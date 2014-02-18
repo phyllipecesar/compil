@@ -1,0 +1,216 @@
+grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
+
+generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
+
+/*
+ * SO FAR
+ * 
+ * LEX.PPNUMBER     [OK]
+ * LEX.NAME         [OK]
+ * LEX.KEY          [OK]
+ * LEX.OPERATORS    [OK]
+ * Lex.Token        [OK]
+ */
+ 
+Model:
+	greetings+=Token;
+	
+Greeting:
+	'Hello' name=ID '!';
+
+
+terminal SIGN:
+	'+'|'-'
+;
+
+// lex.charset
+
+hexquad:
+	HEXADECIMALDIGIT HEXADECIMALDIGIT HEXADECIMALDIGIT HEXADECIMALDIGIT
+;
+
+// lex.icon
+terminal NONZERODIGIT:
+	'1'..'9'
+;
+terminal OCTALDIGIT:
+	'0'..'7'
+;
+terminal HEXADECIMALDIGIT:
+	'0'..'9'|'a'..'f'|'A'..'F';
+	
+// LEX.TOKEN
+
+Token: 
+	Identifier |
+	KEYWORD |
+//	Literal |
+	PPOPorPUNC
+;
+// LEX.PPNUMBER === LEFT RECURSION REMOVED
+ 	
+Ppnumber:  
+ 	(DIGIT | '.' DIGIT) (DIGIT|NONDIGIT| 'e'SIGN|'E'SIGN|'.')*;
+ // LEX _ NAME === LEFT RECURSION REMOVED
+
+Identifier:
+	NONDIGIT (NONDIGIT|DIGIT)*;
+
+terminal NONDIGIT:
+	('a'..'z'|'_'|'A'..'Z')
+;
+terminal DIGIT:
+	('0'..'9')
+;
+
+// LEX.KEY
+terminal KEYWORD:	  
+ 	'alignas'|
+ 	'alignof'| 
+ 	'asm'|
+ 	'auto'|
+ 	'bool'|
+ 	'break'|
+ 	'case'|
+ 	'catch'|
+ 	'char'|
+ 	'char16_t'|
+ 	'char32_t'|
+ 	'class'|
+ 	'const'|
+ 	'constexpr'|
+ 	'const_cast'|
+ 	'continue'|
+ 	'decltype'|
+ 	'default'|
+ 	'delete'|
+ 	'do'|
+ 	'double'|
+ 	'dynamic_cast'|
+ 	'else'|
+ 	'enum'|
+ 	'explicit'|
+ 	'export'|
+ 	'extern'|
+ 	'false'|
+ 	'float'|
+ 	'for'|
+ 	'friend'|
+ 	'goto'|
+ 	'if'|
+ 	'inline'|
+ 	'int'|
+ 	'long'|
+ 	'mutable'|
+ 	'namespace'|
+ 	'new'|
+ 	'noexcept'|
+ 	'nullptr'|
+ 	'operator'|
+ 	'private'|
+ 	'protected'|
+ 	'public'|
+ 	'register'|
+ 	'reinterpret_cast'|
+ 	'return'|
+ 	'short'|
+ 	'signed'|
+ 	'sizeof'|
+ 	'static'|
+ 	'static_assert'|
+ 	'static_cast'|
+ 	'struct'|
+ 	'switch'|
+ 	'template'|
+ 	'this'|
+ 	'thread_local'|
+ 	'throw'|
+ 	'true'|
+ 	'try'|
+ 	'typedef'|
+ 	'typeid'|
+ 	'typename'|
+ 	'union'|
+ 	'unsigned'|
+ 	'using'|
+ 	'virtual'|
+ 	'void'|
+ 	'volatile'|
+ 	'wchar_t'|
+ 	'while';
+ 	
+ 	
+ 	
+// LEX.OPERATORS
+// TODO(rigelbm): operator-token and punctuator
+terminal PPOPorPUNC:
+	'{'|
+ 	'}'|
+ 	'['|
+ 	']'|
+ 	'#'|
+ 	'##'|
+ 	'('|
+ 	')'|
+ 	'<:'|
+ 	':>'|
+ 	'<%'|
+ 	'%>'|
+ 	'%:'|
+ 	'%:%:'|
+ 	';'|
+ 	':'|
+ 	'...'|
+ 	'new'|
+ 	'delete'|
+ 	'?'|
+ 	'::'|
+ 	'.'|
+ 	'.*'|
+ 	'+'|
+ 	'-'|
+ 	'*'|
+ 	'/'|
+ 	'%'|
+ 	'^'|
+ 	'&'|
+ 	'|'|
+ 	'~'|
+ 	'!'|
+ 	'='|
+ 	'<'|
+ 	'>'|
+ 	'+='|
+ 	'-='|
+ 	'*='|
+ 	'/='|
+ 	'%='|
+ 	'^='|
+ 	'&='|
+ 	'|='|
+ 	'<<'|
+ 	'>>'|
+ 	'<<='|
+ 	'>>='|
+ 	'=='|
+ 	'!='|
+ 	'<='|
+ 	'>='|
+ 	'&&'|
+ 	'||'|
+ 	'++'|
+ 	'--'|
+ 	','|
+ 	'->*'|
+ 	'->'|
+ 	'and'|
+ 	'and_eq'|
+ 	'bitand'|
+ 	'bitor'|
+ 	'compl'|
+ 	'not'|
+ 	'not_eq'|
+ 	'or'|
+ 	'or_eq'|
+ 	'xor'|
+ 	'xor_eq';
