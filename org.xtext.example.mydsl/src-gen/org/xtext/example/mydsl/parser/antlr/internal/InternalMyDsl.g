@@ -104,6 +104,14 @@ ruleModel returns [EObject current=null]
 
 
 
+
+
+
+
+
+
+
+
 // Entry rule entryRuleToken
 entryRuleToken returns [String current=null] 
 	:
@@ -118,16 +126,12 @@ ruleToken returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
-    { 
-        newCompositeNode(grammarAccess.getTokenAccess().getIdentifierParserRuleCall_0()); 
-    }
-    this_Identifier_0=ruleIdentifier    {
+(    this_Identifier_0=RULE_IDENTIFIER    {
 		$current.merge(this_Identifier_0);
     }
 
     { 
-        afterParserOrEnumRuleCall();
+    newLeafNode(this_Identifier_0, grammarAccess.getTokenAccess().getIdentifierTerminalRuleCall_0()); 
     }
 
     |    this_KEYWORD_1=RULE_KEYWORD    {
@@ -152,60 +156,27 @@ ruleToken returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 
 
 
-
-
-// Entry rule entryRuleIdentifier
-entryRuleIdentifier returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getIdentifierRule()); } 
-	 iv_ruleIdentifier=ruleIdentifier 
-	 { $current=$iv_ruleIdentifier.current.getText(); }  
-	 EOF 
-;
-
-// Rule Identifier
-ruleIdentifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(    this_NONDIGIT_0=RULE_NONDIGIT    {
-		$current.merge(this_NONDIGIT_0);
-    }
-
-    { 
-    newLeafNode(this_NONDIGIT_0, grammarAccess.getIdentifierAccess().getNONDIGITTerminalRuleCall_0()); 
-    }
-(    this_NONDIGIT_1=RULE_NONDIGIT    {
-		$current.merge(this_NONDIGIT_1);
-    }
-
-    { 
-    newLeafNode(this_NONDIGIT_1, grammarAccess.getIdentifierAccess().getNONDIGITTerminalRuleCall_1_0()); 
-    }
-
-    |    this_DIGIT_2=RULE_DIGIT    {
-		$current.merge(this_DIGIT_2);
-    }
-
-    { 
-    newLeafNode(this_DIGIT_2, grammarAccess.getIdentifierAccess().getDIGITTerminalRuleCall_1_1()); 
-    }
-)*)
-    ;
-
-
-
-
-
 RULE_SIGN : ('+'|'-');
 
-RULE_NONDIGIT : ('a'..'z'|'_'|'A'..'Z');
+RULE_NONZERODIGIT : '1'..'9';
 
-RULE_DIGIT : '0'..'9';
+RULE_OCTALDIGIT : '0'..'7';
+
+RULE_HEXADECIMALDIGIT : ('0'..'9'|'a'..'f'|'A'..'F');
+
+RULE_UNSIGNEDSUFFIX : ('u'|'U');
+
+RULE_LONGSUFFIX : ('l'|'L');
+
+RULE_LONGLONGSUFFIX : ('ll'|'LL');
+
+RULE_PPNUMBER : ('0'..'9'|'.' '0'..'9') ('0'..'9'|('a'..'z'|'A'..'Z'|'_')|'e' RULE_SIGN|'E' RULE_SIGN|'.')*;
 
 RULE_KEYWORD : ('alignas'|'alignof'|'asm'|'auto'|'bool'|'break'|'case'|'catch'|'char'|'char16_t'|'char32_t'|'class'|'const'|'constexpr'|'const_cast'|'continue'|'decltype'|'default'|'delete'|'do'|'double'|'dynamic_cast'|'else'|'enum'|'explicit'|'export'|'extern'|'false'|'float'|'for'|'friend'|'goto'|'if'|'inline'|'int'|'long'|'mutable'|'namespace'|'new'|'noexcept'|'nullptr'|'operator'|'private'|'protected'|'public'|'register'|'reinterpret_cast'|'return'|'short'|'signed'|'sizeof'|'static'|'static_assert'|'static_cast'|'struct'|'switch'|'template'|'this'|'thread_local'|'throw'|'true'|'try'|'typedef'|'typeid'|'typename'|'union'|'unsigned'|'using'|'virtual'|'void'|'volatile'|'wchar_t'|'while');
 
 RULE_PPOPORPUNC : ('{'|'}'|'['|']'|'#'|'##'|'('|')'|'<:'|':>'|'<%'|'%>'|'%:'|'%:%:'|';'|':'|'...'|'new'|'delete'|'?'|'::'|'.'|'.*'|'+'|'-'|'*'|'/'|'%'|'^'|'&'|'|'|'~'|'!'|'='|'<'|'>'|'+='|'-='|'*='|'/='|'%='|'^='|'&='|'|='|'<<'|'>>'|'<<='|'>>='|'=='|'!='|'<='|'>='|'&&'|'||'|'++'|'--'|','|'->*'|'->'|'and'|'and_eq'|'bitand'|'bitor'|'compl'|'not'|'not_eq'|'or'|'or_eq'|'xor'|'xor_eq');
+
+RULE_IDENTIFIER : ('a'..'z'|'A'..'Z'|'_') ('0'..'9'|'A'..'Z'|'a'..'z'|'_')*;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

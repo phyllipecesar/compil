@@ -37,16 +37,17 @@ public class MyDslParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getHexadecimalliteralAccess().getAlternatives_0(), "rule__Hexadecimalliteral__Alternatives_0");
+					put(grammarAccess.getIntegersuffixAccess().getAlternatives(), "rule__Integersuffix__Alternatives");
 					put(grammarAccess.getTokenAccess().getAlternatives(), "rule__Token__Alternatives");
-					put(grammarAccess.getPpnumberAccess().getAlternatives_0(), "rule__Ppnumber__Alternatives_0");
-					put(grammarAccess.getPpnumberAccess().getAlternatives_1(), "rule__Ppnumber__Alternatives_1");
-					put(grammarAccess.getIdentifierAccess().getAlternatives_1(), "rule__Identifier__Alternatives_1");
 					put(grammarAccess.getGreetingAccess().getGroup(), "rule__Greeting__Group__0");
-					put(grammarAccess.getPpnumberAccess().getGroup(), "rule__Ppnumber__Group__0");
-					put(grammarAccess.getPpnumberAccess().getGroup_0_1(), "rule__Ppnumber__Group_0_1__0");
-					put(grammarAccess.getPpnumberAccess().getGroup_1_2(), "rule__Ppnumber__Group_1_2__0");
-					put(grammarAccess.getPpnumberAccess().getGroup_1_3(), "rule__Ppnumber__Group_1_3__0");
-					put(grammarAccess.getIdentifierAccess().getGroup(), "rule__Identifier__Group__0");
+					put(grammarAccess.getHexquadAccess().getGroup(), "rule__Hexquad__Group__0");
+					put(grammarAccess.getOctalliteralAccess().getGroup(), "rule__Octalliteral__Group__0");
+					put(grammarAccess.getHexadecimalliteralAccess().getGroup(), "rule__Hexadecimalliteral__Group__0");
+					put(grammarAccess.getIntegersuffixAccess().getGroup_0(), "rule__Integersuffix__Group_0__0");
+					put(grammarAccess.getIntegersuffixAccess().getGroup_1(), "rule__Integersuffix__Group_1__0");
+					put(grammarAccess.getIntegersuffixAccess().getGroup_2(), "rule__Integersuffix__Group_2__0");
+					put(grammarAccess.getIntegersuffixAccess().getGroup_3(), "rule__Integersuffix__Group_3__0");
 					put(grammarAccess.getModelAccess().getGreetingsAssignment(), "rule__Model__GreetingsAssignment");
 					put(grammarAccess.getGreetingAccess().getNameAssignment_1(), "rule__Greeting__NameAssignment_1");
 				}

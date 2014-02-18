@@ -86,6 +86,14 @@ finally {
 
 
 
+
+
+
+
+
+
+
+
 // Entry rule entryRuleToken
 entryRuleToken 
 :
@@ -116,34 +124,6 @@ finally {
 
 
 
-// Entry rule entryRuleIdentifier
-entryRuleIdentifier 
-:
-{ before(grammarAccess.getIdentifierRule()); }
-	 ruleIdentifier
-{ after(grammarAccess.getIdentifierRule()); } 
-	 EOF 
-;
-
-// Rule Identifier
-ruleIdentifier
-    @init {
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getIdentifierAccess().getGroup()); }
-(rule__Identifier__Group__0)
-{ after(grammarAccess.getIdentifierAccess().getGroup()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
 
 rule__Token__Alternatives
     @init {
@@ -151,9 +131,9 @@ rule__Token__Alternatives
     }
 :
 (
-{ before(grammarAccess.getTokenAccess().getIdentifierParserRuleCall_0()); }
-	ruleIdentifier
-{ after(grammarAccess.getTokenAccess().getIdentifierParserRuleCall_0()); }
+{ before(grammarAccess.getTokenAccess().getIdentifierTerminalRuleCall_0()); }
+	RULE_IDENTIFIER
+{ after(grammarAccess.getTokenAccess().getIdentifierTerminalRuleCall_0()); }
 )
 
     |(
@@ -175,90 +155,8 @@ finally {
 
 
 
-rule__Identifier__Alternatives_1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getIdentifierAccess().getNONDIGITTerminalRuleCall_1_0()); }
-	RULE_NONDIGIT
-{ after(grammarAccess.getIdentifierAccess().getNONDIGITTerminalRuleCall_1_0()); }
-)
-
-    |(
-{ before(grammarAccess.getIdentifierAccess().getDIGITTerminalRuleCall_1_1()); }
-	RULE_DIGIT
-{ after(grammarAccess.getIdentifierAccess().getDIGITTerminalRuleCall_1_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
 
 
-
-
-
-
-
-
-rule__Identifier__Group__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__Identifier__Group__0__Impl
-	rule__Identifier__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Identifier__Group__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getIdentifierAccess().getNONDIGITTerminalRuleCall_0()); }
-	RULE_NONDIGIT
-{ after(grammarAccess.getIdentifierAccess().getNONDIGITTerminalRuleCall_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__Identifier__Group__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__Identifier__Group__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Identifier__Group__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getIdentifierAccess().getAlternatives_1()); }
-(rule__Identifier__Alternatives_1)*
-{ after(grammarAccess.getIdentifierAccess().getAlternatives_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
 
 
 
@@ -285,13 +183,25 @@ finally {
 
 RULE_SIGN : ('+'|'-');
 
-RULE_NONDIGIT : ('a'..'z'|'_'|'A'..'Z');
+RULE_NONZERODIGIT : '1'..'9';
 
-RULE_DIGIT : '0'..'9';
+RULE_OCTALDIGIT : '0'..'7';
+
+RULE_HEXADECIMALDIGIT : ('0'..'9'|'a'..'f'|'A'..'F');
+
+RULE_UNSIGNEDSUFFIX : ('u'|'U');
+
+RULE_LONGSUFFIX : ('l'|'L');
+
+RULE_LONGLONGSUFFIX : ('ll'|'LL');
+
+RULE_PPNUMBER : ('0'..'9'|'.' '0'..'9') ('0'..'9'|('a'..'z'|'A'..'Z'|'_')|'e' RULE_SIGN|'E' RULE_SIGN|'.')*;
 
 RULE_KEYWORD : ('alignas'|'alignof'|'asm'|'auto'|'bool'|'break'|'case'|'catch'|'char'|'char16_t'|'char32_t'|'class'|'const'|'constexpr'|'const_cast'|'continue'|'decltype'|'default'|'delete'|'do'|'double'|'dynamic_cast'|'else'|'enum'|'explicit'|'export'|'extern'|'false'|'float'|'for'|'friend'|'goto'|'if'|'inline'|'int'|'long'|'mutable'|'namespace'|'new'|'noexcept'|'nullptr'|'operator'|'private'|'protected'|'public'|'register'|'reinterpret_cast'|'return'|'short'|'signed'|'sizeof'|'static'|'static_assert'|'static_cast'|'struct'|'switch'|'template'|'this'|'thread_local'|'throw'|'true'|'try'|'typedef'|'typeid'|'typename'|'union'|'unsigned'|'using'|'virtual'|'void'|'volatile'|'wchar_t'|'while');
 
 RULE_PPOPORPUNC : ('{'|'}'|'['|']'|'#'|'##'|'('|')'|'<:'|':>'|'<%'|'%>'|'%:'|'%:%:'|';'|':'|'...'|'new'|'delete'|'?'|'::'|'.'|'.*'|'+'|'-'|'*'|'/'|'%'|'^'|'&'|'|'|'~'|'!'|'='|'<'|'>'|'+='|'-='|'*='|'/='|'%='|'^='|'&='|'|='|'<<'|'>>'|'<<='|'>>='|'=='|'!='|'<='|'>='|'&&'|'||'|'++'|'--'|','|'->*'|'->'|'and'|'and_eq'|'bitand'|'bitor'|'compl'|'not'|'not_eq'|'or'|'or_eq'|'xor'|'xor_eq');
+
+RULE_IDENTIFIER : ('a'..'z'|'A'..'Z'|'_') ('0'..'9'|'A'..'Z'|'a'..'z'|'_')*;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

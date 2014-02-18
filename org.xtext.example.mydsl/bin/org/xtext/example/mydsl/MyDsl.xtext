@@ -19,7 +19,7 @@ Greeting:
 	'Hello' name=ID '!';
 
 
-terminal SIGN:
+SIGN:
 	'+'|'-'
 ;
 
@@ -30,15 +30,51 @@ hexquad:
 ;
 
 // lex.icon
-terminal NONZERODIGIT:
-	'1'..'9'
+
+terminal integerliteral:
+	decimalliteral(('u'|'U')('l'|'L')?|('u'|'U')('ll'|'LL')?|('l'|'L')('u'|'U')?|('ll'|'LL')('u'|'U')?)?|
+	octalliteral(('u'|'U')('l'|'L')?|('u'|'U')('ll'|'LL')?|('l'|'L')('u'|'U')?|('ll'|'LL')('u'|'U')?)?|
+	hexadecimalliteral(('u'|'U')('l'|'L')?|('u'|'U')('ll'|'LL')?|('l'|'L')('u'|'U')?|('ll'|'LL')('u'|'U')?)?
 ;
-terminal OCTALDIGIT:
-	'0'..'7'
+terminal decimalliteral:
+	'1'..'9' ('0'..'9')*
 ;
-terminal HEXADECIMALDIGIT:
-	'0'..'9'|'a'..'f'|'A'..'F';
+terminal octalliteral:
+	'0' ('0'..'7')*
+;
+
+terminal hexadecimalliteral:
+	('0x'|'0X') ('0'..'9'|'a'..'f'|'A'..'F')+;
 	
+ NONZERODIGIT:
+	'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'
+;
+OCTALDIGIT:
+	'0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'
+;
+HEXADECIMALDIGIT:
+	'0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'a'|'b'|'c'|'d'|'e'|'f'|
+	'A'|'B'|'C'|'D'|'E'|'F'
+	;
+
+integersuffix:
+	UNSIGNEDSUFFIX (LONGSUFFIX)?|
+	UNSIGNEDSUFFIX (LONGLONGSUFFIX)?|
+	LONGSUFFIX (UNSIGNEDSUFFIX)?|
+	LONGLONGSUFFIX (UNSIGNEDSUFFIX)?
+	
+;
+ UNSIGNEDSUFFIX:
+	'u'|'U'
+;
+
+LONGSUFFIX:
+	'l'|'L'
+;
+
+LONGLONGSUFFIX:
+	'll'|'LL'
+;
 // LEX.TOKEN
 
 Token: 
@@ -49,18 +85,12 @@ Token:
 ;
 // LEX.PPNUMBER === LEFT RECURSION REMOVED
  	
-Ppnumber:  
- 	(DIGIT | '.' DIGIT) (DIGIT|NONDIGIT| 'e'SIGN|'E'SIGN|'.')*;
+terminal Ppnumber:  
+ 	(('0'..'9') | '.' ('0'..'9')) ('0'..'9'|('a'..'z'|'A'..'Z'|'_')| 'e'('+'|'-')|'E'('+'|'-')|'.')*;
  // LEX _ NAME === LEFT RECURSION REMOVED
 
-Identifier:
-	NONDIGIT (NONDIGIT|DIGIT)*;
-
-terminal NONDIGIT:
-	('a'..'z'|'_'|'A'..'Z')
-;
-terminal DIGIT:
-	('0'..'9')
+terminal LITERAL:
+	inte
 ;
 
 // LEX.KEY
@@ -214,3 +244,7 @@ terminal PPOPorPUNC:
  	'or_eq'|
  	'xor'|
  	'xor_eq';
+ 
+ terminal Identifier:
+	('a'..'z'|'A'..'Z'|'_') ('0'..'9'|'A'..'Z'|'a'..'z'|'_')*;
+ 	

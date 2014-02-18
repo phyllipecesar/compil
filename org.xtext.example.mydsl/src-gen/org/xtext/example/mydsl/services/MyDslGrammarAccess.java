@@ -70,10 +70,150 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getExclamationMarkKeyword_2() { return cExclamationMarkKeyword_2; }
 	}
 
+	public class HexquadElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hexquad");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cHEXADECIMALDIGITTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cHEXADECIMALDIGITTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cHEXADECIMALDIGITTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final RuleCall cHEXADECIMALDIGITTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		
+		//// lex.charset
+		//hexquad:
+		//	HEXADECIMALDIGIT HEXADECIMALDIGIT HEXADECIMALDIGIT HEXADECIMALDIGIT;
+		public ParserRule getRule() { return rule; }
+
+		//HEXADECIMALDIGIT HEXADECIMALDIGIT HEXADECIMALDIGIT HEXADECIMALDIGIT
+		public Group getGroup() { return cGroup; }
+
+		//HEXADECIMALDIGIT
+		public RuleCall getHEXADECIMALDIGITTerminalRuleCall_0() { return cHEXADECIMALDIGITTerminalRuleCall_0; }
+
+		//HEXADECIMALDIGIT
+		public RuleCall getHEXADECIMALDIGITTerminalRuleCall_1() { return cHEXADECIMALDIGITTerminalRuleCall_1; }
+
+		//HEXADECIMALDIGIT
+		public RuleCall getHEXADECIMALDIGITTerminalRuleCall_2() { return cHEXADECIMALDIGITTerminalRuleCall_2; }
+
+		//HEXADECIMALDIGIT
+		public RuleCall getHEXADECIMALDIGITTerminalRuleCall_3() { return cHEXADECIMALDIGITTerminalRuleCall_3; }
+	}
+
+	public class OctalliteralElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "octalliteral");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDigitZeroKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cOCTALDIGITTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		
+		//// lex.icon
+		//octalliteral:
+		//	"0" OCTALDIGIT*;
+		public ParserRule getRule() { return rule; }
+
+		//"0" OCTALDIGIT*
+		public Group getGroup() { return cGroup; }
+
+		//"0"
+		public Keyword getDigitZeroKeyword_0() { return cDigitZeroKeyword_0; }
+
+		//OCTALDIGIT*
+		public RuleCall getOCTALDIGITTerminalRuleCall_1() { return cOCTALDIGITTerminalRuleCall_1; }
+	}
+
+	public class HexadecimalliteralElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hexadecimalliteral");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cXKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cXKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final RuleCall cHEXADECIMALDIGITTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		
+		//hexadecimalliteral:
+		//	("0x" | "0X") HEXADECIMALDIGIT+;
+		public ParserRule getRule() { return rule; }
+
+		//("0x" | "0X") HEXADECIMALDIGIT+
+		public Group getGroup() { return cGroup; }
+
+		//"0x" | "0X"
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+
+		//"0x"
+		public Keyword getXKeyword_0_0() { return cXKeyword_0_0; }
+
+		//"0X"
+		public Keyword getXKeyword_0_1() { return cXKeyword_0_1; }
+
+		//HEXADECIMALDIGIT+
+		public RuleCall getHEXADECIMALDIGITTerminalRuleCall_1() { return cHEXADECIMALDIGITTerminalRuleCall_1; }
+	}
+
+	public class IntegersuffixElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "integersuffix");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final RuleCall cUNSIGNEDSUFFIXTerminalRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
+		private final RuleCall cLONGSUFFIXTerminalRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final RuleCall cUNSIGNEDSUFFIXTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final RuleCall cLONGLONGSUFFIXTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final RuleCall cLONGSUFFIXTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final RuleCall cUNSIGNEDSUFFIXTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final RuleCall cLONGLONGSUFFIXTerminalRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
+		private final RuleCall cUNSIGNEDSUFFIXTerminalRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
+		
+		//integersuffix:
+		//	UNSIGNEDSUFFIX LONGSUFFIX? | UNSIGNEDSUFFIX LONGLONGSUFFIX? | LONGSUFFIX UNSIGNEDSUFFIX? | LONGLONGSUFFIX
+		//	UNSIGNEDSUFFIX?;
+		public ParserRule getRule() { return rule; }
+
+		//UNSIGNEDSUFFIX LONGSUFFIX? | UNSIGNEDSUFFIX LONGLONGSUFFIX? | LONGSUFFIX UNSIGNEDSUFFIX? | LONGLONGSUFFIX
+		//UNSIGNEDSUFFIX?
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//UNSIGNEDSUFFIX LONGSUFFIX?
+		public Group getGroup_0() { return cGroup_0; }
+
+		//UNSIGNEDSUFFIX
+		public RuleCall getUNSIGNEDSUFFIXTerminalRuleCall_0_0() { return cUNSIGNEDSUFFIXTerminalRuleCall_0_0; }
+
+		//LONGSUFFIX?
+		public RuleCall getLONGSUFFIXTerminalRuleCall_0_1() { return cLONGSUFFIXTerminalRuleCall_0_1; }
+
+		//UNSIGNEDSUFFIX LONGLONGSUFFIX?
+		public Group getGroup_1() { return cGroup_1; }
+
+		//UNSIGNEDSUFFIX
+		public RuleCall getUNSIGNEDSUFFIXTerminalRuleCall_1_0() { return cUNSIGNEDSUFFIXTerminalRuleCall_1_0; }
+
+		//LONGLONGSUFFIX?
+		public RuleCall getLONGLONGSUFFIXTerminalRuleCall_1_1() { return cLONGLONGSUFFIXTerminalRuleCall_1_1; }
+
+		//LONGSUFFIX UNSIGNEDSUFFIX?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//LONGSUFFIX
+		public RuleCall getLONGSUFFIXTerminalRuleCall_2_0() { return cLONGSUFFIXTerminalRuleCall_2_0; }
+
+		//UNSIGNEDSUFFIX?
+		public RuleCall getUNSIGNEDSUFFIXTerminalRuleCall_2_1() { return cUNSIGNEDSUFFIXTerminalRuleCall_2_1; }
+
+		//LONGLONGSUFFIX UNSIGNEDSUFFIX?
+		public Group getGroup_3() { return cGroup_3; }
+
+		//LONGLONGSUFFIX
+		public RuleCall getLONGLONGSUFFIXTerminalRuleCall_3_0() { return cLONGLONGSUFFIXTerminalRuleCall_3_0; }
+
+		//UNSIGNEDSUFFIX?
+		public RuleCall getUNSIGNEDSUFFIXTerminalRuleCall_3_1() { return cUNSIGNEDSUFFIXTerminalRuleCall_3_1; }
+	}
+
 	public class TokenElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Token");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cIdentifierParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cIdentifierTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cKEYWORDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cPPOPorPUNCTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
@@ -88,7 +228,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Identifier
-		public RuleCall getIdentifierParserRuleCall_0() { return cIdentifierParserRuleCall_0; }
+		public RuleCall getIdentifierTerminalRuleCall_0() { return cIdentifierTerminalRuleCall_0; }
 
 		//KEYWORD
 		public RuleCall getKEYWORDTerminalRuleCall_1() { return cKEYWORDTerminalRuleCall_1; }
@@ -97,120 +237,26 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//PPOPorPUNC
 		public RuleCall getPPOPorPUNCTerminalRuleCall_2() { return cPPOPorPUNCTerminalRuleCall_2; }
 	}
-
-	public class PpnumberElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Ppnumber");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final RuleCall cDIGITTerminalRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
-		private final Group cGroup_0_1 = (Group)cAlternatives_0.eContents().get(1);
-		private final Keyword cFullStopKeyword_0_1_0 = (Keyword)cGroup_0_1.eContents().get(0);
-		private final RuleCall cDIGITTerminalRuleCall_0_1_1 = (RuleCall)cGroup_0_1.eContents().get(1);
-		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final RuleCall cDIGITTerminalRuleCall_1_0 = (RuleCall)cAlternatives_1.eContents().get(0);
-		private final RuleCall cNONDIGITTerminalRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
-		private final Group cGroup_1_2 = (Group)cAlternatives_1.eContents().get(2);
-		private final Keyword cEKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
-		private final RuleCall cSIGNTerminalRuleCall_1_2_1 = (RuleCall)cGroup_1_2.eContents().get(1);
-		private final Group cGroup_1_3 = (Group)cAlternatives_1.eContents().get(3);
-		private final Keyword cEKeyword_1_3_0 = (Keyword)cGroup_1_3.eContents().get(0);
-		private final RuleCall cSIGNTerminalRuleCall_1_3_1 = (RuleCall)cGroup_1_3.eContents().get(1);
-		private final Keyword cFullStopKeyword_1_4 = (Keyword)cAlternatives_1.eContents().get(4);
-		
-		//// LEX.PPNUMBER === LEFT RECURSION REMOVED
-		//Ppnumber:
-		//	(DIGIT | "." DIGIT) (DIGIT | NONDIGIT | "e" SIGN | "E" SIGN | ".")*;
-		public ParserRule getRule() { return rule; }
-
-		//(DIGIT | "." DIGIT) (DIGIT | NONDIGIT | "e" SIGN | "E" SIGN | ".")*
-		public Group getGroup() { return cGroup; }
-
-		//DIGIT | "." DIGIT
-		public Alternatives getAlternatives_0() { return cAlternatives_0; }
-
-		//DIGIT
-		public RuleCall getDIGITTerminalRuleCall_0_0() { return cDIGITTerminalRuleCall_0_0; }
-
-		//"." DIGIT
-		public Group getGroup_0_1() { return cGroup_0_1; }
-
-		//"."
-		public Keyword getFullStopKeyword_0_1_0() { return cFullStopKeyword_0_1_0; }
-
-		//DIGIT
-		public RuleCall getDIGITTerminalRuleCall_0_1_1() { return cDIGITTerminalRuleCall_0_1_1; }
-
-		//(DIGIT | NONDIGIT | "e" SIGN | "E" SIGN | ".")*
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
-
-		//DIGIT
-		public RuleCall getDIGITTerminalRuleCall_1_0() { return cDIGITTerminalRuleCall_1_0; }
-
-		//NONDIGIT
-		public RuleCall getNONDIGITTerminalRuleCall_1_1() { return cNONDIGITTerminalRuleCall_1_1; }
-
-		//"e" SIGN
-		public Group getGroup_1_2() { return cGroup_1_2; }
-
-		//"e"
-		public Keyword getEKeyword_1_2_0() { return cEKeyword_1_2_0; }
-
-		//SIGN
-		public RuleCall getSIGNTerminalRuleCall_1_2_1() { return cSIGNTerminalRuleCall_1_2_1; }
-
-		//"E" SIGN
-		public Group getGroup_1_3() { return cGroup_1_3; }
-
-		//"E"
-		public Keyword getEKeyword_1_3_0() { return cEKeyword_1_3_0; }
-
-		//SIGN
-		public RuleCall getSIGNTerminalRuleCall_1_3_1() { return cSIGNTerminalRuleCall_1_3_1; }
-
-		//"."
-		public Keyword getFullStopKeyword_1_4() { return cFullStopKeyword_1_4; }
-	}
-
-	public class IdentifierElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Identifier");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cNONDIGITTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final RuleCall cNONDIGITTerminalRuleCall_1_0 = (RuleCall)cAlternatives_1.eContents().get(0);
-		private final RuleCall cDIGITTerminalRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
-		
-		//// LEX _ NAME === LEFT RECURSION REMOVED
-		//Identifier:
-		//	NONDIGIT (NONDIGIT | DIGIT)*;
-		public ParserRule getRule() { return rule; }
-
-		//NONDIGIT (NONDIGIT | DIGIT)*
-		public Group getGroup() { return cGroup; }
-
-		//NONDIGIT
-		public RuleCall getNONDIGITTerminalRuleCall_0() { return cNONDIGITTerminalRuleCall_0; }
-
-		//(NONDIGIT | DIGIT)*
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
-
-		//NONDIGIT
-		public RuleCall getNONDIGITTerminalRuleCall_1_0() { return cNONDIGITTerminalRuleCall_1_0; }
-
-		//DIGIT
-		public RuleCall getDIGITTerminalRuleCall_1_1() { return cDIGITTerminalRuleCall_1_1; }
-	}
 	
 	
 	private ModelElements pModel;
 	private GreetingElements pGreeting;
 	private TerminalRule tSIGN;
+	private HexquadElements pHexquad;
+	private OctalliteralElements pOctalliteral;
+	private HexadecimalliteralElements pHexadecimalliteral;
+	private TerminalRule tNONZERODIGIT;
+	private TerminalRule tOCTALDIGIT;
+	private TerminalRule tHEXADECIMALDIGIT;
+	private IntegersuffixElements pIntegersuffix;
+	private TerminalRule tUNSIGNEDSUFFIX;
+	private TerminalRule tLONGSUFFIX;
+	private TerminalRule tLONGLONGSUFFIX;
 	private TokenElements pToken;
-	private PpnumberElements pPpnumber;
-	private IdentifierElements pIdentifier;
-	private TerminalRule tNONDIGIT;
-	private TerminalRule tDIGIT;
+	private TerminalRule tPpnumber;
 	private TerminalRule tKEYWORD;
 	private TerminalRule tPPOPorPUNC;
+	private TerminalRule tIdentifier;
 	
 	private final Grammar grammar;
 
@@ -284,6 +330,85 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return (tSIGN != null) ? tSIGN : (tSIGN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SIGN"));
 	} 
 
+	//// lex.charset
+	//hexquad:
+	//	HEXADECIMALDIGIT HEXADECIMALDIGIT HEXADECIMALDIGIT HEXADECIMALDIGIT;
+	public HexquadElements getHexquadAccess() {
+		return (pHexquad != null) ? pHexquad : (pHexquad = new HexquadElements());
+	}
+	
+	public ParserRule getHexquadRule() {
+		return getHexquadAccess().getRule();
+	}
+
+	//// lex.icon
+	//octalliteral:
+	//	"0" OCTALDIGIT*;
+	public OctalliteralElements getOctalliteralAccess() {
+		return (pOctalliteral != null) ? pOctalliteral : (pOctalliteral = new OctalliteralElements());
+	}
+	
+	public ParserRule getOctalliteralRule() {
+		return getOctalliteralAccess().getRule();
+	}
+
+	//hexadecimalliteral:
+	//	("0x" | "0X") HEXADECIMALDIGIT+;
+	public HexadecimalliteralElements getHexadecimalliteralAccess() {
+		return (pHexadecimalliteral != null) ? pHexadecimalliteral : (pHexadecimalliteral = new HexadecimalliteralElements());
+	}
+	
+	public ParserRule getHexadecimalliteralRule() {
+		return getHexadecimalliteralAccess().getRule();
+	}
+
+	//terminal NONZERODIGIT:
+	//	"1".."9";
+	public TerminalRule getNONZERODIGITRule() {
+		return (tNONZERODIGIT != null) ? tNONZERODIGIT : (tNONZERODIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NONZERODIGIT"));
+	} 
+
+	//terminal OCTALDIGIT:
+	//	"0".."7";
+	public TerminalRule getOCTALDIGITRule() {
+		return (tOCTALDIGIT != null) ? tOCTALDIGIT : (tOCTALDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "OCTALDIGIT"));
+	} 
+
+	//terminal HEXADECIMALDIGIT:
+	//	"0".."9" | "a".."f" | "A".."F";
+	public TerminalRule getHEXADECIMALDIGITRule() {
+		return (tHEXADECIMALDIGIT != null) ? tHEXADECIMALDIGIT : (tHEXADECIMALDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "HEXADECIMALDIGIT"));
+	} 
+
+	//integersuffix:
+	//	UNSIGNEDSUFFIX LONGSUFFIX? | UNSIGNEDSUFFIX LONGLONGSUFFIX? | LONGSUFFIX UNSIGNEDSUFFIX? | LONGLONGSUFFIX
+	//	UNSIGNEDSUFFIX?;
+	public IntegersuffixElements getIntegersuffixAccess() {
+		return (pIntegersuffix != null) ? pIntegersuffix : (pIntegersuffix = new IntegersuffixElements());
+	}
+	
+	public ParserRule getIntegersuffixRule() {
+		return getIntegersuffixAccess().getRule();
+	}
+
+	//terminal UNSIGNEDSUFFIX:
+	//	"u" | "U";
+	public TerminalRule getUNSIGNEDSUFFIXRule() {
+		return (tUNSIGNEDSUFFIX != null) ? tUNSIGNEDSUFFIX : (tUNSIGNEDSUFFIX = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "UNSIGNEDSUFFIX"));
+	} 
+
+	//terminal LONGSUFFIX:
+	//	"l" | "L";
+	public TerminalRule getLONGSUFFIXRule() {
+		return (tLONGSUFFIX != null) ? tLONGSUFFIX : (tLONGSUFFIX = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "LONGSUFFIX"));
+	} 
+
+	//terminal LONGLONGSUFFIX:
+	//	"ll" | "LL";
+	public TerminalRule getLONGLONGSUFFIXRule() {
+		return (tLONGLONGSUFFIX != null) ? tLONGLONGSUFFIX : (tLONGLONGSUFFIX = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "LONGLONGSUFFIX"));
+	} 
+
 	//// LEX.TOKEN
 	//Token:
 	//	Identifier | KEYWORD | //	Literal |
@@ -297,39 +422,13 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// LEX.PPNUMBER === LEFT RECURSION REMOVED
-	//Ppnumber:
-	//	(DIGIT | "." DIGIT) (DIGIT | NONDIGIT | "e" SIGN | "E" SIGN | ".")*;
-	public PpnumberElements getPpnumberAccess() {
-		return (pPpnumber != null) ? pPpnumber : (pPpnumber = new PpnumberElements());
-	}
-	
-	public ParserRule getPpnumberRule() {
-		return getPpnumberAccess().getRule();
-	}
+	//terminal Ppnumber:
+	//	("0".."9" | "." "0".."9") ("0".."9" | ("a".."z" | "A".."Z" | "_") | "e" SIGN | "E" SIGN | ".")*;
+	public TerminalRule getPpnumberRule() {
+		return (tPpnumber != null) ? tPpnumber : (tPpnumber = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "Ppnumber"));
+	} 
 
 	//// LEX _ NAME === LEFT RECURSION REMOVED
-	//Identifier:
-	//	NONDIGIT (NONDIGIT | DIGIT)*;
-	public IdentifierElements getIdentifierAccess() {
-		return (pIdentifier != null) ? pIdentifier : (pIdentifier = new IdentifierElements());
-	}
-	
-	public ParserRule getIdentifierRule() {
-		return getIdentifierAccess().getRule();
-	}
-
-	//terminal NONDIGIT:
-	//	"a".."z" | "_" | "A".."Z";
-	public TerminalRule getNONDIGITRule() {
-		return (tNONDIGIT != null) ? tNONDIGIT : (tNONDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NONDIGIT"));
-	} 
-
-	//terminal DIGIT:
-	//	"0".."9";
-	public TerminalRule getDIGITRule() {
-		return (tDIGIT != null) ? tDIGIT : (tDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DIGIT"));
-	} 
-
 	//// LEX.KEY
 	//terminal KEYWORD:
 	//	"alignas" | "alignof" | "asm" | "auto" | "bool" | "break" | "case" | "catch" | "char" | "char16_t" | "char32_t" |
@@ -354,6 +453,12 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	| "or_eq" | "xor" | "xor_eq";
 	public TerminalRule getPPOPorPUNCRule() {
 		return (tPPOPorPUNC != null) ? tPPOPorPUNC : (tPPOPorPUNC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "PPOPorPUNC"));
+	} 
+
+	//terminal Identifier:
+	//	("a".."z" | "A".."Z" | "_") ("0".."9" | "A".."Z" | "a".."z" | "_")*;
+	public TerminalRule getIdentifierRule() {
+		return (tIdentifier != null) ? tIdentifier : (tIdentifier = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "Identifier"));
 	} 
 
 	//terminal ID:

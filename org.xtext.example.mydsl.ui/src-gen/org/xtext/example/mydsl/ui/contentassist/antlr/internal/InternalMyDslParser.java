@@ -22,21 +22,27 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMyDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_KEYWORD", "RULE_PPOPORPUNC", "RULE_NONDIGIT", "RULE_DIGIT", "RULE_SIGN", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_IDENTIFIER", "RULE_KEYWORD", "RULE_PPOPORPUNC", "RULE_SIGN", "RULE_NONZERODIGIT", "RULE_OCTALDIGIT", "RULE_HEXADECIMALDIGIT", "RULE_UNSIGNEDSUFFIX", "RULE_LONGSUFFIX", "RULE_LONGLONGSUFFIX", "RULE_PPNUMBER", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
     };
-    public static final int RULE_ID=9;
-    public static final int RULE_STRING=11;
-    public static final int RULE_KEYWORD=4;
-    public static final int RULE_ANY_OTHER=15;
-    public static final int RULE_INT=10;
-    public static final int RULE_PPOPORPUNC=5;
-    public static final int RULE_SIGN=8;
-    public static final int RULE_WS=14;
-    public static final int RULE_SL_COMMENT=13;
+    public static final int RULE_ID=15;
+    public static final int RULE_ANY_OTHER=21;
+    public static final int RULE_HEXADECIMALDIGIT=10;
+    public static final int RULE_IDENTIFIER=4;
+    public static final int RULE_OCTALDIGIT=9;
+    public static final int RULE_SIGN=7;
     public static final int EOF=-1;
-    public static final int RULE_DIGIT=7;
-    public static final int RULE_NONDIGIT=6;
-    public static final int RULE_ML_COMMENT=12;
+    public static final int RULE_SL_COMMENT=19;
+    public static final int RULE_ML_COMMENT=18;
+    public static final int RULE_STRING=17;
+    public static final int RULE_LONGLONGSUFFIX=13;
+    public static final int RULE_KEYWORD=5;
+    public static final int RULE_NONZERODIGIT=8;
+    public static final int RULE_INT=16;
+    public static final int RULE_PPOPORPUNC=6;
+    public static final int RULE_LONGSUFFIX=12;
+    public static final int RULE_PPNUMBER=14;
+    public static final int RULE_WS=20;
+    public static final int RULE_UNSIGNEDSUFFIX=11;
 
     // delegates
     // delegators
@@ -153,20 +159,20 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleToken"
-    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:90:1: entryRuleToken : ruleToken EOF ;
+    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:98:1: entryRuleToken : ruleToken EOF ;
     public final void entryRuleToken() throws RecognitionException {
         try {
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:91:1: ( ruleToken EOF )
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:92:1: ruleToken EOF
+            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:99:1: ( ruleToken EOF )
+            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:100:1: ruleToken EOF
             {
              before(grammarAccess.getTokenRule()); 
-            pushFollow(FOLLOW_ruleToken_in_entryRuleToken123);
+            pushFollow(FOLLOW_ruleToken_in_entryRuleToken131);
             ruleToken();
 
             state._fsp--;
 
              after(grammarAccess.getTokenRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleToken130); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleToken138); 
 
             }
 
@@ -183,23 +189,23 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleToken"
-    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:99:1: ruleToken : ( ( rule__Token__Alternatives ) ) ;
+    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:107:1: ruleToken : ( ( rule__Token__Alternatives ) ) ;
     public final void ruleToken() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:103:2: ( ( ( rule__Token__Alternatives ) ) )
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:104:1: ( ( rule__Token__Alternatives ) )
+            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:111:2: ( ( ( rule__Token__Alternatives ) ) )
+            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:112:1: ( ( rule__Token__Alternatives ) )
             {
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:104:1: ( ( rule__Token__Alternatives ) )
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:105:1: ( rule__Token__Alternatives )
+            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:112:1: ( ( rule__Token__Alternatives ) )
+            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:113:1: ( rule__Token__Alternatives )
             {
              before(grammarAccess.getTokenAccess().getAlternatives()); 
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:106:1: ( rule__Token__Alternatives )
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:106:2: rule__Token__Alternatives
+            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:114:1: ( rule__Token__Alternatives )
+            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:114:2: rule__Token__Alternatives
             {
-            pushFollow(FOLLOW_rule__Token__Alternatives_in_ruleToken156);
+            pushFollow(FOLLOW_rule__Token__Alternatives_in_ruleToken164);
             rule__Token__Alternatives();
 
             state._fsp--;
@@ -229,94 +235,17 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleToken"
 
 
-    // $ANTLR start "entryRuleIdentifier"
-    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:120:1: entryRuleIdentifier : ruleIdentifier EOF ;
-    public final void entryRuleIdentifier() throws RecognitionException {
-        try {
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:121:1: ( ruleIdentifier EOF )
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:122:1: ruleIdentifier EOF
-            {
-             before(grammarAccess.getIdentifierRule()); 
-            pushFollow(FOLLOW_ruleIdentifier_in_entryRuleIdentifier185);
-            ruleIdentifier();
-
-            state._fsp--;
-
-             after(grammarAccess.getIdentifierRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIdentifier192); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleIdentifier"
-
-
-    // $ANTLR start "ruleIdentifier"
-    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:129:1: ruleIdentifier : ( ( rule__Identifier__Group__0 ) ) ;
-    public final void ruleIdentifier() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:133:2: ( ( ( rule__Identifier__Group__0 ) ) )
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:134:1: ( ( rule__Identifier__Group__0 ) )
-            {
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:134:1: ( ( rule__Identifier__Group__0 ) )
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:135:1: ( rule__Identifier__Group__0 )
-            {
-             before(grammarAccess.getIdentifierAccess().getGroup()); 
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:136:1: ( rule__Identifier__Group__0 )
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:136:2: rule__Identifier__Group__0
-            {
-            pushFollow(FOLLOW_rule__Identifier__Group__0_in_ruleIdentifier218);
-            rule__Identifier__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getIdentifierAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleIdentifier"
-
-
     // $ANTLR start "rule__Token__Alternatives"
-    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:148:1: rule__Token__Alternatives : ( ( ruleIdentifier ) | ( RULE_KEYWORD ) | ( RULE_PPOPORPUNC ) );
+    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:128:1: rule__Token__Alternatives : ( ( RULE_IDENTIFIER ) | ( RULE_KEYWORD ) | ( RULE_PPOPORPUNC ) );
     public final void rule__Token__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:152:1: ( ( ruleIdentifier ) | ( RULE_KEYWORD ) | ( RULE_PPOPORPUNC ) )
+            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:132:1: ( ( RULE_IDENTIFIER ) | ( RULE_KEYWORD ) | ( RULE_PPOPORPUNC ) )
             int alt1=3;
             switch ( input.LA(1) ) {
-            case RULE_NONDIGIT:
+            case RULE_IDENTIFIER:
                 {
                 alt1=1;
                 }
@@ -340,18 +269,14 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
 
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:153:1: ( ruleIdentifier )
+                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:133:1: ( RULE_IDENTIFIER )
                     {
-                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:153:1: ( ruleIdentifier )
-                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:154:1: ruleIdentifier
+                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:133:1: ( RULE_IDENTIFIER )
+                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:134:1: RULE_IDENTIFIER
                     {
-                     before(grammarAccess.getTokenAccess().getIdentifierParserRuleCall_0()); 
-                    pushFollow(FOLLOW_ruleIdentifier_in_rule__Token__Alternatives254);
-                    ruleIdentifier();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getTokenAccess().getIdentifierParserRuleCall_0()); 
+                     before(grammarAccess.getTokenAccess().getIdentifierTerminalRuleCall_0()); 
+                    match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_rule__Token__Alternatives202); 
+                     after(grammarAccess.getTokenAccess().getIdentifierTerminalRuleCall_0()); 
 
                     }
 
@@ -359,13 +284,13 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:159:6: ( RULE_KEYWORD )
+                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:139:6: ( RULE_KEYWORD )
                     {
-                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:159:6: ( RULE_KEYWORD )
-                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:160:1: RULE_KEYWORD
+                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:139:6: ( RULE_KEYWORD )
+                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:140:1: RULE_KEYWORD
                     {
                      before(grammarAccess.getTokenAccess().getKEYWORDTerminalRuleCall_1()); 
-                    match(input,RULE_KEYWORD,FOLLOW_RULE_KEYWORD_in_rule__Token__Alternatives271); 
+                    match(input,RULE_KEYWORD,FOLLOW_RULE_KEYWORD_in_rule__Token__Alternatives219); 
                      after(grammarAccess.getTokenAccess().getKEYWORDTerminalRuleCall_1()); 
 
                     }
@@ -374,13 +299,13 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:165:6: ( RULE_PPOPORPUNC )
+                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:145:6: ( RULE_PPOPORPUNC )
                     {
-                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:165:6: ( RULE_PPOPORPUNC )
-                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:166:1: RULE_PPOPORPUNC
+                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:145:6: ( RULE_PPOPORPUNC )
+                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:146:1: RULE_PPOPORPUNC
                     {
                      before(grammarAccess.getTokenAccess().getPPOPorPUNCTerminalRuleCall_2()); 
-                    match(input,RULE_PPOPORPUNC,FOLLOW_RULE_PPOPORPUNC_in_rule__Token__Alternatives288); 
+                    match(input,RULE_PPOPORPUNC,FOLLOW_RULE_PPOPORPUNC_in_rule__Token__Alternatives236); 
                      after(grammarAccess.getTokenAccess().getPPOPorPUNCTerminalRuleCall_2()); 
 
                     }
@@ -405,265 +330,21 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Token__Alternatives"
 
 
-    // $ANTLR start "rule__Identifier__Alternatives_1"
-    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:178:1: rule__Identifier__Alternatives_1 : ( ( RULE_NONDIGIT ) | ( RULE_DIGIT ) );
-    public final void rule__Identifier__Alternatives_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:182:1: ( ( RULE_NONDIGIT ) | ( RULE_DIGIT ) )
-            int alt2=2;
-            int LA2_0 = input.LA(1);
-
-            if ( (LA2_0==RULE_NONDIGIT) ) {
-                alt2=1;
-            }
-            else if ( (LA2_0==RULE_DIGIT) ) {
-                alt2=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 2, 0, input);
-
-                throw nvae;
-            }
-            switch (alt2) {
-                case 1 :
-                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:183:1: ( RULE_NONDIGIT )
-                    {
-                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:183:1: ( RULE_NONDIGIT )
-                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:184:1: RULE_NONDIGIT
-                    {
-                     before(grammarAccess.getIdentifierAccess().getNONDIGITTerminalRuleCall_1_0()); 
-                    match(input,RULE_NONDIGIT,FOLLOW_RULE_NONDIGIT_in_rule__Identifier__Alternatives_1322); 
-                     after(grammarAccess.getIdentifierAccess().getNONDIGITTerminalRuleCall_1_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:189:6: ( RULE_DIGIT )
-                    {
-                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:189:6: ( RULE_DIGIT )
-                    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:190:1: RULE_DIGIT
-                    {
-                     before(grammarAccess.getIdentifierAccess().getDIGITTerminalRuleCall_1_1()); 
-                    match(input,RULE_DIGIT,FOLLOW_RULE_DIGIT_in_rule__Identifier__Alternatives_1339); 
-                     after(grammarAccess.getIdentifierAccess().getDIGITTerminalRuleCall_1_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Identifier__Alternatives_1"
-
-
-    // $ANTLR start "rule__Identifier__Group__0"
-    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:207:1: rule__Identifier__Group__0 : rule__Identifier__Group__0__Impl rule__Identifier__Group__1 ;
-    public final void rule__Identifier__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:211:1: ( rule__Identifier__Group__0__Impl rule__Identifier__Group__1 )
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:212:2: rule__Identifier__Group__0__Impl rule__Identifier__Group__1
-            {
-            pushFollow(FOLLOW_rule__Identifier__Group__0__Impl_in_rule__Identifier__Group__0374);
-            rule__Identifier__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Identifier__Group__1_in_rule__Identifier__Group__0377);
-            rule__Identifier__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Identifier__Group__0"
-
-
-    // $ANTLR start "rule__Identifier__Group__0__Impl"
-    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:219:1: rule__Identifier__Group__0__Impl : ( RULE_NONDIGIT ) ;
-    public final void rule__Identifier__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:223:1: ( ( RULE_NONDIGIT ) )
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:224:1: ( RULE_NONDIGIT )
-            {
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:224:1: ( RULE_NONDIGIT )
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:225:1: RULE_NONDIGIT
-            {
-             before(grammarAccess.getIdentifierAccess().getNONDIGITTerminalRuleCall_0()); 
-            match(input,RULE_NONDIGIT,FOLLOW_RULE_NONDIGIT_in_rule__Identifier__Group__0__Impl404); 
-             after(grammarAccess.getIdentifierAccess().getNONDIGITTerminalRuleCall_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Identifier__Group__0__Impl"
-
-
-    // $ANTLR start "rule__Identifier__Group__1"
-    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:236:1: rule__Identifier__Group__1 : rule__Identifier__Group__1__Impl ;
-    public final void rule__Identifier__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:240:1: ( rule__Identifier__Group__1__Impl )
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:241:2: rule__Identifier__Group__1__Impl
-            {
-            pushFollow(FOLLOW_rule__Identifier__Group__1__Impl_in_rule__Identifier__Group__1433);
-            rule__Identifier__Group__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Identifier__Group__1"
-
-
-    // $ANTLR start "rule__Identifier__Group__1__Impl"
-    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:247:1: rule__Identifier__Group__1__Impl : ( ( rule__Identifier__Alternatives_1 )* ) ;
-    public final void rule__Identifier__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:251:1: ( ( ( rule__Identifier__Alternatives_1 )* ) )
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:252:1: ( ( rule__Identifier__Alternatives_1 )* )
-            {
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:252:1: ( ( rule__Identifier__Alternatives_1 )* )
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:253:1: ( rule__Identifier__Alternatives_1 )*
-            {
-             before(grammarAccess.getIdentifierAccess().getAlternatives_1()); 
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:254:1: ( rule__Identifier__Alternatives_1 )*
-            loop3:
-            do {
-                int alt3=2;
-                int LA3_0 = input.LA(1);
-
-                if ( ((LA3_0>=RULE_NONDIGIT && LA3_0<=RULE_DIGIT)) ) {
-                    alt3=1;
-                }
-
-
-                switch (alt3) {
-            	case 1 :
-            	    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:254:2: rule__Identifier__Alternatives_1
-            	    {
-            	    pushFollow(FOLLOW_rule__Identifier__Alternatives_1_in_rule__Identifier__Group__1__Impl460);
-            	    rule__Identifier__Alternatives_1();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop3;
-                }
-            } while (true);
-
-             after(grammarAccess.getIdentifierAccess().getAlternatives_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Identifier__Group__1__Impl"
-
-
     // $ANTLR start "rule__Model__GreetingsAssignment"
-    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:269:1: rule__Model__GreetingsAssignment : ( ruleToken ) ;
+    // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:167:1: rule__Model__GreetingsAssignment : ( ruleToken ) ;
     public final void rule__Model__GreetingsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:273:1: ( ( ruleToken ) )
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:274:1: ( ruleToken )
+            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:171:1: ( ( ruleToken ) )
+            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:172:1: ( ruleToken )
             {
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:274:1: ( ruleToken )
-            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:275:1: ruleToken
+            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:172:1: ( ruleToken )
+            // ../org.xtext.example.mydsl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalMyDsl.g:173:1: ruleToken
             {
              before(grammarAccess.getModelAccess().getGreetingsTokenParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleToken_in_rule__Model__GreetingsAssignment500);
+            pushFollow(FOLLOW_ruleToken_in_rule__Model__GreetingsAssignment279);
             ruleToken();
 
             state._fsp--;
@@ -697,22 +378,12 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleModel_in_entryRuleModel61 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleModel68 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Model__GreetingsAssignment_in_ruleModel94 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleToken_in_entryRuleToken123 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleToken130 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Token__Alternatives_in_ruleToken156 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIdentifier_in_entryRuleIdentifier185 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIdentifier192 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Identifier__Group__0_in_ruleIdentifier218 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIdentifier_in_rule__Token__Alternatives254 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_KEYWORD_in_rule__Token__Alternatives271 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_PPOPORPUNC_in_rule__Token__Alternatives288 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_NONDIGIT_in_rule__Identifier__Alternatives_1322 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DIGIT_in_rule__Identifier__Alternatives_1339 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Identifier__Group__0__Impl_in_rule__Identifier__Group__0374 = new BitSet(new long[]{0x00000000000000C0L});
-    public static final BitSet FOLLOW_rule__Identifier__Group__1_in_rule__Identifier__Group__0377 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_NONDIGIT_in_rule__Identifier__Group__0__Impl404 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Identifier__Group__1__Impl_in_rule__Identifier__Group__1433 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Identifier__Alternatives_1_in_rule__Identifier__Group__1__Impl460 = new BitSet(new long[]{0x00000000000000C2L});
-    public static final BitSet FOLLOW_ruleToken_in_rule__Model__GreetingsAssignment500 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleToken_in_entryRuleToken131 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleToken138 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Token__Alternatives_in_ruleToken164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_IDENTIFIER_in_rule__Token__Alternatives202 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_KEYWORD_in_rule__Token__Alternatives219 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_PPOPORPUNC_in_rule__Token__Alternatives236 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleToken_in_rule__Model__GreetingsAssignment279 = new BitSet(new long[]{0x0000000000000002L});
 
 }
