@@ -10,6 +10,7 @@ generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
  * LEX.KEY          [OK]
  * LEX.OPERATORS    [OK]
  * Lex.Token        [OK]
+ *
  */
  
 Model:
@@ -25,72 +26,44 @@ SIGN:
 
 // lex.charset
 
-hexquad:
-	HEXADECIMALDIGIT HEXADECIMALDIGIT HEXADECIMALDIGIT HEXADECIMALDIGIT
-;
+
 
 // lex.icon
 
-terminal integerliteral:
-	decimalliteral(('u'|'U')('l'|'L')?|('u'|'U')('ll'|'LL')?|('l'|'L')('u'|'U')?|('ll'|'LL')('u'|'U')?)?|
-	octalliteral(('u'|'U')('l'|'L')?|('u'|'U')('ll'|'LL')?|('l'|'L')('u'|'U')?|('ll'|'LL')('u'|'U')?)?|
-	hexadecimalliteral(('u'|'U')('l'|'L')?|('u'|'U')('ll'|'LL')?|('l'|'L')('u'|'U')?|('ll'|'LL')('u'|'U')?)?
-;
-terminal decimalliteral:
-	'1'..'9' ('0'..'9')*
-;
-terminal octalliteral:
-	'0' ('0'..'7')*
+terminal INTEGERLITERAL:
+	'1'..'9' ('0'..'9')*(('u'|'U') ('l'|'L'|'ll'|'LL')? | ('l'|'L'|'ll'|'LL')('u'|'U')?)?|
+	'0' ('0'..'7')*(('u'|'U') ('l'|'L'|'ll'|'LL')? | ('l'|'L'|'ll'|'LL')('u'|'U')?)?|
+	('0x'|'0X') ('0'..'9'|'a'..'f'|'A'..'F')+(('u'|'U') ('l'|'L'|'ll'|'LL')? | ('l'|'L'|'ll'|'LL')('u'|'U')?)?
 ;
 
-terminal hexadecimalliteral:
-	('0x'|'0X') ('0'..'9'|'a'..'f'|'A'..'F')+;
-	
- NONZERODIGIT:
-	'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'
-;
-OCTALDIGIT:
-	'0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'
-;
-HEXADECIMALDIGIT:
-	'0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'a'|'b'|'c'|'d'|'e'|'f'|
-	'A'|'B'|'C'|'D'|'E'|'F'
-	;
-
-integersuffix:
-	UNSIGNEDSUFFIX (LONGSUFFIX)?|
-	UNSIGNEDSUFFIX (LONGLONGSUFFIX)?|
-	LONGSUFFIX (UNSIGNEDSUFFIX)?|
-	LONGLONGSUFFIX (UNSIGNEDSUFFIX)?
-	
-;
- UNSIGNEDSUFFIX:
-	'u'|'U'
+// lex.bool
+terminal BOOLEANLITERAL:
+	'false'|'true'
 ;
 
-LONGSUFFIX:
-	'l'|'L'
-;
+// lex.nullptr
 
-LONGLONGSUFFIX:
-	'll'|'LL'
+terminal POINTERLITERAL:
+	'nullptr'
 ;
 // LEX.TOKEN
 
 Token: 
-	Identifier |
+	LITERAL |
+	PPNUMBER |
 	KEYWORD |
-//	Literal |
 	PPOPorPUNC
 ;
 // LEX.PPNUMBER === LEFT RECURSION REMOVED
  	
-terminal Ppnumber:  
+terminal PPNUMBER:  
  	(('0'..'9') | '.' ('0'..'9')) ('0'..'9'|('a'..'z'|'A'..'Z'|'_')| 'e'('+'|'-')|'E'('+'|'-')|'.')*;
  // LEX _ NAME === LEFT RECURSION REMOVED
 
 terminal LITERAL:
-	inte
+	INTEGERLITERAL |
+	BOOLEANLITERAL |
+	POINTERLITERAL
 ;
 
 // LEX.KEY
@@ -245,6 +218,6 @@ terminal PPOPorPUNC:
  	'xor'|
  	'xor_eq';
  
- terminal Identifier:
+ terminal IDENTIFIER:
 	('a'..'z'|'A'..'Z'|'_') ('0'..'9'|'A'..'Z'|'a'..'z'|'_')*;
  	

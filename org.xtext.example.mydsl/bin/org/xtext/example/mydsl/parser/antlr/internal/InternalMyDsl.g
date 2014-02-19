@@ -106,12 +106,6 @@ ruleModel returns [EObject current=null]
 
 
 
-
-
-
-
-
-
 // Entry rule entryRuleToken
 entryRuleToken returns [String current=null] 
 	:
@@ -126,12 +120,12 @@ ruleToken returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(    this_Identifier_0=RULE_IDENTIFIER    {
-		$current.merge(this_Identifier_0);
+(    this_PPNUMBER_0=RULE_PPNUMBER    {
+		$current.merge(this_PPNUMBER_0);
     }
 
     { 
-    newLeafNode(this_Identifier_0, grammarAccess.getTokenAccess().getIdentifierTerminalRuleCall_0()); 
+    newLeafNode(this_PPNUMBER_0, grammarAccess.getTokenAccess().getPPNUMBERTerminalRuleCall_0()); 
     }
 
     |    this_KEYWORD_1=RULE_KEYWORD    {
@@ -156,21 +150,11 @@ ruleToken returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 
 
 
-RULE_SIGN : ('+'|'-');
+RULE_INTEGERLITERAL : ('1'..'9' ('0'..'9')* (('u'|'U') ('l'|'L'|'ll'|'LL')?|('l'|'L'|'ll'|'LL') ('u'|'U')?)?|'0' ('0'..'7')* (('u'|'U') ('l'|'L'|'ll'|'LL')?|('l'|'L'|'ll'|'LL') ('u'|'U')?)?|('0x'|'0X') ('0'..'9'|'a'..'f'|'A'..'F')+ (('u'|'U') ('l'|'L'|'ll'|'LL')?|('l'|'L'|'ll'|'LL') ('u'|'U')?)?);
 
-RULE_NONZERODIGIT : '1'..'9';
+RULE_PPNUMBER : ('0'..'9'|'.' '0'..'9') ('0'..'9'|('a'..'z'|'A'..'Z'|'_')|'e' ('+'|'-')|'E' ('+'|'-')|'.')*;
 
-RULE_OCTALDIGIT : '0'..'7';
-
-RULE_HEXADECIMALDIGIT : ('0'..'9'|'a'..'f'|'A'..'F');
-
-RULE_UNSIGNEDSUFFIX : ('u'|'U');
-
-RULE_LONGSUFFIX : ('l'|'L');
-
-RULE_LONGLONGSUFFIX : ('ll'|'LL');
-
-RULE_PPNUMBER : ('0'..'9'|'.' '0'..'9') ('0'..'9'|('a'..'z'|'A'..'Z'|'_')|'e' RULE_SIGN|'E' RULE_SIGN|'.')*;
+RULE_LITERAL : RULE_INTEGERLITERAL;
 
 RULE_KEYWORD : ('alignas'|'alignof'|'asm'|'auto'|'bool'|'break'|'case'|'catch'|'char'|'char16_t'|'char32_t'|'class'|'const'|'constexpr'|'const_cast'|'continue'|'decltype'|'default'|'delete'|'do'|'double'|'dynamic_cast'|'else'|'enum'|'explicit'|'export'|'extern'|'false'|'float'|'for'|'friend'|'goto'|'if'|'inline'|'int'|'long'|'mutable'|'namespace'|'new'|'noexcept'|'nullptr'|'operator'|'private'|'protected'|'public'|'register'|'reinterpret_cast'|'return'|'short'|'signed'|'sizeof'|'static'|'static_assert'|'static_cast'|'struct'|'switch'|'template'|'this'|'thread_local'|'throw'|'true'|'try'|'typedef'|'typeid'|'typename'|'union'|'unsigned'|'using'|'virtual'|'void'|'volatile'|'wchar_t'|'while');
 

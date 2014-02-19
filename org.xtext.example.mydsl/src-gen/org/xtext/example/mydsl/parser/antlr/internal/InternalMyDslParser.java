@@ -21,27 +21,22 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMyDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_IDENTIFIER", "RULE_KEYWORD", "RULE_PPOPORPUNC", "RULE_SIGN", "RULE_NONZERODIGIT", "RULE_OCTALDIGIT", "RULE_HEXADECIMALDIGIT", "RULE_UNSIGNEDSUFFIX", "RULE_LONGSUFFIX", "RULE_LONGLONGSUFFIX", "RULE_PPNUMBER", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_PPNUMBER", "RULE_KEYWORD", "RULE_PPOPORPUNC", "RULE_INTEGERLITERAL", "RULE_LITERAL", "RULE_IDENTIFIER", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
     };
-    public static final int RULE_ID=15;
-    public static final int RULE_ANY_OTHER=21;
-    public static final int RULE_HEXADECIMALDIGIT=10;
-    public static final int RULE_IDENTIFIER=4;
-    public static final int RULE_OCTALDIGIT=9;
-    public static final int RULE_SIGN=7;
-    public static final int EOF=-1;
-    public static final int RULE_SL_COMMENT=19;
-    public static final int RULE_ML_COMMENT=18;
-    public static final int RULE_STRING=17;
-    public static final int RULE_LONGLONGSUFFIX=13;
+    public static final int RULE_ID=10;
+    public static final int RULE_STRING=12;
     public static final int RULE_KEYWORD=5;
-    public static final int RULE_NONZERODIGIT=8;
-    public static final int RULE_INT=16;
+    public static final int RULE_ANY_OTHER=16;
+    public static final int RULE_INTEGERLITERAL=7;
+    public static final int RULE_INT=11;
+    public static final int RULE_IDENTIFIER=9;
     public static final int RULE_PPOPORPUNC=6;
-    public static final int RULE_LONGSUFFIX=12;
-    public static final int RULE_PPNUMBER=14;
-    public static final int RULE_WS=20;
-    public static final int RULE_UNSIGNEDSUFFIX=11;
+    public static final int RULE_PPNUMBER=4;
+    public static final int RULE_WS=15;
+    public static final int RULE_SL_COMMENT=14;
+    public static final int RULE_LITERAL=8;
+    public static final int EOF=-1;
+    public static final int RULE_ML_COMMENT=13;
 
     // delegates
     // delegators
@@ -180,7 +175,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleToken"
-    // ../org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalMyDsl.g:116:1: entryRuleToken returns [String current=null] : iv_ruleToken= ruleToken EOF ;
+    // ../org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalMyDsl.g:110:1: entryRuleToken returns [String current=null] : iv_ruleToken= ruleToken EOF ;
     public final String entryRuleToken() throws RecognitionException {
         String current = null;
 
@@ -188,17 +183,17 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalMyDsl.g:117:2: (iv_ruleToken= ruleToken EOF )
-            // ../org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalMyDsl.g:118:2: iv_ruleToken= ruleToken EOF
+            // ../org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalMyDsl.g:111:2: (iv_ruleToken= ruleToken EOF )
+            // ../org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalMyDsl.g:112:2: iv_ruleToken= ruleToken EOF
             {
              newCompositeNode(grammarAccess.getTokenRule()); 
-            pushFollow(FOLLOW_ruleToken_in_entryRuleToken176);
+            pushFollow(FOLLOW_ruleToken_in_entryRuleToken170);
             iv_ruleToken=ruleToken();
 
             state._fsp--;
 
              current =iv_ruleToken.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleToken187); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleToken181); 
 
             }
 
@@ -216,24 +211,24 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleToken"
-    // ../org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalMyDsl.g:125:1: ruleToken returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_Identifier_0= RULE_IDENTIFIER | this_KEYWORD_1= RULE_KEYWORD | this_PPOPorPUNC_2= RULE_PPOPORPUNC ) ;
+    // ../org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalMyDsl.g:119:1: ruleToken returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_PPNUMBER_0= RULE_PPNUMBER | this_KEYWORD_1= RULE_KEYWORD | this_PPOPorPUNC_2= RULE_PPOPORPUNC ) ;
     public final AntlrDatatypeRuleToken ruleToken() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
-        Token this_Identifier_0=null;
+        Token this_PPNUMBER_0=null;
         Token this_KEYWORD_1=null;
         Token this_PPOPorPUNC_2=null;
 
          enterRule(); 
             
         try {
-            // ../org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalMyDsl.g:128:28: ( (this_Identifier_0= RULE_IDENTIFIER | this_KEYWORD_1= RULE_KEYWORD | this_PPOPorPUNC_2= RULE_PPOPORPUNC ) )
-            // ../org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalMyDsl.g:129:1: (this_Identifier_0= RULE_IDENTIFIER | this_KEYWORD_1= RULE_KEYWORD | this_PPOPorPUNC_2= RULE_PPOPORPUNC )
+            // ../org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalMyDsl.g:122:28: ( (this_PPNUMBER_0= RULE_PPNUMBER | this_KEYWORD_1= RULE_KEYWORD | this_PPOPorPUNC_2= RULE_PPOPORPUNC ) )
+            // ../org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalMyDsl.g:123:1: (this_PPNUMBER_0= RULE_PPNUMBER | this_KEYWORD_1= RULE_KEYWORD | this_PPOPorPUNC_2= RULE_PPOPORPUNC )
             {
-            // ../org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalMyDsl.g:129:1: (this_Identifier_0= RULE_IDENTIFIER | this_KEYWORD_1= RULE_KEYWORD | this_PPOPorPUNC_2= RULE_PPOPORPUNC )
+            // ../org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalMyDsl.g:123:1: (this_PPNUMBER_0= RULE_PPNUMBER | this_KEYWORD_1= RULE_KEYWORD | this_PPOPorPUNC_2= RULE_PPOPORPUNC )
             int alt1=3;
             switch ( input.LA(1) ) {
-            case RULE_IDENTIFIER:
+            case RULE_PPNUMBER:
                 {
                 alt1=1;
                 }
@@ -257,22 +252,22 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalMyDsl.g:129:6: this_Identifier_0= RULE_IDENTIFIER
+                    // ../org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalMyDsl.g:123:6: this_PPNUMBER_0= RULE_PPNUMBER
                     {
-                    this_Identifier_0=(Token)match(input,RULE_IDENTIFIER,FOLLOW_RULE_IDENTIFIER_in_ruleToken227); 
+                    this_PPNUMBER_0=(Token)match(input,RULE_PPNUMBER,FOLLOW_RULE_PPNUMBER_in_ruleToken221); 
 
-                    		current.merge(this_Identifier_0);
+                    		current.merge(this_PPNUMBER_0);
                         
                      
-                        newLeafNode(this_Identifier_0, grammarAccess.getTokenAccess().getIdentifierTerminalRuleCall_0()); 
+                        newLeafNode(this_PPNUMBER_0, grammarAccess.getTokenAccess().getPPNUMBERTerminalRuleCall_0()); 
                         
 
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalMyDsl.g:137:10: this_KEYWORD_1= RULE_KEYWORD
+                    // ../org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalMyDsl.g:131:10: this_KEYWORD_1= RULE_KEYWORD
                     {
-                    this_KEYWORD_1=(Token)match(input,RULE_KEYWORD,FOLLOW_RULE_KEYWORD_in_ruleToken253); 
+                    this_KEYWORD_1=(Token)match(input,RULE_KEYWORD,FOLLOW_RULE_KEYWORD_in_ruleToken247); 
 
                     		current.merge(this_KEYWORD_1);
                         
@@ -283,9 +278,9 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalMyDsl.g:145:10: this_PPOPorPUNC_2= RULE_PPOPORPUNC
+                    // ../org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/parser/antlr/internal/InternalMyDsl.g:139:10: this_PPOPorPUNC_2= RULE_PPOPORPUNC
                     {
-                    this_PPOPorPUNC_2=(Token)match(input,RULE_PPOPORPUNC,FOLLOW_RULE_PPOPORPUNC_in_ruleToken279); 
+                    this_PPOPorPUNC_2=(Token)match(input,RULE_PPOPORPUNC,FOLLOW_RULE_PPOPORPUNC_in_ruleToken273); 
 
                     		current.merge(this_PPOPorPUNC_2);
                         
@@ -322,10 +317,10 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleModel_in_entryRuleModel75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleModel85 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleToken_in_ruleModel130 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleToken_in_entryRuleToken176 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleToken187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_IDENTIFIER_in_ruleToken227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_KEYWORD_in_ruleToken253 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_PPOPORPUNC_in_ruleToken279 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleToken_in_entryRuleToken170 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleToken181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_PPNUMBER_in_ruleToken221 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_KEYWORD_in_ruleToken247 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_PPOPORPUNC_in_ruleToken273 = new BitSet(new long[]{0x0000000000000002L});
 
 }
