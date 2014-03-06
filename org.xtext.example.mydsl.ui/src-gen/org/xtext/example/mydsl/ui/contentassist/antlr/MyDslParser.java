@@ -37,9 +37,28 @@ public class MyDslParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getGroup_partAccess().getAlternatives(), "rule__Group_part__Alternatives");
+					put(grammarAccess.getIf_groupAccess().getAlternatives(), "rule__If_group__Alternatives");
+					put(grammarAccess.getControl_lineAccess().getAlternatives(), "rule__Control_line__Alternatives");
 					put(grammarAccess.getSIGNAccess().getAlternatives(), "rule__SIGN__Alternatives");
 					put(grammarAccess.getTokenAccess().getAlternatives(), "rule__Token__Alternatives");
 					put(grammarAccess.getGreetingAccess().getGroup(), "rule__Greeting__Group__0");
+					put(grammarAccess.getGroup_partAccess().getGroup_0(), "rule__Group_part__Group_0__0");
+					put(grammarAccess.getIf_actionAccess().getGroup(), "rule__If_action__Group__0");
+					put(grammarAccess.getIf_groupAccess().getGroup_0(), "rule__If_group__Group_0__0");
+					put(grammarAccess.getIf_groupAccess().getGroup_1(), "rule__If_group__Group_1__0");
+					put(grammarAccess.getIf_groupAccess().getGroup_2(), "rule__If_group__Group_2__0");
+					put(grammarAccess.getElif_groupAccess().getGroup(), "rule__Elif_group__Group__0");
+					put(grammarAccess.getElse_groupAccess().getGroup(), "rule__Else_group__Group__0");
+					put(grammarAccess.getEndif_lineAccess().getGroup(), "rule__Endif_line__Group__0");
+					put(grammarAccess.getControl_lineAccess().getGroup_0(), "rule__Control_line__Group_0__0");
+					put(grammarAccess.getControl_lineAccess().getGroup_1(), "rule__Control_line__Group_1__0");
+					put(grammarAccess.getControl_lineAccess().getGroup_2(), "rule__Control_line__Group_2__0");
+					put(grammarAccess.getControl_lineAccess().getGroup_3(), "rule__Control_line__Group_3__0");
+					put(grammarAccess.getControl_lineAccess().getGroup_4(), "rule__Control_line__Group_4__0");
+					put(grammarAccess.getControl_lineAccess().getGroup_5(), "rule__Control_line__Group_5__0");
+					put(grammarAccess.getControl_lineAccess().getGroup_6(), "rule__Control_line__Group_6__0");
+					put(grammarAccess.getControl_lineAccess().getGroup_7(), "rule__Control_line__Group_7__0");
 					put(grammarAccess.getModelAccess().getGreetingsAssignment(), "rule__Model__GreetingsAssignment");
 					put(grammarAccess.getGreetingAccess().getNameAssignment_1(), "rule__Greeting__NameAssignment_1");
 				}

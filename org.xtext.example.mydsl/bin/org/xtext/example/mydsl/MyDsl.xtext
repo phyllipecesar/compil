@@ -14,11 +14,72 @@ generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
  */
  
 Model:
-	greetings+=Token;
+	greetings+=preprocessing_file;
 	
 Greeting:
 	'Hello' name=ID '!';
 
+new_line:
+	'\n'
+;
+preprocessing_file:
+	group?
+;
+
+group:
+	group_part+
+;
+
+group_part:
+	pp_tokens? new_line |
+	if_action |
+	control_line
+;
+
+if_action:
+	if_group elif_groups? else_group? endif_line
+;
+if_group:
+	'#if' constant_expression new_line group?|
+	'#ifdef' IDENTIFIER new_line group?|
+	'#ifndef' IDENTIFIER new_line group?
+;
+elif_groups:
+	elif_group+;
+	
+elif_group:
+  '#elif' constant_expression new_line group?;
+
+
+// TODO(constant_expression)
+constant_expression: '==';
+// TODO(): preprocessing_token
+preprocessing_token: '!=';
+else_group:
+	'#else' new_line group?
+;
+endif_line:
+	'#endif' new_line
+;
+control_line:
+'#include' pp_tokens new_line |
+'#define' IDENTIFIER replacement_list new_line|
+'#define' IDENTIFIER lparen IDENTIFIER? ')' replacement_list new_line|
+'#undef' IDENTIFIER new_line|
+'#line' pp_tokens new_line|
+'#error' pp_tokens? new_line|
+'#pragma' pp_tokens? new_line|
+'#' new_line;
+
+lparen:
+	'('
+;
+replacement_list:
+	pp_tokens?
+;
+pp_tokens:
+	 preprocessing_token+
+;
 
 SIGN:
 	'+'|'-'
@@ -29,6 +90,7 @@ SIGN:
 
 
 // lex.icon
+
 
 terminal INTEGERLITERAL:
 	'1'..'9' ('0'..'9')*(('u'|'U') ('l'|'L'|'ll'|'LL')? | ('l'|'L'|'ll'|'LL')('u'|'U')?)?|
