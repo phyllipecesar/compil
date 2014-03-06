@@ -20,7 +20,7 @@ Greeting:
 	'Hello' name=ID '!';
 
 new_line:
-	'\n'
+	'\n' | '\r\n'
 ;
 preprocessing_file:
 	group?
