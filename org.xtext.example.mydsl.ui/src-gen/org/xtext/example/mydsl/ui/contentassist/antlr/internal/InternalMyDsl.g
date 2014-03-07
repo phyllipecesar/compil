@@ -4190,10 +4190,6 @@ fragment RULE_H_CHAR : ~(('\n'|'>'));
 
 fragment RULE_Q_CHAR : ~(('\n'|'"'));
 
-RULE_DIGIT : '0'..'9';
-
-RULE_NONDIGIT : ('a'..'z'|'A'..'Z'|'_');
-
 RULE_KEYWORD : ('alignas'|'alignof'|'asm'|'auto'|'bool'|'break'|'case'|'catch'|'char'|'char16_t'|'char32_t'|'class'|'const'|'constexpr'|'const_cast'|'continue'|'decltype'|'default'|'delete'|'do'|'double'|'dynamic_cast'|'else'|'enum'|'explicit'|'export'|'extern'|'false'|'float'|'for'|'friend'|'goto'|'if'|'inline'|'int'|'long'|'mutable'|'namespace'|'new'|'noexcept'|'nullptr'|'operator'|'private'|'protected'|'public'|'register'|'reinterpret_cast'|'return'|'short'|'signed'|'sizeof'|'static'|'static_assert'|'static_cast'|'struct'|'switch'|'template'|'this'|'thread_local'|'throw'|'true'|'try'|'typedef'|'typeid'|'typename'|'union'|'unsigned'|'using'|'virtual'|'void'|'volatile'|'wchar_t'|'while');
 
 RULE_PREPROCESSING_OP_OR_PUNC : ('{'|'}'|'['|']'|'#'|'##'|'('|')'|'<:'|':>'|'<%'|'%>'|'%:'|'%:%:'|';'|':'|'...'|'new'|'delete'|'?'|'::'|'.'|'.*'|'+'|'-'|'*'|'/'|'%'|'^'|'&'|'|'|'~'|'!'|'='|'<'|'>'|'+='|'-='|'*='|'/='|'%='|'^='|'&='|'|='|'<<'|'>>'|'<<='|'>>='|'=='|'!='|'<='|'>='|'&&'|'||'|'++'|'--'|','|'->*'|'->'|'and'|'and_eq'|'bitand'|'bitor'|'compl'|'not'|'not_eq'|'or'|'or_eq'|'xor'|'xor_eq');
@@ -4224,6 +4220,12 @@ fragment RULE_OCTAL_ESCAPE_SEQUENCE : '\\' RULE_OCTAL_DIGIT RULE_OCTAL_DIGIT RUL
 
 fragment RULE_HEXADECIMAL_ESCAPE_SEQUENCE : '\\x' RULE_HEXADECIMAL_DIGIT+;
 
+RULE_ID : (RULE_NONDIGIT|RULE_UNIVERSAL_CHARACTER_NAME) (RULE_DIGIT|RULE_NONDIGIT|RULE_UNIVERSAL_CHARACTER_NAME)*;
+
+RULE_DIGIT : '0'..'9';
+
+RULE_NONDIGIT : ('a'..'z'|'A'..'Z'|'_');
+
 RULE_FLOATING_LITERAL : (RULE_FRACTIONAL_CONSTANT RULE_EXPONENT_PART?|RULE_DIGIT+ RULE_EXPONENT_PART) ('f'|'l'|'F'|'L')?;
 
 fragment RULE_FRACTIONAL_CONSTANT : (RULE_DIGIT* '.' RULE_DIGIT+|RULE_DIGIT+ '.');
@@ -4235,8 +4237,6 @@ RULE_STRING_LITERAL : RULE_ENC_PREFIX? '"' RULE_SCHAR+ '"';
 fragment RULE_ENC_PREFIX : ('u8'|'u'|'U'|'L');
 
 fragment RULE_SCHAR : (~(('"'|'\\'|'\n'))|RULE_ESCAPE_SEQUENCE|RULE_UNIVERSAL_CHARACTER_NAME);
-
-RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_STRING : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\'');
 

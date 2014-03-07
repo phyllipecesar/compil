@@ -1152,8 +1152,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private TerminalRule tHEADER_NAME;
 	private TerminalRule tH_CHAR;
 	private TerminalRule tQ_CHAR;
-	private TerminalRule tDIGIT;
-	private TerminalRule tNONDIGIT;
 	private TerminalRule tKEYWORD;
 	private TerminalRule tPREPROCESSING_OP_OR_PUNC;
 	private LiteralElements pLiteral;
@@ -1170,6 +1168,9 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private TerminalRule tSIMPLE_ESCAPE_SEQUENCE;
 	private TerminalRule tOCTAL_ESCAPE_SEQUENCE;
 	private TerminalRule tHEXADECIMAL_ESCAPE_SEQUENCE;
+	private TerminalRule tID;
+	private TerminalRule tDIGIT;
+	private TerminalRule tNONDIGIT;
 	private TerminalRule tFLOATING_LITERAL;
 	private TerminalRule tFRACTIONAL_CONSTANT;
 	private TerminalRule tEXPONENT_PART;
@@ -1765,19 +1766,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return (tQ_CHAR != null) ? tQ_CHAR : (tQ_CHAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "Q_CHAR"));
 	} 
 
-	//// lex.name
-	//terminal DIGIT:
-	//	"0".."9";
-	public TerminalRule getDIGITRule() {
-		return (tDIGIT != null) ? tDIGIT : (tDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DIGIT"));
-	} 
-
-	//terminal NONDIGIT:
-	//	"a".."z" | "A".."Z" | "_";
-	public TerminalRule getNONDIGITRule() {
-		return (tNONDIGIT != null) ? tNONDIGIT : (tNONDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NONDIGIT"));
-	} 
-
 	//// lex.key
 	//terminal KEYWORD:
 	//	"alignas" | "alignof" | "asm" | "auto" | "bool" | "break" | "case" | "catch" | "char" | "char16_t" | "char32_t" |
@@ -1896,6 +1884,25 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return (tHEXADECIMAL_ESCAPE_SEQUENCE != null) ? tHEXADECIMAL_ESCAPE_SEQUENCE : (tHEXADECIMAL_ESCAPE_SEQUENCE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "HEXADECIMAL_ESCAPE_SEQUENCE"));
 	} 
 
+	//// lex.name
+	//terminal ID:
+	//	(NONDIGIT | UNIVERSAL_CHARACTER_NAME) (DIGIT | NONDIGIT | UNIVERSAL_CHARACTER_NAME)*;
+	public TerminalRule getIDRule() {
+		return (tID != null) ? tID : (tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID"));
+	} 
+
+	//terminal DIGIT:
+	//	"0".."9";
+	public TerminalRule getDIGITRule() {
+		return (tDIGIT != null) ? tDIGIT : (tDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DIGIT"));
+	} 
+
+	//terminal NONDIGIT:
+	//	"a".."z" | "A".."Z" | "_";
+	public TerminalRule getNONDIGITRule() {
+		return (tNONDIGIT != null) ? tNONDIGIT : (tNONDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NONDIGIT"));
+	} 
+
 	//// lex.fcon
 	//terminal FLOATING_LITERAL:
 	//	(FRACTIONAL_CONSTANT EXPONENT_PART? | DIGIT+ EXPONENT_PART) ("f" | "l" | "F" | "L")?;
@@ -1932,12 +1939,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	!("\"" | "\\" | "\n") | ESCAPE_SEQUENCE | UNIVERSAL_CHARACTER_NAME;
 	public TerminalRule getSCHARRule() {
 		return (tSCHAR != null) ? tSCHAR : (tSCHAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SCHAR"));
-	} 
-
-	//terminal ID:
-	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
-	public TerminalRule getIDRule() {
-		return gaTerminals.getIDRule();
 	} 
 
 	//terminal STRING:

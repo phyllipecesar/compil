@@ -24,7 +24,7 @@ Body:
 FunctionDeclaration:
 	{FunctionDeclaration} type=Type name=ID "(" 
 		(params+=Parameter  ("," params+=Parameter)* )?  ")" "{"new_line		
-		escopo=statement
+		(escopo=statement)?
 	"}";	
 Parameter returns Symbol:
 	{Parameter} type=Type name=ID;
@@ -351,12 +351,6 @@ terminal fragment H_CHAR:
 terminal fragment Q_CHAR:
 	!('\n' | '\"');
 
-// lex.name
-terminal DIGIT:
-	'0'..'9';
-
-terminal NONDIGIT:
-	'a'..'z' | 'A'..'Z' | '_';
 
 // lex.key
 terminal KEYWORD:
@@ -559,6 +553,16 @@ terminal fragment OCTAL_ESCAPE_SEQUENCE:
 
 terminal fragment HEXADECIMAL_ESCAPE_SEQUENCE:
 	'\\x' HEXADECIMAL_DIGIT+;
+
+// lex.name
+terminal ID:
+	(NONDIGIT | UNIVERSAL_CHARACTER_NAME) (DIGIT | NONDIGIT | UNIVERSAL_CHARACTER_NAME)*
+;
+terminal DIGIT:
+	'0'..'9';
+
+terminal NONDIGIT:
+	'a'..'z' | 'A'..'Z' | '_';
 
 // lex.fcon
 terminal FLOATING_LITERAL:
