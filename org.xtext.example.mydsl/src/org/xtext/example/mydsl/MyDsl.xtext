@@ -52,7 +52,22 @@ elif_group:
 
 
 // TODO(constant_expression)
-constant_expression: '==';
+constant_expression:
+	conditional_expression;
+	
+conditional_expression:
+	logical_or_expression |
+	logical_or_expression '?' expression ':' assignment_expression;
+
+logical_or_expression:
+	'==logical==';
+
+expression:
+	'==expression==';
+
+assignment_expression:
+	'==assignment==';
+
 // TODO(): preprocessing_token
 preprocessing_token: '!=';
 else_group:
