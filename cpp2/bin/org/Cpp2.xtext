@@ -1,0 +1,273 @@
+grammar org.Cpp2 with org.eclipse.xtext.common.Terminals
+
+generate cpp2 "http://www.Cpp2.org"
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+Test:
+//	(elements+=PreProcessingToken)*
+	(elements+=Token)*;
+
+// lex.charset
+terminal fragment HEX_QUAD:
+	HEXADECIMAL_DIGIT HEXADECIMAL_DIGIT HEXADECIMAL_DIGIT HEXADECIMAL_DIGIT;
+
+terminal fragment UNIVERSAL_CHARACTER_NAME:
+	'\\u' HEX_QUAD | '\\U' HEX_QUAD HEX_QUAD;
+
+// lex.pptoken
+PreProcessingToken:
+	HEADER_NAME |
+	ID |
+	(DIGIT | '.' DIGIT) (DIGIT | NONDIGIT | ('e' | 'E') ('+' | '-') | '.')* |
+	CHARACTER_LITERAL |
+	STRING_LITERAL |
+	PREPROCESSING_OP_OR_PUNC
+	// each non-white-space character that cannot be one of the above [ambiguity!!!]
+;
+
+// lex.token
+Token:
+	KEYWORD |
+	Literal |
+	PREPROCESSING_OP_OR_PUNC
+	ID;
+	
+// lex.header
+terminal HEADER_NAME:
+	'<' H_CHAR+ '>' | '\"' Q_CHAR+ '\"'
+;
+
+terminal fragment H_CHAR:
+	!('\n' | '>');
+
+terminal fragment Q_CHAR:
+	!('\n' | '\"');
+
+// lex.name
+terminal DIGIT:
+	'0'..'9';
+
+terminal NONDIGIT:
+	'a'..'z' | 'A'..'Z' | '_';
+
+// lex.key
+terminal KEYWORD:
+	'alignas' |
+	'alignof' |
+	'asm' |
+	'auto' |
+	'bool' |
+	'break' |
+	'case' |
+	'catch' |
+	'char' |
+	'char16_t' |
+	'char32_t' |
+	'class' |
+	'const' |
+	'constexpr' |
+	'const_cast' |
+	'continue' |
+	'decltype' |
+	'default' |
+	'delete' |
+	'do' |
+	'double' |
+	'dynamic_cast' |
+	'else' |
+	'enum' |
+	'explicit' |
+	'export' |
+	'extern' |
+	'false' |
+	'float' |
+	'for' |
+	'friend' |
+	'goto' |
+	'if' |
+	'inline' |
+	'int' |
+	'long' |
+	'mutable' |
+	'namespace' |
+	'new' |
+	'noexcept' |
+	'nullptr' |
+	'operator' |
+	'private' |
+	'protected' |
+	'public' |
+	'register' |
+	'reinterpret_cast' |
+	'return' |
+	'short' |
+	'signed' |
+	'sizeof' |
+	'static' |
+	'static_assert' |
+	'static_cast' |
+	'struct' |
+	'switch' |
+	'template' |
+	'this' |
+	'thread_local' |
+	'throw' |
+	'true' |
+	'try' |
+	'typedef' |
+	'typeid' |
+	'typename' |
+	'union' |
+	'unsigned' |
+	'using' |
+	'virtual' |
+	'void' |
+	'volatile' |
+	'wchar_t' |
+	'while';
+
+// lex.operators
+terminal PREPROCESSING_OP_OR_PUNC:
+	'{' |
+	'}' |
+	'[' |
+	']' |
+	'#' |
+	'##' |
+	'(' |
+	')' |
+	'<:' |
+	':>' |
+	'<%' |
+	'%>' |
+	'%:' |
+	'%:%:' |
+	';' |
+	':' |
+	'...' |
+	'new' |
+	'delete' |
+	'?' |
+	'::' |
+	'.' |
+	'.*' |
+	'+' |
+	'-' |
+	'*' |
+	'/' |
+	'%' |
+	'^' |
+	'&' |
+	'|' |
+	'~' |
+	'!' |
+	'=' |
+	'<' |
+	'>' |
+	'+=' |
+	'-=' |
+	'*=' |
+	'/=' |
+	'%=' |
+	'^=' |
+	'&=' |
+	'|=' |
+	'<<' |
+	'>>' |
+	'<<=' |
+	'>>=' |
+	'==' |
+	'!=' |
+	'<=' |
+	'>=' |
+	'&&' |
+	'||' |
+	'++' |
+	'--' |
+	',' |
+	'->*' |
+	'->' |
+	'and' |
+	'and_eq' |
+	'bitand' |
+	'bitor' |
+	'compl' |
+	'not' |
+	'not_eq' |
+	'or' |
+	'or_eq' |
+	'xor' |
+	'xor_eq';
+
+// lex.literal.kinds
+Literal:
+	INT |
+	CHARACTER_LITERAL |
+	FLOATING_LITERAL |
+	STRING_LITERAL |
+	('true' | 'false')
+	//POINTER_LITERAL
+	//USER_DEFINED_LITERAL
+	;
+
+// lex.icon
+terminal INT returns ecore::EInt:
+	(DECIMAL_LITERAL | OCTAL_LITERAL | HEXADECIMAL_LITERAL) INTEGER_SUFFIX?;
+	
+terminal fragment DECIMAL_LITERAL:
+	'1'..'9' DIGIT*;
+	
+terminal fragment OCTAL_LITERAL:
+	'0' OCTAL_DIGIT*;
+	
+terminal fragment HEXADECIMAL_LITERAL:
+	('0x' | '0X') HEXADECIMAL_DIGIT+;
+	
+terminal fragment OCTAL_DIGIT:
+	'0'..'7';
+	
+terminal fragment HEXADECIMAL_DIGIT:
+	'0'..'9' | 'A'..'F';
+
+terminal fragment INTEGER_SUFFIX:
+	('u' | 'U') ('l' | 'L' | 'll' | 'LL')? |
+	('l' | 'L' | 'll' | 'LL') ('u' | 'U')?;
+
+// lex.ccon
+terminal CHARACTER_LITERAL:
+	('u' | 'U' | 'L')? '\'' C_CHAR+ '\'';
+	
+terminal fragment C_CHAR:
+	!('\'' | '\\' | '\n') | ESCAPE_SEQUENCE | UNIVERSAL_CHARACTER_NAME;
+	
+terminal fragment ESCAPE_SEQUENCE:
+	SIMPLE_ESCAPE_SEQUENCE | OCTAL_ESCAPE_SEQUENCE | HEXADECIMAL_ESCAPE_SEQUENCE;
+	
+terminal fragment SIMPLE_ESCAPE_SEQUENCE:
+	'\\' ('\'' | '\"' | '?' | '\\' | 'a' | 'b' | 'f' | 'n' | 'r' | 't' | 'v');
+	
+terminal fragment OCTAL_ESCAPE_SEQUENCE:
+	'\\' OCTAL_DIGIT OCTAL_DIGIT OCTAL_DIGIT;
+	
+terminal fragment HEXADECIMAL_ESCAPE_SEQUENCE:
+	'\\x' HEXADECIMAL_DIGIT+;
+
+// lex.fcon
+terminal FLOATING_LITERAL:
+	(FRACTIONAL_CONSTANT EXPONENT_PART? | DIGIT+ EXPONENT_PART) ('f' | 'l' | 'F' | 'L')?;
+
+terminal fragment FRACTIONAL_CONSTANT:
+	DIGIT* '.' DIGIT+ | DIGIT+ '.';
+
+terminal fragment EXPONENT_PART:
+	('e' | 'E') ('+' | '-')? DIGIT+;
+
+// lex.string
+terminal STRING_LITERAL:
+	ENC_PREFIX? '\"' SCHAR+ '\"';
+
+terminal fragment ENC_PREFIX:
+	'u8' | 'u' | 'U' | 'L';
+
+terminal fragment SCHAR:
+	!('\"' | '\\' | '\n') | ESCAPE_SEQUENCE | UNIVERSAL_CHARACTER_NAME;
