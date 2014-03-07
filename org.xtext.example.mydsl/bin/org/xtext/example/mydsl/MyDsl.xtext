@@ -12,7 +12,7 @@ generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
  * Lex.Token        [OK]
  *
  */
- 
+
 Model:
 	greetings+=statement;
 
