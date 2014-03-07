@@ -11,5 +11,6 @@ package org.xtext.example.mydsl.scoping
  *
  */
 class MyDslScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider {
+ 
 
 }

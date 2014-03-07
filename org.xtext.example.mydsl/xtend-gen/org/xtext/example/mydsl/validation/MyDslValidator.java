@@ -3,6 +3,15 @@
  */
 package org.xtext.example.mydsl.validation;
 
+import java.util.HashSet;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Functions.Function0;
+import org.xtext.example.mydsl.myDsl.VarDecl;
+import org.xtext.example.mydsl.myDsl.block_declaration;
+import org.xtext.example.mydsl.myDsl.declaration_statement;
+import org.xtext.example.mydsl.myDsl.simple_declaration;
+import org.xtext.example.mydsl.myDsl.statement;
 import org.xtext.example.mydsl.validation.AbstractMyDslValidator;
 
 /**
@@ -12,4 +21,31 @@ import org.xtext.example.mydsl.validation.AbstractMyDslValidator;
  */
 @SuppressWarnings("all")
 public class MyDslValidator extends AbstractMyDslValidator {
+  private HashSet<String> hash = new Function0<HashSet<String>>() {
+    public HashSet<String> apply() {
+      HashSet<String> _hashSet = new HashSet<String>();
+      return _hashSet;
+    }
+  }.apply();
+  
+  @Check
+  public void checkVariableAlreadyExists(final statement st) {
+    this.hash.clear();
+    declaration_statement _variavel = st.getVariavel();
+    EList<block_declaration> _variaveis = _variavel.getVariaveis();
+    for (final block_declaration block : _variaveis) {
+      {
+        simple_declaration _variavel_1 = block.getVariavel();
+        VarDecl _variavel_2 = _variavel_1.getVariavel();
+        final String nome = _variavel_2.getName();
+        boolean _contains = this.hash.contains(nome);
+        if (_contains) {
+          simple_declaration _variavel_3 = block.getVariavel();
+          VarDecl _variavel_4 = _variavel_3.getVariavel();
+          this.error((("Variable " + nome) + " already exists"), _variavel_4, null, (-1));
+        }
+        this.hash.add(nome);
+      }
+    }
+  }
 }

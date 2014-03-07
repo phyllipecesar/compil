@@ -4,16 +4,21 @@ package org.xtext.example.mydsl.myDsl.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.mydsl.myDsl.Model;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
+import org.xtext.example.mydsl.myDsl.statement;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +27,7 @@ import org.xtext.example.mydsl.myDsl.MyDslPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.ModelImpl#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.ModelImpl#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,14 +36,14 @@ import org.xtext.example.mydsl.myDsl.MyDslPackage;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getGreetings() <em>Greetings</em>}' attribute list.
+   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGreetings()
+   * @see #getElements()
    * @generated
    * @ordered
    */
-  protected EList<String> greetings;
+  protected EList<statement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,13 +71,29 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getGreetings()
+  public EList<statement> getElements()
   {
-    if (greetings == null)
+    if (elements == null)
     {
-      greetings = new EDataTypeEList<String>(String.class, this, MyDslPackage.MODEL__GREETINGS);
+      elements = new EObjectContainmentEList<statement>(statement.class, this, MyDslPackage.MODEL__ELEMENTS);
     }
-    return greetings;
+    return elements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case MyDslPackage.MODEL__ELEMENTS:
+        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -85,8 +106,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case MyDslPackage.MODEL__GREETINGS:
-        return getGreetings();
+      case MyDslPackage.MODEL__ELEMENTS:
+        return getElements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -102,9 +123,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case MyDslPackage.MODEL__GREETINGS:
-        getGreetings().clear();
-        getGreetings().addAll((Collection<? extends String>)newValue);
+      case MyDslPackage.MODEL__ELEMENTS:
+        getElements().clear();
+        getElements().addAll((Collection<? extends statement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -120,8 +141,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case MyDslPackage.MODEL__GREETINGS:
-        getGreetings().clear();
+      case MyDslPackage.MODEL__ELEMENTS:
+        getElements().clear();
         return;
     }
     super.eUnset(featureID);
@@ -137,27 +158,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case MyDslPackage.MODEL__GREETINGS:
-        return greetings != null && !greetings.isEmpty();
+      case MyDslPackage.MODEL__ELEMENTS:
+        return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (greetings: ");
-    result.append(greetings);
-    result.append(')');
-    return result.toString();
   }
 
 } //ModelImpl

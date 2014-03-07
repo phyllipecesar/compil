@@ -32,13 +32,85 @@ public interface MyDslFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Greeting</em>'.
+   * Returns a new object of class '<em>Var Decl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Greeting</em>'.
+   * @return a new object of class '<em>Var Decl</em>'.
    * @generated
    */
-  Greeting createGreeting();
+  VarDecl createVarDecl();
+
+  /**
+   * Returns a new object of class '<em>Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type</em>'.
+   * @generated
+   */
+  Type createType();
+
+  /**
+   * Returns a new object of class '<em>simple type specifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>simple type specifier</em>'.
+   * @generated
+   */
+  simple_type_specifier createsimple_type_specifier();
+
+  /**
+   * Returns a new object of class '<em>statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>statement</em>'.
+   * @generated
+   */
+  statement createstatement();
+
+  /**
+   * Returns a new object of class '<em>simple declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>simple declaration</em>'.
+   * @generated
+   */
+  simple_declaration createsimple_declaration();
+
+  /**
+   * Returns a new object of class '<em>declaration statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>declaration statement</em>'.
+   * @generated
+   */
+  declaration_statement createdeclaration_statement();
+
+  /**
+   * Returns a new object of class '<em>block declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>block declaration</em>'.
+   * @generated
+   */
+  block_declaration createblock_declaration();
+
+  /**
+   * Returns a new object of class '<em>Int Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Int Type</em>'.
+   * @generated
+   */
+  IntType createIntType();
+
+  /**
+   * Returns a new object of class '<em>Bool Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Bool Type</em>'.
+   * @generated
+   */
+  BoolType createBoolType();
 
   /**
    * Returns the package supported by this factory.

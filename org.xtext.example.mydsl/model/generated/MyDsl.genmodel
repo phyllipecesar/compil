@@ -8,10 +8,27 @@
   <genPackages prefix="MyDsl" basePackage="org.xtext.example.mydsl" disposableProviderFactory="true"
       fileExtensions="mydsl" ecorePackage="MyDsl.ecore#/">
     <genClasses ecoreClass="MyDsl.ecore#//Model">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Model/greetings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Model/elements"/>
     </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//Greeting">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Greeting/name"/>
+    <genClasses ecoreClass="MyDsl.ecore#//VarDecl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//VarDecl/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//VarDecl/name"/>
     </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Type"/>
+    <genClasses ecoreClass="MyDsl.ecore#//simple_type_specifier"/>
+    <genClasses ecoreClass="MyDsl.ecore#//statement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//statement/variavel"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//simple_declaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//simple_declaration/variavel"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//declaration_statement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//declaration_statement/variaveis"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//block_declaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//block_declaration/variavel"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//IntType"/>
+    <genClasses ecoreClass="MyDsl.ecore#//BoolType"/>
   </genPackages>
 </genmodel:GenModel>

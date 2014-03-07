@@ -14,7 +14,19 @@ generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
  */
 
 Model:
-	elements+=preprocessing_file;
+	elements+=statement;
+
+
+VarDecl:
+	{VarDecl} type=Type name=IDENTIFIER
+;
+
+Type:
+	simple_type_specifier
+;
+simple_type_specifier:
+	{IntType}"int" |
+	{BoolType} "bool";
 
 new_line:
 	'\n' | '\r\n'
@@ -49,13 +61,13 @@ elif_group:
 
 
 //// A.5
-//statement:
+statement:
 //	expression_statement|
 //	compound_statement|
 //	jump_statement|
-//	declaration_statement|
+	{statement} variavel = declaration_statement
 //	selection_statement
-//	;
+	;
 //iteration_statement:
 //	'while (' condition ')' statement|
 //	'do' statement 'while ('expression ');'|
@@ -64,9 +76,9 @@ elif_group:
 //for_init_statement:
 //	expression_statement|simple_declaration;
 //
-//simple_declaration:
-//	'int a = 1;'
-//;
+simple_declaration:
+	variavel = VarDecl ';' new_line
+;
 //expression_statement:
 //	expression?
 //;
@@ -91,14 +103,14 @@ elif_group:
 //	'return' expression?';'|
 //	'goto' IDENTIFIER';'
 //;
-//declaration_statement:
-//	block_declaration
-//;
+declaration_statement:
+	(variaveis += block_declaration)+
+;
 //
 //// TODO
-//block_declaration:
-//	'==block_declaration=='
-//;
+block_declaration:
+	{block_declaration} variavel = simple_declaration
+;
 
 constant_expression:
 	conditional_expression;
