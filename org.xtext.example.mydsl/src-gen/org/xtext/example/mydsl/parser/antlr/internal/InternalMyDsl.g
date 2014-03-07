@@ -118,13 +118,20 @@ rulenew_line returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-
+(
 	kw='\n' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getNew_lineAccess().getControl000aKeyword()); 
+        newLeafNode(kw, grammarAccess.getNew_lineAccess().getControl000aKeyword_0()); 
     }
 
+    |
+	kw='\r\n' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getNew_lineAccess().getControl000dControl000aKeyword_1()); 
+    }
+)
     ;
 
 
@@ -592,13 +599,38 @@ rulepreprocessing_token returns [AntlrDatatypeRuleToken current=new AntlrDatatyp
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-
-	kw='!=' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getPreprocessing_tokenAccess().getExclamationMarkEqualsSignKeyword()); 
+(    this_IDENTIFIER_0=RULE_IDENTIFIER    {
+		$current.merge(this_IDENTIFIER_0);
     }
 
+    { 
+    newLeafNode(this_IDENTIFIER_0, grammarAccess.getPreprocessing_tokenAccess().getIDENTIFIERTerminalRuleCall_0()); 
+    }
+
+    |    this_HEADERNAME_1=RULE_HEADERNAME    {
+		$current.merge(this_HEADERNAME_1);
+    }
+
+    { 
+    newLeafNode(this_HEADERNAME_1, grammarAccess.getPreprocessing_tokenAccess().getHEADERNAMETerminalRuleCall_1()); 
+    }
+
+    |    this_PPNUMBER_2=RULE_PPNUMBER    {
+		$current.merge(this_PPNUMBER_2);
+    }
+
+    { 
+    newLeafNode(this_PPNUMBER_2, grammarAccess.getPreprocessing_tokenAccess().getPPNUMBERTerminalRuleCall_2()); 
+    }
+
+    |    this_PPOPorPUNC_3=RULE_PPOPORPUNC    {
+		$current.merge(this_PPOPorPUNC_3);
+    }
+
+    { 
+    newLeafNode(this_PPOPorPUNC_3, grammarAccess.getPreprocessing_tokenAccess().getPPOPorPUNCTerminalRuleCall_3()); 
+    }
+)
     ;
 
 
@@ -1061,6 +1093,8 @@ rulepp_tokens returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken
 
 
 
+
+RULE_HEADERNAME : (RULE_STRING|'<' ('a'..'z'|'A'..'Z'|'.')+ '>');
 
 RULE_INTEGERLITERAL : ('1'..'9' ('0'..'9')* (('u'|'U') ('l'|'L'|'ll'|'LL')?|('l'|'L'|'ll'|'LL') ('u'|'U')?)?|'0' ('0'..'7')* (('u'|'U') ('l'|'L'|'ll'|'LL')?|('l'|'L'|'ll'|'LL') ('u'|'U')?)?|('0x'|'0X') ('0'..'9'|'a'..'f'|'A'..'F')+ (('u'|'U') ('l'|'L'|'ll'|'LL')?|('l'|'L'|'ll'|'LL') ('u'|'U')?)?);
 
