@@ -54,6 +54,9 @@ public class Cpp2Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getTemplateIdAccess().getAlternatives(), "rule__TemplateId__Alternatives");
 					put(grammarAccess.getTemplateArgumentAccess().getAlternatives(), "rule__TemplateArgument__Alternatives");
 					put(grammarAccess.getTypenameSpecifierAccess().getAlternatives_3(), "rule__TypenameSpecifier__Alternatives_3");
+					put(grammarAccess.getExceptionDeclarationAccess().getAlternatives(), "rule__ExceptionDeclaration__Alternatives");
+					put(grammarAccess.getExceptionDeclarationAccess().getAlternatives_0_2(), "rule__ExceptionDeclaration__Alternatives_0_2");
+					put(grammarAccess.getExceptionSpecificationAccess().getAlternatives(), "rule__ExceptionSpecification__Alternatives");
 					put(grammarAccess.getPreProcessingTokenAccess().getGroup_2(), "rule__PreProcessingToken__Group_2__0");
 					put(grammarAccess.getPreProcessingTokenAccess().getGroup_2_0_1(), "rule__PreProcessingToken__Group_2_0_1__0");
 					put(grammarAccess.getPreProcessingTokenAccess().getGroup_2_1_2(), "rule__PreProcessingToken__Group_2_1_2__0");
@@ -85,6 +88,14 @@ public class Cpp2Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getTypenameSpecifierAccess().getGroup_3_1(), "rule__TypenameSpecifier__Group_3_1__0");
 					put(grammarAccess.getExplicitInstantiationAccess().getGroup(), "rule__ExplicitInstantiation__Group__0");
 					put(grammarAccess.getExplicitSpecializationAccess().getGroup(), "rule__ExplicitSpecialization__Group__0");
+					put(grammarAccess.getTryBlockAccess().getGroup(), "rule__TryBlock__Group__0");
+					put(grammarAccess.getFunctionTryBlockAccess().getGroup(), "rule__FunctionTryBlock__Group__0");
+					put(grammarAccess.getHandlerAccess().getGroup(), "rule__Handler__Group__0");
+					put(grammarAccess.getExceptionDeclarationAccess().getGroup_0(), "rule__ExceptionDeclaration__Group_0__0");
+					put(grammarAccess.getThrowExpressionAccess().getGroup(), "rule__ThrowExpression__Group__0");
+					put(grammarAccess.getDynamicExceptionSpecificationAccess().getGroup(), "rule__DynamicExceptionSpecification__Group__0");
+					put(grammarAccess.getNoexceptSpecificationAccess().getGroup(), "rule__NoexceptSpecification__Group__0");
+					put(grammarAccess.getNoexceptSpecificationAccess().getGroup_1(), "rule__NoexceptSpecification__Group_1__0");
 					put(grammarAccess.getTestAccess().getElementsAssignment(), "rule__Test__ElementsAssignment");
 				}
 			};

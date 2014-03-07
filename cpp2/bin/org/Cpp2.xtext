@@ -367,7 +367,36 @@ ExplicitInstantiation:
 ExplicitSpecialization:
 	'template' '<' '>' Declaration;
 	
+// except
+TryBlock:
+	'try' CompoundStatement Handler+;
+
+FunctionTryBlock:
+	'try' CtorInitializer? CompoundStatement Handler+;
+
+Handler:
+	'catch' '(' ExceptionDeclaration ')' CompoundStatement;
+
+ExceptionDeclaration:
+	AttributeSpecifier* TypeSpecifier+ (Declarator | AbstractDeclarator?) |
+	'...';
 	
+ThrowExpression:
+	'throw' AssignmentExpression?;
+
+// except.spec
+ExceptionSpecification:
+	DynamicExceptionSpecification |
+	NoexceptSpecification;
+
+DynamicExceptionSpecification:
+	'throw' '(' TypeIdList ')';
+
+NoexceptSpecification:
+	'noexcept' ('(' ConstantExpression ')')?;
+
+
+
 // DUMMY
 
 ConstantExpression:
@@ -394,3 +423,34 @@ NestedNameSpecifier:
 	'DUMMY6'
 ;
 
+AssignmentExpression:
+	'DUMMY7'
+;
+
+AttributeSpecifier:
+	'DUMMY8'
+;
+
+TypeSpecifier:
+	'DUMMY9'
+;
+
+Declarator:
+	'DUMMY10'
+;
+
+AbstractDeclarator:
+	'DUMMY11'
+;
+
+CompoundStatement:
+	'DUMMY12'
+;
+
+CtorInitializer:
+	'DUMMY13'
+;
+
+TypeIdList:
+	'DUMMY14'
+;

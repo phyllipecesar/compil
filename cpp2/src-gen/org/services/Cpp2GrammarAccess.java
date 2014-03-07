@@ -966,6 +966,232 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getDeclarationParserRuleCall_3() { return cDeclarationParserRuleCall_3; }
 	}
 
+	public class TryBlockElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TryBlock");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTryKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cCompoundStatementParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cHandlerParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		
+		//// except
+		//TryBlock:
+		//	"try" CompoundStatement Handler+;
+		public ParserRule getRule() { return rule; }
+
+		//"try" CompoundStatement Handler+
+		public Group getGroup() { return cGroup; }
+
+		//"try"
+		public Keyword getTryKeyword_0() { return cTryKeyword_0; }
+
+		//CompoundStatement
+		public RuleCall getCompoundStatementParserRuleCall_1() { return cCompoundStatementParserRuleCall_1; }
+
+		//Handler+
+		public RuleCall getHandlerParserRuleCall_2() { return cHandlerParserRuleCall_2; }
+	}
+
+	public class FunctionTryBlockElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FunctionTryBlock");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTryKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cCtorInitializerParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cCompoundStatementParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final RuleCall cHandlerParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		
+		//FunctionTryBlock:
+		//	"try" CtorInitializer? CompoundStatement Handler+;
+		public ParserRule getRule() { return rule; }
+
+		//"try" CtorInitializer? CompoundStatement Handler+
+		public Group getGroup() { return cGroup; }
+
+		//"try"
+		public Keyword getTryKeyword_0() { return cTryKeyword_0; }
+
+		//CtorInitializer?
+		public RuleCall getCtorInitializerParserRuleCall_1() { return cCtorInitializerParserRuleCall_1; }
+
+		//CompoundStatement
+		public RuleCall getCompoundStatementParserRuleCall_2() { return cCompoundStatementParserRuleCall_2; }
+
+		//Handler+
+		public RuleCall getHandlerParserRuleCall_3() { return cHandlerParserRuleCall_3; }
+	}
+
+	public class HandlerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Handler");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCatchKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final RuleCall cExceptionDeclarationParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cCompoundStatementParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		
+		//Handler:
+		//	"catch" "(" ExceptionDeclaration ")" CompoundStatement;
+		public ParserRule getRule() { return rule; }
+
+		//"catch" "(" ExceptionDeclaration ")" CompoundStatement
+		public Group getGroup() { return cGroup; }
+
+		//"catch"
+		public Keyword getCatchKeyword_0() { return cCatchKeyword_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//ExceptionDeclaration
+		public RuleCall getExceptionDeclarationParserRuleCall_2() { return cExceptionDeclarationParserRuleCall_2; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+
+		//CompoundStatement
+		public RuleCall getCompoundStatementParserRuleCall_4() { return cCompoundStatementParserRuleCall_4; }
+	}
+
+	public class ExceptionDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExceptionDeclaration");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final RuleCall cAttributeSpecifierParserRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
+		private final RuleCall cTypeSpecifierParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Alternatives cAlternatives_0_2 = (Alternatives)cGroup_0.eContents().get(2);
+		private final RuleCall cDeclaratorParserRuleCall_0_2_0 = (RuleCall)cAlternatives_0_2.eContents().get(0);
+		private final RuleCall cAbstractDeclaratorParserRuleCall_0_2_1 = (RuleCall)cAlternatives_0_2.eContents().get(1);
+		private final Keyword cFullStopFullStopFullStopKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		//ExceptionDeclaration:
+		//	AttributeSpecifier* TypeSpecifier+ (Declarator | AbstractDeclarator?) | "...";
+		public ParserRule getRule() { return rule; }
+
+		//AttributeSpecifier* TypeSpecifier+ (Declarator | AbstractDeclarator?) | "..."
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//AttributeSpecifier* TypeSpecifier+ (Declarator | AbstractDeclarator?)
+		public Group getGroup_0() { return cGroup_0; }
+
+		//AttributeSpecifier*
+		public RuleCall getAttributeSpecifierParserRuleCall_0_0() { return cAttributeSpecifierParserRuleCall_0_0; }
+
+		//TypeSpecifier+
+		public RuleCall getTypeSpecifierParserRuleCall_0_1() { return cTypeSpecifierParserRuleCall_0_1; }
+
+		//Declarator | AbstractDeclarator?
+		public Alternatives getAlternatives_0_2() { return cAlternatives_0_2; }
+
+		//Declarator
+		public RuleCall getDeclaratorParserRuleCall_0_2_0() { return cDeclaratorParserRuleCall_0_2_0; }
+
+		//AbstractDeclarator?
+		public RuleCall getAbstractDeclaratorParserRuleCall_0_2_1() { return cAbstractDeclaratorParserRuleCall_0_2_1; }
+
+		//"..."
+		public Keyword getFullStopFullStopFullStopKeyword_1() { return cFullStopFullStopFullStopKeyword_1; }
+	}
+
+	public class ThrowExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ThrowExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cThrowKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cAssignmentExpressionParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		
+		//ThrowExpression:
+		//	"throw" AssignmentExpression?;
+		public ParserRule getRule() { return rule; }
+
+		//"throw" AssignmentExpression?
+		public Group getGroup() { return cGroup; }
+
+		//"throw"
+		public Keyword getThrowKeyword_0() { return cThrowKeyword_0; }
+
+		//AssignmentExpression?
+		public RuleCall getAssignmentExpressionParserRuleCall_1() { return cAssignmentExpressionParserRuleCall_1; }
+	}
+
+	public class ExceptionSpecificationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExceptionSpecification");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cDynamicExceptionSpecificationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cNoexceptSpecificationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//// except.spec
+		//ExceptionSpecification:
+		//	DynamicExceptionSpecification | NoexceptSpecification;
+		public ParserRule getRule() { return rule; }
+
+		//DynamicExceptionSpecification | NoexceptSpecification
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//DynamicExceptionSpecification
+		public RuleCall getDynamicExceptionSpecificationParserRuleCall_0() { return cDynamicExceptionSpecificationParserRuleCall_0; }
+
+		//NoexceptSpecification
+		public RuleCall getNoexceptSpecificationParserRuleCall_1() { return cNoexceptSpecificationParserRuleCall_1; }
+	}
+
+	public class DynamicExceptionSpecificationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DynamicExceptionSpecification");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cThrowKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final RuleCall cTypeIdListParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//DynamicExceptionSpecification:
+		//	"throw" "(" TypeIdList ")";
+		public ParserRule getRule() { return rule; }
+
+		//"throw" "(" TypeIdList ")"
+		public Group getGroup() { return cGroup; }
+
+		//"throw"
+		public Keyword getThrowKeyword_0() { return cThrowKeyword_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//TypeIdList
+		public RuleCall getTypeIdListParserRuleCall_2() { return cTypeIdListParserRuleCall_2; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+
+	public class NoexceptSpecificationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NoexceptSpecification");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cNoexceptKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cConstantExpressionParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		
+		//NoexceptSpecification:
+		//	"noexcept" ("(" ConstantExpression ")")?;
+		public ParserRule getRule() { return rule; }
+
+		//"noexcept" ("(" ConstantExpression ")")?
+		public Group getGroup() { return cGroup; }
+
+		//"noexcept"
+		public Keyword getNoexceptKeyword_0() { return cNoexceptKeyword_0; }
+
+		//("(" ConstantExpression ")")?
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1_0() { return cLeftParenthesisKeyword_1_0; }
+
+		//ConstantExpression
+		public RuleCall getConstantExpressionParserRuleCall_1_1() { return cConstantExpressionParserRuleCall_1_1; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_1_2() { return cRightParenthesisKeyword_1_2; }
+	}
+
 	public class ConstantExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConstantExpression");
 		private final Keyword cDUMMY1Keyword = (Keyword)rule.eContents().get(1);
@@ -1038,6 +1264,102 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 		//"DUMMY6"
 		public Keyword getDUMMY6Keyword() { return cDUMMY6Keyword; }
 	}
+
+	public class AssignmentExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AssignmentExpression");
+		private final Keyword cDUMMY7Keyword = (Keyword)rule.eContents().get(1);
+		
+		//AssignmentExpression:
+		//	"DUMMY7";
+		public ParserRule getRule() { return rule; }
+
+		//"DUMMY7"
+		public Keyword getDUMMY7Keyword() { return cDUMMY7Keyword; }
+	}
+
+	public class AttributeSpecifierElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AttributeSpecifier");
+		private final Keyword cDUMMY8Keyword = (Keyword)rule.eContents().get(1);
+		
+		//AttributeSpecifier:
+		//	"DUMMY8";
+		public ParserRule getRule() { return rule; }
+
+		//"DUMMY8"
+		public Keyword getDUMMY8Keyword() { return cDUMMY8Keyword; }
+	}
+
+	public class TypeSpecifierElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TypeSpecifier");
+		private final Keyword cDUMMY9Keyword = (Keyword)rule.eContents().get(1);
+		
+		//TypeSpecifier:
+		//	"DUMMY9";
+		public ParserRule getRule() { return rule; }
+
+		//"DUMMY9"
+		public Keyword getDUMMY9Keyword() { return cDUMMY9Keyword; }
+	}
+
+	public class DeclaratorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Declarator");
+		private final Keyword cDUMMY10Keyword = (Keyword)rule.eContents().get(1);
+		
+		//Declarator:
+		//	"DUMMY10";
+		public ParserRule getRule() { return rule; }
+
+		//"DUMMY10"
+		public Keyword getDUMMY10Keyword() { return cDUMMY10Keyword; }
+	}
+
+	public class AbstractDeclaratorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractDeclarator");
+		private final Keyword cDUMMY11Keyword = (Keyword)rule.eContents().get(1);
+		
+		//AbstractDeclarator:
+		//	"DUMMY11";
+		public ParserRule getRule() { return rule; }
+
+		//"DUMMY11"
+		public Keyword getDUMMY11Keyword() { return cDUMMY11Keyword; }
+	}
+
+	public class CompoundStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CompoundStatement");
+		private final Keyword cDUMMY12Keyword = (Keyword)rule.eContents().get(1);
+		
+		//CompoundStatement:
+		//	"DUMMY12";
+		public ParserRule getRule() { return rule; }
+
+		//"DUMMY12"
+		public Keyword getDUMMY12Keyword() { return cDUMMY12Keyword; }
+	}
+
+	public class CtorInitializerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CtorInitializer");
+		private final Keyword cDUMMY13Keyword = (Keyword)rule.eContents().get(1);
+		
+		//CtorInitializer:
+		//	"DUMMY13";
+		public ParserRule getRule() { return rule; }
+
+		//"DUMMY13"
+		public Keyword getDUMMY13Keyword() { return cDUMMY13Keyword; }
+	}
+
+	public class TypeIdListElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TypeIdList");
+		private final Keyword cDUMMY14Keyword = (Keyword)rule.eContents().get(1);
+		
+		//TypeIdList:
+		//	"DUMMY14";
+		public ParserRule getRule() { return rule; }
+
+		//"DUMMY14"
+		public Keyword getDUMMY14Keyword() { return cDUMMY14Keyword; }
+	}
 	
 	
 	private TestElements pTest;
@@ -1086,12 +1408,28 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 	private TypenameSpecifierElements pTypenameSpecifier;
 	private ExplicitInstantiationElements pExplicitInstantiation;
 	private ExplicitSpecializationElements pExplicitSpecialization;
+	private TryBlockElements pTryBlock;
+	private FunctionTryBlockElements pFunctionTryBlock;
+	private HandlerElements pHandler;
+	private ExceptionDeclarationElements pExceptionDeclaration;
+	private ThrowExpressionElements pThrowExpression;
+	private ExceptionSpecificationElements pExceptionSpecification;
+	private DynamicExceptionSpecificationElements pDynamicExceptionSpecification;
+	private NoexceptSpecificationElements pNoexceptSpecification;
 	private ConstantExpressionElements pConstantExpression;
 	private TypeIdElements pTypeId;
 	private IdExpressionElements pIdExpression;
 	private ParameterDeclarationElements pParameterDeclaration;
 	private DeclarationElements pDeclaration;
 	private NestedNameSpecifierElements pNestedNameSpecifier;
+	private AssignmentExpressionElements pAssignmentExpression;
+	private AttributeSpecifierElements pAttributeSpecifier;
+	private TypeSpecifierElements pTypeSpecifier;
+	private DeclaratorElements pDeclarator;
+	private AbstractDeclaratorElements pAbstractDeclarator;
+	private CompoundStatementElements pCompoundStatement;
+	private CtorInitializerElements pCtorInitializer;
+	private TypeIdListElements pTypeIdList;
 	
 	private final Grammar grammar;
 
@@ -1515,6 +1853,88 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 		return getExplicitSpecializationAccess().getRule();
 	}
 
+	//// except
+	//TryBlock:
+	//	"try" CompoundStatement Handler+;
+	public TryBlockElements getTryBlockAccess() {
+		return (pTryBlock != null) ? pTryBlock : (pTryBlock = new TryBlockElements());
+	}
+	
+	public ParserRule getTryBlockRule() {
+		return getTryBlockAccess().getRule();
+	}
+
+	//FunctionTryBlock:
+	//	"try" CtorInitializer? CompoundStatement Handler+;
+	public FunctionTryBlockElements getFunctionTryBlockAccess() {
+		return (pFunctionTryBlock != null) ? pFunctionTryBlock : (pFunctionTryBlock = new FunctionTryBlockElements());
+	}
+	
+	public ParserRule getFunctionTryBlockRule() {
+		return getFunctionTryBlockAccess().getRule();
+	}
+
+	//Handler:
+	//	"catch" "(" ExceptionDeclaration ")" CompoundStatement;
+	public HandlerElements getHandlerAccess() {
+		return (pHandler != null) ? pHandler : (pHandler = new HandlerElements());
+	}
+	
+	public ParserRule getHandlerRule() {
+		return getHandlerAccess().getRule();
+	}
+
+	//ExceptionDeclaration:
+	//	AttributeSpecifier* TypeSpecifier+ (Declarator | AbstractDeclarator?) | "...";
+	public ExceptionDeclarationElements getExceptionDeclarationAccess() {
+		return (pExceptionDeclaration != null) ? pExceptionDeclaration : (pExceptionDeclaration = new ExceptionDeclarationElements());
+	}
+	
+	public ParserRule getExceptionDeclarationRule() {
+		return getExceptionDeclarationAccess().getRule();
+	}
+
+	//ThrowExpression:
+	//	"throw" AssignmentExpression?;
+	public ThrowExpressionElements getThrowExpressionAccess() {
+		return (pThrowExpression != null) ? pThrowExpression : (pThrowExpression = new ThrowExpressionElements());
+	}
+	
+	public ParserRule getThrowExpressionRule() {
+		return getThrowExpressionAccess().getRule();
+	}
+
+	//// except.spec
+	//ExceptionSpecification:
+	//	DynamicExceptionSpecification | NoexceptSpecification;
+	public ExceptionSpecificationElements getExceptionSpecificationAccess() {
+		return (pExceptionSpecification != null) ? pExceptionSpecification : (pExceptionSpecification = new ExceptionSpecificationElements());
+	}
+	
+	public ParserRule getExceptionSpecificationRule() {
+		return getExceptionSpecificationAccess().getRule();
+	}
+
+	//DynamicExceptionSpecification:
+	//	"throw" "(" TypeIdList ")";
+	public DynamicExceptionSpecificationElements getDynamicExceptionSpecificationAccess() {
+		return (pDynamicExceptionSpecification != null) ? pDynamicExceptionSpecification : (pDynamicExceptionSpecification = new DynamicExceptionSpecificationElements());
+	}
+	
+	public ParserRule getDynamicExceptionSpecificationRule() {
+		return getDynamicExceptionSpecificationAccess().getRule();
+	}
+
+	//NoexceptSpecification:
+	//	"noexcept" ("(" ConstantExpression ")")?;
+	public NoexceptSpecificationElements getNoexceptSpecificationAccess() {
+		return (pNoexceptSpecification != null) ? pNoexceptSpecification : (pNoexceptSpecification = new NoexceptSpecificationElements());
+	}
+	
+	public ParserRule getNoexceptSpecificationRule() {
+		return getNoexceptSpecificationAccess().getRule();
+	}
+
 	//// DUMMY
 	//ConstantExpression:
 	//	"DUMMY1";
@@ -1574,6 +1994,86 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getNestedNameSpecifierRule() {
 		return getNestedNameSpecifierAccess().getRule();
+	}
+
+	//AssignmentExpression:
+	//	"DUMMY7";
+	public AssignmentExpressionElements getAssignmentExpressionAccess() {
+		return (pAssignmentExpression != null) ? pAssignmentExpression : (pAssignmentExpression = new AssignmentExpressionElements());
+	}
+	
+	public ParserRule getAssignmentExpressionRule() {
+		return getAssignmentExpressionAccess().getRule();
+	}
+
+	//AttributeSpecifier:
+	//	"DUMMY8";
+	public AttributeSpecifierElements getAttributeSpecifierAccess() {
+		return (pAttributeSpecifier != null) ? pAttributeSpecifier : (pAttributeSpecifier = new AttributeSpecifierElements());
+	}
+	
+	public ParserRule getAttributeSpecifierRule() {
+		return getAttributeSpecifierAccess().getRule();
+	}
+
+	//TypeSpecifier:
+	//	"DUMMY9";
+	public TypeSpecifierElements getTypeSpecifierAccess() {
+		return (pTypeSpecifier != null) ? pTypeSpecifier : (pTypeSpecifier = new TypeSpecifierElements());
+	}
+	
+	public ParserRule getTypeSpecifierRule() {
+		return getTypeSpecifierAccess().getRule();
+	}
+
+	//Declarator:
+	//	"DUMMY10";
+	public DeclaratorElements getDeclaratorAccess() {
+		return (pDeclarator != null) ? pDeclarator : (pDeclarator = new DeclaratorElements());
+	}
+	
+	public ParserRule getDeclaratorRule() {
+		return getDeclaratorAccess().getRule();
+	}
+
+	//AbstractDeclarator:
+	//	"DUMMY11";
+	public AbstractDeclaratorElements getAbstractDeclaratorAccess() {
+		return (pAbstractDeclarator != null) ? pAbstractDeclarator : (pAbstractDeclarator = new AbstractDeclaratorElements());
+	}
+	
+	public ParserRule getAbstractDeclaratorRule() {
+		return getAbstractDeclaratorAccess().getRule();
+	}
+
+	//CompoundStatement:
+	//	"DUMMY12";
+	public CompoundStatementElements getCompoundStatementAccess() {
+		return (pCompoundStatement != null) ? pCompoundStatement : (pCompoundStatement = new CompoundStatementElements());
+	}
+	
+	public ParserRule getCompoundStatementRule() {
+		return getCompoundStatementAccess().getRule();
+	}
+
+	//CtorInitializer:
+	//	"DUMMY13";
+	public CtorInitializerElements getCtorInitializerAccess() {
+		return (pCtorInitializer != null) ? pCtorInitializer : (pCtorInitializer = new CtorInitializerElements());
+	}
+	
+	public ParserRule getCtorInitializerRule() {
+		return getCtorInitializerAccess().getRule();
+	}
+
+	//TypeIdList:
+	//	"DUMMY14";
+	public TypeIdListElements getTypeIdListAccess() {
+		return (pTypeIdList != null) ? pTypeIdList : (pTypeIdList = new TypeIdListElements());
+	}
+	
+	public ParserRule getTypeIdListRule() {
+		return getTypeIdListAccess().getRule();
 	}
 
 	//terminal ID:
