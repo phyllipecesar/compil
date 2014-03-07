@@ -152,16 +152,94 @@ unary_expression:
 	('sizeof')* delete_expression;
 
 postfix_expression:
-	'postfix==';
+	primary_expression ('[' expression ']' |
+						'(' expression_list? ')' |
+						'.' 'template'? (IDENTIFIER | pseudo_destructor_name) | //TODO replace IDENTIFIER with id_expression
+						'->' 'template'? (IDENTIFIER | pseudo_destructor_name) | //TODO replace IDENTIFIER with id_expression
+						'++' |
+						'--')*;
+
+primary_expression:
+	'==primary==';
+
+pseudo_destructor_name:
+	'::'? nested_name_specifier? (type_name '::')? '~' type_name |
+	'::'? nested_name_specifier 'template' template_id '::' '~' type_name;
+
+nested_name_specifier:
+	class_or_namespace_name '::' ('template'? class_or_namespace_name '::')* class_or_namespace_name '::';
+
+class_or_namespace_name:
+	class_name | namespace_name;
+
+class_name:
+	IDENTIFIER | template_id;
+
+namespace_name:
+	'==namespace==';
+
+type_name:
+	'==type_name==';
+
+template_id:
+	IDENTIFIER '<' template_argument_list '>' 'class';
+
+template_argument_list:
+	template_argument (',' template_argument)*;
+
+template_argument:
+	assignment_expression |
+	IDENTIFIER | //TODO replace with type_id
+	id_expression;
+
+id_expression:
+	unqualified_id |
+	qualified_id;
+
+unqualified_id:
+	IDENTIFIER |
+	operator_function_id |
+	conversion_function_id |
+	'~' class_name |
+	template_id;
+
+operator_function_id:
+	'operator' operator;
+
+operator:
+	'new' | 'delete' | 'new[]' | 'delete[]' | '+' | '-' | '*' | '/' | '%' | '^' | '&' | '|' | '~' | '!' | '=' | '<' | '>' |
+	'+=' | '-=' | '*=' | '/=' | '%=' | '^=' | '&=' | '|=' | '<<' | '>>' | '<<=' | '>>=' | '==' | '!=' | '<=' | '>=' | '&&' |
+	'||' | '++' | '--' | ',' | '->*' | '->' | '()' | '[]';
+
+conversion_function_id:
+	'operator' conversion_type_id;
+
+conversion_type_id:
+	type_specifier_seq conversion_declarator?;
+
+conversion_declarator:
+	'==conversion==';
+
+type_specifier_seq:
+	type_specifier+;
+
+type_specifier:
+	'==type_specifier==';
+
+qualified_id:
+	'==qualified==';
 
 new_expression:
-	'new==';
+	'==new==';
 
 delete_expression:
-	'delete==';
+	'==delete==';
 
 unary_operator:
 	('*' | '&' | '+' | '-' | '!' | '~');
+
+expression_list:
+	assignment_expression (',' assignment_expression)*;
 
 expression:
 	'==expression==';
