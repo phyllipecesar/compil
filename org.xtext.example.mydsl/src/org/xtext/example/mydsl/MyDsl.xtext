@@ -60,7 +60,25 @@ conditional_expression:
 	logical_or_expression '?' expression ':' assignment_expression;
 
 logical_or_expression:
-	'==logical==';
+	logical_and_expression ('||' logical_and_expression )*;
+
+logical_and_expression:
+	inclusive_or_expression ('&&' inclusive_or_expression)*;
+
+inclusive_or_expression:
+	exclusive_or_expression ('|' exclusive_or_expression)*;
+
+exclusive_or_expression:
+	and_expression ('^' and_expression)*;
+
+and_expression:
+	equality_expression ('&' equality_expression)*;
+
+equality_expression:
+	relational_expression (('==' | '!=') relational_expression)*;
+
+relational_expression:
+	'==rel==';
 
 expression:
 	'==expression==';
