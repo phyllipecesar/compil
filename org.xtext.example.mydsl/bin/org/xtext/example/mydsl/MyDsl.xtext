@@ -12,9 +12,10 @@ generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
  * Lex.Token        [OK]
  *
  */
- 
+
 Model:
-	greetings+=preprocessing_file;
+	greetings+=statement;
+
 	
 Greeting:
 	'Hello' name=ID '!';
@@ -51,6 +52,58 @@ elif_group:
   '#elif' constant_expression new_line group?;
 
 
+// A.5
+statement:
+	expression_statement|
+	compound_statement|
+	jump_statement|
+	declaration_statement|
+	selection_statement
+	;
+iteration_statement:
+	'while (' condition ')' statement|
+	'do' statement 'while ('expression ');'|
+	'for ( 'for_init_statement condition? ';' expression? ')' statement;
+
+for_init_statement:
+	expression_statement|simple_declaration;
+
+simple_declaration:
+	'int a = 1;'
+;
+expression_statement:
+	expression?
+;
+compound_statement:
+	'{' statement_seq? '}';
+	
+statement_seq:
+	(statement)+;
+selection_statement:
+	'if (' condition ')' statement |
+	'if (' condition ')' statement |
+	'switch (' condition ')' statement;
+
+
+// TODO(condition')
+condition:
+	expression
+;
+jump_statement:
+	'break;'|
+	'continue;'|
+	'return' expression?';'|
+	'goto' IDENTIFIER';'
+;
+declaration_statement:
+	block_declaration
+;
+
+// TODO
+block_declaration:
+	'==block_declaration=='
+;
+
 // TODO(constant_expression)
 constant_expression:
 	conditional_expression;
@@ -60,7 +113,25 @@ conditional_expression:
 	logical_or_expression '?' expression ':' assignment_expression;
 
 logical_or_expression:
-	'==logical==';
+	logical_and_expression ('||' logical_and_expression )*;
+
+logical_and_expression:
+	inclusive_or_expression ('&&' inclusive_or_expression)*;
+
+inclusive_or_expression:
+	exclusive_or_expression ('|' exclusive_or_expression)*;
+
+exclusive_or_expression:
+	and_expression ('^' and_expression)*;
+
+and_expression:
+	equality_expression ('&' equality_expression)*;
+
+equality_expression:
+	relational_expression (('==' | '!=') relational_expression)*;
+
+relational_expression:
+	'==rel==';
 
 expression:
 	'==expression==';
