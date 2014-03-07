@@ -14,11 +14,7 @@ generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
  */
 
 Model:
-	greetings+=statement;
-
-	
-Greeting:
-	'Hello' name=ID '!';
+	elements+=preprocessing_file;
 
 new_line:
 	'\n' | '\r\n'
@@ -52,65 +48,64 @@ elif_group:
   '#elif' constant_expression new_line group?;
 
 
-// A.5
-statement:
-	expression_statement|
-	compound_statement|
-	jump_statement|
-	declaration_statement|
-	selection_statement
-	;
-iteration_statement:
-	'while (' condition ')' statement|
-	'do' statement 'while ('expression ');'|
-	'for ( 'for_init_statement condition? ';' expression? ')' statement;
+//// A.5
+//statement:
+//	expression_statement|
+//	compound_statement|
+//	jump_statement|
+//	declaration_statement|
+//	selection_statement
+//	;
+//iteration_statement:
+//	'while (' condition ')' statement|
+//	'do' statement 'while ('expression ');'|
+//	'for ( 'for_init_statement condition? ';' expression? ')' statement;
+//
+//for_init_statement:
+//	expression_statement|simple_declaration;
+//
+//simple_declaration:
+//	'int a = 1;'
+//;
+//expression_statement:
+//	expression?
+//;
+//compound_statement:
+//	'{' statement_seq? '}';
+//	
+//statement_seq:
+//	(statement)+;
+//selection_statement:
+//	'if (' condition ')' statement |
+//	'if (' condition ')' statement |
+//	'switch (' condition ')' statement;
+//
+//
+//// TODO(condition')
+//condition:
+//	expression
+//;
+//jump_statement:
+//	'break;'|
+//	'continue;'|
+//	'return' expression?';'|
+//	'goto' IDENTIFIER';'
+//;
+//declaration_statement:
+//	block_declaration
+//;
+//
+//// TODO
+//block_declaration:
+//	'==block_declaration=='
+//;
 
-for_init_statement:
-	expression_statement|simple_declaration;
-
-simple_declaration:
-	'int a = 1;'
-;
-expression_statement:
-	expression?
-;
-compound_statement:
-	'{' statement_seq? '}';
-	
-statement_seq:
-	(statement)+;
-selection_statement:
-	'if (' condition ')' statement |
-	'if (' condition ')' statement |
-	'switch (' condition ')' statement;
-
-
-// TODO(condition')
-condition:
-	expression
-;
-jump_statement:
-	'break;'|
-	'continue;'|
-	'return' expression?';'|
-	'goto' IDENTIFIER';'
-;
-declaration_statement:
-	block_declaration
-;
-
-// TODO
-block_declaration:
-	'==block_declaration=='
-;
-
-// TODO(constant_expression)
 constant_expression:
 	conditional_expression;
 	
 conditional_expression:
-	logical_or_expression |
-	logical_or_expression '?' expression ':' assignment_expression;
+//	logical_or_expression |
+	logical_or_expression ('?' expression ':' assignment_expression)?;
 
 logical_or_expression:
 	logical_and_expression ('||' logical_and_expression )*;
@@ -137,37 +132,36 @@ shift_expression:
 	additive_expression (('<<' | '>>') additive_expression)*;
 
 additive_expression:
-//	multiplicative_expression (('+' | '-') multiplicative_expression)*;
-//TODO() make production above work! and swap the one below with it
+	multiplicative_expression (SIGN multiplicative_expression)*;
+
+multiplicative_expression:
+	pm_expression (('*' | '/' | '%') pm_expression)*;
+
+pm_expression:
 	cast_expression (('.*' | '->*') cast_expression)*;
 
-//multiplicative_expression:
-//	pm_expression (('*' | '/' | '%') pm_expression)*;
-//TODO() make production above work!
-
-//pm_expression:
-//	cast_expression (('.*' | '->*') cast_expression)*;
-//TODO() after the two productions above work, this one can be uncommented
-
 cast_expression:
-//	('(' ID ')')* unary_expression;
-//TODO() make this above work!
-	('++' | '--') unary_expression;
+	('(' IDENTIFIER ')')* unary_expression;
+	//TODO replace IDENTIFIER with type_id, I guess
 
 unary_expression:
-	'==unary==';
-//	postfix_expression |
-//	new_expression |
-//	delete_expression;
-//
-//postfix_expression:
-//	'postfix==';
-//
-//new_expression:
-//	'new==';
-//
-//delete_expression:
-//	'delete==';
+	('sizeof')* postfix_expression |
+	('sizeof')* ('++' | '--' | unary_operator ) cast_expression |
+	'sizeof' '(' IDENTIFIER ')' |//TODO replace IDENTIFIER with type_id
+	('sizeof')* new_expression |
+	('sizeof')* delete_expression;
+
+postfix_expression:
+	'postfix==';
+
+new_expression:
+	'new==';
+
+delete_expression:
+	'delete==';
+
+unary_operator:
+	('*' | '&' | '+' | '-' | '!' | '~');
 
 expression:
 	'==expression==';
