@@ -32,13 +32,31 @@ public interface MyDslFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Var Decl</em>'.
+   * Returns a new object of class '<em>Body</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Var Decl</em>'.
+   * @return a new object of class '<em>Body</em>'.
    * @generated
    */
-  VarDecl createVarDecl();
+  Body createBody();
+
+  /**
+   * Returns a new object of class '<em>Function Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Declaration</em>'.
+   * @generated
+   */
+  FunctionDeclaration createFunctionDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Symbol</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Symbol</em>'.
+   * @generated
+   */
+  Symbol createSymbol();
 
   /**
    * Returns a new object of class '<em>Type</em>'.
@@ -93,6 +111,24 @@ public interface MyDslFactory extends EFactory
    * @generated
    */
   block_declaration createblock_declaration();
+
+  /**
+   * Returns a new object of class '<em>Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Parameter</em>'.
+   * @generated
+   */
+  Parameter createParameter();
+
+  /**
+   * Returns a new object of class '<em>Var Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Var Decl</em>'.
+   * @generated
+   */
+  VarDecl createVarDecl();
 
   /**
    * Returns a new object of class '<em>Int Type</em>'.

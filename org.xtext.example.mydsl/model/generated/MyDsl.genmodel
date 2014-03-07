@@ -7,12 +7,19 @@
     editorPluginID="org.xtext.example.mydsl.editor" runtimeVersion="2.9">
   <genPackages prefix="MyDsl" basePackage="org.xtext.example.mydsl" disposableProviderFactory="true"
       fileExtensions="mydsl" ecorePackage="MyDsl.ecore#/">
-    <genClasses ecoreClass="MyDsl.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Model/elements"/>
+    <genClasses ecoreClass="MyDsl.ecore#//Model"/>
+    <genClasses ecoreClass="MyDsl.ecore#//Body">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Body/funcoes"/>
     </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//VarDecl">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//VarDecl/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//VarDecl/name"/>
+    <genClasses ecoreClass="MyDsl.ecore#//FunctionDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//FunctionDeclaration/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//FunctionDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//FunctionDeclaration/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//FunctionDeclaration/escopo"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Symbol">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Symbol/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Symbol/name"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Type"/>
     <genClasses ecoreClass="MyDsl.ecore#//simple_type_specifier"/>
@@ -28,6 +35,8 @@
     <genClasses ecoreClass="MyDsl.ecore#//block_declaration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//block_declaration/variavel"/>
     </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Parameter"/>
+    <genClasses ecoreClass="MyDsl.ecore#//VarDecl"/>
     <genClasses ecoreClass="MyDsl.ecore#//IntType"/>
     <genClasses ecoreClass="MyDsl.ecore#//BoolType"/>
   </genPackages>

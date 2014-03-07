@@ -7,7 +7,10 @@ import java.util.HashSet;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
-import org.xtext.example.mydsl.myDsl.VarDecl;
+import org.xtext.example.mydsl.myDsl.Body;
+import org.xtext.example.mydsl.myDsl.FunctionDeclaration;
+import org.xtext.example.mydsl.myDsl.Symbol;
+import org.xtext.example.mydsl.myDsl.Type;
 import org.xtext.example.mydsl.myDsl.block_declaration;
 import org.xtext.example.mydsl.myDsl.declaration_statement;
 import org.xtext.example.mydsl.myDsl.simple_declaration;
@@ -29,6 +32,70 @@ public class MyDslValidator extends AbstractMyDslValidator {
   }.apply();
   
   @Check
+  public void checkParamsFunction(final FunctionDeclaration funcao) {
+    this.hash.clear();
+    EList<Symbol> _params = funcao.getParams();
+    for (final Symbol symbol : _params) {
+      {
+        final String nome = symbol.getName();
+        boolean _contains = this.hash.contains(nome);
+        if (_contains) {
+          this.error((("Parameter " + nome) + " already exists"), symbol, null, (-1));
+        }
+        this.hash.add(nome);
+      }
+    }
+    statement _escopo = funcao.getEscopo();
+    declaration_statement _variavel = _escopo.getVariavel();
+    EList<block_declaration> _variaveis = _variavel.getVariaveis();
+    for (final block_declaration block : _variaveis) {
+      {
+        simple_declaration _variavel_1 = block.getVariavel();
+        Symbol _variavel_2 = _variavel_1.getVariavel();
+        final String nome = _variavel_2.getName();
+        boolean _contains = this.hash.contains(nome);
+        if (_contains) {
+          simple_declaration _variavel_3 = block.getVariavel();
+          Symbol _variavel_4 = _variavel_3.getVariavel();
+          _variavel_4.getType();
+          simple_declaration _variavel_5 = block.getVariavel();
+          Symbol _variavel_6 = _variavel_5.getVariavel();
+          this.error((("declaration of variable \'" + nome) + "\' shadows a paramater"), _variavel_6, null, (-1));
+        }
+      }
+    }
+  }
+  
+  private String row;
+  
+  @Check
+  public void checkFunctionAlreadyExists(final Body b) {
+    this.hash.clear();
+    EList<FunctionDeclaration> _funcoes = b.getFuncoes();
+    for (final FunctionDeclaration symbol : _funcoes) {
+      {
+        String _name = symbol.getName();
+        String _plus = (_name + "-@-phyllipe@");
+        this.row = _plus;
+        EList<Symbol> _params = symbol.getParams();
+        for (final Symbol symb : _params) {
+          Type _type = symb.getType();
+          String _plus_1 = (this.row + _type);
+          this.row = _plus_1;
+        }
+        boolean _contains = this.hash.contains(this.row);
+        if (_contains) {
+          String _name_1 = symbol.getName();
+          String _plus_2 = ("Function \'" + _name_1);
+          String _plus_3 = (_plus_2 + "\' already exists");
+          this.error(_plus_3, symbol, null, (-1));
+        }
+        this.hash.add(this.row);
+      }
+    }
+  }
+  
+  @Check
   public void checkVariableAlreadyExists(final statement st) {
     this.hash.clear();
     declaration_statement _variavel = st.getVariavel();
@@ -36,13 +103,13 @@ public class MyDslValidator extends AbstractMyDslValidator {
     for (final block_declaration block : _variaveis) {
       {
         simple_declaration _variavel_1 = block.getVariavel();
-        VarDecl _variavel_2 = _variavel_1.getVariavel();
+        Symbol _variavel_2 = _variavel_1.getVariavel();
         final String nome = _variavel_2.getName();
         boolean _contains = this.hash.contains(nome);
         if (_contains) {
           simple_declaration _variavel_3 = block.getVariavel();
-          VarDecl _variavel_4 = _variavel_3.getVariavel();
-          this.error((("Variable " + nome) + " already exists"), _variavel_4, null, (-1));
+          Symbol _variavel_4 = _variavel_3.getVariavel();
+          this.error((("Variable \'" + nome) + "\' already exists"), _variavel_4, null, (-1));
         }
         this.hash.add(nome);
       }

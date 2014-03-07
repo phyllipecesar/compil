@@ -13,6 +13,9 @@ import org.xtext.example.mydsl.myDsl.statement
 import java.util.HashSet
 import java.util.HashMap
 import org.xtext.example.mydsl.myDsl.block_declaration
+import org.xtext.example.mydsl.myDsl.Body
+import org.xtext.example.mydsl.myDsl.FunctionDeclaration
+import org.xtext.example.mydsl.myDsl.Symbol
 
 /**
  * Custom validation rules. 
@@ -24,12 +27,47 @@ class MyDslValidator extends AbstractMyDslValidator {
 
 
 @Check
+def checkParamsFunction(FunctionDeclaration funcao) {
+	hash.clear();
+	for (Symbol symbol: funcao.params) {
+			val nome = symbol.name;
+			if (hash.contains(nome)) {
+				error("Parameter " + nome + " already exists", symbol, null, -1);
+			}
+			hash.add(nome);
+	}
+	for (block_declaration block: funcao.escopo.variavel.variaveis) {
+		val nome = block.variavel.variavel.name;
+		if (hash.contains(nome)) {
+			block.variavel.variavel.type
+			error("declaration of variable '" + nome + "' shadows a paramater", block.variavel.variavel, null, -1);
+			
+		}
+	}
+}
+String row;
+@Check
+def checkFunctionAlreadyExists(Body b) {
+	hash.clear();
+	
+	for (FunctionDeclaration symbol: b.funcoes) {
+		row = symbol.name + "-@-phyllipe@";
+		for (Symbol symb : symbol.params) {
+			row = row + symb.type;
+		}
+		if (hash.contains(row)) {
+			error("Function '" + symbol.name + "' already exists", symbol, null, -1);
+		}
+		hash.add(row);
+	}
+}
+@Check
 def checkVariableAlreadyExists(statement st) {
 		hash.clear();
 		for (block_declaration block : st.variavel.variaveis) {
 			val nome = block.variavel.variavel.name;
 			if (hash.contains(nome)) {
-				error("Variable " + nome + " already exists", block.variavel.variavel, null, -1);
+				error("Variable '" + nome + "' already exists", block.variavel.variavel, null, -1);
 			}
 			hash.add(nome);
 		}

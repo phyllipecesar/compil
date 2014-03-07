@@ -13,10 +13,12 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEOb
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import org.xtext.example.mydsl.myDsl.Body;
 import org.xtext.example.mydsl.myDsl.BoolType;
+import org.xtext.example.mydsl.myDsl.FunctionDeclaration;
 import org.xtext.example.mydsl.myDsl.IntType;
-import org.xtext.example.mydsl.myDsl.Model;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
+import org.xtext.example.mydsl.myDsl.Parameter;
 import org.xtext.example.mydsl.myDsl.VarDecl;
 import org.xtext.example.mydsl.myDsl.block_declaration;
 import org.xtext.example.mydsl.myDsl.declaration_statement;
@@ -32,10 +34,23 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == MyDslPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case MyDslPackage.BODY:
+				if(context == grammarAccess.getBodyRule() ||
+				   context == grammarAccess.getModelRule()) {
+					sequence_Body(context, (Body) semanticObject); 
+					return; 
+				}
+				else break;
 			case MyDslPackage.BOOL_TYPE:
 				if(context == grammarAccess.getTypeRule() ||
 				   context == grammarAccess.getSimple_type_specifierRule()) {
 					sequence_simple_type_specifier(context, (BoolType) semanticObject); 
+					return; 
+				}
+				else break;
+			case MyDslPackage.FUNCTION_DECLARATION:
+				if(context == grammarAccess.getFunctionDeclarationRule()) {
+					sequence_FunctionDeclaration(context, (FunctionDeclaration) semanticObject); 
 					return; 
 				}
 				else break;
@@ -46,9 +61,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
-			case MyDslPackage.MODEL:
-				if(context == grammarAccess.getModelRule()) {
-					sequence_Model(context, (Model) semanticObject); 
+			case MyDslPackage.PARAMETER:
+				if(context == grammarAccess.getParameterRule()) {
+					sequence_Parameter(context, (Parameter) semanticObject); 
 					return; 
 				}
 				else break;
@@ -88,10 +103,38 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     elements+=statement
+	 *     (funcoes+=FunctionDeclaration*)
 	 */
-	protected void sequence_Model(EObject context, Model semanticObject) {
+	protected void sequence_Body(EObject context, Body semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (type=Type name=ID (params+=Parameter params+=Parameter*)? escopo=statement)
+	 */
+	protected void sequence_FunctionDeclaration(EObject context, FunctionDeclaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (type=Type name=ID)
+	 */
+	protected void sequence_Parameter(EObject context, Parameter semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.SYMBOL__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.SYMBOL__TYPE));
+			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.SYMBOL__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.SYMBOL__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getParameterAccess().getTypeTypeParserRuleCall_1_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getParameterAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	
@@ -101,10 +144,10 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 */
 	protected void sequence_VarDecl(EObject context, VarDecl semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.VAR_DECL__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.VAR_DECL__TYPE));
-			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.VAR_DECL__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.VAR_DECL__NAME));
+			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.SYMBOL__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.SYMBOL__TYPE));
+			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.SYMBOL__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.SYMBOL__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);

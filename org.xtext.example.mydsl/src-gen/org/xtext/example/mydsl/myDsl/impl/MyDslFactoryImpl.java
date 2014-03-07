@@ -65,13 +65,17 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
     switch (eClass.getClassifierID())
     {
       case MyDslPackage.MODEL: return createModel();
-      case MyDslPackage.VAR_DECL: return createVarDecl();
+      case MyDslPackage.BODY: return createBody();
+      case MyDslPackage.FUNCTION_DECLARATION: return createFunctionDeclaration();
+      case MyDslPackage.SYMBOL: return createSymbol();
       case MyDslPackage.TYPE: return createType();
       case MyDslPackage.SIMPLE_TYPE_SPECIFIER: return createsimple_type_specifier();
       case MyDslPackage.STATEMENT: return createstatement();
       case MyDslPackage.SIMPLE_DECLARATION: return createsimple_declaration();
       case MyDslPackage.DECLARATION_STATEMENT: return createdeclaration_statement();
       case MyDslPackage.BLOCK_DECLARATION: return createblock_declaration();
+      case MyDslPackage.PARAMETER: return createParameter();
+      case MyDslPackage.VAR_DECL: return createVarDecl();
       case MyDslPackage.INT_TYPE: return createIntType();
       case MyDslPackage.BOOL_TYPE: return createBoolType();
       default:
@@ -95,10 +99,32 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public VarDecl createVarDecl()
+  public Body createBody()
   {
-    VarDeclImpl varDecl = new VarDeclImpl();
-    return varDecl;
+    BodyImpl body = new BodyImpl();
+    return body;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FunctionDeclaration createFunctionDeclaration()
+  {
+    FunctionDeclarationImpl functionDeclaration = new FunctionDeclarationImpl();
+    return functionDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Symbol createSymbol()
+  {
+    SymbolImpl symbol = new SymbolImpl();
+    return symbol;
   }
 
   /**
@@ -165,6 +191,28 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     block_declarationImpl block_declaration = new block_declarationImpl();
     return block_declaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Parameter createParameter()
+  {
+    ParameterImpl parameter = new ParameterImpl();
+    return parameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VarDecl createVarDecl()
+  {
+    VarDeclImpl varDecl = new VarDeclImpl();
+    return varDecl;
   }
 
   /**

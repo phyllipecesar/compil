@@ -16,19 +16,26 @@ generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
  */
 
 Model:
-	preprocessing_file
-	elements+=statement;
+ 	Body;
 
-
-VarDecl:
-	{VarDecl} type=Type name=ID
+Body:
+	{Body} preprocessing_file WS* new_line* (funcoes += FunctionDeclaration)*
 ;
+FunctionDeclaration:
+	{FunctionDeclaration} type=Type name=ID "(" 
+		(params+=Parameter  ("," params+=Parameter)* )?  ")" "{"new_line		
+		escopo=statement
+	"}";	
+Parameter returns Symbol:
+	{Parameter} type=Type name=ID;
+
+VarDecl returns Symbol:
+	{VarDecl} type=Type name=ID;
 
 Type:
-	simple_type_specifier
-;
+	simple_type_specifier;
 simple_type_specifier:
-	{IntType}"int" |
+	{IntType}"int"|
 	{BoolType} "bool";
 
 new_line:
