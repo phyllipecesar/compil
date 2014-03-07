@@ -14,6 +14,7 @@ generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
  */
 
 Model:
+	preprocessing_file
 	elements+=statement;
 
 
@@ -40,10 +41,9 @@ group:
 ;
 
 group_part:
-	pp_tokens? new_line |
+	// pp_tokens? new_line |
 	if_action |
-	control_line
-;
+	control_line;
 
 if_action:
 	if_group elif_groups? else_group? endif_line
@@ -283,7 +283,7 @@ control_line:
 '#line' pp_tokens new_line|
 '#error' pp_tokens? new_line|
 '#pragma' pp_tokens? new_line|
-'#' new_line;
+ '#'new_line;
 
 lparen:
 	'('

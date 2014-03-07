@@ -20,8 +20,10 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Model");
-		private final Assignment cElementsAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cElementsStatementParserRuleCall_0 = (RuleCall)cElementsAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cPreprocessing_fileParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Assignment cElementsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cElementsStatementParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
 		
 		/// *
 		// * SO FAR
@@ -33,14 +35,20 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		// * Lex.Token        [OK]
 		// *
 		// * / Model:
-		//	elements+=statement;
+		//	preprocessing_file elements+=statement;
 		public ParserRule getRule() { return rule; }
 
+		//preprocessing_file elements+=statement
+		public Group getGroup() { return cGroup; }
+
+		//preprocessing_file
+		public RuleCall getPreprocessing_fileParserRuleCall_0() { return cPreprocessing_fileParserRuleCall_0; }
+
 		//elements+=statement
-		public Assignment getElementsAssignment() { return cElementsAssignment; }
+		public Assignment getElementsAssignment_1() { return cElementsAssignment_1; }
 
 		//statement
-		public RuleCall getElementsStatementParserRuleCall_0() { return cElementsStatementParserRuleCall_0; }
+		public RuleCall getElementsStatementParserRuleCall_1_0() { return cElementsStatementParserRuleCall_1_0; }
 	}
 
 	public class VarDeclElements extends AbstractParserRuleElementFinder {
@@ -1995,19 +2003,17 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPragmaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final RuleCall cPp_tokensParserRuleCall_6_1 = (RuleCall)cGroup_6.eContents().get(1);
 		private final RuleCall cNew_lineParserRuleCall_6_2 = (RuleCall)cGroup_6.eContents().get(2);
-		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
-		private final Keyword cNumberSignKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final RuleCall cNew_lineParserRuleCall_7_1 = (RuleCall)cGroup_7.eContents().get(1);
+		private final RuleCall cNew_lineParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
 		//control_line:
 		//	"#include" pp_tokens new_line | "#define" IDENTIFIER replacement_list new_line | "#define" IDENTIFIER lparen
 		//	IDENTIFIER? ")" replacement_list new_line | "#undef" IDENTIFIER new_line | "#line" pp_tokens new_line | "#error"
-		//	pp_tokens? new_line | "#pragma" pp_tokens? new_line | "#" new_line;
+		//	pp_tokens? new_line | "#pragma" pp_tokens? new_line | new_line;
 		public ParserRule getRule() { return rule; }
 
 		//"#include" pp_tokens new_line | "#define" IDENTIFIER replacement_list new_line | "#define" IDENTIFIER lparen IDENTIFIER?
 		//")" replacement_list new_line | "#undef" IDENTIFIER new_line | "#line" pp_tokens new_line | "#error" pp_tokens?
-		//new_line | "#pragma" pp_tokens? new_line | "#" new_line
+		//new_line | "#pragma" pp_tokens? new_line | new_line
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"#include" pp_tokens new_line
@@ -2109,14 +2115,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//new_line
 		public RuleCall getNew_lineParserRuleCall_6_2() { return cNew_lineParserRuleCall_6_2; }
 
-		//"#" new_line
-		public Group getGroup_7() { return cGroup_7; }
-
-		//"#"
-		public Keyword getNumberSignKeyword_7_0() { return cNumberSignKeyword_7_0; }
-
 		//new_line
-		public RuleCall getNew_lineParserRuleCall_7_1() { return cNew_lineParserRuleCall_7_1; }
+		public RuleCall getNew_lineParserRuleCall_7() { return cNew_lineParserRuleCall_7; }
 	}
 
 	public class LparenElements extends AbstractParserRuleElementFinder {
@@ -2330,7 +2330,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	// * Lex.Token        [OK]
 	// *
 	// * / Model:
-	//	elements+=statement;
+	//	preprocessing_file elements+=statement;
 	public ModelElements getModelAccess() {
 		return (pModel != null) ? pModel : (pModel = new ModelElements());
 	}
@@ -2998,7 +2998,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	//control_line:
 	//	"#include" pp_tokens new_line | "#define" IDENTIFIER replacement_list new_line | "#define" IDENTIFIER lparen
 	//	IDENTIFIER? ")" replacement_list new_line | "#undef" IDENTIFIER new_line | "#line" pp_tokens new_line | "#error"
-	//	pp_tokens? new_line | "#pragma" pp_tokens? new_line | "#" new_line;
+	//	pp_tokens? new_line | "#pragma" pp_tokens? new_line | new_line;
 	public Control_lineElements getControl_lineAccess() {
 		return (pControl_line != null) ? pControl_line : (pControl_line = new Control_lineElements());
 	}

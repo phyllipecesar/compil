@@ -25,6 +25,8 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if(ruleCall.getRule() == grammarAccess.getNew_lineRule())
 			return getnew_lineToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getPreprocessing_fileRule())
+			return getpreprocessing_fileToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
@@ -37,6 +39,17 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		if (node != null)
 			return getTokenText(node);
 		return "\n";
+	}
+	
+	/**
+	 * preprocessing_file:
+	 * 	group?
+	 * ;
+	 */
+	protected String getpreprocessing_fileToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "";
 	}
 	
 	@Override

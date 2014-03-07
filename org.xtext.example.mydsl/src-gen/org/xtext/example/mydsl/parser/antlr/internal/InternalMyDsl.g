@@ -84,24 +84,35 @@ ruleModel returns [EObject current=null]
     }
     @after { leaveRule(); }:
 (
+	{ 
+	  /* */ 
+	}
+    { 
+        newCompositeNode(grammarAccess.getModelAccess().getPreprocessing_fileParserRuleCall_0()); 
+    }
+rulepreprocessing_file
+    { 
+        afterParserOrEnumRuleCall();
+    }
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getElementsStatementParserRuleCall_0()); 
+	        newCompositeNode(grammarAccess.getModelAccess().getElementsStatementParserRuleCall_1_0()); 
 	    }
-		lv_elements_0_0=rulestatement		{
+		lv_elements_1_0=rulestatement		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getModelRule());
 	        }
        		add(
        			$current, 
        			"elements",
-        		lv_elements_0_0, 
+        		lv_elements_1_0, 
         		"statement");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)
+))
 ;
 
 
@@ -286,6 +297,36 @@ rulenew_line returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
     ;
 
 
+
+
+
+// Entry rule entryRulepreprocessing_file
+entryRulepreprocessing_file returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getPreprocessing_fileRule()); } 
+	 iv_rulepreprocessing_file=rulepreprocessing_file 
+	 { $current=$iv_rulepreprocessing_file.current.getText(); }  
+	 EOF 
+;
+
+// Rule preprocessing_file
+rulepreprocessing_file returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getPreprocessing_fileAccess().getGroupParserRuleCall()); 
+    }
+    this_group_0=rulegroup    {
+		$current.merge(this_group_0);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)?
+    ;
 
 
 
@@ -3729,24 +3770,18 @@ rulecontrol_line returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
         afterParserOrEnumRuleCall();
     }
 )
-    |(
-	kw='#' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getControl_lineAccess().getNumberSignKeyword_7_0()); 
-    }
-
+    |
     { 
-        newCompositeNode(grammarAccess.getControl_lineAccess().getNew_lineParserRuleCall_7_1()); 
+        newCompositeNode(grammarAccess.getControl_lineAccess().getNew_lineParserRuleCall_7()); 
     }
-    this_new_line_27=rulenew_line    {
-		$current.merge(this_new_line_27);
+    this_new_line_26=rulenew_line    {
+		$current.merge(this_new_line_26);
     }
 
     { 
         afterParserOrEnumRuleCall();
     }
-))
+)
     ;
 
 
