@@ -20,7 +20,7 @@ Greeting:
 	'Hello' name=ID '!';
 
 new_line:
-	'\n'
+	'\n' | '\r\n'
 ;
 preprocessing_file:
 	group?
@@ -52,9 +52,34 @@ elif_group:
 
 
 // TODO(constant_expression)
-constant_expression: '==';
+constant_expression:
+	conditional_expression;
+	
+conditional_expression:
+	logical_or_expression |
+	logical_or_expression '?' expression ':' assignment_expression;
+
+logical_or_expression:
+	'==logical==';
+
+expression:
+	'==expression==';
+
+assignment_expression:
+	'==assignment==';
+
 // TODO(): preprocessing_token
-preprocessing_token: '!=';
+
+terminal HEADERNAME:
+	STRING|'<'('a'..'z'|'A'..'Z'|'.')+'>'
+;
+preprocessing_token: 
+	IDENTIFIER|
+	HEADERNAME|
+	PPNUMBER|
+//	CHARLITERAL|
+	PPOPorPUNC 
+;
 else_group:
 	'#else' new_line group?
 ;

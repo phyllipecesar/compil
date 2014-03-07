@@ -73,14 +73,22 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class New_lineElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "new_line");
-		private final Keyword cControl000aKeyword = (Keyword)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cControl000aKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cControl000dControl000aKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
 		//new_line:
-		//	"\n";
+		//	"\n" | "\r\n";
 		public ParserRule getRule() { return rule; }
 
+		//"\n" | "\r\n"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
 		//"\n"
-		public Keyword getControl000aKeyword() { return cControl000aKeyword; }
+		public Keyword getControl000aKeyword_0() { return cControl000aKeyword_0; }
+
+		//"\r\n"
+		public Keyword getControl000dControl000aKeyword_1() { return cControl000dControl000aKeyword_1; }
 	}
 
 	public class Preprocessing_fileElements extends AbstractParserRuleElementFinder {
@@ -295,15 +303,30 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class Preprocessing_tokenElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "preprocessing_token");
-		private final Keyword cExclamationMarkEqualsSignKeyword = (Keyword)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cIDENTIFIERTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cHEADERNAMETerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cPPNUMBERTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cPPOPorPUNCTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
-		//// TODO(): preprocessing_token
 		//preprocessing_token:
-		//	"!=";
+		//	IDENTIFIER | HEADERNAME | PPNUMBER | PPOPorPUNC;
 		public ParserRule getRule() { return rule; }
 
-		//"!="
-		public Keyword getExclamationMarkEqualsSignKeyword() { return cExclamationMarkEqualsSignKeyword; }
+		//IDENTIFIER | HEADERNAME | PPNUMBER | PPOPorPUNC
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//IDENTIFIER
+		public RuleCall getIDENTIFIERTerminalRuleCall_0() { return cIDENTIFIERTerminalRuleCall_0; }
+
+		//HEADERNAME
+		public RuleCall getHEADERNAMETerminalRuleCall_1() { return cHEADERNAMETerminalRuleCall_1; }
+
+		//PPNUMBER
+		public RuleCall getPPNUMBERTerminalRuleCall_2() { return cPPNUMBERTerminalRuleCall_2; }
+
+		//PPOPorPUNC
+		public RuleCall getPPOPorPUNCTerminalRuleCall_3() { return cPPOPorPUNCTerminalRuleCall_3; }
 	}
 
 	public class Else_groupElements extends AbstractParserRuleElementFinder {
@@ -607,6 +630,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private Elif_groupsElements pElif_groups;
 	private Elif_groupElements pElif_group;
 	private Constant_expressionElements pConstant_expression;
+	private TerminalRule tHEADERNAME;
 	private Preprocessing_tokenElements pPreprocessing_token;
 	private Else_groupElements pElse_group;
 	private Endif_lineElements pEndif_line;
@@ -693,7 +717,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//new_line:
-	//	"\n";
+	//	"\n" | "\r\n";
 	public New_lineElements getNew_lineAccess() {
 		return (pNew_line != null) ? pNew_line : (pNew_line = new New_lineElements());
 	}
@@ -785,8 +809,14 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// TODO(): preprocessing_token
+	//terminal HEADERNAME:
+	//	STRING | "<" ("a".."z" | "A".."Z" | ".")+ ">";
+	public TerminalRule getHEADERNAMERule() {
+		return (tHEADERNAME != null) ? tHEADERNAME : (tHEADERNAME = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "HEADERNAME"));
+	} 
+
 	//preprocessing_token:
-	//	"!=";
+	//	IDENTIFIER | HEADERNAME | PPNUMBER | PPOPorPUNC;
 	public Preprocessing_tokenElements getPreprocessing_tokenAccess() {
 		return (pPreprocessing_token != null) ? pPreprocessing_token : (pPreprocessing_token = new Preprocessing_tokenElements());
 	}

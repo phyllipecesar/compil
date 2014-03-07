@@ -69,7 +69,17 @@ assignment_expression:
 	'==assignment==';
 
 // TODO(): preprocessing_token
-preprocessing_token: '!=';
+
+terminal HEADERNAME:
+	STRING|'<'('a'..'z'|'A'..'Z'|'.')+'>'
+;
+preprocessing_token: 
+	IDENTIFIER|
+	HEADERNAME|
+	PPNUMBER|
+//	CHARLITERAL|
+	PPOPorPUNC 
+;
 else_group:
 	'#else' new_line group?
 ;
