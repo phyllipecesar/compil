@@ -78,15 +78,49 @@ equality_expression:
 	relational_expression (('==' | '!=') relational_expression)*;
 
 relational_expression:
-	'==rel==';
+	shift_expression (('<' | '>' | '<=' | '>=') shift_expression)*;
+
+shift_expression:
+	additive_expression (('<<' | '>>') additive_expression)*;
+
+additive_expression:
+//	multiplicative_expression (('+' | '-') multiplicative_expression)*;
+//TODO() make production above work! and swap the one below with it
+	cast_expression (('.*' | '->*') cast_expression)*;
+
+//multiplicative_expression:
+//	pm_expression (('*' | '/' | '%') pm_expression)*;
+//TODO() make production above work!
+
+//pm_expression:
+//	cast_expression (('.*' | '->*') cast_expression)*;
+//TODO() after the two productions above work, this one can be uncommented
+
+cast_expression:
+//	('(' ID ')')* unary_expression;
+//TODO() make this above work!
+	('++' | '--') unary_expression;
+
+unary_expression:
+	'==unary==';
+//	postfix_expression |
+//	new_expression |
+//	delete_expression;
+//
+//postfix_expression:
+//	'postfix==';
+//
+//new_expression:
+//	'new==';
+//
+//delete_expression:
+//	'delete==';
 
 expression:
 	'==expression==';
 
 assignment_expression:
 	'==assignment==';
-
-// TODO(): preprocessing_token
 
 terminal HEADERNAME:
 	STRING|'<'('a'..'z'|'A'..'Z'|'.')+'>'
