@@ -179,18 +179,18 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCHARACTER_LITERALTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cFLOATING_LITERALTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cSTRING_LITERALTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final Alternatives cAlternatives_4 = (Alternatives)cAlternatives.eContents().get(4);
-		private final Keyword cTrueKeyword_4_0 = (Keyword)cAlternatives_4.eContents().get(0);
-		private final Keyword cFalseKeyword_4_1 = (Keyword)cAlternatives_4.eContents().get(1);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Alternatives cAlternatives_4_0 = (Alternatives)cGroup_4.eContents().get(0);
+		private final Keyword cTrueKeyword_4_0_0 = (Keyword)cAlternatives_4_0.eContents().get(0);
+		private final Keyword cFalseKeyword_4_0_1 = (Keyword)cAlternatives_4_0.eContents().get(1);
+		private final Keyword cNullptrKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
 		
 		//// lex.literal.kinds
-		////POINTER_LITERAL
-		////USER_DEFINED_LITERAL
 		//Literal:
-		//	INT | CHARACTER_LITERAL | FLOATING_LITERAL | STRING_LITERAL | ("true" | "false");
+		//	INT | CHARACTER_LITERAL | FLOATING_LITERAL | STRING_LITERAL | ("true" | "false") "nullptr";
 		public ParserRule getRule() { return rule; }
 
-		//INT | CHARACTER_LITERAL | FLOATING_LITERAL | STRING_LITERAL | ("true" | "false")
+		//INT | CHARACTER_LITERAL | FLOATING_LITERAL | STRING_LITERAL | ("true" | "false") "nullptr"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//INT
@@ -205,14 +205,838 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 		//STRING_LITERAL
 		public RuleCall getSTRING_LITERALTerminalRuleCall_3() { return cSTRING_LITERALTerminalRuleCall_3; }
 
+		//("true" | "false") "nullptr"
+		public Group getGroup_4() { return cGroup_4; }
+
 		//"true" | "false"
-		public Alternatives getAlternatives_4() { return cAlternatives_4; }
+		public Alternatives getAlternatives_4_0() { return cAlternatives_4_0; }
 
 		//"true"
-		public Keyword getTrueKeyword_4_0() { return cTrueKeyword_4_0; }
+		public Keyword getTrueKeyword_4_0_0() { return cTrueKeyword_4_0_0; }
 
 		//"false"
-		public Keyword getFalseKeyword_4_1() { return cFalseKeyword_4_1; }
+		public Keyword getFalseKeyword_4_0_1() { return cFalseKeyword_4_0_1; }
+
+		//"nullptr"
+		public Keyword getNullptrKeyword_4_1() { return cNullptrKeyword_4_1; }
+	}
+
+	public class OperatorFunctionIdElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OperatorFunctionId");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cOperatorKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cOverloadableOperatorParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cLessThanSignKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final RuleCall cTemplateArgumentParserRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final Keyword cGreaterThanSignKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		
+		//// over.oper
+		//OperatorFunctionId:
+		//	"operator" OverloadableOperator ("<" TemplateArgument* ">")?;
+		public ParserRule getRule() { return rule; }
+
+		//"operator" OverloadableOperator ("<" TemplateArgument* ">")?
+		public Group getGroup() { return cGroup; }
+
+		//"operator"
+		public Keyword getOperatorKeyword_0() { return cOperatorKeyword_0; }
+
+		//OverloadableOperator
+		public RuleCall getOverloadableOperatorParserRuleCall_1() { return cOverloadableOperatorParserRuleCall_1; }
+
+		//("<" TemplateArgument* ">")?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//"<"
+		public Keyword getLessThanSignKeyword_2_0() { return cLessThanSignKeyword_2_0; }
+
+		//TemplateArgument*
+		public RuleCall getTemplateArgumentParserRuleCall_2_1() { return cTemplateArgumentParserRuleCall_2_1; }
+
+		//">"
+		public Keyword getGreaterThanSignKeyword_2_2() { return cGreaterThanSignKeyword_2_2; }
+	}
+
+	public class OverloadableOperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OverloadableOperator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cNewKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cDeleteKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Keyword cNewKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Keyword cRightSquareBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Keyword cDeleteKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Keyword cRightSquareBracketKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final Keyword cPlusSignKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cHyphenMinusKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Keyword cAsteriskKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Keyword cSolidusKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
+		private final Keyword cPercentSignKeyword_8 = (Keyword)cAlternatives.eContents().get(8);
+		private final Keyword cCircumflexAccentKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
+		private final Keyword cAmpersandKeyword_10 = (Keyword)cAlternatives.eContents().get(10);
+		private final Keyword cVerticalLineKeyword_11 = (Keyword)cAlternatives.eContents().get(11);
+		private final Keyword cTildeKeyword_12 = (Keyword)cAlternatives.eContents().get(12);
+		private final Keyword cExclamationMarkKeyword_13 = (Keyword)cAlternatives.eContents().get(13);
+		private final Keyword cEqualsSignKeyword_14 = (Keyword)cAlternatives.eContents().get(14);
+		private final Keyword cLessThanSignKeyword_15 = (Keyword)cAlternatives.eContents().get(15);
+		private final Keyword cGreaterThanSignKeyword_16 = (Keyword)cAlternatives.eContents().get(16);
+		private final Keyword cPlusSignEqualsSignKeyword_17 = (Keyword)cAlternatives.eContents().get(17);
+		private final Keyword cHyphenMinusEqualsSignKeyword_18 = (Keyword)cAlternatives.eContents().get(18);
+		private final Keyword cAsteriskEqualsSignKeyword_19 = (Keyword)cAlternatives.eContents().get(19);
+		private final Keyword cSolidusEqualsSignKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
+		private final Keyword cPercentSignEqualsSignKeyword_21 = (Keyword)cAlternatives.eContents().get(21);
+		private final Keyword cCircumflexAccentEqualsSignKeyword_22 = (Keyword)cAlternatives.eContents().get(22);
+		private final Keyword cAmpersandEqualsSignKeyword_23 = (Keyword)cAlternatives.eContents().get(23);
+		private final Keyword cVerticalLineEqualsSignKeyword_24 = (Keyword)cAlternatives.eContents().get(24);
+		private final Keyword cLessThanSignLessThanSignKeyword_25 = (Keyword)cAlternatives.eContents().get(25);
+		private final Keyword cGreaterThanSignGreaterThanSignKeyword_26 = (Keyword)cAlternatives.eContents().get(26);
+		private final Keyword cGreaterThanSignGreaterThanSignEqualsSignKeyword_27 = (Keyword)cAlternatives.eContents().get(27);
+		private final Keyword cLessThanSignLessThanSignEqualsSignKeyword_28 = (Keyword)cAlternatives.eContents().get(28);
+		private final Keyword cEqualsSignEqualsSignKeyword_29 = (Keyword)cAlternatives.eContents().get(29);
+		private final Keyword cExclamationMarkEqualsSignKeyword_30 = (Keyword)cAlternatives.eContents().get(30);
+		private final Keyword cLessThanSignEqualsSignKeyword_31 = (Keyword)cAlternatives.eContents().get(31);
+		private final Keyword cGreaterThanSignEqualsSignKeyword_32 = (Keyword)cAlternatives.eContents().get(32);
+		private final Keyword cAmpersandAmpersandKeyword_33 = (Keyword)cAlternatives.eContents().get(33);
+		private final Keyword cVerticalLineVerticalLineKeyword_34 = (Keyword)cAlternatives.eContents().get(34);
+		private final Keyword cPlusSignPlusSignKeyword_35 = (Keyword)cAlternatives.eContents().get(35);
+		private final Keyword cHyphenMinusHyphenMinusKeyword_36 = (Keyword)cAlternatives.eContents().get(36);
+		private final Keyword cCommaKeyword_37 = (Keyword)cAlternatives.eContents().get(37);
+		private final Keyword cHyphenMinusGreaterThanSignAsteriskKeyword_38 = (Keyword)cAlternatives.eContents().get(38);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_39 = (Keyword)cAlternatives.eContents().get(39);
+		private final Keyword cLeftParenthesisRightParenthesisKeyword_40 = (Keyword)cAlternatives.eContents().get(40);
+		private final Keyword cLeftSquareBracketRightSquareBracketKeyword_41 = (Keyword)cAlternatives.eContents().get(41);
+		
+		//OverloadableOperator:
+		//	"new" | "delete" | "new" "[" "]" | "delete" "[" "]" | "+" | "-" | "*" | "/" | "%" | "^" | "&" | "|" | "~" | "!" | "="
+		//	| "<" | ">" | "+=" | "-=" | "*=" | "/=" | "%=" | "^=" | "&=" | "|=" | "<<" | ">>" | ">>=" | "<<=" | "==" | "!=" |
+		//	"<=" | ">=" | "&&" | "||" | "++" | "--" | "," | "->*" | "->" | "()" | "[]";
+		public ParserRule getRule() { return rule; }
+
+		//"new" | "delete" | "new" "[" "]" | "delete" "[" "]" | "+" | "-" | "*" | "/" | "%" | "^" | "&" | "|" | "~" | "!" | "=" |
+		//"<" | ">" | "+=" | "-=" | "*=" | "/=" | "%=" | "^=" | "&=" | "|=" | "<<" | ">>" | ">>=" | "<<=" | "==" | "!=" | "<=" |
+		//">=" | "&&" | "||" | "++" | "--" | "," | "->*" | "->" | "()" | "[]"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"new"
+		public Keyword getNewKeyword_0() { return cNewKeyword_0; }
+
+		//"delete"
+		public Keyword getDeleteKeyword_1() { return cDeleteKeyword_1; }
+
+		//"new" "[" "]"
+		public Group getGroup_2() { return cGroup_2; }
+
+		//"new"
+		public Keyword getNewKeyword_2_0() { return cNewKeyword_2_0; }
+
+		//"["
+		public Keyword getLeftSquareBracketKeyword_2_1() { return cLeftSquareBracketKeyword_2_1; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_2_2() { return cRightSquareBracketKeyword_2_2; }
+
+		//"delete" "[" "]"
+		public Group getGroup_3() { return cGroup_3; }
+
+		//"delete"
+		public Keyword getDeleteKeyword_3_0() { return cDeleteKeyword_3_0; }
+
+		//"["
+		public Keyword getLeftSquareBracketKeyword_3_1() { return cLeftSquareBracketKeyword_3_1; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_3_2() { return cRightSquareBracketKeyword_3_2; }
+
+		//"+"
+		public Keyword getPlusSignKeyword_4() { return cPlusSignKeyword_4; }
+
+		//"-"
+		public Keyword getHyphenMinusKeyword_5() { return cHyphenMinusKeyword_5; }
+
+		//"*"
+		public Keyword getAsteriskKeyword_6() { return cAsteriskKeyword_6; }
+
+		//"/"
+		public Keyword getSolidusKeyword_7() { return cSolidusKeyword_7; }
+
+		//"%"
+		public Keyword getPercentSignKeyword_8() { return cPercentSignKeyword_8; }
+
+		//"^"
+		public Keyword getCircumflexAccentKeyword_9() { return cCircumflexAccentKeyword_9; }
+
+		//"&"
+		public Keyword getAmpersandKeyword_10() { return cAmpersandKeyword_10; }
+
+		//"|"
+		public Keyword getVerticalLineKeyword_11() { return cVerticalLineKeyword_11; }
+
+		//"~"
+		public Keyword getTildeKeyword_12() { return cTildeKeyword_12; }
+
+		//"!"
+		public Keyword getExclamationMarkKeyword_13() { return cExclamationMarkKeyword_13; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_14() { return cEqualsSignKeyword_14; }
+
+		//"<"
+		public Keyword getLessThanSignKeyword_15() { return cLessThanSignKeyword_15; }
+
+		//">"
+		public Keyword getGreaterThanSignKeyword_16() { return cGreaterThanSignKeyword_16; }
+
+		//"+="
+		public Keyword getPlusSignEqualsSignKeyword_17() { return cPlusSignEqualsSignKeyword_17; }
+
+		//"-="
+		public Keyword getHyphenMinusEqualsSignKeyword_18() { return cHyphenMinusEqualsSignKeyword_18; }
+
+		//"*="
+		public Keyword getAsteriskEqualsSignKeyword_19() { return cAsteriskEqualsSignKeyword_19; }
+
+		//"/="
+		public Keyword getSolidusEqualsSignKeyword_20() { return cSolidusEqualsSignKeyword_20; }
+
+		//"%="
+		public Keyword getPercentSignEqualsSignKeyword_21() { return cPercentSignEqualsSignKeyword_21; }
+
+		//"^="
+		public Keyword getCircumflexAccentEqualsSignKeyword_22() { return cCircumflexAccentEqualsSignKeyword_22; }
+
+		//"&="
+		public Keyword getAmpersandEqualsSignKeyword_23() { return cAmpersandEqualsSignKeyword_23; }
+
+		//"|="
+		public Keyword getVerticalLineEqualsSignKeyword_24() { return cVerticalLineEqualsSignKeyword_24; }
+
+		//"<<"
+		public Keyword getLessThanSignLessThanSignKeyword_25() { return cLessThanSignLessThanSignKeyword_25; }
+
+		//">>"
+		public Keyword getGreaterThanSignGreaterThanSignKeyword_26() { return cGreaterThanSignGreaterThanSignKeyword_26; }
+
+		//">>="
+		public Keyword getGreaterThanSignGreaterThanSignEqualsSignKeyword_27() { return cGreaterThanSignGreaterThanSignEqualsSignKeyword_27; }
+
+		//"<<="
+		public Keyword getLessThanSignLessThanSignEqualsSignKeyword_28() { return cLessThanSignLessThanSignEqualsSignKeyword_28; }
+
+		//"=="
+		public Keyword getEqualsSignEqualsSignKeyword_29() { return cEqualsSignEqualsSignKeyword_29; }
+
+		//"!="
+		public Keyword getExclamationMarkEqualsSignKeyword_30() { return cExclamationMarkEqualsSignKeyword_30; }
+
+		//"<="
+		public Keyword getLessThanSignEqualsSignKeyword_31() { return cLessThanSignEqualsSignKeyword_31; }
+
+		//">="
+		public Keyword getGreaterThanSignEqualsSignKeyword_32() { return cGreaterThanSignEqualsSignKeyword_32; }
+
+		//"&&"
+		public Keyword getAmpersandAmpersandKeyword_33() { return cAmpersandAmpersandKeyword_33; }
+
+		//"||"
+		public Keyword getVerticalLineVerticalLineKeyword_34() { return cVerticalLineVerticalLineKeyword_34; }
+
+		//"++"
+		public Keyword getPlusSignPlusSignKeyword_35() { return cPlusSignPlusSignKeyword_35; }
+
+		//"--"
+		public Keyword getHyphenMinusHyphenMinusKeyword_36() { return cHyphenMinusHyphenMinusKeyword_36; }
+
+		//","
+		public Keyword getCommaKeyword_37() { return cCommaKeyword_37; }
+
+		//"->*"
+		public Keyword getHyphenMinusGreaterThanSignAsteriskKeyword_38() { return cHyphenMinusGreaterThanSignAsteriskKeyword_38; }
+
+		//"->"
+		public Keyword getHyphenMinusGreaterThanSignKeyword_39() { return cHyphenMinusGreaterThanSignKeyword_39; }
+
+		//"()"
+		public Keyword getLeftParenthesisRightParenthesisKeyword_40() { return cLeftParenthesisRightParenthesisKeyword_40; }
+
+		//"[]"
+		public Keyword getLeftSquareBracketRightSquareBracketKeyword_41() { return cLeftSquareBracketRightSquareBracketKeyword_41; }
+	}
+
+	public class LiteralOperatorIdElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LiteralOperatorId");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cOperatorKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cQuotationMarkKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cQuotationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//LiteralOperatorId:
+		//	"operator" "\"" "\"";
+		public ParserRule getRule() { return rule; }
+
+		//"operator" "\"" "\""
+		public Group getGroup() { return cGroup; }
+
+		//"operator"
+		public Keyword getOperatorKeyword_0() { return cOperatorKeyword_0; }
+
+		//"\""
+		public Keyword getQuotationMarkKeyword_1() { return cQuotationMarkKeyword_1; }
+
+		//"\""
+		public Keyword getQuotationMarkKeyword_2() { return cQuotationMarkKeyword_2; }
+	}
+
+	public class TemplateDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TemplateDeclaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTemplateKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLessThanSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final RuleCall cTemplateParameterListParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Keyword cGreaterThanSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cDeclarationParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		
+		//// temp
+		//TemplateDeclaration:
+		//	"template" "<" TemplateParameterList ">" Declaration;
+		public ParserRule getRule() { return rule; }
+
+		//"template" "<" TemplateParameterList ">" Declaration
+		public Group getGroup() { return cGroup; }
+
+		//"template"
+		public Keyword getTemplateKeyword_0() { return cTemplateKeyword_0; }
+
+		//"<"
+		public Keyword getLessThanSignKeyword_1() { return cLessThanSignKeyword_1; }
+
+		//TemplateParameterList
+		public RuleCall getTemplateParameterListParserRuleCall_2() { return cTemplateParameterListParserRuleCall_2; }
+
+		//">"
+		public Keyword getGreaterThanSignKeyword_3() { return cGreaterThanSignKeyword_3; }
+
+		//Declaration
+		public RuleCall getDeclarationParserRuleCall_4() { return cDeclarationParserRuleCall_4; }
+	}
+
+	public class TemplateParameterListElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TemplateParameterList");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cTemplateParameterParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cTemplateParameterParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		
+		//TemplateParameterList:
+		//	TemplateParameter ("," TemplateParameter)*;
+		public ParserRule getRule() { return rule; }
+
+		//TemplateParameter ("," TemplateParameter)*
+		public Group getGroup() { return cGroup; }
+
+		//TemplateParameter
+		public RuleCall getTemplateParameterParserRuleCall_0() { return cTemplateParameterParserRuleCall_0; }
+
+		//("," TemplateParameter)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//","
+		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
+
+		//TemplateParameter
+		public RuleCall getTemplateParameterParserRuleCall_1_1() { return cTemplateParameterParserRuleCall_1_1; }
+	}
+
+	public class TemplateParameterElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TemplateParameter");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cTypeParameterParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cParameterDeclarationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//// temp.param
+		//TemplateParameter:
+		//	TypeParameter | ParameterDeclaration;
+		public ParserRule getRule() { return rule; }
+
+		//TypeParameter | ParameterDeclaration
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//TypeParameter
+		public RuleCall getTypeParameterParserRuleCall_0() { return cTypeParameterParserRuleCall_0; }
+
+		//ParameterDeclaration
+		public RuleCall getParameterDeclarationParserRuleCall_1() { return cParameterDeclarationParserRuleCall_1; }
+	}
+
+	public class TypeParameterElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TypeParameter");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cClassKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Alternatives cAlternatives_0_1 = (Alternatives)cGroup_0.eContents().get(1);
+		private final Group cGroup_0_1_0 = (Group)cAlternatives_0_1.eContents().get(0);
+		private final Keyword cFullStopFullStopFullStopKeyword_0_1_0_0 = (Keyword)cGroup_0_1_0.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_0_1_0_1 = (RuleCall)cGroup_0_1_0.eContents().get(1);
+		private final Group cGroup_0_1_1 = (Group)cAlternatives_0_1.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0_1_1_0 = (RuleCall)cGroup_0_1_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_0_1_1_1 = (Keyword)cGroup_0_1_1.eContents().get(1);
+		private final RuleCall cTypeIdParserRuleCall_0_1_1_2 = (RuleCall)cGroup_0_1_1.eContents().get(2);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cTypenameKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
+		private final Group cGroup_1_1_0 = (Group)cAlternatives_1_1.eContents().get(0);
+		private final Keyword cFullStopFullStopFullStopKeyword_1_1_0_0 = (Keyword)cGroup_1_1_0.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_1_0_1 = (RuleCall)cGroup_1_1_0.eContents().get(1);
+		private final Group cGroup_1_1_1 = (Group)cAlternatives_1_1.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_1_1_1_0 = (RuleCall)cGroup_1_1_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1_1_1_1 = (Keyword)cGroup_1_1_1.eContents().get(1);
+		private final RuleCall cTypeIdParserRuleCall_1_1_1_2 = (RuleCall)cGroup_1_1_1.eContents().get(2);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Keyword cTemplateKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cLessThanSignKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final RuleCall cTemplateParameterListParserRuleCall_2_2 = (RuleCall)cGroup_2.eContents().get(2);
+		private final Keyword cGreaterThanSignKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
+		private final Keyword cClassKeyword_2_4 = (Keyword)cGroup_2.eContents().get(4);
+		private final Alternatives cAlternatives_2_5 = (Alternatives)cGroup_2.eContents().get(5);
+		private final Group cGroup_2_5_0 = (Group)cAlternatives_2_5.eContents().get(0);
+		private final Keyword cFullStopFullStopFullStopKeyword_2_5_0_0 = (Keyword)cGroup_2_5_0.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_2_5_0_1 = (RuleCall)cGroup_2_5_0.eContents().get(1);
+		private final Group cGroup_2_5_1 = (Group)cAlternatives_2_5.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_2_5_1_0 = (RuleCall)cGroup_2_5_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_2_5_1_1 = (Keyword)cGroup_2_5_1.eContents().get(1);
+		private final RuleCall cIdExpressionParserRuleCall_2_5_1_2 = (RuleCall)cGroup_2_5_1.eContents().get(2);
+		
+		//TypeParameter:
+		//	"class" ("..."? ID? | ID? "=" TypeId) | "typename" ("..."? ID? | ID? "=" TypeId) | "template" "<"
+		//	TemplateParameterList ">" "class" ("..."? ID? | ID? "=" IdExpression);
+		public ParserRule getRule() { return rule; }
+
+		//"class" ("..."? ID? | ID? "=" TypeId) | "typename" ("..."? ID? | ID? "=" TypeId) | "template" "<" TemplateParameterList
+		//">" "class" ("..."? ID? | ID? "=" IdExpression)
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"class" ("..."? ID? | ID? "=" TypeId)
+		public Group getGroup_0() { return cGroup_0; }
+
+		//"class"
+		public Keyword getClassKeyword_0_0() { return cClassKeyword_0_0; }
+
+		//"..."? ID? | ID? "=" TypeId
+		public Alternatives getAlternatives_0_1() { return cAlternatives_0_1; }
+
+		//"..."? ID?
+		public Group getGroup_0_1_0() { return cGroup_0_1_0; }
+
+		//"..."?
+		public Keyword getFullStopFullStopFullStopKeyword_0_1_0_0() { return cFullStopFullStopFullStopKeyword_0_1_0_0; }
+
+		//ID?
+		public RuleCall getIDTerminalRuleCall_0_1_0_1() { return cIDTerminalRuleCall_0_1_0_1; }
+
+		//ID? "=" TypeId
+		public Group getGroup_0_1_1() { return cGroup_0_1_1; }
+
+		//ID?
+		public RuleCall getIDTerminalRuleCall_0_1_1_0() { return cIDTerminalRuleCall_0_1_1_0; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_0_1_1_1() { return cEqualsSignKeyword_0_1_1_1; }
+
+		//TypeId
+		public RuleCall getTypeIdParserRuleCall_0_1_1_2() { return cTypeIdParserRuleCall_0_1_1_2; }
+
+		//"typename" ("..."? ID? | ID? "=" TypeId)
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"typename"
+		public Keyword getTypenameKeyword_1_0() { return cTypenameKeyword_1_0; }
+
+		//"..."? ID? | ID? "=" TypeId
+		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
+
+		//"..."? ID?
+		public Group getGroup_1_1_0() { return cGroup_1_1_0; }
+
+		//"..."?
+		public Keyword getFullStopFullStopFullStopKeyword_1_1_0_0() { return cFullStopFullStopFullStopKeyword_1_1_0_0; }
+
+		//ID?
+		public RuleCall getIDTerminalRuleCall_1_1_0_1() { return cIDTerminalRuleCall_1_1_0_1; }
+
+		//ID? "=" TypeId
+		public Group getGroup_1_1_1() { return cGroup_1_1_1; }
+
+		//ID?
+		public RuleCall getIDTerminalRuleCall_1_1_1_0() { return cIDTerminalRuleCall_1_1_1_0; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_1_1_1_1() { return cEqualsSignKeyword_1_1_1_1; }
+
+		//TypeId
+		public RuleCall getTypeIdParserRuleCall_1_1_1_2() { return cTypeIdParserRuleCall_1_1_1_2; }
+
+		//"template" "<" TemplateParameterList ">" "class" ("..."? ID? | ID? "=" IdExpression)
+		public Group getGroup_2() { return cGroup_2; }
+
+		//"template"
+		public Keyword getTemplateKeyword_2_0() { return cTemplateKeyword_2_0; }
+
+		//"<"
+		public Keyword getLessThanSignKeyword_2_1() { return cLessThanSignKeyword_2_1; }
+
+		//TemplateParameterList
+		public RuleCall getTemplateParameterListParserRuleCall_2_2() { return cTemplateParameterListParserRuleCall_2_2; }
+
+		//">"
+		public Keyword getGreaterThanSignKeyword_2_3() { return cGreaterThanSignKeyword_2_3; }
+
+		//"class"
+		public Keyword getClassKeyword_2_4() { return cClassKeyword_2_4; }
+
+		//"..."? ID? | ID? "=" IdExpression
+		public Alternatives getAlternatives_2_5() { return cAlternatives_2_5; }
+
+		//"..."? ID?
+		public Group getGroup_2_5_0() { return cGroup_2_5_0; }
+
+		//"..."?
+		public Keyword getFullStopFullStopFullStopKeyword_2_5_0_0() { return cFullStopFullStopFullStopKeyword_2_5_0_0; }
+
+		//ID?
+		public RuleCall getIDTerminalRuleCall_2_5_0_1() { return cIDTerminalRuleCall_2_5_0_1; }
+
+		//ID? "=" IdExpression
+		public Group getGroup_2_5_1() { return cGroup_2_5_1; }
+
+		//ID?
+		public RuleCall getIDTerminalRuleCall_2_5_1_0() { return cIDTerminalRuleCall_2_5_1_0; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_2_5_1_1() { return cEqualsSignKeyword_2_5_1_1; }
+
+		//IdExpression
+		public RuleCall getIdExpressionParserRuleCall_2_5_1_2() { return cIdExpressionParserRuleCall_2_5_1_2; }
+	}
+
+	public class SimpleTemplateIdElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SimpleTemplateId");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cLessThanSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final RuleCall cTemplateArgumentListParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Keyword cGreaterThanSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//// temp.names
+		//SimpleTemplateId:
+		//	ID "<" TemplateArgumentList ">";
+		public ParserRule getRule() { return rule; }
+
+		//ID "<" TemplateArgumentList ">"
+		public Group getGroup() { return cGroup; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+
+		//"<"
+		public Keyword getLessThanSignKeyword_1() { return cLessThanSignKeyword_1; }
+
+		//TemplateArgumentList
+		public RuleCall getTemplateArgumentListParserRuleCall_2() { return cTemplateArgumentListParserRuleCall_2; }
+
+		//">"
+		public Keyword getGreaterThanSignKeyword_3() { return cGreaterThanSignKeyword_3; }
+	}
+
+	public class TemplateIdElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TemplateId");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSimpleTemplateIdParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final RuleCall cOperatorFunctionIdParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cLessThanSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final RuleCall cTemplateArgumentListParserRuleCall_1_2 = (RuleCall)cGroup_1.eContents().get(2);
+		private final Keyword cGreaterThanSignKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final RuleCall cLiteralOperatorIdParserRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cLessThanSignKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final RuleCall cTemplateArgumentListParserRuleCall_2_2 = (RuleCall)cGroup_2.eContents().get(2);
+		private final Keyword cGreaterThanSignKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
+		
+		//TemplateId:
+		//	SimpleTemplateId | OperatorFunctionId "<" TemplateArgumentList ">" | LiteralOperatorId "<" TemplateArgumentList ">";
+		public ParserRule getRule() { return rule; }
+
+		//SimpleTemplateId | OperatorFunctionId "<" TemplateArgumentList ">" | LiteralOperatorId "<" TemplateArgumentList ">"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//SimpleTemplateId
+		public RuleCall getSimpleTemplateIdParserRuleCall_0() { return cSimpleTemplateIdParserRuleCall_0; }
+
+		//OperatorFunctionId "<" TemplateArgumentList ">"
+		public Group getGroup_1() { return cGroup_1; }
+
+		//OperatorFunctionId
+		public RuleCall getOperatorFunctionIdParserRuleCall_1_0() { return cOperatorFunctionIdParserRuleCall_1_0; }
+
+		//"<"
+		public Keyword getLessThanSignKeyword_1_1() { return cLessThanSignKeyword_1_1; }
+
+		//TemplateArgumentList
+		public RuleCall getTemplateArgumentListParserRuleCall_1_2() { return cTemplateArgumentListParserRuleCall_1_2; }
+
+		//">"
+		public Keyword getGreaterThanSignKeyword_1_3() { return cGreaterThanSignKeyword_1_3; }
+
+		//LiteralOperatorId "<" TemplateArgumentList ">"
+		public Group getGroup_2() { return cGroup_2; }
+
+		//LiteralOperatorId
+		public RuleCall getLiteralOperatorIdParserRuleCall_2_0() { return cLiteralOperatorIdParserRuleCall_2_0; }
+
+		//"<"
+		public Keyword getLessThanSignKeyword_2_1() { return cLessThanSignKeyword_2_1; }
+
+		//TemplateArgumentList
+		public RuleCall getTemplateArgumentListParserRuleCall_2_2() { return cTemplateArgumentListParserRuleCall_2_2; }
+
+		//">"
+		public Keyword getGreaterThanSignKeyword_2_3() { return cGreaterThanSignKeyword_2_3; }
+	}
+
+	public class TemplateArgumentListElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TemplateArgumentList");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cTemplateArgumentParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cFullStopFullStopFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final RuleCall cTemplateArgumentParserRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final Keyword cFullStopFullStopFullStopKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		
+		//TemplateArgumentList:
+		//	TemplateArgument "..."? ("," TemplateArgument "..."?)*;
+		public ParserRule getRule() { return rule; }
+
+		//TemplateArgument "..."? ("," TemplateArgument "..."?)*
+		public Group getGroup() { return cGroup; }
+
+		//TemplateArgument
+		public RuleCall getTemplateArgumentParserRuleCall_0() { return cTemplateArgumentParserRuleCall_0; }
+
+		//"..."?
+		public Keyword getFullStopFullStopFullStopKeyword_1() { return cFullStopFullStopFullStopKeyword_1; }
+
+		//("," TemplateArgument "..."?)*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//","
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+
+		//TemplateArgument
+		public RuleCall getTemplateArgumentParserRuleCall_2_1() { return cTemplateArgumentParserRuleCall_2_1; }
+
+		//"..."?
+		public Keyword getFullStopFullStopFullStopKeyword_2_2() { return cFullStopFullStopFullStopKeyword_2_2; }
+	}
+
+	public class TemplateArgumentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TemplateArgument");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cConstantExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cTypeIdParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cIdExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//TemplateArgument:
+		//	ConstantExpression | TypeId | IdExpression;
+		public ParserRule getRule() { return rule; }
+
+		//ConstantExpression | TypeId | IdExpression
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//ConstantExpression
+		public RuleCall getConstantExpressionParserRuleCall_0() { return cConstantExpressionParserRuleCall_0; }
+
+		//TypeId
+		public RuleCall getTypeIdParserRuleCall_1() { return cTypeIdParserRuleCall_1; }
+
+		//IdExpression
+		public RuleCall getIdExpressionParserRuleCall_2() { return cIdExpressionParserRuleCall_2; }
+	}
+
+	public class TypenameSpecifierElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TypenameSpecifier");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTypenameKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cColonColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final RuleCall cNestedNameSpecifierParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final RuleCall cIDTerminalRuleCall_3_0 = (RuleCall)cAlternatives_3.eContents().get(0);
+		private final Group cGroup_3_1 = (Group)cAlternatives_3.eContents().get(1);
+		private final Keyword cTemplateKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
+		private final RuleCall cSimpleTemplateIdParserRuleCall_3_1_1 = (RuleCall)cGroup_3_1.eContents().get(1);
+		
+		//// temp.res
+		//TypenameSpecifier:
+		//	"typename" "::"? NestedNameSpecifier (ID | "template"? SimpleTemplateId);
+		public ParserRule getRule() { return rule; }
+
+		//"typename" "::"? NestedNameSpecifier (ID | "template"? SimpleTemplateId)
+		public Group getGroup() { return cGroup; }
+
+		//"typename"
+		public Keyword getTypenameKeyword_0() { return cTypenameKeyword_0; }
+
+		//"::"?
+		public Keyword getColonColonKeyword_1() { return cColonColonKeyword_1; }
+
+		//NestedNameSpecifier
+		public RuleCall getNestedNameSpecifierParserRuleCall_2() { return cNestedNameSpecifierParserRuleCall_2; }
+
+		//ID | "template"? SimpleTemplateId
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_3_0() { return cIDTerminalRuleCall_3_0; }
+
+		//"template"? SimpleTemplateId
+		public Group getGroup_3_1() { return cGroup_3_1; }
+
+		//"template"?
+		public Keyword getTemplateKeyword_3_1_0() { return cTemplateKeyword_3_1_0; }
+
+		//SimpleTemplateId
+		public RuleCall getSimpleTemplateIdParserRuleCall_3_1_1() { return cSimpleTemplateIdParserRuleCall_3_1_1; }
+	}
+
+	public class ExplicitInstantiationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExplicitInstantiation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cExternKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cTemplateKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final RuleCall cDeclarationParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		
+		//// temp.explicit
+		//ExplicitInstantiation:
+		//	"extern"? "template" Declaration;
+		public ParserRule getRule() { return rule; }
+
+		//"extern"? "template" Declaration
+		public Group getGroup() { return cGroup; }
+
+		//"extern"?
+		public Keyword getExternKeyword_0() { return cExternKeyword_0; }
+
+		//"template"
+		public Keyword getTemplateKeyword_1() { return cTemplateKeyword_1; }
+
+		//Declaration
+		public RuleCall getDeclarationParserRuleCall_2() { return cDeclarationParserRuleCall_2; }
+	}
+
+	public class ExplicitSpecializationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExplicitSpecialization");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTemplateKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLessThanSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cDeclarationParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		
+		//// temp.expl.spec
+		//ExplicitSpecialization:
+		//	"template" "<" ">" Declaration;
+		public ParserRule getRule() { return rule; }
+
+		//"template" "<" ">" Declaration
+		public Group getGroup() { return cGroup; }
+
+		//"template"
+		public Keyword getTemplateKeyword_0() { return cTemplateKeyword_0; }
+
+		//"<"
+		public Keyword getLessThanSignKeyword_1() { return cLessThanSignKeyword_1; }
+
+		//">"
+		public Keyword getGreaterThanSignKeyword_2() { return cGreaterThanSignKeyword_2; }
+
+		//Declaration
+		public RuleCall getDeclarationParserRuleCall_3() { return cDeclarationParserRuleCall_3; }
+	}
+
+	public class ConstantExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConstantExpression");
+		private final Keyword cDUMMY1Keyword = (Keyword)rule.eContents().get(1);
+		
+		//// DUMMY
+		//ConstantExpression:
+		//	"DUMMY1";
+		public ParserRule getRule() { return rule; }
+
+		//"DUMMY1"
+		public Keyword getDUMMY1Keyword() { return cDUMMY1Keyword; }
+	}
+
+	public class TypeIdElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TypeId");
+		private final Keyword cDUMMY2Keyword = (Keyword)rule.eContents().get(1);
+		
+		//TypeId:
+		//	"DUMMY2";
+		public ParserRule getRule() { return rule; }
+
+		//"DUMMY2"
+		public Keyword getDUMMY2Keyword() { return cDUMMY2Keyword; }
+	}
+
+	public class IdExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "IdExpression");
+		private final Keyword cDUMMY3Keyword = (Keyword)rule.eContents().get(1);
+		
+		//IdExpression:
+		//	"DUMMY3";
+		public ParserRule getRule() { return rule; }
+
+		//"DUMMY3"
+		public Keyword getDUMMY3Keyword() { return cDUMMY3Keyword; }
+	}
+
+	public class ParameterDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ParameterDeclaration");
+		private final Keyword cDUMMY4Keyword = (Keyword)rule.eContents().get(1);
+		
+		//ParameterDeclaration:
+		//	"DUMMY4";
+		public ParserRule getRule() { return rule; }
+
+		//"DUMMY4"
+		public Keyword getDUMMY4Keyword() { return cDUMMY4Keyword; }
+	}
+
+	public class DeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Declaration");
+		private final Keyword cDUMMY5Keyword = (Keyword)rule.eContents().get(1);
+		
+		//Declaration:
+		//	"DUMMY5";
+		public ParserRule getRule() { return rule; }
+
+		//"DUMMY5"
+		public Keyword getDUMMY5Keyword() { return cDUMMY5Keyword; }
+	}
+
+	public class NestedNameSpecifierElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NestedNameSpecifier");
+		private final Keyword cDUMMY6Keyword = (Keyword)rule.eContents().get(1);
+		
+		//NestedNameSpecifier:
+		//	"DUMMY6";
+		public ParserRule getRule() { return rule; }
+
+		//"DUMMY6"
+		public Keyword getDUMMY6Keyword() { return cDUMMY6Keyword; }
 	}
 	
 	
@@ -248,6 +1072,26 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 	private TerminalRule tSTRING_LITERAL;
 	private TerminalRule tENC_PREFIX;
 	private TerminalRule tSCHAR;
+	private OperatorFunctionIdElements pOperatorFunctionId;
+	private OverloadableOperatorElements pOverloadableOperator;
+	private LiteralOperatorIdElements pLiteralOperatorId;
+	private TemplateDeclarationElements pTemplateDeclaration;
+	private TemplateParameterListElements pTemplateParameterList;
+	private TemplateParameterElements pTemplateParameter;
+	private TypeParameterElements pTypeParameter;
+	private SimpleTemplateIdElements pSimpleTemplateId;
+	private TemplateIdElements pTemplateId;
+	private TemplateArgumentListElements pTemplateArgumentList;
+	private TemplateArgumentElements pTemplateArgument;
+	private TypenameSpecifierElements pTypenameSpecifier;
+	private ExplicitInstantiationElements pExplicitInstantiation;
+	private ExplicitSpecializationElements pExplicitSpecialization;
+	private ConstantExpressionElements pConstantExpression;
+	private TypeIdElements pTypeId;
+	private IdExpressionElements pIdExpression;
+	private ParameterDeclarationElements pParameterDeclaration;
+	private DeclarationElements pDeclaration;
+	private NestedNameSpecifierElements pNestedNameSpecifier;
 	
 	private final Grammar grammar;
 
@@ -393,10 +1237,8 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//// lex.literal.kinds
-	////POINTER_LITERAL
-	////USER_DEFINED_LITERAL
 	//Literal:
-	//	INT | CHARACTER_LITERAL | FLOATING_LITERAL | STRING_LITERAL | ("true" | "false");
+	//	INT | CHARACTER_LITERAL | FLOATING_LITERAL | STRING_LITERAL | ("true" | "false") "nullptr";
 	public LiteralElements getLiteralAccess() {
 		return (pLiteral != null) ? pLiteral : (pLiteral = new LiteralElements());
 	}
@@ -522,6 +1364,217 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 	public TerminalRule getSCHARRule() {
 		return (tSCHAR != null) ? tSCHAR : (tSCHAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SCHAR"));
 	} 
+
+	//// over.oper
+	//OperatorFunctionId:
+	//	"operator" OverloadableOperator ("<" TemplateArgument* ">")?;
+	public OperatorFunctionIdElements getOperatorFunctionIdAccess() {
+		return (pOperatorFunctionId != null) ? pOperatorFunctionId : (pOperatorFunctionId = new OperatorFunctionIdElements());
+	}
+	
+	public ParserRule getOperatorFunctionIdRule() {
+		return getOperatorFunctionIdAccess().getRule();
+	}
+
+	//OverloadableOperator:
+	//	"new" | "delete" | "new" "[" "]" | "delete" "[" "]" | "+" | "-" | "*" | "/" | "%" | "^" | "&" | "|" | "~" | "!" | "="
+	//	| "<" | ">" | "+=" | "-=" | "*=" | "/=" | "%=" | "^=" | "&=" | "|=" | "<<" | ">>" | ">>=" | "<<=" | "==" | "!=" |
+	//	"<=" | ">=" | "&&" | "||" | "++" | "--" | "," | "->*" | "->" | "()" | "[]";
+	public OverloadableOperatorElements getOverloadableOperatorAccess() {
+		return (pOverloadableOperator != null) ? pOverloadableOperator : (pOverloadableOperator = new OverloadableOperatorElements());
+	}
+	
+	public ParserRule getOverloadableOperatorRule() {
+		return getOverloadableOperatorAccess().getRule();
+	}
+
+	//LiteralOperatorId:
+	//	"operator" "\"" "\"";
+	public LiteralOperatorIdElements getLiteralOperatorIdAccess() {
+		return (pLiteralOperatorId != null) ? pLiteralOperatorId : (pLiteralOperatorId = new LiteralOperatorIdElements());
+	}
+	
+	public ParserRule getLiteralOperatorIdRule() {
+		return getLiteralOperatorIdAccess().getRule();
+	}
+
+	//// temp
+	//TemplateDeclaration:
+	//	"template" "<" TemplateParameterList ">" Declaration;
+	public TemplateDeclarationElements getTemplateDeclarationAccess() {
+		return (pTemplateDeclaration != null) ? pTemplateDeclaration : (pTemplateDeclaration = new TemplateDeclarationElements());
+	}
+	
+	public ParserRule getTemplateDeclarationRule() {
+		return getTemplateDeclarationAccess().getRule();
+	}
+
+	//TemplateParameterList:
+	//	TemplateParameter ("," TemplateParameter)*;
+	public TemplateParameterListElements getTemplateParameterListAccess() {
+		return (pTemplateParameterList != null) ? pTemplateParameterList : (pTemplateParameterList = new TemplateParameterListElements());
+	}
+	
+	public ParserRule getTemplateParameterListRule() {
+		return getTemplateParameterListAccess().getRule();
+	}
+
+	//// temp.param
+	//TemplateParameter:
+	//	TypeParameter | ParameterDeclaration;
+	public TemplateParameterElements getTemplateParameterAccess() {
+		return (pTemplateParameter != null) ? pTemplateParameter : (pTemplateParameter = new TemplateParameterElements());
+	}
+	
+	public ParserRule getTemplateParameterRule() {
+		return getTemplateParameterAccess().getRule();
+	}
+
+	//TypeParameter:
+	//	"class" ("..."? ID? | ID? "=" TypeId) | "typename" ("..."? ID? | ID? "=" TypeId) | "template" "<"
+	//	TemplateParameterList ">" "class" ("..."? ID? | ID? "=" IdExpression);
+	public TypeParameterElements getTypeParameterAccess() {
+		return (pTypeParameter != null) ? pTypeParameter : (pTypeParameter = new TypeParameterElements());
+	}
+	
+	public ParserRule getTypeParameterRule() {
+		return getTypeParameterAccess().getRule();
+	}
+
+	//// temp.names
+	//SimpleTemplateId:
+	//	ID "<" TemplateArgumentList ">";
+	public SimpleTemplateIdElements getSimpleTemplateIdAccess() {
+		return (pSimpleTemplateId != null) ? pSimpleTemplateId : (pSimpleTemplateId = new SimpleTemplateIdElements());
+	}
+	
+	public ParserRule getSimpleTemplateIdRule() {
+		return getSimpleTemplateIdAccess().getRule();
+	}
+
+	//TemplateId:
+	//	SimpleTemplateId | OperatorFunctionId "<" TemplateArgumentList ">" | LiteralOperatorId "<" TemplateArgumentList ">";
+	public TemplateIdElements getTemplateIdAccess() {
+		return (pTemplateId != null) ? pTemplateId : (pTemplateId = new TemplateIdElements());
+	}
+	
+	public ParserRule getTemplateIdRule() {
+		return getTemplateIdAccess().getRule();
+	}
+
+	//TemplateArgumentList:
+	//	TemplateArgument "..."? ("," TemplateArgument "..."?)*;
+	public TemplateArgumentListElements getTemplateArgumentListAccess() {
+		return (pTemplateArgumentList != null) ? pTemplateArgumentList : (pTemplateArgumentList = new TemplateArgumentListElements());
+	}
+	
+	public ParserRule getTemplateArgumentListRule() {
+		return getTemplateArgumentListAccess().getRule();
+	}
+
+	//TemplateArgument:
+	//	ConstantExpression | TypeId | IdExpression;
+	public TemplateArgumentElements getTemplateArgumentAccess() {
+		return (pTemplateArgument != null) ? pTemplateArgument : (pTemplateArgument = new TemplateArgumentElements());
+	}
+	
+	public ParserRule getTemplateArgumentRule() {
+		return getTemplateArgumentAccess().getRule();
+	}
+
+	//// temp.res
+	//TypenameSpecifier:
+	//	"typename" "::"? NestedNameSpecifier (ID | "template"? SimpleTemplateId);
+	public TypenameSpecifierElements getTypenameSpecifierAccess() {
+		return (pTypenameSpecifier != null) ? pTypenameSpecifier : (pTypenameSpecifier = new TypenameSpecifierElements());
+	}
+	
+	public ParserRule getTypenameSpecifierRule() {
+		return getTypenameSpecifierAccess().getRule();
+	}
+
+	//// temp.explicit
+	//ExplicitInstantiation:
+	//	"extern"? "template" Declaration;
+	public ExplicitInstantiationElements getExplicitInstantiationAccess() {
+		return (pExplicitInstantiation != null) ? pExplicitInstantiation : (pExplicitInstantiation = new ExplicitInstantiationElements());
+	}
+	
+	public ParserRule getExplicitInstantiationRule() {
+		return getExplicitInstantiationAccess().getRule();
+	}
+
+	//// temp.expl.spec
+	//ExplicitSpecialization:
+	//	"template" "<" ">" Declaration;
+	public ExplicitSpecializationElements getExplicitSpecializationAccess() {
+		return (pExplicitSpecialization != null) ? pExplicitSpecialization : (pExplicitSpecialization = new ExplicitSpecializationElements());
+	}
+	
+	public ParserRule getExplicitSpecializationRule() {
+		return getExplicitSpecializationAccess().getRule();
+	}
+
+	//// DUMMY
+	//ConstantExpression:
+	//	"DUMMY1";
+	public ConstantExpressionElements getConstantExpressionAccess() {
+		return (pConstantExpression != null) ? pConstantExpression : (pConstantExpression = new ConstantExpressionElements());
+	}
+	
+	public ParserRule getConstantExpressionRule() {
+		return getConstantExpressionAccess().getRule();
+	}
+
+	//TypeId:
+	//	"DUMMY2";
+	public TypeIdElements getTypeIdAccess() {
+		return (pTypeId != null) ? pTypeId : (pTypeId = new TypeIdElements());
+	}
+	
+	public ParserRule getTypeIdRule() {
+		return getTypeIdAccess().getRule();
+	}
+
+	//IdExpression:
+	//	"DUMMY3";
+	public IdExpressionElements getIdExpressionAccess() {
+		return (pIdExpression != null) ? pIdExpression : (pIdExpression = new IdExpressionElements());
+	}
+	
+	public ParserRule getIdExpressionRule() {
+		return getIdExpressionAccess().getRule();
+	}
+
+	//ParameterDeclaration:
+	//	"DUMMY4";
+	public ParameterDeclarationElements getParameterDeclarationAccess() {
+		return (pParameterDeclaration != null) ? pParameterDeclaration : (pParameterDeclaration = new ParameterDeclarationElements());
+	}
+	
+	public ParserRule getParameterDeclarationRule() {
+		return getParameterDeclarationAccess().getRule();
+	}
+
+	//Declaration:
+	//	"DUMMY5";
+	public DeclarationElements getDeclarationAccess() {
+		return (pDeclaration != null) ? pDeclaration : (pDeclaration = new DeclarationElements());
+	}
+	
+	public ParserRule getDeclarationRule() {
+		return getDeclarationAccess().getRule();
+	}
+
+	//NestedNameSpecifier:
+	//	"DUMMY6";
+	public NestedNameSpecifierElements getNestedNameSpecifierAccess() {
+		return (pNestedNameSpecifier != null) ? pNestedNameSpecifier : (pNestedNameSpecifier = new NestedNameSpecifierElements());
+	}
+	
+	public ParserRule getNestedNameSpecifierRule() {
+		return getNestedNameSpecifierAccess().getRule();
+	}
 
 	//terminal ID:
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;

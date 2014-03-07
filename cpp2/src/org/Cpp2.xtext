@@ -206,9 +206,7 @@ Literal:
 	FLOATING_LITERAL |
 	STRING_LITERAL |
 	('true' | 'false')
-	//POINTER_LITERAL
-	//USER_DEFINED_LITERAL
-	;
+	'nullptr';
 
 // lex.icon
 terminal INT returns ecore::EInt:
@@ -271,3 +269,128 @@ terminal fragment ENC_PREFIX:
 
 terminal fragment SCHAR:
 	!('\"' | '\\' | '\n') | ESCAPE_SEQUENCE | UNIVERSAL_CHARACTER_NAME;
+	
+// over.oper
+OperatorFunctionId:
+	'operator' OverloadableOperator ('<' TemplateArgument* '>')?;
+
+OverloadableOperator:
+	'new' |
+	'delete' |
+	'new' '[' ']' |
+	'delete' '[' ']' |
+	'+' |
+	'-' |
+	'*' |
+	'/' |
+	'%' |
+	'^' |
+	'&' |
+	'|' |
+	'~' |
+	'!' |
+	'=' |
+	'<' |
+	'>' |
+	'+=' |
+	'-=' |
+	'*=' |
+	'/=' |
+	'%=' |
+	'^=' |
+	'&=' |
+	'|=' |
+	'<<' |
+	'>>' |
+	'>>=' |
+	'<<=' |
+	'==' |
+	'!=' |
+	'<=' |
+	'>=' |
+	'&&' |
+	'||' |
+	'++' |
+	'--' |
+	',' |
+	'->*' |
+	'->' |
+	'()' |
+	'[]';
+
+LiteralOperatorId:
+	'operator' '\"''\"';
+
+// temp
+TemplateDeclaration:
+	'template' '<' TemplateParameterList '>' Declaration;
+
+TemplateParameterList:
+	TemplateParameter (',' TemplateParameter)*;
+
+// temp.param
+TemplateParameter:
+	TypeParameter | ParameterDeclaration;
+
+TypeParameter:
+	'class' ('...'? ID? | ID? '=' TypeId) |
+	'typename' ('...'? ID? | ID? '=' TypeId) |
+	'template' '<' TemplateParameterList '>' 'class' ('...'? ID? | ID? '=' IdExpression);
+
+// temp.names
+SimpleTemplateId:
+	ID '<' TemplateArgumentList '>';
+
+TemplateId:
+	SimpleTemplateId |
+	OperatorFunctionId '<' TemplateArgumentList '>' |
+	LiteralOperatorId '<' TemplateArgumentList '>'
+;
+
+TemplateArgumentList:
+	TemplateArgument '...'? (',' TemplateArgument '...'?)*;
+
+TemplateArgument:
+	ConstantExpression |
+	TypeId |
+	IdExpression;
+
+// temp.res
+TypenameSpecifier:
+	'typename' '::'? NestedNameSpecifier (ID | 'template'? SimpleTemplateId);
+
+// temp.explicit
+ExplicitInstantiation:
+	'extern'? 'template' Declaration;
+
+// temp.expl.spec
+ExplicitSpecialization:
+	'template' '<' '>' Declaration;
+	
+	
+// DUMMY
+
+ConstantExpression:
+	'DUMMY1'
+;
+
+TypeId:
+	'DUMMY2'
+;
+
+IdExpression:
+	'DUMMY3'
+;
+
+ParameterDeclaration:
+	'DUMMY4'
+;
+
+Declaration:
+	'DUMMY5'
+;
+
+NestedNameSpecifier:
+	'DUMMY6'
+;
+

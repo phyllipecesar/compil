@@ -21,45 +21,100 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalCpp2Parser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_KEYWORD", "RULE_PREPROCESSING_OP_OR_PUNC", "RULE_ID", "RULE_INT", "RULE_CHARACTER_LITERAL", "RULE_FLOATING_LITERAL", "RULE_STRING_LITERAL", "RULE_HEXADECIMAL_DIGIT", "RULE_HEX_QUAD", "RULE_UNIVERSAL_CHARACTER_NAME", "RULE_H_CHAR", "RULE_Q_CHAR", "RULE_HEADER_NAME", "RULE_DIGIT", "RULE_NONDIGIT", "RULE_DECIMAL_LITERAL", "RULE_OCTAL_LITERAL", "RULE_HEXADECIMAL_LITERAL", "RULE_INTEGER_SUFFIX", "RULE_OCTAL_DIGIT", "RULE_C_CHAR", "RULE_ESCAPE_SEQUENCE", "RULE_SIMPLE_ESCAPE_SEQUENCE", "RULE_OCTAL_ESCAPE_SEQUENCE", "RULE_HEXADECIMAL_ESCAPE_SEQUENCE", "RULE_FRACTIONAL_CONSTANT", "RULE_EXPONENT_PART", "RULE_ENC_PREFIX", "RULE_SCHAR", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'true'", "'false'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_KEYWORD", "RULE_PREPROCESSING_OP_OR_PUNC", "RULE_ID", "RULE_INT", "RULE_CHARACTER_LITERAL", "RULE_FLOATING_LITERAL", "RULE_STRING_LITERAL", "RULE_HEXADECIMAL_DIGIT", "RULE_HEX_QUAD", "RULE_UNIVERSAL_CHARACTER_NAME", "RULE_H_CHAR", "RULE_Q_CHAR", "RULE_HEADER_NAME", "RULE_DIGIT", "RULE_NONDIGIT", "RULE_DECIMAL_LITERAL", "RULE_OCTAL_LITERAL", "RULE_HEXADECIMAL_LITERAL", "RULE_INTEGER_SUFFIX", "RULE_OCTAL_DIGIT", "RULE_C_CHAR", "RULE_ESCAPE_SEQUENCE", "RULE_SIMPLE_ESCAPE_SEQUENCE", "RULE_OCTAL_ESCAPE_SEQUENCE", "RULE_HEXADECIMAL_ESCAPE_SEQUENCE", "RULE_FRACTIONAL_CONSTANT", "RULE_EXPONENT_PART", "RULE_ENC_PREFIX", "RULE_SCHAR", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'true'", "'false'", "'nullptr'", "'operator'", "'<'", "'>'", "'new'", "'delete'", "'['", "']'", "'+'", "'-'", "'*'", "'/'", "'%'", "'^'", "'&'", "'|'", "'~'", "'!'", "'='", "'+='", "'-='", "'*='", "'/='", "'%='", "'^='", "'&='", "'|='", "'<<'", "'>>'", "'>>='", "'<<='", "'=='", "'!='", "'<='", "'>='", "'&&'", "'||'", "'++'", "'--'", "','", "'->*'", "'->'", "'()'", "'[]'", "'\"'", "'class'", "'...'", "'typename'", "'template'", "'DUMMY1'", "'DUMMY2'", "'DUMMY3'", "'DUMMY4'", "'DUMMY5'", "'DUMMY6'"
     };
-    public static final int RULE_HEXADECIMAL_LITERAL=21;
     public static final int RULE_ID=6;
     public static final int RULE_FLOATING_LITERAL=9;
+    public static final int RULE_ANY_OTHER=37;
+    public static final int RULE_H_CHAR=14;
+    public static final int EOF=-1;
+    public static final int T__93=93;
+    public static final int T__94=94;
+    public static final int RULE_OCTAL_DIGIT=23;
+    public static final int T__91=91;
+    public static final int T__92=92;
+    public static final int T__90=90;
+    public static final int RULE_KEYWORD=4;
+    public static final int RULE_DECIMAL_LITERAL=19;
+    public static final int RULE_OCTAL_LITERAL=20;
+    public static final int RULE_NONDIGIT=18;
+    public static final int RULE_CHARACTER_LITERAL=8;
+    public static final int RULE_HEX_QUAD=12;
+    public static final int RULE_HEXADECIMAL_LITERAL=21;
+    public static final int T__80=80;
+    public static final int T__81=81;
+    public static final int T__82=82;
+    public static final int T__83=83;
+    public static final int T__85=85;
+    public static final int RULE_C_CHAR=24;
+    public static final int RULE_SCHAR=32;
+    public static final int T__84=84;
+    public static final int T__87=87;
+    public static final int T__86=86;
+    public static final int T__89=89;
+    public static final int T__88=88;
+    public static final int RULE_ML_COMMENT=34;
+    public static final int RULE_STRING=33;
+    public static final int T__71=71;
+    public static final int T__72=72;
+    public static final int T__70=70;
+    public static final int RULE_OCTAL_ESCAPE_SEQUENCE=27;
+    public static final int T__76=76;
+    public static final int T__75=75;
+    public static final int RULE_DIGIT=17;
+    public static final int T__74=74;
+    public static final int T__73=73;
+    public static final int RULE_INTEGER_SUFFIX=22;
+    public static final int T__79=79;
+    public static final int T__78=78;
+    public static final int RULE_SIMPLE_ESCAPE_SEQUENCE=26;
+    public static final int T__77=77;
+    public static final int T__68=68;
+    public static final int T__69=69;
+    public static final int T__66=66;
+    public static final int T__67=67;
+    public static final int T__64=64;
+    public static final int T__65=65;
+    public static final int T__62=62;
+    public static final int T__63=63;
     public static final int RULE_ESCAPE_SEQUENCE=25;
     public static final int RULE_HEXADECIMAL_ESCAPE_SEQUENCE=28;
-    public static final int RULE_ANY_OTHER=37;
     public static final int RULE_ENC_PREFIX=31;
-    public static final int RULE_H_CHAR=14;
-    public static final int RULE_PREPROCESSING_OP_OR_PUNC=5;
-    public static final int RULE_SCHAR=32;
-    public static final int RULE_C_CHAR=24;
-    public static final int RULE_SL_COMMENT=35;
-    public static final int EOF=-1;
-    public static final int RULE_HEXADECIMAL_DIGIT=11;
-    public static final int RULE_ML_COMMENT=34;
+    public static final int T__61=61;
+    public static final int T__60=60;
     public static final int RULE_EXPONENT_PART=30;
-    public static final int RULE_OCTAL_DIGIT=23;
-    public static final int RULE_STRING=33;
+    public static final int T__55=55;
+    public static final int T__56=56;
+    public static final int T__57=57;
+    public static final int T__58=58;
+    public static final int T__51=51;
+    public static final int T__52=52;
+    public static final int T__53=53;
+    public static final int T__54=54;
     public static final int RULE_STRING_LITERAL=10;
     public static final int RULE_FRACTIONAL_CONSTANT=29;
+    public static final int T__59=59;
+    public static final int RULE_INT=7;
+    public static final int RULE_Q_CHAR=15;
+    public static final int T__50=50;
+    public static final int RULE_HEADER_NAME=16;
+    public static final int T__42=42;
+    public static final int T__43=43;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int RULE_PREPROCESSING_OP_OR_PUNC=5;
+    public static final int RULE_SL_COMMENT=35;
+    public static final int RULE_HEXADECIMAL_DIGIT=11;
     public static final int T__38=38;
     public static final int T__39=39;
-    public static final int RULE_KEYWORD=4;
     public static final int RULE_UNIVERSAL_CHARACTER_NAME=13;
-    public static final int RULE_DECIMAL_LITERAL=19;
-    public static final int RULE_INT=7;
-    public static final int RULE_OCTAL_LITERAL=20;
-    public static final int RULE_OCTAL_ESCAPE_SEQUENCE=27;
     public static final int RULE_WS=36;
-    public static final int RULE_Q_CHAR=15;
-    public static final int RULE_DIGIT=17;
-    public static final int RULE_NONDIGIT=18;
-    public static final int RULE_INTEGER_SUFFIX=22;
-    public static final int RULE_CHARACTER_LITERAL=8;
-    public static final int RULE_SIMPLE_ESCAPE_SEQUENCE=26;
-    public static final int RULE_HEX_QUAD=12;
-    public static final int RULE_HEADER_NAME=16;
 
     // delegates
     // delegators
@@ -415,7 +470,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLiteral"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:172:1: ruleLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT | this_CHARACTER_LITERAL_1= RULE_CHARACTER_LITERAL | this_FLOATING_LITERAL_2= RULE_FLOATING_LITERAL | this_STRING_LITERAL_3= RULE_STRING_LITERAL | (kw= 'true' | kw= 'false' ) ) ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:172:1: ruleLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT | this_CHARACTER_LITERAL_1= RULE_CHARACTER_LITERAL | this_FLOATING_LITERAL_2= RULE_FLOATING_LITERAL | this_STRING_LITERAL_3= RULE_STRING_LITERAL | ( (kw= 'true' | kw= 'false' ) kw= 'nullptr' ) ) ;
     public final AntlrDatatypeRuleToken ruleLiteral() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -428,10 +483,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:175:28: ( (this_INT_0= RULE_INT | this_CHARACTER_LITERAL_1= RULE_CHARACTER_LITERAL | this_FLOATING_LITERAL_2= RULE_FLOATING_LITERAL | this_STRING_LITERAL_3= RULE_STRING_LITERAL | (kw= 'true' | kw= 'false' ) ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:176:1: (this_INT_0= RULE_INT | this_CHARACTER_LITERAL_1= RULE_CHARACTER_LITERAL | this_FLOATING_LITERAL_2= RULE_FLOATING_LITERAL | this_STRING_LITERAL_3= RULE_STRING_LITERAL | (kw= 'true' | kw= 'false' ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:175:28: ( (this_INT_0= RULE_INT | this_CHARACTER_LITERAL_1= RULE_CHARACTER_LITERAL | this_FLOATING_LITERAL_2= RULE_FLOATING_LITERAL | this_STRING_LITERAL_3= RULE_STRING_LITERAL | ( (kw= 'true' | kw= 'false' ) kw= 'nullptr' ) ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:176:1: (this_INT_0= RULE_INT | this_CHARACTER_LITERAL_1= RULE_CHARACTER_LITERAL | this_FLOATING_LITERAL_2= RULE_FLOATING_LITERAL | this_STRING_LITERAL_3= RULE_STRING_LITERAL | ( (kw= 'true' | kw= 'false' ) kw= 'nullptr' ) )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:176:1: (this_INT_0= RULE_INT | this_CHARACTER_LITERAL_1= RULE_CHARACTER_LITERAL | this_FLOATING_LITERAL_2= RULE_FLOATING_LITERAL | this_STRING_LITERAL_3= RULE_STRING_LITERAL | (kw= 'true' | kw= 'false' ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:176:1: (this_INT_0= RULE_INT | this_CHARACTER_LITERAL_1= RULE_CHARACTER_LITERAL | this_FLOATING_LITERAL_2= RULE_FLOATING_LITERAL | this_STRING_LITERAL_3= RULE_STRING_LITERAL | ( (kw= 'true' | kw= 'false' ) kw= 'nullptr' ) )
             int alt4=5;
             switch ( input.LA(1) ) {
             case RULE_INT:
@@ -521,9 +576,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:208:6: (kw= 'true' | kw= 'false' )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:208:6: ( (kw= 'true' | kw= 'false' ) kw= 'nullptr' )
                     {
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:208:6: (kw= 'true' | kw= 'false' )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:208:6: ( (kw= 'true' | kw= 'false' ) kw= 'nullptr' )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:208:7: (kw= 'true' | kw= 'false' ) kw= 'nullptr'
+                    {
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:208:7: (kw= 'true' | kw= 'false' )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -543,10 +601,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                         case 1 :
                             // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:209:2: kw= 'true'
                             {
-                            kw=(Token)match(input,38,FOLLOW_38_in_ruleLiteral501); 
+                            kw=(Token)match(input,38,FOLLOW_38_in_ruleLiteral502); 
 
                                     current.merge(kw);
-                                    newLeafNode(kw, grammarAccess.getLiteralAccess().getTrueKeyword_4_0()); 
+                                    newLeafNode(kw, grammarAccess.getLiteralAccess().getTrueKeyword_4_0_0()); 
                                 
 
                             }
@@ -554,14 +612,22 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                         case 2 :
                             // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:216:2: kw= 'false'
                             {
-                            kw=(Token)match(input,39,FOLLOW_39_in_ruleLiteral520); 
+                            kw=(Token)match(input,39,FOLLOW_39_in_ruleLiteral521); 
 
                                     current.merge(kw);
-                                    newLeafNode(kw, grammarAccess.getLiteralAccess().getFalseKeyword_4_1()); 
+                                    newLeafNode(kw, grammarAccess.getLiteralAccess().getFalseKeyword_4_0_1()); 
                                 
 
                             }
                             break;
+
+                    }
+
+                    kw=(Token)match(input,40,FOLLOW_40_in_ruleLiteral535); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getLiteralAccess().getNullptrKeyword_4_1()); 
+                        
 
                     }
 
@@ -587,9 +653,2717 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleLiteral"
 
+
+    // $ANTLR start "entryRuleOperatorFunctionId"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:235:1: entryRuleOperatorFunctionId returns [String current=null] : iv_ruleOperatorFunctionId= ruleOperatorFunctionId EOF ;
+    public final String entryRuleOperatorFunctionId() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleOperatorFunctionId = null;
+
+
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:236:2: (iv_ruleOperatorFunctionId= ruleOperatorFunctionId EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:237:2: iv_ruleOperatorFunctionId= ruleOperatorFunctionId EOF
+            {
+             newCompositeNode(grammarAccess.getOperatorFunctionIdRule()); 
+            pushFollow(FOLLOW_ruleOperatorFunctionId_in_entryRuleOperatorFunctionId577);
+            iv_ruleOperatorFunctionId=ruleOperatorFunctionId();
+
+            state._fsp--;
+
+             current =iv_ruleOperatorFunctionId.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOperatorFunctionId588); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleOperatorFunctionId"
+
+
+    // $ANTLR start "ruleOperatorFunctionId"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:244:1: ruleOperatorFunctionId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'operator' this_OverloadableOperator_1= ruleOverloadableOperator (kw= '<' (this_TemplateArgument_3= ruleTemplateArgument )* kw= '>' )? ) ;
+    public final AntlrDatatypeRuleToken ruleOperatorFunctionId() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+        AntlrDatatypeRuleToken this_OverloadableOperator_1 = null;
+
+        AntlrDatatypeRuleToken this_TemplateArgument_3 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:247:28: ( (kw= 'operator' this_OverloadableOperator_1= ruleOverloadableOperator (kw= '<' (this_TemplateArgument_3= ruleTemplateArgument )* kw= '>' )? ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:248:1: (kw= 'operator' this_OverloadableOperator_1= ruleOverloadableOperator (kw= '<' (this_TemplateArgument_3= ruleTemplateArgument )* kw= '>' )? )
+            {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:248:1: (kw= 'operator' this_OverloadableOperator_1= ruleOverloadableOperator (kw= '<' (this_TemplateArgument_3= ruleTemplateArgument )* kw= '>' )? )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:249:2: kw= 'operator' this_OverloadableOperator_1= ruleOverloadableOperator (kw= '<' (this_TemplateArgument_3= ruleTemplateArgument )* kw= '>' )?
+            {
+            kw=(Token)match(input,41,FOLLOW_41_in_ruleOperatorFunctionId626); 
+
+                    current.merge(kw);
+                    newLeafNode(kw, grammarAccess.getOperatorFunctionIdAccess().getOperatorKeyword_0()); 
+                
+             
+                    newCompositeNode(grammarAccess.getOperatorFunctionIdAccess().getOverloadableOperatorParserRuleCall_1()); 
+                
+            pushFollow(FOLLOW_ruleOverloadableOperator_in_ruleOperatorFunctionId648);
+            this_OverloadableOperator_1=ruleOverloadableOperator();
+
+            state._fsp--;
+
+
+            		current.merge(this_OverloadableOperator_1);
+                
+             
+                    afterParserOrEnumRuleCall();
+                
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:265:1: (kw= '<' (this_TemplateArgument_3= ruleTemplateArgument )* kw= '>' )?
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0==42) ) {
+                alt6=1;
+            }
+            switch (alt6) {
+                case 1 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:266:2: kw= '<' (this_TemplateArgument_3= ruleTemplateArgument )* kw= '>'
+                    {
+                    kw=(Token)match(input,42,FOLLOW_42_in_ruleOperatorFunctionId667); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOperatorFunctionIdAccess().getLessThanSignKeyword_2_0()); 
+                        
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:271:1: (this_TemplateArgument_3= ruleTemplateArgument )*
+                    loop5:
+                    do {
+                        int alt5=2;
+                        int LA5_0 = input.LA(1);
+
+                        if ( ((LA5_0>=89 && LA5_0<=91)) ) {
+                            alt5=1;
+                        }
+
+
+                        switch (alt5) {
+                    	case 1 :
+                    	    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:272:5: this_TemplateArgument_3= ruleTemplateArgument
+                    	    {
+                    	     
+                    	            newCompositeNode(grammarAccess.getOperatorFunctionIdAccess().getTemplateArgumentParserRuleCall_2_1()); 
+                    	        
+                    	    pushFollow(FOLLOW_ruleTemplateArgument_in_ruleOperatorFunctionId690);
+                    	    this_TemplateArgument_3=ruleTemplateArgument();
+
+                    	    state._fsp--;
+
+
+                    	    		current.merge(this_TemplateArgument_3);
+                    	        
+                    	     
+                    	            afterParserOrEnumRuleCall();
+                    	        
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop5;
+                        }
+                    } while (true);
+
+                    kw=(Token)match(input,43,FOLLOW_43_in_ruleOperatorFunctionId710); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOperatorFunctionIdAccess().getGreaterThanSignKeyword_2_2()); 
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleOperatorFunctionId"
+
+
+    // $ANTLR start "entryRuleOverloadableOperator"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:296:1: entryRuleOverloadableOperator returns [String current=null] : iv_ruleOverloadableOperator= ruleOverloadableOperator EOF ;
+    public final String entryRuleOverloadableOperator() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleOverloadableOperator = null;
+
+
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:297:2: (iv_ruleOverloadableOperator= ruleOverloadableOperator EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:298:2: iv_ruleOverloadableOperator= ruleOverloadableOperator EOF
+            {
+             newCompositeNode(grammarAccess.getOverloadableOperatorRule()); 
+            pushFollow(FOLLOW_ruleOverloadableOperator_in_entryRuleOverloadableOperator753);
+            iv_ruleOverloadableOperator=ruleOverloadableOperator();
+
+            state._fsp--;
+
+             current =iv_ruleOverloadableOperator.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOverloadableOperator764); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleOverloadableOperator"
+
+
+    // $ANTLR start "ruleOverloadableOperator"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:305:1: ruleOverloadableOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'new' | kw= 'delete' | (kw= 'new' kw= '[' kw= ']' ) | (kw= 'delete' kw= '[' kw= ']' ) | kw= '+' | kw= '-' | kw= '*' | kw= '/' | kw= '%' | kw= '^' | kw= '&' | kw= '|' | kw= '~' | kw= '!' | kw= '=' | kw= '<' | kw= '>' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '^=' | kw= '&=' | kw= '|=' | kw= '<<' | kw= '>>' | kw= '>>=' | kw= '<<=' | kw= '==' | kw= '!=' | kw= '<=' | kw= '>=' | kw= '&&' | kw= '||' | kw= '++' | kw= '--' | kw= ',' | kw= '->*' | kw= '->' | kw= '()' | kw= '[]' ) ;
+    public final AntlrDatatypeRuleToken ruleOverloadableOperator() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+         enterRule(); 
+            
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:308:28: ( (kw= 'new' | kw= 'delete' | (kw= 'new' kw= '[' kw= ']' ) | (kw= 'delete' kw= '[' kw= ']' ) | kw= '+' | kw= '-' | kw= '*' | kw= '/' | kw= '%' | kw= '^' | kw= '&' | kw= '|' | kw= '~' | kw= '!' | kw= '=' | kw= '<' | kw= '>' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '^=' | kw= '&=' | kw= '|=' | kw= '<<' | kw= '>>' | kw= '>>=' | kw= '<<=' | kw= '==' | kw= '!=' | kw= '<=' | kw= '>=' | kw= '&&' | kw= '||' | kw= '++' | kw= '--' | kw= ',' | kw= '->*' | kw= '->' | kw= '()' | kw= '[]' ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:309:1: (kw= 'new' | kw= 'delete' | (kw= 'new' kw= '[' kw= ']' ) | (kw= 'delete' kw= '[' kw= ']' ) | kw= '+' | kw= '-' | kw= '*' | kw= '/' | kw= '%' | kw= '^' | kw= '&' | kw= '|' | kw= '~' | kw= '!' | kw= '=' | kw= '<' | kw= '>' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '^=' | kw= '&=' | kw= '|=' | kw= '<<' | kw= '>>' | kw= '>>=' | kw= '<<=' | kw= '==' | kw= '!=' | kw= '<=' | kw= '>=' | kw= '&&' | kw= '||' | kw= '++' | kw= '--' | kw= ',' | kw= '->*' | kw= '->' | kw= '()' | kw= '[]' )
+            {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:309:1: (kw= 'new' | kw= 'delete' | (kw= 'new' kw= '[' kw= ']' ) | (kw= 'delete' kw= '[' kw= ']' ) | kw= '+' | kw= '-' | kw= '*' | kw= '/' | kw= '%' | kw= '^' | kw= '&' | kw= '|' | kw= '~' | kw= '!' | kw= '=' | kw= '<' | kw= '>' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '^=' | kw= '&=' | kw= '|=' | kw= '<<' | kw= '>>' | kw= '>>=' | kw= '<<=' | kw= '==' | kw= '!=' | kw= '<=' | kw= '>=' | kw= '&&' | kw= '||' | kw= '++' | kw= '--' | kw= ',' | kw= '->*' | kw= '->' | kw= '()' | kw= '[]' )
+            int alt7=42;
+            alt7 = dfa7.predict(input);
+            switch (alt7) {
+                case 1 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:310:2: kw= 'new'
+                    {
+                    kw=(Token)match(input,44,FOLLOW_44_in_ruleOverloadableOperator802); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getNewKeyword_0()); 
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:317:2: kw= 'delete'
+                    {
+                    kw=(Token)match(input,45,FOLLOW_45_in_ruleOverloadableOperator821); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getDeleteKeyword_1()); 
+                        
+
+                    }
+                    break;
+                case 3 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:323:6: (kw= 'new' kw= '[' kw= ']' )
+                    {
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:323:6: (kw= 'new' kw= '[' kw= ']' )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:324:2: kw= 'new' kw= '[' kw= ']'
+                    {
+                    kw=(Token)match(input,44,FOLLOW_44_in_ruleOverloadableOperator841); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getNewKeyword_2_0()); 
+                        
+                    kw=(Token)match(input,46,FOLLOW_46_in_ruleOverloadableOperator854); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getLeftSquareBracketKeyword_2_1()); 
+                        
+                    kw=(Token)match(input,47,FOLLOW_47_in_ruleOverloadableOperator867); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getRightSquareBracketKeyword_2_2()); 
+                        
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:342:6: (kw= 'delete' kw= '[' kw= ']' )
+                    {
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:342:6: (kw= 'delete' kw= '[' kw= ']' )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:343:2: kw= 'delete' kw= '[' kw= ']'
+                    {
+                    kw=(Token)match(input,45,FOLLOW_45_in_ruleOverloadableOperator888); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getDeleteKeyword_3_0()); 
+                        
+                    kw=(Token)match(input,46,FOLLOW_46_in_ruleOverloadableOperator901); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getLeftSquareBracketKeyword_3_1()); 
+                        
+                    kw=(Token)match(input,47,FOLLOW_47_in_ruleOverloadableOperator914); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getRightSquareBracketKeyword_3_2()); 
+                        
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:362:2: kw= '+'
+                    {
+                    kw=(Token)match(input,48,FOLLOW_48_in_ruleOverloadableOperator934); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getPlusSignKeyword_4()); 
+                        
+
+                    }
+                    break;
+                case 6 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:369:2: kw= '-'
+                    {
+                    kw=(Token)match(input,49,FOLLOW_49_in_ruleOverloadableOperator953); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getHyphenMinusKeyword_5()); 
+                        
+
+                    }
+                    break;
+                case 7 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:376:2: kw= '*'
+                    {
+                    kw=(Token)match(input,50,FOLLOW_50_in_ruleOverloadableOperator972); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getAsteriskKeyword_6()); 
+                        
+
+                    }
+                    break;
+                case 8 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:383:2: kw= '/'
+                    {
+                    kw=(Token)match(input,51,FOLLOW_51_in_ruleOverloadableOperator991); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getSolidusKeyword_7()); 
+                        
+
+                    }
+                    break;
+                case 9 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:390:2: kw= '%'
+                    {
+                    kw=(Token)match(input,52,FOLLOW_52_in_ruleOverloadableOperator1010); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getPercentSignKeyword_8()); 
+                        
+
+                    }
+                    break;
+                case 10 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:397:2: kw= '^'
+                    {
+                    kw=(Token)match(input,53,FOLLOW_53_in_ruleOverloadableOperator1029); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getCircumflexAccentKeyword_9()); 
+                        
+
+                    }
+                    break;
+                case 11 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:404:2: kw= '&'
+                    {
+                    kw=(Token)match(input,54,FOLLOW_54_in_ruleOverloadableOperator1048); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getAmpersandKeyword_10()); 
+                        
+
+                    }
+                    break;
+                case 12 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:411:2: kw= '|'
+                    {
+                    kw=(Token)match(input,55,FOLLOW_55_in_ruleOverloadableOperator1067); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getVerticalLineKeyword_11()); 
+                        
+
+                    }
+                    break;
+                case 13 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:418:2: kw= '~'
+                    {
+                    kw=(Token)match(input,56,FOLLOW_56_in_ruleOverloadableOperator1086); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getTildeKeyword_12()); 
+                        
+
+                    }
+                    break;
+                case 14 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:425:2: kw= '!'
+                    {
+                    kw=(Token)match(input,57,FOLLOW_57_in_ruleOverloadableOperator1105); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getExclamationMarkKeyword_13()); 
+                        
+
+                    }
+                    break;
+                case 15 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:432:2: kw= '='
+                    {
+                    kw=(Token)match(input,58,FOLLOW_58_in_ruleOverloadableOperator1124); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getEqualsSignKeyword_14()); 
+                        
+
+                    }
+                    break;
+                case 16 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:439:2: kw= '<'
+                    {
+                    kw=(Token)match(input,42,FOLLOW_42_in_ruleOverloadableOperator1143); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getLessThanSignKeyword_15()); 
+                        
+
+                    }
+                    break;
+                case 17 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:446:2: kw= '>'
+                    {
+                    kw=(Token)match(input,43,FOLLOW_43_in_ruleOverloadableOperator1162); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getGreaterThanSignKeyword_16()); 
+                        
+
+                    }
+                    break;
+                case 18 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:453:2: kw= '+='
+                    {
+                    kw=(Token)match(input,59,FOLLOW_59_in_ruleOverloadableOperator1181); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getPlusSignEqualsSignKeyword_17()); 
+                        
+
+                    }
+                    break;
+                case 19 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:460:2: kw= '-='
+                    {
+                    kw=(Token)match(input,60,FOLLOW_60_in_ruleOverloadableOperator1200); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getHyphenMinusEqualsSignKeyword_18()); 
+                        
+
+                    }
+                    break;
+                case 20 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:467:2: kw= '*='
+                    {
+                    kw=(Token)match(input,61,FOLLOW_61_in_ruleOverloadableOperator1219); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getAsteriskEqualsSignKeyword_19()); 
+                        
+
+                    }
+                    break;
+                case 21 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:474:2: kw= '/='
+                    {
+                    kw=(Token)match(input,62,FOLLOW_62_in_ruleOverloadableOperator1238); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getSolidusEqualsSignKeyword_20()); 
+                        
+
+                    }
+                    break;
+                case 22 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:481:2: kw= '%='
+                    {
+                    kw=(Token)match(input,63,FOLLOW_63_in_ruleOverloadableOperator1257); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getPercentSignEqualsSignKeyword_21()); 
+                        
+
+                    }
+                    break;
+                case 23 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:488:2: kw= '^='
+                    {
+                    kw=(Token)match(input,64,FOLLOW_64_in_ruleOverloadableOperator1276); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getCircumflexAccentEqualsSignKeyword_22()); 
+                        
+
+                    }
+                    break;
+                case 24 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:495:2: kw= '&='
+                    {
+                    kw=(Token)match(input,65,FOLLOW_65_in_ruleOverloadableOperator1295); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getAmpersandEqualsSignKeyword_23()); 
+                        
+
+                    }
+                    break;
+                case 25 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:502:2: kw= '|='
+                    {
+                    kw=(Token)match(input,66,FOLLOW_66_in_ruleOverloadableOperator1314); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getVerticalLineEqualsSignKeyword_24()); 
+                        
+
+                    }
+                    break;
+                case 26 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:509:2: kw= '<<'
+                    {
+                    kw=(Token)match(input,67,FOLLOW_67_in_ruleOverloadableOperator1333); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getLessThanSignLessThanSignKeyword_25()); 
+                        
+
+                    }
+                    break;
+                case 27 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:516:2: kw= '>>'
+                    {
+                    kw=(Token)match(input,68,FOLLOW_68_in_ruleOverloadableOperator1352); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getGreaterThanSignGreaterThanSignKeyword_26()); 
+                        
+
+                    }
+                    break;
+                case 28 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:523:2: kw= '>>='
+                    {
+                    kw=(Token)match(input,69,FOLLOW_69_in_ruleOverloadableOperator1371); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getGreaterThanSignGreaterThanSignEqualsSignKeyword_27()); 
+                        
+
+                    }
+                    break;
+                case 29 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:530:2: kw= '<<='
+                    {
+                    kw=(Token)match(input,70,FOLLOW_70_in_ruleOverloadableOperator1390); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getLessThanSignLessThanSignEqualsSignKeyword_28()); 
+                        
+
+                    }
+                    break;
+                case 30 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:537:2: kw= '=='
+                    {
+                    kw=(Token)match(input,71,FOLLOW_71_in_ruleOverloadableOperator1409); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getEqualsSignEqualsSignKeyword_29()); 
+                        
+
+                    }
+                    break;
+                case 31 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:544:2: kw= '!='
+                    {
+                    kw=(Token)match(input,72,FOLLOW_72_in_ruleOverloadableOperator1428); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getExclamationMarkEqualsSignKeyword_30()); 
+                        
+
+                    }
+                    break;
+                case 32 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:551:2: kw= '<='
+                    {
+                    kw=(Token)match(input,73,FOLLOW_73_in_ruleOverloadableOperator1447); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getLessThanSignEqualsSignKeyword_31()); 
+                        
+
+                    }
+                    break;
+                case 33 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:558:2: kw= '>='
+                    {
+                    kw=(Token)match(input,74,FOLLOW_74_in_ruleOverloadableOperator1466); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getGreaterThanSignEqualsSignKeyword_32()); 
+                        
+
+                    }
+                    break;
+                case 34 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:565:2: kw= '&&'
+                    {
+                    kw=(Token)match(input,75,FOLLOW_75_in_ruleOverloadableOperator1485); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getAmpersandAmpersandKeyword_33()); 
+                        
+
+                    }
+                    break;
+                case 35 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:572:2: kw= '||'
+                    {
+                    kw=(Token)match(input,76,FOLLOW_76_in_ruleOverloadableOperator1504); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getVerticalLineVerticalLineKeyword_34()); 
+                        
+
+                    }
+                    break;
+                case 36 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:579:2: kw= '++'
+                    {
+                    kw=(Token)match(input,77,FOLLOW_77_in_ruleOverloadableOperator1523); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getPlusSignPlusSignKeyword_35()); 
+                        
+
+                    }
+                    break;
+                case 37 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:586:2: kw= '--'
+                    {
+                    kw=(Token)match(input,78,FOLLOW_78_in_ruleOverloadableOperator1542); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getHyphenMinusHyphenMinusKeyword_36()); 
+                        
+
+                    }
+                    break;
+                case 38 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:593:2: kw= ','
+                    {
+                    kw=(Token)match(input,79,FOLLOW_79_in_ruleOverloadableOperator1561); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getCommaKeyword_37()); 
+                        
+
+                    }
+                    break;
+                case 39 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:600:2: kw= '->*'
+                    {
+                    kw=(Token)match(input,80,FOLLOW_80_in_ruleOverloadableOperator1580); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getHyphenMinusGreaterThanSignAsteriskKeyword_38()); 
+                        
+
+                    }
+                    break;
+                case 40 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:607:2: kw= '->'
+                    {
+                    kw=(Token)match(input,81,FOLLOW_81_in_ruleOverloadableOperator1599); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getHyphenMinusGreaterThanSignKeyword_39()); 
+                        
+
+                    }
+                    break;
+                case 41 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:614:2: kw= '()'
+                    {
+                    kw=(Token)match(input,82,FOLLOW_82_in_ruleOverloadableOperator1618); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getLeftParenthesisRightParenthesisKeyword_40()); 
+                        
+
+                    }
+                    break;
+                case 42 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:621:2: kw= '[]'
+                    {
+                    kw=(Token)match(input,83,FOLLOW_83_in_ruleOverloadableOperator1637); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getLeftSquareBracketRightSquareBracketKeyword_41()); 
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleOverloadableOperator"
+
+
+    // $ANTLR start "entryRuleLiteralOperatorId"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:634:1: entryRuleLiteralOperatorId returns [String current=null] : iv_ruleLiteralOperatorId= ruleLiteralOperatorId EOF ;
+    public final String entryRuleLiteralOperatorId() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleLiteralOperatorId = null;
+
+
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:635:2: (iv_ruleLiteralOperatorId= ruleLiteralOperatorId EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:636:2: iv_ruleLiteralOperatorId= ruleLiteralOperatorId EOF
+            {
+             newCompositeNode(grammarAccess.getLiteralOperatorIdRule()); 
+            pushFollow(FOLLOW_ruleLiteralOperatorId_in_entryRuleLiteralOperatorId1678);
+            iv_ruleLiteralOperatorId=ruleLiteralOperatorId();
+
+            state._fsp--;
+
+             current =iv_ruleLiteralOperatorId.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteralOperatorId1689); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleLiteralOperatorId"
+
+
+    // $ANTLR start "ruleLiteralOperatorId"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:643:1: ruleLiteralOperatorId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'operator' kw= '\"' kw= '\"' ) ;
+    public final AntlrDatatypeRuleToken ruleLiteralOperatorId() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+         enterRule(); 
+            
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:646:28: ( (kw= 'operator' kw= '\"' kw= '\"' ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:647:1: (kw= 'operator' kw= '\"' kw= '\"' )
+            {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:647:1: (kw= 'operator' kw= '\"' kw= '\"' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:648:2: kw= 'operator' kw= '\"' kw= '\"'
+            {
+            kw=(Token)match(input,41,FOLLOW_41_in_ruleLiteralOperatorId1727); 
+
+                    current.merge(kw);
+                    newLeafNode(kw, grammarAccess.getLiteralOperatorIdAccess().getOperatorKeyword_0()); 
+                
+            kw=(Token)match(input,84,FOLLOW_84_in_ruleLiteralOperatorId1740); 
+
+                    current.merge(kw);
+                    newLeafNode(kw, grammarAccess.getLiteralOperatorIdAccess().getQuotationMarkKeyword_1()); 
+                
+            kw=(Token)match(input,84,FOLLOW_84_in_ruleLiteralOperatorId1753); 
+
+                    current.merge(kw);
+                    newLeafNode(kw, grammarAccess.getLiteralOperatorIdAccess().getQuotationMarkKeyword_2()); 
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleLiteralOperatorId"
+
+
+    // $ANTLR start "entryRuleTemplateParameterList"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:675:1: entryRuleTemplateParameterList returns [String current=null] : iv_ruleTemplateParameterList= ruleTemplateParameterList EOF ;
+    public final String entryRuleTemplateParameterList() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleTemplateParameterList = null;
+
+
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:676:2: (iv_ruleTemplateParameterList= ruleTemplateParameterList EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:677:2: iv_ruleTemplateParameterList= ruleTemplateParameterList EOF
+            {
+             newCompositeNode(grammarAccess.getTemplateParameterListRule()); 
+            pushFollow(FOLLOW_ruleTemplateParameterList_in_entryRuleTemplateParameterList1796);
+            iv_ruleTemplateParameterList=ruleTemplateParameterList();
+
+            state._fsp--;
+
+             current =iv_ruleTemplateParameterList.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTemplateParameterList1807); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleTemplateParameterList"
+
+
+    // $ANTLR start "ruleTemplateParameterList"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:684:1: ruleTemplateParameterList returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_TemplateParameter_0= ruleTemplateParameter (kw= ',' this_TemplateParameter_2= ruleTemplateParameter )* ) ;
+    public final AntlrDatatypeRuleToken ruleTemplateParameterList() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+        AntlrDatatypeRuleToken this_TemplateParameter_0 = null;
+
+        AntlrDatatypeRuleToken this_TemplateParameter_2 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:687:28: ( (this_TemplateParameter_0= ruleTemplateParameter (kw= ',' this_TemplateParameter_2= ruleTemplateParameter )* ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:688:1: (this_TemplateParameter_0= ruleTemplateParameter (kw= ',' this_TemplateParameter_2= ruleTemplateParameter )* )
+            {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:688:1: (this_TemplateParameter_0= ruleTemplateParameter (kw= ',' this_TemplateParameter_2= ruleTemplateParameter )* )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:689:5: this_TemplateParameter_0= ruleTemplateParameter (kw= ',' this_TemplateParameter_2= ruleTemplateParameter )*
+            {
+             
+                    newCompositeNode(grammarAccess.getTemplateParameterListAccess().getTemplateParameterParserRuleCall_0()); 
+                
+            pushFollow(FOLLOW_ruleTemplateParameter_in_ruleTemplateParameterList1854);
+            this_TemplateParameter_0=ruleTemplateParameter();
+
+            state._fsp--;
+
+
+            		current.merge(this_TemplateParameter_0);
+                
+             
+                    afterParserOrEnumRuleCall();
+                
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:699:1: (kw= ',' this_TemplateParameter_2= ruleTemplateParameter )*
+            loop8:
+            do {
+                int alt8=2;
+                int LA8_0 = input.LA(1);
+
+                if ( (LA8_0==79) ) {
+                    alt8=1;
+                }
+
+
+                switch (alt8) {
+            	case 1 :
+            	    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:700:2: kw= ',' this_TemplateParameter_2= ruleTemplateParameter
+            	    {
+            	    kw=(Token)match(input,79,FOLLOW_79_in_ruleTemplateParameterList1873); 
+
+            	            current.merge(kw);
+            	            newLeafNode(kw, grammarAccess.getTemplateParameterListAccess().getCommaKeyword_1_0()); 
+            	        
+            	     
+            	            newCompositeNode(grammarAccess.getTemplateParameterListAccess().getTemplateParameterParserRuleCall_1_1()); 
+            	        
+            	    pushFollow(FOLLOW_ruleTemplateParameter_in_ruleTemplateParameterList1895);
+            	    this_TemplateParameter_2=ruleTemplateParameter();
+
+            	    state._fsp--;
+
+
+            	    		current.merge(this_TemplateParameter_2);
+            	        
+            	     
+            	            afterParserOrEnumRuleCall();
+            	        
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop8;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleTemplateParameterList"
+
+
+    // $ANTLR start "entryRuleTemplateParameter"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:724:1: entryRuleTemplateParameter returns [String current=null] : iv_ruleTemplateParameter= ruleTemplateParameter EOF ;
+    public final String entryRuleTemplateParameter() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleTemplateParameter = null;
+
+
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:725:2: (iv_ruleTemplateParameter= ruleTemplateParameter EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:726:2: iv_ruleTemplateParameter= ruleTemplateParameter EOF
+            {
+             newCompositeNode(grammarAccess.getTemplateParameterRule()); 
+            pushFollow(FOLLOW_ruleTemplateParameter_in_entryRuleTemplateParameter1943);
+            iv_ruleTemplateParameter=ruleTemplateParameter();
+
+            state._fsp--;
+
+             current =iv_ruleTemplateParameter.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTemplateParameter1954); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleTemplateParameter"
+
+
+    // $ANTLR start "ruleTemplateParameter"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:733:1: ruleTemplateParameter returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_TypeParameter_0= ruleTypeParameter | this_ParameterDeclaration_1= ruleParameterDeclaration ) ;
+    public final AntlrDatatypeRuleToken ruleTemplateParameter() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        AntlrDatatypeRuleToken this_TypeParameter_0 = null;
+
+        AntlrDatatypeRuleToken this_ParameterDeclaration_1 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:736:28: ( (this_TypeParameter_0= ruleTypeParameter | this_ParameterDeclaration_1= ruleParameterDeclaration ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:737:1: (this_TypeParameter_0= ruleTypeParameter | this_ParameterDeclaration_1= ruleParameterDeclaration )
+            {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:737:1: (this_TypeParameter_0= ruleTypeParameter | this_ParameterDeclaration_1= ruleParameterDeclaration )
+            int alt9=2;
+            int LA9_0 = input.LA(1);
+
+            if ( (LA9_0==85||(LA9_0>=87 && LA9_0<=88)) ) {
+                alt9=1;
+            }
+            else if ( (LA9_0==92) ) {
+                alt9=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 9, 0, input);
+
+                throw nvae;
+            }
+            switch (alt9) {
+                case 1 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:738:5: this_TypeParameter_0= ruleTypeParameter
+                    {
+                     
+                            newCompositeNode(grammarAccess.getTemplateParameterAccess().getTypeParameterParserRuleCall_0()); 
+                        
+                    pushFollow(FOLLOW_ruleTypeParameter_in_ruleTemplateParameter2001);
+                    this_TypeParameter_0=ruleTypeParameter();
+
+                    state._fsp--;
+
+
+                    		current.merge(this_TypeParameter_0);
+                        
+                     
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:750:5: this_ParameterDeclaration_1= ruleParameterDeclaration
+                    {
+                     
+                            newCompositeNode(grammarAccess.getTemplateParameterAccess().getParameterDeclarationParserRuleCall_1()); 
+                        
+                    pushFollow(FOLLOW_ruleParameterDeclaration_in_ruleTemplateParameter2034);
+                    this_ParameterDeclaration_1=ruleParameterDeclaration();
+
+                    state._fsp--;
+
+
+                    		current.merge(this_ParameterDeclaration_1);
+                        
+                     
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleTemplateParameter"
+
+
+    // $ANTLR start "entryRuleTypeParameter"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:768:1: entryRuleTypeParameter returns [String current=null] : iv_ruleTypeParameter= ruleTypeParameter EOF ;
+    public final String entryRuleTypeParameter() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleTypeParameter = null;
+
+
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:769:2: (iv_ruleTypeParameter= ruleTypeParameter EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:770:2: iv_ruleTypeParameter= ruleTypeParameter EOF
+            {
+             newCompositeNode(grammarAccess.getTypeParameterRule()); 
+            pushFollow(FOLLOW_ruleTypeParameter_in_entryRuleTypeParameter2080);
+            iv_ruleTypeParameter=ruleTypeParameter();
+
+            state._fsp--;
+
+             current =iv_ruleTypeParameter.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeParameter2091); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleTypeParameter"
+
+
+    // $ANTLR start "ruleTypeParameter"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:777:1: ruleTypeParameter returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= 'class' ( ( (kw= '...' )? (this_ID_2= RULE_ID )? ) | ( (this_ID_3= RULE_ID )? kw= '=' this_TypeId_5= ruleTypeId ) ) ) | (kw= 'typename' ( ( (kw= '...' )? (this_ID_8= RULE_ID )? ) | ( (this_ID_9= RULE_ID )? kw= '=' this_TypeId_11= ruleTypeId ) ) ) | (kw= 'template' kw= '<' this_TemplateParameterList_14= ruleTemplateParameterList kw= '>' kw= 'class' ( ( (kw= '...' )? (this_ID_18= RULE_ID )? ) | ( (this_ID_19= RULE_ID )? kw= '=' this_IdExpression_21= ruleIdExpression ) ) ) ) ;
+    public final AntlrDatatypeRuleToken ruleTypeParameter() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+        Token this_ID_2=null;
+        Token this_ID_3=null;
+        Token this_ID_8=null;
+        Token this_ID_9=null;
+        Token this_ID_18=null;
+        Token this_ID_19=null;
+        AntlrDatatypeRuleToken this_TypeId_5 = null;
+
+        AntlrDatatypeRuleToken this_TypeId_11 = null;
+
+        AntlrDatatypeRuleToken this_TemplateParameterList_14 = null;
+
+        AntlrDatatypeRuleToken this_IdExpression_21 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:780:28: ( ( (kw= 'class' ( ( (kw= '...' )? (this_ID_2= RULE_ID )? ) | ( (this_ID_3= RULE_ID )? kw= '=' this_TypeId_5= ruleTypeId ) ) ) | (kw= 'typename' ( ( (kw= '...' )? (this_ID_8= RULE_ID )? ) | ( (this_ID_9= RULE_ID )? kw= '=' this_TypeId_11= ruleTypeId ) ) ) | (kw= 'template' kw= '<' this_TemplateParameterList_14= ruleTemplateParameterList kw= '>' kw= 'class' ( ( (kw= '...' )? (this_ID_18= RULE_ID )? ) | ( (this_ID_19= RULE_ID )? kw= '=' this_IdExpression_21= ruleIdExpression ) ) ) ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:781:1: ( (kw= 'class' ( ( (kw= '...' )? (this_ID_2= RULE_ID )? ) | ( (this_ID_3= RULE_ID )? kw= '=' this_TypeId_5= ruleTypeId ) ) ) | (kw= 'typename' ( ( (kw= '...' )? (this_ID_8= RULE_ID )? ) | ( (this_ID_9= RULE_ID )? kw= '=' this_TypeId_11= ruleTypeId ) ) ) | (kw= 'template' kw= '<' this_TemplateParameterList_14= ruleTemplateParameterList kw= '>' kw= 'class' ( ( (kw= '...' )? (this_ID_18= RULE_ID )? ) | ( (this_ID_19= RULE_ID )? kw= '=' this_IdExpression_21= ruleIdExpression ) ) ) )
+            {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:781:1: ( (kw= 'class' ( ( (kw= '...' )? (this_ID_2= RULE_ID )? ) | ( (this_ID_3= RULE_ID )? kw= '=' this_TypeId_5= ruleTypeId ) ) ) | (kw= 'typename' ( ( (kw= '...' )? (this_ID_8= RULE_ID )? ) | ( (this_ID_9= RULE_ID )? kw= '=' this_TypeId_11= ruleTypeId ) ) ) | (kw= 'template' kw= '<' this_TemplateParameterList_14= ruleTemplateParameterList kw= '>' kw= 'class' ( ( (kw= '...' )? (this_ID_18= RULE_ID )? ) | ( (this_ID_19= RULE_ID )? kw= '=' this_IdExpression_21= ruleIdExpression ) ) ) )
+            int alt22=3;
+            switch ( input.LA(1) ) {
+            case 85:
+                {
+                alt22=1;
+                }
+                break;
+            case 87:
+                {
+                alt22=2;
+                }
+                break;
+            case 88:
+                {
+                alt22=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 22, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt22) {
+                case 1 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:781:2: (kw= 'class' ( ( (kw= '...' )? (this_ID_2= RULE_ID )? ) | ( (this_ID_3= RULE_ID )? kw= '=' this_TypeId_5= ruleTypeId ) ) )
+                    {
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:781:2: (kw= 'class' ( ( (kw= '...' )? (this_ID_2= RULE_ID )? ) | ( (this_ID_3= RULE_ID )? kw= '=' this_TypeId_5= ruleTypeId ) ) )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:782:2: kw= 'class' ( ( (kw= '...' )? (this_ID_2= RULE_ID )? ) | ( (this_ID_3= RULE_ID )? kw= '=' this_TypeId_5= ruleTypeId ) )
+                    {
+                    kw=(Token)match(input,85,FOLLOW_85_in_ruleTypeParameter2130); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getTypeParameterAccess().getClassKeyword_0_0()); 
+                        
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:787:1: ( ( (kw= '...' )? (this_ID_2= RULE_ID )? ) | ( (this_ID_3= RULE_ID )? kw= '=' this_TypeId_5= ruleTypeId ) )
+                    int alt13=2;
+                    switch ( input.LA(1) ) {
+                    case EOF:
+                    case 43:
+                    case 79:
+                    case 86:
+                        {
+                        alt13=1;
+                        }
+                        break;
+                    case RULE_ID:
+                        {
+                        int LA13_2 = input.LA(2);
+
+                        if ( (LA13_2==58) ) {
+                            alt13=2;
+                        }
+                        else if ( (LA13_2==EOF||LA13_2==43||LA13_2==79) ) {
+                            alt13=1;
+                        }
+                        else {
+                            NoViableAltException nvae =
+                                new NoViableAltException("", 13, 2, input);
+
+                            throw nvae;
+                        }
+                        }
+                        break;
+                    case 58:
+                        {
+                        alt13=2;
+                        }
+                        break;
+                    default:
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 13, 0, input);
+
+                        throw nvae;
+                    }
+
+                    switch (alt13) {
+                        case 1 :
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:787:2: ( (kw= '...' )? (this_ID_2= RULE_ID )? )
+                            {
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:787:2: ( (kw= '...' )? (this_ID_2= RULE_ID )? )
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:787:3: (kw= '...' )? (this_ID_2= RULE_ID )?
+                            {
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:787:3: (kw= '...' )?
+                            int alt10=2;
+                            int LA10_0 = input.LA(1);
+
+                            if ( (LA10_0==86) ) {
+                                alt10=1;
+                            }
+                            switch (alt10) {
+                                case 1 :
+                                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:788:2: kw= '...'
+                                    {
+                                    kw=(Token)match(input,86,FOLLOW_86_in_ruleTypeParameter2146); 
+
+                                            current.merge(kw);
+                                            newLeafNode(kw, grammarAccess.getTypeParameterAccess().getFullStopFullStopFullStopKeyword_0_1_0_0()); 
+                                        
+
+                                    }
+                                    break;
+
+                            }
+
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:793:3: (this_ID_2= RULE_ID )?
+                            int alt11=2;
+                            int LA11_0 = input.LA(1);
+
+                            if ( (LA11_0==RULE_ID) ) {
+                                alt11=1;
+                            }
+                            switch (alt11) {
+                                case 1 :
+                                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:793:8: this_ID_2= RULE_ID
+                                    {
+                                    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypeParameter2164); 
+
+                                    		current.merge(this_ID_2);
+                                        
+                                     
+                                        newLeafNode(this_ID_2, grammarAccess.getTypeParameterAccess().getIDTerminalRuleCall_0_1_0_1()); 
+                                        
+
+                                    }
+                                    break;
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
+                        case 2 :
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:801:6: ( (this_ID_3= RULE_ID )? kw= '=' this_TypeId_5= ruleTypeId )
+                            {
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:801:6: ( (this_ID_3= RULE_ID )? kw= '=' this_TypeId_5= ruleTypeId )
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:801:7: (this_ID_3= RULE_ID )? kw= '=' this_TypeId_5= ruleTypeId
+                            {
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:801:7: (this_ID_3= RULE_ID )?
+                            int alt12=2;
+                            int LA12_0 = input.LA(1);
+
+                            if ( (LA12_0==RULE_ID) ) {
+                                alt12=1;
+                            }
+                            switch (alt12) {
+                                case 1 :
+                                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:801:12: this_ID_3= RULE_ID
+                                    {
+                                    this_ID_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypeParameter2195); 
+
+                                    		current.merge(this_ID_3);
+                                        
+                                     
+                                        newLeafNode(this_ID_3, grammarAccess.getTypeParameterAccess().getIDTerminalRuleCall_0_1_1_0()); 
+                                        
+
+                                    }
+                                    break;
+
+                            }
+
+                            kw=(Token)match(input,58,FOLLOW_58_in_ruleTypeParameter2215); 
+
+                                    current.merge(kw);
+                                    newLeafNode(kw, grammarAccess.getTypeParameterAccess().getEqualsSignKeyword_0_1_1_1()); 
+                                
+                             
+                                    newCompositeNode(grammarAccess.getTypeParameterAccess().getTypeIdParserRuleCall_0_1_1_2()); 
+                                
+                            pushFollow(FOLLOW_ruleTypeId_in_ruleTypeParameter2237);
+                            this_TypeId_5=ruleTypeId();
+
+                            state._fsp--;
+
+
+                            		current.merge(this_TypeId_5);
+                                
+                             
+                                    afterParserOrEnumRuleCall();
+                                
+
+                            }
+
+
+                            }
+                            break;
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:826:6: (kw= 'typename' ( ( (kw= '...' )? (this_ID_8= RULE_ID )? ) | ( (this_ID_9= RULE_ID )? kw= '=' this_TypeId_11= ruleTypeId ) ) )
+                    {
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:826:6: (kw= 'typename' ( ( (kw= '...' )? (this_ID_8= RULE_ID )? ) | ( (this_ID_9= RULE_ID )? kw= '=' this_TypeId_11= ruleTypeId ) ) )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:827:2: kw= 'typename' ( ( (kw= '...' )? (this_ID_8= RULE_ID )? ) | ( (this_ID_9= RULE_ID )? kw= '=' this_TypeId_11= ruleTypeId ) )
+                    {
+                    kw=(Token)match(input,87,FOLLOW_87_in_ruleTypeParameter2265); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getTypeParameterAccess().getTypenameKeyword_1_0()); 
+                        
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:832:1: ( ( (kw= '...' )? (this_ID_8= RULE_ID )? ) | ( (this_ID_9= RULE_ID )? kw= '=' this_TypeId_11= ruleTypeId ) )
+                    int alt17=2;
+                    switch ( input.LA(1) ) {
+                    case EOF:
+                    case 43:
+                    case 79:
+                    case 86:
+                        {
+                        alt17=1;
+                        }
+                        break;
+                    case RULE_ID:
+                        {
+                        int LA17_2 = input.LA(2);
+
+                        if ( (LA17_2==58) ) {
+                            alt17=2;
+                        }
+                        else if ( (LA17_2==EOF||LA17_2==43||LA17_2==79) ) {
+                            alt17=1;
+                        }
+                        else {
+                            NoViableAltException nvae =
+                                new NoViableAltException("", 17, 2, input);
+
+                            throw nvae;
+                        }
+                        }
+                        break;
+                    case 58:
+                        {
+                        alt17=2;
+                        }
+                        break;
+                    default:
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 17, 0, input);
+
+                        throw nvae;
+                    }
+
+                    switch (alt17) {
+                        case 1 :
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:832:2: ( (kw= '...' )? (this_ID_8= RULE_ID )? )
+                            {
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:832:2: ( (kw= '...' )? (this_ID_8= RULE_ID )? )
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:832:3: (kw= '...' )? (this_ID_8= RULE_ID )?
+                            {
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:832:3: (kw= '...' )?
+                            int alt14=2;
+                            int LA14_0 = input.LA(1);
+
+                            if ( (LA14_0==86) ) {
+                                alt14=1;
+                            }
+                            switch (alt14) {
+                                case 1 :
+                                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:833:2: kw= '...'
+                                    {
+                                    kw=(Token)match(input,86,FOLLOW_86_in_ruleTypeParameter2281); 
+
+                                            current.merge(kw);
+                                            newLeafNode(kw, grammarAccess.getTypeParameterAccess().getFullStopFullStopFullStopKeyword_1_1_0_0()); 
+                                        
+
+                                    }
+                                    break;
+
+                            }
+
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:838:3: (this_ID_8= RULE_ID )?
+                            int alt15=2;
+                            int LA15_0 = input.LA(1);
+
+                            if ( (LA15_0==RULE_ID) ) {
+                                alt15=1;
+                            }
+                            switch (alt15) {
+                                case 1 :
+                                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:838:8: this_ID_8= RULE_ID
+                                    {
+                                    this_ID_8=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypeParameter2299); 
+
+                                    		current.merge(this_ID_8);
+                                        
+                                     
+                                        newLeafNode(this_ID_8, grammarAccess.getTypeParameterAccess().getIDTerminalRuleCall_1_1_0_1()); 
+                                        
+
+                                    }
+                                    break;
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
+                        case 2 :
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:846:6: ( (this_ID_9= RULE_ID )? kw= '=' this_TypeId_11= ruleTypeId )
+                            {
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:846:6: ( (this_ID_9= RULE_ID )? kw= '=' this_TypeId_11= ruleTypeId )
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:846:7: (this_ID_9= RULE_ID )? kw= '=' this_TypeId_11= ruleTypeId
+                            {
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:846:7: (this_ID_9= RULE_ID )?
+                            int alt16=2;
+                            int LA16_0 = input.LA(1);
+
+                            if ( (LA16_0==RULE_ID) ) {
+                                alt16=1;
+                            }
+                            switch (alt16) {
+                                case 1 :
+                                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:846:12: this_ID_9= RULE_ID
+                                    {
+                                    this_ID_9=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypeParameter2330); 
+
+                                    		current.merge(this_ID_9);
+                                        
+                                     
+                                        newLeafNode(this_ID_9, grammarAccess.getTypeParameterAccess().getIDTerminalRuleCall_1_1_1_0()); 
+                                        
+
+                                    }
+                                    break;
+
+                            }
+
+                            kw=(Token)match(input,58,FOLLOW_58_in_ruleTypeParameter2350); 
+
+                                    current.merge(kw);
+                                    newLeafNode(kw, grammarAccess.getTypeParameterAccess().getEqualsSignKeyword_1_1_1_1()); 
+                                
+                             
+                                    newCompositeNode(grammarAccess.getTypeParameterAccess().getTypeIdParserRuleCall_1_1_1_2()); 
+                                
+                            pushFollow(FOLLOW_ruleTypeId_in_ruleTypeParameter2372);
+                            this_TypeId_11=ruleTypeId();
+
+                            state._fsp--;
+
+
+                            		current.merge(this_TypeId_11);
+                                
+                             
+                                    afterParserOrEnumRuleCall();
+                                
+
+                            }
+
+
+                            }
+                            break;
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:871:6: (kw= 'template' kw= '<' this_TemplateParameterList_14= ruleTemplateParameterList kw= '>' kw= 'class' ( ( (kw= '...' )? (this_ID_18= RULE_ID )? ) | ( (this_ID_19= RULE_ID )? kw= '=' this_IdExpression_21= ruleIdExpression ) ) )
+                    {
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:871:6: (kw= 'template' kw= '<' this_TemplateParameterList_14= ruleTemplateParameterList kw= '>' kw= 'class' ( ( (kw= '...' )? (this_ID_18= RULE_ID )? ) | ( (this_ID_19= RULE_ID )? kw= '=' this_IdExpression_21= ruleIdExpression ) ) )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:872:2: kw= 'template' kw= '<' this_TemplateParameterList_14= ruleTemplateParameterList kw= '>' kw= 'class' ( ( (kw= '...' )? (this_ID_18= RULE_ID )? ) | ( (this_ID_19= RULE_ID )? kw= '=' this_IdExpression_21= ruleIdExpression ) )
+                    {
+                    kw=(Token)match(input,88,FOLLOW_88_in_ruleTypeParameter2400); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getTypeParameterAccess().getTemplateKeyword_2_0()); 
+                        
+                    kw=(Token)match(input,42,FOLLOW_42_in_ruleTypeParameter2413); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getTypeParameterAccess().getLessThanSignKeyword_2_1()); 
+                        
+                     
+                            newCompositeNode(grammarAccess.getTypeParameterAccess().getTemplateParameterListParserRuleCall_2_2()); 
+                        
+                    pushFollow(FOLLOW_ruleTemplateParameterList_in_ruleTypeParameter2435);
+                    this_TemplateParameterList_14=ruleTemplateParameterList();
+
+                    state._fsp--;
+
+
+                    		current.merge(this_TemplateParameterList_14);
+                        
+                     
+                            afterParserOrEnumRuleCall();
+                        
+                    kw=(Token)match(input,43,FOLLOW_43_in_ruleTypeParameter2453); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getTypeParameterAccess().getGreaterThanSignKeyword_2_3()); 
+                        
+                    kw=(Token)match(input,85,FOLLOW_85_in_ruleTypeParameter2466); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getTypeParameterAccess().getClassKeyword_2_4()); 
+                        
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:906:1: ( ( (kw= '...' )? (this_ID_18= RULE_ID )? ) | ( (this_ID_19= RULE_ID )? kw= '=' this_IdExpression_21= ruleIdExpression ) )
+                    int alt21=2;
+                    switch ( input.LA(1) ) {
+                    case EOF:
+                    case 43:
+                    case 79:
+                    case 86:
+                        {
+                        alt21=1;
+                        }
+                        break;
+                    case RULE_ID:
+                        {
+                        int LA21_2 = input.LA(2);
+
+                        if ( (LA21_2==58) ) {
+                            alt21=2;
+                        }
+                        else if ( (LA21_2==EOF||LA21_2==43||LA21_2==79) ) {
+                            alt21=1;
+                        }
+                        else {
+                            NoViableAltException nvae =
+                                new NoViableAltException("", 21, 2, input);
+
+                            throw nvae;
+                        }
+                        }
+                        break;
+                    case 58:
+                        {
+                        alt21=2;
+                        }
+                        break;
+                    default:
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 21, 0, input);
+
+                        throw nvae;
+                    }
+
+                    switch (alt21) {
+                        case 1 :
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:906:2: ( (kw= '...' )? (this_ID_18= RULE_ID )? )
+                            {
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:906:2: ( (kw= '...' )? (this_ID_18= RULE_ID )? )
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:906:3: (kw= '...' )? (this_ID_18= RULE_ID )?
+                            {
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:906:3: (kw= '...' )?
+                            int alt18=2;
+                            int LA18_0 = input.LA(1);
+
+                            if ( (LA18_0==86) ) {
+                                alt18=1;
+                            }
+                            switch (alt18) {
+                                case 1 :
+                                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:907:2: kw= '...'
+                                    {
+                                    kw=(Token)match(input,86,FOLLOW_86_in_ruleTypeParameter2482); 
+
+                                            current.merge(kw);
+                                            newLeafNode(kw, grammarAccess.getTypeParameterAccess().getFullStopFullStopFullStopKeyword_2_5_0_0()); 
+                                        
+
+                                    }
+                                    break;
+
+                            }
+
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:912:3: (this_ID_18= RULE_ID )?
+                            int alt19=2;
+                            int LA19_0 = input.LA(1);
+
+                            if ( (LA19_0==RULE_ID) ) {
+                                alt19=1;
+                            }
+                            switch (alt19) {
+                                case 1 :
+                                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:912:8: this_ID_18= RULE_ID
+                                    {
+                                    this_ID_18=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypeParameter2500); 
+
+                                    		current.merge(this_ID_18);
+                                        
+                                     
+                                        newLeafNode(this_ID_18, grammarAccess.getTypeParameterAccess().getIDTerminalRuleCall_2_5_0_1()); 
+                                        
+
+                                    }
+                                    break;
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
+                        case 2 :
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:920:6: ( (this_ID_19= RULE_ID )? kw= '=' this_IdExpression_21= ruleIdExpression )
+                            {
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:920:6: ( (this_ID_19= RULE_ID )? kw= '=' this_IdExpression_21= ruleIdExpression )
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:920:7: (this_ID_19= RULE_ID )? kw= '=' this_IdExpression_21= ruleIdExpression
+                            {
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:920:7: (this_ID_19= RULE_ID )?
+                            int alt20=2;
+                            int LA20_0 = input.LA(1);
+
+                            if ( (LA20_0==RULE_ID) ) {
+                                alt20=1;
+                            }
+                            switch (alt20) {
+                                case 1 :
+                                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:920:12: this_ID_19= RULE_ID
+                                    {
+                                    this_ID_19=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypeParameter2531); 
+
+                                    		current.merge(this_ID_19);
+                                        
+                                     
+                                        newLeafNode(this_ID_19, grammarAccess.getTypeParameterAccess().getIDTerminalRuleCall_2_5_1_0()); 
+                                        
+
+                                    }
+                                    break;
+
+                            }
+
+                            kw=(Token)match(input,58,FOLLOW_58_in_ruleTypeParameter2551); 
+
+                                    current.merge(kw);
+                                    newLeafNode(kw, grammarAccess.getTypeParameterAccess().getEqualsSignKeyword_2_5_1_1()); 
+                                
+                             
+                                    newCompositeNode(grammarAccess.getTypeParameterAccess().getIdExpressionParserRuleCall_2_5_1_2()); 
+                                
+                            pushFollow(FOLLOW_ruleIdExpression_in_ruleTypeParameter2573);
+                            this_IdExpression_21=ruleIdExpression();
+
+                            state._fsp--;
+
+
+                            		current.merge(this_IdExpression_21);
+                                
+                             
+                                    afterParserOrEnumRuleCall();
+                                
+
+                            }
+
+
+                            }
+                            break;
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleTypeParameter"
+
+
+    // $ANTLR start "entryRuleSimpleTemplateId"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:952:1: entryRuleSimpleTemplateId returns [String current=null] : iv_ruleSimpleTemplateId= ruleSimpleTemplateId EOF ;
+    public final String entryRuleSimpleTemplateId() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleSimpleTemplateId = null;
+
+
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:953:2: (iv_ruleSimpleTemplateId= ruleSimpleTemplateId EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:954:2: iv_ruleSimpleTemplateId= ruleSimpleTemplateId EOF
+            {
+             newCompositeNode(grammarAccess.getSimpleTemplateIdRule()); 
+            pushFollow(FOLLOW_ruleSimpleTemplateId_in_entryRuleSimpleTemplateId2622);
+            iv_ruleSimpleTemplateId=ruleSimpleTemplateId();
+
+            state._fsp--;
+
+             current =iv_ruleSimpleTemplateId.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSimpleTemplateId2633); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleSimpleTemplateId"
+
+
+    // $ANTLR start "ruleSimpleTemplateId"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:961:1: ruleSimpleTemplateId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID kw= '<' this_TemplateArgumentList_2= ruleTemplateArgumentList kw= '>' ) ;
+    public final AntlrDatatypeRuleToken ruleSimpleTemplateId() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token this_ID_0=null;
+        Token kw=null;
+        AntlrDatatypeRuleToken this_TemplateArgumentList_2 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:964:28: ( (this_ID_0= RULE_ID kw= '<' this_TemplateArgumentList_2= ruleTemplateArgumentList kw= '>' ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:965:1: (this_ID_0= RULE_ID kw= '<' this_TemplateArgumentList_2= ruleTemplateArgumentList kw= '>' )
+            {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:965:1: (this_ID_0= RULE_ID kw= '<' this_TemplateArgumentList_2= ruleTemplateArgumentList kw= '>' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:965:6: this_ID_0= RULE_ID kw= '<' this_TemplateArgumentList_2= ruleTemplateArgumentList kw= '>'
+            {
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSimpleTemplateId2673); 
+
+            		current.merge(this_ID_0);
+                
+             
+                newLeafNode(this_ID_0, grammarAccess.getSimpleTemplateIdAccess().getIDTerminalRuleCall_0()); 
+                
+            kw=(Token)match(input,42,FOLLOW_42_in_ruleSimpleTemplateId2691); 
+
+                    current.merge(kw);
+                    newLeafNode(kw, grammarAccess.getSimpleTemplateIdAccess().getLessThanSignKeyword_1()); 
+                
+             
+                    newCompositeNode(grammarAccess.getSimpleTemplateIdAccess().getTemplateArgumentListParserRuleCall_2()); 
+                
+            pushFollow(FOLLOW_ruleTemplateArgumentList_in_ruleSimpleTemplateId2713);
+            this_TemplateArgumentList_2=ruleTemplateArgumentList();
+
+            state._fsp--;
+
+
+            		current.merge(this_TemplateArgumentList_2);
+                
+             
+                    afterParserOrEnumRuleCall();
+                
+            kw=(Token)match(input,43,FOLLOW_43_in_ruleSimpleTemplateId2731); 
+
+                    current.merge(kw);
+                    newLeafNode(kw, grammarAccess.getSimpleTemplateIdAccess().getGreaterThanSignKeyword_3()); 
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleSimpleTemplateId"
+
+
+    // $ANTLR start "entryRuleTemplateArgumentList"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1005:1: entryRuleTemplateArgumentList returns [String current=null] : iv_ruleTemplateArgumentList= ruleTemplateArgumentList EOF ;
+    public final String entryRuleTemplateArgumentList() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleTemplateArgumentList = null;
+
+
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1006:2: (iv_ruleTemplateArgumentList= ruleTemplateArgumentList EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1007:2: iv_ruleTemplateArgumentList= ruleTemplateArgumentList EOF
+            {
+             newCompositeNode(grammarAccess.getTemplateArgumentListRule()); 
+            pushFollow(FOLLOW_ruleTemplateArgumentList_in_entryRuleTemplateArgumentList2774);
+            iv_ruleTemplateArgumentList=ruleTemplateArgumentList();
+
+            state._fsp--;
+
+             current =iv_ruleTemplateArgumentList.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTemplateArgumentList2785); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleTemplateArgumentList"
+
+
+    // $ANTLR start "ruleTemplateArgumentList"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1014:1: ruleTemplateArgumentList returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_TemplateArgument_0= ruleTemplateArgument (kw= '...' )? (kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )? )* ) ;
+    public final AntlrDatatypeRuleToken ruleTemplateArgumentList() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+        AntlrDatatypeRuleToken this_TemplateArgument_0 = null;
+
+        AntlrDatatypeRuleToken this_TemplateArgument_3 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1017:28: ( (this_TemplateArgument_0= ruleTemplateArgument (kw= '...' )? (kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )? )* ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1018:1: (this_TemplateArgument_0= ruleTemplateArgument (kw= '...' )? (kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )? )* )
+            {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1018:1: (this_TemplateArgument_0= ruleTemplateArgument (kw= '...' )? (kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )? )* )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1019:5: this_TemplateArgument_0= ruleTemplateArgument (kw= '...' )? (kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )? )*
+            {
+             
+                    newCompositeNode(grammarAccess.getTemplateArgumentListAccess().getTemplateArgumentParserRuleCall_0()); 
+                
+            pushFollow(FOLLOW_ruleTemplateArgument_in_ruleTemplateArgumentList2832);
+            this_TemplateArgument_0=ruleTemplateArgument();
+
+            state._fsp--;
+
+
+            		current.merge(this_TemplateArgument_0);
+                
+             
+                    afterParserOrEnumRuleCall();
+                
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1029:1: (kw= '...' )?
+            int alt23=2;
+            int LA23_0 = input.LA(1);
+
+            if ( (LA23_0==86) ) {
+                alt23=1;
+            }
+            switch (alt23) {
+                case 1 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1030:2: kw= '...'
+                    {
+                    kw=(Token)match(input,86,FOLLOW_86_in_ruleTemplateArgumentList2851); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getTemplateArgumentListAccess().getFullStopFullStopFullStopKeyword_1()); 
+                        
+
+                    }
+                    break;
+
+            }
+
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1035:3: (kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )? )*
+            loop25:
+            do {
+                int alt25=2;
+                int LA25_0 = input.LA(1);
+
+                if ( (LA25_0==79) ) {
+                    alt25=1;
+                }
+
+
+                switch (alt25) {
+            	case 1 :
+            	    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1036:2: kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )?
+            	    {
+            	    kw=(Token)match(input,79,FOLLOW_79_in_ruleTemplateArgumentList2867); 
+
+            	            current.merge(kw);
+            	            newLeafNode(kw, grammarAccess.getTemplateArgumentListAccess().getCommaKeyword_2_0()); 
+            	        
+            	     
+            	            newCompositeNode(grammarAccess.getTemplateArgumentListAccess().getTemplateArgumentParserRuleCall_2_1()); 
+            	        
+            	    pushFollow(FOLLOW_ruleTemplateArgument_in_ruleTemplateArgumentList2889);
+            	    this_TemplateArgument_3=ruleTemplateArgument();
+
+            	    state._fsp--;
+
+
+            	    		current.merge(this_TemplateArgument_3);
+            	        
+            	     
+            	            afterParserOrEnumRuleCall();
+            	        
+            	    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1052:1: (kw= '...' )?
+            	    int alt24=2;
+            	    int LA24_0 = input.LA(1);
+
+            	    if ( (LA24_0==86) ) {
+            	        alt24=1;
+            	    }
+            	    switch (alt24) {
+            	        case 1 :
+            	            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1053:2: kw= '...'
+            	            {
+            	            kw=(Token)match(input,86,FOLLOW_86_in_ruleTemplateArgumentList2908); 
+
+            	                    current.merge(kw);
+            	                    newLeafNode(kw, grammarAccess.getTemplateArgumentListAccess().getFullStopFullStopFullStopKeyword_2_2()); 
+            	                
+
+            	            }
+            	            break;
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop25;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleTemplateArgumentList"
+
+
+    // $ANTLR start "entryRuleTemplateArgument"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1066:1: entryRuleTemplateArgument returns [String current=null] : iv_ruleTemplateArgument= ruleTemplateArgument EOF ;
+    public final String entryRuleTemplateArgument() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleTemplateArgument = null;
+
+
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1067:2: (iv_ruleTemplateArgument= ruleTemplateArgument EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1068:2: iv_ruleTemplateArgument= ruleTemplateArgument EOF
+            {
+             newCompositeNode(grammarAccess.getTemplateArgumentRule()); 
+            pushFollow(FOLLOW_ruleTemplateArgument_in_entryRuleTemplateArgument2953);
+            iv_ruleTemplateArgument=ruleTemplateArgument();
+
+            state._fsp--;
+
+             current =iv_ruleTemplateArgument.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTemplateArgument2964); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleTemplateArgument"
+
+
+    // $ANTLR start "ruleTemplateArgument"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1075:1: ruleTemplateArgument returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ConstantExpression_0= ruleConstantExpression | this_TypeId_1= ruleTypeId | this_IdExpression_2= ruleIdExpression ) ;
+    public final AntlrDatatypeRuleToken ruleTemplateArgument() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        AntlrDatatypeRuleToken this_ConstantExpression_0 = null;
+
+        AntlrDatatypeRuleToken this_TypeId_1 = null;
+
+        AntlrDatatypeRuleToken this_IdExpression_2 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1078:28: ( (this_ConstantExpression_0= ruleConstantExpression | this_TypeId_1= ruleTypeId | this_IdExpression_2= ruleIdExpression ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1079:1: (this_ConstantExpression_0= ruleConstantExpression | this_TypeId_1= ruleTypeId | this_IdExpression_2= ruleIdExpression )
+            {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1079:1: (this_ConstantExpression_0= ruleConstantExpression | this_TypeId_1= ruleTypeId | this_IdExpression_2= ruleIdExpression )
+            int alt26=3;
+            switch ( input.LA(1) ) {
+            case 89:
+                {
+                alt26=1;
+                }
+                break;
+            case 90:
+                {
+                alt26=2;
+                }
+                break;
+            case 91:
+                {
+                alt26=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 26, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt26) {
+                case 1 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1080:5: this_ConstantExpression_0= ruleConstantExpression
+                    {
+                     
+                            newCompositeNode(grammarAccess.getTemplateArgumentAccess().getConstantExpressionParserRuleCall_0()); 
+                        
+                    pushFollow(FOLLOW_ruleConstantExpression_in_ruleTemplateArgument3011);
+                    this_ConstantExpression_0=ruleConstantExpression();
+
+                    state._fsp--;
+
+
+                    		current.merge(this_ConstantExpression_0);
+                        
+                     
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1092:5: this_TypeId_1= ruleTypeId
+                    {
+                     
+                            newCompositeNode(grammarAccess.getTemplateArgumentAccess().getTypeIdParserRuleCall_1()); 
+                        
+                    pushFollow(FOLLOW_ruleTypeId_in_ruleTemplateArgument3044);
+                    this_TypeId_1=ruleTypeId();
+
+                    state._fsp--;
+
+
+                    		current.merge(this_TypeId_1);
+                        
+                     
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+                case 3 :
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1104:5: this_IdExpression_2= ruleIdExpression
+                    {
+                     
+                            newCompositeNode(grammarAccess.getTemplateArgumentAccess().getIdExpressionParserRuleCall_2()); 
+                        
+                    pushFollow(FOLLOW_ruleIdExpression_in_ruleTemplateArgument3077);
+                    this_IdExpression_2=ruleIdExpression();
+
+                    state._fsp--;
+
+
+                    		current.merge(this_IdExpression_2);
+                        
+                     
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleTemplateArgument"
+
+
+    // $ANTLR start "entryRuleConstantExpression"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1128:1: entryRuleConstantExpression returns [String current=null] : iv_ruleConstantExpression= ruleConstantExpression EOF ;
+    public final String entryRuleConstantExpression() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleConstantExpression = null;
+
+
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1129:2: (iv_ruleConstantExpression= ruleConstantExpression EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1130:2: iv_ruleConstantExpression= ruleConstantExpression EOF
+            {
+             newCompositeNode(grammarAccess.getConstantExpressionRule()); 
+            pushFollow(FOLLOW_ruleConstantExpression_in_entryRuleConstantExpression3129);
+            iv_ruleConstantExpression=ruleConstantExpression();
+
+            state._fsp--;
+
+             current =iv_ruleConstantExpression.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConstantExpression3140); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleConstantExpression"
+
+
+    // $ANTLR start "ruleConstantExpression"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1137:1: ruleConstantExpression returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'DUMMY1' ;
+    public final AntlrDatatypeRuleToken ruleConstantExpression() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+         enterRule(); 
+            
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1140:28: (kw= 'DUMMY1' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1142:2: kw= 'DUMMY1'
+            {
+            kw=(Token)match(input,89,FOLLOW_89_in_ruleConstantExpression3177); 
+
+                    current.merge(kw);
+                    newLeafNode(kw, grammarAccess.getConstantExpressionAccess().getDUMMY1Keyword()); 
+                
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleConstantExpression"
+
+
+    // $ANTLR start "entryRuleTypeId"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1155:1: entryRuleTypeId returns [String current=null] : iv_ruleTypeId= ruleTypeId EOF ;
+    public final String entryRuleTypeId() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleTypeId = null;
+
+
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1156:2: (iv_ruleTypeId= ruleTypeId EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1157:2: iv_ruleTypeId= ruleTypeId EOF
+            {
+             newCompositeNode(grammarAccess.getTypeIdRule()); 
+            pushFollow(FOLLOW_ruleTypeId_in_entryRuleTypeId3217);
+            iv_ruleTypeId=ruleTypeId();
+
+            state._fsp--;
+
+             current =iv_ruleTypeId.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeId3228); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleTypeId"
+
+
+    // $ANTLR start "ruleTypeId"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1164:1: ruleTypeId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'DUMMY2' ;
+    public final AntlrDatatypeRuleToken ruleTypeId() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+         enterRule(); 
+            
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1167:28: (kw= 'DUMMY2' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1169:2: kw= 'DUMMY2'
+            {
+            kw=(Token)match(input,90,FOLLOW_90_in_ruleTypeId3265); 
+
+                    current.merge(kw);
+                    newLeafNode(kw, grammarAccess.getTypeIdAccess().getDUMMY2Keyword()); 
+                
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleTypeId"
+
+
+    // $ANTLR start "entryRuleIdExpression"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1182:1: entryRuleIdExpression returns [String current=null] : iv_ruleIdExpression= ruleIdExpression EOF ;
+    public final String entryRuleIdExpression() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleIdExpression = null;
+
+
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1183:2: (iv_ruleIdExpression= ruleIdExpression EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1184:2: iv_ruleIdExpression= ruleIdExpression EOF
+            {
+             newCompositeNode(grammarAccess.getIdExpressionRule()); 
+            pushFollow(FOLLOW_ruleIdExpression_in_entryRuleIdExpression3305);
+            iv_ruleIdExpression=ruleIdExpression();
+
+            state._fsp--;
+
+             current =iv_ruleIdExpression.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleIdExpression3316); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleIdExpression"
+
+
+    // $ANTLR start "ruleIdExpression"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1191:1: ruleIdExpression returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'DUMMY3' ;
+    public final AntlrDatatypeRuleToken ruleIdExpression() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+         enterRule(); 
+            
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1194:28: (kw= 'DUMMY3' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1196:2: kw= 'DUMMY3'
+            {
+            kw=(Token)match(input,91,FOLLOW_91_in_ruleIdExpression3353); 
+
+                    current.merge(kw);
+                    newLeafNode(kw, grammarAccess.getIdExpressionAccess().getDUMMY3Keyword()); 
+                
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleIdExpression"
+
+
+    // $ANTLR start "entryRuleParameterDeclaration"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1209:1: entryRuleParameterDeclaration returns [String current=null] : iv_ruleParameterDeclaration= ruleParameterDeclaration EOF ;
+    public final String entryRuleParameterDeclaration() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleParameterDeclaration = null;
+
+
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1210:2: (iv_ruleParameterDeclaration= ruleParameterDeclaration EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1211:2: iv_ruleParameterDeclaration= ruleParameterDeclaration EOF
+            {
+             newCompositeNode(grammarAccess.getParameterDeclarationRule()); 
+            pushFollow(FOLLOW_ruleParameterDeclaration_in_entryRuleParameterDeclaration3393);
+            iv_ruleParameterDeclaration=ruleParameterDeclaration();
+
+            state._fsp--;
+
+             current =iv_ruleParameterDeclaration.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleParameterDeclaration3404); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleParameterDeclaration"
+
+
+    // $ANTLR start "ruleParameterDeclaration"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1218:1: ruleParameterDeclaration returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'DUMMY4' ;
+    public final AntlrDatatypeRuleToken ruleParameterDeclaration() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+         enterRule(); 
+            
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1221:28: (kw= 'DUMMY4' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1223:2: kw= 'DUMMY4'
+            {
+            kw=(Token)match(input,92,FOLLOW_92_in_ruleParameterDeclaration3441); 
+
+                    current.merge(kw);
+                    newLeafNode(kw, grammarAccess.getParameterDeclarationAccess().getDUMMY4Keyword()); 
+                
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleParameterDeclaration"
+
+
+    // $ANTLR start "entryRuleDeclaration"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1236:1: entryRuleDeclaration returns [String current=null] : iv_ruleDeclaration= ruleDeclaration EOF ;
+    public final String entryRuleDeclaration() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleDeclaration = null;
+
+
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1237:2: (iv_ruleDeclaration= ruleDeclaration EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1238:2: iv_ruleDeclaration= ruleDeclaration EOF
+            {
+             newCompositeNode(grammarAccess.getDeclarationRule()); 
+            pushFollow(FOLLOW_ruleDeclaration_in_entryRuleDeclaration3481);
+            iv_ruleDeclaration=ruleDeclaration();
+
+            state._fsp--;
+
+             current =iv_ruleDeclaration.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDeclaration3492); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleDeclaration"
+
+
+    // $ANTLR start "ruleDeclaration"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1245:1: ruleDeclaration returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'DUMMY5' ;
+    public final AntlrDatatypeRuleToken ruleDeclaration() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+         enterRule(); 
+            
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1248:28: (kw= 'DUMMY5' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1250:2: kw= 'DUMMY5'
+            {
+            kw=(Token)match(input,93,FOLLOW_93_in_ruleDeclaration3529); 
+
+                    current.merge(kw);
+                    newLeafNode(kw, grammarAccess.getDeclarationAccess().getDUMMY5Keyword()); 
+                
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleDeclaration"
+
+
+    // $ANTLR start "entryRuleNestedNameSpecifier"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1263:1: entryRuleNestedNameSpecifier returns [String current=null] : iv_ruleNestedNameSpecifier= ruleNestedNameSpecifier EOF ;
+    public final String entryRuleNestedNameSpecifier() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleNestedNameSpecifier = null;
+
+
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1264:2: (iv_ruleNestedNameSpecifier= ruleNestedNameSpecifier EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1265:2: iv_ruleNestedNameSpecifier= ruleNestedNameSpecifier EOF
+            {
+             newCompositeNode(grammarAccess.getNestedNameSpecifierRule()); 
+            pushFollow(FOLLOW_ruleNestedNameSpecifier_in_entryRuleNestedNameSpecifier3569);
+            iv_ruleNestedNameSpecifier=ruleNestedNameSpecifier();
+
+            state._fsp--;
+
+             current =iv_ruleNestedNameSpecifier.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNestedNameSpecifier3580); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleNestedNameSpecifier"
+
+
+    // $ANTLR start "ruleNestedNameSpecifier"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1272:1: ruleNestedNameSpecifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'DUMMY6' ;
+    public final AntlrDatatypeRuleToken ruleNestedNameSpecifier() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+         enterRule(); 
+            
+        try {
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1275:28: (kw= 'DUMMY6' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:1277:2: kw= 'DUMMY6'
+            {
+            kw=(Token)match(input,94,FOLLOW_94_in_ruleNestedNameSpecifier3617); 
+
+                    current.merge(kw);
+                    newLeafNode(kw, grammarAccess.getNestedNameSpecifierAccess().getDUMMY6Keyword()); 
+                
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleNestedNameSpecifier"
+
     // Delegated rules
 
 
+    protected DFA7 dfa7 = new DFA7(this);
+    static final String DFA7_eotS =
+        "\55\uffff";
+    static final String DFA7_eofS =
+        "\1\uffff\1\51\1\54\52\uffff";
+    static final String DFA7_minS =
+        "\3\52\52\uffff";
+    static final String DFA7_maxS =
+        "\1\123\2\56\52\uffff";
+    static final String DFA7_acceptS =
+        "\3\uffff\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1"+
+        "\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31\1\32\1\33\1\34"+
+        "\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44\1\45\1\46\1\47\1\50\1\51"+
+        "\1\52\1\1\1\3\1\4\1\2";
+    static final String DFA7_specialS =
+        "\55\uffff}>";
+    static final String[] DFA7_transitionS = {
+            "\1\16\1\17\1\1\1\2\2\uffff\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1"+
+            "\12\1\13\1\14\1\15\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1"+
+            "\30\1\31\1\32\1\33\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1"+
+            "\44\1\45\1\46\1\47\1\50",
+            "\1\51\3\uffff\1\52",
+            "\1\54\3\uffff\1\53",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+    };
+
+    static final short[] DFA7_eot = DFA.unpackEncodedString(DFA7_eotS);
+    static final short[] DFA7_eof = DFA.unpackEncodedString(DFA7_eofS);
+    static final char[] DFA7_min = DFA.unpackEncodedStringToUnsignedChars(DFA7_minS);
+    static final char[] DFA7_max = DFA.unpackEncodedStringToUnsignedChars(DFA7_maxS);
+    static final short[] DFA7_accept = DFA.unpackEncodedString(DFA7_acceptS);
+    static final short[] DFA7_special = DFA.unpackEncodedString(DFA7_specialS);
+    static final short[][] DFA7_transition;
+
+    static {
+        int numStates = DFA7_transitionS.length;
+        DFA7_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA7_transition[i] = DFA.unpackEncodedString(DFA7_transitionS[i]);
+        }
+    }
+
+    class DFA7 extends DFA {
+
+        public DFA7(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 7;
+            this.eot = DFA7_eot;
+            this.eof = DFA7_eof;
+            this.min = DFA7_min;
+            this.max = DFA7_max;
+            this.accept = DFA7_accept;
+            this.special = DFA7_special;
+            this.transition = DFA7_transition;
+        }
+        public String getDescription() {
+            return "309:1: (kw= 'new' | kw= 'delete' | (kw= 'new' kw= '[' kw= ']' ) | (kw= 'delete' kw= '[' kw= ']' ) | kw= '+' | kw= '-' | kw= '*' | kw= '/' | kw= '%' | kw= '^' | kw= '&' | kw= '|' | kw= '~' | kw= '!' | kw= '=' | kw= '<' | kw= '>' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '^=' | kw= '&=' | kw= '|=' | kw= '<<' | kw= '>>' | kw= '>>=' | kw= '<<=' | kw= '==' | kw= '!=' | kw= '<=' | kw= '>=' | kw= '&&' | kw= '||' | kw= '++' | kw= '--' | kw= ',' | kw= '->*' | kw= '->' | kw= '()' | kw= '[]' )";
+        }
+    }
  
 
     public static final BitSet FOLLOW_ruleTest_in_entryRuleTest75 = new BitSet(new long[]{0x0000000000000000L});
@@ -607,7 +3381,137 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_CHARACTER_LITERAL_in_ruleLiteral424 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_FLOATING_LITERAL_in_ruleLiteral450 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_LITERAL_in_ruleLiteral476 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_ruleLiteral501 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleLiteral520 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_ruleLiteral502 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_39_in_ruleLiteral521 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_40_in_ruleLiteral535 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOperatorFunctionId_in_entryRuleOperatorFunctionId577 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOperatorFunctionId588 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleOperatorFunctionId626 = new BitSet(new long[]{0xFFFF3C0000000000L,0x00000000000FFFFFL});
+    public static final BitSet FOLLOW_ruleOverloadableOperator_in_ruleOperatorFunctionId648 = new BitSet(new long[]{0x0000040000000002L});
+    public static final BitSet FOLLOW_42_in_ruleOperatorFunctionId667 = new BitSet(new long[]{0x0000080000000000L,0x000000000E000000L});
+    public static final BitSet FOLLOW_ruleTemplateArgument_in_ruleOperatorFunctionId690 = new BitSet(new long[]{0x0000080000000000L,0x000000000E000000L});
+    public static final BitSet FOLLOW_43_in_ruleOperatorFunctionId710 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOverloadableOperator_in_entryRuleOverloadableOperator753 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOverloadableOperator764 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_ruleOverloadableOperator802 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_ruleOverloadableOperator821 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_ruleOverloadableOperator841 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_46_in_ruleOverloadableOperator854 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_47_in_ruleOverloadableOperator867 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_ruleOverloadableOperator888 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_46_in_ruleOverloadableOperator901 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_47_in_ruleOverloadableOperator914 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_ruleOverloadableOperator934 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_49_in_ruleOverloadableOperator953 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_ruleOverloadableOperator972 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_51_in_ruleOverloadableOperator991 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_52_in_ruleOverloadableOperator1010 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_53_in_ruleOverloadableOperator1029 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_54_in_ruleOverloadableOperator1048 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_ruleOverloadableOperator1067 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_56_in_ruleOverloadableOperator1086 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_57_in_ruleOverloadableOperator1105 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_58_in_ruleOverloadableOperator1124 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_ruleOverloadableOperator1143 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_ruleOverloadableOperator1162 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_59_in_ruleOverloadableOperator1181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_60_in_ruleOverloadableOperator1200 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_61_in_ruleOverloadableOperator1219 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_62_in_ruleOverloadableOperator1238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_63_in_ruleOverloadableOperator1257 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_64_in_ruleOverloadableOperator1276 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleOverloadableOperator1295 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_66_in_ruleOverloadableOperator1314 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_67_in_ruleOverloadableOperator1333 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_68_in_ruleOverloadableOperator1352 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_69_in_ruleOverloadableOperator1371 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_70_in_ruleOverloadableOperator1390 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_71_in_ruleOverloadableOperator1409 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_72_in_ruleOverloadableOperator1428 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_73_in_ruleOverloadableOperator1447 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_74_in_ruleOverloadableOperator1466 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_75_in_ruleOverloadableOperator1485 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_76_in_ruleOverloadableOperator1504 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_77_in_ruleOverloadableOperator1523 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_78_in_ruleOverloadableOperator1542 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_79_in_ruleOverloadableOperator1561 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_80_in_ruleOverloadableOperator1580 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_81_in_ruleOverloadableOperator1599 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_82_in_ruleOverloadableOperator1618 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_83_in_ruleOverloadableOperator1637 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteralOperatorId_in_entryRuleLiteralOperatorId1678 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLiteralOperatorId1689 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleLiteralOperatorId1727 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
+    public static final BitSet FOLLOW_84_in_ruleLiteralOperatorId1740 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
+    public static final BitSet FOLLOW_84_in_ruleLiteralOperatorId1753 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTemplateParameterList_in_entryRuleTemplateParameterList1796 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTemplateParameterList1807 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTemplateParameter_in_ruleTemplateParameterList1854 = new BitSet(new long[]{0x0000000000000002L,0x0000000000008000L});
+    public static final BitSet FOLLOW_79_in_ruleTemplateParameterList1873 = new BitSet(new long[]{0x0000000000000000L,0x0000000011A00000L});
+    public static final BitSet FOLLOW_ruleTemplateParameter_in_ruleTemplateParameterList1895 = new BitSet(new long[]{0x0000000000000002L,0x0000000000008000L});
+    public static final BitSet FOLLOW_ruleTemplateParameter_in_entryRuleTemplateParameter1943 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTemplateParameter1954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeParameter_in_ruleTemplateParameter2001 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParameterDeclaration_in_ruleTemplateParameter2034 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeParameter_in_entryRuleTypeParameter2080 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTypeParameter2091 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_85_in_ruleTypeParameter2130 = new BitSet(new long[]{0x0400000000000042L,0x0000000000400000L});
+    public static final BitSet FOLLOW_86_in_ruleTypeParameter2146 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTypeParameter2164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTypeParameter2195 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_58_in_ruleTypeParameter2215 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_ruleTypeId_in_ruleTypeParameter2237 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_87_in_ruleTypeParameter2265 = new BitSet(new long[]{0x0400000000000042L,0x0000000000400000L});
+    public static final BitSet FOLLOW_86_in_ruleTypeParameter2281 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTypeParameter2299 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTypeParameter2330 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_58_in_ruleTypeParameter2350 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_ruleTypeId_in_ruleTypeParameter2372 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_88_in_ruleTypeParameter2400 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_42_in_ruleTypeParameter2413 = new BitSet(new long[]{0x0000000000000000L,0x0000000011A00000L});
+    public static final BitSet FOLLOW_ruleTemplateParameterList_in_ruleTypeParameter2435 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_43_in_ruleTypeParameter2453 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_85_in_ruleTypeParameter2466 = new BitSet(new long[]{0x0400000000000042L,0x0000000000400000L});
+    public static final BitSet FOLLOW_86_in_ruleTypeParameter2482 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTypeParameter2500 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTypeParameter2531 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_58_in_ruleTypeParameter2551 = new BitSet(new long[]{0x0000000000000000L,0x000000000E000000L});
+    public static final BitSet FOLLOW_ruleIdExpression_in_ruleTypeParameter2573 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSimpleTemplateId_in_entryRuleSimpleTemplateId2622 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSimpleTemplateId2633 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSimpleTemplateId2673 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_42_in_ruleSimpleTemplateId2691 = new BitSet(new long[]{0x0000000000000000L,0x000000000E000000L});
+    public static final BitSet FOLLOW_ruleTemplateArgumentList_in_ruleSimpleTemplateId2713 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_43_in_ruleSimpleTemplateId2731 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTemplateArgumentList_in_entryRuleTemplateArgumentList2774 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTemplateArgumentList2785 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTemplateArgument_in_ruleTemplateArgumentList2832 = new BitSet(new long[]{0x0000000000000002L,0x0000000000408000L});
+    public static final BitSet FOLLOW_86_in_ruleTemplateArgumentList2851 = new BitSet(new long[]{0x0000000000000002L,0x0000000000008000L});
+    public static final BitSet FOLLOW_79_in_ruleTemplateArgumentList2867 = new BitSet(new long[]{0x0000000000000000L,0x000000000E000000L});
+    public static final BitSet FOLLOW_ruleTemplateArgument_in_ruleTemplateArgumentList2889 = new BitSet(new long[]{0x0000000000000002L,0x0000000000408000L});
+    public static final BitSet FOLLOW_86_in_ruleTemplateArgumentList2908 = new BitSet(new long[]{0x0000000000000002L,0x0000000000008000L});
+    public static final BitSet FOLLOW_ruleTemplateArgument_in_entryRuleTemplateArgument2953 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTemplateArgument2964 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstantExpression_in_ruleTemplateArgument3011 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeId_in_ruleTemplateArgument3044 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIdExpression_in_ruleTemplateArgument3077 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstantExpression_in_entryRuleConstantExpression3129 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConstantExpression3140 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_89_in_ruleConstantExpression3177 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeId_in_entryRuleTypeId3217 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTypeId3228 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_90_in_ruleTypeId3265 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIdExpression_in_entryRuleIdExpression3305 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleIdExpression3316 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_91_in_ruleIdExpression3353 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParameterDeclaration_in_entryRuleParameterDeclaration3393 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleParameterDeclaration3404 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_92_in_ruleParameterDeclaration3441 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDeclaration_in_entryRuleDeclaration3481 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDeclaration3492 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_93_in_ruleDeclaration3529 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNestedNameSpecifier_in_entryRuleNestedNameSpecifier3569 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNestedNameSpecifier3580 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_94_in_ruleNestedNameSpecifier3617 = new BitSet(new long[]{0x0000000000000002L});
 
 }
