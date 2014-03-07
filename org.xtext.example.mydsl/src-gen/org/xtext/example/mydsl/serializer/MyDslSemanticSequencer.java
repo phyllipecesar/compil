@@ -97,7 +97,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (type=Type name=IDENTIFIER)
+	 *     (type=Type name=ID)
 	 */
 	protected void sequence_VarDecl(EObject context, VarDecl semanticObject) {
 		if(errorAcceptor != null) {
@@ -109,7 +109,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getVarDeclAccess().getTypeTypeParserRuleCall_1_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getVarDeclAccess().getNameIDENTIFIERTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getVarDeclAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
