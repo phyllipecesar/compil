@@ -474,9 +474,6 @@ ParameterDeclaration:
 	DeclarationSpecifier+ InitDeclarator;
 
 // dcl.fct.def.general
-FunctionDefinition:
-	DeclarationSpecifier* FunctionDeclarator (FunctionBody | '=' 'default' ';' | '=' 'delete' ';');
-
 FunctionBody:
 	CtorInitializer? CompoundStatement |
 	FunctionTryBlock;

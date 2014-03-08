@@ -300,26 +300,26 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDeclarationSpecifierParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final RuleCall cSimpleDeclarationSuffixParserRuleCall_1_0 = (RuleCall)cAlternatives_1.eContents().get(0);
-		private final RuleCall cFunctionDefinitionSuffixParserRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
+		private final RuleCall cFunctionDeclarationSuffixParserRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
 		
 		//SimpleOrFunctionDeclaration:
-		//	DeclarationSpecifier* (SimpleDeclarationSuffix | FunctionDefinitionSuffix);
+		//	DeclarationSpecifier* (SimpleDeclarationSuffix | FunctionDeclarationSuffix);
 		public ParserRule getRule() { return rule; }
 
-		//DeclarationSpecifier* (SimpleDeclarationSuffix | FunctionDefinitionSuffix)
+		//DeclarationSpecifier* (SimpleDeclarationSuffix | FunctionDeclarationSuffix)
 		public Group getGroup() { return cGroup; }
 
 		//DeclarationSpecifier*
 		public RuleCall getDeclarationSpecifierParserRuleCall_0() { return cDeclarationSpecifierParserRuleCall_0; }
 
-		//SimpleDeclarationSuffix | FunctionDefinitionSuffix
+		//SimpleDeclarationSuffix | FunctionDeclarationSuffix
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//SimpleDeclarationSuffix
 		public RuleCall getSimpleDeclarationSuffixParserRuleCall_1_0() { return cSimpleDeclarationSuffixParserRuleCall_1_0; }
 
-		//FunctionDefinitionSuffix
-		public RuleCall getFunctionDefinitionSuffixParserRuleCall_1_1() { return cFunctionDefinitionSuffixParserRuleCall_1_1; }
+		//FunctionDeclarationSuffix
+		public RuleCall getFunctionDeclarationSuffixParserRuleCall_1_1() { return cFunctionDeclarationSuffixParserRuleCall_1_1; }
 	}
 
 	public class SimpleDeclarationSuffixElements extends AbstractParserRuleElementFinder {
@@ -342,8 +342,8 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
 	}
 
-	public class FunctionDefinitionSuffixElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FunctionDefinitionSuffix");
+	public class FunctionDeclarationSuffixElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FunctionDeclarationSuffix");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cFunctionDeclaratorParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
@@ -357,7 +357,7 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDeleteKeyword_1_2_1 = (Keyword)cGroup_1_2.eContents().get(1);
 		private final Keyword cSemicolonKeyword_1_2_2 = (Keyword)cGroup_1_2.eContents().get(2);
 		
-		//FunctionDefinitionSuffix:
+		//FunctionDeclarationSuffix:
 		//	FunctionDeclarator (FunctionBody | "=" "default" ";" | "=" "delete" ";");
 		public ParserRule getRule() { return rule; }
 
@@ -1518,67 +1518,6 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getInitDeclaratorParserRuleCall_1() { return cInitDeclaratorParserRuleCall_1; }
 	}
 
-	public class FunctionDefinitionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FunctionDefinition");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cDeclarationSpecifierParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final RuleCall cFunctionDeclaratorParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
-		private final RuleCall cFunctionBodyParserRuleCall_2_0 = (RuleCall)cAlternatives_2.eContents().get(0);
-		private final Group cGroup_2_1 = (Group)cAlternatives_2.eContents().get(1);
-		private final Keyword cEqualsSignKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
-		private final Keyword cDefaultKeyword_2_1_1 = (Keyword)cGroup_2_1.eContents().get(1);
-		private final Keyword cSemicolonKeyword_2_1_2 = (Keyword)cGroup_2_1.eContents().get(2);
-		private final Group cGroup_2_2 = (Group)cAlternatives_2.eContents().get(2);
-		private final Keyword cEqualsSignKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
-		private final Keyword cDeleteKeyword_2_2_1 = (Keyword)cGroup_2_2.eContents().get(1);
-		private final Keyword cSemicolonKeyword_2_2_2 = (Keyword)cGroup_2_2.eContents().get(2);
-		
-		//// dcl.fct.def.general
-		//FunctionDefinition:
-		//	DeclarationSpecifier* FunctionDeclarator (FunctionBody | "=" "default" ";" | "=" "delete" ";");
-		public ParserRule getRule() { return rule; }
-
-		//DeclarationSpecifier* FunctionDeclarator (FunctionBody | "=" "default" ";" | "=" "delete" ";")
-		public Group getGroup() { return cGroup; }
-
-		//DeclarationSpecifier*
-		public RuleCall getDeclarationSpecifierParserRuleCall_0() { return cDeclarationSpecifierParserRuleCall_0; }
-
-		//FunctionDeclarator
-		public RuleCall getFunctionDeclaratorParserRuleCall_1() { return cFunctionDeclaratorParserRuleCall_1; }
-
-		//FunctionBody | "=" "default" ";" | "=" "delete" ";"
-		public Alternatives getAlternatives_2() { return cAlternatives_2; }
-
-		//FunctionBody
-		public RuleCall getFunctionBodyParserRuleCall_2_0() { return cFunctionBodyParserRuleCall_2_0; }
-
-		//"=" "default" ";"
-		public Group getGroup_2_1() { return cGroup_2_1; }
-
-		//"="
-		public Keyword getEqualsSignKeyword_2_1_0() { return cEqualsSignKeyword_2_1_0; }
-
-		//"default"
-		public Keyword getDefaultKeyword_2_1_1() { return cDefaultKeyword_2_1_1; }
-
-		//";"
-		public Keyword getSemicolonKeyword_2_1_2() { return cSemicolonKeyword_2_1_2; }
-
-		//"=" "delete" ";"
-		public Group getGroup_2_2() { return cGroup_2_2; }
-
-		//"="
-		public Keyword getEqualsSignKeyword_2_2_0() { return cEqualsSignKeyword_2_2_0; }
-
-		//"delete"
-		public Keyword getDeleteKeyword_2_2_1() { return cDeleteKeyword_2_2_1; }
-
-		//";"
-		public Keyword getSemicolonKeyword_2_2_2() { return cSemicolonKeyword_2_2_2; }
-	}
-
 	public class FunctionBodyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FunctionBody");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -1587,6 +1526,7 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCompoundStatementParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
 		private final RuleCall cFunctionTryBlockParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
+		//// dcl.fct.def.general
 		//FunctionBody:
 		//	CtorInitializer? CompoundStatement | FunctionTryBlock;
 		public ParserRule getRule() { return rule; }
@@ -2657,7 +2597,7 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 	private SimpleDeclarationElements pSimpleDeclaration;
 	private SimpleOrFunctionDeclarationElements pSimpleOrFunctionDeclaration;
 	private SimpleDeclarationSuffixElements pSimpleDeclarationSuffix;
-	private FunctionDefinitionSuffixElements pFunctionDefinitionSuffix;
+	private FunctionDeclarationSuffixElements pFunctionDeclarationSuffix;
 	private StaticAssertDeclarationElements pStaticAssertDeclaration;
 	private DeclarationSpecifierElements pDeclarationSpecifier;
 	private StorageClassSpecifierElements pStorageClassSpecifier;
@@ -2692,7 +2632,6 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 	private ParameterDeclarationClauseElements pParameterDeclarationClause;
 	private ParameterDeclarationListElements pParameterDeclarationList;
 	private ParameterDeclarationElements pParameterDeclaration;
-	private FunctionDefinitionElements pFunctionDefinition;
 	private FunctionBodyElements pFunctionBody;
 	private OperatorFunctionIdElements pOperatorFunctionId;
 	private OverloadableOperatorElements pOverloadableOperator;
@@ -3060,7 +2999,7 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SimpleOrFunctionDeclaration:
-	//	DeclarationSpecifier* (SimpleDeclarationSuffix | FunctionDefinitionSuffix);
+	//	DeclarationSpecifier* (SimpleDeclarationSuffix | FunctionDeclarationSuffix);
 	public SimpleOrFunctionDeclarationElements getSimpleOrFunctionDeclarationAccess() {
 		return (pSimpleOrFunctionDeclaration != null) ? pSimpleOrFunctionDeclaration : (pSimpleOrFunctionDeclaration = new SimpleOrFunctionDeclarationElements());
 	}
@@ -3079,14 +3018,14 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 		return getSimpleDeclarationSuffixAccess().getRule();
 	}
 
-	//FunctionDefinitionSuffix:
+	//FunctionDeclarationSuffix:
 	//	FunctionDeclarator (FunctionBody | "=" "default" ";" | "=" "delete" ";");
-	public FunctionDefinitionSuffixElements getFunctionDefinitionSuffixAccess() {
-		return (pFunctionDefinitionSuffix != null) ? pFunctionDefinitionSuffix : (pFunctionDefinitionSuffix = new FunctionDefinitionSuffixElements());
+	public FunctionDeclarationSuffixElements getFunctionDeclarationSuffixAccess() {
+		return (pFunctionDeclarationSuffix != null) ? pFunctionDeclarationSuffix : (pFunctionDeclarationSuffix = new FunctionDeclarationSuffixElements());
 	}
 	
-	public ParserRule getFunctionDefinitionSuffixRule() {
-		return getFunctionDefinitionSuffixAccess().getRule();
+	public ParserRule getFunctionDeclarationSuffixRule() {
+		return getFunctionDeclarationSuffixAccess().getRule();
 	}
 
 	//StaticAssertDeclaration:
@@ -3448,16 +3387,6 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// dcl.fct.def.general
-	//FunctionDefinition:
-	//	DeclarationSpecifier* FunctionDeclarator (FunctionBody | "=" "default" ";" | "=" "delete" ";");
-	public FunctionDefinitionElements getFunctionDefinitionAccess() {
-		return (pFunctionDefinition != null) ? pFunctionDefinition : (pFunctionDefinition = new FunctionDefinitionElements());
-	}
-	
-	public ParserRule getFunctionDefinitionRule() {
-		return getFunctionDefinitionAccess().getRule();
-	}
-
 	//FunctionBody:
 	//	CtorInitializer? CompoundStatement | FunctionTryBlock;
 	public FunctionBodyElements getFunctionBodyAccess() {

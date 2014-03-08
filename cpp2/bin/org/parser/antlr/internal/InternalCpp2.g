@@ -501,10 +501,10 @@ ruleSimpleOrFunctionDeclaration returns [AntlrDatatypeRuleToken current=new Antl
 
     |
     { 
-        newCompositeNode(grammarAccess.getSimpleOrFunctionDeclarationAccess().getFunctionDefinitionSuffixParserRuleCall_1_1()); 
+        newCompositeNode(grammarAccess.getSimpleOrFunctionDeclarationAccess().getFunctionDeclarationSuffixParserRuleCall_1_1()); 
     }
-    this_FunctionDefinitionSuffix_2=ruleFunctionDefinitionSuffix    {
-		$current.merge(this_FunctionDefinitionSuffix_2);
+    this_FunctionDeclarationSuffix_2=ruleFunctionDeclarationSuffix    {
+		$current.merge(this_FunctionDeclarationSuffix_2);
     }
 
     { 
@@ -555,23 +555,23 @@ ruleSimpleDeclarationSuffix returns [AntlrDatatypeRuleToken current=new AntlrDat
 
 
 
-// Entry rule entryRuleFunctionDefinitionSuffix
-entryRuleFunctionDefinitionSuffix returns [String current=null] 
+// Entry rule entryRuleFunctionDeclarationSuffix
+entryRuleFunctionDeclarationSuffix returns [String current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getFunctionDefinitionSuffixRule()); } 
-	 iv_ruleFunctionDefinitionSuffix=ruleFunctionDefinitionSuffix 
-	 { $current=$iv_ruleFunctionDefinitionSuffix.current.getText(); }  
+	{ newCompositeNode(grammarAccess.getFunctionDeclarationSuffixRule()); } 
+	 iv_ruleFunctionDeclarationSuffix=ruleFunctionDeclarationSuffix 
+	 { $current=$iv_ruleFunctionDeclarationSuffix.current.getText(); }  
 	 EOF 
 ;
 
-// Rule FunctionDefinitionSuffix
-ruleFunctionDefinitionSuffix returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+// Rule FunctionDeclarationSuffix
+ruleFunctionDeclarationSuffix returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 (
     { 
-        newCompositeNode(grammarAccess.getFunctionDefinitionSuffixAccess().getFunctionDeclaratorParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getFunctionDeclarationSuffixAccess().getFunctionDeclaratorParserRuleCall_0()); 
     }
     this_FunctionDeclarator_0=ruleFunctionDeclarator    {
 		$current.merge(this_FunctionDeclarator_0);
@@ -582,7 +582,7 @@ ruleFunctionDefinitionSuffix returns [AntlrDatatypeRuleToken current=new AntlrDa
     }
 (
     { 
-        newCompositeNode(grammarAccess.getFunctionDefinitionSuffixAccess().getFunctionBodyParserRuleCall_1_0()); 
+        newCompositeNode(grammarAccess.getFunctionDeclarationSuffixAccess().getFunctionBodyParserRuleCall_1_0()); 
     }
     this_FunctionBody_1=ruleFunctionBody    {
 		$current.merge(this_FunctionBody_1);
@@ -596,38 +596,38 @@ ruleFunctionDefinitionSuffix returns [AntlrDatatypeRuleToken current=new AntlrDa
 	kw='=' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getFunctionDefinitionSuffixAccess().getEqualsSignKeyword_1_1_0()); 
+        newLeafNode(kw, grammarAccess.getFunctionDeclarationSuffixAccess().getEqualsSignKeyword_1_1_0()); 
     }
 
 	kw='default' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getFunctionDefinitionSuffixAccess().getDefaultKeyword_1_1_1()); 
+        newLeafNode(kw, grammarAccess.getFunctionDeclarationSuffixAccess().getDefaultKeyword_1_1_1()); 
     }
 
 	kw=';' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getFunctionDefinitionSuffixAccess().getSemicolonKeyword_1_1_2()); 
+        newLeafNode(kw, grammarAccess.getFunctionDeclarationSuffixAccess().getSemicolonKeyword_1_1_2()); 
     }
 )
     |(
 	kw='=' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getFunctionDefinitionSuffixAccess().getEqualsSignKeyword_1_2_0()); 
+        newLeafNode(kw, grammarAccess.getFunctionDeclarationSuffixAccess().getEqualsSignKeyword_1_2_0()); 
     }
 
 	kw='delete' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getFunctionDefinitionSuffixAccess().getDeleteKeyword_1_2_1()); 
+        newLeafNode(kw, grammarAccess.getFunctionDeclarationSuffixAccess().getDeleteKeyword_1_2_1()); 
     }
 
 	kw=';' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getFunctionDefinitionSuffixAccess().getSemicolonKeyword_1_2_2()); 
+        newLeafNode(kw, grammarAccess.getFunctionDeclarationSuffixAccess().getSemicolonKeyword_1_2_2()); 
     }
 )))
     ;
@@ -2502,8 +2502,6 @@ ruleParameterDeclaration returns [AntlrDatatypeRuleToken current=new AntlrDataty
     }
 )
     ;
-
-
 
 
 

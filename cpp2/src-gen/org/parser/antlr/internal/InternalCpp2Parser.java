@@ -1267,7 +1267,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSimpleOrFunctionDeclaration"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:475:1: ruleSimpleOrFunctionDeclaration returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (this_DeclarationSpecifier_0= ruleDeclarationSpecifier )* (this_SimpleDeclarationSuffix_1= ruleSimpleDeclarationSuffix | this_FunctionDefinitionSuffix_2= ruleFunctionDefinitionSuffix ) ) ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:475:1: ruleSimpleOrFunctionDeclaration returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (this_DeclarationSpecifier_0= ruleDeclarationSpecifier )* (this_SimpleDeclarationSuffix_1= ruleSimpleDeclarationSuffix | this_FunctionDeclarationSuffix_2= ruleFunctionDeclarationSuffix ) ) ;
     public final AntlrDatatypeRuleToken ruleSimpleOrFunctionDeclaration() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1275,17 +1275,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
         AntlrDatatypeRuleToken this_SimpleDeclarationSuffix_1 = null;
 
-        AntlrDatatypeRuleToken this_FunctionDefinitionSuffix_2 = null;
+        AntlrDatatypeRuleToken this_FunctionDeclarationSuffix_2 = null;
 
 
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:478:28: ( ( (this_DeclarationSpecifier_0= ruleDeclarationSpecifier )* (this_SimpleDeclarationSuffix_1= ruleSimpleDeclarationSuffix | this_FunctionDefinitionSuffix_2= ruleFunctionDefinitionSuffix ) ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:479:1: ( (this_DeclarationSpecifier_0= ruleDeclarationSpecifier )* (this_SimpleDeclarationSuffix_1= ruleSimpleDeclarationSuffix | this_FunctionDefinitionSuffix_2= ruleFunctionDefinitionSuffix ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:478:28: ( ( (this_DeclarationSpecifier_0= ruleDeclarationSpecifier )* (this_SimpleDeclarationSuffix_1= ruleSimpleDeclarationSuffix | this_FunctionDeclarationSuffix_2= ruleFunctionDeclarationSuffix ) ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:479:1: ( (this_DeclarationSpecifier_0= ruleDeclarationSpecifier )* (this_SimpleDeclarationSuffix_1= ruleSimpleDeclarationSuffix | this_FunctionDeclarationSuffix_2= ruleFunctionDeclarationSuffix ) )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:479:1: ( (this_DeclarationSpecifier_0= ruleDeclarationSpecifier )* (this_SimpleDeclarationSuffix_1= ruleSimpleDeclarationSuffix | this_FunctionDefinitionSuffix_2= ruleFunctionDefinitionSuffix ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:479:2: (this_DeclarationSpecifier_0= ruleDeclarationSpecifier )* (this_SimpleDeclarationSuffix_1= ruleSimpleDeclarationSuffix | this_FunctionDefinitionSuffix_2= ruleFunctionDefinitionSuffix )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:479:1: ( (this_DeclarationSpecifier_0= ruleDeclarationSpecifier )* (this_SimpleDeclarationSuffix_1= ruleSimpleDeclarationSuffix | this_FunctionDeclarationSuffix_2= ruleFunctionDeclarationSuffix ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:479:2: (this_DeclarationSpecifier_0= ruleDeclarationSpecifier )* (this_SimpleDeclarationSuffix_1= ruleSimpleDeclarationSuffix | this_FunctionDeclarationSuffix_2= ruleFunctionDeclarationSuffix )
             {
             // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:479:2: (this_DeclarationSpecifier_0= ruleDeclarationSpecifier )*
             loop7:
@@ -1325,7 +1325,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:490:3: (this_SimpleDeclarationSuffix_1= ruleSimpleDeclarationSuffix | this_FunctionDefinitionSuffix_2= ruleFunctionDefinitionSuffix )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:490:3: (this_SimpleDeclarationSuffix_1= ruleSimpleDeclarationSuffix | this_FunctionDeclarationSuffix_2= ruleFunctionDeclarationSuffix )
             int alt8=2;
             switch ( input.LA(1) ) {
             case 88:
@@ -1408,18 +1408,18 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:503:5: this_FunctionDefinitionSuffix_2= ruleFunctionDefinitionSuffix
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:503:5: this_FunctionDeclarationSuffix_2= ruleFunctionDeclarationSuffix
                     {
                      
-                            newCompositeNode(grammarAccess.getSimpleOrFunctionDeclarationAccess().getFunctionDefinitionSuffixParserRuleCall_1_1()); 
+                            newCompositeNode(grammarAccess.getSimpleOrFunctionDeclarationAccess().getFunctionDeclarationSuffixParserRuleCall_1_1()); 
                         
-                    pushFollow(FOLLOW_ruleFunctionDefinitionSuffix_in_ruleSimpleOrFunctionDeclaration1358);
-                    this_FunctionDefinitionSuffix_2=ruleFunctionDefinitionSuffix();
+                    pushFollow(FOLLOW_ruleFunctionDeclarationSuffix_in_ruleSimpleOrFunctionDeclaration1358);
+                    this_FunctionDeclarationSuffix_2=ruleFunctionDeclarationSuffix();
 
                     state._fsp--;
 
 
-                    		current.merge(this_FunctionDefinitionSuffix_2);
+                    		current.merge(this_FunctionDeclarationSuffix_2);
                         
                      
                             afterParserOrEnumRuleCall();
@@ -1560,26 +1560,26 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleSimpleDeclarationSuffix"
 
 
-    // $ANTLR start "entryRuleFunctionDefinitionSuffix"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:559:1: entryRuleFunctionDefinitionSuffix returns [String current=null] : iv_ruleFunctionDefinitionSuffix= ruleFunctionDefinitionSuffix EOF ;
-    public final String entryRuleFunctionDefinitionSuffix() throws RecognitionException {
+    // $ANTLR start "entryRuleFunctionDeclarationSuffix"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:559:1: entryRuleFunctionDeclarationSuffix returns [String current=null] : iv_ruleFunctionDeclarationSuffix= ruleFunctionDeclarationSuffix EOF ;
+    public final String entryRuleFunctionDeclarationSuffix() throws RecognitionException {
         String current = null;
 
-        AntlrDatatypeRuleToken iv_ruleFunctionDefinitionSuffix = null;
+        AntlrDatatypeRuleToken iv_ruleFunctionDeclarationSuffix = null;
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:560:2: (iv_ruleFunctionDefinitionSuffix= ruleFunctionDefinitionSuffix EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:561:2: iv_ruleFunctionDefinitionSuffix= ruleFunctionDefinitionSuffix EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:560:2: (iv_ruleFunctionDeclarationSuffix= ruleFunctionDeclarationSuffix EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:561:2: iv_ruleFunctionDeclarationSuffix= ruleFunctionDeclarationSuffix EOF
             {
-             newCompositeNode(grammarAccess.getFunctionDefinitionSuffixRule()); 
-            pushFollow(FOLLOW_ruleFunctionDefinitionSuffix_in_entryRuleFunctionDefinitionSuffix1525);
-            iv_ruleFunctionDefinitionSuffix=ruleFunctionDefinitionSuffix();
+             newCompositeNode(grammarAccess.getFunctionDeclarationSuffixRule()); 
+            pushFollow(FOLLOW_ruleFunctionDeclarationSuffix_in_entryRuleFunctionDeclarationSuffix1525);
+            iv_ruleFunctionDeclarationSuffix=ruleFunctionDeclarationSuffix();
 
             state._fsp--;
 
-             current =iv_ruleFunctionDefinitionSuffix.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFunctionDefinitionSuffix1536); 
+             current =iv_ruleFunctionDeclarationSuffix.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFunctionDeclarationSuffix1536); 
 
             }
 
@@ -1593,12 +1593,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleFunctionDefinitionSuffix"
+    // $ANTLR end "entryRuleFunctionDeclarationSuffix"
 
 
-    // $ANTLR start "ruleFunctionDefinitionSuffix"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:568:1: ruleFunctionDefinitionSuffix returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_FunctionDeclarator_0= ruleFunctionDeclarator (this_FunctionBody_1= ruleFunctionBody | (kw= '=' kw= 'default' kw= ';' ) | (kw= '=' kw= 'delete' kw= ';' ) ) ) ;
-    public final AntlrDatatypeRuleToken ruleFunctionDefinitionSuffix() throws RecognitionException {
+    // $ANTLR start "ruleFunctionDeclarationSuffix"
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:568:1: ruleFunctionDeclarationSuffix returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_FunctionDeclarator_0= ruleFunctionDeclarator (this_FunctionBody_1= ruleFunctionBody | (kw= '=' kw= 'default' kw= ';' ) | (kw= '=' kw= 'delete' kw= ';' ) ) ) ;
+    public final AntlrDatatypeRuleToken ruleFunctionDeclarationSuffix() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
         Token kw=null;
@@ -1617,9 +1617,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
             // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:573:5: this_FunctionDeclarator_0= ruleFunctionDeclarator (this_FunctionBody_1= ruleFunctionBody | (kw= '=' kw= 'default' kw= ';' ) | (kw= '=' kw= 'delete' kw= ';' ) )
             {
              
-                    newCompositeNode(grammarAccess.getFunctionDefinitionSuffixAccess().getFunctionDeclaratorParserRuleCall_0()); 
+                    newCompositeNode(grammarAccess.getFunctionDeclarationSuffixAccess().getFunctionDeclaratorParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleFunctionDeclarator_in_ruleFunctionDefinitionSuffix1583);
+            pushFollow(FOLLOW_ruleFunctionDeclarator_in_ruleFunctionDeclarationSuffix1583);
             this_FunctionDeclarator_0=ruleFunctionDeclarator();
 
             state._fsp--;
@@ -1664,9 +1664,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:584:5: this_FunctionBody_1= ruleFunctionBody
                     {
                      
-                            newCompositeNode(grammarAccess.getFunctionDefinitionSuffixAccess().getFunctionBodyParserRuleCall_1_0()); 
+                            newCompositeNode(grammarAccess.getFunctionDeclarationSuffixAccess().getFunctionBodyParserRuleCall_1_0()); 
                         
-                    pushFollow(FOLLOW_ruleFunctionBody_in_ruleFunctionDefinitionSuffix1611);
+                    pushFollow(FOLLOW_ruleFunctionBody_in_ruleFunctionDeclarationSuffix1611);
                     this_FunctionBody_1=ruleFunctionBody();
 
                     state._fsp--;
@@ -1686,20 +1686,20 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:595:6: (kw= '=' kw= 'default' kw= ';' )
                     // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:596:2: kw= '=' kw= 'default' kw= ';'
                     {
-                    kw=(Token)match(input,39,FOLLOW_39_in_ruleFunctionDefinitionSuffix1636); 
+                    kw=(Token)match(input,39,FOLLOW_39_in_ruleFunctionDeclarationSuffix1636); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getFunctionDefinitionSuffixAccess().getEqualsSignKeyword_1_1_0()); 
+                            newLeafNode(kw, grammarAccess.getFunctionDeclarationSuffixAccess().getEqualsSignKeyword_1_1_0()); 
                         
-                    kw=(Token)match(input,41,FOLLOW_41_in_ruleFunctionDefinitionSuffix1649); 
+                    kw=(Token)match(input,41,FOLLOW_41_in_ruleFunctionDeclarationSuffix1649); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getFunctionDefinitionSuffixAccess().getDefaultKeyword_1_1_1()); 
+                            newLeafNode(kw, grammarAccess.getFunctionDeclarationSuffixAccess().getDefaultKeyword_1_1_1()); 
                         
-                    kw=(Token)match(input,40,FOLLOW_40_in_ruleFunctionDefinitionSuffix1662); 
+                    kw=(Token)match(input,40,FOLLOW_40_in_ruleFunctionDeclarationSuffix1662); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getFunctionDefinitionSuffixAccess().getSemicolonKeyword_1_1_2()); 
+                            newLeafNode(kw, grammarAccess.getFunctionDeclarationSuffixAccess().getSemicolonKeyword_1_1_2()); 
                         
 
                     }
@@ -1713,20 +1713,20 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:614:6: (kw= '=' kw= 'delete' kw= ';' )
                     // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:615:2: kw= '=' kw= 'delete' kw= ';'
                     {
-                    kw=(Token)match(input,39,FOLLOW_39_in_ruleFunctionDefinitionSuffix1683); 
+                    kw=(Token)match(input,39,FOLLOW_39_in_ruleFunctionDeclarationSuffix1683); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getFunctionDefinitionSuffixAccess().getEqualsSignKeyword_1_2_0()); 
+                            newLeafNode(kw, grammarAccess.getFunctionDeclarationSuffixAccess().getEqualsSignKeyword_1_2_0()); 
                         
-                    kw=(Token)match(input,42,FOLLOW_42_in_ruleFunctionDefinitionSuffix1696); 
+                    kw=(Token)match(input,42,FOLLOW_42_in_ruleFunctionDeclarationSuffix1696); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getFunctionDefinitionSuffixAccess().getDeleteKeyword_1_2_1()); 
+                            newLeafNode(kw, grammarAccess.getFunctionDeclarationSuffixAccess().getDeleteKeyword_1_2_1()); 
                         
-                    kw=(Token)match(input,40,FOLLOW_40_in_ruleFunctionDefinitionSuffix1709); 
+                    kw=(Token)match(input,40,FOLLOW_40_in_ruleFunctionDeclarationSuffix1709); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getFunctionDefinitionSuffixAccess().getSemicolonKeyword_1_2_2()); 
+                            newLeafNode(kw, grammarAccess.getFunctionDeclarationSuffixAccess().getSemicolonKeyword_1_2_2()); 
                         
 
                     }
@@ -1754,7 +1754,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleFunctionDefinitionSuffix"
+    // $ANTLR end "ruleFunctionDeclarationSuffix"
 
 
     // $ANTLR start "entryRuleStaticAssertDeclaration"
@@ -6951,7 +6951,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFunctionBody"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2513:1: entryRuleFunctionBody returns [String current=null] : iv_ruleFunctionBody= ruleFunctionBody EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2511:1: entryRuleFunctionBody returns [String current=null] : iv_ruleFunctionBody= ruleFunctionBody EOF ;
     public final String entryRuleFunctionBody() throws RecognitionException {
         String current = null;
 
@@ -6959,17 +6959,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2514:2: (iv_ruleFunctionBody= ruleFunctionBody EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2515:2: iv_ruleFunctionBody= ruleFunctionBody EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2512:2: (iv_ruleFunctionBody= ruleFunctionBody EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2513:2: iv_ruleFunctionBody= ruleFunctionBody EOF
             {
              newCompositeNode(grammarAccess.getFunctionBodyRule()); 
-            pushFollow(FOLLOW_ruleFunctionBody_in_entryRuleFunctionBody7325);
+            pushFollow(FOLLOW_ruleFunctionBody_in_entryRuleFunctionBody7323);
             iv_ruleFunctionBody=ruleFunctionBody();
 
             state._fsp--;
 
              current =iv_ruleFunctionBody.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFunctionBody7336); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFunctionBody7334); 
 
             }
 
@@ -6987,7 +6987,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFunctionBody"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2522:1: ruleFunctionBody returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( ( (this_CtorInitializer_0= ruleCtorInitializer )? this_CompoundStatement_1= ruleCompoundStatement ) | this_FunctionTryBlock_2= ruleFunctionTryBlock ) ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2520:1: ruleFunctionBody returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( ( (this_CtorInitializer_0= ruleCtorInitializer )? this_CompoundStatement_1= ruleCompoundStatement ) | this_FunctionTryBlock_2= ruleFunctionTryBlock ) ;
     public final AntlrDatatypeRuleToken ruleFunctionBody() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7001,10 +7001,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2525:28: ( ( ( (this_CtorInitializer_0= ruleCtorInitializer )? this_CompoundStatement_1= ruleCompoundStatement ) | this_FunctionTryBlock_2= ruleFunctionTryBlock ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2526:1: ( ( (this_CtorInitializer_0= ruleCtorInitializer )? this_CompoundStatement_1= ruleCompoundStatement ) | this_FunctionTryBlock_2= ruleFunctionTryBlock )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2523:28: ( ( ( (this_CtorInitializer_0= ruleCtorInitializer )? this_CompoundStatement_1= ruleCompoundStatement ) | this_FunctionTryBlock_2= ruleFunctionTryBlock ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2524:1: ( ( (this_CtorInitializer_0= ruleCtorInitializer )? this_CompoundStatement_1= ruleCompoundStatement ) | this_FunctionTryBlock_2= ruleFunctionTryBlock )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2526:1: ( ( (this_CtorInitializer_0= ruleCtorInitializer )? this_CompoundStatement_1= ruleCompoundStatement ) | this_FunctionTryBlock_2= ruleFunctionTryBlock )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2524:1: ( ( (this_CtorInitializer_0= ruleCtorInitializer )? this_CompoundStatement_1= ruleCompoundStatement ) | this_FunctionTryBlock_2= ruleFunctionTryBlock )
             int alt58=2;
             int LA58_0 = input.LA(1);
 
@@ -7022,12 +7022,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
             }
             switch (alt58) {
                 case 1 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2526:2: ( (this_CtorInitializer_0= ruleCtorInitializer )? this_CompoundStatement_1= ruleCompoundStatement )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2524:2: ( (this_CtorInitializer_0= ruleCtorInitializer )? this_CompoundStatement_1= ruleCompoundStatement )
                     {
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2526:2: ( (this_CtorInitializer_0= ruleCtorInitializer )? this_CompoundStatement_1= ruleCompoundStatement )
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2526:3: (this_CtorInitializer_0= ruleCtorInitializer )? this_CompoundStatement_1= ruleCompoundStatement
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2524:2: ( (this_CtorInitializer_0= ruleCtorInitializer )? this_CompoundStatement_1= ruleCompoundStatement )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2524:3: (this_CtorInitializer_0= ruleCtorInitializer )? this_CompoundStatement_1= ruleCompoundStatement
                     {
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2526:3: (this_CtorInitializer_0= ruleCtorInitializer )?
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2524:3: (this_CtorInitializer_0= ruleCtorInitializer )?
                     int alt57=2;
                     int LA57_0 = input.LA(1);
 
@@ -7036,12 +7036,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     switch (alt57) {
                         case 1 :
-                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2527:5: this_CtorInitializer_0= ruleCtorInitializer
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2525:5: this_CtorInitializer_0= ruleCtorInitializer
                             {
                              
                                     newCompositeNode(grammarAccess.getFunctionBodyAccess().getCtorInitializerParserRuleCall_0_0()); 
                                 
-                            pushFollow(FOLLOW_ruleCtorInitializer_in_ruleFunctionBody7385);
+                            pushFollow(FOLLOW_ruleCtorInitializer_in_ruleFunctionBody7383);
                             this_CtorInitializer_0=ruleCtorInitializer();
 
                             state._fsp--;
@@ -7061,7 +7061,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getFunctionBodyAccess().getCompoundStatementParserRuleCall_0_1()); 
                         
-                    pushFollow(FOLLOW_ruleCompoundStatement_in_ruleFunctionBody7414);
+                    pushFollow(FOLLOW_ruleCompoundStatement_in_ruleFunctionBody7412);
                     this_CompoundStatement_1=ruleCompoundStatement();
 
                     state._fsp--;
@@ -7079,12 +7079,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2550:5: this_FunctionTryBlock_2= ruleFunctionTryBlock
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2548:5: this_FunctionTryBlock_2= ruleFunctionTryBlock
                     {
                      
                             newCompositeNode(grammarAccess.getFunctionBodyAccess().getFunctionTryBlockParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleFunctionTryBlock_in_ruleFunctionBody7448);
+                    pushFollow(FOLLOW_ruleFunctionTryBlock_in_ruleFunctionBody7446);
                     this_FunctionTryBlock_2=ruleFunctionTryBlock();
 
                     state._fsp--;
@@ -7119,7 +7119,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOperatorFunctionId"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2568:1: entryRuleOperatorFunctionId returns [String current=null] : iv_ruleOperatorFunctionId= ruleOperatorFunctionId EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2566:1: entryRuleOperatorFunctionId returns [String current=null] : iv_ruleOperatorFunctionId= ruleOperatorFunctionId EOF ;
     public final String entryRuleOperatorFunctionId() throws RecognitionException {
         String current = null;
 
@@ -7127,17 +7127,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2569:2: (iv_ruleOperatorFunctionId= ruleOperatorFunctionId EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2570:2: iv_ruleOperatorFunctionId= ruleOperatorFunctionId EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2567:2: (iv_ruleOperatorFunctionId= ruleOperatorFunctionId EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2568:2: iv_ruleOperatorFunctionId= ruleOperatorFunctionId EOF
             {
              newCompositeNode(grammarAccess.getOperatorFunctionIdRule()); 
-            pushFollow(FOLLOW_ruleOperatorFunctionId_in_entryRuleOperatorFunctionId7494);
+            pushFollow(FOLLOW_ruleOperatorFunctionId_in_entryRuleOperatorFunctionId7492);
             iv_ruleOperatorFunctionId=ruleOperatorFunctionId();
 
             state._fsp--;
 
              current =iv_ruleOperatorFunctionId.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOperatorFunctionId7505); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOperatorFunctionId7503); 
 
             }
 
@@ -7155,7 +7155,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOperatorFunctionId"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2577:1: ruleOperatorFunctionId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'operator' this_OverloadableOperator_1= ruleOverloadableOperator (kw= '<' (this_ConstantExpression_3= ruleConstantExpression | this_TypeSpecifier_4= ruleTypeSpecifier | this_IdExpression_5= ruleIdExpression )* kw= '>' )? ) ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2575:1: ruleOperatorFunctionId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'operator' this_OverloadableOperator_1= ruleOverloadableOperator (kw= '<' (this_ConstantExpression_3= ruleConstantExpression | this_TypeSpecifier_4= ruleTypeSpecifier | this_IdExpression_5= ruleIdExpression )* kw= '>' )? ) ;
     public final AntlrDatatypeRuleToken ruleOperatorFunctionId() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7172,13 +7172,13 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2580:28: ( (kw= 'operator' this_OverloadableOperator_1= ruleOverloadableOperator (kw= '<' (this_ConstantExpression_3= ruleConstantExpression | this_TypeSpecifier_4= ruleTypeSpecifier | this_IdExpression_5= ruleIdExpression )* kw= '>' )? ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2581:1: (kw= 'operator' this_OverloadableOperator_1= ruleOverloadableOperator (kw= '<' (this_ConstantExpression_3= ruleConstantExpression | this_TypeSpecifier_4= ruleTypeSpecifier | this_IdExpression_5= ruleIdExpression )* kw= '>' )? )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2578:28: ( (kw= 'operator' this_OverloadableOperator_1= ruleOverloadableOperator (kw= '<' (this_ConstantExpression_3= ruleConstantExpression | this_TypeSpecifier_4= ruleTypeSpecifier | this_IdExpression_5= ruleIdExpression )* kw= '>' )? ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2579:1: (kw= 'operator' this_OverloadableOperator_1= ruleOverloadableOperator (kw= '<' (this_ConstantExpression_3= ruleConstantExpression | this_TypeSpecifier_4= ruleTypeSpecifier | this_IdExpression_5= ruleIdExpression )* kw= '>' )? )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2581:1: (kw= 'operator' this_OverloadableOperator_1= ruleOverloadableOperator (kw= '<' (this_ConstantExpression_3= ruleConstantExpression | this_TypeSpecifier_4= ruleTypeSpecifier | this_IdExpression_5= ruleIdExpression )* kw= '>' )? )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2582:2: kw= 'operator' this_OverloadableOperator_1= ruleOverloadableOperator (kw= '<' (this_ConstantExpression_3= ruleConstantExpression | this_TypeSpecifier_4= ruleTypeSpecifier | this_IdExpression_5= ruleIdExpression )* kw= '>' )?
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2579:1: (kw= 'operator' this_OverloadableOperator_1= ruleOverloadableOperator (kw= '<' (this_ConstantExpression_3= ruleConstantExpression | this_TypeSpecifier_4= ruleTypeSpecifier | this_IdExpression_5= ruleIdExpression )* kw= '>' )? )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2580:2: kw= 'operator' this_OverloadableOperator_1= ruleOverloadableOperator (kw= '<' (this_ConstantExpression_3= ruleConstantExpression | this_TypeSpecifier_4= ruleTypeSpecifier | this_IdExpression_5= ruleIdExpression )* kw= '>' )?
             {
-            kw=(Token)match(input,89,FOLLOW_89_in_ruleOperatorFunctionId7543); 
+            kw=(Token)match(input,89,FOLLOW_89_in_ruleOperatorFunctionId7541); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getOperatorFunctionIdAccess().getOperatorKeyword_0()); 
@@ -7186,7 +7186,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getOperatorFunctionIdAccess().getOverloadableOperatorParserRuleCall_1()); 
                 
-            pushFollow(FOLLOW_ruleOverloadableOperator_in_ruleOperatorFunctionId7565);
+            pushFollow(FOLLOW_ruleOverloadableOperator_in_ruleOperatorFunctionId7563);
             this_OverloadableOperator_1=ruleOverloadableOperator();
 
             state._fsp--;
@@ -7197,7 +7197,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2598:1: (kw= '<' (this_ConstantExpression_3= ruleConstantExpression | this_TypeSpecifier_4= ruleTypeSpecifier | this_IdExpression_5= ruleIdExpression )* kw= '>' )?
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2596:1: (kw= '<' (this_ConstantExpression_3= ruleConstantExpression | this_TypeSpecifier_4= ruleTypeSpecifier | this_IdExpression_5= ruleIdExpression )* kw= '>' )?
             int alt60=2;
             int LA60_0 = input.LA(1);
 
@@ -7206,14 +7206,14 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
             }
             switch (alt60) {
                 case 1 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2599:2: kw= '<' (this_ConstantExpression_3= ruleConstantExpression | this_TypeSpecifier_4= ruleTypeSpecifier | this_IdExpression_5= ruleIdExpression )* kw= '>'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2597:2: kw= '<' (this_ConstantExpression_3= ruleConstantExpression | this_TypeSpecifier_4= ruleTypeSpecifier | this_IdExpression_5= ruleIdExpression )* kw= '>'
                     {
-                    kw=(Token)match(input,90,FOLLOW_90_in_ruleOperatorFunctionId7584); 
+                    kw=(Token)match(input,90,FOLLOW_90_in_ruleOperatorFunctionId7582); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOperatorFunctionIdAccess().getLessThanSignKeyword_2_0()); 
                         
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2604:1: (this_ConstantExpression_3= ruleConstantExpression | this_TypeSpecifier_4= ruleTypeSpecifier | this_IdExpression_5= ruleIdExpression )*
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2602:1: (this_ConstantExpression_3= ruleConstantExpression | this_TypeSpecifier_4= ruleTypeSpecifier | this_IdExpression_5= ruleIdExpression )*
                     loop59:
                     do {
                         int alt59=4;
@@ -7261,12 +7261,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
                         switch (alt59) {
                     	case 1 :
-                    	    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2605:5: this_ConstantExpression_3= ruleConstantExpression
+                    	    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2603:5: this_ConstantExpression_3= ruleConstantExpression
                     	    {
                     	     
                     	            newCompositeNode(grammarAccess.getOperatorFunctionIdAccess().getConstantExpressionParserRuleCall_2_1_0()); 
                     	        
-                    	    pushFollow(FOLLOW_ruleConstantExpression_in_ruleOperatorFunctionId7607);
+                    	    pushFollow(FOLLOW_ruleConstantExpression_in_ruleOperatorFunctionId7605);
                     	    this_ConstantExpression_3=ruleConstantExpression();
 
                     	    state._fsp--;
@@ -7281,12 +7281,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2617:5: this_TypeSpecifier_4= ruleTypeSpecifier
+                    	    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2615:5: this_TypeSpecifier_4= ruleTypeSpecifier
                     	    {
                     	     
                     	            newCompositeNode(grammarAccess.getOperatorFunctionIdAccess().getTypeSpecifierParserRuleCall_2_1_1()); 
                     	        
-                    	    pushFollow(FOLLOW_ruleTypeSpecifier_in_ruleOperatorFunctionId7640);
+                    	    pushFollow(FOLLOW_ruleTypeSpecifier_in_ruleOperatorFunctionId7638);
                     	    this_TypeSpecifier_4=ruleTypeSpecifier();
 
                     	    state._fsp--;
@@ -7301,12 +7301,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     	    }
                     	    break;
                     	case 3 :
-                    	    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2629:5: this_IdExpression_5= ruleIdExpression
+                    	    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2627:5: this_IdExpression_5= ruleIdExpression
                     	    {
                     	     
                     	            newCompositeNode(grammarAccess.getOperatorFunctionIdAccess().getIdExpressionParserRuleCall_2_1_2()); 
                     	        
-                    	    pushFollow(FOLLOW_ruleIdExpression_in_ruleOperatorFunctionId7673);
+                    	    pushFollow(FOLLOW_ruleIdExpression_in_ruleOperatorFunctionId7671);
                     	    this_IdExpression_5=ruleIdExpression();
 
                     	    state._fsp--;
@@ -7326,7 +7326,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    kw=(Token)match(input,91,FOLLOW_91_in_ruleOperatorFunctionId7693); 
+                    kw=(Token)match(input,91,FOLLOW_91_in_ruleOperatorFunctionId7691); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOperatorFunctionIdAccess().getGreaterThanSignKeyword_2_2()); 
@@ -7358,7 +7358,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOverloadableOperator"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2653:1: entryRuleOverloadableOperator returns [String current=null] : iv_ruleOverloadableOperator= ruleOverloadableOperator EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2651:1: entryRuleOverloadableOperator returns [String current=null] : iv_ruleOverloadableOperator= ruleOverloadableOperator EOF ;
     public final String entryRuleOverloadableOperator() throws RecognitionException {
         String current = null;
 
@@ -7366,17 +7366,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2654:2: (iv_ruleOverloadableOperator= ruleOverloadableOperator EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2655:2: iv_ruleOverloadableOperator= ruleOverloadableOperator EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2652:2: (iv_ruleOverloadableOperator= ruleOverloadableOperator EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2653:2: iv_ruleOverloadableOperator= ruleOverloadableOperator EOF
             {
              newCompositeNode(grammarAccess.getOverloadableOperatorRule()); 
-            pushFollow(FOLLOW_ruleOverloadableOperator_in_entryRuleOverloadableOperator7736);
+            pushFollow(FOLLOW_ruleOverloadableOperator_in_entryRuleOverloadableOperator7734);
             iv_ruleOverloadableOperator=ruleOverloadableOperator();
 
             state._fsp--;
 
              current =iv_ruleOverloadableOperator.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOverloadableOperator7747); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOverloadableOperator7745); 
 
             }
 
@@ -7394,7 +7394,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOverloadableOperator"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2662:1: ruleOverloadableOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'new' | kw= 'delete' | (kw= 'new' kw= '[' kw= ']' ) | (kw= 'delete' kw= '[' kw= ']' ) | kw= '+' | kw= '-' | kw= '*' | kw= '/' | kw= '%' | kw= '^' | kw= '&' | kw= '|' | kw= '~' | kw= '!' | kw= '=' | kw= '<' | kw= '>' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '^=' | kw= '&=' | kw= '|=' | kw= '<<' | kw= '>>' | kw= '>>=' | kw= '<<=' | kw= '==' | kw= '!=' | kw= '<=' | kw= '>=' | kw= '&&' | kw= '||' | kw= '++' | kw= '--' | kw= ',' | kw= '->*' | kw= '->' | kw= '()' | kw= '[]' ) ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2660:1: ruleOverloadableOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'new' | kw= 'delete' | (kw= 'new' kw= '[' kw= ']' ) | (kw= 'delete' kw= '[' kw= ']' ) | kw= '+' | kw= '-' | kw= '*' | kw= '/' | kw= '%' | kw= '^' | kw= '&' | kw= '|' | kw= '~' | kw= '!' | kw= '=' | kw= '<' | kw= '>' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '^=' | kw= '&=' | kw= '|=' | kw= '<<' | kw= '>>' | kw= '>>=' | kw= '<<=' | kw= '==' | kw= '!=' | kw= '<=' | kw= '>=' | kw= '&&' | kw= '||' | kw= '++' | kw= '--' | kw= ',' | kw= '->*' | kw= '->' | kw= '()' | kw= '[]' ) ;
     public final AntlrDatatypeRuleToken ruleOverloadableOperator() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7403,17 +7403,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2665:28: ( (kw= 'new' | kw= 'delete' | (kw= 'new' kw= '[' kw= ']' ) | (kw= 'delete' kw= '[' kw= ']' ) | kw= '+' | kw= '-' | kw= '*' | kw= '/' | kw= '%' | kw= '^' | kw= '&' | kw= '|' | kw= '~' | kw= '!' | kw= '=' | kw= '<' | kw= '>' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '^=' | kw= '&=' | kw= '|=' | kw= '<<' | kw= '>>' | kw= '>>=' | kw= '<<=' | kw= '==' | kw= '!=' | kw= '<=' | kw= '>=' | kw= '&&' | kw= '||' | kw= '++' | kw= '--' | kw= ',' | kw= '->*' | kw= '->' | kw= '()' | kw= '[]' ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2666:1: (kw= 'new' | kw= 'delete' | (kw= 'new' kw= '[' kw= ']' ) | (kw= 'delete' kw= '[' kw= ']' ) | kw= '+' | kw= '-' | kw= '*' | kw= '/' | kw= '%' | kw= '^' | kw= '&' | kw= '|' | kw= '~' | kw= '!' | kw= '=' | kw= '<' | kw= '>' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '^=' | kw= '&=' | kw= '|=' | kw= '<<' | kw= '>>' | kw= '>>=' | kw= '<<=' | kw= '==' | kw= '!=' | kw= '<=' | kw= '>=' | kw= '&&' | kw= '||' | kw= '++' | kw= '--' | kw= ',' | kw= '->*' | kw= '->' | kw= '()' | kw= '[]' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2663:28: ( (kw= 'new' | kw= 'delete' | (kw= 'new' kw= '[' kw= ']' ) | (kw= 'delete' kw= '[' kw= ']' ) | kw= '+' | kw= '-' | kw= '*' | kw= '/' | kw= '%' | kw= '^' | kw= '&' | kw= '|' | kw= '~' | kw= '!' | kw= '=' | kw= '<' | kw= '>' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '^=' | kw= '&=' | kw= '|=' | kw= '<<' | kw= '>>' | kw= '>>=' | kw= '<<=' | kw= '==' | kw= '!=' | kw= '<=' | kw= '>=' | kw= '&&' | kw= '||' | kw= '++' | kw= '--' | kw= ',' | kw= '->*' | kw= '->' | kw= '()' | kw= '[]' ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2664:1: (kw= 'new' | kw= 'delete' | (kw= 'new' kw= '[' kw= ']' ) | (kw= 'delete' kw= '[' kw= ']' ) | kw= '+' | kw= '-' | kw= '*' | kw= '/' | kw= '%' | kw= '^' | kw= '&' | kw= '|' | kw= '~' | kw= '!' | kw= '=' | kw= '<' | kw= '>' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '^=' | kw= '&=' | kw= '|=' | kw= '<<' | kw= '>>' | kw= '>>=' | kw= '<<=' | kw= '==' | kw= '!=' | kw= '<=' | kw= '>=' | kw= '&&' | kw= '||' | kw= '++' | kw= '--' | kw= ',' | kw= '->*' | kw= '->' | kw= '()' | kw= '[]' )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2666:1: (kw= 'new' | kw= 'delete' | (kw= 'new' kw= '[' kw= ']' ) | (kw= 'delete' kw= '[' kw= ']' ) | kw= '+' | kw= '-' | kw= '*' | kw= '/' | kw= '%' | kw= '^' | kw= '&' | kw= '|' | kw= '~' | kw= '!' | kw= '=' | kw= '<' | kw= '>' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '^=' | kw= '&=' | kw= '|=' | kw= '<<' | kw= '>>' | kw= '>>=' | kw= '<<=' | kw= '==' | kw= '!=' | kw= '<=' | kw= '>=' | kw= '&&' | kw= '||' | kw= '++' | kw= '--' | kw= ',' | kw= '->*' | kw= '->' | kw= '()' | kw= '[]' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2664:1: (kw= 'new' | kw= 'delete' | (kw= 'new' kw= '[' kw= ']' ) | (kw= 'delete' kw= '[' kw= ']' ) | kw= '+' | kw= '-' | kw= '*' | kw= '/' | kw= '%' | kw= '^' | kw= '&' | kw= '|' | kw= '~' | kw= '!' | kw= '=' | kw= '<' | kw= '>' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '^=' | kw= '&=' | kw= '|=' | kw= '<<' | kw= '>>' | kw= '>>=' | kw= '<<=' | kw= '==' | kw= '!=' | kw= '<=' | kw= '>=' | kw= '&&' | kw= '||' | kw= '++' | kw= '--' | kw= ',' | kw= '->*' | kw= '->' | kw= '()' | kw= '[]' )
             int alt61=42;
             alt61 = dfa61.predict(input);
             switch (alt61) {
                 case 1 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2667:2: kw= 'new'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2665:2: kw= 'new'
                     {
-                    kw=(Token)match(input,92,FOLLOW_92_in_ruleOverloadableOperator7785); 
+                    kw=(Token)match(input,92,FOLLOW_92_in_ruleOverloadableOperator7783); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getNewKeyword_0()); 
@@ -7422,9 +7422,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2674:2: kw= 'delete'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2672:2: kw= 'delete'
                     {
-                    kw=(Token)match(input,42,FOLLOW_42_in_ruleOverloadableOperator7804); 
+                    kw=(Token)match(input,42,FOLLOW_42_in_ruleOverloadableOperator7802); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getDeleteKeyword_1()); 
@@ -7433,22 +7433,22 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2680:6: (kw= 'new' kw= '[' kw= ']' )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2678:6: (kw= 'new' kw= '[' kw= ']' )
                     {
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2680:6: (kw= 'new' kw= '[' kw= ']' )
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2681:2: kw= 'new' kw= '[' kw= ']'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2678:6: (kw= 'new' kw= '[' kw= ']' )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2679:2: kw= 'new' kw= '[' kw= ']'
                     {
-                    kw=(Token)match(input,92,FOLLOW_92_in_ruleOverloadableOperator7824); 
+                    kw=(Token)match(input,92,FOLLOW_92_in_ruleOverloadableOperator7822); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getNewKeyword_2_0()); 
                         
-                    kw=(Token)match(input,93,FOLLOW_93_in_ruleOverloadableOperator7837); 
+                    kw=(Token)match(input,93,FOLLOW_93_in_ruleOverloadableOperator7835); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getLeftSquareBracketKeyword_2_1()); 
                         
-                    kw=(Token)match(input,94,FOLLOW_94_in_ruleOverloadableOperator7850); 
+                    kw=(Token)match(input,94,FOLLOW_94_in_ruleOverloadableOperator7848); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getRightSquareBracketKeyword_2_2()); 
@@ -7460,22 +7460,22 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2699:6: (kw= 'delete' kw= '[' kw= ']' )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2697:6: (kw= 'delete' kw= '[' kw= ']' )
                     {
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2699:6: (kw= 'delete' kw= '[' kw= ']' )
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2700:2: kw= 'delete' kw= '[' kw= ']'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2697:6: (kw= 'delete' kw= '[' kw= ']' )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2698:2: kw= 'delete' kw= '[' kw= ']'
                     {
-                    kw=(Token)match(input,42,FOLLOW_42_in_ruleOverloadableOperator7871); 
+                    kw=(Token)match(input,42,FOLLOW_42_in_ruleOverloadableOperator7869); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getDeleteKeyword_3_0()); 
                         
-                    kw=(Token)match(input,93,FOLLOW_93_in_ruleOverloadableOperator7884); 
+                    kw=(Token)match(input,93,FOLLOW_93_in_ruleOverloadableOperator7882); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getLeftSquareBracketKeyword_3_1()); 
                         
-                    kw=(Token)match(input,94,FOLLOW_94_in_ruleOverloadableOperator7897); 
+                    kw=(Token)match(input,94,FOLLOW_94_in_ruleOverloadableOperator7895); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getRightSquareBracketKeyword_3_2()); 
@@ -7487,9 +7487,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2719:2: kw= '+'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2717:2: kw= '+'
                     {
-                    kw=(Token)match(input,95,FOLLOW_95_in_ruleOverloadableOperator7917); 
+                    kw=(Token)match(input,95,FOLLOW_95_in_ruleOverloadableOperator7915); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getPlusSignKeyword_4()); 
@@ -7498,9 +7498,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2726:2: kw= '-'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2724:2: kw= '-'
                     {
-                    kw=(Token)match(input,96,FOLLOW_96_in_ruleOverloadableOperator7936); 
+                    kw=(Token)match(input,96,FOLLOW_96_in_ruleOverloadableOperator7934); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getHyphenMinusKeyword_5()); 
@@ -7509,9 +7509,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2733:2: kw= '*'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2731:2: kw= '*'
                     {
-                    kw=(Token)match(input,97,FOLLOW_97_in_ruleOverloadableOperator7955); 
+                    kw=(Token)match(input,97,FOLLOW_97_in_ruleOverloadableOperator7953); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getAsteriskKeyword_6()); 
@@ -7520,9 +7520,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2740:2: kw= '/'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2738:2: kw= '/'
                     {
-                    kw=(Token)match(input,98,FOLLOW_98_in_ruleOverloadableOperator7974); 
+                    kw=(Token)match(input,98,FOLLOW_98_in_ruleOverloadableOperator7972); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getSolidusKeyword_7()); 
@@ -7531,9 +7531,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2747:2: kw= '%'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2745:2: kw= '%'
                     {
-                    kw=(Token)match(input,99,FOLLOW_99_in_ruleOverloadableOperator7993); 
+                    kw=(Token)match(input,99,FOLLOW_99_in_ruleOverloadableOperator7991); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getPercentSignKeyword_8()); 
@@ -7542,9 +7542,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2754:2: kw= '^'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2752:2: kw= '^'
                     {
-                    kw=(Token)match(input,100,FOLLOW_100_in_ruleOverloadableOperator8012); 
+                    kw=(Token)match(input,100,FOLLOW_100_in_ruleOverloadableOperator8010); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getCircumflexAccentKeyword_9()); 
@@ -7553,9 +7553,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2761:2: kw= '&'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2759:2: kw= '&'
                     {
-                    kw=(Token)match(input,86,FOLLOW_86_in_ruleOverloadableOperator8031); 
+                    kw=(Token)match(input,86,FOLLOW_86_in_ruleOverloadableOperator8029); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getAmpersandKeyword_10()); 
@@ -7564,9 +7564,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2768:2: kw= '|'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2766:2: kw= '|'
                     {
-                    kw=(Token)match(input,101,FOLLOW_101_in_ruleOverloadableOperator8050); 
+                    kw=(Token)match(input,101,FOLLOW_101_in_ruleOverloadableOperator8048); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getVerticalLineKeyword_11()); 
@@ -7575,9 +7575,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2775:2: kw= '~'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2773:2: kw= '~'
                     {
-                    kw=(Token)match(input,102,FOLLOW_102_in_ruleOverloadableOperator8069); 
+                    kw=(Token)match(input,102,FOLLOW_102_in_ruleOverloadableOperator8067); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getTildeKeyword_12()); 
@@ -7586,9 +7586,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2782:2: kw= '!'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2780:2: kw= '!'
                     {
-                    kw=(Token)match(input,103,FOLLOW_103_in_ruleOverloadableOperator8088); 
+                    kw=(Token)match(input,103,FOLLOW_103_in_ruleOverloadableOperator8086); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getExclamationMarkKeyword_13()); 
@@ -7597,9 +7597,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2789:2: kw= '='
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2787:2: kw= '='
                     {
-                    kw=(Token)match(input,39,FOLLOW_39_in_ruleOverloadableOperator8107); 
+                    kw=(Token)match(input,39,FOLLOW_39_in_ruleOverloadableOperator8105); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getEqualsSignKeyword_14()); 
@@ -7608,9 +7608,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2796:2: kw= '<'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2794:2: kw= '<'
                     {
-                    kw=(Token)match(input,90,FOLLOW_90_in_ruleOverloadableOperator8126); 
+                    kw=(Token)match(input,90,FOLLOW_90_in_ruleOverloadableOperator8124); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getLessThanSignKeyword_15()); 
@@ -7619,9 +7619,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2803:2: kw= '>'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2801:2: kw= '>'
                     {
-                    kw=(Token)match(input,91,FOLLOW_91_in_ruleOverloadableOperator8145); 
+                    kw=(Token)match(input,91,FOLLOW_91_in_ruleOverloadableOperator8143); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getGreaterThanSignKeyword_16()); 
@@ -7630,9 +7630,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2810:2: kw= '+='
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2808:2: kw= '+='
                     {
-                    kw=(Token)match(input,104,FOLLOW_104_in_ruleOverloadableOperator8164); 
+                    kw=(Token)match(input,104,FOLLOW_104_in_ruleOverloadableOperator8162); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getPlusSignEqualsSignKeyword_17()); 
@@ -7641,9 +7641,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 19 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2817:2: kw= '-='
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2815:2: kw= '-='
                     {
-                    kw=(Token)match(input,105,FOLLOW_105_in_ruleOverloadableOperator8183); 
+                    kw=(Token)match(input,105,FOLLOW_105_in_ruleOverloadableOperator8181); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getHyphenMinusEqualsSignKeyword_18()); 
@@ -7652,9 +7652,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 20 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2824:2: kw= '*='
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2822:2: kw= '*='
                     {
-                    kw=(Token)match(input,106,FOLLOW_106_in_ruleOverloadableOperator8202); 
+                    kw=(Token)match(input,106,FOLLOW_106_in_ruleOverloadableOperator8200); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getAsteriskEqualsSignKeyword_19()); 
@@ -7663,9 +7663,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 21 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2831:2: kw= '/='
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2829:2: kw= '/='
                     {
-                    kw=(Token)match(input,107,FOLLOW_107_in_ruleOverloadableOperator8221); 
+                    kw=(Token)match(input,107,FOLLOW_107_in_ruleOverloadableOperator8219); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getSolidusEqualsSignKeyword_20()); 
@@ -7674,9 +7674,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 22 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2838:2: kw= '%='
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2836:2: kw= '%='
                     {
-                    kw=(Token)match(input,108,FOLLOW_108_in_ruleOverloadableOperator8240); 
+                    kw=(Token)match(input,108,FOLLOW_108_in_ruleOverloadableOperator8238); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getPercentSignEqualsSignKeyword_21()); 
@@ -7685,9 +7685,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 23 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2845:2: kw= '^='
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2843:2: kw= '^='
                     {
-                    kw=(Token)match(input,109,FOLLOW_109_in_ruleOverloadableOperator8259); 
+                    kw=(Token)match(input,109,FOLLOW_109_in_ruleOverloadableOperator8257); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getCircumflexAccentEqualsSignKeyword_22()); 
@@ -7696,9 +7696,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 24 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2852:2: kw= '&='
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2850:2: kw= '&='
                     {
-                    kw=(Token)match(input,110,FOLLOW_110_in_ruleOverloadableOperator8278); 
+                    kw=(Token)match(input,110,FOLLOW_110_in_ruleOverloadableOperator8276); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getAmpersandEqualsSignKeyword_23()); 
@@ -7707,9 +7707,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 25 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2859:2: kw= '|='
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2857:2: kw= '|='
                     {
-                    kw=(Token)match(input,111,FOLLOW_111_in_ruleOverloadableOperator8297); 
+                    kw=(Token)match(input,111,FOLLOW_111_in_ruleOverloadableOperator8295); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getVerticalLineEqualsSignKeyword_24()); 
@@ -7718,9 +7718,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 26 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2866:2: kw= '<<'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2864:2: kw= '<<'
                     {
-                    kw=(Token)match(input,112,FOLLOW_112_in_ruleOverloadableOperator8316); 
+                    kw=(Token)match(input,112,FOLLOW_112_in_ruleOverloadableOperator8314); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getLessThanSignLessThanSignKeyword_25()); 
@@ -7729,9 +7729,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 27 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2873:2: kw= '>>'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2871:2: kw= '>>'
                     {
-                    kw=(Token)match(input,113,FOLLOW_113_in_ruleOverloadableOperator8335); 
+                    kw=(Token)match(input,113,FOLLOW_113_in_ruleOverloadableOperator8333); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getGreaterThanSignGreaterThanSignKeyword_26()); 
@@ -7740,9 +7740,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 28 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2880:2: kw= '>>='
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2878:2: kw= '>>='
                     {
-                    kw=(Token)match(input,114,FOLLOW_114_in_ruleOverloadableOperator8354); 
+                    kw=(Token)match(input,114,FOLLOW_114_in_ruleOverloadableOperator8352); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getGreaterThanSignGreaterThanSignEqualsSignKeyword_27()); 
@@ -7751,9 +7751,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 29 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2887:2: kw= '<<='
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2885:2: kw= '<<='
                     {
-                    kw=(Token)match(input,115,FOLLOW_115_in_ruleOverloadableOperator8373); 
+                    kw=(Token)match(input,115,FOLLOW_115_in_ruleOverloadableOperator8371); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getLessThanSignLessThanSignEqualsSignKeyword_28()); 
@@ -7762,9 +7762,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 30 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2894:2: kw= '=='
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2892:2: kw= '=='
                     {
-                    kw=(Token)match(input,116,FOLLOW_116_in_ruleOverloadableOperator8392); 
+                    kw=(Token)match(input,116,FOLLOW_116_in_ruleOverloadableOperator8390); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getEqualsSignEqualsSignKeyword_29()); 
@@ -7773,9 +7773,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 31 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2901:2: kw= '!='
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2899:2: kw= '!='
                     {
-                    kw=(Token)match(input,117,FOLLOW_117_in_ruleOverloadableOperator8411); 
+                    kw=(Token)match(input,117,FOLLOW_117_in_ruleOverloadableOperator8409); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getExclamationMarkEqualsSignKeyword_30()); 
@@ -7784,9 +7784,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 32 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2908:2: kw= '<='
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2906:2: kw= '<='
                     {
-                    kw=(Token)match(input,118,FOLLOW_118_in_ruleOverloadableOperator8430); 
+                    kw=(Token)match(input,118,FOLLOW_118_in_ruleOverloadableOperator8428); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getLessThanSignEqualsSignKeyword_31()); 
@@ -7795,9 +7795,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 33 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2915:2: kw= '>='
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2913:2: kw= '>='
                     {
-                    kw=(Token)match(input,119,FOLLOW_119_in_ruleOverloadableOperator8449); 
+                    kw=(Token)match(input,119,FOLLOW_119_in_ruleOverloadableOperator8447); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getGreaterThanSignEqualsSignKeyword_32()); 
@@ -7806,9 +7806,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 34 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2922:2: kw= '&&'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2920:2: kw= '&&'
                     {
-                    kw=(Token)match(input,87,FOLLOW_87_in_ruleOverloadableOperator8468); 
+                    kw=(Token)match(input,87,FOLLOW_87_in_ruleOverloadableOperator8466); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getAmpersandAmpersandKeyword_33()); 
@@ -7817,9 +7817,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 35 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2929:2: kw= '||'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2927:2: kw= '||'
                     {
-                    kw=(Token)match(input,120,FOLLOW_120_in_ruleOverloadableOperator8487); 
+                    kw=(Token)match(input,120,FOLLOW_120_in_ruleOverloadableOperator8485); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getVerticalLineVerticalLineKeyword_34()); 
@@ -7828,9 +7828,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 36 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2936:2: kw= '++'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2934:2: kw= '++'
                     {
-                    kw=(Token)match(input,121,FOLLOW_121_in_ruleOverloadableOperator8506); 
+                    kw=(Token)match(input,121,FOLLOW_121_in_ruleOverloadableOperator8504); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getPlusSignPlusSignKeyword_35()); 
@@ -7839,9 +7839,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 37 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2943:2: kw= '--'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2941:2: kw= '--'
                     {
-                    kw=(Token)match(input,122,FOLLOW_122_in_ruleOverloadableOperator8525); 
+                    kw=(Token)match(input,122,FOLLOW_122_in_ruleOverloadableOperator8523); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getHyphenMinusHyphenMinusKeyword_36()); 
@@ -7850,9 +7850,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 38 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2950:2: kw= ','
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2948:2: kw= ','
                     {
-                    kw=(Token)match(input,45,FOLLOW_45_in_ruleOverloadableOperator8544); 
+                    kw=(Token)match(input,45,FOLLOW_45_in_ruleOverloadableOperator8542); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getCommaKeyword_37()); 
@@ -7861,9 +7861,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 39 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2957:2: kw= '->*'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2955:2: kw= '->*'
                     {
-                    kw=(Token)match(input,123,FOLLOW_123_in_ruleOverloadableOperator8563); 
+                    kw=(Token)match(input,123,FOLLOW_123_in_ruleOverloadableOperator8561); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getHyphenMinusGreaterThanSignAsteriskKeyword_38()); 
@@ -7872,9 +7872,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 40 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2964:2: kw= '->'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2962:2: kw= '->'
                     {
-                    kw=(Token)match(input,124,FOLLOW_124_in_ruleOverloadableOperator8582); 
+                    kw=(Token)match(input,124,FOLLOW_124_in_ruleOverloadableOperator8580); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getHyphenMinusGreaterThanSignKeyword_39()); 
@@ -7883,9 +7883,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 41 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2971:2: kw= '()'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2969:2: kw= '()'
                     {
-                    kw=(Token)match(input,125,FOLLOW_125_in_ruleOverloadableOperator8601); 
+                    kw=(Token)match(input,125,FOLLOW_125_in_ruleOverloadableOperator8599); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getLeftParenthesisRightParenthesisKeyword_40()); 
@@ -7894,9 +7894,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 42 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2978:2: kw= '[]'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2976:2: kw= '[]'
                     {
-                    kw=(Token)match(input,126,FOLLOW_126_in_ruleOverloadableOperator8620); 
+                    kw=(Token)match(input,126,FOLLOW_126_in_ruleOverloadableOperator8618); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getOverloadableOperatorAccess().getLeftSquareBracketRightSquareBracketKeyword_41()); 
@@ -7925,7 +7925,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLiteralOperatorId"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2991:1: entryRuleLiteralOperatorId returns [String current=null] : iv_ruleLiteralOperatorId= ruleLiteralOperatorId EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2989:1: entryRuleLiteralOperatorId returns [String current=null] : iv_ruleLiteralOperatorId= ruleLiteralOperatorId EOF ;
     public final String entryRuleLiteralOperatorId() throws RecognitionException {
         String current = null;
 
@@ -7933,17 +7933,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2992:2: (iv_ruleLiteralOperatorId= ruleLiteralOperatorId EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2993:2: iv_ruleLiteralOperatorId= ruleLiteralOperatorId EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2990:2: (iv_ruleLiteralOperatorId= ruleLiteralOperatorId EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2991:2: iv_ruleLiteralOperatorId= ruleLiteralOperatorId EOF
             {
              newCompositeNode(grammarAccess.getLiteralOperatorIdRule()); 
-            pushFollow(FOLLOW_ruleLiteralOperatorId_in_entryRuleLiteralOperatorId8661);
+            pushFollow(FOLLOW_ruleLiteralOperatorId_in_entryRuleLiteralOperatorId8659);
             iv_ruleLiteralOperatorId=ruleLiteralOperatorId();
 
             state._fsp--;
 
              current =iv_ruleLiteralOperatorId.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteralOperatorId8672); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteralOperatorId8670); 
 
             }
 
@@ -7961,7 +7961,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLiteralOperatorId"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3000:1: ruleLiteralOperatorId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'operator' kw= '\"' kw= '\"' ) ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:2998:1: ruleLiteralOperatorId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'operator' kw= '\"' kw= '\"' ) ;
     public final AntlrDatatypeRuleToken ruleLiteralOperatorId() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7970,23 +7970,23 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3003:28: ( (kw= 'operator' kw= '\"' kw= '\"' ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3004:1: (kw= 'operator' kw= '\"' kw= '\"' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3001:28: ( (kw= 'operator' kw= '\"' kw= '\"' ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3002:1: (kw= 'operator' kw= '\"' kw= '\"' )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3004:1: (kw= 'operator' kw= '\"' kw= '\"' )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3005:2: kw= 'operator' kw= '\"' kw= '\"'
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3002:1: (kw= 'operator' kw= '\"' kw= '\"' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3003:2: kw= 'operator' kw= '\"' kw= '\"'
             {
-            kw=(Token)match(input,89,FOLLOW_89_in_ruleLiteralOperatorId8710); 
+            kw=(Token)match(input,89,FOLLOW_89_in_ruleLiteralOperatorId8708); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getLiteralOperatorIdAccess().getOperatorKeyword_0()); 
                 
-            kw=(Token)match(input,127,FOLLOW_127_in_ruleLiteralOperatorId8723); 
+            kw=(Token)match(input,127,FOLLOW_127_in_ruleLiteralOperatorId8721); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getLiteralOperatorIdAccess().getQuotationMarkKeyword_1()); 
                 
-            kw=(Token)match(input,127,FOLLOW_127_in_ruleLiteralOperatorId8736); 
+            kw=(Token)match(input,127,FOLLOW_127_in_ruleLiteralOperatorId8734); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getLiteralOperatorIdAccess().getQuotationMarkKeyword_2()); 
@@ -8012,7 +8012,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTemplateDeclaration"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3030:1: entryRuleTemplateDeclaration returns [String current=null] : iv_ruleTemplateDeclaration= ruleTemplateDeclaration EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3028:1: entryRuleTemplateDeclaration returns [String current=null] : iv_ruleTemplateDeclaration= ruleTemplateDeclaration EOF ;
     public final String entryRuleTemplateDeclaration() throws RecognitionException {
         String current = null;
 
@@ -8020,17 +8020,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3031:2: (iv_ruleTemplateDeclaration= ruleTemplateDeclaration EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3032:2: iv_ruleTemplateDeclaration= ruleTemplateDeclaration EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3029:2: (iv_ruleTemplateDeclaration= ruleTemplateDeclaration EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3030:2: iv_ruleTemplateDeclaration= ruleTemplateDeclaration EOF
             {
              newCompositeNode(grammarAccess.getTemplateDeclarationRule()); 
-            pushFollow(FOLLOW_ruleTemplateDeclaration_in_entryRuleTemplateDeclaration8777);
+            pushFollow(FOLLOW_ruleTemplateDeclaration_in_entryRuleTemplateDeclaration8775);
             iv_ruleTemplateDeclaration=ruleTemplateDeclaration();
 
             state._fsp--;
 
              current =iv_ruleTemplateDeclaration.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTemplateDeclaration8788); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTemplateDeclaration8786); 
 
             }
 
@@ -8048,7 +8048,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTemplateDeclaration"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3039:1: ruleTemplateDeclaration returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'template' kw= '<' this_TemplateParameterList_2= ruleTemplateParameterList kw= '>' ) ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3037:1: ruleTemplateDeclaration returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'template' kw= '<' this_TemplateParameterList_2= ruleTemplateParameterList kw= '>' ) ;
     public final AntlrDatatypeRuleToken ruleTemplateDeclaration() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8059,18 +8059,18 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3042:28: ( (kw= 'template' kw= '<' this_TemplateParameterList_2= ruleTemplateParameterList kw= '>' ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3043:1: (kw= 'template' kw= '<' this_TemplateParameterList_2= ruleTemplateParameterList kw= '>' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3040:28: ( (kw= 'template' kw= '<' this_TemplateParameterList_2= ruleTemplateParameterList kw= '>' ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3041:1: (kw= 'template' kw= '<' this_TemplateParameterList_2= ruleTemplateParameterList kw= '>' )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3043:1: (kw= 'template' kw= '<' this_TemplateParameterList_2= ruleTemplateParameterList kw= '>' )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3044:2: kw= 'template' kw= '<' this_TemplateParameterList_2= ruleTemplateParameterList kw= '>'
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3041:1: (kw= 'template' kw= '<' this_TemplateParameterList_2= ruleTemplateParameterList kw= '>' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3042:2: kw= 'template' kw= '<' this_TemplateParameterList_2= ruleTemplateParameterList kw= '>'
             {
-            kw=(Token)match(input,59,FOLLOW_59_in_ruleTemplateDeclaration8826); 
+            kw=(Token)match(input,59,FOLLOW_59_in_ruleTemplateDeclaration8824); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getTemplateDeclarationAccess().getTemplateKeyword_0()); 
                 
-            kw=(Token)match(input,90,FOLLOW_90_in_ruleTemplateDeclaration8839); 
+            kw=(Token)match(input,90,FOLLOW_90_in_ruleTemplateDeclaration8837); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getTemplateDeclarationAccess().getLessThanSignKeyword_1()); 
@@ -8078,7 +8078,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getTemplateDeclarationAccess().getTemplateParameterListParserRuleCall_2()); 
                 
-            pushFollow(FOLLOW_ruleTemplateParameterList_in_ruleTemplateDeclaration8861);
+            pushFollow(FOLLOW_ruleTemplateParameterList_in_ruleTemplateDeclaration8859);
             this_TemplateParameterList_2=ruleTemplateParameterList();
 
             state._fsp--;
@@ -8089,7 +8089,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            kw=(Token)match(input,91,FOLLOW_91_in_ruleTemplateDeclaration8879); 
+            kw=(Token)match(input,91,FOLLOW_91_in_ruleTemplateDeclaration8877); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getTemplateDeclarationAccess().getGreaterThanSignKeyword_3()); 
@@ -8115,7 +8115,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTemplateParameterList"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3080:1: entryRuleTemplateParameterList returns [String current=null] : iv_ruleTemplateParameterList= ruleTemplateParameterList EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3078:1: entryRuleTemplateParameterList returns [String current=null] : iv_ruleTemplateParameterList= ruleTemplateParameterList EOF ;
     public final String entryRuleTemplateParameterList() throws RecognitionException {
         String current = null;
 
@@ -8123,17 +8123,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3081:2: (iv_ruleTemplateParameterList= ruleTemplateParameterList EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3082:2: iv_ruleTemplateParameterList= ruleTemplateParameterList EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3079:2: (iv_ruleTemplateParameterList= ruleTemplateParameterList EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3080:2: iv_ruleTemplateParameterList= ruleTemplateParameterList EOF
             {
              newCompositeNode(grammarAccess.getTemplateParameterListRule()); 
-            pushFollow(FOLLOW_ruleTemplateParameterList_in_entryRuleTemplateParameterList8920);
+            pushFollow(FOLLOW_ruleTemplateParameterList_in_entryRuleTemplateParameterList8918);
             iv_ruleTemplateParameterList=ruleTemplateParameterList();
 
             state._fsp--;
 
              current =iv_ruleTemplateParameterList.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTemplateParameterList8931); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTemplateParameterList8929); 
 
             }
 
@@ -8151,7 +8151,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTemplateParameterList"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3089:1: ruleTemplateParameterList returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_TemplateParameter_0= ruleTemplateParameter (kw= ',' this_TemplateParameter_2= ruleTemplateParameter )* ) ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3087:1: ruleTemplateParameterList returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_TemplateParameter_0= ruleTemplateParameter (kw= ',' this_TemplateParameter_2= ruleTemplateParameter )* ) ;
     public final AntlrDatatypeRuleToken ruleTemplateParameterList() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8164,16 +8164,16 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3092:28: ( (this_TemplateParameter_0= ruleTemplateParameter (kw= ',' this_TemplateParameter_2= ruleTemplateParameter )* ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3093:1: (this_TemplateParameter_0= ruleTemplateParameter (kw= ',' this_TemplateParameter_2= ruleTemplateParameter )* )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3090:28: ( (this_TemplateParameter_0= ruleTemplateParameter (kw= ',' this_TemplateParameter_2= ruleTemplateParameter )* ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3091:1: (this_TemplateParameter_0= ruleTemplateParameter (kw= ',' this_TemplateParameter_2= ruleTemplateParameter )* )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3093:1: (this_TemplateParameter_0= ruleTemplateParameter (kw= ',' this_TemplateParameter_2= ruleTemplateParameter )* )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3094:5: this_TemplateParameter_0= ruleTemplateParameter (kw= ',' this_TemplateParameter_2= ruleTemplateParameter )*
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3091:1: (this_TemplateParameter_0= ruleTemplateParameter (kw= ',' this_TemplateParameter_2= ruleTemplateParameter )* )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3092:5: this_TemplateParameter_0= ruleTemplateParameter (kw= ',' this_TemplateParameter_2= ruleTemplateParameter )*
             {
              
                     newCompositeNode(grammarAccess.getTemplateParameterListAccess().getTemplateParameterParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleTemplateParameter_in_ruleTemplateParameterList8978);
+            pushFollow(FOLLOW_ruleTemplateParameter_in_ruleTemplateParameterList8976);
             this_TemplateParameter_0=ruleTemplateParameter();
 
             state._fsp--;
@@ -8184,7 +8184,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3104:1: (kw= ',' this_TemplateParameter_2= ruleTemplateParameter )*
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3102:1: (kw= ',' this_TemplateParameter_2= ruleTemplateParameter )*
             loop62:
             do {
                 int alt62=2;
@@ -8197,9 +8197,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
                 switch (alt62) {
             	case 1 :
-            	    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3105:2: kw= ',' this_TemplateParameter_2= ruleTemplateParameter
+            	    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3103:2: kw= ',' this_TemplateParameter_2= ruleTemplateParameter
             	    {
-            	    kw=(Token)match(input,45,FOLLOW_45_in_ruleTemplateParameterList8997); 
+            	    kw=(Token)match(input,45,FOLLOW_45_in_ruleTemplateParameterList8995); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getTemplateParameterListAccess().getCommaKeyword_1_0()); 
@@ -8207,7 +8207,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
             	     
             	            newCompositeNode(grammarAccess.getTemplateParameterListAccess().getTemplateParameterParserRuleCall_1_1()); 
             	        
-            	    pushFollow(FOLLOW_ruleTemplateParameter_in_ruleTemplateParameterList9019);
+            	    pushFollow(FOLLOW_ruleTemplateParameter_in_ruleTemplateParameterList9017);
             	    this_TemplateParameter_2=ruleTemplateParameter();
 
             	    state._fsp--;
@@ -8248,7 +8248,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTemplateParameter"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3129:1: entryRuleTemplateParameter returns [String current=null] : iv_ruleTemplateParameter= ruleTemplateParameter EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3127:1: entryRuleTemplateParameter returns [String current=null] : iv_ruleTemplateParameter= ruleTemplateParameter EOF ;
     public final String entryRuleTemplateParameter() throws RecognitionException {
         String current = null;
 
@@ -8256,17 +8256,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3130:2: (iv_ruleTemplateParameter= ruleTemplateParameter EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3131:2: iv_ruleTemplateParameter= ruleTemplateParameter EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3128:2: (iv_ruleTemplateParameter= ruleTemplateParameter EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3129:2: iv_ruleTemplateParameter= ruleTemplateParameter EOF
             {
              newCompositeNode(grammarAccess.getTemplateParameterRule()); 
-            pushFollow(FOLLOW_ruleTemplateParameter_in_entryRuleTemplateParameter9067);
+            pushFollow(FOLLOW_ruleTemplateParameter_in_entryRuleTemplateParameter9065);
             iv_ruleTemplateParameter=ruleTemplateParameter();
 
             state._fsp--;
 
              current =iv_ruleTemplateParameter.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTemplateParameter9078); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTemplateParameter9076); 
 
             }
 
@@ -8284,7 +8284,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTemplateParameter"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3138:1: ruleTemplateParameter returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_TypeParameter_0= ruleTypeParameter | this_ParameterDeclaration_1= ruleParameterDeclaration ) ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3136:1: ruleTemplateParameter returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_TypeParameter_0= ruleTypeParameter | this_ParameterDeclaration_1= ruleParameterDeclaration ) ;
     public final AntlrDatatypeRuleToken ruleTemplateParameter() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8296,10 +8296,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3141:28: ( (this_TypeParameter_0= ruleTypeParameter | this_ParameterDeclaration_1= ruleParameterDeclaration ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3142:1: (this_TypeParameter_0= ruleTypeParameter | this_ParameterDeclaration_1= ruleParameterDeclaration )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3139:28: ( (this_TypeParameter_0= ruleTypeParameter | this_ParameterDeclaration_1= ruleParameterDeclaration ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3140:1: (this_TypeParameter_0= ruleTypeParameter | this_ParameterDeclaration_1= ruleParameterDeclaration )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3142:1: (this_TypeParameter_0= ruleTypeParameter | this_ParameterDeclaration_1= ruleParameterDeclaration )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3140:1: (this_TypeParameter_0= ruleTypeParameter | this_ParameterDeclaration_1= ruleParameterDeclaration )
             int alt63=2;
             switch ( input.LA(1) ) {
             case 78:
@@ -8372,12 +8372,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
             switch (alt63) {
                 case 1 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3143:5: this_TypeParameter_0= ruleTypeParameter
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3141:5: this_TypeParameter_0= ruleTypeParameter
                     {
                      
                             newCompositeNode(grammarAccess.getTemplateParameterAccess().getTypeParameterParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleTypeParameter_in_ruleTemplateParameter9125);
+                    pushFollow(FOLLOW_ruleTypeParameter_in_ruleTemplateParameter9123);
                     this_TypeParameter_0=ruleTypeParameter();
 
                     state._fsp--;
@@ -8392,12 +8392,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3155:5: this_ParameterDeclaration_1= ruleParameterDeclaration
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3153:5: this_ParameterDeclaration_1= ruleParameterDeclaration
                     {
                      
                             newCompositeNode(grammarAccess.getTemplateParameterAccess().getParameterDeclarationParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleParameterDeclaration_in_ruleTemplateParameter9158);
+                    pushFollow(FOLLOW_ruleParameterDeclaration_in_ruleTemplateParameter9156);
                     this_ParameterDeclaration_1=ruleParameterDeclaration();
 
                     state._fsp--;
@@ -8432,7 +8432,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTypeParameter"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3173:1: entryRuleTypeParameter returns [String current=null] : iv_ruleTypeParameter= ruleTypeParameter EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3171:1: entryRuleTypeParameter returns [String current=null] : iv_ruleTypeParameter= ruleTypeParameter EOF ;
     public final String entryRuleTypeParameter() throws RecognitionException {
         String current = null;
 
@@ -8440,17 +8440,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3174:2: (iv_ruleTypeParameter= ruleTypeParameter EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3175:2: iv_ruleTypeParameter= ruleTypeParameter EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3172:2: (iv_ruleTypeParameter= ruleTypeParameter EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3173:2: iv_ruleTypeParameter= ruleTypeParameter EOF
             {
              newCompositeNode(grammarAccess.getTypeParameterRule()); 
-            pushFollow(FOLLOW_ruleTypeParameter_in_entryRuleTypeParameter9204);
+            pushFollow(FOLLOW_ruleTypeParameter_in_entryRuleTypeParameter9202);
             iv_ruleTypeParameter=ruleTypeParameter();
 
             state._fsp--;
 
              current =iv_ruleTypeParameter.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeParameter9215); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeParameter9213); 
 
             }
 
@@ -8468,7 +8468,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTypeParameter"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3182:1: ruleTypeParameter returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= 'class' | kw= 'typename' ) ( ( (kw= '...' )? (this_ID_3= RULE_ID )? ) | ( (this_ID_4= RULE_ID )? kw= '=' this_TypeId_6= ruleTypeId ) ) ) ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3180:1: ruleTypeParameter returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= 'class' | kw= 'typename' ) ( ( (kw= '...' )? (this_ID_3= RULE_ID )? ) | ( (this_ID_4= RULE_ID )? kw= '=' this_TypeId_6= ruleTypeId ) ) ) ;
     public final AntlrDatatypeRuleToken ruleTypeParameter() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8481,13 +8481,13 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3185:28: ( ( (kw= 'class' | kw= 'typename' ) ( ( (kw= '...' )? (this_ID_3= RULE_ID )? ) | ( (this_ID_4= RULE_ID )? kw= '=' this_TypeId_6= ruleTypeId ) ) ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3186:1: ( (kw= 'class' | kw= 'typename' ) ( ( (kw= '...' )? (this_ID_3= RULE_ID )? ) | ( (this_ID_4= RULE_ID )? kw= '=' this_TypeId_6= ruleTypeId ) ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3183:28: ( ( (kw= 'class' | kw= 'typename' ) ( ( (kw= '...' )? (this_ID_3= RULE_ID )? ) | ( (this_ID_4= RULE_ID )? kw= '=' this_TypeId_6= ruleTypeId ) ) ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3184:1: ( (kw= 'class' | kw= 'typename' ) ( ( (kw= '...' )? (this_ID_3= RULE_ID )? ) | ( (this_ID_4= RULE_ID )? kw= '=' this_TypeId_6= ruleTypeId ) ) )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3186:1: ( (kw= 'class' | kw= 'typename' ) ( ( (kw= '...' )? (this_ID_3= RULE_ID )? ) | ( (this_ID_4= RULE_ID )? kw= '=' this_TypeId_6= ruleTypeId ) ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3186:2: (kw= 'class' | kw= 'typename' ) ( ( (kw= '...' )? (this_ID_3= RULE_ID )? ) | ( (this_ID_4= RULE_ID )? kw= '=' this_TypeId_6= ruleTypeId ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3184:1: ( (kw= 'class' | kw= 'typename' ) ( ( (kw= '...' )? (this_ID_3= RULE_ID )? ) | ( (this_ID_4= RULE_ID )? kw= '=' this_TypeId_6= ruleTypeId ) ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3184:2: (kw= 'class' | kw= 'typename' ) ( ( (kw= '...' )? (this_ID_3= RULE_ID )? ) | ( (this_ID_4= RULE_ID )? kw= '=' this_TypeId_6= ruleTypeId ) )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3186:2: (kw= 'class' | kw= 'typename' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3184:2: (kw= 'class' | kw= 'typename' )
             int alt64=2;
             int LA64_0 = input.LA(1);
 
@@ -8505,9 +8505,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
             }
             switch (alt64) {
                 case 1 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3187:2: kw= 'class'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3185:2: kw= 'class'
                     {
-                    kw=(Token)match(input,78,FOLLOW_78_in_ruleTypeParameter9254); 
+                    kw=(Token)match(input,78,FOLLOW_78_in_ruleTypeParameter9252); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTypeParameterAccess().getClassKeyword_0_0()); 
@@ -8516,9 +8516,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3194:2: kw= 'typename'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3192:2: kw= 'typename'
                     {
-                    kw=(Token)match(input,82,FOLLOW_82_in_ruleTypeParameter9273); 
+                    kw=(Token)match(input,82,FOLLOW_82_in_ruleTypeParameter9271); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTypeParameterAccess().getTypenameKeyword_0_1()); 
@@ -8529,7 +8529,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3199:2: ( ( (kw= '...' )? (this_ID_3= RULE_ID )? ) | ( (this_ID_4= RULE_ID )? kw= '=' this_TypeId_6= ruleTypeId ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3197:2: ( ( (kw= '...' )? (this_ID_3= RULE_ID )? ) | ( (this_ID_4= RULE_ID )? kw= '=' this_TypeId_6= ruleTypeId ) )
             int alt68=2;
             switch ( input.LA(1) ) {
             case EOF:
@@ -8572,12 +8572,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
             switch (alt68) {
                 case 1 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3199:3: ( (kw= '...' )? (this_ID_3= RULE_ID )? )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3197:3: ( (kw= '...' )? (this_ID_3= RULE_ID )? )
                     {
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3199:3: ( (kw= '...' )? (this_ID_3= RULE_ID )? )
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3199:4: (kw= '...' )? (this_ID_3= RULE_ID )?
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3197:3: ( (kw= '...' )? (this_ID_3= RULE_ID )? )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3197:4: (kw= '...' )? (this_ID_3= RULE_ID )?
                     {
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3199:4: (kw= '...' )?
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3197:4: (kw= '...' )?
                     int alt65=2;
                     int LA65_0 = input.LA(1);
 
@@ -8586,9 +8586,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     switch (alt65) {
                         case 1 :
-                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3200:2: kw= '...'
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3198:2: kw= '...'
                             {
-                            kw=(Token)match(input,88,FOLLOW_88_in_ruleTypeParameter9290); 
+                            kw=(Token)match(input,88,FOLLOW_88_in_ruleTypeParameter9288); 
 
                                     current.merge(kw);
                                     newLeafNode(kw, grammarAccess.getTypeParameterAccess().getFullStopFullStopFullStopKeyword_1_0_0()); 
@@ -8599,7 +8599,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3205:3: (this_ID_3= RULE_ID )?
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3203:3: (this_ID_3= RULE_ID )?
                     int alt66=2;
                     int LA66_0 = input.LA(1);
 
@@ -8608,9 +8608,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     switch (alt66) {
                         case 1 :
-                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3205:8: this_ID_3= RULE_ID
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3203:8: this_ID_3= RULE_ID
                             {
-                            this_ID_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypeParameter9308); 
+                            this_ID_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypeParameter9306); 
 
                             		current.merge(this_ID_3);
                                 
@@ -8630,12 +8630,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3213:6: ( (this_ID_4= RULE_ID )? kw= '=' this_TypeId_6= ruleTypeId )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3211:6: ( (this_ID_4= RULE_ID )? kw= '=' this_TypeId_6= ruleTypeId )
                     {
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3213:6: ( (this_ID_4= RULE_ID )? kw= '=' this_TypeId_6= ruleTypeId )
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3213:7: (this_ID_4= RULE_ID )? kw= '=' this_TypeId_6= ruleTypeId
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3211:6: ( (this_ID_4= RULE_ID )? kw= '=' this_TypeId_6= ruleTypeId )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3211:7: (this_ID_4= RULE_ID )? kw= '=' this_TypeId_6= ruleTypeId
                     {
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3213:7: (this_ID_4= RULE_ID )?
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3211:7: (this_ID_4= RULE_ID )?
                     int alt67=2;
                     int LA67_0 = input.LA(1);
 
@@ -8644,9 +8644,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     switch (alt67) {
                         case 1 :
-                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3213:12: this_ID_4= RULE_ID
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3211:12: this_ID_4= RULE_ID
                             {
-                            this_ID_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypeParameter9339); 
+                            this_ID_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypeParameter9337); 
 
                             		current.merge(this_ID_4);
                                 
@@ -8659,7 +8659,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
                     }
 
-                    kw=(Token)match(input,39,FOLLOW_39_in_ruleTypeParameter9359); 
+                    kw=(Token)match(input,39,FOLLOW_39_in_ruleTypeParameter9357); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTypeParameterAccess().getEqualsSignKeyword_1_1_1()); 
@@ -8667,7 +8667,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getTypeParameterAccess().getTypeIdParserRuleCall_1_1_2()); 
                         
-                    pushFollow(FOLLOW_ruleTypeId_in_ruleTypeParameter9381);
+                    pushFollow(FOLLOW_ruleTypeId_in_ruleTypeParameter9379);
                     this_TypeId_6=ruleTypeId();
 
                     state._fsp--;
@@ -8708,7 +8708,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSimpleTemplateId"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3245:1: entryRuleSimpleTemplateId returns [String current=null] : iv_ruleSimpleTemplateId= ruleSimpleTemplateId EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3243:1: entryRuleSimpleTemplateId returns [String current=null] : iv_ruleSimpleTemplateId= ruleSimpleTemplateId EOF ;
     public final String entryRuleSimpleTemplateId() throws RecognitionException {
         String current = null;
 
@@ -8716,17 +8716,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3246:2: (iv_ruleSimpleTemplateId= ruleSimpleTemplateId EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3247:2: iv_ruleSimpleTemplateId= ruleSimpleTemplateId EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3244:2: (iv_ruleSimpleTemplateId= ruleSimpleTemplateId EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3245:2: iv_ruleSimpleTemplateId= ruleSimpleTemplateId EOF
             {
              newCompositeNode(grammarAccess.getSimpleTemplateIdRule()); 
-            pushFollow(FOLLOW_ruleSimpleTemplateId_in_entryRuleSimpleTemplateId9429);
+            pushFollow(FOLLOW_ruleSimpleTemplateId_in_entryRuleSimpleTemplateId9427);
             iv_ruleSimpleTemplateId=ruleSimpleTemplateId();
 
             state._fsp--;
 
              current =iv_ruleSimpleTemplateId.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSimpleTemplateId9440); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSimpleTemplateId9438); 
 
             }
 
@@ -8744,7 +8744,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSimpleTemplateId"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3254:1: ruleSimpleTemplateId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID kw= '<' this_TemplateArgumentList_2= ruleTemplateArgumentList kw= '>' ) ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3252:1: ruleSimpleTemplateId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID kw= '<' this_TemplateArgumentList_2= ruleTemplateArgumentList kw= '>' ) ;
     public final AntlrDatatypeRuleToken ruleSimpleTemplateId() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8756,20 +8756,20 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3257:28: ( (this_ID_0= RULE_ID kw= '<' this_TemplateArgumentList_2= ruleTemplateArgumentList kw= '>' ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3258:1: (this_ID_0= RULE_ID kw= '<' this_TemplateArgumentList_2= ruleTemplateArgumentList kw= '>' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3255:28: ( (this_ID_0= RULE_ID kw= '<' this_TemplateArgumentList_2= ruleTemplateArgumentList kw= '>' ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3256:1: (this_ID_0= RULE_ID kw= '<' this_TemplateArgumentList_2= ruleTemplateArgumentList kw= '>' )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3258:1: (this_ID_0= RULE_ID kw= '<' this_TemplateArgumentList_2= ruleTemplateArgumentList kw= '>' )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3258:6: this_ID_0= RULE_ID kw= '<' this_TemplateArgumentList_2= ruleTemplateArgumentList kw= '>'
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3256:1: (this_ID_0= RULE_ID kw= '<' this_TemplateArgumentList_2= ruleTemplateArgumentList kw= '>' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3256:6: this_ID_0= RULE_ID kw= '<' this_TemplateArgumentList_2= ruleTemplateArgumentList kw= '>'
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSimpleTemplateId9480); 
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSimpleTemplateId9478); 
 
             		current.merge(this_ID_0);
                 
              
                 newLeafNode(this_ID_0, grammarAccess.getSimpleTemplateIdAccess().getIDTerminalRuleCall_0()); 
                 
-            kw=(Token)match(input,90,FOLLOW_90_in_ruleSimpleTemplateId9498); 
+            kw=(Token)match(input,90,FOLLOW_90_in_ruleSimpleTemplateId9496); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getSimpleTemplateIdAccess().getLessThanSignKeyword_1()); 
@@ -8777,7 +8777,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getSimpleTemplateIdAccess().getTemplateArgumentListParserRuleCall_2()); 
                 
-            pushFollow(FOLLOW_ruleTemplateArgumentList_in_ruleSimpleTemplateId9520);
+            pushFollow(FOLLOW_ruleTemplateArgumentList_in_ruleSimpleTemplateId9518);
             this_TemplateArgumentList_2=ruleTemplateArgumentList();
 
             state._fsp--;
@@ -8788,7 +8788,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            kw=(Token)match(input,91,FOLLOW_91_in_ruleSimpleTemplateId9538); 
+            kw=(Token)match(input,91,FOLLOW_91_in_ruleSimpleTemplateId9536); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getSimpleTemplateIdAccess().getGreaterThanSignKeyword_3()); 
@@ -8814,7 +8814,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTemplateArgumentList"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3298:1: entryRuleTemplateArgumentList returns [String current=null] : iv_ruleTemplateArgumentList= ruleTemplateArgumentList EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3296:1: entryRuleTemplateArgumentList returns [String current=null] : iv_ruleTemplateArgumentList= ruleTemplateArgumentList EOF ;
     public final String entryRuleTemplateArgumentList() throws RecognitionException {
         String current = null;
 
@@ -8822,17 +8822,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3299:2: (iv_ruleTemplateArgumentList= ruleTemplateArgumentList EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3300:2: iv_ruleTemplateArgumentList= ruleTemplateArgumentList EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3297:2: (iv_ruleTemplateArgumentList= ruleTemplateArgumentList EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3298:2: iv_ruleTemplateArgumentList= ruleTemplateArgumentList EOF
             {
              newCompositeNode(grammarAccess.getTemplateArgumentListRule()); 
-            pushFollow(FOLLOW_ruleTemplateArgumentList_in_entryRuleTemplateArgumentList9581);
+            pushFollow(FOLLOW_ruleTemplateArgumentList_in_entryRuleTemplateArgumentList9579);
             iv_ruleTemplateArgumentList=ruleTemplateArgumentList();
 
             state._fsp--;
 
              current =iv_ruleTemplateArgumentList.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTemplateArgumentList9592); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTemplateArgumentList9590); 
 
             }
 
@@ -8850,7 +8850,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTemplateArgumentList"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3307:1: ruleTemplateArgumentList returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_TemplateArgument_0= ruleTemplateArgument (kw= '...' )? (kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )? )* ) ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3305:1: ruleTemplateArgumentList returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_TemplateArgument_0= ruleTemplateArgument (kw= '...' )? (kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )? )* ) ;
     public final AntlrDatatypeRuleToken ruleTemplateArgumentList() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8863,16 +8863,16 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3310:28: ( (this_TemplateArgument_0= ruleTemplateArgument (kw= '...' )? (kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )? )* ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3311:1: (this_TemplateArgument_0= ruleTemplateArgument (kw= '...' )? (kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )? )* )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3308:28: ( (this_TemplateArgument_0= ruleTemplateArgument (kw= '...' )? (kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )? )* ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3309:1: (this_TemplateArgument_0= ruleTemplateArgument (kw= '...' )? (kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )? )* )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3311:1: (this_TemplateArgument_0= ruleTemplateArgument (kw= '...' )? (kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )? )* )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3312:5: this_TemplateArgument_0= ruleTemplateArgument (kw= '...' )? (kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )? )*
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3309:1: (this_TemplateArgument_0= ruleTemplateArgument (kw= '...' )? (kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )? )* )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3310:5: this_TemplateArgument_0= ruleTemplateArgument (kw= '...' )? (kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )? )*
             {
              
                     newCompositeNode(grammarAccess.getTemplateArgumentListAccess().getTemplateArgumentParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleTemplateArgument_in_ruleTemplateArgumentList9639);
+            pushFollow(FOLLOW_ruleTemplateArgument_in_ruleTemplateArgumentList9637);
             this_TemplateArgument_0=ruleTemplateArgument();
 
             state._fsp--;
@@ -8883,7 +8883,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3322:1: (kw= '...' )?
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3320:1: (kw= '...' )?
             int alt69=2;
             int LA69_0 = input.LA(1);
 
@@ -8892,9 +8892,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
             }
             switch (alt69) {
                 case 1 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3323:2: kw= '...'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3321:2: kw= '...'
                     {
-                    kw=(Token)match(input,88,FOLLOW_88_in_ruleTemplateArgumentList9658); 
+                    kw=(Token)match(input,88,FOLLOW_88_in_ruleTemplateArgumentList9656); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTemplateArgumentListAccess().getFullStopFullStopFullStopKeyword_1()); 
@@ -8905,7 +8905,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3328:3: (kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )? )*
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3326:3: (kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )? )*
             loop71:
             do {
                 int alt71=2;
@@ -8918,9 +8918,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
                 switch (alt71) {
             	case 1 :
-            	    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3329:2: kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )?
+            	    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3327:2: kw= ',' this_TemplateArgument_3= ruleTemplateArgument (kw= '...' )?
             	    {
-            	    kw=(Token)match(input,45,FOLLOW_45_in_ruleTemplateArgumentList9674); 
+            	    kw=(Token)match(input,45,FOLLOW_45_in_ruleTemplateArgumentList9672); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getTemplateArgumentListAccess().getCommaKeyword_2_0()); 
@@ -8928,7 +8928,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
             	     
             	            newCompositeNode(grammarAccess.getTemplateArgumentListAccess().getTemplateArgumentParserRuleCall_2_1()); 
             	        
-            	    pushFollow(FOLLOW_ruleTemplateArgument_in_ruleTemplateArgumentList9696);
+            	    pushFollow(FOLLOW_ruleTemplateArgument_in_ruleTemplateArgumentList9694);
             	    this_TemplateArgument_3=ruleTemplateArgument();
 
             	    state._fsp--;
@@ -8939,7 +8939,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
             	     
             	            afterParserOrEnumRuleCall();
             	        
-            	    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3345:1: (kw= '...' )?
+            	    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3343:1: (kw= '...' )?
             	    int alt70=2;
             	    int LA70_0 = input.LA(1);
 
@@ -8948,9 +8948,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
             	    }
             	    switch (alt70) {
             	        case 1 :
-            	            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3346:2: kw= '...'
+            	            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3344:2: kw= '...'
             	            {
-            	            kw=(Token)match(input,88,FOLLOW_88_in_ruleTemplateArgumentList9715); 
+            	            kw=(Token)match(input,88,FOLLOW_88_in_ruleTemplateArgumentList9713); 
 
             	                    current.merge(kw);
             	                    newLeafNode(kw, grammarAccess.getTemplateArgumentListAccess().getFullStopFullStopFullStopKeyword_2_2()); 
@@ -8991,7 +8991,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTemplateArgument"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3359:1: entryRuleTemplateArgument returns [String current=null] : iv_ruleTemplateArgument= ruleTemplateArgument EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3357:1: entryRuleTemplateArgument returns [String current=null] : iv_ruleTemplateArgument= ruleTemplateArgument EOF ;
     public final String entryRuleTemplateArgument() throws RecognitionException {
         String current = null;
 
@@ -8999,17 +8999,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3360:2: (iv_ruleTemplateArgument= ruleTemplateArgument EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3361:2: iv_ruleTemplateArgument= ruleTemplateArgument EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3358:2: (iv_ruleTemplateArgument= ruleTemplateArgument EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3359:2: iv_ruleTemplateArgument= ruleTemplateArgument EOF
             {
              newCompositeNode(grammarAccess.getTemplateArgumentRule()); 
-            pushFollow(FOLLOW_ruleTemplateArgument_in_entryRuleTemplateArgument9760);
+            pushFollow(FOLLOW_ruleTemplateArgument_in_entryRuleTemplateArgument9758);
             iv_ruleTemplateArgument=ruleTemplateArgument();
 
             state._fsp--;
 
              current =iv_ruleTemplateArgument.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTemplateArgument9771); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTemplateArgument9769); 
 
             }
 
@@ -9027,7 +9027,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTemplateArgument"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3368:1: ruleTemplateArgument returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ConstantExpression_0= ruleConstantExpression | this_TypeId_1= ruleTypeId | this_IdExpression_2= ruleIdExpression ) ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3366:1: ruleTemplateArgument returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ConstantExpression_0= ruleConstantExpression | this_TypeId_1= ruleTypeId | this_IdExpression_2= ruleIdExpression ) ;
     public final AntlrDatatypeRuleToken ruleTemplateArgument() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9041,10 +9041,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3371:28: ( (this_ConstantExpression_0= ruleConstantExpression | this_TypeId_1= ruleTypeId | this_IdExpression_2= ruleIdExpression ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3372:1: (this_ConstantExpression_0= ruleConstantExpression | this_TypeId_1= ruleTypeId | this_IdExpression_2= ruleIdExpression )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3369:28: ( (this_ConstantExpression_0= ruleConstantExpression | this_TypeId_1= ruleTypeId | this_IdExpression_2= ruleIdExpression ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3370:1: (this_ConstantExpression_0= ruleConstantExpression | this_TypeId_1= ruleTypeId | this_IdExpression_2= ruleIdExpression )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3372:1: (this_ConstantExpression_0= ruleConstantExpression | this_TypeId_1= ruleTypeId | this_IdExpression_2= ruleIdExpression )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3370:1: (this_ConstantExpression_0= ruleConstantExpression | this_TypeId_1= ruleTypeId | this_IdExpression_2= ruleIdExpression )
             int alt72=3;
             switch ( input.LA(1) ) {
             case 138:
@@ -9094,12 +9094,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
             switch (alt72) {
                 case 1 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3373:5: this_ConstantExpression_0= ruleConstantExpression
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3371:5: this_ConstantExpression_0= ruleConstantExpression
                     {
                      
                             newCompositeNode(grammarAccess.getTemplateArgumentAccess().getConstantExpressionParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleConstantExpression_in_ruleTemplateArgument9818);
+                    pushFollow(FOLLOW_ruleConstantExpression_in_ruleTemplateArgument9816);
                     this_ConstantExpression_0=ruleConstantExpression();
 
                     state._fsp--;
@@ -9114,12 +9114,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3385:5: this_TypeId_1= ruleTypeId
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3383:5: this_TypeId_1= ruleTypeId
                     {
                      
                             newCompositeNode(grammarAccess.getTemplateArgumentAccess().getTypeIdParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleTypeId_in_ruleTemplateArgument9851);
+                    pushFollow(FOLLOW_ruleTypeId_in_ruleTemplateArgument9849);
                     this_TypeId_1=ruleTypeId();
 
                     state._fsp--;
@@ -9134,12 +9134,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3397:5: this_IdExpression_2= ruleIdExpression
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3395:5: this_IdExpression_2= ruleIdExpression
                     {
                      
                             newCompositeNode(grammarAccess.getTemplateArgumentAccess().getIdExpressionParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleIdExpression_in_ruleTemplateArgument9884);
+                    pushFollow(FOLLOW_ruleIdExpression_in_ruleTemplateArgument9882);
                     this_IdExpression_2=ruleIdExpression();
 
                     state._fsp--;
@@ -9174,7 +9174,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTypenameSpecifier"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3415:1: entryRuleTypenameSpecifier returns [String current=null] : iv_ruleTypenameSpecifier= ruleTypenameSpecifier EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3413:1: entryRuleTypenameSpecifier returns [String current=null] : iv_ruleTypenameSpecifier= ruleTypenameSpecifier EOF ;
     public final String entryRuleTypenameSpecifier() throws RecognitionException {
         String current = null;
 
@@ -9182,17 +9182,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3416:2: (iv_ruleTypenameSpecifier= ruleTypenameSpecifier EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3417:2: iv_ruleTypenameSpecifier= ruleTypenameSpecifier EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3414:2: (iv_ruleTypenameSpecifier= ruleTypenameSpecifier EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3415:2: iv_ruleTypenameSpecifier= ruleTypenameSpecifier EOF
             {
              newCompositeNode(grammarAccess.getTypenameSpecifierRule()); 
-            pushFollow(FOLLOW_ruleTypenameSpecifier_in_entryRuleTypenameSpecifier9930);
+            pushFollow(FOLLOW_ruleTypenameSpecifier_in_entryRuleTypenameSpecifier9928);
             iv_ruleTypenameSpecifier=ruleTypenameSpecifier();
 
             state._fsp--;
 
              current =iv_ruleTypenameSpecifier.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTypenameSpecifier9941); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTypenameSpecifier9939); 
 
             }
 
@@ -9210,7 +9210,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTypenameSpecifier"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3424:1: ruleTypenameSpecifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'typename' (kw= '::' )? this_NestedNameSpecifier_2= ruleNestedNameSpecifier (this_ID_3= RULE_ID | ( (kw= 'template' )? this_ID_5= RULE_ID kw= '<' this_TemplateArgumentList_7= ruleTemplateArgumentList kw= '>' ) ) ) ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3422:1: ruleTypenameSpecifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'typename' (kw= '::' )? this_NestedNameSpecifier_2= ruleNestedNameSpecifier (this_ID_3= RULE_ID | ( (kw= 'template' )? this_ID_5= RULE_ID kw= '<' this_TemplateArgumentList_7= ruleTemplateArgumentList kw= '>' ) ) ) ;
     public final AntlrDatatypeRuleToken ruleTypenameSpecifier() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9225,18 +9225,18 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3427:28: ( (kw= 'typename' (kw= '::' )? this_NestedNameSpecifier_2= ruleNestedNameSpecifier (this_ID_3= RULE_ID | ( (kw= 'template' )? this_ID_5= RULE_ID kw= '<' this_TemplateArgumentList_7= ruleTemplateArgumentList kw= '>' ) ) ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3428:1: (kw= 'typename' (kw= '::' )? this_NestedNameSpecifier_2= ruleNestedNameSpecifier (this_ID_3= RULE_ID | ( (kw= 'template' )? this_ID_5= RULE_ID kw= '<' this_TemplateArgumentList_7= ruleTemplateArgumentList kw= '>' ) ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3425:28: ( (kw= 'typename' (kw= '::' )? this_NestedNameSpecifier_2= ruleNestedNameSpecifier (this_ID_3= RULE_ID | ( (kw= 'template' )? this_ID_5= RULE_ID kw= '<' this_TemplateArgumentList_7= ruleTemplateArgumentList kw= '>' ) ) ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3426:1: (kw= 'typename' (kw= '::' )? this_NestedNameSpecifier_2= ruleNestedNameSpecifier (this_ID_3= RULE_ID | ( (kw= 'template' )? this_ID_5= RULE_ID kw= '<' this_TemplateArgumentList_7= ruleTemplateArgumentList kw= '>' ) ) )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3428:1: (kw= 'typename' (kw= '::' )? this_NestedNameSpecifier_2= ruleNestedNameSpecifier (this_ID_3= RULE_ID | ( (kw= 'template' )? this_ID_5= RULE_ID kw= '<' this_TemplateArgumentList_7= ruleTemplateArgumentList kw= '>' ) ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3429:2: kw= 'typename' (kw= '::' )? this_NestedNameSpecifier_2= ruleNestedNameSpecifier (this_ID_3= RULE_ID | ( (kw= 'template' )? this_ID_5= RULE_ID kw= '<' this_TemplateArgumentList_7= ruleTemplateArgumentList kw= '>' ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3426:1: (kw= 'typename' (kw= '::' )? this_NestedNameSpecifier_2= ruleNestedNameSpecifier (this_ID_3= RULE_ID | ( (kw= 'template' )? this_ID_5= RULE_ID kw= '<' this_TemplateArgumentList_7= ruleTemplateArgumentList kw= '>' ) ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3427:2: kw= 'typename' (kw= '::' )? this_NestedNameSpecifier_2= ruleNestedNameSpecifier (this_ID_3= RULE_ID | ( (kw= 'template' )? this_ID_5= RULE_ID kw= '<' this_TemplateArgumentList_7= ruleTemplateArgumentList kw= '>' ) )
             {
-            kw=(Token)match(input,82,FOLLOW_82_in_ruleTypenameSpecifier9979); 
+            kw=(Token)match(input,82,FOLLOW_82_in_ruleTypenameSpecifier9977); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getTypenameSpecifierAccess().getTypenameKeyword_0()); 
                 
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3434:1: (kw= '::' )?
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3432:1: (kw= '::' )?
             int alt73=2;
             int LA73_0 = input.LA(1);
 
@@ -9245,9 +9245,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
             }
             switch (alt73) {
                 case 1 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3435:2: kw= '::'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3433:2: kw= '::'
                     {
-                    kw=(Token)match(input,58,FOLLOW_58_in_ruleTypenameSpecifier9993); 
+                    kw=(Token)match(input,58,FOLLOW_58_in_ruleTypenameSpecifier9991); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTypenameSpecifierAccess().getColonColonKeyword_1()); 
@@ -9261,7 +9261,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getTypenameSpecifierAccess().getNestedNameSpecifierParserRuleCall_2()); 
                 
-            pushFollow(FOLLOW_ruleNestedNameSpecifier_in_ruleTypenameSpecifier10017);
+            pushFollow(FOLLOW_ruleNestedNameSpecifier_in_ruleTypenameSpecifier10015);
             this_NestedNameSpecifier_2=ruleNestedNameSpecifier();
 
             state._fsp--;
@@ -9272,7 +9272,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3451:1: (this_ID_3= RULE_ID | ( (kw= 'template' )? this_ID_5= RULE_ID kw= '<' this_TemplateArgumentList_7= ruleTemplateArgumentList kw= '>' ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3449:1: (this_ID_3= RULE_ID | ( (kw= 'template' )? this_ID_5= RULE_ID kw= '<' this_TemplateArgumentList_7= ruleTemplateArgumentList kw= '>' ) )
             int alt75=2;
             int LA75_0 = input.LA(1);
 
@@ -9303,9 +9303,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
             }
             switch (alt75) {
                 case 1 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3451:6: this_ID_3= RULE_ID
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3449:6: this_ID_3= RULE_ID
                     {
-                    this_ID_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypenameSpecifier10038); 
+                    this_ID_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypenameSpecifier10036); 
 
                     		current.merge(this_ID_3);
                         
@@ -9316,12 +9316,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3459:6: ( (kw= 'template' )? this_ID_5= RULE_ID kw= '<' this_TemplateArgumentList_7= ruleTemplateArgumentList kw= '>' )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3457:6: ( (kw= 'template' )? this_ID_5= RULE_ID kw= '<' this_TemplateArgumentList_7= ruleTemplateArgumentList kw= '>' )
                     {
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3459:6: ( (kw= 'template' )? this_ID_5= RULE_ID kw= '<' this_TemplateArgumentList_7= ruleTemplateArgumentList kw= '>' )
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3459:7: (kw= 'template' )? this_ID_5= RULE_ID kw= '<' this_TemplateArgumentList_7= ruleTemplateArgumentList kw= '>'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3457:6: ( (kw= 'template' )? this_ID_5= RULE_ID kw= '<' this_TemplateArgumentList_7= ruleTemplateArgumentList kw= '>' )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3457:7: (kw= 'template' )? this_ID_5= RULE_ID kw= '<' this_TemplateArgumentList_7= ruleTemplateArgumentList kw= '>'
                     {
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3459:7: (kw= 'template' )?
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3457:7: (kw= 'template' )?
                     int alt74=2;
                     int LA74_0 = input.LA(1);
 
@@ -9330,9 +9330,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     switch (alt74) {
                         case 1 :
-                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3460:2: kw= 'template'
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3458:2: kw= 'template'
                             {
-                            kw=(Token)match(input,59,FOLLOW_59_in_ruleTypenameSpecifier10064); 
+                            kw=(Token)match(input,59,FOLLOW_59_in_ruleTypenameSpecifier10062); 
 
                                     current.merge(kw);
                                     newLeafNode(kw, grammarAccess.getTypenameSpecifierAccess().getTemplateKeyword_3_1_0()); 
@@ -9343,14 +9343,14 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
                     }
 
-                    this_ID_5=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypenameSpecifier10081); 
+                    this_ID_5=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypenameSpecifier10079); 
 
                     		current.merge(this_ID_5);
                         
                      
                         newLeafNode(this_ID_5, grammarAccess.getTypenameSpecifierAccess().getIDTerminalRuleCall_3_1_1()); 
                         
-                    kw=(Token)match(input,90,FOLLOW_90_in_ruleTypenameSpecifier10099); 
+                    kw=(Token)match(input,90,FOLLOW_90_in_ruleTypenameSpecifier10097); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTypenameSpecifierAccess().getLessThanSignKeyword_3_1_2()); 
@@ -9358,7 +9358,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getTypenameSpecifierAccess().getTemplateArgumentListParserRuleCall_3_1_3()); 
                         
-                    pushFollow(FOLLOW_ruleTemplateArgumentList_in_ruleTypenameSpecifier10121);
+                    pushFollow(FOLLOW_ruleTemplateArgumentList_in_ruleTypenameSpecifier10119);
                     this_TemplateArgumentList_7=ruleTemplateArgumentList();
 
                     state._fsp--;
@@ -9369,7 +9369,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                      
                             afterParserOrEnumRuleCall();
                         
-                    kw=(Token)match(input,91,FOLLOW_91_in_ruleTypenameSpecifier10139); 
+                    kw=(Token)match(input,91,FOLLOW_91_in_ruleTypenameSpecifier10137); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTypenameSpecifierAccess().getGreaterThanSignKeyword_3_1_4()); 
@@ -9404,7 +9404,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFunctionTryBlock"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3505:1: entryRuleFunctionTryBlock returns [String current=null] : iv_ruleFunctionTryBlock= ruleFunctionTryBlock EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3503:1: entryRuleFunctionTryBlock returns [String current=null] : iv_ruleFunctionTryBlock= ruleFunctionTryBlock EOF ;
     public final String entryRuleFunctionTryBlock() throws RecognitionException {
         String current = null;
 
@@ -9412,17 +9412,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3506:2: (iv_ruleFunctionTryBlock= ruleFunctionTryBlock EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3507:2: iv_ruleFunctionTryBlock= ruleFunctionTryBlock EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3504:2: (iv_ruleFunctionTryBlock= ruleFunctionTryBlock EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3505:2: iv_ruleFunctionTryBlock= ruleFunctionTryBlock EOF
             {
              newCompositeNode(grammarAccess.getFunctionTryBlockRule()); 
-            pushFollow(FOLLOW_ruleFunctionTryBlock_in_entryRuleFunctionTryBlock10184);
+            pushFollow(FOLLOW_ruleFunctionTryBlock_in_entryRuleFunctionTryBlock10182);
             iv_ruleFunctionTryBlock=ruleFunctionTryBlock();
 
             state._fsp--;
 
              current =iv_ruleFunctionTryBlock.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFunctionTryBlock10195); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFunctionTryBlock10193); 
 
             }
 
@@ -9440,7 +9440,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFunctionTryBlock"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3514:1: ruleFunctionTryBlock returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'try' (this_CtorInitializer_1= ruleCtorInitializer )? this_CompoundStatement_2= ruleCompoundStatement (this_Handler_3= ruleHandler )+ ) ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3512:1: ruleFunctionTryBlock returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'try' (this_CtorInitializer_1= ruleCtorInitializer )? this_CompoundStatement_2= ruleCompoundStatement (this_Handler_3= ruleHandler )+ ) ;
     public final AntlrDatatypeRuleToken ruleFunctionTryBlock() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9455,18 +9455,18 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3517:28: ( (kw= 'try' (this_CtorInitializer_1= ruleCtorInitializer )? this_CompoundStatement_2= ruleCompoundStatement (this_Handler_3= ruleHandler )+ ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3518:1: (kw= 'try' (this_CtorInitializer_1= ruleCtorInitializer )? this_CompoundStatement_2= ruleCompoundStatement (this_Handler_3= ruleHandler )+ )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3515:28: ( (kw= 'try' (this_CtorInitializer_1= ruleCtorInitializer )? this_CompoundStatement_2= ruleCompoundStatement (this_Handler_3= ruleHandler )+ ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3516:1: (kw= 'try' (this_CtorInitializer_1= ruleCtorInitializer )? this_CompoundStatement_2= ruleCompoundStatement (this_Handler_3= ruleHandler )+ )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3518:1: (kw= 'try' (this_CtorInitializer_1= ruleCtorInitializer )? this_CompoundStatement_2= ruleCompoundStatement (this_Handler_3= ruleHandler )+ )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3519:2: kw= 'try' (this_CtorInitializer_1= ruleCtorInitializer )? this_CompoundStatement_2= ruleCompoundStatement (this_Handler_3= ruleHandler )+
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3516:1: (kw= 'try' (this_CtorInitializer_1= ruleCtorInitializer )? this_CompoundStatement_2= ruleCompoundStatement (this_Handler_3= ruleHandler )+ )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3517:2: kw= 'try' (this_CtorInitializer_1= ruleCtorInitializer )? this_CompoundStatement_2= ruleCompoundStatement (this_Handler_3= ruleHandler )+
             {
-            kw=(Token)match(input,128,FOLLOW_128_in_ruleFunctionTryBlock10233); 
+            kw=(Token)match(input,128,FOLLOW_128_in_ruleFunctionTryBlock10231); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getFunctionTryBlockAccess().getTryKeyword_0()); 
                 
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3524:1: (this_CtorInitializer_1= ruleCtorInitializer )?
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3522:1: (this_CtorInitializer_1= ruleCtorInitializer )?
             int alt76=2;
             int LA76_0 = input.LA(1);
 
@@ -9475,12 +9475,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
             }
             switch (alt76) {
                 case 1 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3525:5: this_CtorInitializer_1= ruleCtorInitializer
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3523:5: this_CtorInitializer_1= ruleCtorInitializer
                     {
                      
                             newCompositeNode(grammarAccess.getFunctionTryBlockAccess().getCtorInitializerParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleCtorInitializer_in_ruleFunctionTryBlock10256);
+                    pushFollow(FOLLOW_ruleCtorInitializer_in_ruleFunctionTryBlock10254);
                     this_CtorInitializer_1=ruleCtorInitializer();
 
                     state._fsp--;
@@ -9500,7 +9500,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getFunctionTryBlockAccess().getCompoundStatementParserRuleCall_2()); 
                 
-            pushFollow(FOLLOW_ruleCompoundStatement_in_ruleFunctionTryBlock10285);
+            pushFollow(FOLLOW_ruleCompoundStatement_in_ruleFunctionTryBlock10283);
             this_CompoundStatement_2=ruleCompoundStatement();
 
             state._fsp--;
@@ -9511,7 +9511,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3546:1: (this_Handler_3= ruleHandler )+
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3544:1: (this_Handler_3= ruleHandler )+
             int cnt77=0;
             loop77:
             do {
@@ -9525,12 +9525,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
                 switch (alt77) {
             	case 1 :
-            	    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3547:5: this_Handler_3= ruleHandler
+            	    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3545:5: this_Handler_3= ruleHandler
             	    {
             	     
             	            newCompositeNode(grammarAccess.getFunctionTryBlockAccess().getHandlerParserRuleCall_3()); 
             	        
-            	    pushFollow(FOLLOW_ruleHandler_in_ruleFunctionTryBlock10313);
+            	    pushFollow(FOLLOW_ruleHandler_in_ruleFunctionTryBlock10311);
             	    this_Handler_3=ruleHandler();
 
             	    state._fsp--;
@@ -9575,7 +9575,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHandler"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3565:1: entryRuleHandler returns [String current=null] : iv_ruleHandler= ruleHandler EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3563:1: entryRuleHandler returns [String current=null] : iv_ruleHandler= ruleHandler EOF ;
     public final String entryRuleHandler() throws RecognitionException {
         String current = null;
 
@@ -9583,17 +9583,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3566:2: (iv_ruleHandler= ruleHandler EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3567:2: iv_ruleHandler= ruleHandler EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3564:2: (iv_ruleHandler= ruleHandler EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3565:2: iv_ruleHandler= ruleHandler EOF
             {
              newCompositeNode(grammarAccess.getHandlerRule()); 
-            pushFollow(FOLLOW_ruleHandler_in_entryRuleHandler10361);
+            pushFollow(FOLLOW_ruleHandler_in_entryRuleHandler10359);
             iv_ruleHandler=ruleHandler();
 
             state._fsp--;
 
              current =iv_ruleHandler.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleHandler10372); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleHandler10370); 
 
             }
 
@@ -9611,7 +9611,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHandler"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3574:1: ruleHandler returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'catch' kw= '(' this_ExceptionDeclaration_2= ruleExceptionDeclaration kw= ')' this_CompoundStatement_4= ruleCompoundStatement ) ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3572:1: ruleHandler returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'catch' kw= '(' this_ExceptionDeclaration_2= ruleExceptionDeclaration kw= ')' this_CompoundStatement_4= ruleCompoundStatement ) ;
     public final AntlrDatatypeRuleToken ruleHandler() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9624,18 +9624,18 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3577:28: ( (kw= 'catch' kw= '(' this_ExceptionDeclaration_2= ruleExceptionDeclaration kw= ')' this_CompoundStatement_4= ruleCompoundStatement ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3578:1: (kw= 'catch' kw= '(' this_ExceptionDeclaration_2= ruleExceptionDeclaration kw= ')' this_CompoundStatement_4= ruleCompoundStatement )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3575:28: ( (kw= 'catch' kw= '(' this_ExceptionDeclaration_2= ruleExceptionDeclaration kw= ')' this_CompoundStatement_4= ruleCompoundStatement ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3576:1: (kw= 'catch' kw= '(' this_ExceptionDeclaration_2= ruleExceptionDeclaration kw= ')' this_CompoundStatement_4= ruleCompoundStatement )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3578:1: (kw= 'catch' kw= '(' this_ExceptionDeclaration_2= ruleExceptionDeclaration kw= ')' this_CompoundStatement_4= ruleCompoundStatement )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3579:2: kw= 'catch' kw= '(' this_ExceptionDeclaration_2= ruleExceptionDeclaration kw= ')' this_CompoundStatement_4= ruleCompoundStatement
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3576:1: (kw= 'catch' kw= '(' this_ExceptionDeclaration_2= ruleExceptionDeclaration kw= ')' this_CompoundStatement_4= ruleCompoundStatement )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3577:2: kw= 'catch' kw= '(' this_ExceptionDeclaration_2= ruleExceptionDeclaration kw= ')' this_CompoundStatement_4= ruleCompoundStatement
             {
-            kw=(Token)match(input,129,FOLLOW_129_in_ruleHandler10410); 
+            kw=(Token)match(input,129,FOLLOW_129_in_ruleHandler10408); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getHandlerAccess().getCatchKeyword_0()); 
                 
-            kw=(Token)match(input,44,FOLLOW_44_in_ruleHandler10423); 
+            kw=(Token)match(input,44,FOLLOW_44_in_ruleHandler10421); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getHandlerAccess().getLeftParenthesisKeyword_1()); 
@@ -9643,7 +9643,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getHandlerAccess().getExceptionDeclarationParserRuleCall_2()); 
                 
-            pushFollow(FOLLOW_ruleExceptionDeclaration_in_ruleHandler10445);
+            pushFollow(FOLLOW_ruleExceptionDeclaration_in_ruleHandler10443);
             this_ExceptionDeclaration_2=ruleExceptionDeclaration();
 
             state._fsp--;
@@ -9654,7 +9654,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            kw=(Token)match(input,46,FOLLOW_46_in_ruleHandler10463); 
+            kw=(Token)match(input,46,FOLLOW_46_in_ruleHandler10461); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getHandlerAccess().getRightParenthesisKeyword_3()); 
@@ -9662,7 +9662,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getHandlerAccess().getCompoundStatementParserRuleCall_4()); 
                 
-            pushFollow(FOLLOW_ruleCompoundStatement_in_ruleHandler10485);
+            pushFollow(FOLLOW_ruleCompoundStatement_in_ruleHandler10483);
             this_CompoundStatement_4=ruleCompoundStatement();
 
             state._fsp--;
@@ -9694,7 +9694,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExceptionDeclaration"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3626:1: entryRuleExceptionDeclaration returns [String current=null] : iv_ruleExceptionDeclaration= ruleExceptionDeclaration EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3624:1: entryRuleExceptionDeclaration returns [String current=null] : iv_ruleExceptionDeclaration= ruleExceptionDeclaration EOF ;
     public final String entryRuleExceptionDeclaration() throws RecognitionException {
         String current = null;
 
@@ -9702,17 +9702,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3627:2: (iv_ruleExceptionDeclaration= ruleExceptionDeclaration EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3628:2: iv_ruleExceptionDeclaration= ruleExceptionDeclaration EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3625:2: (iv_ruleExceptionDeclaration= ruleExceptionDeclaration EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3626:2: iv_ruleExceptionDeclaration= ruleExceptionDeclaration EOF
             {
              newCompositeNode(grammarAccess.getExceptionDeclarationRule()); 
-            pushFollow(FOLLOW_ruleExceptionDeclaration_in_entryRuleExceptionDeclaration10531);
+            pushFollow(FOLLOW_ruleExceptionDeclaration_in_entryRuleExceptionDeclaration10529);
             iv_ruleExceptionDeclaration=ruleExceptionDeclaration();
 
             state._fsp--;
 
              current =iv_ruleExceptionDeclaration.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExceptionDeclaration10542); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExceptionDeclaration10540); 
 
             }
 
@@ -9730,7 +9730,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExceptionDeclaration"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3635:1: ruleExceptionDeclaration returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( ( (this_TypeSpecifier_0= ruleTypeSpecifier )+ (this_DeclaratorId_1= ruleDeclaratorId )? ) | kw= '...' ) ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3633:1: ruleExceptionDeclaration returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( ( (this_TypeSpecifier_0= ruleTypeSpecifier )+ (this_DeclaratorId_1= ruleDeclaratorId )? ) | kw= '...' ) ;
     public final AntlrDatatypeRuleToken ruleExceptionDeclaration() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9743,10 +9743,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3638:28: ( ( ( (this_TypeSpecifier_0= ruleTypeSpecifier )+ (this_DeclaratorId_1= ruleDeclaratorId )? ) | kw= '...' ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3639:1: ( ( (this_TypeSpecifier_0= ruleTypeSpecifier )+ (this_DeclaratorId_1= ruleDeclaratorId )? ) | kw= '...' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3636:28: ( ( ( (this_TypeSpecifier_0= ruleTypeSpecifier )+ (this_DeclaratorId_1= ruleDeclaratorId )? ) | kw= '...' ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3637:1: ( ( (this_TypeSpecifier_0= ruleTypeSpecifier )+ (this_DeclaratorId_1= ruleDeclaratorId )? ) | kw= '...' )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3639:1: ( ( (this_TypeSpecifier_0= ruleTypeSpecifier )+ (this_DeclaratorId_1= ruleDeclaratorId )? ) | kw= '...' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3637:1: ( ( (this_TypeSpecifier_0= ruleTypeSpecifier )+ (this_DeclaratorId_1= ruleDeclaratorId )? ) | kw= '...' )
             int alt80=2;
             int LA80_0 = input.LA(1);
 
@@ -9764,12 +9764,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
             }
             switch (alt80) {
                 case 1 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3639:2: ( (this_TypeSpecifier_0= ruleTypeSpecifier )+ (this_DeclaratorId_1= ruleDeclaratorId )? )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3637:2: ( (this_TypeSpecifier_0= ruleTypeSpecifier )+ (this_DeclaratorId_1= ruleDeclaratorId )? )
                     {
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3639:2: ( (this_TypeSpecifier_0= ruleTypeSpecifier )+ (this_DeclaratorId_1= ruleDeclaratorId )? )
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3639:3: (this_TypeSpecifier_0= ruleTypeSpecifier )+ (this_DeclaratorId_1= ruleDeclaratorId )?
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3637:2: ( (this_TypeSpecifier_0= ruleTypeSpecifier )+ (this_DeclaratorId_1= ruleDeclaratorId )? )
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3637:3: (this_TypeSpecifier_0= ruleTypeSpecifier )+ (this_DeclaratorId_1= ruleDeclaratorId )?
                     {
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3639:3: (this_TypeSpecifier_0= ruleTypeSpecifier )+
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3637:3: (this_TypeSpecifier_0= ruleTypeSpecifier )+
                     int cnt78=0;
                     loop78:
                     do {
@@ -9783,12 +9783,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
                         switch (alt78) {
                     	case 1 :
-                    	    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3640:5: this_TypeSpecifier_0= ruleTypeSpecifier
+                    	    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3638:5: this_TypeSpecifier_0= ruleTypeSpecifier
                     	    {
                     	     
                     	            newCompositeNode(grammarAccess.getExceptionDeclarationAccess().getTypeSpecifierParserRuleCall_0_0()); 
                     	        
-                    	    pushFollow(FOLLOW_ruleTypeSpecifier_in_ruleExceptionDeclaration10591);
+                    	    pushFollow(FOLLOW_ruleTypeSpecifier_in_ruleExceptionDeclaration10589);
                     	    this_TypeSpecifier_0=ruleTypeSpecifier();
 
                     	    state._fsp--;
@@ -9812,7 +9812,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                         cnt78++;
                     } while (true);
 
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3650:3: (this_DeclaratorId_1= ruleDeclaratorId )?
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3648:3: (this_DeclaratorId_1= ruleDeclaratorId )?
                     int alt79=2;
                     int LA79_0 = input.LA(1);
 
@@ -9821,12 +9821,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     switch (alt79) {
                         case 1 :
-                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3651:5: this_DeclaratorId_1= ruleDeclaratorId
+                            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3649:5: this_DeclaratorId_1= ruleDeclaratorId
                             {
                              
                                     newCompositeNode(grammarAccess.getExceptionDeclarationAccess().getDeclaratorIdParserRuleCall_0_1()); 
                                 
-                            pushFollow(FOLLOW_ruleDeclaratorId_in_ruleExceptionDeclaration10621);
+                            pushFollow(FOLLOW_ruleDeclaratorId_in_ruleExceptionDeclaration10619);
                             this_DeclaratorId_1=ruleDeclaratorId();
 
                             state._fsp--;
@@ -9850,9 +9850,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3663:2: kw= '...'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3661:2: kw= '...'
                     {
-                    kw=(Token)match(input,88,FOLLOW_88_in_ruleExceptionDeclaration10648); 
+                    kw=(Token)match(input,88,FOLLOW_88_in_ruleExceptionDeclaration10646); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getExceptionDeclarationAccess().getFullStopFullStopFullStopKeyword_1()); 
@@ -9881,7 +9881,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExceptionSpecification"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3678:1: entryRuleExceptionSpecification returns [String current=null] : iv_ruleExceptionSpecification= ruleExceptionSpecification EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3676:1: entryRuleExceptionSpecification returns [String current=null] : iv_ruleExceptionSpecification= ruleExceptionSpecification EOF ;
     public final String entryRuleExceptionSpecification() throws RecognitionException {
         String current = null;
 
@@ -9889,17 +9889,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3679:2: (iv_ruleExceptionSpecification= ruleExceptionSpecification EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3680:2: iv_ruleExceptionSpecification= ruleExceptionSpecification EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3677:2: (iv_ruleExceptionSpecification= ruleExceptionSpecification EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3678:2: iv_ruleExceptionSpecification= ruleExceptionSpecification EOF
             {
              newCompositeNode(grammarAccess.getExceptionSpecificationRule()); 
-            pushFollow(FOLLOW_ruleExceptionSpecification_in_entryRuleExceptionSpecification10691);
+            pushFollow(FOLLOW_ruleExceptionSpecification_in_entryRuleExceptionSpecification10689);
             iv_ruleExceptionSpecification=ruleExceptionSpecification();
 
             state._fsp--;
 
              current =iv_ruleExceptionSpecification.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExceptionSpecification10702); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExceptionSpecification10700); 
 
             }
 
@@ -9917,7 +9917,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExceptionSpecification"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3687:1: ruleExceptionSpecification returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_DynamicExceptionSpecification_0= ruleDynamicExceptionSpecification | this_NoexceptSpecification_1= ruleNoexceptSpecification ) ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3685:1: ruleExceptionSpecification returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_DynamicExceptionSpecification_0= ruleDynamicExceptionSpecification | this_NoexceptSpecification_1= ruleNoexceptSpecification ) ;
     public final AntlrDatatypeRuleToken ruleExceptionSpecification() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9929,10 +9929,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3690:28: ( (this_DynamicExceptionSpecification_0= ruleDynamicExceptionSpecification | this_NoexceptSpecification_1= ruleNoexceptSpecification ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3691:1: (this_DynamicExceptionSpecification_0= ruleDynamicExceptionSpecification | this_NoexceptSpecification_1= ruleNoexceptSpecification )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3688:28: ( (this_DynamicExceptionSpecification_0= ruleDynamicExceptionSpecification | this_NoexceptSpecification_1= ruleNoexceptSpecification ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3689:1: (this_DynamicExceptionSpecification_0= ruleDynamicExceptionSpecification | this_NoexceptSpecification_1= ruleNoexceptSpecification )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3691:1: (this_DynamicExceptionSpecification_0= ruleDynamicExceptionSpecification | this_NoexceptSpecification_1= ruleNoexceptSpecification )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3689:1: (this_DynamicExceptionSpecification_0= ruleDynamicExceptionSpecification | this_NoexceptSpecification_1= ruleNoexceptSpecification )
             int alt81=2;
             int LA81_0 = input.LA(1);
 
@@ -9950,12 +9950,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
             }
             switch (alt81) {
                 case 1 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3692:5: this_DynamicExceptionSpecification_0= ruleDynamicExceptionSpecification
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3690:5: this_DynamicExceptionSpecification_0= ruleDynamicExceptionSpecification
                     {
                      
                             newCompositeNode(grammarAccess.getExceptionSpecificationAccess().getDynamicExceptionSpecificationParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleDynamicExceptionSpecification_in_ruleExceptionSpecification10749);
+                    pushFollow(FOLLOW_ruleDynamicExceptionSpecification_in_ruleExceptionSpecification10747);
                     this_DynamicExceptionSpecification_0=ruleDynamicExceptionSpecification();
 
                     state._fsp--;
@@ -9970,12 +9970,12 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3704:5: this_NoexceptSpecification_1= ruleNoexceptSpecification
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3702:5: this_NoexceptSpecification_1= ruleNoexceptSpecification
                     {
                      
                             newCompositeNode(grammarAccess.getExceptionSpecificationAccess().getNoexceptSpecificationParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleNoexceptSpecification_in_ruleExceptionSpecification10782);
+                    pushFollow(FOLLOW_ruleNoexceptSpecification_in_ruleExceptionSpecification10780);
                     this_NoexceptSpecification_1=ruleNoexceptSpecification();
 
                     state._fsp--;
@@ -10010,7 +10010,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDynamicExceptionSpecification"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3722:1: entryRuleDynamicExceptionSpecification returns [String current=null] : iv_ruleDynamicExceptionSpecification= ruleDynamicExceptionSpecification EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3720:1: entryRuleDynamicExceptionSpecification returns [String current=null] : iv_ruleDynamicExceptionSpecification= ruleDynamicExceptionSpecification EOF ;
     public final String entryRuleDynamicExceptionSpecification() throws RecognitionException {
         String current = null;
 
@@ -10018,17 +10018,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3723:2: (iv_ruleDynamicExceptionSpecification= ruleDynamicExceptionSpecification EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3724:2: iv_ruleDynamicExceptionSpecification= ruleDynamicExceptionSpecification EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3721:2: (iv_ruleDynamicExceptionSpecification= ruleDynamicExceptionSpecification EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3722:2: iv_ruleDynamicExceptionSpecification= ruleDynamicExceptionSpecification EOF
             {
              newCompositeNode(grammarAccess.getDynamicExceptionSpecificationRule()); 
-            pushFollow(FOLLOW_ruleDynamicExceptionSpecification_in_entryRuleDynamicExceptionSpecification10828);
+            pushFollow(FOLLOW_ruleDynamicExceptionSpecification_in_entryRuleDynamicExceptionSpecification10826);
             iv_ruleDynamicExceptionSpecification=ruleDynamicExceptionSpecification();
 
             state._fsp--;
 
              current =iv_ruleDynamicExceptionSpecification.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDynamicExceptionSpecification10839); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDynamicExceptionSpecification10837); 
 
             }
 
@@ -10046,7 +10046,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDynamicExceptionSpecification"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3731:1: ruleDynamicExceptionSpecification returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'throw' kw= '(' this_TypeIdList_2= ruleTypeIdList kw= ')' ) ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3729:1: ruleDynamicExceptionSpecification returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'throw' kw= '(' this_TypeIdList_2= ruleTypeIdList kw= ')' ) ;
     public final AntlrDatatypeRuleToken ruleDynamicExceptionSpecification() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -10057,18 +10057,18 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3734:28: ( (kw= 'throw' kw= '(' this_TypeIdList_2= ruleTypeIdList kw= ')' ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3735:1: (kw= 'throw' kw= '(' this_TypeIdList_2= ruleTypeIdList kw= ')' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3732:28: ( (kw= 'throw' kw= '(' this_TypeIdList_2= ruleTypeIdList kw= ')' ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3733:1: (kw= 'throw' kw= '(' this_TypeIdList_2= ruleTypeIdList kw= ')' )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3735:1: (kw= 'throw' kw= '(' this_TypeIdList_2= ruleTypeIdList kw= ')' )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3736:2: kw= 'throw' kw= '(' this_TypeIdList_2= ruleTypeIdList kw= ')'
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3733:1: (kw= 'throw' kw= '(' this_TypeIdList_2= ruleTypeIdList kw= ')' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3734:2: kw= 'throw' kw= '(' this_TypeIdList_2= ruleTypeIdList kw= ')'
             {
-            kw=(Token)match(input,130,FOLLOW_130_in_ruleDynamicExceptionSpecification10877); 
+            kw=(Token)match(input,130,FOLLOW_130_in_ruleDynamicExceptionSpecification10875); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getDynamicExceptionSpecificationAccess().getThrowKeyword_0()); 
                 
-            kw=(Token)match(input,44,FOLLOW_44_in_ruleDynamicExceptionSpecification10890); 
+            kw=(Token)match(input,44,FOLLOW_44_in_ruleDynamicExceptionSpecification10888); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getDynamicExceptionSpecificationAccess().getLeftParenthesisKeyword_1()); 
@@ -10076,7 +10076,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getDynamicExceptionSpecificationAccess().getTypeIdListParserRuleCall_2()); 
                 
-            pushFollow(FOLLOW_ruleTypeIdList_in_ruleDynamicExceptionSpecification10912);
+            pushFollow(FOLLOW_ruleTypeIdList_in_ruleDynamicExceptionSpecification10910);
             this_TypeIdList_2=ruleTypeIdList();
 
             state._fsp--;
@@ -10087,7 +10087,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            kw=(Token)match(input,46,FOLLOW_46_in_ruleDynamicExceptionSpecification10930); 
+            kw=(Token)match(input,46,FOLLOW_46_in_ruleDynamicExceptionSpecification10928); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getDynamicExceptionSpecificationAccess().getRightParenthesisKeyword_3()); 
@@ -10113,7 +10113,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNoexceptSpecification"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3772:1: entryRuleNoexceptSpecification returns [String current=null] : iv_ruleNoexceptSpecification= ruleNoexceptSpecification EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3770:1: entryRuleNoexceptSpecification returns [String current=null] : iv_ruleNoexceptSpecification= ruleNoexceptSpecification EOF ;
     public final String entryRuleNoexceptSpecification() throws RecognitionException {
         String current = null;
 
@@ -10121,17 +10121,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3773:2: (iv_ruleNoexceptSpecification= ruleNoexceptSpecification EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3774:2: iv_ruleNoexceptSpecification= ruleNoexceptSpecification EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3771:2: (iv_ruleNoexceptSpecification= ruleNoexceptSpecification EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3772:2: iv_ruleNoexceptSpecification= ruleNoexceptSpecification EOF
             {
              newCompositeNode(grammarAccess.getNoexceptSpecificationRule()); 
-            pushFollow(FOLLOW_ruleNoexceptSpecification_in_entryRuleNoexceptSpecification10971);
+            pushFollow(FOLLOW_ruleNoexceptSpecification_in_entryRuleNoexceptSpecification10969);
             iv_ruleNoexceptSpecification=ruleNoexceptSpecification();
 
             state._fsp--;
 
              current =iv_ruleNoexceptSpecification.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNoexceptSpecification10982); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNoexceptSpecification10980); 
 
             }
 
@@ -10149,7 +10149,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNoexceptSpecification"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3781:1: ruleNoexceptSpecification returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'noexcept' (kw= '(' this_ConstantExpression_2= ruleConstantExpression kw= ')' )? ) ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3779:1: ruleNoexceptSpecification returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'noexcept' (kw= '(' this_ConstantExpression_2= ruleConstantExpression kw= ')' )? ) ;
     public final AntlrDatatypeRuleToken ruleNoexceptSpecification() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -10160,18 +10160,18 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3784:28: ( (kw= 'noexcept' (kw= '(' this_ConstantExpression_2= ruleConstantExpression kw= ')' )? ) )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3785:1: (kw= 'noexcept' (kw= '(' this_ConstantExpression_2= ruleConstantExpression kw= ')' )? )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3782:28: ( (kw= 'noexcept' (kw= '(' this_ConstantExpression_2= ruleConstantExpression kw= ')' )? ) )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3783:1: (kw= 'noexcept' (kw= '(' this_ConstantExpression_2= ruleConstantExpression kw= ')' )? )
             {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3785:1: (kw= 'noexcept' (kw= '(' this_ConstantExpression_2= ruleConstantExpression kw= ')' )? )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3786:2: kw= 'noexcept' (kw= '(' this_ConstantExpression_2= ruleConstantExpression kw= ')' )?
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3783:1: (kw= 'noexcept' (kw= '(' this_ConstantExpression_2= ruleConstantExpression kw= ')' )? )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3784:2: kw= 'noexcept' (kw= '(' this_ConstantExpression_2= ruleConstantExpression kw= ')' )?
             {
-            kw=(Token)match(input,131,FOLLOW_131_in_ruleNoexceptSpecification11020); 
+            kw=(Token)match(input,131,FOLLOW_131_in_ruleNoexceptSpecification11018); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getNoexceptSpecificationAccess().getNoexceptKeyword_0()); 
                 
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3791:1: (kw= '(' this_ConstantExpression_2= ruleConstantExpression kw= ')' )?
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3789:1: (kw= '(' this_ConstantExpression_2= ruleConstantExpression kw= ')' )?
             int alt82=2;
             int LA82_0 = input.LA(1);
 
@@ -10180,9 +10180,9 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
             }
             switch (alt82) {
                 case 1 :
-                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3792:2: kw= '(' this_ConstantExpression_2= ruleConstantExpression kw= ')'
+                    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3790:2: kw= '(' this_ConstantExpression_2= ruleConstantExpression kw= ')'
                     {
-                    kw=(Token)match(input,44,FOLLOW_44_in_ruleNoexceptSpecification11034); 
+                    kw=(Token)match(input,44,FOLLOW_44_in_ruleNoexceptSpecification11032); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getNoexceptSpecificationAccess().getLeftParenthesisKeyword_1_0()); 
@@ -10190,7 +10190,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getNoexceptSpecificationAccess().getConstantExpressionParserRuleCall_1_1()); 
                         
-                    pushFollow(FOLLOW_ruleConstantExpression_in_ruleNoexceptSpecification11056);
+                    pushFollow(FOLLOW_ruleConstantExpression_in_ruleNoexceptSpecification11054);
                     this_ConstantExpression_2=ruleConstantExpression();
 
                     state._fsp--;
@@ -10201,7 +10201,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
                      
                             afterParserOrEnumRuleCall();
                         
-                    kw=(Token)match(input,46,FOLLOW_46_in_ruleNoexceptSpecification11074); 
+                    kw=(Token)match(input,46,FOLLOW_46_in_ruleNoexceptSpecification11072); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getNoexceptSpecificationAccess().getRightParenthesisKeyword_1_2()); 
@@ -10233,7 +10233,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExpression"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3822:1: entryRuleExpression returns [String current=null] : iv_ruleExpression= ruleExpression EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3820:1: entryRuleExpression returns [String current=null] : iv_ruleExpression= ruleExpression EOF ;
     public final String entryRuleExpression() throws RecognitionException {
         String current = null;
 
@@ -10241,17 +10241,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3823:2: (iv_ruleExpression= ruleExpression EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3824:2: iv_ruleExpression= ruleExpression EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3821:2: (iv_ruleExpression= ruleExpression EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3822:2: iv_ruleExpression= ruleExpression EOF
             {
              newCompositeNode(grammarAccess.getExpressionRule()); 
-            pushFollow(FOLLOW_ruleExpression_in_entryRuleExpression11117);
+            pushFollow(FOLLOW_ruleExpression_in_entryRuleExpression11115);
             iv_ruleExpression=ruleExpression();
 
             state._fsp--;
 
              current =iv_ruleExpression.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExpression11128); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExpression11126); 
 
             }
 
@@ -10269,7 +10269,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpression"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3831:1: ruleExpression returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Expression' ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3829:1: ruleExpression returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Expression' ;
     public final AntlrDatatypeRuleToken ruleExpression() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -10278,10 +10278,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3834:28: (kw= 'Expression' )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3836:2: kw= 'Expression'
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3832:28: (kw= 'Expression' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3834:2: kw= 'Expression'
             {
-            kw=(Token)match(input,132,FOLLOW_132_in_ruleExpression11165); 
+            kw=(Token)match(input,132,FOLLOW_132_in_ruleExpression11163); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getExpressionAccess().getExpressionKeyword()); 
@@ -10304,7 +10304,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleClassKey"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3849:1: entryRuleClassKey returns [String current=null] : iv_ruleClassKey= ruleClassKey EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3847:1: entryRuleClassKey returns [String current=null] : iv_ruleClassKey= ruleClassKey EOF ;
     public final String entryRuleClassKey() throws RecognitionException {
         String current = null;
 
@@ -10312,17 +10312,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3850:2: (iv_ruleClassKey= ruleClassKey EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3851:2: iv_ruleClassKey= ruleClassKey EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3848:2: (iv_ruleClassKey= ruleClassKey EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3849:2: iv_ruleClassKey= ruleClassKey EOF
             {
              newCompositeNode(grammarAccess.getClassKeyRule()); 
-            pushFollow(FOLLOW_ruleClassKey_in_entryRuleClassKey11205);
+            pushFollow(FOLLOW_ruleClassKey_in_entryRuleClassKey11203);
             iv_ruleClassKey=ruleClassKey();
 
             state._fsp--;
 
              current =iv_ruleClassKey.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleClassKey11216); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleClassKey11214); 
 
             }
 
@@ -10340,7 +10340,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleClassKey"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3858:1: ruleClassKey returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'ClassKey' ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3856:1: ruleClassKey returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'ClassKey' ;
     public final AntlrDatatypeRuleToken ruleClassKey() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -10349,10 +10349,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3861:28: (kw= 'ClassKey' )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3863:2: kw= 'ClassKey'
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3859:28: (kw= 'ClassKey' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3861:2: kw= 'ClassKey'
             {
-            kw=(Token)match(input,133,FOLLOW_133_in_ruleClassKey11253); 
+            kw=(Token)match(input,133,FOLLOW_133_in_ruleClassKey11251); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getClassKeyAccess().getClassKeyKeyword()); 
@@ -10375,7 +10375,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExplicitSpecialization"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3876:1: entryRuleExplicitSpecialization returns [String current=null] : iv_ruleExplicitSpecialization= ruleExplicitSpecialization EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3874:1: entryRuleExplicitSpecialization returns [String current=null] : iv_ruleExplicitSpecialization= ruleExplicitSpecialization EOF ;
     public final String entryRuleExplicitSpecialization() throws RecognitionException {
         String current = null;
 
@@ -10383,17 +10383,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3877:2: (iv_ruleExplicitSpecialization= ruleExplicitSpecialization EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3878:2: iv_ruleExplicitSpecialization= ruleExplicitSpecialization EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3875:2: (iv_ruleExplicitSpecialization= ruleExplicitSpecialization EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3876:2: iv_ruleExplicitSpecialization= ruleExplicitSpecialization EOF
             {
              newCompositeNode(grammarAccess.getExplicitSpecializationRule()); 
-            pushFollow(FOLLOW_ruleExplicitSpecialization_in_entryRuleExplicitSpecialization11293);
+            pushFollow(FOLLOW_ruleExplicitSpecialization_in_entryRuleExplicitSpecialization11291);
             iv_ruleExplicitSpecialization=ruleExplicitSpecialization();
 
             state._fsp--;
 
              current =iv_ruleExplicitSpecialization.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExplicitSpecialization11304); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExplicitSpecialization11302); 
 
             }
 
@@ -10411,7 +10411,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExplicitSpecialization"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3885:1: ruleExplicitSpecialization returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'ExplicitSpecialization' ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3883:1: ruleExplicitSpecialization returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'ExplicitSpecialization' ;
     public final AntlrDatatypeRuleToken ruleExplicitSpecialization() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -10420,10 +10420,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3888:28: (kw= 'ExplicitSpecialization' )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3890:2: kw= 'ExplicitSpecialization'
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3886:28: (kw= 'ExplicitSpecialization' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3888:2: kw= 'ExplicitSpecialization'
             {
-            kw=(Token)match(input,134,FOLLOW_134_in_ruleExplicitSpecialization11341); 
+            kw=(Token)match(input,134,FOLLOW_134_in_ruleExplicitSpecialization11339); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getExplicitSpecializationAccess().getExplicitSpecializationKeyword()); 
@@ -10446,7 +10446,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExplicitInstantiation"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3903:1: entryRuleExplicitInstantiation returns [String current=null] : iv_ruleExplicitInstantiation= ruleExplicitInstantiation EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3901:1: entryRuleExplicitInstantiation returns [String current=null] : iv_ruleExplicitInstantiation= ruleExplicitInstantiation EOF ;
     public final String entryRuleExplicitInstantiation() throws RecognitionException {
         String current = null;
 
@@ -10454,17 +10454,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3904:2: (iv_ruleExplicitInstantiation= ruleExplicitInstantiation EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3905:2: iv_ruleExplicitInstantiation= ruleExplicitInstantiation EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3902:2: (iv_ruleExplicitInstantiation= ruleExplicitInstantiation EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3903:2: iv_ruleExplicitInstantiation= ruleExplicitInstantiation EOF
             {
              newCompositeNode(grammarAccess.getExplicitInstantiationRule()); 
-            pushFollow(FOLLOW_ruleExplicitInstantiation_in_entryRuleExplicitInstantiation11381);
+            pushFollow(FOLLOW_ruleExplicitInstantiation_in_entryRuleExplicitInstantiation11379);
             iv_ruleExplicitInstantiation=ruleExplicitInstantiation();
 
             state._fsp--;
 
              current =iv_ruleExplicitInstantiation.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExplicitInstantiation11392); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExplicitInstantiation11390); 
 
             }
 
@@ -10482,7 +10482,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExplicitInstantiation"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3912:1: ruleExplicitInstantiation returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'ExplicitInstantiation' ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3910:1: ruleExplicitInstantiation returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'ExplicitInstantiation' ;
     public final AntlrDatatypeRuleToken ruleExplicitInstantiation() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -10491,10 +10491,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3915:28: (kw= 'ExplicitInstantiation' )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3917:2: kw= 'ExplicitInstantiation'
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3913:28: (kw= 'ExplicitInstantiation' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3915:2: kw= 'ExplicitInstantiation'
             {
-            kw=(Token)match(input,135,FOLLOW_135_in_ruleExplicitInstantiation11429); 
+            kw=(Token)match(input,135,FOLLOW_135_in_ruleExplicitInstantiation11427); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getExplicitInstantiationAccess().getExplicitInstantiationKeyword()); 
@@ -10517,7 +10517,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleClassSpecifier"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3930:1: entryRuleClassSpecifier returns [String current=null] : iv_ruleClassSpecifier= ruleClassSpecifier EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3928:1: entryRuleClassSpecifier returns [String current=null] : iv_ruleClassSpecifier= ruleClassSpecifier EOF ;
     public final String entryRuleClassSpecifier() throws RecognitionException {
         String current = null;
 
@@ -10525,17 +10525,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3931:2: (iv_ruleClassSpecifier= ruleClassSpecifier EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3932:2: iv_ruleClassSpecifier= ruleClassSpecifier EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3929:2: (iv_ruleClassSpecifier= ruleClassSpecifier EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3930:2: iv_ruleClassSpecifier= ruleClassSpecifier EOF
             {
              newCompositeNode(grammarAccess.getClassSpecifierRule()); 
-            pushFollow(FOLLOW_ruleClassSpecifier_in_entryRuleClassSpecifier11469);
+            pushFollow(FOLLOW_ruleClassSpecifier_in_entryRuleClassSpecifier11467);
             iv_ruleClassSpecifier=ruleClassSpecifier();
 
             state._fsp--;
 
              current =iv_ruleClassSpecifier.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleClassSpecifier11480); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleClassSpecifier11478); 
 
             }
 
@@ -10553,7 +10553,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleClassSpecifier"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3939:1: ruleClassSpecifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'ClassSpecifier' ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3937:1: ruleClassSpecifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'ClassSpecifier' ;
     public final AntlrDatatypeRuleToken ruleClassSpecifier() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -10562,10 +10562,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3942:28: (kw= 'ClassSpecifier' )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3944:2: kw= 'ClassSpecifier'
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3940:28: (kw= 'ClassSpecifier' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3942:2: kw= 'ClassSpecifier'
             {
-            kw=(Token)match(input,136,FOLLOW_136_in_ruleClassSpecifier11517); 
+            kw=(Token)match(input,136,FOLLOW_136_in_ruleClassSpecifier11515); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getClassSpecifierAccess().getClassSpecifierKeyword()); 
@@ -10588,7 +10588,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCvQualifier"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3957:1: entryRuleCvQualifier returns [String current=null] : iv_ruleCvQualifier= ruleCvQualifier EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3955:1: entryRuleCvQualifier returns [String current=null] : iv_ruleCvQualifier= ruleCvQualifier EOF ;
     public final String entryRuleCvQualifier() throws RecognitionException {
         String current = null;
 
@@ -10596,17 +10596,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3958:2: (iv_ruleCvQualifier= ruleCvQualifier EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3959:2: iv_ruleCvQualifier= ruleCvQualifier EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3956:2: (iv_ruleCvQualifier= ruleCvQualifier EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3957:2: iv_ruleCvQualifier= ruleCvQualifier EOF
             {
              newCompositeNode(grammarAccess.getCvQualifierRule()); 
-            pushFollow(FOLLOW_ruleCvQualifier_in_entryRuleCvQualifier11557);
+            pushFollow(FOLLOW_ruleCvQualifier_in_entryRuleCvQualifier11555);
             iv_ruleCvQualifier=ruleCvQualifier();
 
             state._fsp--;
 
              current =iv_ruleCvQualifier.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCvQualifier11568); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCvQualifier11566); 
 
             }
 
@@ -10624,7 +10624,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCvQualifier"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3966:1: ruleCvQualifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'CvQualifier' ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3964:1: ruleCvQualifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'CvQualifier' ;
     public final AntlrDatatypeRuleToken ruleCvQualifier() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -10633,10 +10633,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3969:28: (kw= 'CvQualifier' )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3971:2: kw= 'CvQualifier'
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3967:28: (kw= 'CvQualifier' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3969:2: kw= 'CvQualifier'
             {
-            kw=(Token)match(input,137,FOLLOW_137_in_ruleCvQualifier11605); 
+            kw=(Token)match(input,137,FOLLOW_137_in_ruleCvQualifier11603); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getCvQualifierAccess().getCvQualifierKeyword()); 
@@ -10659,7 +10659,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConstantExpression"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3984:1: entryRuleConstantExpression returns [String current=null] : iv_ruleConstantExpression= ruleConstantExpression EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3982:1: entryRuleConstantExpression returns [String current=null] : iv_ruleConstantExpression= ruleConstantExpression EOF ;
     public final String entryRuleConstantExpression() throws RecognitionException {
         String current = null;
 
@@ -10667,17 +10667,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3985:2: (iv_ruleConstantExpression= ruleConstantExpression EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3986:2: iv_ruleConstantExpression= ruleConstantExpression EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3983:2: (iv_ruleConstantExpression= ruleConstantExpression EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3984:2: iv_ruleConstantExpression= ruleConstantExpression EOF
             {
              newCompositeNode(grammarAccess.getConstantExpressionRule()); 
-            pushFollow(FOLLOW_ruleConstantExpression_in_entryRuleConstantExpression11645);
+            pushFollow(FOLLOW_ruleConstantExpression_in_entryRuleConstantExpression11643);
             iv_ruleConstantExpression=ruleConstantExpression();
 
             state._fsp--;
 
              current =iv_ruleConstantExpression.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleConstantExpression11656); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConstantExpression11654); 
 
             }
 
@@ -10695,7 +10695,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConstantExpression"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3993:1: ruleConstantExpression returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'ConstantExpression' ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3991:1: ruleConstantExpression returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'ConstantExpression' ;
     public final AntlrDatatypeRuleToken ruleConstantExpression() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -10704,10 +10704,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3996:28: (kw= 'ConstantExpression' )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3998:2: kw= 'ConstantExpression'
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3994:28: (kw= 'ConstantExpression' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:3996:2: kw= 'ConstantExpression'
             {
-            kw=(Token)match(input,138,FOLLOW_138_in_ruleConstantExpression11693); 
+            kw=(Token)match(input,138,FOLLOW_138_in_ruleConstantExpression11691); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getConstantExpressionAccess().getConstantExpressionKeyword()); 
@@ -10730,7 +10730,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIdExpression"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4011:1: entryRuleIdExpression returns [String current=null] : iv_ruleIdExpression= ruleIdExpression EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4009:1: entryRuleIdExpression returns [String current=null] : iv_ruleIdExpression= ruleIdExpression EOF ;
     public final String entryRuleIdExpression() throws RecognitionException {
         String current = null;
 
@@ -10738,17 +10738,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4012:2: (iv_ruleIdExpression= ruleIdExpression EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4013:2: iv_ruleIdExpression= ruleIdExpression EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4010:2: (iv_ruleIdExpression= ruleIdExpression EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4011:2: iv_ruleIdExpression= ruleIdExpression EOF
             {
              newCompositeNode(grammarAccess.getIdExpressionRule()); 
-            pushFollow(FOLLOW_ruleIdExpression_in_entryRuleIdExpression11733);
+            pushFollow(FOLLOW_ruleIdExpression_in_entryRuleIdExpression11731);
             iv_ruleIdExpression=ruleIdExpression();
 
             state._fsp--;
 
              current =iv_ruleIdExpression.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIdExpression11744); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleIdExpression11742); 
 
             }
 
@@ -10766,7 +10766,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIdExpression"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4020:1: ruleIdExpression returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'IdExpression' ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4018:1: ruleIdExpression returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'IdExpression' ;
     public final AntlrDatatypeRuleToken ruleIdExpression() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -10775,10 +10775,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4023:28: (kw= 'IdExpression' )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4025:2: kw= 'IdExpression'
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4021:28: (kw= 'IdExpression' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4023:2: kw= 'IdExpression'
             {
-            kw=(Token)match(input,139,FOLLOW_139_in_ruleIdExpression11781); 
+            kw=(Token)match(input,139,FOLLOW_139_in_ruleIdExpression11779); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getIdExpressionAccess().getIdExpressionKeyword()); 
@@ -10801,7 +10801,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNestedNameSpecifier"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4038:1: entryRuleNestedNameSpecifier returns [String current=null] : iv_ruleNestedNameSpecifier= ruleNestedNameSpecifier EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4036:1: entryRuleNestedNameSpecifier returns [String current=null] : iv_ruleNestedNameSpecifier= ruleNestedNameSpecifier EOF ;
     public final String entryRuleNestedNameSpecifier() throws RecognitionException {
         String current = null;
 
@@ -10809,17 +10809,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4039:2: (iv_ruleNestedNameSpecifier= ruleNestedNameSpecifier EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4040:2: iv_ruleNestedNameSpecifier= ruleNestedNameSpecifier EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4037:2: (iv_ruleNestedNameSpecifier= ruleNestedNameSpecifier EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4038:2: iv_ruleNestedNameSpecifier= ruleNestedNameSpecifier EOF
             {
              newCompositeNode(grammarAccess.getNestedNameSpecifierRule()); 
-            pushFollow(FOLLOW_ruleNestedNameSpecifier_in_entryRuleNestedNameSpecifier11821);
+            pushFollow(FOLLOW_ruleNestedNameSpecifier_in_entryRuleNestedNameSpecifier11819);
             iv_ruleNestedNameSpecifier=ruleNestedNameSpecifier();
 
             state._fsp--;
 
              current =iv_ruleNestedNameSpecifier.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNestedNameSpecifier11832); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNestedNameSpecifier11830); 
 
             }
 
@@ -10837,7 +10837,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNestedNameSpecifier"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4047:1: ruleNestedNameSpecifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'NestedNameSpecifier' ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4045:1: ruleNestedNameSpecifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'NestedNameSpecifier' ;
     public final AntlrDatatypeRuleToken ruleNestedNameSpecifier() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -10846,10 +10846,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4050:28: (kw= 'NestedNameSpecifier' )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4052:2: kw= 'NestedNameSpecifier'
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4048:28: (kw= 'NestedNameSpecifier' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4050:2: kw= 'NestedNameSpecifier'
             {
-            kw=(Token)match(input,140,FOLLOW_140_in_ruleNestedNameSpecifier11869); 
+            kw=(Token)match(input,140,FOLLOW_140_in_ruleNestedNameSpecifier11867); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getNestedNameSpecifierAccess().getNestedNameSpecifierKeyword()); 
@@ -10872,7 +10872,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAssignmentExpression"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4065:1: entryRuleAssignmentExpression returns [String current=null] : iv_ruleAssignmentExpression= ruleAssignmentExpression EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4063:1: entryRuleAssignmentExpression returns [String current=null] : iv_ruleAssignmentExpression= ruleAssignmentExpression EOF ;
     public final String entryRuleAssignmentExpression() throws RecognitionException {
         String current = null;
 
@@ -10880,17 +10880,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4066:2: (iv_ruleAssignmentExpression= ruleAssignmentExpression EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4067:2: iv_ruleAssignmentExpression= ruleAssignmentExpression EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4064:2: (iv_ruleAssignmentExpression= ruleAssignmentExpression EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4065:2: iv_ruleAssignmentExpression= ruleAssignmentExpression EOF
             {
              newCompositeNode(grammarAccess.getAssignmentExpressionRule()); 
-            pushFollow(FOLLOW_ruleAssignmentExpression_in_entryRuleAssignmentExpression11909);
+            pushFollow(FOLLOW_ruleAssignmentExpression_in_entryRuleAssignmentExpression11907);
             iv_ruleAssignmentExpression=ruleAssignmentExpression();
 
             state._fsp--;
 
              current =iv_ruleAssignmentExpression.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAssignmentExpression11920); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAssignmentExpression11918); 
 
             }
 
@@ -10908,7 +10908,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAssignmentExpression"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4074:1: ruleAssignmentExpression returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'AssignmentExpression' ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4072:1: ruleAssignmentExpression returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'AssignmentExpression' ;
     public final AntlrDatatypeRuleToken ruleAssignmentExpression() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -10917,10 +10917,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4077:28: (kw= 'AssignmentExpression' )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4079:2: kw= 'AssignmentExpression'
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4075:28: (kw= 'AssignmentExpression' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4077:2: kw= 'AssignmentExpression'
             {
-            kw=(Token)match(input,141,FOLLOW_141_in_ruleAssignmentExpression11957); 
+            kw=(Token)match(input,141,FOLLOW_141_in_ruleAssignmentExpression11955); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getAssignmentExpressionAccess().getAssignmentExpressionKeyword()); 
@@ -10943,7 +10943,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCompoundStatement"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4092:1: entryRuleCompoundStatement returns [String current=null] : iv_ruleCompoundStatement= ruleCompoundStatement EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4090:1: entryRuleCompoundStatement returns [String current=null] : iv_ruleCompoundStatement= ruleCompoundStatement EOF ;
     public final String entryRuleCompoundStatement() throws RecognitionException {
         String current = null;
 
@@ -10951,17 +10951,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4093:2: (iv_ruleCompoundStatement= ruleCompoundStatement EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4094:2: iv_ruleCompoundStatement= ruleCompoundStatement EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4091:2: (iv_ruleCompoundStatement= ruleCompoundStatement EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4092:2: iv_ruleCompoundStatement= ruleCompoundStatement EOF
             {
              newCompositeNode(grammarAccess.getCompoundStatementRule()); 
-            pushFollow(FOLLOW_ruleCompoundStatement_in_entryRuleCompoundStatement11997);
+            pushFollow(FOLLOW_ruleCompoundStatement_in_entryRuleCompoundStatement11995);
             iv_ruleCompoundStatement=ruleCompoundStatement();
 
             state._fsp--;
 
              current =iv_ruleCompoundStatement.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCompoundStatement12008); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCompoundStatement12006); 
 
             }
 
@@ -10979,7 +10979,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCompoundStatement"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4101:1: ruleCompoundStatement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'CompoundStatement' ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4099:1: ruleCompoundStatement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'CompoundStatement' ;
     public final AntlrDatatypeRuleToken ruleCompoundStatement() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -10988,10 +10988,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4104:28: (kw= 'CompoundStatement' )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4106:2: kw= 'CompoundStatement'
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4102:28: (kw= 'CompoundStatement' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4104:2: kw= 'CompoundStatement'
             {
-            kw=(Token)match(input,142,FOLLOW_142_in_ruleCompoundStatement12045); 
+            kw=(Token)match(input,142,FOLLOW_142_in_ruleCompoundStatement12043); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getCompoundStatementAccess().getCompoundStatementKeyword()); 
@@ -11014,7 +11014,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCtorInitializer"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4119:1: entryRuleCtorInitializer returns [String current=null] : iv_ruleCtorInitializer= ruleCtorInitializer EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4117:1: entryRuleCtorInitializer returns [String current=null] : iv_ruleCtorInitializer= ruleCtorInitializer EOF ;
     public final String entryRuleCtorInitializer() throws RecognitionException {
         String current = null;
 
@@ -11022,17 +11022,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4120:2: (iv_ruleCtorInitializer= ruleCtorInitializer EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4121:2: iv_ruleCtorInitializer= ruleCtorInitializer EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4118:2: (iv_ruleCtorInitializer= ruleCtorInitializer EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4119:2: iv_ruleCtorInitializer= ruleCtorInitializer EOF
             {
              newCompositeNode(grammarAccess.getCtorInitializerRule()); 
-            pushFollow(FOLLOW_ruleCtorInitializer_in_entryRuleCtorInitializer12085);
+            pushFollow(FOLLOW_ruleCtorInitializer_in_entryRuleCtorInitializer12083);
             iv_ruleCtorInitializer=ruleCtorInitializer();
 
             state._fsp--;
 
              current =iv_ruleCtorInitializer.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCtorInitializer12096); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCtorInitializer12094); 
 
             }
 
@@ -11050,7 +11050,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCtorInitializer"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4128:1: ruleCtorInitializer returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'CtorInitializer' ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4126:1: ruleCtorInitializer returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'CtorInitializer' ;
     public final AntlrDatatypeRuleToken ruleCtorInitializer() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -11059,10 +11059,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4131:28: (kw= 'CtorInitializer' )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4133:2: kw= 'CtorInitializer'
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4129:28: (kw= 'CtorInitializer' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4131:2: kw= 'CtorInitializer'
             {
-            kw=(Token)match(input,143,FOLLOW_143_in_ruleCtorInitializer12133); 
+            kw=(Token)match(input,143,FOLLOW_143_in_ruleCtorInitializer12131); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getCtorInitializerAccess().getCtorInitializerKeyword()); 
@@ -11085,7 +11085,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTypeIdList"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4146:1: entryRuleTypeIdList returns [String current=null] : iv_ruleTypeIdList= ruleTypeIdList EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4144:1: entryRuleTypeIdList returns [String current=null] : iv_ruleTypeIdList= ruleTypeIdList EOF ;
     public final String entryRuleTypeIdList() throws RecognitionException {
         String current = null;
 
@@ -11093,17 +11093,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4147:2: (iv_ruleTypeIdList= ruleTypeIdList EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4148:2: iv_ruleTypeIdList= ruleTypeIdList EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4145:2: (iv_ruleTypeIdList= ruleTypeIdList EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4146:2: iv_ruleTypeIdList= ruleTypeIdList EOF
             {
              newCompositeNode(grammarAccess.getTypeIdListRule()); 
-            pushFollow(FOLLOW_ruleTypeIdList_in_entryRuleTypeIdList12173);
+            pushFollow(FOLLOW_ruleTypeIdList_in_entryRuleTypeIdList12171);
             iv_ruleTypeIdList=ruleTypeIdList();
 
             state._fsp--;
 
              current =iv_ruleTypeIdList.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeIdList12184); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeIdList12182); 
 
             }
 
@@ -11121,7 +11121,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTypeIdList"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4155:1: ruleTypeIdList returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'TypeIdList' ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4153:1: ruleTypeIdList returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'TypeIdList' ;
     public final AntlrDatatypeRuleToken ruleTypeIdList() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -11130,10 +11130,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4158:28: (kw= 'TypeIdList' )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4160:2: kw= 'TypeIdList'
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4156:28: (kw= 'TypeIdList' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4158:2: kw= 'TypeIdList'
             {
-            kw=(Token)match(input,144,FOLLOW_144_in_ruleTypeIdList12221); 
+            kw=(Token)match(input,144,FOLLOW_144_in_ruleTypeIdList12219); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getTypeIdListAccess().getTypeIdListKeyword()); 
@@ -11156,7 +11156,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUnqualifiedId"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4173:1: entryRuleUnqualifiedId returns [String current=null] : iv_ruleUnqualifiedId= ruleUnqualifiedId EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4171:1: entryRuleUnqualifiedId returns [String current=null] : iv_ruleUnqualifiedId= ruleUnqualifiedId EOF ;
     public final String entryRuleUnqualifiedId() throws RecognitionException {
         String current = null;
 
@@ -11164,17 +11164,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4174:2: (iv_ruleUnqualifiedId= ruleUnqualifiedId EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4175:2: iv_ruleUnqualifiedId= ruleUnqualifiedId EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4172:2: (iv_ruleUnqualifiedId= ruleUnqualifiedId EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4173:2: iv_ruleUnqualifiedId= ruleUnqualifiedId EOF
             {
              newCompositeNode(grammarAccess.getUnqualifiedIdRule()); 
-            pushFollow(FOLLOW_ruleUnqualifiedId_in_entryRuleUnqualifiedId12261);
+            pushFollow(FOLLOW_ruleUnqualifiedId_in_entryRuleUnqualifiedId12259);
             iv_ruleUnqualifiedId=ruleUnqualifiedId();
 
             state._fsp--;
 
              current =iv_ruleUnqualifiedId.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUnqualifiedId12272); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUnqualifiedId12270); 
 
             }
 
@@ -11192,7 +11192,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUnqualifiedId"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4182:1: ruleUnqualifiedId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'UnqualifiedId' ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4180:1: ruleUnqualifiedId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'UnqualifiedId' ;
     public final AntlrDatatypeRuleToken ruleUnqualifiedId() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -11201,10 +11201,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4185:28: (kw= 'UnqualifiedId' )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4187:2: kw= 'UnqualifiedId'
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4183:28: (kw= 'UnqualifiedId' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4185:2: kw= 'UnqualifiedId'
             {
-            kw=(Token)match(input,145,FOLLOW_145_in_ruleUnqualifiedId12309); 
+            kw=(Token)match(input,145,FOLLOW_145_in_ruleUnqualifiedId12307); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getUnqualifiedIdAccess().getUnqualifiedIdKeyword()); 
@@ -11227,7 +11227,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleClassName"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4200:1: entryRuleClassName returns [String current=null] : iv_ruleClassName= ruleClassName EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4198:1: entryRuleClassName returns [String current=null] : iv_ruleClassName= ruleClassName EOF ;
     public final String entryRuleClassName() throws RecognitionException {
         String current = null;
 
@@ -11235,17 +11235,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4201:2: (iv_ruleClassName= ruleClassName EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4202:2: iv_ruleClassName= ruleClassName EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4199:2: (iv_ruleClassName= ruleClassName EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4200:2: iv_ruleClassName= ruleClassName EOF
             {
              newCompositeNode(grammarAccess.getClassNameRule()); 
-            pushFollow(FOLLOW_ruleClassName_in_entryRuleClassName12349);
+            pushFollow(FOLLOW_ruleClassName_in_entryRuleClassName12347);
             iv_ruleClassName=ruleClassName();
 
             state._fsp--;
 
              current =iv_ruleClassName.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleClassName12360); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleClassName12358); 
 
             }
 
@@ -11263,7 +11263,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleClassName"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4209:1: ruleClassName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'ClassName' ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4207:1: ruleClassName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'ClassName' ;
     public final AntlrDatatypeRuleToken ruleClassName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -11272,10 +11272,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4212:28: (kw= 'ClassName' )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4214:2: kw= 'ClassName'
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4210:28: (kw= 'ClassName' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4212:2: kw= 'ClassName'
             {
-            kw=(Token)match(input,146,FOLLOW_146_in_ruleClassName12397); 
+            kw=(Token)match(input,146,FOLLOW_146_in_ruleClassName12395); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getClassNameAccess().getClassNameKeyword()); 
@@ -11298,7 +11298,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInitializer"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4227:1: entryRuleInitializer returns [String current=null] : iv_ruleInitializer= ruleInitializer EOF ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4225:1: entryRuleInitializer returns [String current=null] : iv_ruleInitializer= ruleInitializer EOF ;
     public final String entryRuleInitializer() throws RecognitionException {
         String current = null;
 
@@ -11306,17 +11306,17 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4228:2: (iv_ruleInitializer= ruleInitializer EOF )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4229:2: iv_ruleInitializer= ruleInitializer EOF
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4226:2: (iv_ruleInitializer= ruleInitializer EOF )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4227:2: iv_ruleInitializer= ruleInitializer EOF
             {
              newCompositeNode(grammarAccess.getInitializerRule()); 
-            pushFollow(FOLLOW_ruleInitializer_in_entryRuleInitializer12437);
+            pushFollow(FOLLOW_ruleInitializer_in_entryRuleInitializer12435);
             iv_ruleInitializer=ruleInitializer();
 
             state._fsp--;
 
              current =iv_ruleInitializer.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInitializer12448); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInitializer12446); 
 
             }
 
@@ -11334,7 +11334,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInitializer"
-    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4236:1: ruleInitializer returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Initializer' ;
+    // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4234:1: ruleInitializer returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'Initializer' ;
     public final AntlrDatatypeRuleToken ruleInitializer() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -11343,10 +11343,10 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4239:28: (kw= 'Initializer' )
-            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4241:2: kw= 'Initializer'
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4237:28: (kw= 'Initializer' )
+            // ../cpp2/src-gen/org/parser/antlr/internal/InternalCpp2.g:4239:2: kw= 'Initializer'
             {
-            kw=(Token)match(input,147,FOLLOW_147_in_ruleInitializer12485); 
+            kw=(Token)match(input,147,FOLLOW_147_in_ruleInitializer12483); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getInitializerAccess().getInitializerKeyword()); 
@@ -11534,7 +11534,7 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
             this.transition = DFA61_transition;
         }
         public String getDescription() {
-            return "2666:1: (kw= 'new' | kw= 'delete' | (kw= 'new' kw= '[' kw= ']' ) | (kw= 'delete' kw= '[' kw= ']' ) | kw= '+' | kw= '-' | kw= '*' | kw= '/' | kw= '%' | kw= '^' | kw= '&' | kw= '|' | kw= '~' | kw= '!' | kw= '=' | kw= '<' | kw= '>' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '^=' | kw= '&=' | kw= '|=' | kw= '<<' | kw= '>>' | kw= '>>=' | kw= '<<=' | kw= '==' | kw= '!=' | kw= '<=' | kw= '>=' | kw= '&&' | kw= '||' | kw= '++' | kw= '--' | kw= ',' | kw= '->*' | kw= '->' | kw= '()' | kw= '[]' )";
+            return "2664:1: (kw= 'new' | kw= 'delete' | (kw= 'new' kw= '[' kw= ']' ) | (kw= 'delete' kw= '[' kw= ']' ) | kw= '+' | kw= '-' | kw= '*' | kw= '/' | kw= '%' | kw= '^' | kw= '&' | kw= '|' | kw= '~' | kw= '!' | kw= '=' | kw= '<' | kw= '>' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '^=' | kw= '&=' | kw= '|=' | kw= '<<' | kw= '>>' | kw= '>>=' | kw= '<<=' | kw= '==' | kw= '!=' | kw= '<=' | kw= '>=' | kw= '&&' | kw= '||' | kw= '++' | kw= '--' | kw= ',' | kw= '->*' | kw= '->' | kw= '()' | kw= '[]' )";
         }
     }
  
@@ -11582,21 +11582,21 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleSimpleOrFunctionDeclaration1247 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDeclarationSpecifier_in_ruleSimpleOrFunctionDeclaration1295 = new BitSet(new long[]{0xF7FF810000000100L,0x00000000010427FFL,0x0000000000041B20L});
     public static final BitSet FOLLOW_ruleSimpleDeclarationSuffix_in_ruleSimpleOrFunctionDeclaration1325 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionDefinitionSuffix_in_ruleSimpleOrFunctionDeclaration1358 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionDeclarationSuffix_in_ruleSimpleOrFunctionDeclaration1358 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSimpleDeclarationSuffix_in_entryRuleSimpleDeclarationSuffix1405 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSimpleDeclarationSuffix1416 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleInitDeclaratorList_in_ruleSimpleDeclarationSuffix1464 = new BitSet(new long[]{0x0000010000000000L});
     public static final BitSet FOLLOW_40_in_ruleSimpleDeclarationSuffix1484 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionDefinitionSuffix_in_entryRuleFunctionDefinitionSuffix1525 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFunctionDefinitionSuffix1536 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionDeclarator_in_ruleFunctionDefinitionSuffix1583 = new BitSet(new long[]{0x0000008000000000L,0x0000000000000000L,0x000000000000C001L});
-    public static final BitSet FOLLOW_ruleFunctionBody_in_ruleFunctionDefinitionSuffix1611 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleFunctionDefinitionSuffix1636 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_41_in_ruleFunctionDefinitionSuffix1649 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_40_in_ruleFunctionDefinitionSuffix1662 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleFunctionDefinitionSuffix1683 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_42_in_ruleFunctionDefinitionSuffix1696 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_40_in_ruleFunctionDefinitionSuffix1709 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionDeclarationSuffix_in_entryRuleFunctionDeclarationSuffix1525 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFunctionDeclarationSuffix1536 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionDeclarator_in_ruleFunctionDeclarationSuffix1583 = new BitSet(new long[]{0x0000008000000000L,0x0000000000000000L,0x000000000000C001L});
+    public static final BitSet FOLLOW_ruleFunctionBody_in_ruleFunctionDeclarationSuffix1611 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleFunctionDeclarationSuffix1636 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_41_in_ruleFunctionDeclarationSuffix1649 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_40_in_ruleFunctionDeclarationSuffix1662 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleFunctionDeclarationSuffix1683 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_42_in_ruleFunctionDeclarationSuffix1696 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_40_in_ruleFunctionDeclarationSuffix1709 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStaticAssertDeclaration_in_entryRuleStaticAssertDeclaration1752 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleStaticAssertDeclaration1763 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_43_in_ruleStaticAssertDeclaration1801 = new BitSet(new long[]{0x0000100000000000L});
@@ -11806,207 +11806,207 @@ public class InternalCpp2Parser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleParameterDeclaration7200 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDeclarationSpecifier_in_ruleParameterDeclaration7248 = new BitSet(new long[]{0xF7FF800000000100L,0x00000000010427FFL,0x0000000000041B20L});
     public static final BitSet FOLLOW_ruleInitDeclarator_in_ruleParameterDeclaration7277 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionBody_in_entryRuleFunctionBody7325 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFunctionBody7336 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCtorInitializer_in_ruleFunctionBody7385 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000000000C000L});
-    public static final BitSet FOLLOW_ruleCompoundStatement_in_ruleFunctionBody7414 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionTryBlock_in_ruleFunctionBody7448 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOperatorFunctionId_in_entryRuleOperatorFunctionId7494 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOperatorFunctionId7505 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_89_in_ruleOperatorFunctionId7543 = new BitSet(new long[]{0x0000248000000000L,0x7FFFFFFF9CC00000L});
-    public static final BitSet FOLLOW_ruleOverloadableOperator_in_ruleOperatorFunctionId7565 = new BitSet(new long[]{0x0000000000000002L,0x0000000004000000L});
-    public static final BitSet FOLLOW_90_in_ruleOperatorFunctionId7584 = new BitSet(new long[]{0xF400000000000100L,0x00000000090427FFL,0x0000000000041F20L});
-    public static final BitSet FOLLOW_ruleConstantExpression_in_ruleOperatorFunctionId7607 = new BitSet(new long[]{0xF400000000000100L,0x00000000090427FFL,0x0000000000041F20L});
-    public static final BitSet FOLLOW_ruleTypeSpecifier_in_ruleOperatorFunctionId7640 = new BitSet(new long[]{0xF400000000000100L,0x00000000090427FFL,0x0000000000041F20L});
-    public static final BitSet FOLLOW_ruleIdExpression_in_ruleOperatorFunctionId7673 = new BitSet(new long[]{0xF400000000000100L,0x00000000090427FFL,0x0000000000041F20L});
-    public static final BitSet FOLLOW_91_in_ruleOperatorFunctionId7693 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOverloadableOperator_in_entryRuleOverloadableOperator7736 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOverloadableOperator7747 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_92_in_ruleOverloadableOperator7785 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_ruleOverloadableOperator7804 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_92_in_ruleOverloadableOperator7824 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleOverloadableOperator7837 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
-    public static final BitSet FOLLOW_94_in_ruleOverloadableOperator7850 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_ruleOverloadableOperator7871 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleOverloadableOperator7884 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
-    public static final BitSet FOLLOW_94_in_ruleOverloadableOperator7897 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_95_in_ruleOverloadableOperator7917 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_96_in_ruleOverloadableOperator7936 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_97_in_ruleOverloadableOperator7955 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_98_in_ruleOverloadableOperator7974 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_99_in_ruleOverloadableOperator7993 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_100_in_ruleOverloadableOperator8012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_86_in_ruleOverloadableOperator8031 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_101_in_ruleOverloadableOperator8050 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_102_in_ruleOverloadableOperator8069 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_103_in_ruleOverloadableOperator8088 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleOverloadableOperator8107 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_90_in_ruleOverloadableOperator8126 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_91_in_ruleOverloadableOperator8145 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_104_in_ruleOverloadableOperator8164 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_105_in_ruleOverloadableOperator8183 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_106_in_ruleOverloadableOperator8202 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_107_in_ruleOverloadableOperator8221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_108_in_ruleOverloadableOperator8240 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_109_in_ruleOverloadableOperator8259 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_110_in_ruleOverloadableOperator8278 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_111_in_ruleOverloadableOperator8297 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_112_in_ruleOverloadableOperator8316 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_113_in_ruleOverloadableOperator8335 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_114_in_ruleOverloadableOperator8354 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_115_in_ruleOverloadableOperator8373 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_116_in_ruleOverloadableOperator8392 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_117_in_ruleOverloadableOperator8411 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_118_in_ruleOverloadableOperator8430 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_119_in_ruleOverloadableOperator8449 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_87_in_ruleOverloadableOperator8468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_120_in_ruleOverloadableOperator8487 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_121_in_ruleOverloadableOperator8506 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_122_in_ruleOverloadableOperator8525 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_ruleOverloadableOperator8544 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_123_in_ruleOverloadableOperator8563 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_124_in_ruleOverloadableOperator8582 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_125_in_ruleOverloadableOperator8601 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_126_in_ruleOverloadableOperator8620 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLiteralOperatorId_in_entryRuleLiteralOperatorId8661 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLiteralOperatorId8672 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_89_in_ruleLiteralOperatorId8710 = new BitSet(new long[]{0x0000000000000000L,0x8000000000000000L});
-    public static final BitSet FOLLOW_127_in_ruleLiteralOperatorId8723 = new BitSet(new long[]{0x0000000000000000L,0x8000000000000000L});
-    public static final BitSet FOLLOW_127_in_ruleLiteralOperatorId8736 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTemplateDeclaration_in_entryRuleTemplateDeclaration8777 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTemplateDeclaration8788 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_59_in_ruleTemplateDeclaration8826 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_90_in_ruleTemplateDeclaration8839 = new BitSet(new long[]{0xF7FF800000000100L,0x00000000010467FFL,0x0000000000041320L});
-    public static final BitSet FOLLOW_ruleTemplateParameterList_in_ruleTemplateDeclaration8861 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_91_in_ruleTemplateDeclaration8879 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTemplateParameterList_in_entryRuleTemplateParameterList8920 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTemplateParameterList8931 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTemplateParameter_in_ruleTemplateParameterList8978 = new BitSet(new long[]{0x0000200000000002L});
-    public static final BitSet FOLLOW_45_in_ruleTemplateParameterList8997 = new BitSet(new long[]{0xF7FF800000000100L,0x00000000010467FFL,0x0000000000041320L});
-    public static final BitSet FOLLOW_ruleTemplateParameter_in_ruleTemplateParameterList9019 = new BitSet(new long[]{0x0000200000000002L});
-    public static final BitSet FOLLOW_ruleTemplateParameter_in_entryRuleTemplateParameter9067 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTemplateParameter9078 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeParameter_in_ruleTemplateParameter9125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParameterDeclaration_in_ruleTemplateParameter9158 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeParameter_in_entryRuleTypeParameter9204 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTypeParameter9215 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_78_in_ruleTypeParameter9254 = new BitSet(new long[]{0x0000008000000102L,0x0000000001000000L});
-    public static final BitSet FOLLOW_82_in_ruleTypeParameter9273 = new BitSet(new long[]{0x0000008000000102L,0x0000000001000000L});
-    public static final BitSet FOLLOW_88_in_ruleTypeParameter9290 = new BitSet(new long[]{0x0000000000000102L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTypeParameter9308 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTypeParameter9339 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_39_in_ruleTypeParameter9359 = new BitSet(new long[]{0xF400000000000100L,0x00000000000427FFL,0x0000000000041320L});
-    public static final BitSet FOLLOW_ruleTypeId_in_ruleTypeParameter9381 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSimpleTemplateId_in_entryRuleSimpleTemplateId9429 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSimpleTemplateId9440 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleSimpleTemplateId9480 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_90_in_ruleSimpleTemplateId9498 = new BitSet(new long[]{0xF400000000000100L,0x00000000010427FFL,0x0000000000041F20L});
-    public static final BitSet FOLLOW_ruleTemplateArgumentList_in_ruleSimpleTemplateId9520 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_91_in_ruleSimpleTemplateId9538 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTemplateArgumentList_in_entryRuleTemplateArgumentList9581 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTemplateArgumentList9592 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTemplateArgument_in_ruleTemplateArgumentList9639 = new BitSet(new long[]{0x0000200000000002L,0x0000000001000000L});
-    public static final BitSet FOLLOW_88_in_ruleTemplateArgumentList9658 = new BitSet(new long[]{0x0000200000000002L});
-    public static final BitSet FOLLOW_45_in_ruleTemplateArgumentList9674 = new BitSet(new long[]{0xF400000000000100L,0x00000000010427FFL,0x0000000000041F20L});
-    public static final BitSet FOLLOW_ruleTemplateArgument_in_ruleTemplateArgumentList9696 = new BitSet(new long[]{0x0000200000000002L,0x0000000001000000L});
-    public static final BitSet FOLLOW_88_in_ruleTemplateArgumentList9715 = new BitSet(new long[]{0x0000200000000002L});
-    public static final BitSet FOLLOW_ruleTemplateArgument_in_entryRuleTemplateArgument9760 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTemplateArgument9771 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstantExpression_in_ruleTemplateArgument9818 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeId_in_ruleTemplateArgument9851 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIdExpression_in_ruleTemplateArgument9884 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypenameSpecifier_in_entryRuleTypenameSpecifier9930 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTypenameSpecifier9941 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_82_in_ruleTypenameSpecifier9979 = new BitSet(new long[]{0x0400000000000100L,0x0000000000000000L,0x0000000000041000L});
-    public static final BitSet FOLLOW_58_in_ruleTypenameSpecifier9993 = new BitSet(new long[]{0x0400000000000100L,0x0000000000000000L,0x0000000000041000L});
-    public static final BitSet FOLLOW_ruleNestedNameSpecifier_in_ruleTypenameSpecifier10017 = new BitSet(new long[]{0x0800000000000100L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTypenameSpecifier10038 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_59_in_ruleTypenameSpecifier10064 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTypenameSpecifier10081 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_90_in_ruleTypenameSpecifier10099 = new BitSet(new long[]{0xF400000000000100L,0x00000000010427FFL,0x0000000000041F20L});
-    public static final BitSet FOLLOW_ruleTemplateArgumentList_in_ruleTypenameSpecifier10121 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_91_in_ruleTypenameSpecifier10139 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFunctionTryBlock_in_entryRuleFunctionTryBlock10184 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFunctionTryBlock10195 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_128_in_ruleFunctionTryBlock10233 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000000000C000L});
-    public static final BitSet FOLLOW_ruleCtorInitializer_in_ruleFunctionTryBlock10256 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000000000C000L});
-    public static final BitSet FOLLOW_ruleCompoundStatement_in_ruleFunctionTryBlock10285 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleHandler_in_ruleFunctionTryBlock10313 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleHandler_in_entryRuleHandler10361 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleHandler10372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_129_in_ruleHandler10410 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_44_in_ruleHandler10423 = new BitSet(new long[]{0xF400000000000100L,0x00000000010427FFL,0x0000000000041320L});
-    public static final BitSet FOLLOW_ruleExceptionDeclaration_in_ruleHandler10445 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_46_in_ruleHandler10463 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000000000C000L});
-    public static final BitSet FOLLOW_ruleCompoundStatement_in_ruleHandler10485 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExceptionDeclaration_in_entryRuleExceptionDeclaration10531 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExceptionDeclaration10542 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeSpecifier_in_ruleExceptionDeclaration10591 = new BitSet(new long[]{0xF400000000000102L,0x00000000010427FFL,0x0000000000041B20L});
-    public static final BitSet FOLLOW_ruleDeclaratorId_in_ruleExceptionDeclaration10621 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_88_in_ruleExceptionDeclaration10648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExceptionSpecification_in_entryRuleExceptionSpecification10691 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExceptionSpecification10702 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDynamicExceptionSpecification_in_ruleExceptionSpecification10749 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNoexceptSpecification_in_ruleExceptionSpecification10782 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDynamicExceptionSpecification_in_entryRuleDynamicExceptionSpecification10828 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDynamicExceptionSpecification10839 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_130_in_ruleDynamicExceptionSpecification10877 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_44_in_ruleDynamicExceptionSpecification10890 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000010000L});
-    public static final BitSet FOLLOW_ruleTypeIdList_in_ruleDynamicExceptionSpecification10912 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_46_in_ruleDynamicExceptionSpecification10930 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNoexceptSpecification_in_entryRuleNoexceptSpecification10971 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNoexceptSpecification10982 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_131_in_ruleNoexceptSpecification11020 = new BitSet(new long[]{0x0000100000000002L});
-    public static final BitSet FOLLOW_44_in_ruleNoexceptSpecification11034 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_ruleConstantExpression_in_ruleNoexceptSpecification11056 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_46_in_ruleNoexceptSpecification11074 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression11117 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExpression11128 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_132_in_ruleExpression11165 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleClassKey_in_entryRuleClassKey11205 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleClassKey11216 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_133_in_ruleClassKey11253 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExplicitSpecialization_in_entryRuleExplicitSpecialization11293 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExplicitSpecialization11304 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_134_in_ruleExplicitSpecialization11341 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExplicitInstantiation_in_entryRuleExplicitInstantiation11381 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExplicitInstantiation11392 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_135_in_ruleExplicitInstantiation11429 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleClassSpecifier_in_entryRuleClassSpecifier11469 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleClassSpecifier11480 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_136_in_ruleClassSpecifier11517 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCvQualifier_in_entryRuleCvQualifier11557 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCvQualifier11568 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_137_in_ruleCvQualifier11605 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstantExpression_in_entryRuleConstantExpression11645 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleConstantExpression11656 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_138_in_ruleConstantExpression11693 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIdExpression_in_entryRuleIdExpression11733 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIdExpression11744 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_139_in_ruleIdExpression11781 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNestedNameSpecifier_in_entryRuleNestedNameSpecifier11821 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNestedNameSpecifier11832 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_140_in_ruleNestedNameSpecifier11869 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAssignmentExpression_in_entryRuleAssignmentExpression11909 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAssignmentExpression11920 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_141_in_ruleAssignmentExpression11957 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCompoundStatement_in_entryRuleCompoundStatement11997 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCompoundStatement12008 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_142_in_ruleCompoundStatement12045 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCtorInitializer_in_entryRuleCtorInitializer12085 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCtorInitializer12096 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_143_in_ruleCtorInitializer12133 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeIdList_in_entryRuleTypeIdList12173 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTypeIdList12184 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_144_in_ruleTypeIdList12221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnqualifiedId_in_entryRuleUnqualifiedId12261 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUnqualifiedId12272 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_145_in_ruleUnqualifiedId12309 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleClassName_in_entryRuleClassName12349 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleClassName12360 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_146_in_ruleClassName12397 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInitializer_in_entryRuleInitializer12437 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInitializer12448 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_147_in_ruleInitializer12485 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionBody_in_entryRuleFunctionBody7323 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFunctionBody7334 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCtorInitializer_in_ruleFunctionBody7383 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000000000C000L});
+    public static final BitSet FOLLOW_ruleCompoundStatement_in_ruleFunctionBody7412 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionTryBlock_in_ruleFunctionBody7446 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOperatorFunctionId_in_entryRuleOperatorFunctionId7492 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOperatorFunctionId7503 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_89_in_ruleOperatorFunctionId7541 = new BitSet(new long[]{0x0000248000000000L,0x7FFFFFFF9CC00000L});
+    public static final BitSet FOLLOW_ruleOverloadableOperator_in_ruleOperatorFunctionId7563 = new BitSet(new long[]{0x0000000000000002L,0x0000000004000000L});
+    public static final BitSet FOLLOW_90_in_ruleOperatorFunctionId7582 = new BitSet(new long[]{0xF400000000000100L,0x00000000090427FFL,0x0000000000041F20L});
+    public static final BitSet FOLLOW_ruleConstantExpression_in_ruleOperatorFunctionId7605 = new BitSet(new long[]{0xF400000000000100L,0x00000000090427FFL,0x0000000000041F20L});
+    public static final BitSet FOLLOW_ruleTypeSpecifier_in_ruleOperatorFunctionId7638 = new BitSet(new long[]{0xF400000000000100L,0x00000000090427FFL,0x0000000000041F20L});
+    public static final BitSet FOLLOW_ruleIdExpression_in_ruleOperatorFunctionId7671 = new BitSet(new long[]{0xF400000000000100L,0x00000000090427FFL,0x0000000000041F20L});
+    public static final BitSet FOLLOW_91_in_ruleOperatorFunctionId7691 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOverloadableOperator_in_entryRuleOverloadableOperator7734 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOverloadableOperator7745 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_92_in_ruleOverloadableOperator7783 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_ruleOverloadableOperator7802 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_92_in_ruleOverloadableOperator7822 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleOverloadableOperator7835 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
+    public static final BitSet FOLLOW_94_in_ruleOverloadableOperator7848 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_ruleOverloadableOperator7869 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleOverloadableOperator7882 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
+    public static final BitSet FOLLOW_94_in_ruleOverloadableOperator7895 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_95_in_ruleOverloadableOperator7915 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_96_in_ruleOverloadableOperator7934 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_97_in_ruleOverloadableOperator7953 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_98_in_ruleOverloadableOperator7972 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_99_in_ruleOverloadableOperator7991 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_100_in_ruleOverloadableOperator8010 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_86_in_ruleOverloadableOperator8029 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_101_in_ruleOverloadableOperator8048 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_102_in_ruleOverloadableOperator8067 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_103_in_ruleOverloadableOperator8086 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleOverloadableOperator8105 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_90_in_ruleOverloadableOperator8124 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_91_in_ruleOverloadableOperator8143 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_104_in_ruleOverloadableOperator8162 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_105_in_ruleOverloadableOperator8181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_106_in_ruleOverloadableOperator8200 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_107_in_ruleOverloadableOperator8219 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_108_in_ruleOverloadableOperator8238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_109_in_ruleOverloadableOperator8257 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_110_in_ruleOverloadableOperator8276 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_111_in_ruleOverloadableOperator8295 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_112_in_ruleOverloadableOperator8314 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_113_in_ruleOverloadableOperator8333 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_114_in_ruleOverloadableOperator8352 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_115_in_ruleOverloadableOperator8371 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_116_in_ruleOverloadableOperator8390 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_117_in_ruleOverloadableOperator8409 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_118_in_ruleOverloadableOperator8428 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_119_in_ruleOverloadableOperator8447 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_87_in_ruleOverloadableOperator8466 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_120_in_ruleOverloadableOperator8485 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_121_in_ruleOverloadableOperator8504 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_122_in_ruleOverloadableOperator8523 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_ruleOverloadableOperator8542 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_123_in_ruleOverloadableOperator8561 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_124_in_ruleOverloadableOperator8580 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_125_in_ruleOverloadableOperator8599 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_126_in_ruleOverloadableOperator8618 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteralOperatorId_in_entryRuleLiteralOperatorId8659 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLiteralOperatorId8670 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_89_in_ruleLiteralOperatorId8708 = new BitSet(new long[]{0x0000000000000000L,0x8000000000000000L});
+    public static final BitSet FOLLOW_127_in_ruleLiteralOperatorId8721 = new BitSet(new long[]{0x0000000000000000L,0x8000000000000000L});
+    public static final BitSet FOLLOW_127_in_ruleLiteralOperatorId8734 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTemplateDeclaration_in_entryRuleTemplateDeclaration8775 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTemplateDeclaration8786 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_59_in_ruleTemplateDeclaration8824 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_90_in_ruleTemplateDeclaration8837 = new BitSet(new long[]{0xF7FF800000000100L,0x00000000010467FFL,0x0000000000041320L});
+    public static final BitSet FOLLOW_ruleTemplateParameterList_in_ruleTemplateDeclaration8859 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_91_in_ruleTemplateDeclaration8877 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTemplateParameterList_in_entryRuleTemplateParameterList8918 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTemplateParameterList8929 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTemplateParameter_in_ruleTemplateParameterList8976 = new BitSet(new long[]{0x0000200000000002L});
+    public static final BitSet FOLLOW_45_in_ruleTemplateParameterList8995 = new BitSet(new long[]{0xF7FF800000000100L,0x00000000010467FFL,0x0000000000041320L});
+    public static final BitSet FOLLOW_ruleTemplateParameter_in_ruleTemplateParameterList9017 = new BitSet(new long[]{0x0000200000000002L});
+    public static final BitSet FOLLOW_ruleTemplateParameter_in_entryRuleTemplateParameter9065 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTemplateParameter9076 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeParameter_in_ruleTemplateParameter9123 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParameterDeclaration_in_ruleTemplateParameter9156 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeParameter_in_entryRuleTypeParameter9202 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTypeParameter9213 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_78_in_ruleTypeParameter9252 = new BitSet(new long[]{0x0000008000000102L,0x0000000001000000L});
+    public static final BitSet FOLLOW_82_in_ruleTypeParameter9271 = new BitSet(new long[]{0x0000008000000102L,0x0000000001000000L});
+    public static final BitSet FOLLOW_88_in_ruleTypeParameter9288 = new BitSet(new long[]{0x0000000000000102L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTypeParameter9306 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTypeParameter9337 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_39_in_ruleTypeParameter9357 = new BitSet(new long[]{0xF400000000000100L,0x00000000000427FFL,0x0000000000041320L});
+    public static final BitSet FOLLOW_ruleTypeId_in_ruleTypeParameter9379 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSimpleTemplateId_in_entryRuleSimpleTemplateId9427 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSimpleTemplateId9438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSimpleTemplateId9478 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_90_in_ruleSimpleTemplateId9496 = new BitSet(new long[]{0xF400000000000100L,0x00000000010427FFL,0x0000000000041F20L});
+    public static final BitSet FOLLOW_ruleTemplateArgumentList_in_ruleSimpleTemplateId9518 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_91_in_ruleSimpleTemplateId9536 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTemplateArgumentList_in_entryRuleTemplateArgumentList9579 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTemplateArgumentList9590 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTemplateArgument_in_ruleTemplateArgumentList9637 = new BitSet(new long[]{0x0000200000000002L,0x0000000001000000L});
+    public static final BitSet FOLLOW_88_in_ruleTemplateArgumentList9656 = new BitSet(new long[]{0x0000200000000002L});
+    public static final BitSet FOLLOW_45_in_ruleTemplateArgumentList9672 = new BitSet(new long[]{0xF400000000000100L,0x00000000010427FFL,0x0000000000041F20L});
+    public static final BitSet FOLLOW_ruleTemplateArgument_in_ruleTemplateArgumentList9694 = new BitSet(new long[]{0x0000200000000002L,0x0000000001000000L});
+    public static final BitSet FOLLOW_88_in_ruleTemplateArgumentList9713 = new BitSet(new long[]{0x0000200000000002L});
+    public static final BitSet FOLLOW_ruleTemplateArgument_in_entryRuleTemplateArgument9758 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTemplateArgument9769 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstantExpression_in_ruleTemplateArgument9816 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeId_in_ruleTemplateArgument9849 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIdExpression_in_ruleTemplateArgument9882 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypenameSpecifier_in_entryRuleTypenameSpecifier9928 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTypenameSpecifier9939 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_82_in_ruleTypenameSpecifier9977 = new BitSet(new long[]{0x0400000000000100L,0x0000000000000000L,0x0000000000041000L});
+    public static final BitSet FOLLOW_58_in_ruleTypenameSpecifier9991 = new BitSet(new long[]{0x0400000000000100L,0x0000000000000000L,0x0000000000041000L});
+    public static final BitSet FOLLOW_ruleNestedNameSpecifier_in_ruleTypenameSpecifier10015 = new BitSet(new long[]{0x0800000000000100L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTypenameSpecifier10036 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_59_in_ruleTypenameSpecifier10062 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTypenameSpecifier10079 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_90_in_ruleTypenameSpecifier10097 = new BitSet(new long[]{0xF400000000000100L,0x00000000010427FFL,0x0000000000041F20L});
+    public static final BitSet FOLLOW_ruleTemplateArgumentList_in_ruleTypenameSpecifier10119 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_91_in_ruleTypenameSpecifier10137 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFunctionTryBlock_in_entryRuleFunctionTryBlock10182 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFunctionTryBlock10193 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_128_in_ruleFunctionTryBlock10231 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000000000C000L});
+    public static final BitSet FOLLOW_ruleCtorInitializer_in_ruleFunctionTryBlock10254 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000000000C000L});
+    public static final BitSet FOLLOW_ruleCompoundStatement_in_ruleFunctionTryBlock10283 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleHandler_in_ruleFunctionTryBlock10311 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleHandler_in_entryRuleHandler10359 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleHandler10370 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_129_in_ruleHandler10408 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_44_in_ruleHandler10421 = new BitSet(new long[]{0xF400000000000100L,0x00000000010427FFL,0x0000000000041320L});
+    public static final BitSet FOLLOW_ruleExceptionDeclaration_in_ruleHandler10443 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_46_in_ruleHandler10461 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000000000C000L});
+    public static final BitSet FOLLOW_ruleCompoundStatement_in_ruleHandler10483 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExceptionDeclaration_in_entryRuleExceptionDeclaration10529 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExceptionDeclaration10540 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeSpecifier_in_ruleExceptionDeclaration10589 = new BitSet(new long[]{0xF400000000000102L,0x00000000010427FFL,0x0000000000041B20L});
+    public static final BitSet FOLLOW_ruleDeclaratorId_in_ruleExceptionDeclaration10619 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_88_in_ruleExceptionDeclaration10646 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExceptionSpecification_in_entryRuleExceptionSpecification10689 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExceptionSpecification10700 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDynamicExceptionSpecification_in_ruleExceptionSpecification10747 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNoexceptSpecification_in_ruleExceptionSpecification10780 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDynamicExceptionSpecification_in_entryRuleDynamicExceptionSpecification10826 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDynamicExceptionSpecification10837 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_130_in_ruleDynamicExceptionSpecification10875 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_44_in_ruleDynamicExceptionSpecification10888 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000010000L});
+    public static final BitSet FOLLOW_ruleTypeIdList_in_ruleDynamicExceptionSpecification10910 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_46_in_ruleDynamicExceptionSpecification10928 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNoexceptSpecification_in_entryRuleNoexceptSpecification10969 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNoexceptSpecification10980 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_131_in_ruleNoexceptSpecification11018 = new BitSet(new long[]{0x0000100000000002L});
+    public static final BitSet FOLLOW_44_in_ruleNoexceptSpecification11032 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000400L});
+    public static final BitSet FOLLOW_ruleConstantExpression_in_ruleNoexceptSpecification11054 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_46_in_ruleNoexceptSpecification11072 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression11115 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExpression11126 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_132_in_ruleExpression11163 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleClassKey_in_entryRuleClassKey11203 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleClassKey11214 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_133_in_ruleClassKey11251 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExplicitSpecialization_in_entryRuleExplicitSpecialization11291 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExplicitSpecialization11302 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_134_in_ruleExplicitSpecialization11339 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExplicitInstantiation_in_entryRuleExplicitInstantiation11379 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExplicitInstantiation11390 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_135_in_ruleExplicitInstantiation11427 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleClassSpecifier_in_entryRuleClassSpecifier11467 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleClassSpecifier11478 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_136_in_ruleClassSpecifier11515 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCvQualifier_in_entryRuleCvQualifier11555 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCvQualifier11566 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_137_in_ruleCvQualifier11603 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstantExpression_in_entryRuleConstantExpression11643 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConstantExpression11654 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_138_in_ruleConstantExpression11691 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIdExpression_in_entryRuleIdExpression11731 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleIdExpression11742 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_139_in_ruleIdExpression11779 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNestedNameSpecifier_in_entryRuleNestedNameSpecifier11819 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNestedNameSpecifier11830 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_140_in_ruleNestedNameSpecifier11867 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAssignmentExpression_in_entryRuleAssignmentExpression11907 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAssignmentExpression11918 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_141_in_ruleAssignmentExpression11955 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCompoundStatement_in_entryRuleCompoundStatement11995 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCompoundStatement12006 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_142_in_ruleCompoundStatement12043 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCtorInitializer_in_entryRuleCtorInitializer12083 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCtorInitializer12094 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_143_in_ruleCtorInitializer12131 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeIdList_in_entryRuleTypeIdList12171 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTypeIdList12182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_144_in_ruleTypeIdList12219 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnqualifiedId_in_entryRuleUnqualifiedId12259 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUnqualifiedId12270 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_145_in_ruleUnqualifiedId12307 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleClassName_in_entryRuleClassName12347 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleClassName12358 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_146_in_ruleClassName12395 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInitializer_in_entryRuleInitializer12435 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInitializer12446 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_147_in_ruleInitializer12483 = new BitSet(new long[]{0x0000000000000002L});
 
 }

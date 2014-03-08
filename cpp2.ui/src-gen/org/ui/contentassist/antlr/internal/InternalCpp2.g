@@ -284,25 +284,25 @@ finally {
 
 
 
-// Entry rule entryRuleFunctionDefinitionSuffix
-entryRuleFunctionDefinitionSuffix 
+// Entry rule entryRuleFunctionDeclarationSuffix
+entryRuleFunctionDeclarationSuffix 
 :
-{ before(grammarAccess.getFunctionDefinitionSuffixRule()); }
-	 ruleFunctionDefinitionSuffix
-{ after(grammarAccess.getFunctionDefinitionSuffixRule()); } 
+{ before(grammarAccess.getFunctionDeclarationSuffixRule()); }
+	 ruleFunctionDeclarationSuffix
+{ after(grammarAccess.getFunctionDeclarationSuffixRule()); } 
 	 EOF 
 ;
 
-// Rule FunctionDefinitionSuffix
-ruleFunctionDefinitionSuffix
+// Rule FunctionDeclarationSuffix
+ruleFunctionDeclarationSuffix
     @init {
 		int stackSize = keepStackSize();
     }
 	:
 (
-{ before(grammarAccess.getFunctionDefinitionSuffixAccess().getGroup()); }
-(rule__FunctionDefinitionSuffix__Group__0)
-{ after(grammarAccess.getFunctionDefinitionSuffixAccess().getGroup()); }
+{ before(grammarAccess.getFunctionDeclarationSuffixAccess().getGroup()); }
+(rule__FunctionDeclarationSuffix__Group__0)
+{ after(grammarAccess.getFunctionDeclarationSuffixAccess().getGroup()); }
 )
 
 ;
@@ -1216,8 +1216,6 @@ ruleParameterDeclaration
 finally {
 	restoreStackSize(stackSize);
 }
-
-
 
 
 
@@ -2384,9 +2382,9 @@ rule__SimpleOrFunctionDeclaration__Alternatives_1
 )
 
     |(
-{ before(grammarAccess.getSimpleOrFunctionDeclarationAccess().getFunctionDefinitionSuffixParserRuleCall_1_1()); }
-	ruleFunctionDefinitionSuffix
-{ after(grammarAccess.getSimpleOrFunctionDeclarationAccess().getFunctionDefinitionSuffixParserRuleCall_1_1()); }
+{ before(grammarAccess.getSimpleOrFunctionDeclarationAccess().getFunctionDeclarationSuffixParserRuleCall_1_1()); }
+	ruleFunctionDeclarationSuffix
+{ after(grammarAccess.getSimpleOrFunctionDeclarationAccess().getFunctionDeclarationSuffixParserRuleCall_1_1()); }
 )
 
 ;
@@ -2394,27 +2392,27 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FunctionDefinitionSuffix__Alternatives_1
+rule__FunctionDeclarationSuffix__Alternatives_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFunctionDefinitionSuffixAccess().getFunctionBodyParserRuleCall_1_0()); }
+{ before(grammarAccess.getFunctionDeclarationSuffixAccess().getFunctionBodyParserRuleCall_1_0()); }
 	ruleFunctionBody
-{ after(grammarAccess.getFunctionDefinitionSuffixAccess().getFunctionBodyParserRuleCall_1_0()); }
+{ after(grammarAccess.getFunctionDeclarationSuffixAccess().getFunctionBodyParserRuleCall_1_0()); }
 )
 
     |(
-{ before(grammarAccess.getFunctionDefinitionSuffixAccess().getGroup_1_1()); }
-(rule__FunctionDefinitionSuffix__Group_1_1__0)
-{ after(grammarAccess.getFunctionDefinitionSuffixAccess().getGroup_1_1()); }
+{ before(grammarAccess.getFunctionDeclarationSuffixAccess().getGroup_1_1()); }
+(rule__FunctionDeclarationSuffix__Group_1_1__0)
+{ after(grammarAccess.getFunctionDeclarationSuffixAccess().getGroup_1_1()); }
 )
 
     |(
-{ before(grammarAccess.getFunctionDefinitionSuffixAccess().getGroup_1_2()); }
-(rule__FunctionDefinitionSuffix__Group_1_2__0)
-{ after(grammarAccess.getFunctionDefinitionSuffixAccess().getGroup_1_2()); }
+{ before(grammarAccess.getFunctionDeclarationSuffixAccess().getGroup_1_2()); }
+(rule__FunctionDeclarationSuffix__Group_1_2__0)
+{ after(grammarAccess.getFunctionDeclarationSuffixAccess().getGroup_1_2()); }
 )
 
 ;
@@ -3021,7 +3019,6 @@ rule__ParameterDeclarationClause__Alternatives
 finally {
 	restoreStackSize(stackSize);
 }
-
 
 rule__FunctionBody__Alternatives
     @init {
@@ -3994,27 +3991,27 @@ finally {
 
 
 
-rule__FunctionDefinitionSuffix__Group__0
+rule__FunctionDeclarationSuffix__Group__0
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__FunctionDefinitionSuffix__Group__0__Impl
-	rule__FunctionDefinitionSuffix__Group__1
+	rule__FunctionDeclarationSuffix__Group__0__Impl
+	rule__FunctionDeclarationSuffix__Group__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FunctionDefinitionSuffix__Group__0__Impl
+rule__FunctionDeclarationSuffix__Group__0__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFunctionDefinitionSuffixAccess().getFunctionDeclaratorParserRuleCall_0()); }
+{ before(grammarAccess.getFunctionDeclarationSuffixAccess().getFunctionDeclaratorParserRuleCall_0()); }
 	ruleFunctionDeclarator
-{ after(grammarAccess.getFunctionDefinitionSuffixAccess().getFunctionDeclaratorParserRuleCall_0()); }
+{ after(grammarAccess.getFunctionDeclarationSuffixAccess().getFunctionDeclaratorParserRuleCall_0()); }
 )
 
 ;
@@ -4023,26 +4020,26 @@ finally {
 }
 
 
-rule__FunctionDefinitionSuffix__Group__1
+rule__FunctionDeclarationSuffix__Group__1
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__FunctionDefinitionSuffix__Group__1__Impl
+	rule__FunctionDeclarationSuffix__Group__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FunctionDefinitionSuffix__Group__1__Impl
+rule__FunctionDeclarationSuffix__Group__1__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFunctionDefinitionSuffixAccess().getAlternatives_1()); }
-(rule__FunctionDefinitionSuffix__Alternatives_1)
-{ after(grammarAccess.getFunctionDefinitionSuffixAccess().getAlternatives_1()); }
+{ before(grammarAccess.getFunctionDeclarationSuffixAccess().getAlternatives_1()); }
+(rule__FunctionDeclarationSuffix__Alternatives_1)
+{ after(grammarAccess.getFunctionDeclarationSuffixAccess().getAlternatives_1()); }
 )
 
 ;
@@ -4055,29 +4052,29 @@ finally {
 
 
 
-rule__FunctionDefinitionSuffix__Group_1_1__0
+rule__FunctionDeclarationSuffix__Group_1_1__0
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__FunctionDefinitionSuffix__Group_1_1__0__Impl
-	rule__FunctionDefinitionSuffix__Group_1_1__1
+	rule__FunctionDeclarationSuffix__Group_1_1__0__Impl
+	rule__FunctionDeclarationSuffix__Group_1_1__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FunctionDefinitionSuffix__Group_1_1__0__Impl
+rule__FunctionDeclarationSuffix__Group_1_1__0__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFunctionDefinitionSuffixAccess().getEqualsSignKeyword_1_1_0()); }
+{ before(grammarAccess.getFunctionDeclarationSuffixAccess().getEqualsSignKeyword_1_1_0()); }
 
 	'=' 
 
-{ after(grammarAccess.getFunctionDefinitionSuffixAccess().getEqualsSignKeyword_1_1_0()); }
+{ after(grammarAccess.getFunctionDeclarationSuffixAccess().getEqualsSignKeyword_1_1_0()); }
 )
 
 ;
@@ -4086,29 +4083,29 @@ finally {
 }
 
 
-rule__FunctionDefinitionSuffix__Group_1_1__1
+rule__FunctionDeclarationSuffix__Group_1_1__1
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__FunctionDefinitionSuffix__Group_1_1__1__Impl
-	rule__FunctionDefinitionSuffix__Group_1_1__2
+	rule__FunctionDeclarationSuffix__Group_1_1__1__Impl
+	rule__FunctionDeclarationSuffix__Group_1_1__2
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FunctionDefinitionSuffix__Group_1_1__1__Impl
+rule__FunctionDeclarationSuffix__Group_1_1__1__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFunctionDefinitionSuffixAccess().getDefaultKeyword_1_1_1()); }
+{ before(grammarAccess.getFunctionDeclarationSuffixAccess().getDefaultKeyword_1_1_1()); }
 
 	'default' 
 
-{ after(grammarAccess.getFunctionDefinitionSuffixAccess().getDefaultKeyword_1_1_1()); }
+{ after(grammarAccess.getFunctionDeclarationSuffixAccess().getDefaultKeyword_1_1_1()); }
 )
 
 ;
@@ -4117,28 +4114,28 @@ finally {
 }
 
 
-rule__FunctionDefinitionSuffix__Group_1_1__2
+rule__FunctionDeclarationSuffix__Group_1_1__2
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__FunctionDefinitionSuffix__Group_1_1__2__Impl
+	rule__FunctionDeclarationSuffix__Group_1_1__2__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FunctionDefinitionSuffix__Group_1_1__2__Impl
+rule__FunctionDeclarationSuffix__Group_1_1__2__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFunctionDefinitionSuffixAccess().getSemicolonKeyword_1_1_2()); }
+{ before(grammarAccess.getFunctionDeclarationSuffixAccess().getSemicolonKeyword_1_1_2()); }
 
 	';' 
 
-{ after(grammarAccess.getFunctionDefinitionSuffixAccess().getSemicolonKeyword_1_1_2()); }
+{ after(grammarAccess.getFunctionDeclarationSuffixAccess().getSemicolonKeyword_1_1_2()); }
 )
 
 ;
@@ -4153,29 +4150,29 @@ finally {
 
 
 
-rule__FunctionDefinitionSuffix__Group_1_2__0
+rule__FunctionDeclarationSuffix__Group_1_2__0
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__FunctionDefinitionSuffix__Group_1_2__0__Impl
-	rule__FunctionDefinitionSuffix__Group_1_2__1
+	rule__FunctionDeclarationSuffix__Group_1_2__0__Impl
+	rule__FunctionDeclarationSuffix__Group_1_2__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FunctionDefinitionSuffix__Group_1_2__0__Impl
+rule__FunctionDeclarationSuffix__Group_1_2__0__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFunctionDefinitionSuffixAccess().getEqualsSignKeyword_1_2_0()); }
+{ before(grammarAccess.getFunctionDeclarationSuffixAccess().getEqualsSignKeyword_1_2_0()); }
 
 	'=' 
 
-{ after(grammarAccess.getFunctionDefinitionSuffixAccess().getEqualsSignKeyword_1_2_0()); }
+{ after(grammarAccess.getFunctionDeclarationSuffixAccess().getEqualsSignKeyword_1_2_0()); }
 )
 
 ;
@@ -4184,29 +4181,29 @@ finally {
 }
 
 
-rule__FunctionDefinitionSuffix__Group_1_2__1
+rule__FunctionDeclarationSuffix__Group_1_2__1
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__FunctionDefinitionSuffix__Group_1_2__1__Impl
-	rule__FunctionDefinitionSuffix__Group_1_2__2
+	rule__FunctionDeclarationSuffix__Group_1_2__1__Impl
+	rule__FunctionDeclarationSuffix__Group_1_2__2
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FunctionDefinitionSuffix__Group_1_2__1__Impl
+rule__FunctionDeclarationSuffix__Group_1_2__1__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFunctionDefinitionSuffixAccess().getDeleteKeyword_1_2_1()); }
+{ before(grammarAccess.getFunctionDeclarationSuffixAccess().getDeleteKeyword_1_2_1()); }
 
 	'delete' 
 
-{ after(grammarAccess.getFunctionDefinitionSuffixAccess().getDeleteKeyword_1_2_1()); }
+{ after(grammarAccess.getFunctionDeclarationSuffixAccess().getDeleteKeyword_1_2_1()); }
 )
 
 ;
@@ -4215,28 +4212,28 @@ finally {
 }
 
 
-rule__FunctionDefinitionSuffix__Group_1_2__2
+rule__FunctionDeclarationSuffix__Group_1_2__2
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__FunctionDefinitionSuffix__Group_1_2__2__Impl
+	rule__FunctionDeclarationSuffix__Group_1_2__2__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FunctionDefinitionSuffix__Group_1_2__2__Impl
+rule__FunctionDeclarationSuffix__Group_1_2__2__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFunctionDefinitionSuffixAccess().getSemicolonKeyword_1_2_2()); }
+{ before(grammarAccess.getFunctionDeclarationSuffixAccess().getSemicolonKeyword_1_2_2()); }
 
 	';' 
 
-{ after(grammarAccess.getFunctionDefinitionSuffixAccess().getSemicolonKeyword_1_2_2()); }
+{ after(grammarAccess.getFunctionDeclarationSuffixAccess().getSemicolonKeyword_1_2_2()); }
 )
 
 ;
@@ -7605,9 +7602,6 @@ rule__ParameterDeclaration__Group__1__Impl
 finally {
 	restoreStackSize(stackSize);
 }
-
-
-
 
 
 

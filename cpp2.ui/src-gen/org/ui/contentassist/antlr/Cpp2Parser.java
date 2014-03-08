@@ -44,7 +44,7 @@ public class Cpp2Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getDeclarationAccess().getAlternatives(), "rule__Declaration__Alternatives");
 					put(grammarAccess.getBlockDeclarationAccess().getAlternatives(), "rule__BlockDeclaration__Alternatives");
 					put(grammarAccess.getSimpleOrFunctionDeclarationAccess().getAlternatives_1(), "rule__SimpleOrFunctionDeclaration__Alternatives_1");
-					put(grammarAccess.getFunctionDefinitionSuffixAccess().getAlternatives_1(), "rule__FunctionDefinitionSuffix__Alternatives_1");
+					put(grammarAccess.getFunctionDeclarationSuffixAccess().getAlternatives_1(), "rule__FunctionDeclarationSuffix__Alternatives_1");
 					put(grammarAccess.getDeclarationSpecifierAccess().getAlternatives(), "rule__DeclarationSpecifier__Alternatives");
 					put(grammarAccess.getStorageClassSpecifierAccess().getAlternatives(), "rule__StorageClassSpecifier__Alternatives");
 					put(grammarAccess.getFunctionSpecifierAccess().getAlternatives(), "rule__FunctionSpecifier__Alternatives");
@@ -62,7 +62,6 @@ public class Cpp2Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getParametersAndQualifiersAccess().getAlternatives_3(), "rule__ParametersAndQualifiers__Alternatives_3");
 					put(grammarAccess.getParametersAndQualifiersAccess().getAlternatives_4(), "rule__ParametersAndQualifiers__Alternatives_4");
 					put(grammarAccess.getParameterDeclarationClauseAccess().getAlternatives(), "rule__ParameterDeclarationClause__Alternatives");
-					put(grammarAccess.getFunctionDefinitionAccess().getAlternatives_2(), "rule__FunctionDefinition__Alternatives_2");
 					put(grammarAccess.getFunctionBodyAccess().getAlternatives(), "rule__FunctionBody__Alternatives");
 					put(grammarAccess.getOperatorFunctionIdAccess().getAlternatives_2_1(), "rule__OperatorFunctionId__Alternatives_2_1");
 					put(grammarAccess.getOverloadableOperatorAccess().getAlternatives(), "rule__OverloadableOperator__Alternatives");
@@ -81,9 +80,9 @@ public class Cpp2Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getSimpleDeclarationAccess().getGroup(), "rule__SimpleDeclaration__Group__0");
 					put(grammarAccess.getSimpleOrFunctionDeclarationAccess().getGroup(), "rule__SimpleOrFunctionDeclaration__Group__0");
 					put(grammarAccess.getSimpleDeclarationSuffixAccess().getGroup(), "rule__SimpleDeclarationSuffix__Group__0");
-					put(grammarAccess.getFunctionDefinitionSuffixAccess().getGroup(), "rule__FunctionDefinitionSuffix__Group__0");
-					put(grammarAccess.getFunctionDefinitionSuffixAccess().getGroup_1_1(), "rule__FunctionDefinitionSuffix__Group_1_1__0");
-					put(grammarAccess.getFunctionDefinitionSuffixAccess().getGroup_1_2(), "rule__FunctionDefinitionSuffix__Group_1_2__0");
+					put(grammarAccess.getFunctionDeclarationSuffixAccess().getGroup(), "rule__FunctionDeclarationSuffix__Group__0");
+					put(grammarAccess.getFunctionDeclarationSuffixAccess().getGroup_1_1(), "rule__FunctionDeclarationSuffix__Group_1_1__0");
+					put(grammarAccess.getFunctionDeclarationSuffixAccess().getGroup_1_2(), "rule__FunctionDeclarationSuffix__Group_1_2__0");
 					put(grammarAccess.getStaticAssertDeclarationAccess().getGroup(), "rule__StaticAssertDeclaration__Group__0");
 					put(grammarAccess.getSimpleTypeSpecifierAccess().getGroup_0(), "rule__SimpleTypeSpecifier__Group_0__0");
 					put(grammarAccess.getSimpleTypeSpecifierAccess().getGroup_0_1_1(), "rule__SimpleTypeSpecifier__Group_0_1_1__0");
@@ -122,9 +121,6 @@ public class Cpp2Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getParameterDeclarationListAccess().getGroup(), "rule__ParameterDeclarationList__Group__0");
 					put(grammarAccess.getParameterDeclarationListAccess().getGroup_1(), "rule__ParameterDeclarationList__Group_1__0");
 					put(grammarAccess.getParameterDeclarationAccess().getGroup(), "rule__ParameterDeclaration__Group__0");
-					put(grammarAccess.getFunctionDefinitionAccess().getGroup(), "rule__FunctionDefinition__Group__0");
-					put(grammarAccess.getFunctionDefinitionAccess().getGroup_2_1(), "rule__FunctionDefinition__Group_2_1__0");
-					put(grammarAccess.getFunctionDefinitionAccess().getGroup_2_2(), "rule__FunctionDefinition__Group_2_2__0");
 					put(grammarAccess.getFunctionBodyAccess().getGroup_0(), "rule__FunctionBody__Group_0__0");
 					put(grammarAccess.getOperatorFunctionIdAccess().getGroup(), "rule__OperatorFunctionId__Group__0");
 					put(grammarAccess.getOperatorFunctionIdAccess().getGroup_2(), "rule__OperatorFunctionId__Group_2__0");
