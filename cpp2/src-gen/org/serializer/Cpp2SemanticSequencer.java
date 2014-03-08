@@ -34,7 +34,7 @@ public class Cpp2SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     elements+=FunctionDefinition
+	 *     elements+=Declaration*
 	 */
 	protected void sequence_Test(EObject context, Test semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -4,7 +4,7 @@ generate cpp2 "http://www.Cpp2.org"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Test:
-	(elements += FunctionDefinition);
+	(elements += Declaration)*;
 
 // lex.charset
 terminal fragment HEX_QUAD:
@@ -282,12 +282,142 @@ terminal fragment ENC_PREFIX:
 terminal fragment SCHAR:
 	!('\"' | '\\' | '\n') | ESCAPE_SEQUENCE | UNIVERSAL_CHARACTER_NAME;
 
+// stmt.dcl
+DeclarationStatement:
+	SimpleDeclaration |
+	BlockDeclaration;
+	
+// dcl.dcl
+Declaration:
+	SimpleOrFunctionDeclaration |
+	BlockDeclaration |
+	TemplateDeclaration |
+	ExplicitInstantiation |
+	ExplicitSpecialization |
+	LinkageSpecification |
+	NamespaceDefinition;
+
+BlockDeclaration:
+	AsmDefinition |
+	NamespaceAliasDefinition |
+	UsingDeclaration |
+	StaticAssertDeclaration |
+	AliasDeclaration;
+
+AliasDeclaration:
+	'using' ID '=' TypeId ';';
+
+SimpleDeclaration:
+	DeclarationSpecifier* SimpleDeclarationSuffix;
+
+SimpleOrFunctionDeclaration:
+	DeclarationSpecifier* (SimpleDeclarationSuffix | FunctionDeclarationSuffix);
+
+SimpleDeclarationSuffix:
+	InitDeclaratorList? ';';
+
+FunctionDeclarationSuffix:
+	FunctionDeclarator (FunctionBody | '=' 'default' ';' | '=' 'delete' ';');
+
+StaticAssertDeclaration:
+	'static_assert' '(' ConstantExpression ',' STRING_LITERAL ')' ';';
+
+// dcl.spec
+DeclarationSpecifier:
+	StorageClassSpecifier |
+	TypeSpecifier |
+	FunctionSpecifier |
+	'friend' |
+	'typedef' |
+	'constexpr';
+
+// dcl.stc
+StorageClassSpecifier:
+	'register' |
+	'static' |
+	'thread_local' |
+	'extern' |
+	'mutable';
+
+// dcl.fct.spec
+FunctionSpecifier:
+	'inline' |
+	'virtual' |
+	'explicit';
+
+// dcl.type
+TypeSpecifier:
+	TrailingTypeSpecifier |
+	ClassSpecifier |
+	EnumSpecifier;
+
+TrailingTypeSpecifier:
+	SimpleTypeSpecifier |
+	ElaboratedTypeSpecifier |
+	TypenameSpecifier |
+	CvQualifier;
+
+// dct.type.simple
+SimpleTypeSpecifier:
+	'::'? (TypeName | NestedNameSpecifier (TypeName | 'template' SimpleTemplateId)) |
+	'char' |
+	'char16_t' |
+	'char32_t' |
+	'wchar_t' |
+	'bool' |
+	'short' |
+	'int' |
+	'long' |
+	'signed' |
+	'unsigned' |
+	'float' |
+	'double' |
+	'void' |
+	'auto' |
+	DeclarationTypeSpecifier;
+
+TypeName:
+	ClassName |
+	SimpleTemplateId |
+	ID ;
+
+DeclarationTypeSpecifier:
+	'decltype' '(' Expression ')';
+
+// dcl.type.elab
+ElaboratedTypeSpecifier:
+	ClassKey '::'? NestedNameSpecifier? (ID | 'template'? SimpleTemplateId);
+
+// dcl.enum
+EnumName:
+	ID;
+
+EnumSpecifier:
+	EnumHead '{' (EnumeratorList ','?)? '}';
+
+EnumHead:
+	EnumKey (ID? | NestedNameSpecifier ID) EnumBase?;
+
+EnumKey:
+	'enum' |
+	'enum' 'class' |
+	'enum' 'struct';
+	
+EnumBase:
+	':' TypeSpecifier+;
+
+EnumeratorList:
+	EnumerationDefinition (',' EnumerationDefinition)*;
+
+EnumerationDefinition:
+	Enumerator ('=' ConstantExpression)?;
+
+Enumerator:
+	ID;
+
 // namespace.def
 NamespaceDefinition:
-	'inline'? 'namespace' ID? '{' NamespaceBody '}';
-
-NamespaceBody:
-	Declaration*;
+	'inline'? 'namespace' ID? '{' Declaration* '}';
 
 // namespace.alias
 NamespaceAliasDefinition:
@@ -298,12 +428,11 @@ QualifiedNamespaceSpecifier:
 
 // namespace.udecl
 UsingDeclaration:
-	'using' 'typename'? '::'? NestedNameSpecifier UnqualifiedId ';' |
-	'using' '::' UnqualifiedId ';';
+	'using' ('::' | 'typename'? '::'? NestedNameSpecifier) UnqualifiedId ';';
 
 // namespace.udir
 UsingDirective:
-	AttributeSpecifier* 'using' 'namespace' '::'? NestedNameSpecifier? ID ';';
+	'using' 'namespace' '::'? NestedNameSpecifier? ID ';';
 
 // dcl.asm
 AsmDefinition:
@@ -313,41 +442,21 @@ AsmDefinition:
 LinkageSpecification:
 	'extern' STRING_LITERAL (Declaration | '{' Declaration* '}');
 
-// dcl.attr.grammar
-AttributeSpecifier:
-	'[' '[' AttributeList ']' ']';
-
-AttributeList:
-	(Attribute '...'?) (',' (Attribute '...'?)?)*;
-
-Attribute:
-	AttributeToken AttributeArgumentClause?;
-
-AttributeToken:
-	(ID '::')? ID;
-
-AttributeArgumentClause:
-	'(' Token ')';
-
 // dcl.decl
-InitDeclarator:
-	Declarator Initializer?;
+InitDeclaratorList:
+	InitDeclarator (',' InitDeclarator)*;
 
-Declarator:
-	NoptrDeclarator;
+InitDeclarator:
+	DeclaratorId Initializer?;
 
 FunctionDeclarator:
-	TemplateDeclaration? NoptrDeclarator ParametersAndQualifiers;
-
-NoptrDeclarator:
-	DeclaratorId;
+	DeclaratorId ParametersAndQualifiers;
 
 ParametersAndQualifiers:
-	'(' ParameterDeclarationClause? ')' AttributeSpecifier* ('const' | 'volatile')? ('&' | '&&')? ExceptionSpecification?;
+	'(' ParameterDeclarationClause? ')' ('const' | 'volatile')? ('&' | '&&')? ExceptionSpecification?;
 
 DeclaratorId:
-	'...'? IdExpression |
-	'::'? NestedNameSpecifier? ClassName;
+	'...'? IdExpression;
 
 // dcl.name
 TypeId:
@@ -362,11 +471,11 @@ ParameterDeclarationList:
 	ParameterDeclaration (',' ParameterDeclaration)*;
 
 ParameterDeclaration:
-	AttributeSpecifier* DeclarationSpecifier+ InitDeclarator;
+	DeclarationSpecifier+ InitDeclarator;
 
 // dcl.fct.def.general
 FunctionDefinition:
-	AttributeSpecifier* DeclarationSpecifier* FunctionDeclarator (FunctionBody | '=' 'default' ';' | '=' 'delete' ';');
+	DeclarationSpecifier* FunctionDeclarator (FunctionBody | '=' 'default' ';' | '=' 'delete' ';');
 
 FunctionBody:
 	CtorInitializer? CompoundStatement |
@@ -439,8 +548,12 @@ TypeParameter:
 	//'template' '<' TemplateParameterList '>' 'class' ('...'? ID? | ID? '=' IdExpression);
 
 // temp.names
+SimpleTemplateId:
+	ID '<' TemplateArgumentList '>';
+
 TemplateId:
-	(ID | OperatorFunctionId | LiteralOperatorId) '<' TemplateArgumentList '>';
+	SimpleTemplateId |
+	(OperatorFunctionId | LiteralOperatorId) '<' TemplateArgumentList '>';
 
 TemplateArgumentList:
 	TemplateArgument '...'? (',' TemplateArgument '...'?)*;
@@ -465,10 +578,8 @@ Handler:
 	'catch' '(' ExceptionDeclaration ')' CompoundStatement;
 
 ExceptionDeclaration:
-	AttributeSpecifier* TypeSpecifier+ Declarator? | 
+	TypeSpecifier+ DeclaratorId? | 
 	'...';
-	// AttributeSpecifier* TypeSpecifier+ (Declarator | AbstractDeclarator)?
-	// It cannot decide between Declarator and AbstractDeclarator. Do they should be merged?
 	
 ThrowExpression:
 	'throw' AssignmentExpression?;
@@ -488,6 +599,30 @@ NoexceptSpecification:
 
 // DUMMY
 
+Expression:
+	'Expression'
+;
+
+ClassKey:
+	'ClassKey'
+;
+
+ExplicitSpecialization:
+	'ExplicitSpecialization'
+;
+
+ExplicitInstantiation:
+	'ExplicitInstantiation'
+;
+
+ClassSpecifier:
+	'ClassSpecifier'
+;
+
+CvQualifier:
+	'CvQualifier'
+;
+
 ConstantExpression:
 	'ConstantExpression'
 ;
@@ -496,28 +631,12 @@ IdExpression:
 	'IdExpression'
 ;
 
-DeclarationSpecifier:
-	'DeclarationSpecifier'
-;
-
-Declaration:
-	'Declaration'
-;
-
 NestedNameSpecifier:
 	'NestedNameSpecifier'
 ;
 
 AssignmentExpression:
 	'AssignmentExpression'
-;
-
-AlignmentExpression:
-	'AlignmentExpression'
-;
-
-TypeSpecifier:
-	'TypeSpecifier'
 ;
 
 CompoundStatement:
