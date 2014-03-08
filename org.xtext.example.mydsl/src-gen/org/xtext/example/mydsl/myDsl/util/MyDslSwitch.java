@@ -136,6 +136,13 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MyDslPackage.JUMP_STATEMENT:
+      {
+        jump_statement jump_statement = (jump_statement)theEObject;
+        T result = casejump_statement(jump_statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MyDslPackage.DECLARATION_STATEMENT:
       {
         declaration_statement declaration_statement = (declaration_statement)theEObject;
@@ -171,6 +178,22 @@ public class MyDslSwitch<T> extends Switch<T>
         UnknownType unknownType = (UnknownType)theEObject;
         T result = caseUnknownType(unknownType);
         if (result == null) result = casesimple_type_specifier(unknownType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.JUMP:
+      {
+        jump jump = (jump)theEObject;
+        T result = casejump(jump);
+        if (result == null) result = casestatement(jump);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.RETURN:
+      {
+        Return return_ = (Return)theEObject;
+        T result = caseReturn(return_);
+        if (result == null) result = casejump_statement(return_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -323,6 +346,22 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>jump statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>jump statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casejump_statement(jump_statement object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>declaration statement</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -398,6 +437,38 @@ public class MyDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseUnknownType(UnknownType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>jump</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>jump</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casejump(jump object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Return</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Return</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReturn(Return object)
   {
     return null;
   }

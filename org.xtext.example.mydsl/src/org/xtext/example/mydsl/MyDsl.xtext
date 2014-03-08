@@ -19,7 +19,16 @@ Model:
  	Body;
 
 Body:
-	{Body} preprocessing_file funcoes += FunctionDeclaration*
+	{Body} 
+	preprocessing_file
+	// (structs += StructDeclaration)* |
+	// (classes += ClassDeclaration)* |
+	// (structs += StructDeclaration)* |
+	// (structs += StructDeclaration)* |
+	(variaveis += VarDecl |
+	 funcoes += FunctionDeclaration
+	)*
+	
 ;
 
 // INCLUDE, DEFINES
@@ -118,7 +127,7 @@ simple_type_specifier:
 statement:
 //	expression_statement|
 //	compound_statement|
-//	jump_statement|
+	{jump} jump = jump_statement|
 	{statement} variavel = declaration_statement
 //	selection_statement
 	;
@@ -141,7 +150,7 @@ simple_declaration:
 //	
 //statement_seq:
 //	(statement)+;
-//selection_statement:
+//\\selection_statement:
 //	'if (' condition ')' statement |
 //	'if (' condition ')' statement |
 //	'switch (' condition ')' statement;
@@ -151,12 +160,17 @@ simple_declaration:
 //condition:
 //	expression
 //;
-//jump_statement:
-//	'break;'|
-//	'continue;'|
-//	'return' expression?';'|
-//	'goto' ID';'
-//;
+
+jump_statement:
+	'break;'|
+	'continue;'|
+	{Return}'return' exp=expression?';'|
+	'goto' ID';'
+;
+
+expression:
+	"--DUMMY--"
+;
 declaration_statement:
 	(variaveis += block_declaration)+
 ;
@@ -167,151 +181,4 @@ block_declaration:
 ;
 
 
-/* 	
-conditional_expression:
-//	logical_or_expression |
-	logical_or_expression ('?' expression ':' assignment_expression)?;
-
-logical_or_expression:
-	logical_and_expression ('||' logical_and_expression )*;
-
-logical_and_expression:
-	inclusive_or_expression ('&&' inclusive_or_expression)*;
-
-inclusive_or_expression:
-	exclusive_or_expression ('|' exclusive_or_expression)*;
-
-exclusive_or_expression:
-	and_expression ('^' and_expression)*;
-
-and_expression:
-	equality_expression ('&' equality_expression)*;
-
-equality_expression:
-	relational_expression (('==' | '!=') relational_expression)*;
-
-relational_expression:
-	shift_expression (('<' | '>' | '<=' | '>=') shift_expression)*;
-
-shift_expression:
-	additive_expression (('<<' | '>>') additive_expression)*;
-
-additive_expression:
-	multiplicative_expression (SIGN multiplicative_expression)*;
-
-multiplicative_expression:
-	pm_expression (('*' | '/' | '%') pm_expression)*;
-
-pm_expression:
-	cast_expression (('.*' | '->*') cast_expression)*;
-
-cast_expression:
-	('(' ID ')')* unary_expression;
-	//TODO replace ID with type_id, I guess
-
-unary_expression:
-	('sizeof')* postfix_expression |
-	('sizeof')* ('++' | '--' | unary_operator ) cast_expression |
-	'sizeof' '(' ID ')' |//TODO replace ID with type_id
-	('sizeof')* new_expression |
-	('sizeof')* delete_expression;
-
-postfix_expression:
-	primary_expression ('[' expression ']' |
-						'(' expression_list? ')' |
-						'.' 'template'? (ID) | //TODO replace ID with id_expression
-						'->' 'template'? (ID) | //TODO replace ID with id_expression
-						'++' |
-						'--')*;
-
-primary_expression:
-	'==primary==';
-
-pseudo_destructor_name:
-	'::'? nested_name_specifier? type_name '::' '~' type_name |
-	'::'? nested_name_specifier => 'template' template_id '::' '~' type_name;
-
-nested_name_specifier:
-	class_or_namespace_name '::' nested_name_specifier?;
-//	class_or_namespace_name '::' => 'template' nested_name_specifier;
 	
-
-class_or_namespace_name:
-	class_name | namespace_name;
-
-class_name:
-	ID | template_id;
-
-namespace_name:
-	'==namespace==';
-
-type_name:
-	'==type_name==';
-
-template_id:
-	ID '<' template_argument_list? '>' 'class';
-
-template_argument_list:
-	template_argument (',' template_argument)*;
-
-template_argument:
-	assignment_expression |
-	id_expression;
-
-id_expression:
-	unqualified_id |
-	qualified_id;
-
-unqualified_id:
-	ID |
-	operator_function_id |
-	conversion_function_id |
-	'~' class_name |
-	template_id;
-
-operator_function_id:
-	'operator' operator;
-
-operator:
-	'new' | 'delete' | 'new[]' | 'delete[]' | '+' | '-' | '*' | '/' | '%' | '^' | '&' | '|' | '~' | '!' | '=' | '<' | '>' |
-	'+=' | '-=' | '*=' | '/=' | '%=' | '^=' | '&=' | '|=' | '<<' | '>>' | '<<=' | '>>=' | '==' | '!=' | '<=' | '>=' | '&&' |
-	'||' | '++' | '--' | ',' | '->*' | '->' | '()' | '[]';
-
-conversion_function_id:
-	'operator' conversion_type_id;
-
-conversion_type_id:
-	type_specifier_seq conversion_declarator?;
-
-conversion_declarator:
-	'==conversion==';
-
-type_specifier_seq:
-	type_specifier+;
-
-type_specifier:
-	'==type_specifier==';
-
-qualified_id:
-	'==qualified==';
-
-new_expression:
-	'==new==';
-
-delete_expression:
-	'==delete==';
-
-unary_operator:
-	('*' | '&' | '+' | '-' | '!' | '~');
-
-expression_list:
-	assignment_expression (',' assignment_expression)*;
-
-expression:
-	'==expression==';
-
-assignment_expression:
-	'==assignment==';
-
-*/
-

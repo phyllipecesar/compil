@@ -104,6 +104,15 @@ public interface MyDslFactory extends EFactory
   simple_declaration createsimple_declaration();
 
   /**
+   * Returns a new object of class '<em>jump statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>jump statement</em>'.
+   * @generated
+   */
+  jump_statement createjump_statement();
+
+  /**
    * Returns a new object of class '<em>declaration statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -147,6 +156,24 @@ public interface MyDslFactory extends EFactory
    * @generated
    */
   UnknownType createUnknownType();
+
+  /**
+   * Returns a new object of class '<em>jump</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>jump</em>'.
+   * @generated
+   */
+  jump createjump();
+
+  /**
+   * Returns a new object of class '<em>Return</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Return</em>'.
+   * @generated
+   */
+  Return createReturn();
 
   /**
    * Returns the package supported by this factory.

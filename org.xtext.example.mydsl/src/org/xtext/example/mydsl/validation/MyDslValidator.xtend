@@ -16,6 +16,8 @@ import org.xtext.example.mydsl.myDsl.block_declaration
 import org.xtext.example.mydsl.myDsl.Body
 import org.xtext.example.mydsl.myDsl.FunctionDeclaration
 import org.xtext.example.mydsl.myDsl.Parameter
+import org.xtext.example.mydsl.myDsl.Return
+import org.antlr.misc.Utils
 
 /**
  * Custom validation rules. 
@@ -65,6 +67,25 @@ def checkFunctionAlreadyExists(Body b) {
 		}
 		hash.add(row);
 	}
+}
+
+@Check
+def checkReturnOnlyOnFunction(Return r) {
+	if (r.eContainer == null) {
+			error( "return can only be used inside of functions", r, null, -1);
+	}
+	System.out.println(r.eContainer.class);
+	if (r.eContainer.eContainer == null) {
+			error( "return can only be used inside of functions", r, null, -1);
+	}
+	if (r.eContainer.eContainer.eContainer == null) {
+			error( "return can only be used inside of functions", r, null, -1);
+	}
+	
+	if (r.eContainer.eContainer.eContainer.eContainer.class != FunctionDeclaration) {
+			error( "return can only be used inside of functions", r, null, -1);
+	}
+	
 }
 @Check
 def checkVariableAlreadyExists(statement st) {

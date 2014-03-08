@@ -17,11 +17,14 @@ import org.xtext.example.mydsl.myDsl.Model;
 import org.xtext.example.mydsl.myDsl.MyDslFactory;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.Parameter;
+import org.xtext.example.mydsl.myDsl.Return;
 import org.xtext.example.mydsl.myDsl.Type;
 import org.xtext.example.mydsl.myDsl.UnknownType;
 import org.xtext.example.mydsl.myDsl.VarDecl;
 import org.xtext.example.mydsl.myDsl.block_declaration;
 import org.xtext.example.mydsl.myDsl.declaration_statement;
+import org.xtext.example.mydsl.myDsl.jump;
+import org.xtext.example.mydsl.myDsl.jump_statement;
 import org.xtext.example.mydsl.myDsl.simple_declaration;
 import org.xtext.example.mydsl.myDsl.simple_type_specifier;
 import org.xtext.example.mydsl.myDsl.statement;
@@ -102,6 +105,13 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass jump_statementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass declaration_statementEClass = null;
 
   /**
@@ -131,6 +141,20 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   private EClass unknownTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass jumpEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass returnEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -220,9 +244,19 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBody_Funcoes()
+  public EReference getBody_Variaveis()
   {
     return (EReference)bodyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBody_Funcoes()
+  {
+    return (EReference)bodyEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -420,6 +454,16 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getjump_statement()
+  {
+    return jump_statementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getdeclaration_statement()
   {
     return declaration_statementEClass;
@@ -490,6 +534,46 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getjump()
+  {
+    return jumpEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getjump_Jump()
+  {
+    return (EReference)jumpEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getReturn()
+  {
+    return returnEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getReturn_Exp()
+  {
+    return (EAttribute)returnEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public MyDslFactory getMyDslFactory()
   {
     return (MyDslFactory)getEFactoryInstance();
@@ -518,6 +602,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     modelEClass = createEClass(MODEL);
 
     bodyEClass = createEClass(BODY);
+    createEReference(bodyEClass, BODY__VARIAVEIS);
     createEReference(bodyEClass, BODY__FUNCOES);
 
     functionDeclarationEClass = createEClass(FUNCTION_DECLARATION);
@@ -546,6 +631,8 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     simple_declarationEClass = createEClass(SIMPLE_DECLARATION);
     createEReference(simple_declarationEClass, SIMPLE_DECLARATION__VARIAVEL);
 
+    jump_statementEClass = createEClass(JUMP_STATEMENT);
+
     declaration_statementEClass = createEClass(DECLARATION_STATEMENT);
     createEReference(declaration_statementEClass, DECLARATION_STATEMENT__VARIAVEIS);
 
@@ -557,6 +644,12 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     boolTypeEClass = createEClass(BOOL_TYPE);
 
     unknownTypeEClass = createEClass(UNKNOWN_TYPE);
+
+    jumpEClass = createEClass(JUMP);
+    createEReference(jumpEClass, JUMP__JUMP);
+
+    returnEClass = createEClass(RETURN);
+    createEAttribute(returnEClass, RETURN__EXP);
   }
 
   /**
@@ -592,11 +685,14 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     intTypeEClass.getESuperTypes().add(this.getsimple_type_specifier());
     boolTypeEClass.getESuperTypes().add(this.getsimple_type_specifier());
     unknownTypeEClass.getESuperTypes().add(this.getsimple_type_specifier());
+    jumpEClass.getESuperTypes().add(this.getstatement());
+    returnEClass.getESuperTypes().add(this.getjump_statement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(bodyEClass, Body.class, "Body", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBody_Variaveis(), this.getVarDecl(), null, "variaveis", null, 0, -1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBody_Funcoes(), this.getFunctionDeclaration(), null, "funcoes", null, 0, -1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionDeclarationEClass, FunctionDeclaration.class, "FunctionDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -625,6 +721,8 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEClass(simple_declarationEClass, simple_declaration.class, "simple_declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getsimple_declaration_Variavel(), this.getVarDecl(), null, "variavel", null, 0, 1, simple_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(jump_statementEClass, jump_statement.class, "jump_statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(declaration_statementEClass, declaration_statement.class, "declaration_statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getdeclaration_statement_Variaveis(), this.getblock_declaration(), null, "variaveis", null, 0, -1, declaration_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -636,6 +734,12 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEClass(boolTypeEClass, BoolType.class, "BoolType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(unknownTypeEClass, UnknownType.class, "UnknownType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(jumpEClass, jump.class, "jump", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getjump_Jump(), this.getjump_statement(), null, "jump", null, 0, 1, jump.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(returnEClass, Return.class, "Return", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getReturn_Exp(), ecorePackage.getEString(), "exp", null, 0, 1, Return.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

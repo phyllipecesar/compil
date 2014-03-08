@@ -120,6 +120,11 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createsimple_declarationAdapter();
       }
       @Override
+      public Adapter casejump_statement(jump_statement object)
+      {
+        return createjump_statementAdapter();
+      }
+      @Override
       public Adapter casedeclaration_statement(declaration_statement object)
       {
         return createdeclaration_statementAdapter();
@@ -143,6 +148,16 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseUnknownType(UnknownType object)
       {
         return createUnknownTypeAdapter();
+      }
+      @Override
+      public Adapter casejump(jump object)
+      {
+        return createjumpAdapter();
+      }
+      @Override
+      public Adapter caseReturn(Return object)
+      {
+        return createReturnAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -302,6 +317,21 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.jump_statement <em>jump statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.myDsl.jump_statement
+   * @generated
+   */
+  public Adapter createjump_statementAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.declaration_statement <em>declaration statement</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -372,6 +402,36 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createUnknownTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.jump <em>jump</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.myDsl.jump
+   * @generated
+   */
+  public Adapter createjumpAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Return <em>Return</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.myDsl.Return
+   * @generated
+   */
+  public Adapter createReturnAdapter()
   {
     return null;
   }

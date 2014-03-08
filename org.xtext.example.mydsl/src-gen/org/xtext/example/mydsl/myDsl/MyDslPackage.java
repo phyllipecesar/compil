@@ -86,13 +86,22 @@ public interface MyDslPackage extends EPackage
   int BODY = 1;
 
   /**
+   * The feature id for the '<em><b>Variaveis</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BODY__VARIAVEIS = MODEL_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Funcoes</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BODY__FUNCOES = MODEL_FEATURE_COUNT + 0;
+  int BODY__FUNCOES = MODEL_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Body</em>' class.
@@ -101,7 +110,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BODY_FEATURE_COUNT = MODEL_FEATURE_COUNT + 1;
+  int BODY_FEATURE_COUNT = MODEL_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.FunctionDeclarationImpl <em>Function Declaration</em>}' class.
@@ -345,6 +354,25 @@ public interface MyDslPackage extends EPackage
   int SIMPLE_DECLARATION_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.jump_statementImpl <em>jump statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.jump_statementImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getjump_statement()
+   * @generated
+   */
+  int JUMP_STATEMENT = 9;
+
+  /**
+   * The number of structural features of the '<em>jump statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JUMP_STATEMENT_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.declaration_statementImpl <em>declaration statement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -352,7 +380,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getdeclaration_statement()
    * @generated
    */
-  int DECLARATION_STATEMENT = 9;
+  int DECLARATION_STATEMENT = 10;
 
   /**
    * The feature id for the '<em><b>Variaveis</b></em>' containment reference list.
@@ -380,7 +408,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getblock_declaration()
    * @generated
    */
-  int BLOCK_DECLARATION = 10;
+  int BLOCK_DECLARATION = 11;
 
   /**
    * The feature id for the '<em><b>Variavel</b></em>' containment reference.
@@ -408,7 +436,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getIntType()
    * @generated
    */
-  int INT_TYPE = 11;
+  int INT_TYPE = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -436,7 +464,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getBoolType()
    * @generated
    */
-  int BOOL_TYPE = 12;
+  int BOOL_TYPE = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -464,7 +492,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getUnknownType()
    * @generated
    */
-  int UNKNOWN_TYPE = 13;
+  int UNKNOWN_TYPE = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -483,6 +511,71 @@ public interface MyDslPackage extends EPackage
    * @ordered
    */
   int UNKNOWN_TYPE_FEATURE_COUNT = SIMPLE_TYPE_SPECIFIER_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.jumpImpl <em>jump</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.jumpImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getjump()
+   * @generated
+   */
+  int JUMP = 15;
+
+  /**
+   * The feature id for the '<em><b>Variavel</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JUMP__VARIAVEL = STATEMENT__VARIAVEL;
+
+  /**
+   * The feature id for the '<em><b>Jump</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JUMP__JUMP = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>jump</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JUMP_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.ReturnImpl <em>Return</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.ReturnImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getReturn()
+   * @generated
+   */
+  int RETURN = 16;
+
+  /**
+   * The feature id for the '<em><b>Exp</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN__EXP = JUMP_STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Return</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_FEATURE_COUNT = JUMP_STATEMENT_FEATURE_COUNT + 1;
 
 
   /**
@@ -504,6 +597,17 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EClass getBody();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Body#getVariaveis <em>Variaveis</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Variaveis</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Body#getVariaveis()
+   * @see #getBody()
+   * @generated
+   */
+  EReference getBody_Variaveis();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Body#getFuncoes <em>Funcoes</em>}'.
@@ -719,6 +823,16 @@ public interface MyDslPackage extends EPackage
   EReference getsimple_declaration_Variavel();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.jump_statement <em>jump statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>jump statement</em>'.
+   * @see org.xtext.example.mydsl.myDsl.jump_statement
+   * @generated
+   */
+  EClass getjump_statement();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.declaration_statement <em>declaration statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -791,6 +905,48 @@ public interface MyDslPackage extends EPackage
   EClass getUnknownType();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.jump <em>jump</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>jump</em>'.
+   * @see org.xtext.example.mydsl.myDsl.jump
+   * @generated
+   */
+  EClass getjump();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.jump#getJump <em>Jump</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Jump</em>'.
+   * @see org.xtext.example.mydsl.myDsl.jump#getJump()
+   * @see #getjump()
+   * @generated
+   */
+  EReference getjump_Jump();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Return <em>Return</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Return</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Return
+   * @generated
+   */
+  EClass getReturn();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Return#getExp <em>Exp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Exp</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Return#getExp()
+   * @see #getReturn()
+   * @generated
+   */
+  EAttribute getReturn_Exp();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -832,6 +988,14 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EClass BODY = eINSTANCE.getBody();
+
+    /**
+     * The meta object literal for the '<em><b>Variaveis</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BODY__VARIAVEIS = eINSTANCE.getBody_Variaveis();
 
     /**
      * The meta object literal for the '<em><b>Funcoes</b></em>' containment reference list feature.
@@ -1008,6 +1172,16 @@ public interface MyDslPackage extends EPackage
     EReference SIMPLE_DECLARATION__VARIAVEL = eINSTANCE.getsimple_declaration_Variavel();
 
     /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.jump_statementImpl <em>jump statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.jump_statementImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getjump_statement()
+     * @generated
+     */
+    EClass JUMP_STATEMENT = eINSTANCE.getjump_statement();
+
+    /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.declaration_statementImpl <em>declaration statement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1072,6 +1246,42 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EClass UNKNOWN_TYPE = eINSTANCE.getUnknownType();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.jumpImpl <em>jump</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.jumpImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getjump()
+     * @generated
+     */
+    EClass JUMP = eINSTANCE.getjump();
+
+    /**
+     * The meta object literal for the '<em><b>Jump</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference JUMP__JUMP = eINSTANCE.getjump_Jump();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.ReturnImpl <em>Return</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.ReturnImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getReturn()
+     * @generated
+     */
+    EClass RETURN = eINSTANCE.getReturn();
+
+    /**
+     * The meta object literal for the '<em><b>Exp</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RETURN__EXP = eINSTANCE.getReturn_Exp();
 
   }
 

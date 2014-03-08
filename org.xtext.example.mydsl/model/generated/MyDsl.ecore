@@ -3,6 +3,8 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="myDsl" nsURI="http://www.xtext.org/example/mydsl/MyDsl" nsPrefix="myDsl">
   <eClassifiers xsi:type="ecore:EClass" name="Model"/>
   <eClassifiers xsi:type="ecore:EClass" name="Body" eSuperTypes="#//Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variaveis" upperBound="-1"
+        eType="#//VarDecl" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="funcoes" upperBound="-1"
         eType="#//FunctionDeclaration" containment="true"/>
   </eClassifiers>
@@ -37,6 +39,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="variavel" eType="#//VarDecl"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="jump_statement"/>
   <eClassifiers xsi:type="ecore:EClass" name="declaration_statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variaveis" upperBound="-1"
         eType="#//block_declaration" containment="true"/>
@@ -48,4 +51,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="IntType" eSuperTypes="#//simple_type_specifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="BoolType" eSuperTypes="#//simple_type_specifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="UnknownType" eSuperTypes="#//simple_type_specifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="jump" eSuperTypes="#//statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jump" eType="#//jump_statement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Return" eSuperTypes="#//jump_statement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

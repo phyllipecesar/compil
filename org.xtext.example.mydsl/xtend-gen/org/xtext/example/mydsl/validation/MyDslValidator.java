@@ -3,13 +3,16 @@
  */
 package org.xtext.example.mydsl.validation;
 
+import com.google.common.base.Objects;
 import java.util.HashSet;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.xtext.example.mydsl.myDsl.Body;
 import org.xtext.example.mydsl.myDsl.FunctionDeclaration;
 import org.xtext.example.mydsl.myDsl.Parameter;
+import org.xtext.example.mydsl.myDsl.Return;
 import org.xtext.example.mydsl.myDsl.Type;
 import org.xtext.example.mydsl.myDsl.VarDecl;
 import org.xtext.example.mydsl.myDsl.block_declaration;
@@ -110,6 +113,40 @@ public class MyDslValidator extends AbstractMyDslValidator {
         }
         this.hash.add(this.row);
       }
+    }
+  }
+  
+  @Check
+  public void checkReturnOnlyOnFunction(final Return r) {
+    EObject _eContainer = r.eContainer();
+    boolean _equals = Objects.equal(_eContainer, null);
+    if (_equals) {
+      this.error("return can only be used inside of functions", r, null, (-1));
+    }
+    EObject _eContainer_1 = r.eContainer();
+    Class<? extends EObject> _class = _eContainer_1.getClass();
+    System.out.println(_class);
+    EObject _eContainer_2 = r.eContainer();
+    EObject _eContainer_3 = _eContainer_2.eContainer();
+    boolean _equals_1 = Objects.equal(_eContainer_3, null);
+    if (_equals_1) {
+      this.error("return can only be used inside of functions", r, null, (-1));
+    }
+    EObject _eContainer_4 = r.eContainer();
+    EObject _eContainer_5 = _eContainer_4.eContainer();
+    EObject _eContainer_6 = _eContainer_5.eContainer();
+    boolean _equals_2 = Objects.equal(_eContainer_6, null);
+    if (_equals_2) {
+      this.error("return can only be used inside of functions", r, null, (-1));
+    }
+    EObject _eContainer_7 = r.eContainer();
+    EObject _eContainer_8 = _eContainer_7.eContainer();
+    EObject _eContainer_9 = _eContainer_8.eContainer();
+    EObject _eContainer_10 = _eContainer_9.eContainer();
+    Class<? extends EObject> _class_1 = _eContainer_10.getClass();
+    boolean _notEquals = (!Objects.equal(_class_1, FunctionDeclaration.class));
+    if (_notEquals) {
+      this.error("return can only be used inside of functions", r, null, (-1));
     }
   }
   

@@ -73,11 +73,14 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.SIMPLE_TYPE_SPECIFIER: return createsimple_type_specifier();
       case MyDslPackage.STATEMENT: return createstatement();
       case MyDslPackage.SIMPLE_DECLARATION: return createsimple_declaration();
+      case MyDslPackage.JUMP_STATEMENT: return createjump_statement();
       case MyDslPackage.DECLARATION_STATEMENT: return createdeclaration_statement();
       case MyDslPackage.BLOCK_DECLARATION: return createblock_declaration();
       case MyDslPackage.INT_TYPE: return createIntType();
       case MyDslPackage.BOOL_TYPE: return createBoolType();
       case MyDslPackage.UNKNOWN_TYPE: return createUnknownType();
+      case MyDslPackage.JUMP: return createjump();
+      case MyDslPackage.RETURN: return createReturn();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -187,6 +190,17 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public jump_statement createjump_statement()
+  {
+    jump_statementImpl jump_statement = new jump_statementImpl();
+    return jump_statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public declaration_statement createdeclaration_statement()
   {
     declaration_statementImpl declaration_statement = new declaration_statementImpl();
@@ -235,6 +249,28 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     UnknownTypeImpl unknownType = new UnknownTypeImpl();
     return unknownType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public jump createjump()
+  {
+    jumpImpl jump = new jumpImpl();
+    return jump;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Return createReturn()
+  {
+    ReturnImpl return_ = new ReturnImpl();
+    return return_;
   }
 
   /**

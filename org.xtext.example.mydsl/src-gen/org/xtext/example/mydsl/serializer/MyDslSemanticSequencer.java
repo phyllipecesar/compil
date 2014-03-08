@@ -19,11 +19,13 @@ import org.xtext.example.mydsl.myDsl.FunctionDeclaration;
 import org.xtext.example.mydsl.myDsl.IntType;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.Parameter;
+import org.xtext.example.mydsl.myDsl.Return;
 import org.xtext.example.mydsl.myDsl.Type;
 import org.xtext.example.mydsl.myDsl.UnknownType;
 import org.xtext.example.mydsl.myDsl.VarDecl;
 import org.xtext.example.mydsl.myDsl.block_declaration;
 import org.xtext.example.mydsl.myDsl.declaration_statement;
+import org.xtext.example.mydsl.myDsl.jump;
 import org.xtext.example.mydsl.myDsl.simple_declaration;
 import org.xtext.example.mydsl.myDsl.statement;
 import org.xtext.example.mydsl.services.MyDslGrammarAccess;
@@ -67,6 +69,12 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case MyDslPackage.RETURN:
+				if(context == grammarAccess.getJump_statementRule()) {
+					sequence_jump_statement(context, (Return) semanticObject); 
+					return; 
+				}
+				else break;
 			case MyDslPackage.TYPE:
 				if(context == grammarAccess.getTypeRule()) {
 					sequence_Type(context, (Type) semanticObject); 
@@ -97,6 +105,12 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case MyDslPackage.JUMP:
+				if(context == grammarAccess.getStatementRule()) {
+					sequence_statement(context, (jump) semanticObject); 
+					return; 
+				}
+				else break;
 			case MyDslPackage.SIMPLE_DECLARATION:
 				if(context == grammarAccess.getSimple_declarationRule()) {
 					sequence_simple_declaration(context, (simple_declaration) semanticObject); 
@@ -115,7 +129,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (funcoes+=FunctionDeclaration*)
+	 *     ((variaveis+=VarDecl | funcoes+=FunctionDeclaration)*)
 	 */
 	protected void sequence_Body(EObject context, Body semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -212,6 +226,15 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
+	 *     (exp=expression?)
+	 */
+	protected void sequence_jump_statement(EObject context, Return semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     variavel=VarDecl
 	 */
 	protected void sequence_simple_declaration(EObject context, simple_declaration semanticObject) {
@@ -276,6 +299,15 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
+	 *     jump=jump_statement
+	 */
+	protected void sequence_statement(EObject context, jump semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     variavel=declaration_statement
 	 */
 	protected void sequence_statement(EObject context, statement semanticObject) {
@@ -285,7 +317,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getStatementAccess().getVariavelDeclaration_statementParserRuleCall_1_0(), semanticObject.getVariavel());
+		feeder.accept(grammarAccess.getStatementAccess().getVariavelDeclaration_statementParserRuleCall_1_1_0(), semanticObject.getVariavel());
 		feeder.finish();
 	}
 }

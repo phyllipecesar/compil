@@ -9,6 +9,7 @@
       fileExtensions="mydsl" ecorePackage="MyDsl.ecore#/">
     <genClasses ecoreClass="MyDsl.ecore#//Model"/>
     <genClasses ecoreClass="MyDsl.ecore#//Body">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Body/variaveis"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Body/funcoes"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//FunctionDeclaration">
@@ -37,6 +38,7 @@
     <genClasses ecoreClass="MyDsl.ecore#//simple_declaration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//simple_declaration/variavel"/>
     </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//jump_statement"/>
     <genClasses ecoreClass="MyDsl.ecore#//declaration_statement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//declaration_statement/variaveis"/>
     </genClasses>
@@ -46,5 +48,11 @@
     <genClasses ecoreClass="MyDsl.ecore#//IntType"/>
     <genClasses ecoreClass="MyDsl.ecore#//BoolType"/>
     <genClasses ecoreClass="MyDsl.ecore#//UnknownType"/>
+    <genClasses ecoreClass="MyDsl.ecore#//jump">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//jump/jump"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Return">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Return/exp"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
