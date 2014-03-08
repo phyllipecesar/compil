@@ -4,8 +4,7 @@ generate cpp2 "http://www.Cpp2.org"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Test:
-//	(elements+=PreProcessingToken)*
-	(elements+=Token)*;
+	(elements += FunctionDefinition);
 
 // lex.charset
 terminal fragment HEX_QUAD:
@@ -13,6 +12,9 @@ terminal fragment HEX_QUAD:
 
 terminal fragment UNIVERSAL_CHARACTER_NAME:
 	'\\u' HEX_QUAD | '\\U' HEX_QUAD HEX_QUAD;
+
+/* 
+ * It makes no sense to pre-process the file during compilation.
 
 // lex.pptoken
 PreProcessingToken:
@@ -25,7 +27,23 @@ PreProcessingToken:
 	STRING_LITERAL |
 	PREPROCESSING_OP_OR_PUNC
 	// each non-white-space character that cannot be one of the above [ambiguity!!!]
-;
+; 
+
+// lex.header
+terminal HEADER_NAME:
+	'<' H_CHAR+ '>' | '\"' Q_CHAR+ '\"';
+ 
+terminal fragment H_CHAR:
+	!('\n' | '>');
+
+terminal fragment Q_CHAR:
+	!('\n' | '\"');
+
+// lex.ppnumber
+terminal PP_NUMBER:
+	(DIGIT | '.' DIGIT) (DIGIT | NONDIGIT | UNIVERSAL_CHARACTER_NAME | ('e' | 'E') ('+' | '-') | '.')*;
+
+*/
 
 // lex.token
 Token:
@@ -34,17 +52,6 @@ Token:
 	PREPROCESSING_OP_OR_PUNC
 	ID;
 	
-// lex.header
-terminal HEADER_NAME:
-	'<' H_CHAR+ '>' | '\"' Q_CHAR+ '\"'
-;
-
-terminal fragment H_CHAR:
-	!('\n' | '>');
-
-terminal fragment Q_CHAR:
-	!('\n' | '\"');
-
 // lex.key
 terminal KEYWORD:
 	'alignas' |
@@ -275,10 +282,6 @@ terminal fragment ENC_PREFIX:
 terminal fragment SCHAR:
 	!('\"' | '\\' | '\n') | ESCAPE_SEQUENCE | UNIVERSAL_CHARACTER_NAME;
 
-// lex.ppnumber
-terminal PP_NUMBER:
-	(DIGIT | '.' DIGIT) (DIGIT | NONDIGIT | UNIVERSAL_CHARACTER_NAME | ('e' | 'E') ('+' | '-') | '.')*;
-
 // namespace.def
 NamespaceDefinition:
 	'inline'? 'namespace' ID? '{' NamespaceBody '}';
@@ -312,12 +315,7 @@ LinkageSpecification:
 
 // dcl.attr.grammar
 AttributeSpecifier:
-	'[' '[' AttributeList ']' ']' |
-	AlignmentSpecifier;
-
-AlignmentSpecifier:
-	'alignas' '(' TypeId '...'? ')' |
-	'alignas' '(' AlignmentExpression '...'? ')';
+	'[' '[' AttributeList ']' ']';
 
 AttributeList:
 	(Attribute '...'?) (',' (Attribute '...'?)?)*;
@@ -332,49 +330,51 @@ AttributeArgumentClause:
 	'(' Token ')';
 
 // dcl.decl
-InitDeclaratorList:
-	InitDeclarator (',' InitDeclarator)*;
-
 InitDeclarator:
 	Declarator Initializer?;
 
 Declarator:
-	PtrOperator+ NoptrDeclarator |
-	NoptrDeclarator (ParametersAndQualifiers TrailingReturnType)?;
-	
-PtrDeclarator:
-	PtrOperator* NoptrDeclarator;
+	NoptrDeclarator;
+
+FunctionDeclarator:
+	TemplateDeclaration? NoptrDeclarator ParametersAndQualifiers;
 
 NoptrDeclarator:
-	_NoptrDeclarator __NoptrDeclarator*;
-
-_NoptrDeclarator:
-	DeclaratorId AttributeSpecifier* |
-	'(' PtrDeclarator ')';
-
-__NoptrDeclarator:
-	ParametersAndQualifiers |
-	'[' ConstantExpression ']' AttributeSpecifier*;
+	DeclaratorId;
 
 ParametersAndQualifiers:
-	'(' ParameterDeclarationClause ')' AttributeSpecifier* ('const' | 'volatile')* ('&' | '&&')* ExceptionSpecification?;
-
-TrailingReturnType:
-	'->' TrailingTypeSpecifier+ AbstractDeclarator?;
-
-PtrOperator:
-	'*' AttributeSpecifier* ('const' | 'volatile')* |
-	'&' AttributeSpecifier* |
-	'&&' AttributeSpecifier* |
-	'::'? NestedNameSpecifier '*' AttributeSpecifier* ('const' | 'volatile')*;
+	'(' ParameterDeclarationClause? ')' AttributeSpecifier* ('const' | 'volatile')? ('&' | '&&')? ExceptionSpecification?;
 
 DeclaratorId:
 	'...'? IdExpression |
 	'::'? NestedNameSpecifier? ClassName;
 
+// dcl.name
+TypeId:
+	TypeSpecifier+;
+
+// dcl.fct
+ParameterDeclarationClause:
+	'...' |
+	ParameterDeclarationList (','? '...')?;
+
+ParameterDeclarationList:
+	ParameterDeclaration (',' ParameterDeclaration)*;
+
+ParameterDeclaration:
+	AttributeSpecifier* DeclarationSpecifier+ InitDeclarator;
+
+// dcl.fct.def.general
+FunctionDefinition:
+	AttributeSpecifier* DeclarationSpecifier* FunctionDeclarator (FunctionBody | '=' 'default' ';' | '=' 'delete' ';');
+
+FunctionBody:
+	CtorInitializer? CompoundStatement |
+	FunctionTryBlock;
+
 // over.oper
 OperatorFunctionId:
-	'operator' OverloadableOperator ('<' TemplateArgument* '>')?;
+	'operator' OverloadableOperator ('<' (ConstantExpression | TypeSpecifier | IdExpression)* '>')?;
 
 OverloadableOperator:
 	'new' |
@@ -421,11 +421,11 @@ OverloadableOperator:
 	'[]';
 
 LiteralOperatorId:
-	'operator' '\"''\"';
+	'operator' '\"' '\"';
 
 // temp
 TemplateDeclaration:
-	'template' '<' TemplateParameterList '>' Declaration;
+	'template' '<' TemplateParameterList '>';
 
 TemplateParameterList:
 	TemplateParameter (',' TemplateParameter)*;
@@ -435,18 +435,12 @@ TemplateParameter:
 	TypeParameter | ParameterDeclaration;
 
 TypeParameter:
-	'class' ('...'? ID? | ID? '=' TypeId) |
-	'typename' ('...'? ID? | ID? '=' TypeId) |
-	'template' '<' TemplateParameterList '>' 'class' ('...'? ID? | ID? '=' IdExpression);
+	('class' | 'typename') ('...'? ID? | ID? '=' TypeId);
+	//'template' '<' TemplateParameterList '>' 'class' ('...'? ID? | ID? '=' IdExpression);
 
 // temp.names
-SimpleTemplateId:
-	ID '<' TemplateArgumentList '>';
-
 TemplateId:
-	SimpleTemplateId |
-	OperatorFunctionId '<' TemplateArgumentList '>' |
-	LiteralOperatorId '<' TemplateArgumentList '>';
+	(ID | OperatorFunctionId | LiteralOperatorId) '<' TemplateArgumentList '>';
 
 TemplateArgumentList:
 	TemplateArgument '...'? (',' TemplateArgument '...'?)*;
@@ -458,15 +452,7 @@ TemplateArgument:
 
 // temp.res
 TypenameSpecifier:
-	'typename' '::'? NestedNameSpecifier (ID | 'template'? SimpleTemplateId);
-
-// temp.explicit
-ExplicitInstantiation:
-	'extern'? 'template' Declaration;
-
-// temp.expl.spec
-ExplicitSpecialization:
-	'template' '<' '>' Declaration;
+	'typename' '::'? NestedNameSpecifier (ID | 'template'? ID '<' TemplateArgumentList '>');
 	
 // except
 TryBlock:
@@ -479,8 +465,10 @@ Handler:
 	'catch' '(' ExceptionDeclaration ')' CompoundStatement;
 
 ExceptionDeclaration:
-	AttributeSpecifier* TypeSpecifier+ (Declarator | AbstractDeclarator?) |
+	AttributeSpecifier* TypeSpecifier+ Declarator? | 
 	'...';
+	// AttributeSpecifier* TypeSpecifier+ (Declarator | AbstractDeclarator)?
+	// It cannot decide between Declarator and AbstractDeclarator. Do they should be merged?
 	
 ThrowExpression:
 	'throw' AssignmentExpression?;
@@ -504,16 +492,12 @@ ConstantExpression:
 	'ConstantExpression'
 ;
 
-TypeId:
-	'TypeId'
-;
-
 IdExpression:
 	'IdExpression'
 ;
 
-ParameterDeclaration:
-	'ParameterDeclaration'
+DeclarationSpecifier:
+	'DeclarationSpecifier'
 ;
 
 Declaration:
@@ -536,10 +520,6 @@ TypeSpecifier:
 	'TypeSpecifier'
 ;
 
-AbstractDeclarator:
-	'AbstractDeclarator'
-;
-
 CompoundStatement:
 	'CompoundStatement'
 ;
@@ -554,14 +534,6 @@ TypeIdList:
 
 UnqualifiedId:
 	'UnqualifiedId'
-;
-
-ParameterDeclarationClause:
-	'ParameterDeclarationClause'
-;
-
-TrailingTypeSpecifier:
-	'TrailingTypeSpecifier'
 ;
 
 ClassName:
