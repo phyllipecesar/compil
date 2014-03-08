@@ -44,11 +44,11 @@ terminal fragment Q_CHAR:
 	!('\n' | '\"');
 
 // lex.name
-terminal DIGIT:
-	'0'..'9';
-
 terminal NONDIGIT:
 	'a'..'z' | 'A'..'Z' | '_';
+
+terminal DIGIT:
+	'0'..'9';
 
 // lex.key
 terminal KEYWORD:
@@ -199,6 +199,10 @@ terminal PREPROCESSING_OP_OR_PUNC:
 	'xor' |
 	'xor_eq';
 
+// lex.name (cont)
+terminal ID:
+	(NONDIGIT | UNIVERSAL_CHARACTER_NAME) (DIGIT | NONDIGIT | UNIVERSAL_CHARACTER_NAME)*;
+
 // lex.literal.kinds
 Literal:
 	INT |
@@ -269,7 +273,100 @@ terminal fragment ENC_PREFIX:
 
 terminal fragment SCHAR:
 	!('\"' | '\\' | '\n') | ESCAPE_SEQUENCE | UNIVERSAL_CHARACTER_NAME;
+
+// namespace.def
+NamespaceDefinition:
+	'inline'? 'namespace' ID? '{' NamespaceBody '}';
+
+NamespaceBody:
+	Declaration*;
+
+// namespace.alias
+NamespaceAliasDefinition:
+	'namespace' ID '=' QualifiedNamespaceSpecifier ';';
+
+QualifiedNamespaceSpecifier:
+	'::'? NestedNameSpecifier? ID;
+
+// namespace.udecl
+UsingDeclaration:
+	'using' 'typename'? '::'? NestedNameSpecifier UnqualifiedId ';' |
+	'using' '::' UnqualifiedId ';';
+
+// namespace.udir
+UsingDirective:
+	AttributeSpecifier* 'using' 'namespace' '::'? NestedNameSpecifier? ID ';';
+
+// dcl.asm
+AsmDefinition:
+	'asm' '(' STRING_LITERAL ')' ';';
+
+// dcl.link
+LinkageSpecification:
+	'extern' STRING_LITERAL (Declaration | '{' Declaration* '}');
+
+// dcl.attr.grammar
+AttributeSpecifier:
+	'[' '[' AttributeList ']' ']' |
+	AlignmentSpecifier;
+
+AlignmentSpecifier:
+	'alignas' '(' TypeId '...'? ')' |
+	'alignas' '(' AlignmentExpression '...'? ')';
+
+AttributeList:
+	(Attribute '...'?) (',' (Attribute '...'?)?)*;
+
+Attribute:
+	AttributeToken AttributeArgumentClause?;
+
+AttributeToken:
+	(ID '::')? ID;
+
+AttributeArgumentClause:
+	'(' Token ')';
+
+// dcl.decl
+InitDeclaratorList:
+	InitDeclarator (',' InitDeclarator)*;
+
+InitDeclarator:
+	Declarator Initializer?;
+
+Declarator:
+	PtrOperator+ NoptrDeclarator |
+	NoptrDeclarator (ParametersAndQualifiers TrailingReturnType)?;
 	
+PtrDeclarator:
+	PtrOperator* NoptrDeclarator;
+
+NoptrDeclarator:
+	_NoptrDeclarator __NoptrDeclarator*;
+
+_NoptrDeclarator:
+	DeclaratorId AttributeSpecifier* |
+	'(' PtrDeclarator ')';
+
+__NoptrDeclarator:
+	ParametersAndQualifiers |
+	'[' ConstantExpression ']' AttributeSpecifier*;
+
+ParametersAndQualifiers:
+	'(' ParameterDeclarationClause ')' AttributeSpecifier* ('const' | 'volatile')* ('&' | '&&')* ExceptionSpecification?;
+
+TrailingReturnType:
+	'->' TrailingTypeSpecifier+ AbstractDeclarator?;
+
+PtrOperator:
+	'*' AttributeSpecifier* ('const' | 'volatile')* |
+	'&' AttributeSpecifier* |
+	'&&' AttributeSpecifier* |
+	'::'? NestedNameSpecifier '*' AttributeSpecifier* ('const' | 'volatile')*;
+
+DeclaratorId:
+	'...'? IdExpression |
+	'::'? NestedNameSpecifier? ClassName;
+
 // over.oper
 OperatorFunctionId:
 	'operator' OverloadableOperator ('<' TemplateArgument* '>')?;
@@ -344,8 +441,7 @@ SimpleTemplateId:
 TemplateId:
 	SimpleTemplateId |
 	OperatorFunctionId '<' TemplateArgumentList '>' |
-	LiteralOperatorId '<' TemplateArgumentList '>'
-;
+	LiteralOperatorId '<' TemplateArgumentList '>';
 
 TemplateArgumentList:
 	TemplateArgument '...'? (',' TemplateArgument '...'?)*;
@@ -400,57 +496,73 @@ NoexceptSpecification:
 // DUMMY
 
 ConstantExpression:
-	'DUMMY1'
+	'ConstantExpression'
 ;
 
 TypeId:
-	'DUMMY2'
+	'TypeId'
 ;
 
 IdExpression:
-	'DUMMY3'
+	'IdExpression'
 ;
 
 ParameterDeclaration:
-	'DUMMY4'
+	'ParameterDeclaration'
 ;
 
 Declaration:
-	'DUMMY5'
+	'Declaration'
 ;
 
 NestedNameSpecifier:
-	'DUMMY6'
+	'NestedNameSpecifier'
 ;
 
 AssignmentExpression:
-	'DUMMY7'
+	'AssignmentExpression'
 ;
 
-AttributeSpecifier:
-	'DUMMY8'
+AlignmentExpression:
+	'AlignmentExpression'
 ;
 
 TypeSpecifier:
-	'DUMMY9'
-;
-
-Declarator:
-	'DUMMY10'
+	'TypeSpecifier'
 ;
 
 AbstractDeclarator:
-	'DUMMY11'
+	'AbstractDeclarator'
 ;
 
 CompoundStatement:
-	'DUMMY12'
+	'CompoundStatement'
 ;
 
 CtorInitializer:
-	'DUMMY13'
+	'CtorInitializer'
 ;
 
 TypeIdList:
-	'DUMMY14'
+	'TypeIdList'
+;
+
+UnqualifiedId:
+	'UnqualifiedId'
+;
+
+ParameterDeclarationClause:
+	'ParameterDeclarationClause'
+;
+
+TrailingTypeSpecifier:
+	'TrailingTypeSpecifier'
+;
+
+ClassName:
+	'ClassName'
+;
+
+Initializer:
+	'Initializer'
 ;
