@@ -23,9 +23,21 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if(ruleCall.getRule() == grammarAccess.getPreprocessing_fileRule())
+			return getpreprocessing_fileToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * preprocessing_file:
+	 * 	group?
+	 * ;
+	 */
+	protected String getpreprocessing_fileToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

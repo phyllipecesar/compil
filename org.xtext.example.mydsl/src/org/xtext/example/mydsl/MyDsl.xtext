@@ -19,8 +19,81 @@ Model:
  	Body;
 
 Body:
-	{Body}funcoes += FunctionDeclaration*
+	{Body} preprocessing_file funcoes += FunctionDeclaration*
 ;
+
+// INCLUDE, DEFINES
+
+elif_group:
+  '#elif' constant_expression group?;
+  
+constant_expression:
+	conditional_expression;
+
+conditional_expression:
+		'TODO';
+preprocessing_file:
+	group?
+;
+	
+terminal HEADER_NAME:
+	'<' (ID|'.') '>' | '\"' (ID|'.') '\"'
+;
+
+preprocessing_token: 
+	HEADER_NAME
+//	PPNUMBER|
+//	CHARLITERAL|
+
+;
+else_group:
+	'#else'  group?
+;
+endif_line:
+	'#endif'
+;
+control_line:
+'#include' pp_tokens |
+'#define' ID replacement_list |
+'#define' ID lparen ID? ')' replacement_list |
+'#undef' ID |
+'#line' pp_tokens|
+'#error' pp_tokens? |
+'#pragma' pp_tokens? |
+ '#';
+
+lparen:
+	'('
+;
+replacement_list:
+	pp_tokens?
+;
+pp_tokens:
+	 preprocessing_token+
+;
+
+group:
+	group_part+
+;
+
+group_part:
+	if_action |
+	control_line;
+
+if_action:
+	if_group elif_groups? else_group? endif_line
+;
+if_group:
+	'#if' constant_expression group?|
+	'#ifdef' ID group?|
+	'#ifndef' ID group?
+;
+elif_groups:
+	elif_group+;
+
+
+		
+// FUNCTION
 FunctionDeclaration:
 	{FunctionDeclaration} type=Type name=ID "(" 
 		(params+=Parameter  ("," params+=Parameter)* )?  ")" "{"	
@@ -93,12 +166,7 @@ block_declaration:
 	{block_declaration} variavel = simple_declaration
 ;
 
-constant_expression:
-	conditional_expression;
 
-conditional_expression:
-		'TODO'
-;
 /* 	
 conditional_expression:
 //	logical_or_expression |

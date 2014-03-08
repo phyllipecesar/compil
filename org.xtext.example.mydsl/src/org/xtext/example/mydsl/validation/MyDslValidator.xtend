@@ -15,7 +15,6 @@ import java.util.HashMap
 import org.xtext.example.mydsl.myDsl.block_declaration
 import org.xtext.example.mydsl.myDsl.Body
 import org.xtext.example.mydsl.myDsl.FunctionDeclaration
-import org.xtext.example.mydsl.myDsl.Symbol
 import org.xtext.example.mydsl.myDsl.Parameter
 
 /**
