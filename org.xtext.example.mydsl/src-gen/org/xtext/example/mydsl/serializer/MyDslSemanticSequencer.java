@@ -112,7 +112,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (type=Type name=ID (params+=Parameter params+=Parameter*)? escopo=statement)
+	 *     (type=Type name=ID (params+=Parameter params+=Parameter*)? escopo=statement?)
 	 */
 	protected void sequence_FunctionDeclaration(EObject context, FunctionDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
