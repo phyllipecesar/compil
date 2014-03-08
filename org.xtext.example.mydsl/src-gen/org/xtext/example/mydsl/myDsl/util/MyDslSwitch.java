@@ -94,10 +94,17 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.SYMBOL:
+      case MyDslPackage.PARAMETER:
       {
-        Symbol symbol = (Symbol)theEObject;
-        T result = caseSymbol(symbol);
+        Parameter parameter = (Parameter)theEObject;
+        T result = caseParameter(parameter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.VAR_DECL:
+      {
+        VarDecl varDecl = (VarDecl)theEObject;
+        T result = caseVarDecl(varDecl);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -112,7 +119,6 @@ public class MyDslSwitch<T> extends Switch<T>
       {
         simple_type_specifier simple_type_specifier = (simple_type_specifier)theEObject;
         T result = casesimple_type_specifier(simple_type_specifier);
-        if (result == null) result = caseType(simple_type_specifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -144,28 +150,11 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.PARAMETER:
-      {
-        Parameter parameter = (Parameter)theEObject;
-        T result = caseParameter(parameter);
-        if (result == null) result = caseSymbol(parameter);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MyDslPackage.VAR_DECL:
-      {
-        VarDecl varDecl = (VarDecl)theEObject;
-        T result = caseVarDecl(varDecl);
-        if (result == null) result = caseSymbol(varDecl);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case MyDslPackage.INT_TYPE:
       {
         IntType intType = (IntType)theEObject;
         T result = caseIntType(intType);
         if (result == null) result = casesimple_type_specifier(intType);
-        if (result == null) result = caseType(intType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -174,7 +163,14 @@ public class MyDslSwitch<T> extends Switch<T>
         BoolType boolType = (BoolType)theEObject;
         T result = caseBoolType(boolType);
         if (result == null) result = casesimple_type_specifier(boolType);
-        if (result == null) result = caseType(boolType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.UNKNOWN_TYPE:
+      {
+        UnknownType unknownType = (UnknownType)theEObject;
+        T result = caseUnknownType(unknownType);
+        if (result == null) result = casesimple_type_specifier(unknownType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -231,17 +227,33 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Symbol</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Parameter</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Symbol</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Parameter</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSymbol(Symbol object)
+  public T caseParameter(Parameter object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Var Decl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Var Decl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVarDecl(VarDecl object)
   {
     return null;
   }
@@ -343,38 +355,6 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Parameter</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Parameter</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseParameter(Parameter object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Var Decl</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Var Decl</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVarDecl(VarDecl object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Int Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -402,6 +382,22 @@ public class MyDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBoolType(BoolType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Unknown Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Unknown Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUnknownType(UnknownType object)
   {
     return null;
   }

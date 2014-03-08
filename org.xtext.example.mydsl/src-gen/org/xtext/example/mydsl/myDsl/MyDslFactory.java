@@ -50,13 +50,22 @@ public interface MyDslFactory extends EFactory
   FunctionDeclaration createFunctionDeclaration();
 
   /**
-   * Returns a new object of class '<em>Symbol</em>'.
+   * Returns a new object of class '<em>Parameter</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Symbol</em>'.
+   * @return a new object of class '<em>Parameter</em>'.
    * @generated
    */
-  Symbol createSymbol();
+  Parameter createParameter();
+
+  /**
+   * Returns a new object of class '<em>Var Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Var Decl</em>'.
+   * @generated
+   */
+  VarDecl createVarDecl();
 
   /**
    * Returns a new object of class '<em>Type</em>'.
@@ -113,24 +122,6 @@ public interface MyDslFactory extends EFactory
   block_declaration createblock_declaration();
 
   /**
-   * Returns a new object of class '<em>Parameter</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Parameter</em>'.
-   * @generated
-   */
-  Parameter createParameter();
-
-  /**
-   * Returns a new object of class '<em>Var Decl</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Var Decl</em>'.
-   * @generated
-   */
-  VarDecl createVarDecl();
-
-  /**
    * Returns a new object of class '<em>Int Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -147,6 +138,15 @@ public interface MyDslFactory extends EFactory
    * @generated
    */
   BoolType createBoolType();
+
+  /**
+   * Returns a new object of class '<em>Unknown Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Unknown Type</em>'.
+   * @generated
+   */
+  UnknownType createUnknownType();
 
   /**
    * Returns the package supported by this factory.

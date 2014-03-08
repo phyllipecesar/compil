@@ -25,19 +25,21 @@ FunctionDeclaration:
 	{FunctionDeclaration} type=Type name=ID "(" 
 		(params+=Parameter  ("," params+=Parameter)* )?  ")" "{"	
 		(escopo=statement)?
-	"}";	
-Parameter returns Symbol:
+	"}";
+		
+Parameter:
 	{Parameter} type=Type name=ID;
 
-VarDecl returns Symbol:
+VarDecl:
 	{VarDecl} type=Type name=ID;
 
 Type:
-	simple_type_specifier;
-simple_type_specifier:
-	{IntType}"int"|
-	{BoolType} "bool";
+	{Type} sts = simple_type_specifier;
 
+simple_type_specifier:
+	{IntType} name="int"|
+	{BoolType} name="bool"|
+	{UnknownType} name=ID;
 
 //// A.5
 statement:

@@ -16,6 +16,7 @@ import org.xtext.example.mydsl.myDsl.block_declaration
 import org.xtext.example.mydsl.myDsl.Body
 import org.xtext.example.mydsl.myDsl.FunctionDeclaration
 import org.xtext.example.mydsl.myDsl.Symbol
+import org.xtext.example.mydsl.myDsl.Parameter
 
 /**
  * Custom validation rules. 
@@ -29,10 +30,10 @@ class MyDslValidator extends AbstractMyDslValidator {
 @Check
 def checkParamsFunction(FunctionDeclaration funcao) {
 	hash.clear();
-	for (Symbol symbol: funcao.params) {
+	for (Parameter symbol: funcao.params) {
 			val nome = symbol.name;
 			if (hash.contains(nome)) {
-				error("Parameter " + nome + " already exists", symbol, null, -1);
+				error("Parameter '" + symbol.type.sts.name + " " + nome + "' already exists", symbol, null, -1);
 			}
 			hash.add(nome);
 	}
@@ -46,17 +47,22 @@ def checkParamsFunction(FunctionDeclaration funcao) {
 	}
 }
 String row;
+int ok;
 @Check
 def checkFunctionAlreadyExists(Body b) {
 	hash.clear();
 	
 	for (FunctionDeclaration symbol: b.funcoes) {
-		row = symbol.name + "-@-phyllipe@";
-		for (Symbol symb : symbol.params) {
-			row = row + symb.type;
+		row = symbol.name + "(";
+		ok = 0;
+		for (Parameter symb : symbol.params) {
+			if (ok == 1) row = row + ",";
+			ok = 1;
+			row = row + symb.type.sts.name;
 		}
+		row = row + ")";
 		if (hash.contains(row)) {
-			error("Function '" + symbol.name + "' already exists", symbol, null, -1);
+			error("Function '" +  row + "' already exists", symbol, null, -1);
 		}
 		hash.add(row);
 	}

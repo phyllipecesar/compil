@@ -10,22 +10,31 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
-        eType="#//Symbol" containment="true"/>
+        eType="#//Parameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="escopo" eType="#//statement"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Symbol">
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Type"/>
-  <eClassifiers xsi:type="ecore:EClass" name="simple_type_specifier" eSuperTypes="#//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VarDecl">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Type">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sts" eType="#//simple_type_specifier"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="simple_type_specifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variavel" eType="#//declaration_statement"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="simple_declaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variavel" eType="#//Symbol"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variavel" eType="#//VarDecl"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="declaration_statement">
@@ -36,8 +45,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="variavel" eType="#//simple_declaration"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//Symbol"/>
-  <eClassifiers xsi:type="ecore:EClass" name="VarDecl" eSuperTypes="#//Symbol"/>
   <eClassifiers xsi:type="ecore:EClass" name="IntType" eSuperTypes="#//simple_type_specifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="BoolType" eSuperTypes="#//simple_type_specifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnknownType" eSuperTypes="#//simple_type_specifier"/>
 </ecore:EPackage>

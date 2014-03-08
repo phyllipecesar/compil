@@ -67,17 +67,17 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.MODEL: return createModel();
       case MyDslPackage.BODY: return createBody();
       case MyDslPackage.FUNCTION_DECLARATION: return createFunctionDeclaration();
-      case MyDslPackage.SYMBOL: return createSymbol();
+      case MyDslPackage.PARAMETER: return createParameter();
+      case MyDslPackage.VAR_DECL: return createVarDecl();
       case MyDslPackage.TYPE: return createType();
       case MyDslPackage.SIMPLE_TYPE_SPECIFIER: return createsimple_type_specifier();
       case MyDslPackage.STATEMENT: return createstatement();
       case MyDslPackage.SIMPLE_DECLARATION: return createsimple_declaration();
       case MyDslPackage.DECLARATION_STATEMENT: return createdeclaration_statement();
       case MyDslPackage.BLOCK_DECLARATION: return createblock_declaration();
-      case MyDslPackage.PARAMETER: return createParameter();
-      case MyDslPackage.VAR_DECL: return createVarDecl();
       case MyDslPackage.INT_TYPE: return createIntType();
       case MyDslPackage.BOOL_TYPE: return createBoolType();
+      case MyDslPackage.UNKNOWN_TYPE: return createUnknownType();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -121,10 +121,21 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Symbol createSymbol()
+  public Parameter createParameter()
   {
-    SymbolImpl symbol = new SymbolImpl();
-    return symbol;
+    ParameterImpl parameter = new ParameterImpl();
+    return parameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VarDecl createVarDecl()
+  {
+    VarDeclImpl varDecl = new VarDeclImpl();
+    return varDecl;
   }
 
   /**
@@ -198,28 +209,6 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Parameter createParameter()
-  {
-    ParameterImpl parameter = new ParameterImpl();
-    return parameter;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VarDecl createVarDecl()
-  {
-    VarDeclImpl varDecl = new VarDeclImpl();
-    return varDecl;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public IntType createIntType()
   {
     IntTypeImpl intType = new IntTypeImpl();
@@ -235,6 +224,17 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     BoolTypeImpl boolType = new BoolTypeImpl();
     return boolType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UnknownType createUnknownType()
+  {
+    UnknownTypeImpl unknownType = new UnknownTypeImpl();
+    return unknownType;
   }
 
   /**

@@ -17,8 +17,8 @@ import org.xtext.example.mydsl.myDsl.Model;
 import org.xtext.example.mydsl.myDsl.MyDslFactory;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.Parameter;
-import org.xtext.example.mydsl.myDsl.Symbol;
 import org.xtext.example.mydsl.myDsl.Type;
+import org.xtext.example.mydsl.myDsl.UnknownType;
 import org.xtext.example.mydsl.myDsl.VarDecl;
 import org.xtext.example.mydsl.myDsl.block_declaration;
 import org.xtext.example.mydsl.myDsl.declaration_statement;
@@ -60,7 +60,14 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass symbolEClass = null;
+  private EClass parameterEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass varDeclEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -109,20 +116,6 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass parameterEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass varDeclEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass intTypeEClass = null;
 
   /**
@@ -131,6 +124,13 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   private EClass boolTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass unknownTypeEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -280,9 +280,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSymbol()
+  public EClass getParameter()
   {
-    return symbolEClass;
+    return parameterEClass;
   }
 
   /**
@@ -290,9 +290,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSymbol_Type()
+  public EReference getParameter_Type()
   {
-    return (EReference)symbolEClass.getEStructuralFeatures().get(0);
+    return (EReference)parameterEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -300,9 +300,39 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSymbol_Name()
+  public EAttribute getParameter_Name()
   {
-    return (EAttribute)symbolEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)parameterEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVarDecl()
+  {
+    return varDeclEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVarDecl_Type()
+  {
+    return (EReference)varDeclEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getVarDecl_Name()
+  {
+    return (EAttribute)varDeclEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -320,9 +350,29 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getType_Sts()
+  {
+    return (EReference)typeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getsimple_type_specifier()
   {
     return simple_type_specifierEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getsimple_type_specifier_Name()
+  {
+    return (EAttribute)simple_type_specifierEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -410,26 +460,6 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getParameter()
-  {
-    return parameterEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getVarDecl()
-  {
-    return varDeclEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getIntType()
   {
     return intTypeEClass;
@@ -443,6 +473,16 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
   public EClass getBoolType()
   {
     return boolTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getUnknownType()
+  {
+    return unknownTypeEClass;
   }
 
   /**
@@ -486,13 +526,19 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     createEReference(functionDeclarationEClass, FUNCTION_DECLARATION__PARAMS);
     createEReference(functionDeclarationEClass, FUNCTION_DECLARATION__ESCOPO);
 
-    symbolEClass = createEClass(SYMBOL);
-    createEReference(symbolEClass, SYMBOL__TYPE);
-    createEAttribute(symbolEClass, SYMBOL__NAME);
+    parameterEClass = createEClass(PARAMETER);
+    createEReference(parameterEClass, PARAMETER__TYPE);
+    createEAttribute(parameterEClass, PARAMETER__NAME);
+
+    varDeclEClass = createEClass(VAR_DECL);
+    createEReference(varDeclEClass, VAR_DECL__TYPE);
+    createEAttribute(varDeclEClass, VAR_DECL__NAME);
 
     typeEClass = createEClass(TYPE);
+    createEReference(typeEClass, TYPE__STS);
 
     simple_type_specifierEClass = createEClass(SIMPLE_TYPE_SPECIFIER);
+    createEAttribute(simple_type_specifierEClass, SIMPLE_TYPE_SPECIFIER__NAME);
 
     statementEClass = createEClass(STATEMENT);
     createEReference(statementEClass, STATEMENT__VARIAVEL);
@@ -506,13 +552,11 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     block_declarationEClass = createEClass(BLOCK_DECLARATION);
     createEReference(block_declarationEClass, BLOCK_DECLARATION__VARIAVEL);
 
-    parameterEClass = createEClass(PARAMETER);
-
-    varDeclEClass = createEClass(VAR_DECL);
-
     intTypeEClass = createEClass(INT_TYPE);
 
     boolTypeEClass = createEClass(BOOL_TYPE);
+
+    unknownTypeEClass = createEClass(UNKNOWN_TYPE);
   }
 
   /**
@@ -545,11 +589,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 
     // Add supertypes to classes
     bodyEClass.getESuperTypes().add(this.getModel());
-    simple_type_specifierEClass.getESuperTypes().add(this.getType());
-    parameterEClass.getESuperTypes().add(this.getSymbol());
-    varDeclEClass.getESuperTypes().add(this.getSymbol());
     intTypeEClass.getESuperTypes().add(this.getsimple_type_specifier());
     boolTypeEClass.getESuperTypes().add(this.getsimple_type_specifier());
+    unknownTypeEClass.getESuperTypes().add(this.getsimple_type_specifier());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -560,22 +602,28 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEClass(functionDeclarationEClass, FunctionDeclaration.class, "FunctionDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFunctionDeclaration_Type(), this.getType(), null, "type", null, 0, 1, FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFunctionDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionDeclaration_Params(), this.getSymbol(), null, "params", null, 0, -1, FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionDeclaration_Params(), this.getParameter(), null, "params", null, 0, -1, FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionDeclaration_Escopo(), this.getstatement(), null, "escopo", null, 0, 1, FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(symbolEClass, Symbol.class, "Symbol", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSymbol_Type(), this.getType(), null, "type", null, 0, 1, Symbol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSymbol_Name(), ecorePackage.getEString(), "name", null, 0, 1, Symbol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getParameter_Type(), this.getType(), null, "type", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(varDeclEClass, VarDecl.class, "VarDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getVarDecl_Type(), this.getType(), null, "type", null, 0, 1, VarDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVarDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, VarDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getType_Sts(), this.getsimple_type_specifier(), null, "sts", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(simple_type_specifierEClass, simple_type_specifier.class, "simple_type_specifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getsimple_type_specifier_Name(), ecorePackage.getEString(), "name", null, 0, 1, simple_type_specifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementEClass, statement.class, "statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getstatement_Variavel(), this.getdeclaration_statement(), null, "variavel", null, 0, 1, statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(simple_declarationEClass, simple_declaration.class, "simple_declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getsimple_declaration_Variavel(), this.getSymbol(), null, "variavel", null, 0, 1, simple_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getsimple_declaration_Variavel(), this.getVarDecl(), null, "variavel", null, 0, 1, simple_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(declaration_statementEClass, declaration_statement.class, "declaration_statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getdeclaration_statement_Variaveis(), this.getblock_declaration(), null, "variaveis", null, 0, -1, declaration_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -583,13 +631,11 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEClass(block_declarationEClass, block_declaration.class, "block_declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getblock_declaration_Variavel(), this.getsimple_declaration(), null, "variavel", null, 0, 1, block_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(varDeclEClass, VarDecl.class, "VarDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
     initEClass(intTypeEClass, IntType.class, "IntType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(boolTypeEClass, BoolType.class, "BoolType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(unknownTypeEClass, UnknownType.class, "UnknownType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

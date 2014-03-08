@@ -436,19 +436,34 @@ ruleType returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-
+((
 	{ 
 	  /* */ 
 	}
-    { 
-        newCompositeNode(grammarAccess.getTypeAccess().getSimple_type_specifierParserRuleCall()); 
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getTypeAccess().getTypeAction_0(),
+            $current);
     }
-    this_simple_type_specifier_0=rulesimple_type_specifier
-    { 
-        $current = $this_simple_type_specifier_0.current; 
-        afterParserOrEnumRuleCall();
-    }
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getTypeAccess().getStsSimple_type_specifierParserRuleCall_1_0()); 
+	    }
+		lv_sts_1_0=rulesimple_type_specifier		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTypeRule());
+	        }
+       		set(
+       			$current, 
+       			"sts",
+        		lv_sts_1_0, 
+        		"simple_type_specifier");
+	        afterParserOrEnumRuleCall();
+	    }
 
+)
+))
 ;
 
 
@@ -478,11 +493,22 @@ rulesimple_type_specifier returns [EObject current=null]
             grammarAccess.getSimple_type_specifierAccess().getIntTypeAction_0_0(),
             $current);
     }
-)	otherlv_1='int' 
+)(
+(
+		lv_name_1_0=	'int' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getSimple_type_specifierAccess().getIntKeyword_0_1());
+        newLeafNode(lv_name_1_0, grammarAccess.getSimple_type_specifierAccess().getNameIntKeyword_0_1_0());
     }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSimple_type_specifierRule());
+	        }
+       		setWithLastConsumed($current, "name", lv_name_1_0, "int");
+	    }
+
 )
+))
     |((
 	{ 
 	  /* */ 
@@ -492,11 +518,50 @@ rulesimple_type_specifier returns [EObject current=null]
             grammarAccess.getSimple_type_specifierAccess().getBoolTypeAction_1_0(),
             $current);
     }
-)	otherlv_3='bool' 
+)(
+(
+		lv_name_3_0=	'bool' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getSimple_type_specifierAccess().getBoolKeyword_1_1());
+        newLeafNode(lv_name_3_0, grammarAccess.getSimple_type_specifierAccess().getNameBoolKeyword_1_1_0());
     }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSimple_type_specifierRule());
+	        }
+       		setWithLastConsumed($current, "name", lv_name_3_0, "bool");
+	    }
+
+)
 ))
+    |((
+	{ 
+	  /* */ 
+	}
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getSimple_type_specifierAccess().getUnknownTypeAction_2_0(),
+            $current);
+    }
+)(
+(
+		lv_name_5_0=RULE_ID
+		{
+			newLeafNode(lv_name_5_0, grammarAccess.getSimple_type_specifierAccess().getNameIDTerminalRuleCall_2_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSimple_type_specifierRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_5_0, 
+        		"ID");
+	    }
+
+)
+)))
 ;
 
 

@@ -157,7 +157,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
-		//Parameter returns Symbol:
+		//Parameter:
 		//	{Parameter} type=Type name=ID;
 		public ParserRule getRule() { return rule; }
 
@@ -189,7 +189,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
-		//VarDecl returns Symbol:
+		//VarDecl:
 		//	{VarDecl} type=Type name=ID;
 		public ParserRule getRule() { return rule; }
 
@@ -214,14 +214,26 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class TypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Type");
-		private final RuleCall cSimple_type_specifierParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cTypeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cStsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cStsSimple_type_specifierParserRuleCall_1_0 = (RuleCall)cStsAssignment_1.eContents().get(0);
 		
 		//Type:
-		//	simple_type_specifier;
+		//	{Type} sts=simple_type_specifier;
 		public ParserRule getRule() { return rule; }
 
+		//{Type} sts=simple_type_specifier
+		public Group getGroup() { return cGroup; }
+
+		//{Type}
+		public Action getTypeAction_0() { return cTypeAction_0; }
+
+		//sts=simple_type_specifier
+		public Assignment getStsAssignment_1() { return cStsAssignment_1; }
+
 		//simple_type_specifier
-		public RuleCall getSimple_type_specifierParserRuleCall() { return cSimple_type_specifierParserRuleCall; }
+		public RuleCall getStsSimple_type_specifierParserRuleCall_1_0() { return cStsSimple_type_specifierParserRuleCall_1_0; }
 	}
 
 	public class Simple_type_specifierElements extends AbstractParserRuleElementFinder {
@@ -229,35 +241,59 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Action cIntTypeAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Keyword cIntKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final Keyword cNameIntKeyword_0_1_0 = (Keyword)cNameAssignment_0_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Action cBoolTypeAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Keyword cBoolKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final Keyword cNameBoolKeyword_1_1_0 = (Keyword)cNameAssignment_1_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Action cUnknownTypeAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
 		
 		//simple_type_specifier:
-		//	{IntType} "int" | {BoolType} "bool";
+		//	{IntType} name="int" | {BoolType} name="bool" | {UnknownType} name=ID;
 		public ParserRule getRule() { return rule; }
 
-		//{IntType} "int" | {BoolType} "bool"
+		//{IntType} name="int" | {BoolType} name="bool" | {UnknownType} name=ID
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//{IntType} "int"
+		//{IntType} name="int"
 		public Group getGroup_0() { return cGroup_0; }
 
 		//{IntType}
 		public Action getIntTypeAction_0_0() { return cIntTypeAction_0_0; }
 
-		//"int"
-		public Keyword getIntKeyword_0_1() { return cIntKeyword_0_1; }
+		//name="int"
+		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
 
-		//{BoolType} "bool"
+		//"int"
+		public Keyword getNameIntKeyword_0_1_0() { return cNameIntKeyword_0_1_0; }
+
+		//{BoolType} name="bool"
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{BoolType}
 		public Action getBoolTypeAction_1_0() { return cBoolTypeAction_1_0; }
 
+		//name="bool"
+		public Assignment getNameAssignment_1_1() { return cNameAssignment_1_1; }
+
 		//"bool"
-		public Keyword getBoolKeyword_1_1() { return cBoolKeyword_1_1; }
+		public Keyword getNameBoolKeyword_1_1_0() { return cNameBoolKeyword_1_1_0; }
+
+		//{UnknownType} name=ID
+		public Group getGroup_2() { return cGroup_2; }
+
+		//{UnknownType}
+		public Action getUnknownTypeAction_2_0() { return cUnknownTypeAction_2_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_1_0() { return cNameIDTerminalRuleCall_2_1_0; }
 	}
 
 	public class StatementElements extends AbstractParserRuleElementFinder {
@@ -655,7 +691,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getFunctionDeclarationAccess().getRule();
 	}
 
-	//Parameter returns Symbol:
+	//Parameter:
 	//	{Parameter} type=Type name=ID;
 	public ParameterElements getParameterAccess() {
 		return (pParameter != null) ? pParameter : (pParameter = new ParameterElements());
@@ -665,7 +701,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterAccess().getRule();
 	}
 
-	//VarDecl returns Symbol:
+	//VarDecl:
 	//	{VarDecl} type=Type name=ID;
 	public VarDeclElements getVarDeclAccess() {
 		return (pVarDecl != null) ? pVarDecl : (pVarDecl = new VarDeclElements());
@@ -676,7 +712,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Type:
-	//	simple_type_specifier;
+	//	{Type} sts=simple_type_specifier;
 	public TypeElements getTypeAccess() {
 		return (pType != null) ? pType : (pType = new TypeElements());
 	}
@@ -686,7 +722,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//simple_type_specifier:
-	//	{IntType} "int" | {BoolType} "bool";
+	//	{IntType} name="int" | {BoolType} name="bool" | {UnknownType} name=ID;
 	public Simple_type_specifierElements getSimple_type_specifierAccess() {
 		return (pSimple_type_specifier != null) ? pSimple_type_specifier : (pSimple_type_specifier = new Simple_type_specifierElements());
 	}

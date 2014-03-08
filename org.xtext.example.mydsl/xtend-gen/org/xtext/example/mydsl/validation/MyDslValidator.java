@@ -9,11 +9,13 @@ import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.xtext.example.mydsl.myDsl.Body;
 import org.xtext.example.mydsl.myDsl.FunctionDeclaration;
-import org.xtext.example.mydsl.myDsl.Symbol;
+import org.xtext.example.mydsl.myDsl.Parameter;
 import org.xtext.example.mydsl.myDsl.Type;
+import org.xtext.example.mydsl.myDsl.VarDecl;
 import org.xtext.example.mydsl.myDsl.block_declaration;
 import org.xtext.example.mydsl.myDsl.declaration_statement;
 import org.xtext.example.mydsl.myDsl.simple_declaration;
+import org.xtext.example.mydsl.myDsl.simple_type_specifier;
 import org.xtext.example.mydsl.myDsl.statement;
 import org.xtext.example.mydsl.validation.AbstractMyDslValidator;
 
@@ -34,13 +36,20 @@ public class MyDslValidator extends AbstractMyDslValidator {
   @Check
   public void checkParamsFunction(final FunctionDeclaration funcao) {
     this.hash.clear();
-    EList<Symbol> _params = funcao.getParams();
-    for (final Symbol symbol : _params) {
+    EList<Parameter> _params = funcao.getParams();
+    for (final Parameter symbol : _params) {
       {
         final String nome = symbol.getName();
         boolean _contains = this.hash.contains(nome);
         if (_contains) {
-          this.error((("Parameter " + nome) + " already exists"), symbol, null, (-1));
+          Type _type = symbol.getType();
+          simple_type_specifier _sts = _type.getSts();
+          String _name = _sts.getName();
+          String _plus = ("Parameter \'" + _name);
+          String _plus_1 = (_plus + " ");
+          String _plus_2 = (_plus_1 + nome);
+          String _plus_3 = (_plus_2 + "\' already exists");
+          this.error(_plus_3, symbol, null, (-1));
         }
         this.hash.add(nome);
       }
@@ -51,15 +60,15 @@ public class MyDslValidator extends AbstractMyDslValidator {
     for (final block_declaration block : _variaveis) {
       {
         simple_declaration _variavel_1 = block.getVariavel();
-        Symbol _variavel_2 = _variavel_1.getVariavel();
+        VarDecl _variavel_2 = _variavel_1.getVariavel();
         final String nome = _variavel_2.getName();
         boolean _contains = this.hash.contains(nome);
         if (_contains) {
           simple_declaration _variavel_3 = block.getVariavel();
-          Symbol _variavel_4 = _variavel_3.getVariavel();
+          VarDecl _variavel_4 = _variavel_3.getVariavel();
           _variavel_4.getType();
           simple_declaration _variavel_5 = block.getVariavel();
-          Symbol _variavel_6 = _variavel_5.getVariavel();
+          VarDecl _variavel_6 = _variavel_5.getVariavel();
           this.error((("declaration of variable \'" + nome) + "\' shadows a paramater"), _variavel_6, null, (-1));
         }
       }
@@ -68,6 +77,8 @@ public class MyDslValidator extends AbstractMyDslValidator {
   
   private String row;
   
+  private int ok;
+  
   @Check
   public void checkFunctionAlreadyExists(final Body b) {
     this.hash.clear();
@@ -75,20 +86,27 @@ public class MyDslValidator extends AbstractMyDslValidator {
     for (final FunctionDeclaration symbol : _funcoes) {
       {
         String _name = symbol.getName();
-        String _plus = (_name + "-@-phyllipe@");
+        String _plus = (_name + "(");
         this.row = _plus;
-        EList<Symbol> _params = symbol.getParams();
-        for (final Symbol symb : _params) {
-          Type _type = symb.getType();
-          String _plus_1 = (this.row + _type);
-          this.row = _plus_1;
+        this.ok = 0;
+        EList<Parameter> _params = symbol.getParams();
+        for (final Parameter symb : _params) {
+          {
+            if ((this.ok == 1)) {
+              this.row = (this.row + ",");
+            }
+            this.ok = 1;
+            Type _type = symb.getType();
+            simple_type_specifier _sts = _type.getSts();
+            String _name_1 = _sts.getName();
+            String _plus_1 = (this.row + _name_1);
+            this.row = _plus_1;
+          }
         }
+        this.row = (this.row + ")");
         boolean _contains = this.hash.contains(this.row);
         if (_contains) {
-          String _name_1 = symbol.getName();
-          String _plus_2 = ("Function \'" + _name_1);
-          String _plus_3 = (_plus_2 + "\' already exists");
-          this.error(_plus_3, symbol, null, (-1));
+          this.error((("Function \'" + this.row) + "\' already exists"), symbol, null, (-1));
         }
         this.hash.add(this.row);
       }
@@ -103,12 +121,12 @@ public class MyDslValidator extends AbstractMyDslValidator {
     for (final block_declaration block : _variaveis) {
       {
         simple_declaration _variavel_1 = block.getVariavel();
-        Symbol _variavel_2 = _variavel_1.getVariavel();
+        VarDecl _variavel_2 = _variavel_1.getVariavel();
         final String nome = _variavel_2.getName();
         boolean _contains = this.hash.contains(nome);
         if (_contains) {
           simple_declaration _variavel_3 = block.getVariavel();
-          Symbol _variavel_4 = _variavel_3.getVariavel();
+          VarDecl _variavel_4 = _variavel_3.getVariavel();
           this.error((("Variable \'" + nome) + "\' already exists"), _variavel_4, null, (-1));
         }
         this.hash.add(nome);
