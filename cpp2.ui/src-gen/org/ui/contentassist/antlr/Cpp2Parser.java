@@ -38,10 +38,6 @@ public class Cpp2Parser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getPreProcessingTokenAccess().getAlternatives(), "rule__PreProcessingToken__Alternatives");
-					put(grammarAccess.getPreProcessingTokenAccess().getAlternatives_2_0(), "rule__PreProcessingToken__Alternatives_2_0");
-					put(grammarAccess.getPreProcessingTokenAccess().getAlternatives_2_1(), "rule__PreProcessingToken__Alternatives_2_1");
-					put(grammarAccess.getPreProcessingTokenAccess().getAlternatives_2_1_2_0(), "rule__PreProcessingToken__Alternatives_2_1_2_0");
-					put(grammarAccess.getPreProcessingTokenAccess().getAlternatives_2_1_2_1(), "rule__PreProcessingToken__Alternatives_2_1_2_1");
 					put(grammarAccess.getTokenAccess().getAlternatives(), "rule__Token__Alternatives");
 					put(grammarAccess.getLiteralAccess().getAlternatives(), "rule__Literal__Alternatives");
 					put(grammarAccess.getLiteralAccess().getAlternatives_4_0(), "rule__Literal__Alternatives_4_0");
@@ -70,9 +66,6 @@ public class Cpp2Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getExceptionDeclarationAccess().getAlternatives(), "rule__ExceptionDeclaration__Alternatives");
 					put(grammarAccess.getExceptionDeclarationAccess().getAlternatives_0_2(), "rule__ExceptionDeclaration__Alternatives_0_2");
 					put(grammarAccess.getExceptionSpecificationAccess().getAlternatives(), "rule__ExceptionSpecification__Alternatives");
-					put(grammarAccess.getPreProcessingTokenAccess().getGroup_2(), "rule__PreProcessingToken__Group_2__0");
-					put(grammarAccess.getPreProcessingTokenAccess().getGroup_2_0_1(), "rule__PreProcessingToken__Group_2_0_1__0");
-					put(grammarAccess.getPreProcessingTokenAccess().getGroup_2_1_2(), "rule__PreProcessingToken__Group_2_1_2__0");
 					put(grammarAccess.getTokenAccess().getGroup_2(), "rule__Token__Group_2__0");
 					put(grammarAccess.getLiteralAccess().getGroup_4(), "rule__Literal__Group_4__0");
 					put(grammarAccess.getNamespaceDefinitionAccess().getGroup(), "rule__NamespaceDefinition__Group__0");

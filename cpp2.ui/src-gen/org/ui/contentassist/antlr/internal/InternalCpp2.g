@@ -1610,10 +1610,6 @@ finally {
 
 
 
-
-
-
-
 rule__Token__Alternatives
     @init {
 		int stackSize = keepStackSize();
@@ -2535,9 +2531,6 @@ rule__ExceptionSpecification__Alternatives
 finally {
 	restoreStackSize(stackSize);
 }
-
-
-
 
 
 
@@ -7598,15 +7591,15 @@ fragment RULE_H_CHAR : ~(('\n'|'>'));
 
 fragment RULE_Q_CHAR : ~(('\n'|'"'));
 
-RULE_NONDIGIT : ('a'..'z'|'A'..'Z'|'_');
-
-RULE_DIGIT : '0'..'9';
-
 RULE_KEYWORD : ('alignas'|'alignof'|'asm'|'auto'|'bool'|'break'|'case'|'catch'|'char'|'char16_t'|'char32_t'|'class'|'const'|'constexpr'|'const_cast'|'continue'|'decltype'|'default'|'delete'|'do'|'double'|'dynamic_cast'|'else'|'enum'|'explicit'|'export'|'extern'|'false'|'float'|'for'|'friend'|'goto'|'if'|'inline'|'int'|'long'|'mutable'|'namespace'|'new'|'noexcept'|'nullptr'|'operator'|'private'|'protected'|'public'|'register'|'reinterpret_cast'|'return'|'short'|'signed'|'sizeof'|'static'|'static_assert'|'static_cast'|'struct'|'switch'|'template'|'this'|'thread_local'|'throw'|'true'|'try'|'typedef'|'typeid'|'typename'|'union'|'unsigned'|'using'|'virtual'|'void'|'volatile'|'wchar_t'|'while');
 
 RULE_PREPROCESSING_OP_OR_PUNC : ('{'|'}'|'['|']'|'#'|'##'|'('|')'|'<:'|':>'|'<%'|'%>'|'%:'|'%:%:'|';'|':'|'...'|'new'|'delete'|'?'|'::'|'.'|'.*'|'+'|'-'|'*'|'/'|'%'|'^'|'&'|'|'|'~'|'!'|'='|'<'|'>'|'+='|'-='|'*='|'/='|'%='|'^='|'&='|'|='|'<<'|'>>'|'<<='|'>>='|'=='|'!='|'<='|'>='|'&&'|'||'|'++'|'--'|','|'->*'|'->'|'and'|'and_eq'|'bitand'|'bitor'|'compl'|'not'|'not_eq'|'or'|'or_eq'|'xor'|'xor_eq');
 
 RULE_ID : (RULE_NONDIGIT|RULE_UNIVERSAL_CHARACTER_NAME) (RULE_DIGIT|RULE_NONDIGIT|RULE_UNIVERSAL_CHARACTER_NAME)*;
+
+fragment RULE_NONDIGIT : ('a'..'z'|'A'..'Z'|'_');
+
+fragment RULE_DIGIT : '0'..'9';
 
 RULE_INT : (RULE_DECIMAL_LITERAL|RULE_OCTAL_LITERAL|RULE_HEXADECIMAL_LITERAL) RULE_INTEGER_SUFFIX?;
 
@@ -7645,6 +7638,8 @@ RULE_STRING_LITERAL : RULE_ENC_PREFIX? '"' RULE_SCHAR+ '"';
 fragment RULE_ENC_PREFIX : ('u8'|'u'|'U'|'L');
 
 fragment RULE_SCHAR : (~(('"'|'\\'|'\n'))|RULE_ESCAPE_SEQUENCE|RULE_UNIVERSAL_CHARACTER_NAME);
+
+RULE_PP_NUMBER : (RULE_DIGIT|'.' RULE_DIGIT) (RULE_DIGIT|RULE_NONDIGIT|RULE_UNIVERSAL_CHARACTER_NAME|('e'|'E') ('+'|'-')|'.')*;
 
 RULE_STRING : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\'');
 

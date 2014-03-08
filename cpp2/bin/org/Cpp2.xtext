@@ -18,7 +18,9 @@ terminal fragment UNIVERSAL_CHARACTER_NAME:
 PreProcessingToken:
 	HEADER_NAME |
 	ID |
-	(DIGIT | '.' DIGIT) (DIGIT | NONDIGIT | ('e' | 'E') ('+' | '-') | '.')* |
+	INT |
+	FLOATING_LITERAL |
+	PP_NUMBER |
 	CHARACTER_LITERAL |
 	STRING_LITERAL |
 	PREPROCESSING_OP_OR_PUNC
@@ -42,13 +44,6 @@ terminal fragment H_CHAR:
 
 terminal fragment Q_CHAR:
 	!('\n' | '\"');
-
-// lex.name
-terminal NONDIGIT:
-	'a'..'z' | 'A'..'Z' | '_';
-
-terminal DIGIT:
-	'0'..'9';
 
 // lex.key
 terminal KEYWORD:
@@ -199,9 +194,15 @@ terminal PREPROCESSING_OP_OR_PUNC:
 	'xor' |
 	'xor_eq';
 
-// lex.name (cont)
+// lex.name
 terminal ID:
 	(NONDIGIT | UNIVERSAL_CHARACTER_NAME) (DIGIT | NONDIGIT | UNIVERSAL_CHARACTER_NAME)*;
+
+terminal fragment NONDIGIT:
+	'a'..'z' | 'A'..'Z' | '_';
+
+terminal fragment DIGIT:
+	'0'..'9';
 
 // lex.literal.kinds
 Literal:
@@ -273,6 +274,10 @@ terminal fragment ENC_PREFIX:
 
 terminal fragment SCHAR:
 	!('\"' | '\\' | '\n') | ESCAPE_SEQUENCE | UNIVERSAL_CHARACTER_NAME;
+
+// lex.ppnumber
+terminal PP_NUMBER:
+	(DIGIT | '.' DIGIT) (DIGIT | NONDIGIT | UNIVERSAL_CHARACTER_NAME | ('e' | 'E') ('+' | '-') | '.')*;
 
 // namespace.def
 NamespaceDefinition:

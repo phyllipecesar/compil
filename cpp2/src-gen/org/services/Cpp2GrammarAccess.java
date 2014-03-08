@@ -40,36 +40,21 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cHEADER_NAMETerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Alternatives cAlternatives_2_0 = (Alternatives)cGroup_2.eContents().get(0);
-		private final RuleCall cDIGITTerminalRuleCall_2_0_0 = (RuleCall)cAlternatives_2_0.eContents().get(0);
-		private final Group cGroup_2_0_1 = (Group)cAlternatives_2_0.eContents().get(1);
-		private final Keyword cFullStopKeyword_2_0_1_0 = (Keyword)cGroup_2_0_1.eContents().get(0);
-		private final RuleCall cDIGITTerminalRuleCall_2_0_1_1 = (RuleCall)cGroup_2_0_1.eContents().get(1);
-		private final Alternatives cAlternatives_2_1 = (Alternatives)cGroup_2.eContents().get(1);
-		private final RuleCall cDIGITTerminalRuleCall_2_1_0 = (RuleCall)cAlternatives_2_1.eContents().get(0);
-		private final RuleCall cNONDIGITTerminalRuleCall_2_1_1 = (RuleCall)cAlternatives_2_1.eContents().get(1);
-		private final Group cGroup_2_1_2 = (Group)cAlternatives_2_1.eContents().get(2);
-		private final Alternatives cAlternatives_2_1_2_0 = (Alternatives)cGroup_2_1_2.eContents().get(0);
-		private final Keyword cEKeyword_2_1_2_0_0 = (Keyword)cAlternatives_2_1_2_0.eContents().get(0);
-		private final Keyword cEKeyword_2_1_2_0_1 = (Keyword)cAlternatives_2_1_2_0.eContents().get(1);
-		private final Alternatives cAlternatives_2_1_2_1 = (Alternatives)cGroup_2_1_2.eContents().get(1);
-		private final Keyword cPlusSignKeyword_2_1_2_1_0 = (Keyword)cAlternatives_2_1_2_1.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_2_1_2_1_1 = (Keyword)cAlternatives_2_1_2_1.eContents().get(1);
-		private final Keyword cFullStopKeyword_2_1_3 = (Keyword)cAlternatives_2_1.eContents().get(3);
-		private final RuleCall cCHARACTER_LITERALTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cSTRING_LITERALTerminalRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cPREPROCESSING_OP_OR_PUNCTerminalRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cFLOATING_LITERALTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cPP_NUMBERTerminalRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cCHARACTER_LITERALTerminalRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cSTRING_LITERALTerminalRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cPREPROCESSING_OP_OR_PUNCTerminalRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
 		//// lex.pptoken
 		//// each non-white-space character that cannot be one of the above [ambiguity!!!]
 		//PreProcessingToken:
-		//	HEADER_NAME | ID | (DIGIT | "." DIGIT) (DIGIT | NONDIGIT | ("e" | "E") ("+" | "-") | ".")* | CHARACTER_LITERAL |
-		//	STRING_LITERAL | PREPROCESSING_OP_OR_PUNC;
+		//	HEADER_NAME | ID | INT | FLOATING_LITERAL | PP_NUMBER | CHARACTER_LITERAL | STRING_LITERAL |
+		//	PREPROCESSING_OP_OR_PUNC;
 		public ParserRule getRule() { return rule; }
 
-		//HEADER_NAME | ID | (DIGIT | "." DIGIT) (DIGIT | NONDIGIT | ("e" | "E") ("+" | "-") | ".")* | CHARACTER_LITERAL |
-		//STRING_LITERAL | PREPROCESSING_OP_OR_PUNC
+		//HEADER_NAME | ID | INT | FLOATING_LITERAL | PP_NUMBER | CHARACTER_LITERAL | STRING_LITERAL | PREPROCESSING_OP_OR_PUNC
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//HEADER_NAME
@@ -78,65 +63,23 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
 
-		//(DIGIT | "." DIGIT) (DIGIT | NONDIGIT | ("e" | "E") ("+" | "-") | ".")*
-		public Group getGroup_2() { return cGroup_2; }
+		//INT
+		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
 
-		//DIGIT | "." DIGIT
-		public Alternatives getAlternatives_2_0() { return cAlternatives_2_0; }
+		//FLOATING_LITERAL
+		public RuleCall getFLOATING_LITERALTerminalRuleCall_3() { return cFLOATING_LITERALTerminalRuleCall_3; }
 
-		//DIGIT
-		public RuleCall getDIGITTerminalRuleCall_2_0_0() { return cDIGITTerminalRuleCall_2_0_0; }
-
-		//"." DIGIT
-		public Group getGroup_2_0_1() { return cGroup_2_0_1; }
-
-		//"."
-		public Keyword getFullStopKeyword_2_0_1_0() { return cFullStopKeyword_2_0_1_0; }
-
-		//DIGIT
-		public RuleCall getDIGITTerminalRuleCall_2_0_1_1() { return cDIGITTerminalRuleCall_2_0_1_1; }
-
-		//(DIGIT | NONDIGIT | ("e" | "E") ("+" | "-") | ".")*
-		public Alternatives getAlternatives_2_1() { return cAlternatives_2_1; }
-
-		//DIGIT
-		public RuleCall getDIGITTerminalRuleCall_2_1_0() { return cDIGITTerminalRuleCall_2_1_0; }
-
-		//NONDIGIT
-		public RuleCall getNONDIGITTerminalRuleCall_2_1_1() { return cNONDIGITTerminalRuleCall_2_1_1; }
-
-		//("e" | "E") ("+" | "-")
-		public Group getGroup_2_1_2() { return cGroup_2_1_2; }
-
-		//"e" | "E"
-		public Alternatives getAlternatives_2_1_2_0() { return cAlternatives_2_1_2_0; }
-
-		//"e"
-		public Keyword getEKeyword_2_1_2_0_0() { return cEKeyword_2_1_2_0_0; }
-
-		//"E"
-		public Keyword getEKeyword_2_1_2_0_1() { return cEKeyword_2_1_2_0_1; }
-
-		//"+" | "-"
-		public Alternatives getAlternatives_2_1_2_1() { return cAlternatives_2_1_2_1; }
-
-		//"+"
-		public Keyword getPlusSignKeyword_2_1_2_1_0() { return cPlusSignKeyword_2_1_2_1_0; }
-
-		//"-"
-		public Keyword getHyphenMinusKeyword_2_1_2_1_1() { return cHyphenMinusKeyword_2_1_2_1_1; }
-
-		//"."
-		public Keyword getFullStopKeyword_2_1_3() { return cFullStopKeyword_2_1_3; }
+		//PP_NUMBER
+		public RuleCall getPP_NUMBERTerminalRuleCall_4() { return cPP_NUMBERTerminalRuleCall_4; }
 
 		//CHARACTER_LITERAL
-		public RuleCall getCHARACTER_LITERALTerminalRuleCall_3() { return cCHARACTER_LITERALTerminalRuleCall_3; }
+		public RuleCall getCHARACTER_LITERALTerminalRuleCall_5() { return cCHARACTER_LITERALTerminalRuleCall_5; }
 
 		//STRING_LITERAL
-		public RuleCall getSTRING_LITERALTerminalRuleCall_4() { return cSTRING_LITERALTerminalRuleCall_4; }
+		public RuleCall getSTRING_LITERALTerminalRuleCall_6() { return cSTRING_LITERALTerminalRuleCall_6; }
 
 		//PREPROCESSING_OP_OR_PUNC
-		public RuleCall getPREPROCESSING_OP_OR_PUNCTerminalRuleCall_5() { return cPREPROCESSING_OP_OR_PUNCTerminalRuleCall_5; }
+		public RuleCall getPREPROCESSING_OP_OR_PUNCTerminalRuleCall_7() { return cPREPROCESSING_OP_OR_PUNCTerminalRuleCall_7; }
 	}
 
 	public class TokenElements extends AbstractParserRuleElementFinder {
@@ -2344,11 +2287,11 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 	private TerminalRule tHEADER_NAME;
 	private TerminalRule tH_CHAR;
 	private TerminalRule tQ_CHAR;
-	private TerminalRule tNONDIGIT;
-	private TerminalRule tDIGIT;
 	private TerminalRule tKEYWORD;
 	private TerminalRule tPREPROCESSING_OP_OR_PUNC;
 	private TerminalRule tID;
+	private TerminalRule tNONDIGIT;
+	private TerminalRule tDIGIT;
 	private LiteralElements pLiteral;
 	private TerminalRule tINT;
 	private TerminalRule tDECIMAL_LITERAL;
@@ -2369,6 +2312,7 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 	private TerminalRule tSTRING_LITERAL;
 	private TerminalRule tENC_PREFIX;
 	private TerminalRule tSCHAR;
+	private TerminalRule tPP_NUMBER;
 	private NamespaceDefinitionElements pNamespaceDefinition;
 	private NamespaceBodyElements pNamespaceBody;
 	private NamespaceAliasDefinitionElements pNamespaceAliasDefinition;
@@ -2500,8 +2444,8 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 	//// lex.pptoken
 	//// each non-white-space character that cannot be one of the above [ambiguity!!!]
 	//PreProcessingToken:
-	//	HEADER_NAME | ID | (DIGIT | "." DIGIT) (DIGIT | NONDIGIT | ("e" | "E") ("+" | "-") | ".")* | CHARACTER_LITERAL |
-	//	STRING_LITERAL | PREPROCESSING_OP_OR_PUNC;
+	//	HEADER_NAME | ID | INT | FLOATING_LITERAL | PP_NUMBER | CHARACTER_LITERAL | STRING_LITERAL |
+	//	PREPROCESSING_OP_OR_PUNC;
 	public PreProcessingTokenElements getPreProcessingTokenAccess() {
 		return (pPreProcessingToken != null) ? pPreProcessingToken : (pPreProcessingToken = new PreProcessingTokenElements());
 	}
@@ -2540,19 +2484,6 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 		return (tQ_CHAR != null) ? tQ_CHAR : (tQ_CHAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "Q_CHAR"));
 	} 
 
-	//// lex.name
-	//terminal NONDIGIT:
-	//	"a".."z" | "A".."Z" | "_";
-	public TerminalRule getNONDIGITRule() {
-		return (tNONDIGIT != null) ? tNONDIGIT : (tNONDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NONDIGIT"));
-	} 
-
-	//terminal DIGIT:
-	//	"0".."9";
-	public TerminalRule getDIGITRule() {
-		return (tDIGIT != null) ? tDIGIT : (tDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DIGIT"));
-	} 
-
 	//// lex.key
 	//terminal KEYWORD:
 	//	"alignas" | "alignof" | "asm" | "auto" | "bool" | "break" | "case" | "catch" | "char" | "char16_t" | "char32_t" |
@@ -2578,11 +2509,23 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 		return (tPREPROCESSING_OP_OR_PUNC != null) ? tPREPROCESSING_OP_OR_PUNC : (tPREPROCESSING_OP_OR_PUNC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "PREPROCESSING_OP_OR_PUNC"));
 	} 
 
-	//// lex.name (cont)
+	//// lex.name
 	//terminal ID:
 	//	(NONDIGIT | UNIVERSAL_CHARACTER_NAME) (DIGIT | NONDIGIT | UNIVERSAL_CHARACTER_NAME)*;
 	public TerminalRule getIDRule() {
 		return (tID != null) ? tID : (tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID"));
+	} 
+
+	//terminal fragment NONDIGIT:
+	//	"a".."z" | "A".."Z" | "_";
+	public TerminalRule getNONDIGITRule() {
+		return (tNONDIGIT != null) ? tNONDIGIT : (tNONDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NONDIGIT"));
+	} 
+
+	//terminal fragment DIGIT:
+	//	"0".."9";
+	public TerminalRule getDIGITRule() {
+		return (tDIGIT != null) ? tDIGIT : (tDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DIGIT"));
 	} 
 
 	//// lex.literal.kinds
@@ -2712,6 +2655,13 @@ public class Cpp2GrammarAccess extends AbstractGrammarElementFinder {
 	//	!("\"" | "\\" | "\n") | ESCAPE_SEQUENCE | UNIVERSAL_CHARACTER_NAME;
 	public TerminalRule getSCHARRule() {
 		return (tSCHAR != null) ? tSCHAR : (tSCHAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SCHAR"));
+	} 
+
+	//// lex.ppnumber
+	//terminal PP_NUMBER:
+	//	(DIGIT | "." DIGIT) (DIGIT | NONDIGIT | UNIVERSAL_CHARACTER_NAME | ("e" | "E") ("+" | "-") | ".")*;
+	public TerminalRule getPP_NUMBERRule() {
+		return (tPP_NUMBER != null) ? tPP_NUMBER : (tPP_NUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "PP_NUMBER"));
 	} 
 
 	//// namespace.def
