@@ -131,6 +131,33 @@ public interface MyDslFactory extends EFactory
   block_declaration createblock_declaration();
 
   /**
+   * Returns a new object of class '<em>Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declaration</em>'.
+   * @generated
+   */
+  Declaration createDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Namespace Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Namespace Definition</em>'.
+   * @generated
+   */
+  NamespaceDefinition createNamespaceDefinition();
+
+  /**
+   * Returns a new object of class '<em>Linkage Specification</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Linkage Specification</em>'.
+   * @generated
+   */
+  LinkageSpecification createLinkageSpecification();
+
+  /**
    * Returns a new object of class '<em>Int Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -174,6 +201,15 @@ public interface MyDslFactory extends EFactory
    * @generated
    */
   Return createReturn();
+
+  /**
+   * Returns a new object of class '<em>LKS</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>LKS</em>'.
+   * @generated
+   */
+  LKS createLKS();
 
   /**
    * Returns the package supported by this factory.

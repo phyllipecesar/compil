@@ -25,9 +25,7 @@ Body:
 	// (classes += ClassDeclaration)* |
 	// (structs += StructDeclaration)* |
 	// (structs += StructDeclaration)* |
-	(variaveis += VarDecl |
-	 funcoes += FunctionDeclaration
-	)*
+	(declarations += Declaration)*
 	
 ;
 
@@ -103,7 +101,7 @@ elif_groups:
 
 		
 // FUNCTION
-FunctionDeclaration:
+FunctionDeclaration returns FunctionDeclaration:
 	{FunctionDeclaration} type=Type name=ID "(" 
 		(params+=Parameter  ("," params+=Parameter)* )?  ")" "{"	
 		(escopo=statement)?
@@ -164,13 +162,13 @@ simple_declaration:
 jump_statement:
 	'break;'|
 	'continue;'|
-	{Return}'return' exp=expression?';'|
+	{Return}'return' exp=Expression?';'|
 	'goto' ID';'
 ;
 
-expression:
-	"--DUMMY--"
-;
+
+
+
 declaration_statement:
 	(variaveis += block_declaration)+
 ;
@@ -180,5 +178,660 @@ block_declaration:
 	{block_declaration} variavel = simple_declaration
 ;
 
+
+// lex.charset
+terminal fragment HEX_QUAD:
+	HEXADECIMAL_DIGIT HEXADECIMAL_DIGIT HEXADECIMAL_DIGIT HEXADECIMAL_DIGIT;
+
+terminal fragment UNIVERSAL_CHARACTER_NAME:
+	'\\u' HEX_QUAD | '\\U' HEX_QUAD HEX_QUAD;
+
+/* 
+ * It makes no sense to pre-process the file during compilation.
+
+// lex.pptoken
+PreProcessingToken:
+	HEADER_NAME |
+	ID |
+	INT |
+	FLOATING_LITERAL |
+	PP_NUMBER |
+	CHARACTER_LITERAL |
+	STRING_LITERAL |
+	PREPROCESSING_OP_OR_PUNC
+	// each non-white-space character that cannot be one of the above [ambiguity!!!]
+; 
+
+// lex.header
+terminal HEADER_NAME:
+	'<' H_CHAR+ '>' | '\"' Q_CHAR+ '\"';
+ 
+terminal fragment H_CHAR:
+	!('\n' | '>');
+
+terminal fragment Q_CHAR:
+	!('\n' | '\"');
+
+// lex.ppnumber
+terminal PP_NUMBER:
+	(DIGIT | '.' DIGIT) (DIGIT | NONDIGIT | UNIVERSAL_CHARACTER_NAME | ('e' | 'E') ('+' | '-') | '.')*;
+
+*/
+
+// lex.token
+Token:
+	KEYWORD |
+	Literal |
+	PREPROCESSING_OP_OR_PUNC
+	ID;
+	
+// lex.key
+terminal KEYWORD:
+	'alignas' |
+	'alignof' |
+	'asm' |
+	'auto' |
+	'bool' |
+	'break' |
+	'case' |
+	'catch' |
+	'char' |
+	'char16_t' |
+	'char32_t' |
+	'class' |
+	'const' |
+	'constexpr' |
+	'const_cast' |
+	'continue' |
+	'decltype' |
+	'default' |
+	'delete' |
+	'do' |
+	'double' |
+	'dynamic_cast' |
+	'else' |
+	'enum' |
+	'explicit' |
+	'export' |
+	'extern' |
+	'false' |
+	'float' |
+	'for' |
+	'friend' |
+	'goto' |
+	'if' |
+	'inline' |
+	'int' |
+	'long' |
+	'mutable' |
+	'namespace' |
+	'new' |
+	'noexcept' |
+	'nullptr' |
+	'operator' |
+	'private' |
+	'protected' |
+	'public' |
+	'register' |
+	'reinterpret_cast' |
+	'return' |
+	'short' |
+	'signed' |
+	'sizeof' |
+	'static' |
+	'static_assert' |
+	'static_cast' |
+	'struct' |
+	'switch' |
+	'template' |
+	'this' |
+	'thread_local' |
+	'throw' |
+	'true' |
+	'try' |
+	'typedef' |
+	'typeid' |
+	'typename' |
+	'union' |
+	'unsigned' |
+	'using' |
+	'virtual' |
+	'void' |
+	'volatile' |
+	'wchar_t' |
+	'while';
+
+// lex.operators
+terminal PREPROCESSING_OP_OR_PUNC:
+	'{' |
+	'}' |
+	'[' |
+	']' |
+	'#' |
+	'##' |
+	'(' |
+	')' |
+	'<:' |
+	':>' |
+	'<%' |
+	'%>' |
+	'%:' |
+	'%:%:' |
+	';' |
+	':' |
+	'...' |
+	'new' |
+	'delete' |
+	'?' |
+	'::' |
+	'.' |
+	'.*' |
+	'+' |
+	'-' |
+	'*' |
+	'/' |
+	'%' |
+	'^' |
+	'&' |
+	'|' |
+	'~' |
+	'!' |
+	'=' |
+	'<' |
+	'>' |
+	'+=' |
+	'-=' |
+	'*=' |
+	'/=' |
+	'%=' |
+	'^=' |
+	'&=' |
+	'|=' |
+	'<<' |
+	'>>' |
+	'<<=' |
+	'>>=' |
+	'==' |
+	'!=' |
+	'<=' |
+	'>=' |
+	'&&' |
+	'||' |
+	'++' |
+	'--' |
+	',' |
+	'->*' |
+	'->' |
+	'and' |
+	'and_eq' |
+	'bitand' |
+	'bitor' |
+	'compl' |
+	'not' |
+	'not_eq' |
+	'or' |
+	'or_eq' |
+	'xor' |
+	'xor_eq';
+
+// lex.name
+terminal ID:
+	(NONDIGIT | UNIVERSAL_CHARACTER_NAME) (DIGIT | NONDIGIT | UNIVERSAL_CHARACTER_NAME)*;
+
+terminal fragment NONDIGIT:
+	'a'..'z' | 'A'..'Z' | '_';
+
+terminal fragment DIGIT:
+	'0'..'9';
+
+// lex.literal.kinds
+Literal:
+	INT |
+	CHARACTER_LITERAL |
+	FLOATING_LITERAL |
+	STRING_LITERAL |
+	('true' | 'false')
+	'nullptr';
+
+// lex.icon
+terminal INT returns ecore::EInt:
+	(DECIMAL_LITERAL | OCTAL_LITERAL | HEXADECIMAL_LITERAL) INTEGER_SUFFIX?;
+	
+terminal fragment DECIMAL_LITERAL:
+	'1'..'9' DIGIT*;
+	
+terminal fragment OCTAL_LITERAL:
+	'0' OCTAL_DIGIT*;
+	
+terminal fragment HEXADECIMAL_LITERAL:
+	('0x' | '0X') HEXADECIMAL_DIGIT+;
+	
+terminal fragment OCTAL_DIGIT:
+	'0'..'7';
+	
+terminal fragment HEXADECIMAL_DIGIT:
+	'0'..'9' | 'A'..'F';
+
+terminal fragment INTEGER_SUFFIX:
+	('u' | 'U') ('l' | 'L' | 'll' | 'LL')? |
+	('l' | 'L' | 'll' | 'LL') ('u' | 'U')?;
+
+// lex.ccon
+terminal CHARACTER_LITERAL:
+	('u' | 'U' | 'L')? '\'' C_CHAR+ '\'';
+	
+terminal fragment C_CHAR:
+	!('\'' | '\\' | '\n') | ESCAPE_SEQUENCE | UNIVERSAL_CHARACTER_NAME;
+	
+terminal fragment ESCAPE_SEQUENCE:
+	SIMPLE_ESCAPE_SEQUENCE | OCTAL_ESCAPE_SEQUENCE | HEXADECIMAL_ESCAPE_SEQUENCE;
+	
+terminal fragment SIMPLE_ESCAPE_SEQUENCE:
+	'\\' ('\'' | '\"' | '?' | '\\' | 'a' | 'b' | 'f' | 'n' | 'r' | 't' | 'v');
+	
+terminal fragment OCTAL_ESCAPE_SEQUENCE:
+	'\\' OCTAL_DIGIT OCTAL_DIGIT OCTAL_DIGIT;
+	
+terminal fragment HEXADECIMAL_ESCAPE_SEQUENCE:
+	'\\x' HEXADECIMAL_DIGIT+;
+
+// lex.fcon
+terminal FLOATING_LITERAL:
+	(FRACTIONAL_CONSTANT EXPONENT_PART? | DIGIT+ EXPONENT_PART) ('f' | 'l' | 'F' | 'L')?;
+
+terminal fragment FRACTIONAL_CONSTANT:
+	DIGIT* '.' DIGIT+ | DIGIT+ '.';
+
+terminal fragment EXPONENT_PART:
+	('e' | 'E') ('+' | '-')? DIGIT+;
+
+// lex.string
+terminal STRING_LITERAL:
+	ENC_PREFIX? '\"' SCHAR+ '\"';
+
+terminal fragment ENC_PREFIX:
+	'u8' | 'u' | 'U' | 'L';
+
+terminal fragment SCHAR:
+	!('\"' | '\\' | '\n') | ESCAPE_SEQUENCE | UNIVERSAL_CHARACTER_NAME;
+
+// stmt.dcl
+DeclarationStatement:
+	SimpleDeclaration |
+	BlockDeclaration;
+	
+// dcl.dcl
+Declaration:
+	{Declaration} (funcao = FunctionDeclaration |
+	dirtyE= SimpleOrFunctionDeclaration|
+	dirtyA = BlockDeclaration |
+	dirtyB = TemplateDeclaration |
+	dirtyC = ExplicitInstantiation |
+	dirtyD = ExplicitSpecialization |
+	dirty = LinkageSpecification |
+	dirty = NamespaceDefinition);
+
+BlockDeclaration:
+	AsmDefinition |
+	NamespaceAliasDefinition |
+	UsingDeclaration |
+	StaticAssertDeclaration |
+	AliasDeclaration;
+
+AliasDeclaration:
+	'using' ID '=' TypeId ';';
+
+SimpleDeclaration:
+	DeclarationSpecifier* SimpleDeclarationSuffix;
+
+SimpleOrFunctionDeclaration:
+	DeclarationSpecifier* (SimpleDeclarationSuffix | FunctionDeclarationSuffix);
+
+SimpleDeclarationSuffix:
+	InitDeclaratorList? ';';
+
+FunctionDeclarationSuffix:
+	FunctionDeclarator (FunctionBody | '=' 'default' ';' | '=' 'delete' ';');
+
+StaticAssertDeclaration:
+	'static_assert' '(' ConstantExpression ',' STRING_LITERAL ')' ';';
+
+// dcl.spec
+DeclarationSpecifier:
+	StorageClassSpecifier |
+	TypeSpecifier |
+	FunctionSpecifier |
+	'friend' |
+	'typedef' |
+	'constexpr';
+
+// dcl.stc
+StorageClassSpecifier:
+	'register' |
+	'static' |
+	'thread_local' |
+	'extern' |
+	'mutable';
+
+// dcl.fct.spec
+FunctionSpecifier:
+	'inline' |
+	'virtual' |
+	'explicit';
+
+// dcl.type
+TypeSpecifier:
+	TrailingTypeSpecifier |
+	ClassSpecifier |
+	EnumSpecifier;
+
+TrailingTypeSpecifier:
+	SimpleTypeSpecifier |
+	ElaboratedTypeSpecifier |
+	TypenameSpecifier |
+	CvQualifier;
+
+// dct.type.simple
+SimpleTypeSpecifier:
+	'::'? (TypeName | NestedNameSpecifier (TypeName | 'template' SimpleTemplateId)) |
+	'char' |
+	'char16_t' |
+	'char32_t' |
+	'wchar_t' |
+	'bool' |
+	'short' |
+	'int' |
+	'long' |
+	'signed' |
+	'unsigned' |
+	'float' |
+	'double' |
+	'void' |
+	'auto' |
+	DeclarationTypeSpecifier;
+
+TypeName:
+	ClassName |
+	SimpleTemplateId |
+	ID ;
+
+DeclarationTypeSpecifier:
+	'decltype' '(' Expression ')';
+
+// dcl.type.elab
+ElaboratedTypeSpecifier:
+	ClassKey '::'? NestedNameSpecifier? (ID | 'template'? SimpleTemplateId);
+
+// dcl.enum
+EnumName:
+	ID;
+
+EnumSpecifier:
+	EnumHead '{' (EnumeratorList ','?)? '}';
+
+EnumHead:
+	EnumKey (ID? | NestedNameSpecifier ID) EnumBase?;
+
+EnumKey:
+	'enum' |
+	'enum' 'class' |
+	'enum' 'struct';
+	
+EnumBase:
+	':' TypeSpecifier+;
+
+EnumeratorList:
+	EnumerationDefinition (',' EnumerationDefinition)*;
+
+EnumerationDefinition:
+	Enumerator ('=' ConstantExpression)?;
+
+Enumerator:
+	ID;
+
+// namespace.def
+NamespaceDefinition:
+	'inline'? 'namespace' ID? '{' dirty = Declaration* '}';
+
+// namespace.alias
+NamespaceAliasDefinition:
+	'namespace' ID '=' QualifiedNamespaceSpecifier ';';
+
+QualifiedNamespaceSpecifier:
+	'::'? NestedNameSpecifier? ID;
+
+// namespace.udecl
+UsingDeclaration:
+	'using' ('::' | 'typename'? '::'? NestedNameSpecifier) UnqualifiedId ';';
+
+// namespace.udir
+UsingDirective:
+	'using' 'namespace' '::'? NestedNameSpecifier? ID ';';
+
+// dcl.asm
+AsmDefinition:
+	'asm' '(' STRING_LITERAL ')' ';';
+
+// dcl.link
+LinkageSpecification:
+	{LKS} 'extern' STRING_LITERAL (dirty=Declaration | '{'dirty=Declaration* '}');
+
+// dcl.decl
+InitDeclaratorList:
+	InitDeclarator (',' InitDeclarator)*;
+
+InitDeclarator:
+	DeclaratorId Initializer?;
+
+FunctionDeclarator:
+	DeclaratorId ParametersAndQualifiers;
+
+ParametersAndQualifiers:
+	'(' ParameterDeclarationClause? ')' ('const' | 'volatile')? ('&' | '&&')? ExceptionSpecification?;
+
+DeclaratorId:
+	'...'? IdExpression;
+
+// dcl.name
+TypeId:
+	TypeSpecifier+;
+
+// dcl.fct
+ParameterDeclarationClause:
+	'...' |
+	ParameterDeclarationList (','? '...')?;
+
+ParameterDeclarationList:
+	ParameterDeclaration (',' ParameterDeclaration)*;
+
+ParameterDeclaration:
+	DeclarationSpecifier+ InitDeclarator;
+
+// dcl.fct.def.general
+FunctionBody:
+	CtorInitializer? CompoundStatement |
+	FunctionTryBlock;
+
+// over.oper
+OperatorFunctionId:
+	'operator' OverloadableOperator ('<' (ConstantExpression | TypeSpecifier | IdExpression)* '>')?;
+
+OverloadableOperator:
+	'new' |
+	'delete' |
+	'new' '[' ']' |
+	'delete' '[' ']' |
+	'+' |
+	'-' |
+	'*' |
+	'/' |
+	'%' |
+	'^' |
+	'&' |
+	'|' |
+	'~' |
+	'!' |
+	'=' |
+	'<' |
+	'>' |
+	'+=' |
+	'-=' |
+	'*=' |
+	'/=' |
+	'%=' |
+	'^=' |
+	'&=' |
+	'|=' |
+	'<<' |
+	'>>' |
+	'>>=' |
+	'<<=' |
+	'==' |
+	'!=' |
+	'<=' |
+	'>=' |
+	'&&' |
+	'||' |
+	'++' |
+	'--' |
+	',' |
+	'->*' |
+	'->' |
+	'()' |
+	'[]';
+
+LiteralOperatorId:
+	'operator' '\"' '\"';
+
+// temp
+TemplateDeclaration:
+	'template' '<' TemplateParameterList '>';
+
+TemplateParameterList:
+	TemplateParameter (',' TemplateParameter)*;
+
+// temp.param
+TemplateParameter:
+	TypeParameter | ParameterDeclaration;
+
+TypeParameter:
+	('class' | 'typename') ('...'? ID? | ID? '=' TypeId);
+	//'template' '<' TemplateParameterList '>' 'class' ('...'? ID? | ID? '=' IdExpression);
+
+// temp.names
+SimpleTemplateId:
+	ID '<' TemplateArgumentList '>';
+
+TemplateId:
+	SimpleTemplateId |
+	(OperatorFunctionId | LiteralOperatorId) '<' TemplateArgumentList '>';
+
+TemplateArgumentList:
+	TemplateArgument '...'? (',' TemplateArgument '...'?)*;
+
+TemplateArgument:
+	ConstantExpression |
+	TypeId |
+	IdExpression;
+
+// temp.res
+TypenameSpecifier:
+	'typename' '::'? NestedNameSpecifier (ID | 'template'? ID '<' TemplateArgumentList '>');
+	
+// except
+TryBlock:
+	'try' CompoundStatement Handler+;
+
+FunctionTryBlock:
+	'try' CtorInitializer? CompoundStatement Handler+;
+
+Handler:
+	'catch' '(' ExceptionDeclaration ')' CompoundStatement;
+
+ExceptionDeclaration:
+	TypeSpecifier+ DeclaratorId? | 
+	'...';
+	
+ThrowExpression:
+	'throw' AssignmentExpression?;
+
+// except.spec
+ExceptionSpecification:
+	DynamicExceptionSpecification |
+	NoexceptSpecification;
+
+DynamicExceptionSpecification:
+	'throw' '(' TypeIdList ')';
+
+NoexceptSpecification:
+	'noexcept' ('(' ConstantExpression ')')?;
+
+
+
+// DUMMY
+
+Expression:
+	'Expression'
+;
+
+ClassKey:
+	'ClassKey'
+;
+
+ExplicitSpecialization:
+	'ExplicitSpecialization'
+;
+
+ExplicitInstantiation:
+	'ExplicitInstantiation'
+;
+
+ClassSpecifier:
+	'ClassSpecifier'
+;
+
+CvQualifier:
+	'CvQualifier'
+;
+
+ConstantExpression:
+	'ConstantExpression'
+;
+
+IdExpression:
+	'IdExpression'
+;
+
+NestedNameSpecifier:
+	'NestedNameSpecifier'
+;
+
+AssignmentExpression:
+	'AssignmentExpression'
+;
+
+CompoundStatement:
+	'CompoundStatement'
+;
+
+CtorInitializer:
+	'CtorInitializer'
+;
+
+TypeIdList:
+	'TypeIdList'
+;
+
+UnqualifiedId:
+	'UnqualifiedId'
+;
+
+ClassName:
+	'ClassName'
+;
+
+Initializer:
+	'Initializer'
+;
 
 	

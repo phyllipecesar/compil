@@ -15,9 +15,12 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.mydsl.myDsl.Body;
 import org.xtext.example.mydsl.myDsl.BoolType;
+import org.xtext.example.mydsl.myDsl.Declaration;
 import org.xtext.example.mydsl.myDsl.FunctionDeclaration;
 import org.xtext.example.mydsl.myDsl.IntType;
+import org.xtext.example.mydsl.myDsl.LKS;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
+import org.xtext.example.mydsl.myDsl.NamespaceDefinition;
 import org.xtext.example.mydsl.myDsl.Parameter;
 import org.xtext.example.mydsl.myDsl.Return;
 import org.xtext.example.mydsl.myDsl.Type;
@@ -51,6 +54,12 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case MyDslPackage.DECLARATION:
+				if(context == grammarAccess.getDeclarationRule()) {
+					sequence_Declaration(context, (Declaration) semanticObject); 
+					return; 
+				}
+				else break;
 			case MyDslPackage.FUNCTION_DECLARATION:
 				if(context == grammarAccess.getFunctionDeclarationRule()) {
 					sequence_FunctionDeclaration(context, (FunctionDeclaration) semanticObject); 
@@ -60,6 +69,18 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MyDslPackage.INT_TYPE:
 				if(context == grammarAccess.getSimple_type_specifierRule()) {
 					sequence_simple_type_specifier(context, (IntType) semanticObject); 
+					return; 
+				}
+				else break;
+			case MyDslPackage.LKS:
+				if(context == grammarAccess.getLinkageSpecificationRule()) {
+					sequence_LinkageSpecification(context, (LKS) semanticObject); 
+					return; 
+				}
+				else break;
+			case MyDslPackage.NAMESPACE_DEFINITION:
+				if(context == grammarAccess.getNamespaceDefinitionRule()) {
+					sequence_NamespaceDefinition(context, (NamespaceDefinition) semanticObject); 
 					return; 
 				}
 				else break;
@@ -129,9 +150,27 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     ((variaveis+=VarDecl | funcoes+=FunctionDeclaration)*)
+	 *     (declarations+=Declaration*)
 	 */
 	protected void sequence_Body(EObject context, Body semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         funcao=FunctionDeclaration | 
+	 *         dirtyE=SimpleOrFunctionDeclaration | 
+	 *         dirtyA=BlockDeclaration | 
+	 *         dirtyB=TemplateDeclaration | 
+	 *         dirtyC=ExplicitInstantiation | 
+	 *         dirtyD=ExplicitSpecialization | 
+	 *         dirty=LinkageSpecification | 
+	 *         dirty=NamespaceDefinition
+	 *     )
+	 */
+	protected void sequence_Declaration(EObject context, Declaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -141,6 +180,24 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (type=Type name=ID (params+=Parameter params+=Parameter*)? escopo=statement?)
 	 */
 	protected void sequence_FunctionDeclaration(EObject context, FunctionDeclaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (dirty=Declaration | dirty=Declaration*)
+	 */
+	protected void sequence_LinkageSpecification(EObject context, LKS semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     dirty=Declaration*
+	 */
+	protected void sequence_NamespaceDefinition(EObject context, NamespaceDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -226,7 +283,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (exp=expression?)
+	 *     (exp=Expression?)
 	 */
 	protected void sequence_jump_statement(EObject context, Return semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

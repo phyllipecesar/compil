@@ -86,22 +86,13 @@ public interface MyDslPackage extends EPackage
   int BODY = 1;
 
   /**
-   * The feature id for the '<em><b>Variaveis</b></em>' containment reference list.
+   * The feature id for the '<em><b>Declarations</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BODY__VARIAVEIS = MODEL_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Funcoes</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BODY__FUNCOES = MODEL_FEATURE_COUNT + 1;
+  int BODY__DECLARATIONS = MODEL_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Body</em>' class.
@@ -110,7 +101,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BODY_FEATURE_COUNT = MODEL_FEATURE_COUNT + 2;
+  int BODY_FEATURE_COUNT = MODEL_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.FunctionDeclarationImpl <em>Function Declaration</em>}' class.
@@ -429,6 +420,135 @@ public interface MyDslPackage extends EPackage
   int BLOCK_DECLARATION_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.DeclarationImpl <em>Declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.DeclarationImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getDeclaration()
+   * @generated
+   */
+  int DECLARATION = 12;
+
+  /**
+   * The feature id for the '<em><b>Funcao</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__FUNCAO = 0;
+
+  /**
+   * The feature id for the '<em><b>Dirty E</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__DIRTY_E = 1;
+
+  /**
+   * The feature id for the '<em><b>Dirty A</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__DIRTY_A = 2;
+
+  /**
+   * The feature id for the '<em><b>Dirty B</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__DIRTY_B = 3;
+
+  /**
+   * The feature id for the '<em><b>Dirty C</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__DIRTY_C = 4;
+
+  /**
+   * The feature id for the '<em><b>Dirty D</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__DIRTY_D = 5;
+
+  /**
+   * The feature id for the '<em><b>Dirty</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__DIRTY = 6;
+
+  /**
+   * The number of structural features of the '<em>Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_FEATURE_COUNT = 7;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.NamespaceDefinitionImpl <em>Namespace Definition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.NamespaceDefinitionImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getNamespaceDefinition()
+   * @generated
+   */
+  int NAMESPACE_DEFINITION = 13;
+
+  /**
+   * The feature id for the '<em><b>Dirty</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMESPACE_DEFINITION__DIRTY = 0;
+
+  /**
+   * The number of structural features of the '<em>Namespace Definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMESPACE_DEFINITION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.LinkageSpecificationImpl <em>Linkage Specification</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.LinkageSpecificationImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getLinkageSpecification()
+   * @generated
+   */
+  int LINKAGE_SPECIFICATION = 14;
+
+  /**
+   * The number of structural features of the '<em>Linkage Specification</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINKAGE_SPECIFICATION_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.IntTypeImpl <em>Int Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -436,7 +556,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getIntType()
    * @generated
    */
-  int INT_TYPE = 12;
+  int INT_TYPE = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -464,7 +584,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getBoolType()
    * @generated
    */
-  int BOOL_TYPE = 13;
+  int BOOL_TYPE = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -492,7 +612,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getUnknownType()
    * @generated
    */
-  int UNKNOWN_TYPE = 14;
+  int UNKNOWN_TYPE = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -520,7 +640,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getjump()
    * @generated
    */
-  int JUMP = 15;
+  int JUMP = 18;
 
   /**
    * The feature id for the '<em><b>Variavel</b></em>' containment reference.
@@ -557,7 +677,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getReturn()
    * @generated
    */
-  int RETURN = 16;
+  int RETURN = 19;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' attribute.
@@ -576,6 +696,34 @@ public interface MyDslPackage extends EPackage
    * @ordered
    */
   int RETURN_FEATURE_COUNT = JUMP_STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.LKSImpl <em>LKS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.LKSImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getLKS()
+   * @generated
+   */
+  int LKS = 20;
+
+  /**
+   * The feature id for the '<em><b>Dirty</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LKS__DIRTY = LINKAGE_SPECIFICATION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>LKS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LKS_FEATURE_COUNT = LINKAGE_SPECIFICATION_FEATURE_COUNT + 1;
 
 
   /**
@@ -599,26 +747,15 @@ public interface MyDslPackage extends EPackage
   EClass getBody();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Body#getVariaveis <em>Variaveis</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Body#getDeclarations <em>Declarations</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Variaveis</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Body#getVariaveis()
+   * @return the meta object for the containment reference list '<em>Declarations</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Body#getDeclarations()
    * @see #getBody()
    * @generated
    */
-  EReference getBody_Variaveis();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Body#getFuncoes <em>Funcoes</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Funcoes</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Body#getFuncoes()
-   * @see #getBody()
-   * @generated
-   */
-  EReference getBody_Funcoes();
+  EReference getBody_Declarations();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.FunctionDeclaration <em>Function Declaration</em>}'.
@@ -875,6 +1012,124 @@ public interface MyDslPackage extends EPackage
   EReference getblock_declaration_Variavel();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Declaration <em>Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Declaration</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Declaration
+   * @generated
+   */
+  EClass getDeclaration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Declaration#getFuncao <em>Funcao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Funcao</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Declaration#getFuncao()
+   * @see #getDeclaration()
+   * @generated
+   */
+  EReference getDeclaration_Funcao();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Declaration#getDirtyE <em>Dirty E</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dirty E</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Declaration#getDirtyE()
+   * @see #getDeclaration()
+   * @generated
+   */
+  EAttribute getDeclaration_DirtyE();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Declaration#getDirtyA <em>Dirty A</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dirty A</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Declaration#getDirtyA()
+   * @see #getDeclaration()
+   * @generated
+   */
+  EAttribute getDeclaration_DirtyA();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Declaration#getDirtyB <em>Dirty B</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dirty B</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Declaration#getDirtyB()
+   * @see #getDeclaration()
+   * @generated
+   */
+  EAttribute getDeclaration_DirtyB();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Declaration#getDirtyC <em>Dirty C</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dirty C</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Declaration#getDirtyC()
+   * @see #getDeclaration()
+   * @generated
+   */
+  EAttribute getDeclaration_DirtyC();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Declaration#getDirtyD <em>Dirty D</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dirty D</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Declaration#getDirtyD()
+   * @see #getDeclaration()
+   * @generated
+   */
+  EAttribute getDeclaration_DirtyD();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Declaration#getDirty <em>Dirty</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Dirty</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Declaration#getDirty()
+   * @see #getDeclaration()
+   * @generated
+   */
+  EReference getDeclaration_Dirty();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.NamespaceDefinition <em>Namespace Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Namespace Definition</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NamespaceDefinition
+   * @generated
+   */
+  EClass getNamespaceDefinition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.NamespaceDefinition#getDirty <em>Dirty</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Dirty</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NamespaceDefinition#getDirty()
+   * @see #getNamespaceDefinition()
+   * @generated
+   */
+  EReference getNamespaceDefinition_Dirty();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.LinkageSpecification <em>Linkage Specification</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Linkage Specification</em>'.
+   * @see org.xtext.example.mydsl.myDsl.LinkageSpecification
+   * @generated
+   */
+  EClass getLinkageSpecification();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.IntType <em>Int Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -947,6 +1202,27 @@ public interface MyDslPackage extends EPackage
   EAttribute getReturn_Exp();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.LKS <em>LKS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>LKS</em>'.
+   * @see org.xtext.example.mydsl.myDsl.LKS
+   * @generated
+   */
+  EClass getLKS();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.LKS#getDirty <em>Dirty</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Dirty</em>'.
+   * @see org.xtext.example.mydsl.myDsl.LKS#getDirty()
+   * @see #getLKS()
+   * @generated
+   */
+  EReference getLKS_Dirty();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -990,20 +1266,12 @@ public interface MyDslPackage extends EPackage
     EClass BODY = eINSTANCE.getBody();
 
     /**
-     * The meta object literal for the '<em><b>Variaveis</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Declarations</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BODY__VARIAVEIS = eINSTANCE.getBody_Variaveis();
-
-    /**
-     * The meta object literal for the '<em><b>Funcoes</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BODY__FUNCOES = eINSTANCE.getBody_Funcoes();
+    EReference BODY__DECLARATIONS = eINSTANCE.getBody_Declarations();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.FunctionDeclarationImpl <em>Function Declaration</em>}' class.
@@ -1218,6 +1486,100 @@ public interface MyDslPackage extends EPackage
     EReference BLOCK_DECLARATION__VARIAVEL = eINSTANCE.getblock_declaration_Variavel();
 
     /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.DeclarationImpl <em>Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.DeclarationImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getDeclaration()
+     * @generated
+     */
+    EClass DECLARATION = eINSTANCE.getDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Funcao</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION__FUNCAO = eINSTANCE.getDeclaration_Funcao();
+
+    /**
+     * The meta object literal for the '<em><b>Dirty E</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DECLARATION__DIRTY_E = eINSTANCE.getDeclaration_DirtyE();
+
+    /**
+     * The meta object literal for the '<em><b>Dirty A</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DECLARATION__DIRTY_A = eINSTANCE.getDeclaration_DirtyA();
+
+    /**
+     * The meta object literal for the '<em><b>Dirty B</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DECLARATION__DIRTY_B = eINSTANCE.getDeclaration_DirtyB();
+
+    /**
+     * The meta object literal for the '<em><b>Dirty C</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DECLARATION__DIRTY_C = eINSTANCE.getDeclaration_DirtyC();
+
+    /**
+     * The meta object literal for the '<em><b>Dirty D</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DECLARATION__DIRTY_D = eINSTANCE.getDeclaration_DirtyD();
+
+    /**
+     * The meta object literal for the '<em><b>Dirty</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION__DIRTY = eINSTANCE.getDeclaration_Dirty();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.NamespaceDefinitionImpl <em>Namespace Definition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.NamespaceDefinitionImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getNamespaceDefinition()
+     * @generated
+     */
+    EClass NAMESPACE_DEFINITION = eINSTANCE.getNamespaceDefinition();
+
+    /**
+     * The meta object literal for the '<em><b>Dirty</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NAMESPACE_DEFINITION__DIRTY = eINSTANCE.getNamespaceDefinition_Dirty();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.LinkageSpecificationImpl <em>Linkage Specification</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.LinkageSpecificationImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getLinkageSpecification()
+     * @generated
+     */
+    EClass LINKAGE_SPECIFICATION = eINSTANCE.getLinkageSpecification();
+
+    /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.IntTypeImpl <em>Int Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1282,6 +1644,24 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EAttribute RETURN__EXP = eINSTANCE.getReturn_Exp();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.LKSImpl <em>LKS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.LKSImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getLKS()
+     * @generated
+     */
+    EClass LKS = eINSTANCE.getLKS();
+
+    /**
+     * The meta object literal for the '<em><b>Dirty</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LKS__DIRTY = eINSTANCE.getLKS_Dirty();
 
   }
 

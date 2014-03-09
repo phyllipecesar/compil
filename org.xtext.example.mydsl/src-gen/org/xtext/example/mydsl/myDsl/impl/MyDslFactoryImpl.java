@@ -76,11 +76,15 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.JUMP_STATEMENT: return createjump_statement();
       case MyDslPackage.DECLARATION_STATEMENT: return createdeclaration_statement();
       case MyDslPackage.BLOCK_DECLARATION: return createblock_declaration();
+      case MyDslPackage.DECLARATION: return createDeclaration();
+      case MyDslPackage.NAMESPACE_DEFINITION: return createNamespaceDefinition();
+      case MyDslPackage.LINKAGE_SPECIFICATION: return createLinkageSpecification();
       case MyDslPackage.INT_TYPE: return createIntType();
       case MyDslPackage.BOOL_TYPE: return createBoolType();
       case MyDslPackage.UNKNOWN_TYPE: return createUnknownType();
       case MyDslPackage.JUMP: return createjump();
       case MyDslPackage.RETURN: return createReturn();
+      case MyDslPackage.LKS: return createLKS();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -223,6 +227,39 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Declaration createDeclaration()
+  {
+    DeclarationImpl declaration = new DeclarationImpl();
+    return declaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NamespaceDefinition createNamespaceDefinition()
+  {
+    NamespaceDefinitionImpl namespaceDefinition = new NamespaceDefinitionImpl();
+    return namespaceDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LinkageSpecification createLinkageSpecification()
+  {
+    LinkageSpecificationImpl linkageSpecification = new LinkageSpecificationImpl();
+    return linkageSpecification;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public IntType createIntType()
   {
     IntTypeImpl intType = new IntTypeImpl();
@@ -271,6 +308,17 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     ReturnImpl return_ = new ReturnImpl();
     return return_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LKS createLKS()
+  {
+    LKSImpl lks = new LKSImpl();
+    return lks;
   }
 
   /**

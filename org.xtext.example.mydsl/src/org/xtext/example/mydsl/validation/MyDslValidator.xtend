@@ -18,6 +18,7 @@ import org.xtext.example.mydsl.myDsl.FunctionDeclaration
 import org.xtext.example.mydsl.myDsl.Parameter
 import org.xtext.example.mydsl.myDsl.Return
 import org.antlr.misc.Utils
+import org.xtext.example.mydsl.myDsl.Declaration
 
 /**
  * Custom validation rules. 
@@ -53,21 +54,24 @@ int ok;
 def checkFunctionAlreadyExists(Body b) {
 	hash.clear();
 	
-	for (FunctionDeclaration symbol: b.funcoes) {
-		row = symbol.name + "(";
-		ok = 0;
-		for (Parameter symb : symbol.params) {
-			if (ok == 1) row = row + ",";
-			ok = 1;
-			row = row + symb.type.sts.name;
+	for (Declaration symbol: b.declarations) {
+		if (symbol.funcao.name != "null") {
+			row = symbol.funcao.name + "(";
+			ok = 0;
+			for (Parameter symb : symbol.funcao.params) {
+				if (ok == 1) row = row + ",";
+				ok = 1;
+				row = row + symb.type.sts.name;
+			}
+			row = row + ")";
+			if (hash.contains(row)) {
+				error("Function '" +  row + "' already exists", symbol.funcao, null, -1);
+			}
+			hash.add(row);
 		}
-		row = row + ")";
-		if (hash.contains(row)) {
-			error("Function '" +  row + "' already exists", symbol, null, -1);
-		}
-		hash.add(row);
 	}
 }
+
 
 @Check
 def checkReturnOnlyOnFunction(Return r) {

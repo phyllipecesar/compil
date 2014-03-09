@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.xtext.example.mydsl.myDsl.Body;
+import org.xtext.example.mydsl.myDsl.Declaration;
 import org.xtext.example.mydsl.myDsl.FunctionDeclaration;
 import org.xtext.example.mydsl.myDsl.Parameter;
 import org.xtext.example.mydsl.myDsl.Return;
@@ -85,14 +86,19 @@ public class MyDslValidator extends AbstractMyDslValidator {
   @Check
   public void checkFunctionAlreadyExists(final Body b) {
     this.hash.clear();
-    EList<FunctionDeclaration> _funcoes = b.getFuncoes();
-    for (final FunctionDeclaration symbol : _funcoes) {
-      {
-        String _name = symbol.getName();
-        String _plus = (_name + "(");
+    EList<Declaration> _declarations = b.getDeclarations();
+    for (final Declaration symbol : _declarations) {
+      FunctionDeclaration _funcao = symbol.getFuncao();
+      String _name = _funcao.getName();
+      boolean _notEquals = (!Objects.equal(_name, "null"));
+      if (_notEquals) {
+        FunctionDeclaration _funcao_1 = symbol.getFuncao();
+        String _name_1 = _funcao_1.getName();
+        String _plus = (_name_1 + "(");
         this.row = _plus;
         this.ok = 0;
-        EList<Parameter> _params = symbol.getParams();
+        FunctionDeclaration _funcao_2 = symbol.getFuncao();
+        EList<Parameter> _params = _funcao_2.getParams();
         for (final Parameter symb : _params) {
           {
             if ((this.ok == 1)) {
@@ -101,15 +107,16 @@ public class MyDslValidator extends AbstractMyDslValidator {
             this.ok = 1;
             Type _type = symb.getType();
             simple_type_specifier _sts = _type.getSts();
-            String _name_1 = _sts.getName();
-            String _plus_1 = (this.row + _name_1);
+            String _name_2 = _sts.getName();
+            String _plus_1 = (this.row + _name_2);
             this.row = _plus_1;
           }
         }
         this.row = (this.row + ")");
         boolean _contains = this.hash.contains(this.row);
         if (_contains) {
-          this.error((("Function \'" + this.row) + "\' already exists"), symbol, null, (-1));
+          FunctionDeclaration _funcao_3 = symbol.getFuncao();
+          this.error((("Function \'" + this.row) + "\' already exists"), _funcao_3, null, (-1));
         }
         this.hash.add(this.row);
       }

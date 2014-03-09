@@ -3,10 +3,8 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="myDsl" nsURI="http://www.xtext.org/example/mydsl/MyDsl" nsPrefix="myDsl">
   <eClassifiers xsi:type="ecore:EClass" name="Model"/>
   <eClassifiers xsi:type="ecore:EClass" name="Body" eSuperTypes="#//Model">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variaveis" upperBound="-1"
-        eType="#//VarDecl" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="funcoes" upperBound="-1"
-        eType="#//FunctionDeclaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declarations" upperBound="-1"
+        eType="#//Declaration" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FunctionDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type" containment="true"/>
@@ -48,6 +46,22 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="variavel" eType="#//simple_declaration"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Declaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="funcao" eType="#//FunctionDeclaration"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dirtyE" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dirtyA" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dirtyB" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dirtyC" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dirtyD" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dirty" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamespaceDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dirty" eType="#//Declaration"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinkageSpecification"/>
   <eClassifiers xsi:type="ecore:EClass" name="IntType" eSuperTypes="#//simple_type_specifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="BoolType" eSuperTypes="#//simple_type_specifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="UnknownType" eSuperTypes="#//simple_type_specifier"/>
@@ -57,5 +71,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Return" eSuperTypes="#//jump_statement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="exp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LKS" eSuperTypes="#//LinkageSpecification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dirty" eType="#//Declaration"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
