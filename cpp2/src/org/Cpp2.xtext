@@ -353,7 +353,6 @@ TypeSpecifier:
 
 TrailingTypeSpecifier:
 	SimpleTypeSpecifier |
-	ElaboratedTypeSpecifier |
 	TypenameSpecifier |
 	CvQualifier;
 
@@ -377,16 +376,11 @@ SimpleTypeSpecifier:
 	DeclarationTypeSpecifier;
 
 TypeName:
-	ClassName |
 	SimpleTemplateId |
 	ID ;
 
 DeclarationTypeSpecifier:
 	'decltype' '(' Expression ')';
-
-// dcl.type.elab
-ElaboratedTypeSpecifier:
-	ClassKey '::'? NestedNameSpecifier? (ID | 'template'? SimpleTemplateId);
 
 // dcl.enum
 EnumName:
@@ -477,6 +471,91 @@ ParameterDeclaration:
 FunctionBody:
 	CtorInitializer? CompoundStatement |
 	FunctionTryBlock;
+
+// dcl.init
+Initializer:
+	BraceOrEqualInitializer |
+	'(' ExpressionList ')';
+
+BraceOrEqualInitializer:
+	'=' InitializerClause |
+	BracedInitializerList;
+
+InitializerClause:
+	AssignmentExpression |
+	BracedInitializerList;
+
+InitializerList:
+	InitializerClause '...'? (',' InitializerClause '...'?)*;
+
+BracedInitializerList:
+	'{' (InitializerList ','?)? '}';
+
+// class
+ClassSpecifier:
+	ClassHead '{' MemberSpecification? '}';
+
+ClassHead:
+	ClassKey (NestedNameSpecifier? TypeName ClassVirtualSpecifier*)? BaseClause?;
+
+ClassVirtualSpecifier:
+	'final' |
+	'explicit';
+
+ClassKey:
+	'class' |
+	'struct' |
+	'union';
+
+// class.mem
+MemberSpecification:
+	(MemberDeclaration | AccessSpecifier ':') MemberSpecification?;
+
+MemberDeclaration:
+	MemberOrFunctionDeclaration |
+	UsingDeclaration |
+	StaticAssertDeclaration |
+	TemplateDeclaration |
+	AliasDeclaration;
+
+MemberOrFunctionDeclaration:
+	DeclarationSpecifier* (FunctionDeclarationSuffix | MemberDeclarationSuffix ';');
+
+MemberDeclarationSuffix:
+	MemberDeclaratorList?;
+
+MemberDeclaratorList:
+	MemberDeclarator (',' MemberDeclarator)*;
+
+MemberDeclarator:
+	DeclaratorId VirtualSpecifier* (PureSpecifier? | BraceOrEqualInitializer);
+
+VirtualSpecifier:
+	'override' |
+	'final' |
+	'new';
+
+PureSpecifier:
+	'=' '0';
+
+// class.derived
+BaseClause:
+	':' BaseSpecifierList;
+
+BaseSpecifierList:
+	BaseSpecifier '...'? (',' BaseSpecifier '...'?)*;
+
+BaseSpecifier:
+	('virtual' AccessSpecifier? | AccessSpecifier 'virtual'?)? ClassOrDeclarationType;
+
+ClassOrDeclarationType:
+	'::'? NestedNameSpecifier? TypeName |
+	DeclarationTypeSpecifier;
+
+AccessSpecifier:
+	'private' |
+	'protected' |
+	'public';
 
 // over.oper
 OperatorFunctionId:
@@ -600,9 +679,8 @@ Expression:
 	'Expression'
 ;
 
-ClassKey:
-	'ClassKey'
-;
+ExpressionList:
+	Expression (',' Expression)*;
 
 ExplicitSpecialization:
 	'ExplicitSpecialization'
@@ -610,10 +688,6 @@ ExplicitSpecialization:
 
 ExplicitInstantiation:
 	'ExplicitInstantiation'
-;
-
-ClassSpecifier:
-	'ClassSpecifier'
 ;
 
 CvQualifier:
@@ -652,10 +726,4 @@ UnqualifiedId:
 	'UnqualifiedId'
 ;
 
-ClassName:
-	'ClassName'
-;
 
-Initializer:
-	'Initializer'
-;
