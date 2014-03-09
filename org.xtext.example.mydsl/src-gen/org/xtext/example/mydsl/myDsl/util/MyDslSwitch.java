@@ -87,6 +87,27 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MyDslPackage.DECLARATION:
+      {
+        Declaration declaration = (Declaration)theEObject;
+        T result = caseDeclaration(declaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.NAMESPACE_DEFINITION:
+      {
+        NamespaceDefinition namespaceDefinition = (NamespaceDefinition)theEObject;
+        T result = caseNamespaceDefinition(namespaceDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.LINKAGE_SPECIFICATION:
+      {
+        LinkageSpecification linkageSpecification = (LinkageSpecification)theEObject;
+        T result = caseLinkageSpecification(linkageSpecification);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MyDslPackage.FUNCTION_DECLARATION:
       {
         FunctionDeclaration functionDeclaration = (FunctionDeclaration)theEObject;
@@ -122,13 +143,6 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.STATEMENT:
-      {
-        statement statement = (statement)theEObject;
-        T result = casestatement(statement);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case MyDslPackage.SIMPLE_DECLARATION:
       {
         simple_declaration simple_declaration = (simple_declaration)theEObject;
@@ -157,24 +171,11 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.DECLARATION:
+      case MyDslPackage.LKS:
       {
-        Declaration declaration = (Declaration)theEObject;
-        T result = caseDeclaration(declaration);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MyDslPackage.NAMESPACE_DEFINITION:
-      {
-        NamespaceDefinition namespaceDefinition = (NamespaceDefinition)theEObject;
-        T result = caseNamespaceDefinition(namespaceDefinition);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MyDslPackage.LINKAGE_SPECIFICATION:
-      {
-        LinkageSpecification linkageSpecification = (LinkageSpecification)theEObject;
-        T result = caseLinkageSpecification(linkageSpecification);
+        LKS lks = (LKS)theEObject;
+        T result = caseLKS(lks);
+        if (result == null) result = caseLinkageSpecification(lks);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -202,27 +203,11 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.JUMP:
-      {
-        jump jump = (jump)theEObject;
-        T result = casejump(jump);
-        if (result == null) result = casestatement(jump);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case MyDslPackage.RETURN:
       {
         Return return_ = (Return)theEObject;
         T result = caseReturn(return_);
         if (result == null) result = casejump_statement(return_);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MyDslPackage.LKS:
-      {
-        LKS lks = (LKS)theEObject;
-        T result = caseLKS(lks);
-        if (result == null) result = caseLinkageSpecification(lks);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -258,6 +243,54 @@ public class MyDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBody(Body object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeclaration(Declaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Namespace Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Namespace Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNamespaceDefinition(NamespaceDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Linkage Specification</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Linkage Specification</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLinkageSpecification(LinkageSpecification object)
   {
     return null;
   }
@@ -343,22 +376,6 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>statement</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>statement</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casestatement(statement object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>simple declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -423,49 +440,17 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Declaration</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>LKS</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Declaration</em>'.
+   * @return the result of interpreting the object as an instance of '<em>LKS</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDeclaration(Declaration object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Namespace Definition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Namespace Definition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseNamespaceDefinition(NamespaceDefinition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Linkage Specification</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Linkage Specification</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseLinkageSpecification(LinkageSpecification object)
+  public T caseLKS(LKS object)
   {
     return null;
   }
@@ -519,22 +504,6 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>jump</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>jump</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casejump(jump object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Return</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -546,22 +515,6 @@ public class MyDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseReturn(Return object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>LKS</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>LKS</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseLKS(LKS object)
   {
     return null;
   }

@@ -66,25 +66,23 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
     {
       case MyDslPackage.MODEL: return createModel();
       case MyDslPackage.BODY: return createBody();
+      case MyDslPackage.DECLARATION: return createDeclaration();
+      case MyDslPackage.NAMESPACE_DEFINITION: return createNamespaceDefinition();
+      case MyDslPackage.LINKAGE_SPECIFICATION: return createLinkageSpecification();
       case MyDslPackage.FUNCTION_DECLARATION: return createFunctionDeclaration();
       case MyDslPackage.PARAMETER: return createParameter();
       case MyDslPackage.VAR_DECL: return createVarDecl();
       case MyDslPackage.TYPE: return createType();
       case MyDslPackage.SIMPLE_TYPE_SPECIFIER: return createsimple_type_specifier();
-      case MyDslPackage.STATEMENT: return createstatement();
       case MyDslPackage.SIMPLE_DECLARATION: return createsimple_declaration();
       case MyDslPackage.JUMP_STATEMENT: return createjump_statement();
       case MyDslPackage.DECLARATION_STATEMENT: return createdeclaration_statement();
       case MyDslPackage.BLOCK_DECLARATION: return createblock_declaration();
-      case MyDslPackage.DECLARATION: return createDeclaration();
-      case MyDslPackage.NAMESPACE_DEFINITION: return createNamespaceDefinition();
-      case MyDslPackage.LINKAGE_SPECIFICATION: return createLinkageSpecification();
+      case MyDslPackage.LKS: return createLKS();
       case MyDslPackage.INT_TYPE: return createIntType();
       case MyDslPackage.BOOL_TYPE: return createBoolType();
       case MyDslPackage.UNKNOWN_TYPE: return createUnknownType();
-      case MyDslPackage.JUMP: return createjump();
       case MyDslPackage.RETURN: return createReturn();
-      case MyDslPackage.LKS: return createLKS();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -110,6 +108,39 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     BodyImpl body = new BodyImpl();
     return body;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Declaration createDeclaration()
+  {
+    DeclarationImpl declaration = new DeclarationImpl();
+    return declaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NamespaceDefinition createNamespaceDefinition()
+  {
+    NamespaceDefinitionImpl namespaceDefinition = new NamespaceDefinitionImpl();
+    return namespaceDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LinkageSpecification createLinkageSpecification()
+  {
+    LinkageSpecificationImpl linkageSpecification = new LinkageSpecificationImpl();
+    return linkageSpecification;
   }
 
   /**
@@ -172,17 +203,6 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public statement createstatement()
-  {
-    statementImpl statement = new statementImpl();
-    return statement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public simple_declaration createsimple_declaration()
   {
     simple_declarationImpl simple_declaration = new simple_declarationImpl();
@@ -227,32 +247,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Declaration createDeclaration()
+  public LKS createLKS()
   {
-    DeclarationImpl declaration = new DeclarationImpl();
-    return declaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NamespaceDefinition createNamespaceDefinition()
-  {
-    NamespaceDefinitionImpl namespaceDefinition = new NamespaceDefinitionImpl();
-    return namespaceDefinition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public LinkageSpecification createLinkageSpecification()
-  {
-    LinkageSpecificationImpl linkageSpecification = new LinkageSpecificationImpl();
-    return linkageSpecification;
+    LKSImpl lks = new LKSImpl();
+    return lks;
   }
 
   /**
@@ -293,32 +291,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public jump createjump()
-  {
-    jumpImpl jump = new jumpImpl();
-    return jump;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Return createReturn()
   {
     ReturnImpl return_ = new ReturnImpl();
     return return_;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public LKS createLKS()
-  {
-    LKSImpl lks = new LKSImpl();
-    return lks;
   }
 
   /**

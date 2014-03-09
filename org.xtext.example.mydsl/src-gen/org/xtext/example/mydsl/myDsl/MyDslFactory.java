@@ -41,6 +41,33 @@ public interface MyDslFactory extends EFactory
   Body createBody();
 
   /**
+   * Returns a new object of class '<em>Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declaration</em>'.
+   * @generated
+   */
+  Declaration createDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Namespace Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Namespace Definition</em>'.
+   * @generated
+   */
+  NamespaceDefinition createNamespaceDefinition();
+
+  /**
+   * Returns a new object of class '<em>Linkage Specification</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Linkage Specification</em>'.
+   * @generated
+   */
+  LinkageSpecification createLinkageSpecification();
+
+  /**
    * Returns a new object of class '<em>Function Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -86,15 +113,6 @@ public interface MyDslFactory extends EFactory
   simple_type_specifier createsimple_type_specifier();
 
   /**
-   * Returns a new object of class '<em>statement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>statement</em>'.
-   * @generated
-   */
-  statement createstatement();
-
-  /**
    * Returns a new object of class '<em>simple declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -131,31 +149,13 @@ public interface MyDslFactory extends EFactory
   block_declaration createblock_declaration();
 
   /**
-   * Returns a new object of class '<em>Declaration</em>'.
+   * Returns a new object of class '<em>LKS</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Declaration</em>'.
+   * @return a new object of class '<em>LKS</em>'.
    * @generated
    */
-  Declaration createDeclaration();
-
-  /**
-   * Returns a new object of class '<em>Namespace Definition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Namespace Definition</em>'.
-   * @generated
-   */
-  NamespaceDefinition createNamespaceDefinition();
-
-  /**
-   * Returns a new object of class '<em>Linkage Specification</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Linkage Specification</em>'.
-   * @generated
-   */
-  LinkageSpecification createLinkageSpecification();
+  LKS createLKS();
 
   /**
    * Returns a new object of class '<em>Int Type</em>'.
@@ -185,15 +185,6 @@ public interface MyDslFactory extends EFactory
   UnknownType createUnknownType();
 
   /**
-   * Returns a new object of class '<em>jump</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>jump</em>'.
-   * @generated
-   */
-  jump createjump();
-
-  /**
    * Returns a new object of class '<em>Return</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -201,15 +192,6 @@ public interface MyDslFactory extends EFactory
    * @generated
    */
   Return createReturn();
-
-  /**
-   * Returns a new object of class '<em>LKS</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>LKS</em>'.
-   * @generated
-   */
-  LKS createLKS();
 
   /**
    * Returns the package supported by this factory.

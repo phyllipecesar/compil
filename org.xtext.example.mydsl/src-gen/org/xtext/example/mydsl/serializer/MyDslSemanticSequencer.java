@@ -28,9 +28,7 @@ import org.xtext.example.mydsl.myDsl.UnknownType;
 import org.xtext.example.mydsl.myDsl.VarDecl;
 import org.xtext.example.mydsl.myDsl.block_declaration;
 import org.xtext.example.mydsl.myDsl.declaration_statement;
-import org.xtext.example.mydsl.myDsl.jump;
 import org.xtext.example.mydsl.myDsl.simple_declaration;
-import org.xtext.example.mydsl.myDsl.statement;
 import org.xtext.example.mydsl.services.MyDslGrammarAccess;
 
 @SuppressWarnings("all")
@@ -126,21 +124,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
-			case MyDslPackage.JUMP:
-				if(context == grammarAccess.getStatementRule()) {
-					sequence_statement(context, (jump) semanticObject); 
-					return; 
-				}
-				else break;
 			case MyDslPackage.SIMPLE_DECLARATION:
 				if(context == grammarAccess.getSimple_declarationRule()) {
 					sequence_simple_declaration(context, (simple_declaration) semanticObject); 
-					return; 
-				}
-				else break;
-			case MyDslPackage.STATEMENT:
-				if(context == grammarAccess.getStatementRule()) {
-					sequence_statement(context, (statement) semanticObject); 
 					return; 
 				}
 				else break;
@@ -177,7 +163,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (type=Type name=ID (params+=Parameter params+=Parameter*)? escopo=statement?)
+	 *     (type=Type name=ID (params+=Parameter params+=Parameter*)? escopo=Statement?)
 	 */
 	protected void sequence_FunctionDeclaration(EObject context, FunctionDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -350,31 +336,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getSimple_type_specifierAccess().getNameIDTerminalRuleCall_2_1_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     jump=jump_statement
-	 */
-	protected void sequence_statement(EObject context, jump semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     variavel=declaration_statement
-	 */
-	protected void sequence_statement(EObject context, statement semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.STATEMENT__VARIAVEL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.STATEMENT__VARIAVEL));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getStatementAccess().getVariavelDeclaration_statementParserRuleCall_1_1_0(), semanticObject.getVariavel());
 		feeder.finish();
 	}
 }

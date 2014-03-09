@@ -11,11 +11,24 @@
     <genClasses ecoreClass="MyDsl.ecore#//Body">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Body/declarations"/>
     </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Declaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Declaration/funcao"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Declaration/dirtyE"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Declaration/dirtyA"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Declaration/dirtyB"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Declaration/dirtyC"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Declaration/dirtyD"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Declaration/dirty"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//NamespaceDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NamespaceDefinition/dirty"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//LinkageSpecification"/>
     <genClasses ecoreClass="MyDsl.ecore#//FunctionDeclaration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//FunctionDeclaration/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//FunctionDeclaration/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//FunctionDeclaration/params"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//FunctionDeclaration/escopo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//FunctionDeclaration/escopo"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Parameter">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Parameter/type"/>
@@ -31,9 +44,6 @@
     <genClasses ecoreClass="MyDsl.ecore#//simple_type_specifier">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//simple_type_specifier/name"/>
     </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//statement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//statement/variavel"/>
-    </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//simple_declaration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//simple_declaration/variavel"/>
     </genClasses>
@@ -44,30 +54,14 @@
     <genClasses ecoreClass="MyDsl.ecore#//block_declaration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//block_declaration/variavel"/>
     </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//Declaration">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Declaration/funcao"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Declaration/dirtyE"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Declaration/dirtyA"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Declaration/dirtyB"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Declaration/dirtyC"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Declaration/dirtyD"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Declaration/dirty"/>
+    <genClasses ecoreClass="MyDsl.ecore#//LKS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//LKS/dirty"/>
     </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//NamespaceDefinition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NamespaceDefinition/dirty"/>
-    </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//LinkageSpecification"/>
     <genClasses ecoreClass="MyDsl.ecore#//IntType"/>
     <genClasses ecoreClass="MyDsl.ecore#//BoolType"/>
     <genClasses ecoreClass="MyDsl.ecore#//UnknownType"/>
-    <genClasses ecoreClass="MyDsl.ecore#//jump">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//jump/jump"/>
-    </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Return">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Return/exp"/>
-    </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//LKS">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//LKS/dirty"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

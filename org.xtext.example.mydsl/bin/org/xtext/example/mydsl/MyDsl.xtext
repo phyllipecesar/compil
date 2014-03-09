@@ -29,6 +29,31 @@ Body:
 	
 ;
 
+
+// MODIFIEDS
+
+Declaration:
+	{Declaration} (funcao = FunctionDeclaration |
+	dirtyE= SimpleOrFunctionDeclaration|
+	dirtyA = BlockDeclaration |
+	dirtyB = TemplateDeclaration |
+	dirtyC = ExplicitInstantiation |
+	dirtyD = ExplicitSpecialization |
+	dirty = LinkageSpecification |
+	dirty = NamespaceDefinition);
+	
+	
+// namespace.def
+NamespaceDefinition:
+	'inline'? 'namespace' ID? '{' dirty = Declaration* '}';
+	
+// dcl.link
+LinkageSpecification:
+	{LKS} 'extern' STRING_LITERAL (dirty=Declaration | '{'dirty=Declaration* '}');
+
+
+//
+
 // INCLUDE, DEFINES
 
 elif_group:
@@ -104,7 +129,7 @@ elif_groups:
 FunctionDeclaration returns FunctionDeclaration:
 	{FunctionDeclaration} type=Type name=ID "(" 
 		(params+=Parameter  ("," params+=Parameter)* )?  ")" "{"	
-		(escopo=statement)?
+		(escopo=Statement)?
 	"}";
 		
 Parameter:
@@ -122,13 +147,13 @@ simple_type_specifier:
 	{UnknownType} name=ID;
 
 //// A.5
-statement:
+//statement:
 //	expression_statement|
 //	compound_statement|
-	{jump} jump = jump_statement|
-	{statement} variavel = declaration_statement
+//	{jump} jump = jump_statement|
+//	{statement} variavel = declaration_statement
 //	selection_statement
-	;
+//	;
 //iteration_statement:
 //	'while (' condition ')' statement|
 //	'do' statement 'while ('expression ');'|
@@ -177,8 +202,6 @@ declaration_statement:
 block_declaration:
 	{block_declaration} variavel = simple_declaration
 ;
-
-
 // lex.charset
 terminal fragment HEX_QUAD:
 	HEXADECIMAL_DIGIT HEXADECIMAL_DIGIT HEXADECIMAL_DIGIT HEXADECIMAL_DIGIT;
@@ -455,21 +478,62 @@ terminal fragment ENC_PREFIX:
 terminal fragment SCHAR:
 	!('\"' | '\\' | '\n') | ESCAPE_SEQUENCE | UNIVERSAL_CHARACTER_NAME;
 
+// stmt.stmt
+Statement:
+	LabeledStatement |
+	ExpressionStatement |
+	CompoundStatement |
+	SelectionStatement |
+	IterationStatement |
+	JumpStatement |
+	DeclarationStatement |
+	TryBlock;
+
+// stmt.label
+LabeledStatement:
+	ID ':' Statement |
+	'case' ConstantExpression ':' Statement |
+	'default' ':' Statement;
+
+// stmt.expr
+ExpressionStatement:
+	Expression ';';
+
+// stmt.block
+CompoundStatement:
+	'{' Statement* '}';
+
+// stmt.select
+SelectionStatement:
+	'if' '(' Condition ')' Statement (=> 'else' Statement)? |
+	'switch' '(' Condition ')' Statement;
+
+Condition:
+	Expression |
+	DeclarationSpecifier+ DeclaratorId ('=' InitializerClause | BracedInitializerList);
+
+// stmt.iter
+IterationStatement:
+	'while' '(' Condition ')' Statement |
+	'do' Statement 'while' '(' Expression ')' ';' |
+	'for' '(' ForInitializationStatement Condition? ';' Expression? ')' Statement;
+
+ForInitializationStatement:
+	ExpressionStatement |
+	SimpleDeclaration;
+
+// stmt.jump
+JumpStatement:
+	'break' ';' |
+	'continue' ';' |
+	'return' (Expression | BracedInitializerList)? ';' |
+	'goto' ID ';';
+
 // stmt.dcl
 DeclarationStatement:
 	SimpleDeclaration |
 	BlockDeclaration;
 	
-// dcl.dcl
-Declaration:
-	{Declaration} (funcao = FunctionDeclaration |
-	dirtyE= SimpleOrFunctionDeclaration|
-	dirtyA = BlockDeclaration |
-	dirtyB = TemplateDeclaration |
-	dirtyC = ExplicitInstantiation |
-	dirtyD = ExplicitSpecialization |
-	dirty = LinkageSpecification |
-	dirty = NamespaceDefinition);
 
 BlockDeclaration:
 	AsmDefinition |
@@ -527,7 +591,6 @@ TypeSpecifier:
 
 TrailingTypeSpecifier:
 	SimpleTypeSpecifier |
-	ElaboratedTypeSpecifier |
 	TypenameSpecifier |
 	CvQualifier;
 
@@ -551,16 +614,11 @@ SimpleTypeSpecifier:
 	DeclarationTypeSpecifier;
 
 TypeName:
-	ClassName |
 	SimpleTemplateId |
 	ID ;
 
 DeclarationTypeSpecifier:
 	'decltype' '(' Expression ')';
-
-// dcl.type.elab
-ElaboratedTypeSpecifier:
-	ClassKey '::'? NestedNameSpecifier? (ID | 'template'? SimpleTemplateId);
 
 // dcl.enum
 EnumName:
@@ -589,10 +647,6 @@ EnumerationDefinition:
 Enumerator:
 	ID;
 
-// namespace.def
-NamespaceDefinition:
-	'inline'? 'namespace' ID? '{' dirty = Declaration* '}';
-
 // namespace.alias
 NamespaceAliasDefinition:
 	'namespace' ID '=' QualifiedNamespaceSpecifier ';';
@@ -612,9 +666,6 @@ UsingDirective:
 AsmDefinition:
 	'asm' '(' STRING_LITERAL ')' ';';
 
-// dcl.link
-LinkageSpecification:
-	{LKS} 'extern' STRING_LITERAL (dirty=Declaration | '{'dirty=Declaration* '}');
 
 // dcl.decl
 InitDeclaratorList:
@@ -651,6 +702,91 @@ ParameterDeclaration:
 FunctionBody:
 	CtorInitializer? CompoundStatement |
 	FunctionTryBlock;
+
+// dcl.init
+Initializer:
+	BraceOrEqualInitializer |
+	'(' ExpressionList ')';
+
+BraceOrEqualInitializer:
+	'=' InitializerClause |
+	BracedInitializerList;
+
+InitializerClause:
+	AssignmentExpression |
+	BracedInitializerList;
+
+InitializerList:
+	InitializerClause '...'? (',' InitializerClause '...'?)*;
+
+BracedInitializerList:
+	'{' (InitializerList ','?)? '}';
+
+// class
+ClassSpecifier:
+	ClassHead '{' MemberSpecification? '}';
+
+ClassHead:
+	ClassKey (NestedNameSpecifier? TypeName ClassVirtualSpecifier*)? BaseClause?;
+
+ClassVirtualSpecifier:
+	'final' |
+	'explicit';
+
+ClassKey:
+	'class' |
+	'struct' |
+	'union';
+
+// class.mem
+MemberSpecification:
+	(MemberDeclaration | AccessSpecifier ':') MemberSpecification?;
+
+MemberDeclaration:
+	MemberOrFunctionDeclaration |
+	UsingDeclaration |
+	StaticAssertDeclaration |
+	TemplateDeclaration |
+	AliasDeclaration;
+
+MemberOrFunctionDeclaration:
+	DeclarationSpecifier* (FunctionDeclarationSuffix | MemberDeclarationSuffix ';');
+
+MemberDeclarationSuffix:
+	MemberDeclaratorList?;
+
+MemberDeclaratorList:
+	MemberDeclarator (',' MemberDeclarator)*;
+
+MemberDeclarator:
+	DeclaratorId VirtualSpecifier* (PureSpecifier? | BraceOrEqualInitializer);
+
+VirtualSpecifier:
+	'override' |
+	'final' |
+	'new';
+
+PureSpecifier:
+	'=' '0';
+
+// class.derived
+BaseClause:
+	':' BaseSpecifierList;
+
+BaseSpecifierList:
+	BaseSpecifier '...'? (',' BaseSpecifier '...'?)*;
+
+BaseSpecifier:
+	('virtual' AccessSpecifier? | AccessSpecifier 'virtual'?)? ClassOrDeclarationType;
+
+ClassOrDeclarationType:
+	'::'? NestedNameSpecifier? TypeName |
+	DeclarationTypeSpecifier;
+
+AccessSpecifier:
+	'private' |
+	'protected' |
+	'public';
 
 // over.oper
 OperatorFunctionId:
@@ -774,9 +910,8 @@ Expression:
 	'Expression'
 ;
 
-ClassKey:
-	'ClassKey'
-;
+ExpressionList:
+	Expression (',' Expression)*;
 
 ExplicitSpecialization:
 	'ExplicitSpecialization'
@@ -784,10 +919,6 @@ ExplicitSpecialization:
 
 ExplicitInstantiation:
 	'ExplicitInstantiation'
-;
-
-ClassSpecifier:
-	'ClassSpecifier'
 ;
 
 CvQualifier:
@@ -810,10 +941,6 @@ AssignmentExpression:
 	'AssignmentExpression'
 ;
 
-CompoundStatement:
-	'CompoundStatement'
-;
-
 CtorInitializer:
 	'CtorInitializer'
 ;
@@ -825,13 +952,3 @@ TypeIdList:
 UnqualifiedId:
 	'UnqualifiedId'
 ;
-
-ClassName:
-	'ClassName'
-;
-
-Initializer:
-	'Initializer'
-;
-
-	
