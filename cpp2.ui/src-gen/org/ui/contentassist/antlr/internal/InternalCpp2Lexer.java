@@ -14,7 +14,10 @@ import java.util.ArrayList;
 public class InternalCpp2Lexer extends Lexer {
     public static final int RULE_ID=4;
     public static final int RULE_FLOATING_LITERAL=7;
+    public static final int T__159=159;
+    public static final int T__158=158;
     public static final int RULE_ANY_OTHER=34;
+    public static final int T__160=160;
     public static final int EOF=-1;
     public static final int T__93=93;
     public static final int RULE_OCTAL_DIGIT=20;
@@ -28,15 +31,22 @@ public class InternalCpp2Lexer extends Lexer {
     public static final int RULE_KEYWORD=12;
     public static final int RULE_DECIMAL_LITERAL=16;
     public static final int RULE_OCTAL_LITERAL=17;
+    public static final int T__154=154;
+    public static final int T__155=155;
+    public static final int T__156=156;
     public static final int RULE_NONDIGIT=14;
     public static final int T__99=99;
+    public static final int T__157=157;
     public static final int T__98=98;
     public static final int T__150=150;
     public static final int T__97=97;
+    public static final int T__151=151;
     public static final int RULE_CHARACTER_LITERAL=6;
     public static final int T__96=96;
+    public static final int T__152=152;
     public static final int RULE_HEX_QUAD=10;
     public static final int T__95=95;
+    public static final int T__153=153;
     public static final int T__139=139;
     public static final int RULE_HEXADECIMAL_LITERAL=18;
     public static final int T__138=138;
@@ -46,12 +56,12 @@ public class InternalCpp2Lexer extends Lexer {
     public static final int T__81=81;
     public static final int T__82=82;
     public static final int T__83=83;
-    public static final int T__85=85;
-    public static final int T__141=141;
-    public static final int RULE_C_CHAR=21;
     public static final int RULE_SCHAR=29;
-    public static final int T__84=84;
+    public static final int RULE_C_CHAR=21;
+    public static final int T__141=141;
+    public static final int T__85=85;
     public static final int T__142=142;
+    public static final int T__84=84;
     public static final int T__87=87;
     public static final int T__140=140;
     public static final int T__86=86;
@@ -96,10 +106,10 @@ public class InternalCpp2Lexer extends Lexer {
     public static final int T__65=65;
     public static final int T__62=62;
     public static final int T__63=63;
-    public static final int RULE_ESCAPE_SEQUENCE=22;
     public static final int T__118=118;
-    public static final int RULE_HEXADECIMAL_ESCAPE_SEQUENCE=25;
+    public static final int RULE_ESCAPE_SEQUENCE=22;
     public static final int T__119=119;
+    public static final int RULE_HEXADECIMAL_ESCAPE_SEQUENCE=25;
     public static final int T__116=116;
     public static final int T__117=117;
     public static final int T__114=114;
@@ -347,10 +357,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:19:7: ( 'CompoundStatement' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:19:9: 'CompoundStatement'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:19:7: ( 'CtorInitializer' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:19:9: 'CtorInitializer'
             {
-            match("CompoundStatement"); 
+            match("CtorInitializer"); 
 
 
             }
@@ -368,10 +378,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:20:7: ( 'CtorInitializer' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:20:9: 'CtorInitializer'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:20:7: ( 'TypeIdList' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:20:9: 'TypeIdList'
             {
-            match("CtorInitializer"); 
+            match("TypeIdList"); 
 
 
             }
@@ -389,10 +399,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:21:7: ( 'TypeIdList' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:21:9: 'TypeIdList'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:21:7: ( 'UnqualifiedId' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:21:9: 'UnqualifiedId'
             {
-            match("TypeIdList"); 
+            match("UnqualifiedId"); 
 
 
             }
@@ -410,10 +420,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:22:7: ( 'UnqualifiedId' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:22:9: 'UnqualifiedId'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:22:7: ( 'true' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:22:9: 'true'
             {
-            match("UnqualifiedId"); 
+            match("true"); 
 
 
             }
@@ -431,10 +441,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:23:7: ( 'true' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:23:9: 'true'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:23:7: ( 'false' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:23:9: 'false'
             {
-            match("true"); 
+            match("false"); 
 
 
             }
@@ -452,10 +462,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:24:7: ( 'false' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:24:9: 'false'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:24:7: ( 'friend' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:24:9: 'friend'
             {
-            match("false"); 
+            match("friend"); 
 
 
             }
@@ -473,10 +483,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:25:7: ( 'friend' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:25:9: 'friend'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:25:7: ( 'typedef' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:25:9: 'typedef'
             {
-            match("friend"); 
+            match("typedef"); 
 
 
             }
@@ -494,10 +504,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:26:7: ( 'typedef' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:26:9: 'typedef'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:26:7: ( 'constexpr' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:26:9: 'constexpr'
             {
-            match("typedef"); 
+            match("constexpr"); 
 
 
             }
@@ -515,10 +525,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:27:7: ( 'constexpr' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:27:9: 'constexpr'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:27:7: ( 'register' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:27:9: 'register'
             {
-            match("constexpr"); 
+            match("register"); 
 
 
             }
@@ -536,10 +546,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:28:7: ( 'register' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:28:9: 'register'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:28:7: ( 'static' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:28:9: 'static'
             {
-            match("register"); 
+            match("static"); 
 
 
             }
@@ -557,10 +567,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:29:7: ( 'static' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:29:9: 'static'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:29:7: ( 'thread_local' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:29:9: 'thread_local'
             {
-            match("static"); 
+            match("thread_local"); 
 
 
             }
@@ -578,10 +588,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:30:7: ( 'thread_local' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:30:9: 'thread_local'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:30:7: ( 'extern' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:30:9: 'extern'
             {
-            match("thread_local"); 
+            match("extern"); 
 
 
             }
@@ -599,10 +609,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:31:7: ( 'extern' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:31:9: 'extern'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:31:7: ( 'mutable' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:31:9: 'mutable'
             {
-            match("extern"); 
+            match("mutable"); 
 
 
             }
@@ -620,10 +630,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:32:7: ( 'mutable' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:32:9: 'mutable'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:32:7: ( 'inline' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:32:9: 'inline'
             {
-            match("mutable"); 
+            match("inline"); 
 
 
             }
@@ -641,10 +651,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:33:7: ( 'inline' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:33:9: 'inline'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:33:7: ( 'virtual' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:33:9: 'virtual'
             {
-            match("inline"); 
+            match("virtual"); 
 
 
             }
@@ -662,10 +672,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:34:7: ( 'virtual' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:34:9: 'virtual'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:34:7: ( 'explicit' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:34:9: 'explicit'
             {
-            match("virtual"); 
+            match("explicit"); 
 
 
             }
@@ -683,10 +693,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:35:7: ( 'explicit' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:35:9: 'explicit'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:35:7: ( 'char' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:35:9: 'char'
             {
-            match("explicit"); 
+            match("char"); 
 
 
             }
@@ -704,10 +714,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:36:7: ( 'char' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:36:9: 'char'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:36:7: ( 'char16_t' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:36:9: 'char16_t'
             {
-            match("char"); 
+            match("char16_t"); 
 
 
             }
@@ -725,10 +735,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:37:7: ( 'char16_t' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:37:9: 'char16_t'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:37:7: ( 'char32_t' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:37:9: 'char32_t'
             {
-            match("char16_t"); 
+            match("char32_t"); 
 
 
             }
@@ -746,10 +756,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:38:7: ( 'char32_t' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:38:9: 'char32_t'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:38:7: ( 'wchar_t' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:38:9: 'wchar_t'
             {
-            match("char32_t"); 
+            match("wchar_t"); 
 
 
             }
@@ -767,10 +777,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:39:7: ( 'wchar_t' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:39:9: 'wchar_t'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:39:7: ( 'bool' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:39:9: 'bool'
             {
-            match("wchar_t"); 
+            match("bool"); 
 
 
             }
@@ -788,10 +798,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:40:7: ( 'bool' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:40:9: 'bool'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:40:7: ( 'short' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:40:9: 'short'
             {
-            match("bool"); 
+            match("short"); 
 
 
             }
@@ -809,10 +819,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:41:7: ( 'short' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:41:9: 'short'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:41:7: ( 'int' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:41:9: 'int'
             {
-            match("short"); 
+            match("int"); 
 
 
             }
@@ -830,10 +840,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:42:7: ( 'int' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:42:9: 'int'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:42:7: ( 'long' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:42:9: 'long'
             {
-            match("int"); 
+            match("long"); 
 
 
             }
@@ -851,10 +861,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:43:7: ( 'long' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:43:9: 'long'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:43:7: ( 'signed' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:43:9: 'signed'
             {
-            match("long"); 
+            match("signed"); 
 
 
             }
@@ -872,10 +882,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:44:7: ( 'signed' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:44:9: 'signed'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:44:7: ( 'unsigned' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:44:9: 'unsigned'
             {
-            match("signed"); 
+            match("unsigned"); 
 
 
             }
@@ -893,10 +903,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:45:7: ( 'unsigned' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:45:9: 'unsigned'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:45:7: ( 'float' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:45:9: 'float'
             {
-            match("unsigned"); 
+            match("float"); 
 
 
             }
@@ -914,10 +924,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:46:7: ( 'float' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:46:9: 'float'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:46:7: ( 'double' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:46:9: 'double'
             {
-            match("float"); 
+            match("double"); 
 
 
             }
@@ -935,10 +945,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:47:7: ( 'double' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:47:9: 'double'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:47:7: ( 'void' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:47:9: 'void'
             {
-            match("double"); 
+            match("void"); 
 
 
             }
@@ -956,10 +966,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:48:7: ( 'void' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:48:9: 'void'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:48:7: ( 'auto' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:48:9: 'auto'
             {
-            match("void"); 
+            match("auto"); 
 
 
             }
@@ -977,10 +987,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:49:7: ( 'auto' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:49:9: 'auto'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:49:7: ( 'enum' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:49:9: 'enum'
             {
-            match("auto"); 
+            match("enum"); 
 
 
             }
@@ -998,10 +1008,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:50:7: ( 'enum' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:50:9: 'enum'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:50:7: ( '::' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:50:9: '::'
             {
-            match("enum"); 
+            match("::"); 
 
 
             }
@@ -1019,10 +1029,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:51:7: ( '::' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:51:9: '::'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:51:7: ( 'const' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:51:9: 'const'
             {
-            match("::"); 
+            match("const"); 
 
 
             }
@@ -1040,10 +1050,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:52:7: ( 'const' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:52:9: 'const'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:52:7: ( 'volatile' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:52:9: 'volatile'
             {
-            match("const"); 
+            match("volatile"); 
 
 
             }
@@ -1061,11 +1071,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:53:7: ( 'volatile' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:53:9: 'volatile'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:53:7: ( '&' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:53:9: '&'
             {
-            match("volatile"); 
-
+            match('&'); 
 
             }
 
@@ -1082,10 +1091,11 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:54:7: ( '&' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:54:9: '&'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:54:7: ( '&&' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:54:9: '&&'
             {
-            match('&'); 
+            match("&&"); 
+
 
             }
 
@@ -1102,10 +1112,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:55:7: ( '&&' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:55:9: '&&'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:55:7: ( '...' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:55:9: '...'
             {
-            match("&&"); 
+            match("..."); 
 
 
             }
@@ -1123,10 +1133,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:56:7: ( '...' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:56:9: '...'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:56:7: ( 'final' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:56:9: 'final'
             {
-            match("..."); 
+            match("final"); 
 
 
             }
@@ -1144,10 +1154,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:57:7: ( 'final' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:57:9: 'final'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:57:7: ( 'class' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:57:9: 'class'
             {
-            match("final"); 
+            match("class"); 
 
 
             }
@@ -1165,10 +1175,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__82;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:58:7: ( 'class' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:58:9: 'class'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:58:7: ( 'struct' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:58:9: 'struct'
             {
-            match("class"); 
+            match("struct"); 
 
 
             }
@@ -1186,10 +1196,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__83;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:59:7: ( 'struct' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:59:9: 'struct'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:59:7: ( 'union' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:59:9: 'union'
             {
-            match("struct"); 
+            match("union"); 
 
 
             }
@@ -1207,10 +1217,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__84;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:60:7: ( 'union' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:60:9: 'union'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:60:7: ( 'override' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:60:9: 'override'
             {
-            match("union"); 
+            match("override"); 
 
 
             }
@@ -1228,10 +1238,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__85;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:61:7: ( 'override' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:61:9: 'override'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:61:7: ( 'new' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:61:9: 'new'
             {
-            match("override"); 
+            match("new"); 
 
 
             }
@@ -1249,10 +1259,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__86;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:62:7: ( 'new' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:62:9: 'new'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:62:7: ( 'private' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:62:9: 'private'
             {
-            match("new"); 
+            match("private"); 
 
 
             }
@@ -1270,10 +1280,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__87;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:63:7: ( 'private' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:63:9: 'private'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:63:7: ( 'protected' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:63:9: 'protected'
             {
-            match("private"); 
+            match("protected"); 
 
 
             }
@@ -1291,10 +1301,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__88;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:64:7: ( 'protected' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:64:9: 'protected'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:64:7: ( 'public' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:64:9: 'public'
             {
-            match("protected"); 
+            match("public"); 
 
 
             }
@@ -1312,10 +1322,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__89;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:65:7: ( 'public' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:65:9: 'public'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:65:7: ( 'delete' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:65:9: 'delete'
             {
-            match("public"); 
+            match("delete"); 
 
 
             }
@@ -1333,11 +1343,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__90;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:66:7: ( 'delete' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:66:9: 'delete'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:66:7: ( '+' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:66:9: '+'
             {
-            match("delete"); 
-
+            match('+'); 
 
             }
 
@@ -1354,10 +1363,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__91;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:67:7: ( '+' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:67:9: '+'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:67:7: ( '-' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:67:9: '-'
             {
-            match('+'); 
+            match('-'); 
 
             }
 
@@ -1374,10 +1383,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__92;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:68:7: ( '-' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:68:9: '-'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:68:7: ( '*' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:68:9: '*'
             {
-            match('-'); 
+            match('*'); 
 
             }
 
@@ -1394,10 +1403,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__93;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:69:7: ( '*' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:69:9: '*'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:69:7: ( '/' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:69:9: '/'
             {
-            match('*'); 
+            match('/'); 
 
             }
 
@@ -1414,10 +1423,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__94;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:70:7: ( '/' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:70:9: '/'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:70:7: ( '%' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:70:9: '%'
             {
-            match('/'); 
+            match('%'); 
 
             }
 
@@ -1434,10 +1443,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__95;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:71:7: ( '%' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:71:9: '%'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:71:7: ( '^' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:71:9: '^'
             {
-            match('%'); 
+            match('^'); 
 
             }
 
@@ -1454,10 +1463,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__96;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:72:7: ( '^' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:72:9: '^'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:72:7: ( '|' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:72:9: '|'
             {
-            match('^'); 
+            match('|'); 
 
             }
 
@@ -1474,10 +1483,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__97;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:73:7: ( '|' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:73:9: '|'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:73:7: ( '~' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:73:9: '~'
             {
-            match('|'); 
+            match('~'); 
 
             }
 
@@ -1494,10 +1503,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__98;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:74:7: ( '~' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:74:9: '~'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:74:7: ( '!' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:74:9: '!'
             {
-            match('~'); 
+            match('!'); 
 
             }
 
@@ -1514,10 +1523,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__99;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:75:7: ( '!' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:75:9: '!'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:75:7: ( '=' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:75:9: '='
             {
-            match('!'); 
+            match('='); 
 
             }
 
@@ -1534,10 +1543,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__100;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:76:8: ( '=' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:76:10: '='
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:76:8: ( '<' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:76:10: '<'
             {
-            match('='); 
+            match('<'); 
 
             }
 
@@ -1554,10 +1563,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__101;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:77:8: ( '<' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:77:10: '<'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:77:8: ( '>' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:77:10: '>'
             {
-            match('<'); 
+            match('>'); 
 
             }
 
@@ -1574,10 +1583,11 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__102;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:78:8: ( '>' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:78:10: '>'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:78:8: ( '+=' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:78:10: '+='
             {
-            match('>'); 
+            match("+="); 
+
 
             }
 
@@ -1594,10 +1604,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__103;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:79:8: ( '+=' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:79:10: '+='
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:79:8: ( '-=' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:79:10: '-='
             {
-            match("+="); 
+            match("-="); 
 
 
             }
@@ -1615,10 +1625,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__104;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:80:8: ( '-=' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:80:10: '-='
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:80:8: ( '*=' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:80:10: '*='
             {
-            match("-="); 
+            match("*="); 
 
 
             }
@@ -1636,10 +1646,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__105;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:81:8: ( '*=' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:81:10: '*='
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:81:8: ( '/=' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:81:10: '/='
             {
-            match("*="); 
+            match("/="); 
 
 
             }
@@ -1657,10 +1667,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__106;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:82:8: ( '/=' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:82:10: '/='
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:82:8: ( '%=' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:82:10: '%='
             {
-            match("/="); 
+            match("%="); 
 
 
             }
@@ -1678,10 +1688,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__107;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:83:8: ( '%=' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:83:10: '%='
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:83:8: ( '^=' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:83:10: '^='
             {
-            match("%="); 
+            match("^="); 
 
 
             }
@@ -1699,10 +1709,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__108;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:84:8: ( '^=' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:84:10: '^='
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:84:8: ( '&=' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:84:10: '&='
             {
-            match("^="); 
+            match("&="); 
 
 
             }
@@ -1720,10 +1730,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__109;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:85:8: ( '&=' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:85:10: '&='
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:85:8: ( '|=' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:85:10: '|='
             {
-            match("&="); 
+            match("|="); 
 
 
             }
@@ -1741,10 +1751,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__110;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:86:8: ( '|=' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:86:10: '|='
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:86:8: ( '<<' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:86:10: '<<'
             {
-            match("|="); 
+            match("<<"); 
 
 
             }
@@ -1762,10 +1772,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__111;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:87:8: ( '<<' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:87:10: '<<'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:87:8: ( '>>' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:87:10: '>>'
             {
-            match("<<"); 
+            match(">>"); 
 
 
             }
@@ -1783,10 +1793,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__112;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:88:8: ( '>>' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:88:10: '>>'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:88:8: ( '>>=' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:88:10: '>>='
             {
-            match(">>"); 
+            match(">>="); 
 
 
             }
@@ -1804,10 +1814,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__113;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:89:8: ( '>>=' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:89:10: '>>='
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:89:8: ( '<<=' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:89:10: '<<='
             {
-            match(">>="); 
+            match("<<="); 
 
 
             }
@@ -1825,10 +1835,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__114;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:90:8: ( '<<=' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:90:10: '<<='
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:90:8: ( '==' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:90:10: '=='
             {
-            match("<<="); 
+            match("=="); 
 
 
             }
@@ -1846,10 +1856,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__115;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:91:8: ( '==' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:91:10: '=='
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:91:8: ( '!=' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:91:10: '!='
             {
-            match("=="); 
+            match("!="); 
 
 
             }
@@ -1867,10 +1877,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__116;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:92:8: ( '!=' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:92:10: '!='
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:92:8: ( '<=' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:92:10: '<='
             {
-            match("!="); 
+            match("<="); 
 
 
             }
@@ -1888,10 +1898,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__117;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:93:8: ( '<=' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:93:10: '<='
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:93:8: ( '>=' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:93:10: '>='
             {
-            match("<="); 
+            match(">="); 
 
 
             }
@@ -1909,10 +1919,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__118;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:94:8: ( '>=' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:94:10: '>='
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:94:8: ( '||' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:94:10: '||'
             {
-            match(">="); 
+            match("||"); 
 
 
             }
@@ -1930,10 +1940,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__119;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:95:8: ( '||' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:95:10: '||'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:95:8: ( '++' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:95:10: '++'
             {
-            match("||"); 
+            match("++"); 
 
 
             }
@@ -1951,10 +1961,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__120;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:96:8: ( '++' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:96:10: '++'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:96:8: ( '--' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:96:10: '--'
             {
-            match("++"); 
+            match("--"); 
 
 
             }
@@ -1972,11 +1982,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__121;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:97:8: ( '--' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:97:10: '--'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:97:8: ( ',' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:97:10: ','
             {
-            match("--"); 
-
+            match(','); 
 
             }
 
@@ -1993,10 +2002,11 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__122;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:98:8: ( ',' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:98:10: ','
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:98:8: ( '->*' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:98:10: '->*'
             {
-            match(','); 
+            match("->*"); 
+
 
             }
 
@@ -2013,10 +2023,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__123;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:99:8: ( '->*' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:99:10: '->*'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:99:8: ( '->' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:99:10: '->'
             {
-            match("->*"); 
+            match("->"); 
 
 
             }
@@ -2034,10 +2044,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__124;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:100:8: ( '->' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:100:10: '->'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:100:8: ( '()' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:100:10: '()'
             {
-            match("->"); 
+            match("()"); 
 
 
             }
@@ -2055,10 +2065,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__125;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:101:8: ( '()' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:101:10: '()'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:101:8: ( '[]' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:101:10: '[]'
             {
-            match("()"); 
+            match("[]"); 
 
 
             }
@@ -2076,10 +2086,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__126;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:102:8: ( '[]' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:102:10: '[]'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:102:8: ( 'typename' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:102:10: 'typename'
             {
-            match("[]"); 
+            match("typename"); 
 
 
             }
@@ -2097,10 +2107,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__127;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:103:8: ( 'typename' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:103:10: 'typename'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:103:8: ( 'nullptr' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:103:10: 'nullptr'
             {
-            match("typename"); 
+            match("nullptr"); 
 
 
             }
@@ -2118,11 +2128,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__128;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:104:8: ( 'nullptr' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:104:10: 'nullptr'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:104:8: ( ':' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:104:10: ':'
             {
-            match("nullptr"); 
-
+            match(':'); 
 
             }
 
@@ -2139,10 +2148,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__129;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:105:8: ( 'using' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:105:10: 'using'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:105:8: ( 'case' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:105:10: 'case'
             {
-            match("using"); 
+            match("case"); 
 
 
             }
@@ -2160,10 +2169,11 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__130;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:106:8: ( ';' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:106:10: ';'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:106:8: ( 'default' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:106:10: 'default'
             {
-            match(';'); 
+            match("default"); 
+
 
             }
 
@@ -2180,11 +2190,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__131;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:107:8: ( 'default' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:107:10: 'default'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:107:8: ( ';' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:107:10: ';'
             {
-            match("default"); 
-
+            match(';'); 
 
             }
 
@@ -2201,11 +2210,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__132;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:108:8: ( 'static_assert' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:108:10: 'static_assert'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:108:8: ( '{' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:108:10: '{'
             {
-            match("static_assert"); 
-
+            match('{'); 
 
             }
 
@@ -2222,10 +2230,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__133;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:109:8: ( '(' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:109:10: '('
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:109:8: ( '}' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:109:10: '}'
             {
-            match('('); 
+            match('}'); 
 
             }
 
@@ -2242,10 +2250,11 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__134;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:110:8: ( ')' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:110:10: ')'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:110:8: ( 'if' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:110:10: 'if'
             {
-            match(')'); 
+            match("if"); 
+
 
             }
 
@@ -2262,11 +2271,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__135;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:111:8: ( 'template' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:111:10: 'template'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:111:8: ( '(' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:111:10: '('
             {
-            match("template"); 
-
+            match('('); 
 
             }
 
@@ -2283,11 +2291,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__136;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:112:8: ( 'decltype' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:112:10: 'decltype'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:112:8: ( ')' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:112:10: ')'
             {
-            match("decltype"); 
-
+            match(')'); 
 
             }
 
@@ -2304,10 +2311,11 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__137;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:113:8: ( '{' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:113:10: '{'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:113:8: ( 'else' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:113:10: 'else'
             {
-            match('{'); 
+            match("else"); 
+
 
             }
 
@@ -2324,10 +2332,11 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__138;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:114:8: ( '}' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:114:10: '}'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:114:8: ( 'switch' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:114:10: 'switch'
             {
-            match('}'); 
+            match("switch"); 
+
 
             }
 
@@ -2344,10 +2353,11 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__139;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:115:8: ( ':' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:115:10: ':'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:115:8: ( 'while' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:115:10: 'while'
             {
-            match(':'); 
+            match("while"); 
+
 
             }
 
@@ -2364,10 +2374,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__140;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:116:8: ( 'namespace' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:116:10: 'namespace'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:116:8: ( 'do' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:116:10: 'do'
             {
-            match("namespace"); 
+            match("do"); 
 
 
             }
@@ -2385,10 +2395,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__141;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:117:8: ( 'asm' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:117:10: 'asm'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:117:8: ( 'for' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:117:10: 'for'
             {
-            match("asm"); 
+            match("for"); 
 
 
             }
@@ -2406,10 +2416,11 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__142;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:118:8: ( '0' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:118:10: '0'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:118:8: ( 'break' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:118:10: 'break'
             {
-            match('0'); 
+            match("break"); 
+
 
             }
 
@@ -2426,10 +2437,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__143;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:119:8: ( 'operator' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:119:10: 'operator'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:119:8: ( 'continue' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:119:10: 'continue'
             {
-            match("operator"); 
+            match("continue"); 
 
 
             }
@@ -2447,10 +2458,11 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__144;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:120:8: ( '[' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:120:10: '['
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:120:8: ( 'return' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:120:10: 'return'
             {
-            match('['); 
+            match("return"); 
+
 
             }
 
@@ -2467,10 +2479,11 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__145;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:121:8: ( ']' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:121:10: ']'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:121:8: ( 'goto' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:121:10: 'goto'
             {
-            match(']'); 
+            match("goto"); 
+
 
             }
 
@@ -2487,10 +2500,11 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__146;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:122:8: ( '\"' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:122:10: '\"'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:122:8: ( 'using' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:122:10: 'using'
             {
-            match('\"'); 
+            match("using"); 
+
 
             }
 
@@ -2507,10 +2521,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__147;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:123:8: ( 'try' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:123:10: 'try'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:123:8: ( 'static_assert' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:123:10: 'static_assert'
             {
-            match("try"); 
+            match("static_assert"); 
 
 
             }
@@ -2528,10 +2542,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__148;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:124:8: ( 'catch' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:124:10: 'catch'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:124:8: ( 'template' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:124:10: 'template'
             {
-            match("catch"); 
+            match("template"); 
 
 
             }
@@ -2549,10 +2563,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__149;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:125:8: ( 'throw' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:125:10: 'throw'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:125:8: ( 'decltype' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:125:10: 'decltype'
             {
-            match("throw"); 
+            match("decltype"); 
 
 
             }
@@ -2570,10 +2584,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = T__150;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:126:8: ( 'noexcept' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:126:10: 'noexcept'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:126:8: ( 'namespace' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:126:10: 'namespace'
             {
-            match("noexcept"); 
+            match("namespace"); 
 
 
             }
@@ -2586,11 +2600,217 @@ public class InternalCpp2Lexer extends Lexer {
     }
     // $ANTLR end "T__150"
 
+    // $ANTLR start "T__151"
+    public final void mT__151() throws RecognitionException {
+        try {
+            int _type = T__151;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:127:8: ( 'asm' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:127:10: 'asm'
+            {
+            match("asm"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__151"
+
+    // $ANTLR start "T__152"
+    public final void mT__152() throws RecognitionException {
+        try {
+            int _type = T__152;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:128:8: ( '0' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:128:10: '0'
+            {
+            match('0'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__152"
+
+    // $ANTLR start "T__153"
+    public final void mT__153() throws RecognitionException {
+        try {
+            int _type = T__153;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:129:8: ( 'operator' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:129:10: 'operator'
+            {
+            match("operator"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__153"
+
+    // $ANTLR start "T__154"
+    public final void mT__154() throws RecognitionException {
+        try {
+            int _type = T__154;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:130:8: ( '[' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:130:10: '['
+            {
+            match('['); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__154"
+
+    // $ANTLR start "T__155"
+    public final void mT__155() throws RecognitionException {
+        try {
+            int _type = T__155;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:131:8: ( ']' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:131:10: ']'
+            {
+            match(']'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__155"
+
+    // $ANTLR start "T__156"
+    public final void mT__156() throws RecognitionException {
+        try {
+            int _type = T__156;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:132:8: ( '\"' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:132:10: '\"'
+            {
+            match('\"'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__156"
+
+    // $ANTLR start "T__157"
+    public final void mT__157() throws RecognitionException {
+        try {
+            int _type = T__157;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:133:8: ( 'try' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:133:10: 'try'
+            {
+            match("try"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__157"
+
+    // $ANTLR start "T__158"
+    public final void mT__158() throws RecognitionException {
+        try {
+            int _type = T__158;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:134:8: ( 'catch' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:134:10: 'catch'
+            {
+            match("catch"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__158"
+
+    // $ANTLR start "T__159"
+    public final void mT__159() throws RecognitionException {
+        try {
+            int _type = T__159;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:135:8: ( 'throw' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:135:10: 'throw'
+            {
+            match("throw"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__159"
+
+    // $ANTLR start "T__160"
+    public final void mT__160() throws RecognitionException {
+        try {
+            int _type = T__160;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:136:8: ( 'noexcept' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:136:10: 'noexcept'
+            {
+            match("noexcept"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__160"
+
     // $ANTLR start "RULE_HEX_QUAD"
     public final void mRULE_HEX_QUAD() throws RecognitionException {
         try {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12523:24: ( RULE_HEXADECIMAL_DIGIT RULE_HEXADECIMAL_DIGIT RULE_HEXADECIMAL_DIGIT RULE_HEXADECIMAL_DIGIT )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12523:26: RULE_HEXADECIMAL_DIGIT RULE_HEXADECIMAL_DIGIT RULE_HEXADECIMAL_DIGIT RULE_HEXADECIMAL_DIGIT
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15192:24: ( RULE_HEXADECIMAL_DIGIT RULE_HEXADECIMAL_DIGIT RULE_HEXADECIMAL_DIGIT RULE_HEXADECIMAL_DIGIT )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15192:26: RULE_HEXADECIMAL_DIGIT RULE_HEXADECIMAL_DIGIT RULE_HEXADECIMAL_DIGIT RULE_HEXADECIMAL_DIGIT
             {
             mRULE_HEXADECIMAL_DIGIT(); 
             mRULE_HEXADECIMAL_DIGIT(); 
@@ -2608,10 +2828,10 @@ public class InternalCpp2Lexer extends Lexer {
     // $ANTLR start "RULE_UNIVERSAL_CHARACTER_NAME"
     public final void mRULE_UNIVERSAL_CHARACTER_NAME() throws RecognitionException {
         try {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12525:40: ( ( '\\\\u' RULE_HEX_QUAD | '\\\\U' RULE_HEX_QUAD RULE_HEX_QUAD ) )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12525:42: ( '\\\\u' RULE_HEX_QUAD | '\\\\U' RULE_HEX_QUAD RULE_HEX_QUAD )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15194:40: ( ( '\\\\u' RULE_HEX_QUAD | '\\\\U' RULE_HEX_QUAD RULE_HEX_QUAD ) )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15194:42: ( '\\\\u' RULE_HEX_QUAD | '\\\\U' RULE_HEX_QUAD RULE_HEX_QUAD )
             {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12525:42: ( '\\\\u' RULE_HEX_QUAD | '\\\\U' RULE_HEX_QUAD RULE_HEX_QUAD )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15194:42: ( '\\\\u' RULE_HEX_QUAD | '\\\\U' RULE_HEX_QUAD RULE_HEX_QUAD )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -2639,7 +2859,7 @@ public class InternalCpp2Lexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12525:43: '\\\\u' RULE_HEX_QUAD
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15194:43: '\\\\u' RULE_HEX_QUAD
                     {
                     match("\\u"); 
 
@@ -2648,7 +2868,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12525:63: '\\\\U' RULE_HEX_QUAD RULE_HEX_QUAD
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15194:63: '\\\\U' RULE_HEX_QUAD RULE_HEX_QUAD
                     {
                     match("\\U"); 
 
@@ -2674,15 +2894,15 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = RULE_KEYWORD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:14: ( ( 'alignas' | 'alignof' | 'asm' | 'auto' | 'bool' | 'break' | 'case' | 'catch' | 'char' | 'char16_t' | 'char32_t' | 'class' | 'const' | 'constexpr' | 'const_cast' | 'continue' | 'decltype' | 'default' | 'delete' | 'do' | 'double' | 'dynamic_cast' | 'else' | 'enum' | 'explicit' | 'export' | 'extern' | 'false' | 'float' | 'for' | 'friend' | 'goto' | 'if' | 'inline' | 'int' | 'long' | 'mutable' | 'namespace' | 'new' | 'noexcept' | 'nullptr' | 'operator' | 'private' | 'protected' | 'public' | 'register' | 'reinterpret_cast' | 'return' | 'short' | 'signed' | 'sizeof' | 'static' | 'static_assert' | 'static_cast' | 'struct' | 'switch' | 'template' | 'this' | 'thread_local' | 'throw' | 'true' | 'try' | 'typedef' | 'typeid' | 'typename' | 'union' | 'unsigned' | 'using' | 'virtual' | 'void' | 'volatile' | 'wchar_t' | 'while' ) )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:16: ( 'alignas' | 'alignof' | 'asm' | 'auto' | 'bool' | 'break' | 'case' | 'catch' | 'char' | 'char16_t' | 'char32_t' | 'class' | 'const' | 'constexpr' | 'const_cast' | 'continue' | 'decltype' | 'default' | 'delete' | 'do' | 'double' | 'dynamic_cast' | 'else' | 'enum' | 'explicit' | 'export' | 'extern' | 'false' | 'float' | 'for' | 'friend' | 'goto' | 'if' | 'inline' | 'int' | 'long' | 'mutable' | 'namespace' | 'new' | 'noexcept' | 'nullptr' | 'operator' | 'private' | 'protected' | 'public' | 'register' | 'reinterpret_cast' | 'return' | 'short' | 'signed' | 'sizeof' | 'static' | 'static_assert' | 'static_cast' | 'struct' | 'switch' | 'template' | 'this' | 'thread_local' | 'throw' | 'true' | 'try' | 'typedef' | 'typeid' | 'typename' | 'union' | 'unsigned' | 'using' | 'virtual' | 'void' | 'volatile' | 'wchar_t' | 'while' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:14: ( ( 'alignas' | 'alignof' | 'asm' | 'auto' | 'bool' | 'break' | 'case' | 'catch' | 'char' | 'char16_t' | 'char32_t' | 'class' | 'const' | 'constexpr' | 'const_cast' | 'continue' | 'decltype' | 'default' | 'delete' | 'do' | 'double' | 'dynamic_cast' | 'else' | 'enum' | 'explicit' | 'export' | 'extern' | 'false' | 'float' | 'for' | 'friend' | 'goto' | 'if' | 'inline' | 'int' | 'long' | 'mutable' | 'namespace' | 'new' | 'noexcept' | 'nullptr' | 'operator' | 'private' | 'protected' | 'public' | 'register' | 'reinterpret_cast' | 'return' | 'short' | 'signed' | 'sizeof' | 'static' | 'static_assert' | 'static_cast' | 'struct' | 'switch' | 'template' | 'this' | 'thread_local' | 'throw' | 'true' | 'try' | 'typedef' | 'typeid' | 'typename' | 'union' | 'unsigned' | 'using' | 'virtual' | 'void' | 'volatile' | 'wchar_t' | 'while' ) )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:16: ( 'alignas' | 'alignof' | 'asm' | 'auto' | 'bool' | 'break' | 'case' | 'catch' | 'char' | 'char16_t' | 'char32_t' | 'class' | 'const' | 'constexpr' | 'const_cast' | 'continue' | 'decltype' | 'default' | 'delete' | 'do' | 'double' | 'dynamic_cast' | 'else' | 'enum' | 'explicit' | 'export' | 'extern' | 'false' | 'float' | 'for' | 'friend' | 'goto' | 'if' | 'inline' | 'int' | 'long' | 'mutable' | 'namespace' | 'new' | 'noexcept' | 'nullptr' | 'operator' | 'private' | 'protected' | 'public' | 'register' | 'reinterpret_cast' | 'return' | 'short' | 'signed' | 'sizeof' | 'static' | 'static_assert' | 'static_cast' | 'struct' | 'switch' | 'template' | 'this' | 'thread_local' | 'throw' | 'true' | 'try' | 'typedef' | 'typeid' | 'typename' | 'union' | 'unsigned' | 'using' | 'virtual' | 'void' | 'volatile' | 'wchar_t' | 'while' )
             {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:16: ( 'alignas' | 'alignof' | 'asm' | 'auto' | 'bool' | 'break' | 'case' | 'catch' | 'char' | 'char16_t' | 'char32_t' | 'class' | 'const' | 'constexpr' | 'const_cast' | 'continue' | 'decltype' | 'default' | 'delete' | 'do' | 'double' | 'dynamic_cast' | 'else' | 'enum' | 'explicit' | 'export' | 'extern' | 'false' | 'float' | 'for' | 'friend' | 'goto' | 'if' | 'inline' | 'int' | 'long' | 'mutable' | 'namespace' | 'new' | 'noexcept' | 'nullptr' | 'operator' | 'private' | 'protected' | 'public' | 'register' | 'reinterpret_cast' | 'return' | 'short' | 'signed' | 'sizeof' | 'static' | 'static_assert' | 'static_cast' | 'struct' | 'switch' | 'template' | 'this' | 'thread_local' | 'throw' | 'true' | 'try' | 'typedef' | 'typeid' | 'typename' | 'union' | 'unsigned' | 'using' | 'virtual' | 'void' | 'volatile' | 'wchar_t' | 'while' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:16: ( 'alignas' | 'alignof' | 'asm' | 'auto' | 'bool' | 'break' | 'case' | 'catch' | 'char' | 'char16_t' | 'char32_t' | 'class' | 'const' | 'constexpr' | 'const_cast' | 'continue' | 'decltype' | 'default' | 'delete' | 'do' | 'double' | 'dynamic_cast' | 'else' | 'enum' | 'explicit' | 'export' | 'extern' | 'false' | 'float' | 'for' | 'friend' | 'goto' | 'if' | 'inline' | 'int' | 'long' | 'mutable' | 'namespace' | 'new' | 'noexcept' | 'nullptr' | 'operator' | 'private' | 'protected' | 'public' | 'register' | 'reinterpret_cast' | 'return' | 'short' | 'signed' | 'sizeof' | 'static' | 'static_assert' | 'static_cast' | 'struct' | 'switch' | 'template' | 'this' | 'thread_local' | 'throw' | 'true' | 'try' | 'typedef' | 'typeid' | 'typename' | 'union' | 'unsigned' | 'using' | 'virtual' | 'void' | 'volatile' | 'wchar_t' | 'while' )
             int alt2=73;
             alt2 = dfa2.predict(input);
             switch (alt2) {
                 case 1 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:17: 'alignas'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:17: 'alignas'
                     {
                     match("alignas"); 
 
@@ -2690,7 +2910,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:27: 'alignof'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:27: 'alignof'
                     {
                     match("alignof"); 
 
@@ -2698,7 +2918,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:37: 'asm'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:37: 'asm'
                     {
                     match("asm"); 
 
@@ -2706,7 +2926,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:43: 'auto'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:43: 'auto'
                     {
                     match("auto"); 
 
@@ -2714,7 +2934,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:50: 'bool'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:50: 'bool'
                     {
                     match("bool"); 
 
@@ -2722,7 +2942,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 6 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:57: 'break'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:57: 'break'
                     {
                     match("break"); 
 
@@ -2730,7 +2950,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 7 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:65: 'case'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:65: 'case'
                     {
                     match("case"); 
 
@@ -2738,7 +2958,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 8 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:72: 'catch'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:72: 'catch'
                     {
                     match("catch"); 
 
@@ -2746,7 +2966,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 9 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:80: 'char'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:80: 'char'
                     {
                     match("char"); 
 
@@ -2754,7 +2974,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 10 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:87: 'char16_t'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:87: 'char16_t'
                     {
                     match("char16_t"); 
 
@@ -2762,7 +2982,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 11 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:98: 'char32_t'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:98: 'char32_t'
                     {
                     match("char32_t"); 
 
@@ -2770,7 +2990,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 12 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:109: 'class'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:109: 'class'
                     {
                     match("class"); 
 
@@ -2778,7 +2998,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 13 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:117: 'const'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:117: 'const'
                     {
                     match("const"); 
 
@@ -2786,7 +3006,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 14 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:125: 'constexpr'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:125: 'constexpr'
                     {
                     match("constexpr"); 
 
@@ -2794,7 +3014,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 15 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:137: 'const_cast'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:137: 'const_cast'
                     {
                     match("const_cast"); 
 
@@ -2802,7 +3022,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 16 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:150: 'continue'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:150: 'continue'
                     {
                     match("continue"); 
 
@@ -2810,7 +3030,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 17 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:161: 'decltype'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:161: 'decltype'
                     {
                     match("decltype"); 
 
@@ -2818,7 +3038,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 18 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:172: 'default'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:172: 'default'
                     {
                     match("default"); 
 
@@ -2826,7 +3046,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 19 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:182: 'delete'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:182: 'delete'
                     {
                     match("delete"); 
 
@@ -2834,7 +3054,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 20 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:191: 'do'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:191: 'do'
                     {
                     match("do"); 
 
@@ -2842,7 +3062,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 21 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:196: 'double'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:196: 'double'
                     {
                     match("double"); 
 
@@ -2850,7 +3070,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 22 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:205: 'dynamic_cast'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:205: 'dynamic_cast'
                     {
                     match("dynamic_cast"); 
 
@@ -2858,7 +3078,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 23 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:220: 'else'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:220: 'else'
                     {
                     match("else"); 
 
@@ -2866,7 +3086,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 24 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:227: 'enum'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:227: 'enum'
                     {
                     match("enum"); 
 
@@ -2874,7 +3094,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 25 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:234: 'explicit'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:234: 'explicit'
                     {
                     match("explicit"); 
 
@@ -2882,7 +3102,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 26 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:245: 'export'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:245: 'export'
                     {
                     match("export"); 
 
@@ -2890,7 +3110,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 27 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:254: 'extern'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:254: 'extern'
                     {
                     match("extern"); 
 
@@ -2898,7 +3118,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 28 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:263: 'false'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:263: 'false'
                     {
                     match("false"); 
 
@@ -2906,7 +3126,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 29 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:271: 'float'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:271: 'float'
                     {
                     match("float"); 
 
@@ -2914,7 +3134,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 30 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:279: 'for'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:279: 'for'
                     {
                     match("for"); 
 
@@ -2922,7 +3142,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 31 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:285: 'friend'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:285: 'friend'
                     {
                     match("friend"); 
 
@@ -2930,7 +3150,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 32 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:294: 'goto'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:294: 'goto'
                     {
                     match("goto"); 
 
@@ -2938,7 +3158,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 33 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:301: 'if'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:301: 'if'
                     {
                     match("if"); 
 
@@ -2946,7 +3166,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 34 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:306: 'inline'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:306: 'inline'
                     {
                     match("inline"); 
 
@@ -2954,7 +3174,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 35 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:315: 'int'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:315: 'int'
                     {
                     match("int"); 
 
@@ -2962,7 +3182,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 36 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:321: 'long'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:321: 'long'
                     {
                     match("long"); 
 
@@ -2970,7 +3190,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 37 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:328: 'mutable'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:328: 'mutable'
                     {
                     match("mutable"); 
 
@@ -2978,7 +3198,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 38 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:338: 'namespace'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:338: 'namespace'
                     {
                     match("namespace"); 
 
@@ -2986,7 +3206,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 39 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:350: 'new'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:350: 'new'
                     {
                     match("new"); 
 
@@ -2994,7 +3214,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 40 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:356: 'noexcept'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:356: 'noexcept'
                     {
                     match("noexcept"); 
 
@@ -3002,7 +3222,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 41 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:367: 'nullptr'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:367: 'nullptr'
                     {
                     match("nullptr"); 
 
@@ -3010,7 +3230,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 42 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:377: 'operator'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:377: 'operator'
                     {
                     match("operator"); 
 
@@ -3018,7 +3238,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 43 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:388: 'private'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:388: 'private'
                     {
                     match("private"); 
 
@@ -3026,7 +3246,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 44 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:398: 'protected'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:398: 'protected'
                     {
                     match("protected"); 
 
@@ -3034,7 +3254,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 45 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:410: 'public'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:410: 'public'
                     {
                     match("public"); 
 
@@ -3042,7 +3262,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 46 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:419: 'register'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:419: 'register'
                     {
                     match("register"); 
 
@@ -3050,7 +3270,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 47 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:430: 'reinterpret_cast'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:430: 'reinterpret_cast'
                     {
                     match("reinterpret_cast"); 
 
@@ -3058,7 +3278,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 48 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:449: 'return'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:449: 'return'
                     {
                     match("return"); 
 
@@ -3066,7 +3286,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 49 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:458: 'short'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:458: 'short'
                     {
                     match("short"); 
 
@@ -3074,7 +3294,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 50 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:466: 'signed'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:466: 'signed'
                     {
                     match("signed"); 
 
@@ -3082,7 +3302,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 51 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:475: 'sizeof'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:475: 'sizeof'
                     {
                     match("sizeof"); 
 
@@ -3090,7 +3310,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 52 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:484: 'static'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:484: 'static'
                     {
                     match("static"); 
 
@@ -3098,7 +3318,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 53 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:493: 'static_assert'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:493: 'static_assert'
                     {
                     match("static_assert"); 
 
@@ -3106,7 +3326,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 54 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:509: 'static_cast'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:509: 'static_cast'
                     {
                     match("static_cast"); 
 
@@ -3114,7 +3334,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 55 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:523: 'struct'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:523: 'struct'
                     {
                     match("struct"); 
 
@@ -3122,7 +3342,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 56 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:532: 'switch'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:532: 'switch'
                     {
                     match("switch"); 
 
@@ -3130,7 +3350,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 57 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:541: 'template'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:541: 'template'
                     {
                     match("template"); 
 
@@ -3138,7 +3358,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 58 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:552: 'this'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:552: 'this'
                     {
                     match("this"); 
 
@@ -3146,7 +3366,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 59 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:559: 'thread_local'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:559: 'thread_local'
                     {
                     match("thread_local"); 
 
@@ -3154,7 +3374,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 60 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:574: 'throw'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:574: 'throw'
                     {
                     match("throw"); 
 
@@ -3162,7 +3382,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 61 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:582: 'true'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:582: 'true'
                     {
                     match("true"); 
 
@@ -3170,7 +3390,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 62 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:589: 'try'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:589: 'try'
                     {
                     match("try"); 
 
@@ -3178,7 +3398,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 63 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:595: 'typedef'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:595: 'typedef'
                     {
                     match("typedef"); 
 
@@ -3186,7 +3406,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 64 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:605: 'typeid'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:605: 'typeid'
                     {
                     match("typeid"); 
 
@@ -3194,7 +3414,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 65 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:614: 'typename'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:614: 'typename'
                     {
                     match("typename"); 
 
@@ -3202,7 +3422,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 66 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:625: 'union'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:625: 'union'
                     {
                     match("union"); 
 
@@ -3210,7 +3430,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 67 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:633: 'unsigned'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:633: 'unsigned'
                     {
                     match("unsigned"); 
 
@@ -3218,7 +3438,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 68 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:644: 'using'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:644: 'using'
                     {
                     match("using"); 
 
@@ -3226,7 +3446,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 69 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:652: 'virtual'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:652: 'virtual'
                     {
                     match("virtual"); 
 
@@ -3234,7 +3454,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 70 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:662: 'void'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:662: 'void'
                     {
                     match("void"); 
 
@@ -3242,7 +3462,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 71 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:669: 'volatile'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:669: 'volatile'
                     {
                     match("volatile"); 
 
@@ -3250,7 +3470,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 72 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:680: 'wchar_t'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:680: 'wchar_t'
                     {
                     match("wchar_t"); 
 
@@ -3258,7 +3478,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 73 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12527:690: 'while'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15196:690: 'while'
                     {
                     match("while"); 
 
@@ -3284,50 +3504,50 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = RULE_PREPROCESSING_OP_OR_PUNC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:31: ( ( '{' | '}' | '[' | ']' | '#' | '##' | '(' | ')' | '<:' | ':>' | '<%' | '%>' | '%:' | '%:%:' | ';' | ':' | '...' | 'new' | 'delete' | '?' | '::' | '.' | '.*' | '+' | '-' | '*' | '/' | '%' | '^' | '&' | '|' | '~' | '!' | '=' | '<' | '>' | '+=' | '-=' | '*=' | '/=' | '%=' | '^=' | '&=' | '|=' | '<<' | '>>' | '<<=' | '>>=' | '==' | '!=' | '<=' | '>=' | '&&' | '||' | '++' | '--' | ',' | '->*' | '->' | 'and' | 'and_eq' | 'bitand' | 'bitor' | 'compl' | 'not' | 'not_eq' | 'or' | 'or_eq' | 'xor' | 'xor_eq' ) )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:33: ( '{' | '}' | '[' | ']' | '#' | '##' | '(' | ')' | '<:' | ':>' | '<%' | '%>' | '%:' | '%:%:' | ';' | ':' | '...' | 'new' | 'delete' | '?' | '::' | '.' | '.*' | '+' | '-' | '*' | '/' | '%' | '^' | '&' | '|' | '~' | '!' | '=' | '<' | '>' | '+=' | '-=' | '*=' | '/=' | '%=' | '^=' | '&=' | '|=' | '<<' | '>>' | '<<=' | '>>=' | '==' | '!=' | '<=' | '>=' | '&&' | '||' | '++' | '--' | ',' | '->*' | '->' | 'and' | 'and_eq' | 'bitand' | 'bitor' | 'compl' | 'not' | 'not_eq' | 'or' | 'or_eq' | 'xor' | 'xor_eq' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:31: ( ( '{' | '}' | '[' | ']' | '#' | '##' | '(' | ')' | '<:' | ':>' | '<%' | '%>' | '%:' | '%:%:' | ';' | ':' | '...' | 'new' | 'delete' | '?' | '::' | '.' | '.*' | '+' | '-' | '*' | '/' | '%' | '^' | '&' | '|' | '~' | '!' | '=' | '<' | '>' | '+=' | '-=' | '*=' | '/=' | '%=' | '^=' | '&=' | '|=' | '<<' | '>>' | '<<=' | '>>=' | '==' | '!=' | '<=' | '>=' | '&&' | '||' | '++' | '--' | ',' | '->*' | '->' | 'and' | 'and_eq' | 'bitand' | 'bitor' | 'compl' | 'not' | 'not_eq' | 'or' | 'or_eq' | 'xor' | 'xor_eq' ) )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:33: ( '{' | '}' | '[' | ']' | '#' | '##' | '(' | ')' | '<:' | ':>' | '<%' | '%>' | '%:' | '%:%:' | ';' | ':' | '...' | 'new' | 'delete' | '?' | '::' | '.' | '.*' | '+' | '-' | '*' | '/' | '%' | '^' | '&' | '|' | '~' | '!' | '=' | '<' | '>' | '+=' | '-=' | '*=' | '/=' | '%=' | '^=' | '&=' | '|=' | '<<' | '>>' | '<<=' | '>>=' | '==' | '!=' | '<=' | '>=' | '&&' | '||' | '++' | '--' | ',' | '->*' | '->' | 'and' | 'and_eq' | 'bitand' | 'bitor' | 'compl' | 'not' | 'not_eq' | 'or' | 'or_eq' | 'xor' | 'xor_eq' )
             {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:33: ( '{' | '}' | '[' | ']' | '#' | '##' | '(' | ')' | '<:' | ':>' | '<%' | '%>' | '%:' | '%:%:' | ';' | ':' | '...' | 'new' | 'delete' | '?' | '::' | '.' | '.*' | '+' | '-' | '*' | '/' | '%' | '^' | '&' | '|' | '~' | '!' | '=' | '<' | '>' | '+=' | '-=' | '*=' | '/=' | '%=' | '^=' | '&=' | '|=' | '<<' | '>>' | '<<=' | '>>=' | '==' | '!=' | '<=' | '>=' | '&&' | '||' | '++' | '--' | ',' | '->*' | '->' | 'and' | 'and_eq' | 'bitand' | 'bitor' | 'compl' | 'not' | 'not_eq' | 'or' | 'or_eq' | 'xor' | 'xor_eq' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:33: ( '{' | '}' | '[' | ']' | '#' | '##' | '(' | ')' | '<:' | ':>' | '<%' | '%>' | '%:' | '%:%:' | ';' | ':' | '...' | 'new' | 'delete' | '?' | '::' | '.' | '.*' | '+' | '-' | '*' | '/' | '%' | '^' | '&' | '|' | '~' | '!' | '=' | '<' | '>' | '+=' | '-=' | '*=' | '/=' | '%=' | '^=' | '&=' | '|=' | '<<' | '>>' | '<<=' | '>>=' | '==' | '!=' | '<=' | '>=' | '&&' | '||' | '++' | '--' | ',' | '->*' | '->' | 'and' | 'and_eq' | 'bitand' | 'bitor' | 'compl' | 'not' | 'not_eq' | 'or' | 'or_eq' | 'xor' | 'xor_eq' )
             int alt3=70;
             alt3 = dfa3.predict(input);
             switch (alt3) {
                 case 1 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:34: '{'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:34: '{'
                     {
                     match('{'); 
 
                     }
                     break;
                 case 2 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:38: '}'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:38: '}'
                     {
                     match('}'); 
 
                     }
                     break;
                 case 3 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:42: '['
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:42: '['
                     {
                     match('['); 
 
                     }
                     break;
                 case 4 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:46: ']'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:46: ']'
                     {
                     match(']'); 
 
                     }
                     break;
                 case 5 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:50: '#'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:50: '#'
                     {
                     match('#'); 
 
                     }
                     break;
                 case 6 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:54: '##'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:54: '##'
                     {
                     match("##"); 
 
@@ -3335,21 +3555,21 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 7 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:59: '('
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:59: '('
                     {
                     match('('); 
 
                     }
                     break;
                 case 8 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:63: ')'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:63: ')'
                     {
                     match(')'); 
 
                     }
                     break;
                 case 9 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:67: '<:'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:67: '<:'
                     {
                     match("<:"); 
 
@@ -3357,7 +3577,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 10 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:72: ':>'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:72: ':>'
                     {
                     match(":>"); 
 
@@ -3365,7 +3585,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 11 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:77: '<%'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:77: '<%'
                     {
                     match("<%"); 
 
@@ -3373,7 +3593,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 12 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:82: '%>'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:82: '%>'
                     {
                     match("%>"); 
 
@@ -3381,7 +3601,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 13 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:87: '%:'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:87: '%:'
                     {
                     match("%:"); 
 
@@ -3389,7 +3609,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 14 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:92: '%:%:'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:92: '%:%:'
                     {
                     match("%:%:"); 
 
@@ -3397,21 +3617,21 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 15 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:99: ';'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:99: ';'
                     {
                     match(';'); 
 
                     }
                     break;
                 case 16 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:103: ':'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:103: ':'
                     {
                     match(':'); 
 
                     }
                     break;
                 case 17 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:107: '...'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:107: '...'
                     {
                     match("..."); 
 
@@ -3419,7 +3639,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 18 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:113: 'new'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:113: 'new'
                     {
                     match("new"); 
 
@@ -3427,7 +3647,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 19 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:119: 'delete'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:119: 'delete'
                     {
                     match("delete"); 
 
@@ -3435,14 +3655,14 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 20 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:128: '?'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:128: '?'
                     {
                     match('?'); 
 
                     }
                     break;
                 case 21 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:132: '::'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:132: '::'
                     {
                     match("::"); 
 
@@ -3450,14 +3670,14 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 22 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:137: '.'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:137: '.'
                     {
                     match('.'); 
 
                     }
                     break;
                 case 23 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:141: '.*'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:141: '.*'
                     {
                     match(".*"); 
 
@@ -3465,98 +3685,98 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 24 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:146: '+'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:146: '+'
                     {
                     match('+'); 
 
                     }
                     break;
                 case 25 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:150: '-'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:150: '-'
                     {
                     match('-'); 
 
                     }
                     break;
                 case 26 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:154: '*'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:154: '*'
                     {
                     match('*'); 
 
                     }
                     break;
                 case 27 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:158: '/'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:158: '/'
                     {
                     match('/'); 
 
                     }
                     break;
                 case 28 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:162: '%'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:162: '%'
                     {
                     match('%'); 
 
                     }
                     break;
                 case 29 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:166: '^'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:166: '^'
                     {
                     match('^'); 
 
                     }
                     break;
                 case 30 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:170: '&'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:170: '&'
                     {
                     match('&'); 
 
                     }
                     break;
                 case 31 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:174: '|'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:174: '|'
                     {
                     match('|'); 
 
                     }
                     break;
                 case 32 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:178: '~'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:178: '~'
                     {
                     match('~'); 
 
                     }
                     break;
                 case 33 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:182: '!'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:182: '!'
                     {
                     match('!'); 
 
                     }
                     break;
                 case 34 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:186: '='
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:186: '='
                     {
                     match('='); 
 
                     }
                     break;
                 case 35 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:190: '<'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:190: '<'
                     {
                     match('<'); 
 
                     }
                     break;
                 case 36 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:194: '>'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:194: '>'
                     {
                     match('>'); 
 
                     }
                     break;
                 case 37 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:198: '+='
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:198: '+='
                     {
                     match("+="); 
 
@@ -3564,7 +3784,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 38 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:203: '-='
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:203: '-='
                     {
                     match("-="); 
 
@@ -3572,7 +3792,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 39 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:208: '*='
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:208: '*='
                     {
                     match("*="); 
 
@@ -3580,7 +3800,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 40 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:213: '/='
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:213: '/='
                     {
                     match("/="); 
 
@@ -3588,7 +3808,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 41 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:218: '%='
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:218: '%='
                     {
                     match("%="); 
 
@@ -3596,7 +3816,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 42 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:223: '^='
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:223: '^='
                     {
                     match("^="); 
 
@@ -3604,7 +3824,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 43 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:228: '&='
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:228: '&='
                     {
                     match("&="); 
 
@@ -3612,7 +3832,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 44 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:233: '|='
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:233: '|='
                     {
                     match("|="); 
 
@@ -3620,7 +3840,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 45 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:238: '<<'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:238: '<<'
                     {
                     match("<<"); 
 
@@ -3628,7 +3848,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 46 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:243: '>>'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:243: '>>'
                     {
                     match(">>"); 
 
@@ -3636,7 +3856,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 47 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:248: '<<='
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:248: '<<='
                     {
                     match("<<="); 
 
@@ -3644,7 +3864,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 48 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:254: '>>='
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:254: '>>='
                     {
                     match(">>="); 
 
@@ -3652,7 +3872,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 49 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:260: '=='
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:260: '=='
                     {
                     match("=="); 
 
@@ -3660,7 +3880,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 50 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:265: '!='
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:265: '!='
                     {
                     match("!="); 
 
@@ -3668,7 +3888,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 51 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:270: '<='
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:270: '<='
                     {
                     match("<="); 
 
@@ -3676,7 +3896,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 52 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:275: '>='
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:275: '>='
                     {
                     match(">="); 
 
@@ -3684,7 +3904,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 53 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:280: '&&'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:280: '&&'
                     {
                     match("&&"); 
 
@@ -3692,7 +3912,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 54 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:285: '||'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:285: '||'
                     {
                     match("||"); 
 
@@ -3700,7 +3920,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 55 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:290: '++'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:290: '++'
                     {
                     match("++"); 
 
@@ -3708,7 +3928,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 56 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:295: '--'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:295: '--'
                     {
                     match("--"); 
 
@@ -3716,14 +3936,14 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 57 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:300: ','
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:300: ','
                     {
                     match(','); 
 
                     }
                     break;
                 case 58 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:304: '->*'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:304: '->*'
                     {
                     match("->*"); 
 
@@ -3731,7 +3951,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 59 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:310: '->'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:310: '->'
                     {
                     match("->"); 
 
@@ -3739,7 +3959,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 60 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:315: 'and'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:315: 'and'
                     {
                     match("and"); 
 
@@ -3747,7 +3967,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 61 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:321: 'and_eq'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:321: 'and_eq'
                     {
                     match("and_eq"); 
 
@@ -3755,7 +3975,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 62 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:330: 'bitand'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:330: 'bitand'
                     {
                     match("bitand"); 
 
@@ -3763,7 +3983,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 63 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:339: 'bitor'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:339: 'bitor'
                     {
                     match("bitor"); 
 
@@ -3771,7 +3991,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 64 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:347: 'compl'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:347: 'compl'
                     {
                     match("compl"); 
 
@@ -3779,7 +3999,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 65 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:355: 'not'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:355: 'not'
                     {
                     match("not"); 
 
@@ -3787,7 +4007,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 66 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:361: 'not_eq'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:361: 'not_eq'
                     {
                     match("not_eq"); 
 
@@ -3795,7 +4015,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 67 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:370: 'or'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:370: 'or'
                     {
                     match("or"); 
 
@@ -3803,7 +4023,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 68 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:375: 'or_eq'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:375: 'or_eq'
                     {
                     match("or_eq"); 
 
@@ -3811,7 +4031,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 69 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:383: 'xor'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:383: 'xor'
                     {
                     match("xor"); 
 
@@ -3819,7 +4039,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 70 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12529:389: 'xor_eq'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15198:389: 'xor_eq'
                     {
                     match("xor_eq"); 
 
@@ -3845,10 +4065,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12531:9: ( ( RULE_NONDIGIT | RULE_UNIVERSAL_CHARACTER_NAME ) ( RULE_DIGIT | RULE_NONDIGIT | RULE_UNIVERSAL_CHARACTER_NAME )* )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12531:11: ( RULE_NONDIGIT | RULE_UNIVERSAL_CHARACTER_NAME ) ( RULE_DIGIT | RULE_NONDIGIT | RULE_UNIVERSAL_CHARACTER_NAME )*
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15200:9: ( ( RULE_NONDIGIT | RULE_UNIVERSAL_CHARACTER_NAME ) ( RULE_DIGIT | RULE_NONDIGIT | RULE_UNIVERSAL_CHARACTER_NAME )* )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15200:11: ( RULE_NONDIGIT | RULE_UNIVERSAL_CHARACTER_NAME ) ( RULE_DIGIT | RULE_NONDIGIT | RULE_UNIVERSAL_CHARACTER_NAME )*
             {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12531:11: ( RULE_NONDIGIT | RULE_UNIVERSAL_CHARACTER_NAME )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15200:11: ( RULE_NONDIGIT | RULE_UNIVERSAL_CHARACTER_NAME )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -3866,14 +4086,14 @@ public class InternalCpp2Lexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12531:12: RULE_NONDIGIT
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15200:12: RULE_NONDIGIT
                     {
                     mRULE_NONDIGIT(); 
 
                     }
                     break;
                 case 2 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12531:26: RULE_UNIVERSAL_CHARACTER_NAME
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15200:26: RULE_UNIVERSAL_CHARACTER_NAME
                     {
                     mRULE_UNIVERSAL_CHARACTER_NAME(); 
 
@@ -3882,7 +4102,7 @@ public class InternalCpp2Lexer extends Lexer {
 
             }
 
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12531:57: ( RULE_DIGIT | RULE_NONDIGIT | RULE_UNIVERSAL_CHARACTER_NAME )*
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15200:57: ( RULE_DIGIT | RULE_NONDIGIT | RULE_UNIVERSAL_CHARACTER_NAME )*
             loop5:
             do {
                 int alt5=4;
@@ -3968,21 +4188,21 @@ public class InternalCpp2Lexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12531:58: RULE_DIGIT
+            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15200:58: RULE_DIGIT
             	    {
             	    mRULE_DIGIT(); 
 
             	    }
             	    break;
             	case 2 :
-            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12531:69: RULE_NONDIGIT
+            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15200:69: RULE_NONDIGIT
             	    {
             	    mRULE_NONDIGIT(); 
 
             	    }
             	    break;
             	case 3 :
-            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12531:83: RULE_UNIVERSAL_CHARACTER_NAME
+            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15200:83: RULE_UNIVERSAL_CHARACTER_NAME
             	    {
             	    mRULE_UNIVERSAL_CHARACTER_NAME(); 
 
@@ -4008,8 +4228,8 @@ public class InternalCpp2Lexer extends Lexer {
     // $ANTLR start "RULE_NONDIGIT"
     public final void mRULE_NONDIGIT() throws RecognitionException {
         try {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12533:24: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12533:26: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15202:24: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15202:26: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -4032,8 +4252,8 @@ public class InternalCpp2Lexer extends Lexer {
     // $ANTLR start "RULE_DIGIT"
     public final void mRULE_DIGIT() throws RecognitionException {
         try {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12535:21: ( '0' .. '9' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12535:23: '0' .. '9'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15204:21: ( '0' .. '9' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15204:23: '0' .. '9'
             {
             matchRange('0','9'); 
 
@@ -4050,10 +4270,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12537:10: ( ( RULE_DECIMAL_LITERAL | RULE_OCTAL_LITERAL | RULE_HEXADECIMAL_LITERAL ) ( RULE_INTEGER_SUFFIX )? )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12537:12: ( RULE_DECIMAL_LITERAL | RULE_OCTAL_LITERAL | RULE_HEXADECIMAL_LITERAL ) ( RULE_INTEGER_SUFFIX )?
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15206:10: ( ( RULE_DECIMAL_LITERAL | RULE_OCTAL_LITERAL | RULE_HEXADECIMAL_LITERAL ) ( RULE_INTEGER_SUFFIX )? )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15206:12: ( RULE_DECIMAL_LITERAL | RULE_OCTAL_LITERAL | RULE_HEXADECIMAL_LITERAL ) ( RULE_INTEGER_SUFFIX )?
             {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12537:12: ( RULE_DECIMAL_LITERAL | RULE_OCTAL_LITERAL | RULE_HEXADECIMAL_LITERAL )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15206:12: ( RULE_DECIMAL_LITERAL | RULE_OCTAL_LITERAL | RULE_HEXADECIMAL_LITERAL )
             int alt6=3;
             int LA6_0 = input.LA(1);
 
@@ -4077,21 +4297,21 @@ public class InternalCpp2Lexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12537:13: RULE_DECIMAL_LITERAL
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15206:13: RULE_DECIMAL_LITERAL
                     {
                     mRULE_DECIMAL_LITERAL(); 
 
                     }
                     break;
                 case 2 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12537:34: RULE_OCTAL_LITERAL
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15206:34: RULE_OCTAL_LITERAL
                     {
                     mRULE_OCTAL_LITERAL(); 
 
                     }
                     break;
                 case 3 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12537:53: RULE_HEXADECIMAL_LITERAL
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15206:53: RULE_HEXADECIMAL_LITERAL
                     {
                     mRULE_HEXADECIMAL_LITERAL(); 
 
@@ -4100,7 +4320,7 @@ public class InternalCpp2Lexer extends Lexer {
 
             }
 
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12537:79: ( RULE_INTEGER_SUFFIX )?
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15206:79: ( RULE_INTEGER_SUFFIX )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -4109,7 +4329,7 @@ public class InternalCpp2Lexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12537:79: RULE_INTEGER_SUFFIX
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15206:79: RULE_INTEGER_SUFFIX
                     {
                     mRULE_INTEGER_SUFFIX(); 
 
@@ -4132,11 +4352,11 @@ public class InternalCpp2Lexer extends Lexer {
     // $ANTLR start "RULE_DECIMAL_LITERAL"
     public final void mRULE_DECIMAL_LITERAL() throws RecognitionException {
         try {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12539:31: ( '1' .. '9' ( RULE_DIGIT )* )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12539:33: '1' .. '9' ( RULE_DIGIT )*
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15208:31: ( '1' .. '9' ( RULE_DIGIT )* )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15208:33: '1' .. '9' ( RULE_DIGIT )*
             {
             matchRange('1','9'); 
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12539:42: ( RULE_DIGIT )*
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15208:42: ( RULE_DIGIT )*
             loop8:
             do {
                 int alt8=2;
@@ -4149,7 +4369,7 @@ public class InternalCpp2Lexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12539:42: RULE_DIGIT
+            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15208:42: RULE_DIGIT
             	    {
             	    mRULE_DIGIT(); 
 
@@ -4173,11 +4393,11 @@ public class InternalCpp2Lexer extends Lexer {
     // $ANTLR start "RULE_OCTAL_LITERAL"
     public final void mRULE_OCTAL_LITERAL() throws RecognitionException {
         try {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12541:29: ( '0' ( RULE_OCTAL_DIGIT )* )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12541:31: '0' ( RULE_OCTAL_DIGIT )*
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15210:29: ( '0' ( RULE_OCTAL_DIGIT )* )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15210:31: '0' ( RULE_OCTAL_DIGIT )*
             {
             match('0'); 
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12541:35: ( RULE_OCTAL_DIGIT )*
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15210:35: ( RULE_OCTAL_DIGIT )*
             loop9:
             do {
                 int alt9=2;
@@ -4190,7 +4410,7 @@ public class InternalCpp2Lexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12541:35: RULE_OCTAL_DIGIT
+            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15210:35: RULE_OCTAL_DIGIT
             	    {
             	    mRULE_OCTAL_DIGIT(); 
 
@@ -4214,10 +4434,10 @@ public class InternalCpp2Lexer extends Lexer {
     // $ANTLR start "RULE_HEXADECIMAL_LITERAL"
     public final void mRULE_HEXADECIMAL_LITERAL() throws RecognitionException {
         try {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12543:35: ( ( '0x' | '0X' ) ( RULE_HEXADECIMAL_DIGIT )+ )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12543:37: ( '0x' | '0X' ) ( RULE_HEXADECIMAL_DIGIT )+
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15212:35: ( ( '0x' | '0X' ) ( RULE_HEXADECIMAL_DIGIT )+ )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15212:37: ( '0x' | '0X' ) ( RULE_HEXADECIMAL_DIGIT )+
             {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12543:37: ( '0x' | '0X' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15212:37: ( '0x' | '0X' )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -4245,7 +4465,7 @@ public class InternalCpp2Lexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12543:38: '0x'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15212:38: '0x'
                     {
                     match("0x"); 
 
@@ -4253,7 +4473,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12543:43: '0X'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15212:43: '0X'
                     {
                     match("0X"); 
 
@@ -4263,7 +4483,7 @@ public class InternalCpp2Lexer extends Lexer {
 
             }
 
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12543:49: ( RULE_HEXADECIMAL_DIGIT )+
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15212:49: ( RULE_HEXADECIMAL_DIGIT )+
             int cnt11=0;
             loop11:
             do {
@@ -4277,7 +4497,7 @@ public class InternalCpp2Lexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12543:49: RULE_HEXADECIMAL_DIGIT
+            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15212:49: RULE_HEXADECIMAL_DIGIT
             	    {
             	    mRULE_HEXADECIMAL_DIGIT(); 
 
@@ -4305,8 +4525,8 @@ public class InternalCpp2Lexer extends Lexer {
     // $ANTLR start "RULE_OCTAL_DIGIT"
     public final void mRULE_OCTAL_DIGIT() throws RecognitionException {
         try {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12545:27: ( '0' .. '7' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12545:29: '0' .. '7'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15214:27: ( '0' .. '7' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15214:29: '0' .. '7'
             {
             matchRange('0','7'); 
 
@@ -4321,8 +4541,8 @@ public class InternalCpp2Lexer extends Lexer {
     // $ANTLR start "RULE_HEXADECIMAL_DIGIT"
     public final void mRULE_HEXADECIMAL_DIGIT() throws RecognitionException {
         try {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12547:33: ( ( '0' .. '9' | 'A' .. 'F' ) )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12547:35: ( '0' .. '9' | 'A' .. 'F' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15216:33: ( ( '0' .. '9' | 'A' .. 'F' ) )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15216:35: ( '0' .. '9' | 'A' .. 'F' )
             {
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F') ) {
                 input.consume();
@@ -4345,10 +4565,10 @@ public class InternalCpp2Lexer extends Lexer {
     // $ANTLR start "RULE_INTEGER_SUFFIX"
     public final void mRULE_INTEGER_SUFFIX() throws RecognitionException {
         try {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12549:30: ( ( ( 'u' | 'U' ) ( 'l' | 'L' | 'll' | 'LL' )? | ( 'l' | 'L' | 'll' | 'LL' ) ( 'u' | 'U' )? ) )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12549:32: ( ( 'u' | 'U' ) ( 'l' | 'L' | 'll' | 'LL' )? | ( 'l' | 'L' | 'll' | 'LL' ) ( 'u' | 'U' )? )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15218:30: ( ( ( 'u' | 'U' ) ( 'l' | 'L' | 'll' | 'LL' )? | ( 'l' | 'L' | 'll' | 'LL' ) ( 'u' | 'U' )? ) )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15218:32: ( ( 'u' | 'U' ) ( 'l' | 'L' | 'll' | 'LL' )? | ( 'l' | 'L' | 'll' | 'LL' ) ( 'u' | 'U' )? )
             {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12549:32: ( ( 'u' | 'U' ) ( 'l' | 'L' | 'll' | 'LL' )? | ( 'l' | 'L' | 'll' | 'LL' ) ( 'u' | 'U' )? )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15218:32: ( ( 'u' | 'U' ) ( 'l' | 'L' | 'll' | 'LL' )? | ( 'l' | 'L' | 'll' | 'LL' ) ( 'u' | 'U' )? )
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -4366,7 +4586,7 @@ public class InternalCpp2Lexer extends Lexer {
             }
             switch (alt15) {
                 case 1 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12549:33: ( 'u' | 'U' ) ( 'l' | 'L' | 'll' | 'LL' )?
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15218:33: ( 'u' | 'U' ) ( 'l' | 'L' | 'll' | 'LL' )?
                     {
                     if ( input.LA(1)=='U'||input.LA(1)=='u' ) {
                         input.consume();
@@ -4377,7 +4597,7 @@ public class InternalCpp2Lexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12549:43: ( 'l' | 'L' | 'll' | 'LL' )?
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15218:43: ( 'l' | 'L' | 'll' | 'LL' )?
                     int alt12=5;
                     int LA12_0 = input.LA(1);
 
@@ -4397,21 +4617,21 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     switch (alt12) {
                         case 1 :
-                            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12549:44: 'l'
+                            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15218:44: 'l'
                             {
                             match('l'); 
 
                             }
                             break;
                         case 2 :
-                            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12549:48: 'L'
+                            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15218:48: 'L'
                             {
                             match('L'); 
 
                             }
                             break;
                         case 3 :
-                            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12549:52: 'll'
+                            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15218:52: 'll'
                             {
                             match("ll"); 
 
@@ -4419,7 +4639,7 @@ public class InternalCpp2Lexer extends Lexer {
                             }
                             break;
                         case 4 :
-                            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12549:57: 'LL'
+                            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15218:57: 'LL'
                             {
                             match("LL"); 
 
@@ -4433,9 +4653,9 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12549:64: ( 'l' | 'L' | 'll' | 'LL' ) ( 'u' | 'U' )?
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15218:64: ( 'l' | 'L' | 'll' | 'LL' ) ( 'u' | 'U' )?
                     {
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12549:64: ( 'l' | 'L' | 'll' | 'LL' )
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15218:64: ( 'l' | 'L' | 'll' | 'LL' )
                     int alt13=4;
                     int LA13_0 = input.LA(1);
 
@@ -4465,21 +4685,21 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     switch (alt13) {
                         case 1 :
-                            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12549:65: 'l'
+                            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15218:65: 'l'
                             {
                             match('l'); 
 
                             }
                             break;
                         case 2 :
-                            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12549:69: 'L'
+                            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15218:69: 'L'
                             {
                             match('L'); 
 
                             }
                             break;
                         case 3 :
-                            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12549:73: 'll'
+                            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15218:73: 'll'
                             {
                             match("ll"); 
 
@@ -4487,7 +4707,7 @@ public class InternalCpp2Lexer extends Lexer {
                             }
                             break;
                         case 4 :
-                            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12549:78: 'LL'
+                            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15218:78: 'LL'
                             {
                             match("LL"); 
 
@@ -4497,7 +4717,7 @@ public class InternalCpp2Lexer extends Lexer {
 
                     }
 
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12549:84: ( 'u' | 'U' )?
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15218:84: ( 'u' | 'U' )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -4543,10 +4763,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = RULE_CHARACTER_LITERAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12551:24: ( ( 'u' | 'U' | 'L' )? '\\'' ( RULE_C_CHAR )+ '\\'' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12551:26: ( 'u' | 'U' | 'L' )? '\\'' ( RULE_C_CHAR )+ '\\''
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15220:24: ( ( 'u' | 'U' | 'L' )? '\\'' ( RULE_C_CHAR )+ '\\'' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15220:26: ( 'u' | 'U' | 'L' )? '\\'' ( RULE_C_CHAR )+ '\\''
             {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12551:26: ( 'u' | 'U' | 'L' )?
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15220:26: ( 'u' | 'U' | 'L' )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -4573,7 +4793,7 @@ public class InternalCpp2Lexer extends Lexer {
             }
 
             match('\''); 
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12551:46: ( RULE_C_CHAR )+
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15220:46: ( RULE_C_CHAR )+
             int cnt17=0;
             loop17:
             do {
@@ -4587,7 +4807,7 @@ public class InternalCpp2Lexer extends Lexer {
 
                 switch (alt17) {
             	case 1 :
-            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12551:46: RULE_C_CHAR
+            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15220:46: RULE_C_CHAR
             	    {
             	    mRULE_C_CHAR(); 
 
@@ -4618,10 +4838,10 @@ public class InternalCpp2Lexer extends Lexer {
     // $ANTLR start "RULE_C_CHAR"
     public final void mRULE_C_CHAR() throws RecognitionException {
         try {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12553:22: ( (~ ( ( '\\'' | '\\\\' | '\\n' ) ) | RULE_ESCAPE_SEQUENCE | RULE_UNIVERSAL_CHARACTER_NAME ) )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12553:24: (~ ( ( '\\'' | '\\\\' | '\\n' ) ) | RULE_ESCAPE_SEQUENCE | RULE_UNIVERSAL_CHARACTER_NAME )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15222:22: ( (~ ( ( '\\'' | '\\\\' | '\\n' ) ) | RULE_ESCAPE_SEQUENCE | RULE_UNIVERSAL_CHARACTER_NAME ) )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15222:24: (~ ( ( '\\'' | '\\\\' | '\\n' ) ) | RULE_ESCAPE_SEQUENCE | RULE_UNIVERSAL_CHARACTER_NAME )
             {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12553:24: (~ ( ( '\\'' | '\\\\' | '\\n' ) ) | RULE_ESCAPE_SEQUENCE | RULE_UNIVERSAL_CHARACTER_NAME )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15222:24: (~ ( ( '\\'' | '\\\\' | '\\n' ) ) | RULE_ESCAPE_SEQUENCE | RULE_UNIVERSAL_CHARACTER_NAME )
             int alt18=3;
             int LA18_0 = input.LA(1);
 
@@ -4652,7 +4872,7 @@ public class InternalCpp2Lexer extends Lexer {
             }
             switch (alt18) {
                 case 1 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12553:25: ~ ( ( '\\'' | '\\\\' | '\\n' ) )
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15222:25: ~ ( ( '\\'' | '\\\\' | '\\n' ) )
                     {
                     if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                         input.consume();
@@ -4667,14 +4887,14 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12553:45: RULE_ESCAPE_SEQUENCE
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15222:45: RULE_ESCAPE_SEQUENCE
                     {
                     mRULE_ESCAPE_SEQUENCE(); 
 
                     }
                     break;
                 case 3 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12553:66: RULE_UNIVERSAL_CHARACTER_NAME
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15222:66: RULE_UNIVERSAL_CHARACTER_NAME
                     {
                     mRULE_UNIVERSAL_CHARACTER_NAME(); 
 
@@ -4695,10 +4915,10 @@ public class InternalCpp2Lexer extends Lexer {
     // $ANTLR start "RULE_ESCAPE_SEQUENCE"
     public final void mRULE_ESCAPE_SEQUENCE() throws RecognitionException {
         try {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12555:31: ( ( RULE_SIMPLE_ESCAPE_SEQUENCE | RULE_OCTAL_ESCAPE_SEQUENCE | RULE_HEXADECIMAL_ESCAPE_SEQUENCE ) )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12555:33: ( RULE_SIMPLE_ESCAPE_SEQUENCE | RULE_OCTAL_ESCAPE_SEQUENCE | RULE_HEXADECIMAL_ESCAPE_SEQUENCE )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15224:31: ( ( RULE_SIMPLE_ESCAPE_SEQUENCE | RULE_OCTAL_ESCAPE_SEQUENCE | RULE_HEXADECIMAL_ESCAPE_SEQUENCE ) )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15224:33: ( RULE_SIMPLE_ESCAPE_SEQUENCE | RULE_OCTAL_ESCAPE_SEQUENCE | RULE_HEXADECIMAL_ESCAPE_SEQUENCE )
             {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12555:33: ( RULE_SIMPLE_ESCAPE_SEQUENCE | RULE_OCTAL_ESCAPE_SEQUENCE | RULE_HEXADECIMAL_ESCAPE_SEQUENCE )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15224:33: ( RULE_SIMPLE_ESCAPE_SEQUENCE | RULE_OCTAL_ESCAPE_SEQUENCE | RULE_HEXADECIMAL_ESCAPE_SEQUENCE )
             int alt19=3;
             int LA19_0 = input.LA(1);
 
@@ -4752,21 +4972,21 @@ public class InternalCpp2Lexer extends Lexer {
             }
             switch (alt19) {
                 case 1 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12555:34: RULE_SIMPLE_ESCAPE_SEQUENCE
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15224:34: RULE_SIMPLE_ESCAPE_SEQUENCE
                     {
                     mRULE_SIMPLE_ESCAPE_SEQUENCE(); 
 
                     }
                     break;
                 case 2 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12555:62: RULE_OCTAL_ESCAPE_SEQUENCE
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15224:62: RULE_OCTAL_ESCAPE_SEQUENCE
                     {
                     mRULE_OCTAL_ESCAPE_SEQUENCE(); 
 
                     }
                     break;
                 case 3 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12555:89: RULE_HEXADECIMAL_ESCAPE_SEQUENCE
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15224:89: RULE_HEXADECIMAL_ESCAPE_SEQUENCE
                     {
                     mRULE_HEXADECIMAL_ESCAPE_SEQUENCE(); 
 
@@ -4787,8 +5007,8 @@ public class InternalCpp2Lexer extends Lexer {
     // $ANTLR start "RULE_SIMPLE_ESCAPE_SEQUENCE"
     public final void mRULE_SIMPLE_ESCAPE_SEQUENCE() throws RecognitionException {
         try {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12557:38: ( '\\\\' ( '\\'' | '\"' | '?' | '\\\\' | 'a' | 'b' | 'f' | 'n' | 'r' | 't' | 'v' ) )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12557:40: '\\\\' ( '\\'' | '\"' | '?' | '\\\\' | 'a' | 'b' | 'f' | 'n' | 'r' | 't' | 'v' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15226:38: ( '\\\\' ( '\\'' | '\"' | '?' | '\\\\' | 'a' | 'b' | 'f' | 'n' | 'r' | 't' | 'v' ) )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15226:40: '\\\\' ( '\\'' | '\"' | '?' | '\\\\' | 'a' | 'b' | 'f' | 'n' | 'r' | 't' | 'v' )
             {
             match('\\'); 
             if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='?'||input.LA(1)=='\\'||(input.LA(1)>='a' && input.LA(1)<='b')||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t'||input.LA(1)=='v' ) {
@@ -4812,8 +5032,8 @@ public class InternalCpp2Lexer extends Lexer {
     // $ANTLR start "RULE_OCTAL_ESCAPE_SEQUENCE"
     public final void mRULE_OCTAL_ESCAPE_SEQUENCE() throws RecognitionException {
         try {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12559:37: ( '\\\\' RULE_OCTAL_DIGIT RULE_OCTAL_DIGIT RULE_OCTAL_DIGIT )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12559:39: '\\\\' RULE_OCTAL_DIGIT RULE_OCTAL_DIGIT RULE_OCTAL_DIGIT
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15228:37: ( '\\\\' RULE_OCTAL_DIGIT RULE_OCTAL_DIGIT RULE_OCTAL_DIGIT )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15228:39: '\\\\' RULE_OCTAL_DIGIT RULE_OCTAL_DIGIT RULE_OCTAL_DIGIT
             {
             match('\\'); 
             mRULE_OCTAL_DIGIT(); 
@@ -4831,12 +5051,12 @@ public class InternalCpp2Lexer extends Lexer {
     // $ANTLR start "RULE_HEXADECIMAL_ESCAPE_SEQUENCE"
     public final void mRULE_HEXADECIMAL_ESCAPE_SEQUENCE() throws RecognitionException {
         try {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12561:43: ( '\\\\x' ( RULE_HEXADECIMAL_DIGIT )+ )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12561:45: '\\\\x' ( RULE_HEXADECIMAL_DIGIT )+
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15230:43: ( '\\\\x' ( RULE_HEXADECIMAL_DIGIT )+ )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15230:45: '\\\\x' ( RULE_HEXADECIMAL_DIGIT )+
             {
             match("\\x"); 
 
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12561:51: ( RULE_HEXADECIMAL_DIGIT )+
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15230:51: ( RULE_HEXADECIMAL_DIGIT )+
             int cnt20=0;
             loop20:
             do {
@@ -4850,7 +5070,7 @@ public class InternalCpp2Lexer extends Lexer {
 
                 switch (alt20) {
             	case 1 :
-            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12561:51: RULE_HEXADECIMAL_DIGIT
+            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15230:51: RULE_HEXADECIMAL_DIGIT
             	    {
             	    mRULE_HEXADECIMAL_DIGIT(); 
 
@@ -4880,18 +5100,18 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = RULE_FLOATING_LITERAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12563:23: ( ( RULE_FRACTIONAL_CONSTANT ( RULE_EXPONENT_PART )? | ( RULE_DIGIT )+ RULE_EXPONENT_PART ) ( 'f' | 'l' | 'F' | 'L' )? )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12563:25: ( RULE_FRACTIONAL_CONSTANT ( RULE_EXPONENT_PART )? | ( RULE_DIGIT )+ RULE_EXPONENT_PART ) ( 'f' | 'l' | 'F' | 'L' )?
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15232:23: ( ( RULE_FRACTIONAL_CONSTANT ( RULE_EXPONENT_PART )? | ( RULE_DIGIT )+ RULE_EXPONENT_PART ) ( 'f' | 'l' | 'F' | 'L' )? )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15232:25: ( RULE_FRACTIONAL_CONSTANT ( RULE_EXPONENT_PART )? | ( RULE_DIGIT )+ RULE_EXPONENT_PART ) ( 'f' | 'l' | 'F' | 'L' )?
             {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12563:25: ( RULE_FRACTIONAL_CONSTANT ( RULE_EXPONENT_PART )? | ( RULE_DIGIT )+ RULE_EXPONENT_PART )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15232:25: ( RULE_FRACTIONAL_CONSTANT ( RULE_EXPONENT_PART )? | ( RULE_DIGIT )+ RULE_EXPONENT_PART )
             int alt23=2;
             alt23 = dfa23.predict(input);
             switch (alt23) {
                 case 1 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12563:26: RULE_FRACTIONAL_CONSTANT ( RULE_EXPONENT_PART )?
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15232:26: RULE_FRACTIONAL_CONSTANT ( RULE_EXPONENT_PART )?
                     {
                     mRULE_FRACTIONAL_CONSTANT(); 
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12563:51: ( RULE_EXPONENT_PART )?
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15232:51: ( RULE_EXPONENT_PART )?
                     int alt21=2;
                     int LA21_0 = input.LA(1);
 
@@ -4900,7 +5120,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     switch (alt21) {
                         case 1 :
-                            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12563:51: RULE_EXPONENT_PART
+                            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15232:51: RULE_EXPONENT_PART
                             {
                             mRULE_EXPONENT_PART(); 
 
@@ -4913,9 +5133,9 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12563:71: ( RULE_DIGIT )+ RULE_EXPONENT_PART
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15232:71: ( RULE_DIGIT )+ RULE_EXPONENT_PART
                     {
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12563:71: ( RULE_DIGIT )+
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15232:71: ( RULE_DIGIT )+
                     int cnt22=0;
                     loop22:
                     do {
@@ -4929,7 +5149,7 @@ public class InternalCpp2Lexer extends Lexer {
 
                         switch (alt22) {
                     	case 1 :
-                    	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12563:71: RULE_DIGIT
+                    	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15232:71: RULE_DIGIT
                     	    {
                     	    mRULE_DIGIT(); 
 
@@ -4952,7 +5172,7 @@ public class InternalCpp2Lexer extends Lexer {
 
             }
 
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12563:103: ( 'f' | 'l' | 'F' | 'L' )?
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15232:103: ( 'f' | 'l' | 'F' | 'L' )?
             int alt24=2;
             int LA24_0 = input.LA(1);
 
@@ -4992,17 +5212,17 @@ public class InternalCpp2Lexer extends Lexer {
     // $ANTLR start "RULE_FRACTIONAL_CONSTANT"
     public final void mRULE_FRACTIONAL_CONSTANT() throws RecognitionException {
         try {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12565:35: ( ( ( RULE_DIGIT )* '.' ( RULE_DIGIT )+ | ( RULE_DIGIT )+ '.' ) )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12565:37: ( ( RULE_DIGIT )* '.' ( RULE_DIGIT )+ | ( RULE_DIGIT )+ '.' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15234:35: ( ( ( RULE_DIGIT )* '.' ( RULE_DIGIT )+ | ( RULE_DIGIT )+ '.' ) )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15234:37: ( ( RULE_DIGIT )* '.' ( RULE_DIGIT )+ | ( RULE_DIGIT )+ '.' )
             {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12565:37: ( ( RULE_DIGIT )* '.' ( RULE_DIGIT )+ | ( RULE_DIGIT )+ '.' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15234:37: ( ( RULE_DIGIT )* '.' ( RULE_DIGIT )+ | ( RULE_DIGIT )+ '.' )
             int alt28=2;
             alt28 = dfa28.predict(input);
             switch (alt28) {
                 case 1 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12565:38: ( RULE_DIGIT )* '.' ( RULE_DIGIT )+
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15234:38: ( RULE_DIGIT )* '.' ( RULE_DIGIT )+
                     {
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12565:38: ( RULE_DIGIT )*
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15234:38: ( RULE_DIGIT )*
                     loop25:
                     do {
                         int alt25=2;
@@ -5015,7 +5235,7 @@ public class InternalCpp2Lexer extends Lexer {
 
                         switch (alt25) {
                     	case 1 :
-                    	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12565:38: RULE_DIGIT
+                    	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15234:38: RULE_DIGIT
                     	    {
                     	    mRULE_DIGIT(); 
 
@@ -5028,7 +5248,7 @@ public class InternalCpp2Lexer extends Lexer {
                     } while (true);
 
                     match('.'); 
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12565:54: ( RULE_DIGIT )+
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15234:54: ( RULE_DIGIT )+
                     int cnt26=0;
                     loop26:
                     do {
@@ -5042,7 +5262,7 @@ public class InternalCpp2Lexer extends Lexer {
 
                         switch (alt26) {
                     	case 1 :
-                    	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12565:54: RULE_DIGIT
+                    	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15234:54: RULE_DIGIT
                     	    {
                     	    mRULE_DIGIT(); 
 
@@ -5062,9 +5282,9 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12565:66: ( RULE_DIGIT )+ '.'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15234:66: ( RULE_DIGIT )+ '.'
                     {
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12565:66: ( RULE_DIGIT )+
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15234:66: ( RULE_DIGIT )+
                     int cnt27=0;
                     loop27:
                     do {
@@ -5078,7 +5298,7 @@ public class InternalCpp2Lexer extends Lexer {
 
                         switch (alt27) {
                     	case 1 :
-                    	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12565:66: RULE_DIGIT
+                    	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15234:66: RULE_DIGIT
                     	    {
                     	    mRULE_DIGIT(); 
 
@@ -5113,8 +5333,8 @@ public class InternalCpp2Lexer extends Lexer {
     // $ANTLR start "RULE_EXPONENT_PART"
     public final void mRULE_EXPONENT_PART() throws RecognitionException {
         try {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12567:29: ( ( 'e' | 'E' ) ( '+' | '-' )? ( RULE_DIGIT )+ )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12567:31: ( 'e' | 'E' ) ( '+' | '-' )? ( RULE_DIGIT )+
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15236:29: ( ( 'e' | 'E' ) ( '+' | '-' )? ( RULE_DIGIT )+ )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15236:31: ( 'e' | 'E' ) ( '+' | '-' )? ( RULE_DIGIT )+
             {
             if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                 input.consume();
@@ -5125,7 +5345,7 @@ public class InternalCpp2Lexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12567:41: ( '+' | '-' )?
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15236:41: ( '+' | '-' )?
             int alt29=2;
             int LA29_0 = input.LA(1);
 
@@ -5151,7 +5371,7 @@ public class InternalCpp2Lexer extends Lexer {
 
             }
 
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12567:52: ( RULE_DIGIT )+
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15236:52: ( RULE_DIGIT )+
             int cnt30=0;
             loop30:
             do {
@@ -5165,7 +5385,7 @@ public class InternalCpp2Lexer extends Lexer {
 
                 switch (alt30) {
             	case 1 :
-            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12567:52: RULE_DIGIT
+            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15236:52: RULE_DIGIT
             	    {
             	    mRULE_DIGIT(); 
 
@@ -5195,10 +5415,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = RULE_STRING_LITERAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12569:21: ( ( RULE_ENC_PREFIX )? '\"' ( RULE_SCHAR )+ '\"' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12569:23: ( RULE_ENC_PREFIX )? '\"' ( RULE_SCHAR )+ '\"'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15238:21: ( ( RULE_ENC_PREFIX )? '\"' ( RULE_SCHAR )+ '\"' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15238:23: ( RULE_ENC_PREFIX )? '\"' ( RULE_SCHAR )+ '\"'
             {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12569:23: ( RULE_ENC_PREFIX )?
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15238:23: ( RULE_ENC_PREFIX )?
             int alt31=2;
             int LA31_0 = input.LA(1);
 
@@ -5207,7 +5427,7 @@ public class InternalCpp2Lexer extends Lexer {
             }
             switch (alt31) {
                 case 1 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12569:23: RULE_ENC_PREFIX
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15238:23: RULE_ENC_PREFIX
                     {
                     mRULE_ENC_PREFIX(); 
 
@@ -5217,7 +5437,7 @@ public class InternalCpp2Lexer extends Lexer {
             }
 
             match('\"'); 
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12569:44: ( RULE_SCHAR )+
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15238:44: ( RULE_SCHAR )+
             int cnt32=0;
             loop32:
             do {
@@ -5231,7 +5451,7 @@ public class InternalCpp2Lexer extends Lexer {
 
                 switch (alt32) {
             	case 1 :
-            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12569:44: RULE_SCHAR
+            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15238:44: RULE_SCHAR
             	    {
             	    mRULE_SCHAR(); 
 
@@ -5262,10 +5482,10 @@ public class InternalCpp2Lexer extends Lexer {
     // $ANTLR start "RULE_ENC_PREFIX"
     public final void mRULE_ENC_PREFIX() throws RecognitionException {
         try {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12571:26: ( ( 'u8' | 'u' | 'U' | 'L' ) )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12571:28: ( 'u8' | 'u' | 'U' | 'L' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15240:26: ( ( 'u8' | 'u' | 'U' | 'L' ) )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15240:28: ( 'u8' | 'u' | 'U' | 'L' )
             {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12571:28: ( 'u8' | 'u' | 'U' | 'L' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15240:28: ( 'u8' | 'u' | 'U' | 'L' )
             int alt33=4;
             switch ( input.LA(1) ) {
             case 'u':
@@ -5298,7 +5518,7 @@ public class InternalCpp2Lexer extends Lexer {
 
             switch (alt33) {
                 case 1 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12571:29: 'u8'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15240:29: 'u8'
                     {
                     match("u8"); 
 
@@ -5306,21 +5526,21 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12571:34: 'u'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15240:34: 'u'
                     {
                     match('u'); 
 
                     }
                     break;
                 case 3 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12571:38: 'U'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15240:38: 'U'
                     {
                     match('U'); 
 
                     }
                     break;
                 case 4 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12571:42: 'L'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15240:42: 'L'
                     {
                     match('L'); 
 
@@ -5341,10 +5561,10 @@ public class InternalCpp2Lexer extends Lexer {
     // $ANTLR start "RULE_SCHAR"
     public final void mRULE_SCHAR() throws RecognitionException {
         try {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12573:21: ( (~ ( ( '\"' | '\\\\' | '\\n' ) ) | RULE_ESCAPE_SEQUENCE | RULE_UNIVERSAL_CHARACTER_NAME ) )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12573:23: (~ ( ( '\"' | '\\\\' | '\\n' ) ) | RULE_ESCAPE_SEQUENCE | RULE_UNIVERSAL_CHARACTER_NAME )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15242:21: ( (~ ( ( '\"' | '\\\\' | '\\n' ) ) | RULE_ESCAPE_SEQUENCE | RULE_UNIVERSAL_CHARACTER_NAME ) )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15242:23: (~ ( ( '\"' | '\\\\' | '\\n' ) ) | RULE_ESCAPE_SEQUENCE | RULE_UNIVERSAL_CHARACTER_NAME )
             {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12573:23: (~ ( ( '\"' | '\\\\' | '\\n' ) ) | RULE_ESCAPE_SEQUENCE | RULE_UNIVERSAL_CHARACTER_NAME )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15242:23: (~ ( ( '\"' | '\\\\' | '\\n' ) ) | RULE_ESCAPE_SEQUENCE | RULE_UNIVERSAL_CHARACTER_NAME )
             int alt34=3;
             int LA34_0 = input.LA(1);
 
@@ -5375,7 +5595,7 @@ public class InternalCpp2Lexer extends Lexer {
             }
             switch (alt34) {
                 case 1 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12573:24: ~ ( ( '\"' | '\\\\' | '\\n' ) )
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15242:24: ~ ( ( '\"' | '\\\\' | '\\n' ) )
                     {
                     if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                         input.consume();
@@ -5390,14 +5610,14 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12573:43: RULE_ESCAPE_SEQUENCE
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15242:43: RULE_ESCAPE_SEQUENCE
                     {
                     mRULE_ESCAPE_SEQUENCE(); 
 
                     }
                     break;
                 case 3 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12573:64: RULE_UNIVERSAL_CHARACTER_NAME
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15242:64: RULE_UNIVERSAL_CHARACTER_NAME
                     {
                     mRULE_UNIVERSAL_CHARACTER_NAME(); 
 
@@ -5420,10 +5640,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12575:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12575:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15244:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15244:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12575:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15244:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt37=2;
             int LA37_0 = input.LA(1);
 
@@ -5441,10 +5661,10 @@ public class InternalCpp2Lexer extends Lexer {
             }
             switch (alt37) {
                 case 1 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12575:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15244:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12575:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15244:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop35:
                     do {
                         int alt35=3;
@@ -5460,7 +5680,7 @@ public class InternalCpp2Lexer extends Lexer {
 
                         switch (alt35) {
                     	case 1 :
-                    	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12575:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15244:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -5476,7 +5696,7 @@ public class InternalCpp2Lexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12575:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15244:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -5501,10 +5721,10 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12575:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15244:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12575:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15244:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop36:
                     do {
                         int alt36=3;
@@ -5520,7 +5740,7 @@ public class InternalCpp2Lexer extends Lexer {
 
                         switch (alt36) {
                     	case 1 :
-                    	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12575:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15244:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -5536,7 +5756,7 @@ public class InternalCpp2Lexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12575:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15244:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -5579,12 +5799,12 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12577:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12577:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15246:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15246:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12577:24: ( options {greedy=false; } : . )*
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15246:24: ( options {greedy=false; } : . )*
             loop38:
             do {
                 int alt38=2;
@@ -5609,7 +5829,7 @@ public class InternalCpp2Lexer extends Lexer {
 
                 switch (alt38) {
             	case 1 :
-            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12577:52: .
+            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15246:52: .
             	    {
             	    matchAny(); 
 
@@ -5639,12 +5859,12 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12579:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12579:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15248:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15248:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12579:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15248:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop39:
             do {
                 int alt39=2;
@@ -5657,7 +5877,7 @@ public class InternalCpp2Lexer extends Lexer {
 
                 switch (alt39) {
             	case 1 :
-            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12579:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15248:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -5677,7 +5897,7 @@ public class InternalCpp2Lexer extends Lexer {
                 }
             } while (true);
 
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12579:40: ( ( '\\r' )? '\\n' )?
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15248:40: ( ( '\\r' )? '\\n' )?
             int alt41=2;
             int LA41_0 = input.LA(1);
 
@@ -5686,9 +5906,9 @@ public class InternalCpp2Lexer extends Lexer {
             }
             switch (alt41) {
                 case 1 :
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12579:41: ( '\\r' )? '\\n'
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15248:41: ( '\\r' )? '\\n'
                     {
-                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12579:41: ( '\\r' )?
+                    // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15248:41: ( '\\r' )?
                     int alt40=2;
                     int LA40_0 = input.LA(1);
 
@@ -5697,7 +5917,7 @@ public class InternalCpp2Lexer extends Lexer {
                     }
                     switch (alt40) {
                         case 1 :
-                            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12579:41: '\\r'
+                            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15248:41: '\\r'
                             {
                             match('\r'); 
 
@@ -5729,10 +5949,10 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12581:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12581:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15250:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15250:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12581:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15250:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt42=0;
             loop42:
             do {
@@ -5786,8 +6006,8 @@ public class InternalCpp2Lexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12583:16: ( . )
-            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:12583:18: .
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15252:16: ( . )
+            // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:15252:18: .
             {
             matchAny(); 
 
@@ -5802,8 +6022,8 @@ public class InternalCpp2Lexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:8: ( T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | RULE_KEYWORD | RULE_PREPROCESSING_OP_OR_PUNC | RULE_ID | RULE_INT | RULE_CHARACTER_LITERAL | RULE_FLOATING_LITERAL | RULE_STRING_LITERAL | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt43=128;
+        // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:8: ( T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | T__156 | T__157 | T__158 | T__159 | T__160 | RULE_KEYWORD | RULE_PREPROCESSING_OP_OR_PUNC | RULE_ID | RULE_INT | RULE_CHARACTER_LITERAL | RULE_FLOATING_LITERAL | RULE_STRING_LITERAL | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt43=138;
         alt43 = dfa43.predict(input);
         switch (alt43) {
             case 1 :
@@ -6619,84 +6839,154 @@ public class InternalCpp2Lexer extends Lexer {
                 }
                 break;
             case 117 :
-                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:757: RULE_KEYWORD
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:757: T__151
+                {
+                mT__151(); 
+
+                }
+                break;
+            case 118 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:764: T__152
+                {
+                mT__152(); 
+
+                }
+                break;
+            case 119 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:771: T__153
+                {
+                mT__153(); 
+
+                }
+                break;
+            case 120 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:778: T__154
+                {
+                mT__154(); 
+
+                }
+                break;
+            case 121 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:785: T__155
+                {
+                mT__155(); 
+
+                }
+                break;
+            case 122 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:792: T__156
+                {
+                mT__156(); 
+
+                }
+                break;
+            case 123 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:799: T__157
+                {
+                mT__157(); 
+
+                }
+                break;
+            case 124 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:806: T__158
+                {
+                mT__158(); 
+
+                }
+                break;
+            case 125 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:813: T__159
+                {
+                mT__159(); 
+
+                }
+                break;
+            case 126 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:820: T__160
+                {
+                mT__160(); 
+
+                }
+                break;
+            case 127 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:827: RULE_KEYWORD
                 {
                 mRULE_KEYWORD(); 
 
                 }
                 break;
-            case 118 :
-                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:770: RULE_PREPROCESSING_OP_OR_PUNC
+            case 128 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:840: RULE_PREPROCESSING_OP_OR_PUNC
                 {
                 mRULE_PREPROCESSING_OP_OR_PUNC(); 
 
                 }
                 break;
-            case 119 :
-                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:800: RULE_ID
+            case 129 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:870: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 120 :
-                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:808: RULE_INT
+            case 130 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:878: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 121 :
-                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:817: RULE_CHARACTER_LITERAL
+            case 131 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:887: RULE_CHARACTER_LITERAL
                 {
                 mRULE_CHARACTER_LITERAL(); 
 
                 }
                 break;
-            case 122 :
-                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:840: RULE_FLOATING_LITERAL
+            case 132 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:910: RULE_FLOATING_LITERAL
                 {
                 mRULE_FLOATING_LITERAL(); 
 
                 }
                 break;
-            case 123 :
-                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:862: RULE_STRING_LITERAL
+            case 133 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:932: RULE_STRING_LITERAL
                 {
                 mRULE_STRING_LITERAL(); 
 
                 }
                 break;
-            case 124 :
-                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:882: RULE_STRING
+            case 134 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:952: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 125 :
-                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:894: RULE_ML_COMMENT
+            case 135 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:964: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 126 :
-                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:910: RULE_SL_COMMENT
+            case 136 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:980: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 127 :
-                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:926: RULE_WS
+            case 137 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:996: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 128 :
-                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:934: RULE_ANY_OTHER
+            case 138 :
+                // ../cpp2.ui/src-gen/org/ui/contentassist/antlr/internal/InternalCpp2.g:1:1004: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -6905,7 +7195,7 @@ public class InternalCpp2Lexer extends Lexer {
             this.transition = DFA2_transition;
         }
         public String getDescription() {
-            return "12527:16: ( 'alignas' | 'alignof' | 'asm' | 'auto' | 'bool' | 'break' | 'case' | 'catch' | 'char' | 'char16_t' | 'char32_t' | 'class' | 'const' | 'constexpr' | 'const_cast' | 'continue' | 'decltype' | 'default' | 'delete' | 'do' | 'double' | 'dynamic_cast' | 'else' | 'enum' | 'explicit' | 'export' | 'extern' | 'false' | 'float' | 'for' | 'friend' | 'goto' | 'if' | 'inline' | 'int' | 'long' | 'mutable' | 'namespace' | 'new' | 'noexcept' | 'nullptr' | 'operator' | 'private' | 'protected' | 'public' | 'register' | 'reinterpret_cast' | 'return' | 'short' | 'signed' | 'sizeof' | 'static' | 'static_assert' | 'static_cast' | 'struct' | 'switch' | 'template' | 'this' | 'thread_local' | 'throw' | 'true' | 'try' | 'typedef' | 'typeid' | 'typename' | 'union' | 'unsigned' | 'using' | 'virtual' | 'void' | 'volatile' | 'wchar_t' | 'while' )";
+            return "15196:16: ( 'alignas' | 'alignof' | 'asm' | 'auto' | 'bool' | 'break' | 'case' | 'catch' | 'char' | 'char16_t' | 'char32_t' | 'class' | 'const' | 'constexpr' | 'const_cast' | 'continue' | 'decltype' | 'default' | 'delete' | 'do' | 'double' | 'dynamic_cast' | 'else' | 'enum' | 'explicit' | 'export' | 'extern' | 'false' | 'float' | 'for' | 'friend' | 'goto' | 'if' | 'inline' | 'int' | 'long' | 'mutable' | 'namespace' | 'new' | 'noexcept' | 'nullptr' | 'operator' | 'private' | 'protected' | 'public' | 'register' | 'reinterpret_cast' | 'return' | 'short' | 'signed' | 'sizeof' | 'static' | 'static_assert' | 'static_cast' | 'struct' | 'switch' | 'template' | 'this' | 'thread_local' | 'throw' | 'true' | 'try' | 'typedef' | 'typeid' | 'typename' | 'union' | 'unsigned' | 'using' | 'virtual' | 'void' | 'volatile' | 'wchar_t' | 'while' )";
         }
     }
     static final String DFA3_eotS =
@@ -7078,7 +7368,7 @@ public class InternalCpp2Lexer extends Lexer {
             this.transition = DFA3_transition;
         }
         public String getDescription() {
-            return "12529:33: ( '{' | '}' | '[' | ']' | '#' | '##' | '(' | ')' | '<:' | ':>' | '<%' | '%>' | '%:' | '%:%:' | ';' | ':' | '...' | 'new' | 'delete' | '?' | '::' | '.' | '.*' | '+' | '-' | '*' | '/' | '%' | '^' | '&' | '|' | '~' | '!' | '=' | '<' | '>' | '+=' | '-=' | '*=' | '/=' | '%=' | '^=' | '&=' | '|=' | '<<' | '>>' | '<<=' | '>>=' | '==' | '!=' | '<=' | '>=' | '&&' | '||' | '++' | '--' | ',' | '->*' | '->' | 'and' | 'and_eq' | 'bitand' | 'bitor' | 'compl' | 'not' | 'not_eq' | 'or' | 'or_eq' | 'xor' | 'xor_eq' )";
+            return "15198:33: ( '{' | '}' | '[' | ']' | '#' | '##' | '(' | ')' | '<:' | ':>' | '<%' | '%>' | '%:' | '%:%:' | ';' | ':' | '...' | 'new' | 'delete' | '?' | '::' | '.' | '.*' | '+' | '-' | '*' | '/' | '%' | '^' | '&' | '|' | '~' | '!' | '=' | '<' | '>' | '+=' | '-=' | '*=' | '/=' | '%=' | '^=' | '&=' | '|=' | '<<' | '>>' | '<<=' | '>>=' | '==' | '!=' | '<=' | '>=' | '&&' | '||' | '++' | '--' | ',' | '->*' | '->' | 'and' | 'and_eq' | 'bitand' | 'bitor' | 'compl' | 'not' | 'not_eq' | 'or' | 'or_eq' | 'xor' | 'xor_eq' )";
         }
     }
     static final String DFA23_eotS =
@@ -7130,7 +7420,7 @@ public class InternalCpp2Lexer extends Lexer {
             this.transition = DFA23_transition;
         }
         public String getDescription() {
-            return "12563:25: ( RULE_FRACTIONAL_CONSTANT ( RULE_EXPONENT_PART )? | ( RULE_DIGIT )+ RULE_EXPONENT_PART )";
+            return "15232:25: ( RULE_FRACTIONAL_CONSTANT ( RULE_EXPONENT_PART )? | ( RULE_DIGIT )+ RULE_EXPONENT_PART )";
         }
     }
     static final String DFA28_eotS =
@@ -7183,207 +7473,210 @@ public class InternalCpp2Lexer extends Lexer {
             this.transition = DFA28_transition;
         }
         public String getDescription() {
-            return "12565:37: ( ( RULE_DIGIT )* '.' ( RULE_DIGIT )+ | ( RULE_DIGIT )+ '.' )";
+            return "15234:37: ( ( RULE_DIGIT )* '.' ( RULE_DIGIT )+ | ( RULE_DIGIT )+ '.' )";
         }
     }
     static final String DFA43_eotS =
         "\1\uffff\26\77\1\166\1\171\1\165\3\77\1\u0087\1\u008b\1\u008d\1"+
         "\u0091\1\u0093\1\u0095\1\u0098\1\uffff\1\u009b\1\u009d\1\u00a0\1"+
-        "\u00a3\1\uffff\1\u00a6\1\u00a8\4\uffff\1\u00ae\1\uffff\1\u00b1\1"+
-        "\77\2\uffff\2\77\1\75\1\u00ad\1\uffff\1\75\2\uffff\1\77\1\uffff"+
-        "\10\77\2\uffff\27\77\1\u00e6\13\77\1\u00e6\6\77\10\uffff\2\77\1"+
-        "\165\6\77\5\uffff\1\u0110\23\uffff\1\u011a\2\uffff\1\u011d\15\uffff"+
-        "\1\u00ad\5\uffff\2\77\1\u00ad\3\uffff\13\77\1\u0133\10\77\1\u00e6"+
-        "\25\77\1\u0154\1\uffff\22\77\1\u0168\1\77\1\165\4\uffff\3\77\1\u016f"+
-        "\3\77\1\165\3\77\27\uffff\1\77\1\165\3\uffff\13\77\1\u0189\1\uffff"+
-        "\3\77\1\u00e6\10\77\1\u0199\2\77\1\u00e6\14\77\1\u01a8\1\u00e6\2"+
-        "\77\1\uffff\1\77\1\u01ac\3\77\1\u01b0\3\77\1\u01b4\10\77\1\u01bd"+
-        "\1\uffff\2\77\1\uffff\3\77\1\uffff\7\77\4\uffff\1\u00e6\1\77\1\uffff"+
-        "\13\77\1\uffff\4\77\1\u01dc\1\77\1\u01de\1\77\1\u01e0\1\u01e1\1"+
-        "\u01e4\1\77\1\165\2\77\1\uffff\1\u01e8\1\u01e9\5\77\1\u01ef\6\77"+
-        "\1\uffff\3\77\1\uffff\2\77\1\u00e6\1\uffff\1\u00e6\1\77\1\165\1"+
-        "\uffff\1\77\1\u01fd\1\u01fe\5\77\1\uffff\4\77\1\165\7\77\1\uffff"+
-        "\1\77\1\uffff\15\77\1\u00e6\1\77\1\uffff\1\77\1\uffff\1\u0222\2"+
-        "\uffff\2\77\1\uffff\3\77\2\uffff\2\77\1\u00e6\1\u022b\1\u022c\1"+
-        "\uffff\1\u022d\2\u00e6\1\u022e\1\77\1\u00e6\1\77\1\u0231\3\77\1"+
-        "\165\1\77\2\uffff\1\u0236\1\u0237\5\77\1\165\5\77\1\165\2\77\1\u0244"+
-        "\1\uffff\1\165\1\uffff\13\77\1\u0252\3\77\1\uffff\10\77\4\uffff"+
-        "\1\77\1\u0260\1\uffff\1\u0261\1\77\1\u0263\1\77\2\uffff\1\u0265"+
-        "\2\77\2\u00e6\2\77\1\u026a\2\77\1\u026d\1\77\3\uffff\13\77\1\uffff"+
-        "\1\u027b\1\77\1\u027d\2\77\1\u00e6\1\u0280\1\u0281\1\u0282\3\77"+
-        "\1\u0286\2\uffff\1\u0287\1\uffff\1\u0288\1\uffff\1\u0289\1\77\1"+
-        "\u028b\1\u028c\1\uffff\1\77\1\u028e\1\uffff\15\77\1\uffff\1\77\1"+
-        "\uffff\1\u029d\1\77\3\uffff\3\77\4\uffff\1\77\2\uffff\1\u02a3\1"+
-        "\uffff\1\u02a4\1\u02a5\11\77\1\u02af\2\77\1\uffff\1\u00e6\4\77\3"+
-        "\uffff\2\77\1\u02b8\6\77\1\uffff\4\77\1\u00e6\3\77\1\uffff\3\77"+
-        "\1\u02c9\3\77\1\u02cd\2\77\1\u00e6\5\77\1\uffff\2\77\1\u02d7\1\uffff"+
-        "\1\77\1\u02d9\7\77\1\uffff\1\77\1\uffff\4\77\1\u02e6\7\77\1\uffff"+
-        "\2\77\1\u00e6\3\77\1\u02f3\4\77\1\u02f8\1\uffff\4\77\1\uffff\1\u02fd"+
-        "\3\77\1\uffff\1\u0301\1\77\1\u0303\1\uffff\1\u0304\2\uffff";
+        "\u00a3\1\uffff\1\u00a6\1\u00a8\4\uffff\1\77\1\u00af\1\uffff\1\u00b2"+
+        "\2\uffff\2\77\1\75\1\u00ae\1\uffff\1\75\2\uffff\1\77\1\uffff\10"+
+        "\77\2\uffff\27\77\1\u00e5\13\77\1\u00f3\6\77\10\uffff\2\77\1\165"+
+        "\6\77\5\uffff\1\u0110\23\uffff\1\u011a\2\uffff\1\u011d\13\uffff"+
+        "\1\77\2\uffff\1\u00ae\5\uffff\1\77\1\u00ae\3\uffff\12\77\1\u0132"+
+        "\10\77\1\u013c\25\77\1\u0154\1\uffff\15\77\1\uffff\5\77\1\u0168"+
+        "\1\77\1\165\4\uffff\3\77\1\u016f\3\77\1\165\3\77\24\uffff\1\77\3"+
+        "\uffff\1\165\3\uffff\12\77\1\u0188\1\uffff\3\77\1\u018e\5\77\1\uffff"+
+        "\3\77\1\u0199\1\77\1\u019b\15\77\1\u01a9\1\u01aa\2\77\1\uffff\1"+
+        "\77\1\u01ae\3\77\1\u01b2\3\77\1\u01b6\10\77\1\u01bf\1\uffff\2\77"+
+        "\1\uffff\3\77\1\uffff\7\77\3\uffff\1\u01cc\1\uffff\1\77\1\uffff"+
+        "\12\77\1\uffff\4\77\1\u01de\1\uffff\1\77\1\u01e0\1\77\1\u01e2\1"+
+        "\u01e3\1\u01e6\1\77\1\165\2\77\1\uffff\1\u01ea\1\uffff\1\u01eb\5"+
+        "\77\1\u01f1\6\77\2\uffff\3\77\1\uffff\2\77\1\u01fd\1\uffff\1\u01fe"+
+        "\1\77\1\165\1\uffff\1\77\1\u0201\1\u0202\5\77\1\uffff\4\77\1\165"+
+        "\7\77\2\uffff\1\77\1\uffff\14\77\1\u018e\1\77\1\uffff\1\77\1\uffff"+
+        "\1\u0225\2\uffff\2\77\1\uffff\3\77\2\uffff\1\77\1\u022c\1\77\1\u022f"+
+        "\1\u0230\1\uffff\1\u0231\1\u018e\1\u0232\1\u0233\1\77\1\u018e\1"+
+        "\77\1\u0236\3\77\2\uffff\1\165\1\77\2\uffff\1\u023b\1\u023c\5\77"+
+        "\1\165\5\77\1\165\2\77\1\u0249\1\uffff\1\165\1\uffff\12\77\1\u0256"+
+        "\3\77\1\uffff\6\77\1\uffff\2\77\5\uffff\1\77\1\u0264\1\uffff\1\u0265"+
+        "\1\77\1\u0267\1\77\2\uffff\1\u0269\2\77\2\u018e\2\77\1\u026e\2\77"+
+        "\1\u0271\1\77\3\uffff\12\77\1\uffff\1\u027e\1\77\1\u0280\2\77\1"+
+        "\u0283\1\u0284\1\u0285\1\u0286\3\77\1\u028a\2\uffff\1\u028b\1\uffff"+
+        "\1\u028c\1\uffff\1\u028d\1\77\1\u028f\1\u0290\1\uffff\1\77\1\u0292"+
+        "\1\uffff\14\77\1\uffff\1\77\1\uffff\1\u02a0\1\77\4\uffff\3\77\4"+
+        "\uffff\1\77\2\uffff\1\u02a6\1\uffff\1\u02a7\1\u02a8\10\77\1\u02b1"+
+        "\2\77\1\uffff\1\u018e\4\77\3\uffff\2\77\1\u02ba\5\77\1\uffff\4\77"+
+        "\1\u018e\3\77\1\uffff\2\77\1\u02c9\3\77\1\u02cd\2\77\1\u018e\4\77"+
+        "\1\uffff\2\77\1\u02d6\1\uffff\1\77\1\u02d8\6\77\1\uffff\1\77\1\uffff"+
+        "\3\77\1\u02e3\6\77\1\uffff\2\77\1\u018e\7\77\1\u02f3\4\77\1\uffff"+
+        "\1\u02f8\3\77\1\uffff\1\u02fc\1\77\1\u02fe\1\uffff\1\u02ff\2\uffff";
     static final String DFA43_eofS =
-        "\u0305\uffff";
+        "\u0300\uffff";
     static final String DFA43_minS =
         "\1\0\1\170\1\157\1\144\1\145\1\163\1\171\1\42\1\145\2\141\1\145"+
         "\1\150\1\154\1\165\1\146\1\151\1\143\1\151\1\157\1\42\1\145\1\154"+
         "\1\72\1\46\1\56\1\160\1\141\1\162\1\53\1\55\1\75\1\52\1\72\2\75"+
-        "\1\uffff\2\75\1\45\1\75\1\uffff\1\51\1\135\4\uffff\1\56\1\uffff"+
-        "\1\0\1\157\2\uffff\1\157\1\42\1\125\1\56\1\uffff\1\0\2\uffff\1\160"+
-        "\1\uffff\1\121\1\155\1\157\1\105\2\163\1\160\1\161\2\uffff\1\165"+
+        "\1\uffff\2\75\1\45\1\75\1\uffff\1\51\1\135\4\uffff\1\157\1\56\1"+
+        "\uffff\1\0\2\uffff\1\157\1\42\1\125\1\56\1\uffff\1\0\2\uffff\1\160"+
+        "\1\uffff\1\121\1\156\1\157\1\105\2\163\1\160\1\161\2\uffff\1\165"+
         "\1\160\1\151\1\155\1\154\1\151\1\157\1\156\1\162\1\155\2\141\1\163"+
         "\1\147\1\141\1\157\1\147\1\151\1\160\1\165\1\163\1\164\1\154\1\60"+
         "\1\162\1\151\1\150\1\151\1\157\1\145\1\164\1\156\2\151\1\42\1\60"+
         "\1\143\1\156\1\164\1\155\1\151\1\144\6\uffff\1\56\1\uffff\2\145"+
         "\1\60\1\167\1\154\1\155\1\145\1\151\1\142\5\uffff\1\52\23\uffff"+
-        "\1\75\2\uffff\1\75\15\uffff\1\56\2\uffff\1\42\1\0\1\uffff\1\164"+
-        "\1\162\1\56\1\0\1\42\1\uffff\1\154\1\165\1\163\1\160\1\162\1\170"+
+        "\1\75\2\uffff\1\75\13\uffff\1\164\2\uffff\1\56\2\uffff\1\0\1\42"+
+        "\1\uffff\1\162\1\56\1\42\1\0\1\uffff\1\154\1\165\1\163\1\162\1\170"+
         "\1\164\1\151\1\145\1\165\1\145\1\60\2\145\1\163\1\160\1\163\1\145"+
-        "\2\141\1\60\1\163\1\160\1\162\1\163\1\143\1\145\1\151\1\156\1\165"+
+        "\2\141\1\60\1\163\1\160\1\162\1\163\1\145\1\143\1\151\1\165\1\156"+
         "\1\164\1\165\1\162\1\156\1\145\1\164\1\145\1\154\1\155\1\145\1\141"+
         "\1\151\1\60\1\uffff\1\164\1\144\2\141\2\154\2\141\1\147\1\151\1"+
-        "\157\1\156\1\142\1\145\1\141\1\154\1\141\1\157\1\60\1\147\1\60\4"+
-        "\uffff\2\162\1\145\1\60\1\154\1\145\1\170\1\60\1\166\1\164\1\154"+
-        "\24\uffff\2\0\1\uffff\1\157\1\60\1\uffff\2\0\1\145\1\151\1\141\1"+
-        "\164\1\157\1\111\1\160\1\145\1\147\1\111\1\141\1\60\1\uffff\1\144"+
-        "\1\141\1\167\1\60\1\154\1\145\1\156\1\164\1\154\1\164\1\151\1\154"+
-        "\1\60\1\163\1\150\1\60\1\163\1\164\1\162\1\151\1\143\1\164\1\145"+
-        "\1\157\1\143\1\162\1\151\1\162\2\60\1\142\1\156\1\uffff\1\165\1"+
-        "\60\1\164\1\162\1\145\1\60\1\153\1\156\1\162\1\60\1\147\1\156\1"+
-        "\147\1\154\1\164\1\165\1\164\1\155\1\60\1\uffff\1\156\1\145\1\uffff"+
-        "\1\162\1\141\1\161\1\uffff\1\160\1\163\1\143\1\145\1\141\1\145\1"+
-        "\151\3\uffff\1\0\1\60\1\145\1\0\1\163\1\143\1\154\1\141\1\165\1"+
-        "\156\1\162\1\144\1\156\1\144\1\154\1\uffff\1\145\1\141\2\144\1\60"+
-        "\1\141\1\60\1\144\3\60\1\156\1\60\1\66\1\62\1\uffff\2\60\1\164\1"+
-        "\145\1\156\1\143\1\164\1\60\1\144\1\146\1\150\1\156\1\143\1\164"+
-        "\1\uffff\1\154\1\145\1\141\1\uffff\1\151\1\137\1\60\1\uffff\1\60"+
-        "\1\144\1\60\1\uffff\1\156\2\60\2\145\1\154\1\171\1\151\1\uffff\1"+
-        "\141\1\161\1\151\1\164\1\60\1\164\1\160\1\145\1\161\1\164\2\143"+
-        "\1\0\1\161\1\0\1\163\2\151\2\156\1\151\1\145\1\116\1\155\1\114\1"+
-        "\151\1\146\1\155\1\60\1\137\1\uffff\1\164\1\uffff\1\60\2\uffff\1"+
-        "\170\1\143\1\uffff\1\165\2\137\2\uffff\1\145\1\162\3\60\1\uffff"+
-        "\4\60\1\151\1\60\1\145\1\60\2\154\1\164\1\60\1\145\2\uffff\2\60"+
-        "\1\164\1\160\1\143\1\163\1\146\1\60\1\144\1\157\1\162\1\141\1\160"+
-        "\1\60\1\145\1\164\1\60\1\0\1\60\1\0\1\151\1\164\1\146\1\164\1\144"+
-        "\1\164\1\163\1\141\1\145\1\151\1\146\1\60\1\145\1\154\1\145\1\uffff"+
-        "\1\160\1\141\1\145\2\164\1\162\1\160\1\141\4\uffff\1\164\1\60\1"+
-        "\uffff\1\60\1\145\1\60\1\144\2\uffff\1\60\1\145\1\137\2\60\1\145"+
-        "\1\162\1\60\1\143\1\164\1\60\1\145\1\uffff\2\0\1\157\1\111\1\151"+
-        "\1\105\1\123\1\151\1\163\1\155\1\156\1\163\1\151\1\uffff\1\60\1"+
-        "\157\1\60\1\162\1\163\4\60\1\162\1\163\1\141\1\60\2\uffff\1\60\1"+
-        "\uffff\1\60\1\uffff\1\60\1\143\2\60\1\uffff\1\145\1\60\1\uffff\1"+
-        "\144\1\156\1\160\1\156\1\145\1\170\1\164\1\141\1\151\1\145\2\164"+
-        "\1\145\1\uffff\1\143\1\uffff\1\60\1\164\3\uffff\1\145\2\163\4\uffff"+
-        "\1\141\2\uffff\1\60\1\uffff\2\60\1\145\1\163\1\162\1\160\1\141\1"+
-        "\154\1\157\1\123\1\105\1\60\1\144\1\141\1\uffff\1\60\1\164\1\145"+
-        "\1\164\1\163\3\uffff\1\143\1\164\1\60\1\162\1\164\1\151\1\156\1"+
-        "\160\1\170\1\uffff\1\111\1\154\1\137\1\162\1\60\1\164\1\151\1\141"+
-        "\1\uffff\2\145\1\172\1\60\1\145\1\160\1\144\1\60\1\143\1\164\1\60"+
-        "\1\141\1\156\1\163\1\155\1\145\1\uffff\1\143\1\162\1\60\1\uffff"+
-        "\1\141\1\60\1\154\1\164\1\163\1\145\1\162\1\151\1\145\1\uffff\1"+
-        "\163\1\uffff\3\151\1\156\1\60\1\146\1\163\1\164\1\172\1\141\1\157"+
-        "\1\164\1\uffff\1\151\1\163\1\60\1\141\1\164\1\156\1\60\1\145\1\151"+
-        "\1\164\1\151\1\60\1\uffff\1\162\1\157\1\151\1\157\1\uffff\1\60\1"+
-        "\156\1\157\1\156\1\uffff\1\60\1\156\1\60\1\uffff\1\60\2\uffff";
+        "\157\1\156\1\142\1\uffff\1\145\1\141\1\154\1\141\1\157\1\60\1\147"+
+        "\1\60\4\uffff\2\162\1\145\1\60\1\154\1\145\1\170\1\60\1\166\1\164"+
+        "\1\154\24\uffff\1\157\1\uffff\2\0\1\60\2\0\1\uffff\1\145\1\151\1"+
+        "\141\1\164\1\111\1\160\1\145\1\147\1\111\1\141\1\60\1\uffff\1\144"+
+        "\1\141\1\167\1\60\1\154\1\145\1\156\1\164\1\154\1\uffff\1\164\1"+
+        "\151\1\154\1\60\1\163\1\60\1\150\1\163\1\162\1\164\1\151\1\143\1"+
+        "\164\1\145\1\157\1\143\1\162\1\151\1\162\2\60\1\142\1\156\1\uffff"+
+        "\1\165\1\60\1\164\1\162\1\145\1\60\1\153\1\156\1\162\1\60\1\147"+
+        "\1\156\1\147\1\154\1\164\1\165\1\164\1\155\1\60\1\uffff\1\156\1"+
+        "\145\1\uffff\1\162\1\141\1\161\1\uffff\1\160\1\163\1\143\1\145\1"+
+        "\141\1\145\1\151\3\uffff\1\60\1\0\1\145\1\0\1\163\1\143\1\154\1"+
+        "\141\1\156\1\162\1\144\1\156\1\144\1\154\1\uffff\1\145\1\141\2\144"+
+        "\1\60\1\uffff\1\141\1\60\1\144\3\60\1\156\1\60\1\66\1\62\1\uffff"+
+        "\1\60\1\uffff\1\60\1\164\1\156\1\145\1\143\1\164\1\60\1\144\1\146"+
+        "\1\150\1\156\1\143\1\164\2\uffff\1\154\1\145\1\141\1\uffff\1\151"+
+        "\1\137\1\60\1\uffff\1\60\1\144\1\60\1\uffff\1\156\2\60\2\145\1\154"+
+        "\1\171\1\151\1\uffff\1\141\1\161\1\151\1\164\1\60\1\164\1\160\1"+
+        "\145\1\161\1\164\2\143\1\uffff\1\0\1\161\1\0\1\163\2\151\1\156\1"+
+        "\151\1\145\1\116\1\155\1\114\1\151\1\146\1\155\1\60\1\137\1\uffff"+
+        "\1\164\1\uffff\1\60\2\uffff\1\170\1\143\1\uffff\1\165\2\137\2\uffff"+
+        "\1\145\1\60\1\162\2\60\1\uffff\4\60\1\151\1\60\1\145\1\60\2\154"+
+        "\1\164\2\uffff\1\60\1\145\2\uffff\2\60\1\164\1\160\1\143\1\163\1"+
+        "\146\1\60\1\144\1\157\1\162\1\141\1\160\1\60\1\145\1\164\1\60\1"+
+        "\0\1\60\1\0\1\151\1\164\1\146\2\164\1\163\1\141\1\145\1\151\1\146"+
+        "\1\60\1\145\1\154\1\145\1\uffff\1\160\1\141\1\145\2\164\1\162\1"+
+        "\uffff\1\160\1\141\5\uffff\1\164\1\60\1\uffff\1\60\1\145\1\60\1"+
+        "\144\2\uffff\1\60\1\145\1\137\2\60\1\145\1\162\1\60\1\143\1\164"+
+        "\1\60\1\145\1\uffff\2\0\1\157\1\111\1\151\1\105\1\151\1\163\1\155"+
+        "\1\156\1\163\1\151\1\uffff\1\60\1\157\1\60\1\162\1\163\4\60\1\162"+
+        "\1\163\1\141\1\60\2\uffff\1\60\1\uffff\1\60\1\uffff\1\60\1\143\2"+
+        "\60\1\uffff\1\145\1\60\1\uffff\1\144\1\156\1\160\1\156\1\145\1\170"+
+        "\1\141\1\151\1\145\2\164\1\145\1\uffff\1\143\1\uffff\1\60\1\164"+
+        "\4\uffff\1\145\2\163\4\uffff\1\141\2\uffff\1\60\1\uffff\2\60\1\145"+
+        "\1\163\1\162\1\160\1\154\1\157\1\123\1\105\1\60\1\144\1\141\1\uffff"+
+        "\1\60\1\164\1\145\1\164\1\163\3\uffff\1\143\1\164\1\60\1\162\1\151"+
+        "\1\156\1\160\1\170\1\uffff\1\111\1\154\1\137\1\162\1\60\1\164\1"+
+        "\151\1\141\1\uffff\1\145\1\172\1\60\1\145\1\160\1\144\1\60\1\143"+
+        "\1\164\1\60\1\141\1\156\1\163\1\145\1\uffff\1\143\1\162\1\60\1\uffff"+
+        "\1\141\1\60\1\154\1\164\1\163\1\162\1\151\1\145\1\uffff\1\163\1"+
+        "\uffff\3\151\1\60\1\146\1\163\1\164\1\172\1\141\1\157\1\uffff\1"+
+        "\151\1\163\1\60\1\141\1\164\1\156\1\145\1\151\1\164\1\151\1\60\1"+
+        "\162\1\157\1\151\1\157\1\uffff\1\60\1\156\1\157\1\156\1\uffff\1"+
+        "\60\1\156\1\60\1\uffff\1\60\2\uffff";
     static final String DFA43_maxS =
         "\1\uffff\1\170\1\166\1\144\1\145\1\163\1\171\1\156\1\171\1\162"+
         "\1\157\1\145\1\167\1\170\1\165\1\156\1\157\1\150\1\162\1\157\1\163"+
         "\1\171\1\165\1\76\1\75\1\71\1\166\2\165\1\75\1\76\2\75\1\76\1\75"+
-        "\1\174\1\uffff\3\75\1\76\1\uffff\1\51\1\135\4\uffff\1\170\1\uffff"+
-        "\1\uffff\1\157\2\uffff\1\157\1\47\1\165\1\145\1\uffff\1\uffff\2"+
-        "\uffff\1\160\1\uffff\1\121\1\156\1\157\1\105\2\163\1\160\1\161\2"+
-        "\uffff\1\171\1\160\1\162\1\155\1\154\1\151\1\157\1\156\1\162\1\156"+
-        "\2\141\2\164\1\162\1\157\1\172\1\151\1\164\1\165\1\163\2\164\1\172"+
-        "\1\162\1\154\1\150\1\151\1\157\1\145\1\164\1\156\1\163\1\151\1\42"+
-        "\1\172\1\154\1\156\1\164\1\155\1\151\1\144\6\uffff\1\56\1\uffff"+
+        "\1\174\1\uffff\3\75\1\76\1\uffff\1\51\1\135\4\uffff\1\157\1\170"+
+        "\1\uffff\1\uffff\2\uffff\1\157\1\47\1\165\1\145\1\uffff\1\uffff"+
+        "\2\uffff\1\160\1\uffff\1\121\1\156\1\157\1\105\2\163\1\160\1\161"+
+        "\2\uffff\1\171\1\160\1\162\1\155\1\154\1\151\1\157\1\156\1\162\1"+
+        "\156\2\141\2\164\1\162\1\157\1\172\1\151\1\164\1\165\1\163\2\164"+
+        "\1\172\1\162\1\154\1\150\1\151\1\157\1\145\1\164\1\156\1\163\1\151"+
+        "\1\42\1\172\1\154\1\156\1\164\1\155\1\151\1\144\6\uffff\1\56\1\uffff"+
         "\2\145\1\172\1\167\1\154\1\155\1\164\1\157\1\142\5\uffff\1\52\23"+
-        "\uffff\1\75\2\uffff\1\75\15\uffff\1\145\2\uffff\1\170\1\uffff\1"+
-        "\uffff\1\164\1\162\1\145\1\uffff\1\170\1\uffff\1\162\1\165\1\163"+
-        "\1\160\1\162\1\170\1\164\1\151\1\145\1\165\1\145\1\172\1\145\1\157"+
-        "\1\163\1\160\1\163\1\145\2\141\1\172\1\164\1\160\1\162\1\163\1\143"+
-        "\1\145\1\151\1\156\1\165\1\164\1\165\1\162\1\156\1\145\1\164\1\145"+
+        "\uffff\1\75\2\uffff\1\75\13\uffff\1\164\2\uffff\1\145\2\uffff\1"+
+        "\uffff\1\170\1\uffff\1\162\1\145\1\170\1\uffff\1\uffff\1\162\1\165"+
+        "\1\163\1\162\1\170\1\164\1\151\1\145\1\165\1\145\1\172\1\145\1\157"+
+        "\1\163\1\160\1\163\1\145\2\141\1\172\1\164\1\160\1\162\1\163\1\145"+
+        "\1\143\1\151\1\165\1\156\1\164\1\165\1\162\1\156\1\145\1\164\1\145"+
         "\1\157\1\155\1\145\1\141\1\151\1\172\1\uffff\1\164\1\144\2\141\2"+
-        "\154\1\141\1\157\1\147\1\151\1\157\1\156\1\142\1\145\1\141\1\154"+
-        "\1\141\1\157\1\172\1\147\1\172\4\uffff\2\162\1\145\1\172\1\154\1"+
-        "\145\1\170\1\172\1\166\1\164\1\154\24\uffff\2\uffff\1\uffff\1\157"+
-        "\1\172\1\uffff\2\uffff\1\145\1\151\1\141\1\164\1\157\1\111\1\160"+
+        "\154\1\141\1\157\1\147\1\151\1\157\1\156\1\142\1\uffff\1\145\1\141"+
+        "\1\154\1\141\1\157\1\172\1\147\1\172\4\uffff\2\162\1\145\1\172\1"+
+        "\154\1\145\1\170\1\172\1\166\1\164\1\154\24\uffff\1\157\1\uffff"+
+        "\2\uffff\1\172\2\uffff\1\uffff\1\145\1\151\1\141\1\164\1\111\1\160"+
         "\1\145\1\147\1\111\1\141\1\172\1\uffff\1\156\1\141\1\167\1\172\1"+
-        "\154\1\145\1\156\1\164\1\154\1\164\1\151\1\154\1\172\1\163\1\150"+
-        "\1\172\1\163\1\164\1\162\1\151\1\143\1\164\1\145\1\157\1\143\1\162"+
-        "\1\151\1\162\2\172\1\142\1\156\1\uffff\1\165\1\172\1\164\1\162\1"+
-        "\145\1\172\1\153\1\156\1\162\1\172\1\147\1\156\1\147\1\154\1\164"+
-        "\1\165\1\164\1\155\1\172\1\uffff\1\156\1\145\1\uffff\1\162\1\141"+
-        "\1\161\1\uffff\1\160\1\163\1\143\1\145\1\141\1\145\1\151\3\uffff"+
-        "\1\uffff\1\172\1\145\1\uffff\1\163\1\143\1\154\1\141\1\165\1\156"+
+        "\154\1\145\1\156\1\164\1\154\1\uffff\1\164\1\151\1\154\1\172\1\163"+
+        "\1\172\1\150\1\163\1\162\1\164\1\151\1\143\1\164\1\145\1\157\1\143"+
+        "\1\162\1\151\1\162\2\172\1\142\1\156\1\uffff\1\165\1\172\1\164\1"+
+        "\162\1\145\1\172\1\153\1\156\1\162\1\172\1\147\1\156\1\147\1\154"+
+        "\1\164\1\165\1\164\1\155\1\172\1\uffff\1\156\1\145\1\uffff\1\162"+
+        "\1\141\1\161\1\uffff\1\160\1\163\1\143\1\145\1\141\1\145\1\151\3"+
+        "\uffff\1\172\1\uffff\1\145\1\uffff\1\163\1\143\1\154\1\141\1\156"+
         "\1\162\1\144\1\156\1\144\1\154\1\uffff\1\145\1\141\2\144\1\172\1"+
-        "\141\1\172\1\144\3\172\1\156\1\172\1\66\1\62\1\uffff\2\172\1\164"+
-        "\1\145\1\156\1\143\1\164\1\172\1\144\1\146\1\150\1\156\1\143\1\164"+
-        "\1\uffff\1\154\1\145\1\141\1\uffff\1\151\1\137\1\172\1\uffff\1\172"+
-        "\1\144\1\172\1\uffff\1\156\2\172\2\145\1\154\1\171\1\151\1\uffff"+
-        "\1\157\1\161\1\151\1\164\1\172\1\164\1\160\1\145\1\161\1\164\2\143"+
-        "\1\uffff\1\161\1\uffff\1\163\2\151\2\156\1\151\1\145\1\116\1\155"+
-        "\1\114\1\151\1\146\1\155\1\172\1\137\1\uffff\1\164\1\uffff\1\172"+
-        "\2\uffff\1\170\1\143\1\uffff\1\165\2\137\2\uffff\1\145\1\162\3\172"+
-        "\1\uffff\4\172\1\151\1\172\1\145\1\172\2\154\1\164\1\172\1\145\2"+
-        "\uffff\2\172\1\164\1\160\1\143\1\163\1\146\1\172\1\144\1\157\1\162"+
-        "\1\141\1\160\1\172\1\145\1\164\1\172\1\uffff\1\172\1\uffff\1\151"+
-        "\1\164\1\146\1\164\1\144\1\164\1\163\1\141\1\145\1\151\1\146\1\172"+
-        "\1\145\1\154\1\145\1\uffff\1\160\1\141\1\145\2\164\1\162\1\160\1"+
-        "\143\4\uffff\1\164\1\172\1\uffff\1\172\1\145\1\172\1\144\2\uffff"+
-        "\1\172\1\145\1\137\2\172\1\145\1\162\1\172\1\143\1\164\1\172\1\145"+
-        "\1\uffff\2\uffff\1\157\1\123\1\151\1\105\1\123\1\151\1\163\1\155"+
-        "\1\156\1\163\1\151\1\uffff\1\172\1\157\1\172\1\162\1\163\4\172\1"+
-        "\162\1\163\1\141\1\172\2\uffff\1\172\1\uffff\1\172\1\uffff\1\172"+
-        "\1\143\2\172\1\uffff\1\145\1\172\1\uffff\1\144\1\156\1\160\1\156"+
-        "\1\145\1\170\1\164\1\141\1\151\1\145\2\164\1\145\1\uffff\1\143\1"+
-        "\uffff\1\172\1\164\3\uffff\1\145\2\163\4\uffff\1\141\2\uffff\1\172"+
-        "\1\uffff\2\172\1\145\1\163\1\162\1\160\1\141\1\154\1\157\1\123\1"+
-        "\105\1\172\1\144\1\141\1\uffff\1\172\1\164\1\145\1\164\1\163\3\uffff"+
-        "\1\143\1\164\1\172\1\162\1\164\1\151\1\156\1\160\1\170\1\uffff\1"+
-        "\111\1\154\1\137\1\162\1\172\1\164\1\151\1\141\1\uffff\2\145\2\172"+
-        "\1\145\1\160\1\144\1\172\1\143\1\164\1\172\1\141\1\156\1\163\1\155"+
-        "\1\145\1\uffff\1\143\1\162\1\172\1\uffff\1\141\1\172\1\154\1\164"+
-        "\1\163\1\145\1\162\1\151\1\145\1\uffff\1\163\1\uffff\3\151\1\156"+
-        "\1\172\1\146\1\163\1\164\1\172\1\141\1\157\1\164\1\uffff\1\151\1"+
-        "\163\1\172\1\141\1\164\1\156\1\172\1\145\1\151\1\164\1\151\1\172"+
-        "\1\uffff\1\162\1\157\1\151\1\157\1\uffff\1\172\1\156\1\157\1\156"+
-        "\1\uffff\1\172\1\156\1\172\1\uffff\1\172\2\uffff";
+        "\uffff\1\141\1\172\1\144\3\172\1\156\1\172\1\66\1\62\1\uffff\1\172"+
+        "\1\uffff\1\172\1\164\1\156\1\145\1\143\1\164\1\172\1\144\1\146\1"+
+        "\150\1\156\1\143\1\164\2\uffff\1\154\1\145\1\141\1\uffff\1\151\1"+
+        "\137\1\172\1\uffff\1\172\1\144\1\172\1\uffff\1\156\2\172\2\145\1"+
+        "\154\1\171\1\151\1\uffff\1\157\1\161\1\151\1\164\1\172\1\164\1\160"+
+        "\1\145\1\161\1\164\2\143\1\uffff\1\uffff\1\161\1\uffff\1\163\2\151"+
+        "\1\156\1\151\1\145\1\116\1\155\1\114\1\151\1\146\1\155\1\172\1\137"+
+        "\1\uffff\1\164\1\uffff\1\172\2\uffff\1\170\1\143\1\uffff\1\165\2"+
+        "\137\2\uffff\1\145\1\172\1\162\2\172\1\uffff\4\172\1\151\1\172\1"+
+        "\145\1\172\2\154\1\164\2\uffff\1\172\1\145\2\uffff\2\172\1\164\1"+
+        "\160\1\143\1\163\1\146\1\172\1\144\1\157\1\162\1\141\1\160\1\172"+
+        "\1\145\1\164\1\172\1\uffff\1\172\1\uffff\1\151\1\164\1\146\2\164"+
+        "\1\163\1\141\1\145\1\151\1\146\1\172\1\145\1\154\1\145\1\uffff\1"+
+        "\160\1\141\1\145\2\164\1\162\1\uffff\1\160\1\143\5\uffff\1\164\1"+
+        "\172\1\uffff\1\172\1\145\1\172\1\144\2\uffff\1\172\1\145\1\137\2"+
+        "\172\1\145\1\162\1\172\1\143\1\164\1\172\1\145\1\uffff\2\uffff\1"+
+        "\157\1\123\1\151\1\105\1\151\1\163\1\155\1\156\1\163\1\151\1\uffff"+
+        "\1\172\1\157\1\172\1\162\1\163\4\172\1\162\1\163\1\141\1\172\2\uffff"+
+        "\1\172\1\uffff\1\172\1\uffff\1\172\1\143\2\172\1\uffff\1\145\1\172"+
+        "\1\uffff\1\144\1\156\1\160\1\156\1\145\1\170\1\141\1\151\1\145\2"+
+        "\164\1\145\1\uffff\1\143\1\uffff\1\172\1\164\4\uffff\1\145\2\163"+
+        "\4\uffff\1\141\2\uffff\1\172\1\uffff\2\172\1\145\1\163\1\162\1\160"+
+        "\1\154\1\157\1\123\1\105\1\172\1\144\1\141\1\uffff\1\172\1\164\1"+
+        "\145\1\164\1\163\3\uffff\1\143\1\164\1\172\1\162\1\151\1\156\1\160"+
+        "\1\170\1\uffff\1\111\1\154\1\137\1\162\1\172\1\164\1\151\1\141\1"+
+        "\uffff\1\145\2\172\1\145\1\160\1\144\1\172\1\143\1\164\1\172\1\141"+
+        "\1\156\1\163\1\145\1\uffff\1\143\1\162\1\172\1\uffff\1\141\1\172"+
+        "\1\154\1\164\1\163\1\162\1\151\1\145\1\uffff\1\163\1\uffff\3\151"+
+        "\1\172\1\146\1\163\1\164\1\172\1\141\1\157\1\uffff\1\151\1\163\1"+
+        "\172\1\141\1\164\1\156\1\145\1\151\1\164\1\151\1\172\1\162\1\157"+
+        "\1\151\1\157\1\uffff\1\172\1\156\1\157\1\156\1\uffff\1\172\1\156"+
+        "\1\172\1\uffff\1\172\2\uffff";
     static final String DFA43_acceptS =
-        "\44\uffff\1\100\4\uffff\1\130\2\uffff\1\140\1\144\1\147\1\150\1"+
-        "\uffff\1\157\2\uffff\2\166\4\uffff\1\167\1\uffff\1\177\1\u0080\1"+
-        "\uffff\1\167\10\uffff\1\171\1\173\52\uffff\1\51\1\166\1\151\1\55"+
-        "\1\113\1\54\1\uffff\1\172\11\uffff\1\105\1\126\1\71\1\106\1\127"+
-        "\1\uffff\1\72\1\107\1\73\1\110\1\175\1\176\1\74\1\111\1\75\1\112"+
-        "\1\76\1\114\1\125\1\77\1\100\1\122\1\101\1\121\1\102\1\uffff\1\123"+
-        "\1\103\1\uffff\1\124\1\104\1\130\1\133\1\143\1\134\1\156\1\140\1"+
-        "\144\1\147\1\150\1\170\1\154\1\uffff\1\157\1\160\2\uffff\1\174\5"+
-        "\uffff\1\177\53\uffff\1\165\25\uffff\1\51\1\55\1\113\1\56\13\uffff"+
-        "\1\105\1\126\1\106\1\127\1\131\1\132\1\107\1\110\1\111\1\112\1\114"+
-        "\1\125\1\122\1\121\1\120\1\115\1\123\1\117\1\116\1\124\2\uffff\1"+
-        "\173\2\uffff\1\171\16\uffff\1\161\40\uffff\1\40\23\uffff\1\153\2"+
-        "\uffff\1\56\3\uffff\1\64\7\uffff\1\131\1\120\1\117\17\uffff\1\15"+
-        "\17\uffff\1\32\16\uffff\1\50\3\uffff\1\46\3\uffff\1\36\3\uffff\1"+
-        "\41\10\uffff\1\47\36\uffff\1\163\1\uffff\1\16\1\uffff\1\44\1\57"+
-        "\2\uffff\1\52\3\uffff\1\60\1\162\5\uffff\1\37\15\uffff\1\62\1\137"+
-        "\43\uffff\1\17\10\uffff\1\23\1\61\1\42\1\25\2\uffff\1\27\4\uffff"+
-        "\1\45\1\70\14\uffff\1\67\15\uffff\1\20\15\uffff\1\26\1\30\1\uffff"+
-        "\1\35\1\uffff\1\141\4\uffff\1\136\2\uffff\1\65\15\uffff\1\135\1"+
-        "\uffff\1\145\2\uffff\1\33\1\34\1\22\3\uffff\1\31\1\53\1\43\1\146"+
-        "\1\uffff\1\63\1\155\1\uffff\1\164\16\uffff\1\21\5\uffff\1\152\1"+
-        "\66\1\1\11\uffff\1\13\10\uffff\1\4\20\uffff\1\6\3\uffff\1\24\11"+
-        "\uffff\1\14\1\uffff\1\142\14\uffff\1\12\14\uffff\1\11\4\uffff\1"+
+        "\44\uffff\1\77\4\uffff\1\127\2\uffff\1\141\1\142\1\143\1\146\2"+
+        "\uffff\1\171\1\uffff\2\u0080\4\uffff\1\u0081\1\uffff\1\u0089\1\u008a"+
+        "\1\uffff\1\u0081\10\uffff\1\u0083\1\u0085\52\uffff\1\50\1\u0080"+
+        "\1\136\1\54\1\112\1\53\1\uffff\1\u0084\11\uffff\1\104\1\125\1\70"+
+        "\1\105\1\126\1\uffff\1\71\1\106\1\72\1\107\1\u0087\1\u0088\1\73"+
+        "\1\110\1\74\1\111\1\75\1\113\1\124\1\76\1\77\1\121\1\100\1\120\1"+
+        "\101\1\uffff\1\122\1\102\1\uffff\1\123\1\103\1\127\1\132\1\145\1"+
+        "\133\1\170\1\141\1\142\1\143\1\146\1\uffff\1\u0082\1\166\1\uffff"+
+        "\1\171\1\172\2\uffff\1\u0086\4\uffff\1\u0089\52\uffff\1\144\15\uffff"+
+        "\1\152\10\uffff\1\50\1\54\1\112\1\55\13\uffff\1\104\1\125\1\105"+
+        "\1\126\1\130\1\131\1\106\1\107\1\110\1\111\1\113\1\124\1\121\1\120"+
+        "\1\117\1\114\1\122\1\116\1\115\1\123\1\uffff\1\u0085\5\uffff\1\u0083"+
+        "\13\uffff\1\173\11\uffff\1\153\27\uffff\1\37\23\uffff\1\165\2\uffff"+
+        "\1\55\3\uffff\1\63\7\uffff\1\130\1\117\1\116\16\uffff\1\14\5\uffff"+
+        "\1\177\12\uffff\1\31\1\uffff\1\137\15\uffff\1\47\1\147\3\uffff\1"+
+        "\45\3\uffff\1\35\3\uffff\1\40\10\uffff\1\46\14\uffff\1\157\21\uffff"+
+        "\1\175\1\uffff\1\15\1\uffff\1\43\1\56\2\uffff\1\51\3\uffff\1\57"+
+        "\1\174\5\uffff\1\36\13\uffff\1\151\1\154\2\uffff\1\61\1\160\42\uffff"+
+        "\1\16\6\uffff\1\156\2\uffff\1\22\1\60\1\41\1\150\1\24\2\uffff\1"+
+        "\26\4\uffff\1\44\1\67\14\uffff\1\66\14\uffff\1\17\15\uffff\1\25"+
+        "\1\27\1\uffff\1\34\1\uffff\1\140\4\uffff\1\135\2\uffff\1\64\14\uffff"+
+        "\1\134\1\uffff\1\162\2\uffff\1\155\1\32\1\33\1\21\3\uffff\1\30\1"+
+        "\52\1\42\1\163\1\uffff\1\62\1\167\1\uffff\1\176\15\uffff\1\20\5"+
+        "\uffff\1\164\1\65\1\1\10\uffff\1\12\10\uffff\1\4\16\uffff\1\6\3"+
+        "\uffff\1\23\10\uffff\1\13\1\uffff\1\161\12\uffff\1\11\17\uffff\1"+
         "\5\4\uffff\1\7\3\uffff\1\10\1\uffff\1\3\1\2";
     static final String DFA43_specialS =
-        "\1\15\61\uffff\1\12\10\uffff\1\11\167\uffff\1\13\4\uffff\1\5\146"+
-        "\uffff\1\17\1\3\4\uffff\1\4\1\16\123\uffff\1\2\2\uffff\1\10\114"+
-        "\uffff\1\1\1\uffff\1\6\103\uffff\1\0\1\uffff\1\7\62\uffff\1\14\1"+
-        "\20\u00be\uffff}>";
+        "\1\5\62\uffff\1\4\7\uffff\1\1\167\uffff\1\16\5\uffff\1\20\147\uffff"+
+        "\1\2\1\17\1\uffff\1\0\1\3\125\uffff\1\12\1\uffff\1\13\117\uffff"+
+        "\1\11\1\uffff\1\14\104\uffff\1\10\1\uffff\1\15\63\uffff\1\7\1\6"+
+        "\u00b4\uffff}>";
     static final String[] DFA43_transitionS = {
-            "\11\75\2\74\2\75\1\74\22\75\1\74\1\45\1\62\1\64\1\75\1\41\1"+
-            "\30\1\73\1\52\1\55\1\37\1\35\1\51\1\36\1\31\1\40\1\60\11\71"+
+            "\11\75\2\74\2\75\1\74\22\75\1\74\1\45\1\63\1\64\1\75\1\41\1"+
+            "\30\1\73\1\52\1\57\1\37\1\35\1\51\1\36\1\31\1\40\1\61\11\71"+
             "\1\27\1\54\1\47\1\46\1\50\1\65\1\75\1\5\1\72\1\2\1\72\1\1\3"+
-            "\72\1\3\2\72\1\67\1\72\1\4\5\72\1\6\1\7\5\72\1\53\1\70\1\61"+
-            "\1\42\1\72\1\75\1\26\1\22\1\12\1\25\1\15\1\11\1\63\1\72\1\17"+
+            "\72\1\3\2\72\1\67\1\72\1\4\5\72\1\6\1\7\5\72\1\53\1\70\1\62"+
+            "\1\42\1\72\1\75\1\26\1\22\1\12\1\25\1\15\1\11\1\60\1\72\1\17"+
             "\2\72\1\23\1\16\1\33\1\32\1\34\1\72\1\13\1\14\1\10\1\24\1\20"+
-            "\1\21\1\66\2\72\1\56\1\43\1\57\1\44\uff81\75",
+            "\1\21\1\66\2\72\1\55\1\43\1\56\1\44\uff81\75",
             "\1\76",
             "\1\101\4\uffff\1\102\1\uffff\1\100",
             "\1\103",
@@ -7433,13 +7726,13 @@ public class InternalCpp2Lexer extends Lexer {
             "",
             "",
             "",
-            "\1\173\1\uffff\10\u00af\2\173\13\uffff\1\173\6\uffff\1\u00ad"+
-            "\10\uffff\1\u00ad\2\uffff\1\u00ad\14\uffff\1\173\6\uffff\1\u00ad"+
-            "\10\uffff\1\u00ad\2\uffff\1\u00ad",
+            "\1\u00ad",
+            "\1\173\1\uffff\10\u00b0\2\173\13\uffff\1\173\6\uffff\1\u00ae"+
+            "\10\uffff\1\u00ae\2\uffff\1\u00ae\14\uffff\1\173\6\uffff\1\u00ae"+
+            "\10\uffff\1\u00ae\2\uffff\1\u00ae",
             "",
-            "\12\u00b3\1\u00b4\27\u00b3\1\u00b4\71\u00b3\1\u00b2\uffa3"+
+            "\12\u00b3\1\u00b5\27\u00b3\1\u00b5\71\u00b3\1\u00b4\uffa3"+
             "\u00b3",
-            "\1\u00b5",
             "",
             "",
             "\1\u00b6",
@@ -7447,60 +7740,60 @@ public class InternalCpp2Lexer extends Lexer {
             "\1\77\37\uffff\1\77",
             "\1\173\1\uffff\12\u00b7\13\uffff\1\173\37\uffff\1\173",
             "",
-            "\12\u00b8\1\u00b4\34\u00b8\1\u00b4\64\u00b8\1\u00b9\uffa3"+
-            "\u00b8",
+            "\12\u00b9\1\u00b5\34\u00b9\1\u00b5\64\u00b9\1\u00b8\uffa3"+
+            "\u00b9",
             "",
             "",
             "\1\u00bb",
             "",
             "\1\u00bc",
-            "\1\u00be\1\u00bd",
+            "\1\u00bd",
+            "\1\u00be",
             "\1\u00bf",
             "\1\u00c0",
             "\1\u00c1",
             "\1\u00c2",
             "\1\u00c3",
-            "\1\u00c4",
             "",
             "",
-            "\1\u00c5\3\uffff\1\u00c6",
-            "\1\u00c7",
-            "\1\u00c9\10\uffff\1\u00c8",
+            "\1\u00c4\3\uffff\1\u00c5",
+            "\1\u00c6",
+            "\1\u00c8\10\uffff\1\u00c7",
+            "\1\u00c9",
             "\1\u00ca",
             "\1\u00cb",
             "\1\u00cc",
             "\1\u00cd",
             "\1\u00ce",
-            "\1\u00cf",
-            "\1\u00d1\1\u00d0",
+            "\1\u00d0\1\u00cf",
+            "\1\u00d1",
             "\1\u00d2",
-            "\1\u00d3",
-            "\1\u00d5\1\u00d4",
-            "\1\u00d6\1\uffff\1\u00d7\12\uffff\1\u00d8",
-            "\1\u00d9\20\uffff\1\u00da",
-            "\1\u00db",
-            "\1\u00dc\22\uffff\1\u00dd",
-            "\1\u00de",
-            "\1\u00e0\3\uffff\1\u00df",
+            "\1\u00d3\1\u00d4",
+            "\1\u00d5\1\uffff\1\u00d7\12\uffff\1\u00d6",
+            "\1\u00d8\20\uffff\1\u00d9",
+            "\1\u00da",
+            "\1\u00db\22\uffff\1\u00dc",
+            "\1\u00dd",
+            "\1\u00df\3\uffff\1\u00de",
+            "\1\u00e0",
             "\1\u00e1",
             "\1\u00e2",
-            "\1\u00e3",
-            "\1\u00e4\7\uffff\1\u00e5",
+            "\1\u00e3\7\uffff\1\u00e4",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "\1\u00e7",
-            "\1\u00e8\2\uffff\1\u00e9",
+            "\1\u00e6",
+            "\1\u00e7\2\uffff\1\u00e8",
+            "\1\u00e9",
             "\1\u00ea",
             "\1\u00eb",
             "\1\u00ec",
             "\1\u00ed",
             "\1\u00ee",
-            "\1\u00ef",
-            "\1\u00f1\11\uffff\1\u00f0",
-            "\1\u00f2",
+            "\1\u00f0\11\uffff\1\u00ef",
+            "\1\u00f1",
             "\1\111",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\24"+
-            "\77\1\u00f3\5\77",
+            "\77\1\u00f2\5\77",
             "\1\u00f6\2\uffff\1\u00f5\5\uffff\1\u00f4",
             "\1\u00f7",
             "\1\u00f8",
@@ -7565,27 +7858,27 @@ public class InternalCpp2Lexer extends Lexer {
             "",
             "",
             "",
+            "\1\u011f",
             "",
             "",
-            "\1\173\1\uffff\10\u00af\2\173\13\uffff\1\173\37\uffff\1\173",
+            "\1\173\1\uffff\10\u00b0\2\173\13\uffff\1\173\37\uffff\1\173",
             "",
             "",
-            "\1\u011f\4\uffff\1\u011f\10\uffff\10\111\7\uffff\1\111\25"+
-            "\uffff\1\111\6\uffff\1\u011f\4\uffff\1\111\1\u011f\3\uffff\1"+
-            "\u011f\7\uffff\1\u011f\3\uffff\1\u011f\1\uffff\1\u011f\1\u0120"+
-            "\1\111\1\uffff\1\111",
-            "\12\u00b3\1\u00b4\27\u00b3\1\u0121\71\u00b3\1\u00b2\uffa3"+
+            "\12\u00b3\1\u00b5\27\u00b3\1\u0120\71\u00b3\1\u00b4\uffa3"+
             "\u00b3",
+            "\1\u0121\4\uffff\1\u0121\10\uffff\10\111\7\uffff\1\111\25"+
+            "\uffff\1\111\6\uffff\1\u0121\4\uffff\1\111\1\u0121\3\uffff\1"+
+            "\u0121\7\uffff\1\u0121\3\uffff\1\u0121\1\uffff\1\u0121\1\u0122"+
+            "\1\111\1\uffff\1\111",
             "",
-            "\1\u0122",
             "\1\u0123",
             "\1\173\1\uffff\12\u00b7\13\uffff\1\173\37\uffff\1\173",
-            "\12\u00b8\1\u00b4\34\u00b8\1\u0124\64\u00b8\1\u00b9\uffa3"+
-            "\u00b8",
-            "\1\u0125\4\uffff\1\u0125\10\uffff\10\110\7\uffff\1\110\25"+
-            "\uffff\1\110\6\uffff\1\u0125\4\uffff\1\110\1\u0125\3\uffff\1"+
-            "\u0125\7\uffff\1\u0125\3\uffff\1\u0125\1\uffff\1\u0125\1\u0126"+
+            "\1\u0124\4\uffff\1\u0124\10\uffff\10\110\7\uffff\1\110\25"+
+            "\uffff\1\110\6\uffff\1\u0124\4\uffff\1\110\1\u0124\3\uffff\1"+
+            "\u0124\7\uffff\1\u0124\3\uffff\1\u0124\1\uffff\1\u0124\1\u0125"+
             "\1\110\1\uffff\1\110",
+            "\12\u00b9\1\u00b5\34\u00b9\1\u0126\64\u00b9\1\u00b8\uffa3"+
+            "\u00b9",
             "",
             "\1\u0128\5\uffff\1\u0127",
             "\1\u0129",
@@ -7597,17 +7890,16 @@ public class InternalCpp2Lexer extends Lexer {
             "\1\u012f",
             "\1\u0130",
             "\1\u0131",
-            "\1\u0132",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "\1\u0134",
-            "\1\u0135\11\uffff\1\u0136",
+            "\1\u0133",
+            "\1\u0134\11\uffff\1\u0135",
+            "\1\u0136",
             "\1\u0137",
             "\1\u0138",
             "\1\u0139",
             "\1\u013a",
             "\1\u013b",
-            "\1\u013c",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
             "\1\u013d\1\u013e",
@@ -7647,6 +7939,7 @@ public class InternalCpp2Lexer extends Lexer {
             "\1\u0160",
             "\1\u0161",
             "\1\u0162",
+            "",
             "\1\u0163",
             "\1\u0164",
             "\1\u0165",
@@ -7694,17 +7987,17 @@ public class InternalCpp2Lexer extends Lexer {
             "",
             "",
             "",
-            "\12\u00b3\1\u00b4\27\u00b3\1\u0121\71\u00b3\1\u00b2\uffa3"+
-            "\u00b3",
-            "\60\u00b4\12\u017a\7\u00b4\6\u017a\uffb9\u00b4",
+            "\1\u017a",
             "",
-            "\1\u017b",
+            "\12\u00b3\1\u00b5\27\u00b3\1\u0120\71\u00b3\1\u00b4\uffa3"+
+            "\u00b3",
+            "\60\u00b5\12\u017b\7\u00b5\6\u017b\uffb9\u00b5",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\u017c\1\uffff"+
             "\32\77",
+            "\12\u00b9\1\u00b5\34\u00b9\1\u0126\64\u00b9\1\u00b8\uffa3"+
+            "\u00b9",
+            "\60\u00b5\12\u017d\7\u00b5\6\u017d\uffb9\u00b5",
             "",
-            "\12\u00b8\1\u00b4\34\u00b8\1\u0124\64\u00b8\1\u00b9\uffa3"+
-            "\u00b8",
-            "\60\u00b4\12\u017d\7\u00b4\6\u017d\uffb9\u00b4",
             "\1\u017e",
             "\1\u017f",
             "\1\u0180",
@@ -7715,13 +8008,12 @@ public class InternalCpp2Lexer extends Lexer {
             "\1\u0185",
             "\1\u0186",
             "\1\u0187",
-            "\1\u0188",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
             "",
-            "\1\u018a\4\uffff\1\u018c\4\uffff\1\u018b",
+            "\1\u0189\4\uffff\1\u018b\4\uffff\1\u018a",
+            "\1\u018c",
             "\1\u018d",
-            "\1\u018e",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
             "\1\u018f",
@@ -7729,13 +8021,13 @@ public class InternalCpp2Lexer extends Lexer {
             "\1\u0191",
             "\1\u0192",
             "\1\u0193",
+            "",
             "\1\u0194",
             "\1\u0195",
             "\1\u0196",
             "\1\77\1\u0197\1\77\1\u0198\6\77\7\uffff\32\77\1\uffff\1\77"+
             "\2\uffff\1\77\1\uffff\32\77",
             "\1\u019a",
-            "\1\u019b",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
             "\1\u019c",
@@ -7750,62 +8042,60 @@ public class InternalCpp2Lexer extends Lexer {
             "\1\u01a5",
             "\1\u01a6",
             "\1\u01a7",
+            "\1\u01a8",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "\1\u01a9",
-            "\1\u01aa",
-            "",
             "\1\u01ab",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
+            "\1\u01ac",
+            "",
             "\1\u01ad",
-            "\1\u01ae",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
             "\1\u01af",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
+            "\1\u01b0",
             "\1\u01b1",
-            "\1\u01b2",
-            "\1\u01b3",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
+            "\1\u01b3",
+            "\1\u01b4",
             "\1\u01b5",
-            "\1\u01b6",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
             "\1\u01b7",
             "\1\u01b8",
             "\1\u01b9",
             "\1\u01ba",
             "\1\u01bb",
             "\1\u01bc",
+            "\1\u01bd",
+            "\1\u01be",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
             "",
-            "\1\u01be",
-            "\1\u01bf",
-            "",
             "\1\u01c0",
             "\1\u01c1",
-            "\1\u01c2",
             "",
+            "\1\u01c2",
             "\1\u01c3",
             "\1\u01c4",
+            "",
             "\1\u01c5",
             "\1\u01c6",
             "\1\u01c7",
             "\1\u01c8",
             "\1\u01c9",
+            "\1\u01ca",
+            "\1\u01cb",
             "",
             "",
             "",
-            "\60\u00b4\12\u01ca\7\u00b4\6\u01ca\uffb9\u00b4",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "\1\u01cb",
-            "\60\u00b4\12\u01cc\7\u00b4\6\u01cc\uffb9\u00b4",
-            "\1\u01cd",
+            "\60\u00b5\12\u01cd\7\u00b5\6\u01cd\uffb9\u00b5",
             "\1\u01ce",
-            "\1\u01cf",
+            "\60\u00b5\12\u01cf\7\u00b5\6\u01cf\uffb9\u00b5",
             "\1\u01d0",
             "\1\u01d1",
             "\1\u01d2",
@@ -7814,93 +8104,95 @@ public class InternalCpp2Lexer extends Lexer {
             "\1\u01d5",
             "\1\u01d6",
             "\1\u01d7",
-            "",
             "\1\u01d8",
             "\1\u01d9",
+            "",
             "\1\u01da",
             "\1\u01db",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
+            "\1\u01dc",
             "\1\u01dd",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
+            "",
             "\1\u01df",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
+            "\1\u01e1",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\u01e3\1\uffff"+
-            "\4\77\1\u01e2\25\77",
-            "\1\u01e5",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "\1\u01e6",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\u01e5\1\uffff"+
+            "\4\77\1\u01e4\25\77",
             "\1\u01e7",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
+            "\1\u01e8",
+            "\1\u01e9",
             "",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
+            "",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "\1\u01ea",
-            "\1\u01eb",
             "\1\u01ec",
             "\1\u01ed",
             "\1\u01ee",
+            "\1\u01ef",
+            "\1\u01f0",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "\1\u01f0",
-            "\1\u01f1",
             "\1\u01f2",
             "\1\u01f3",
             "\1\u01f4",
             "\1\u01f5",
-            "",
             "\1\u01f6",
             "\1\u01f7",
-            "\1\u01f8",
             "",
+            "",
+            "\1\u01f8",
             "\1\u01f9",
             "\1\u01fa",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
             "",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
             "\1\u01fb",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
-            "",
             "\1\u01fc",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
+            "",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
             "\1\u01ff",
-            "\1\u0200",
-            "\1\u0201",
-            "\1\u0202",
-            "\1\u0203",
-            "",
-            "\1\u0204\15\uffff\1\u0205",
-            "\1\u0206",
-            "\1\u0207",
-            "\1\u0208",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "\1\u0209",
+            "",
+            "\1\u0200",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
+            "\1\u0203",
+            "\1\u0204",
+            "\1\u0205",
+            "\1\u0206",
+            "\1\u0207",
+            "",
+            "\1\u0208\15\uffff\1\u0209",
             "\1\u020a",
             "\1\u020b",
             "\1\u020c",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
             "\1\u020d",
             "\1\u020e",
             "\1\u020f",
-            "\60\u00b4\12\u0210\7\u00b4\6\u0210\uffb9\u00b4",
+            "\1\u0210",
             "\1\u0211",
-            "\60\u00b4\12\u0212\7\u00b4\6\u0212\uffb9\u00b4",
+            "\1\u0212",
             "\1\u0213",
-            "\1\u0214",
+            "",
+            "\60\u00b5\12\u0214\7\u00b5\6\u0214\uffb9\u00b5",
             "\1\u0215",
-            "\1\u0216",
+            "\60\u00b5\12\u0216\7\u00b5\6\u0216\uffb9\u00b5",
             "\1\u0217",
             "\1\u0218",
             "\1\u0219",
@@ -7910,29 +8202,32 @@ public class InternalCpp2Lexer extends Lexer {
             "\1\u021d",
             "\1\u021e",
             "\1\u021f",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
             "\1\u0220",
-            "",
             "\1\u0221",
-            "",
+            "\1\u0222",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "",
-            "",
             "\1\u0223",
+            "",
             "\1\u0224",
             "",
-            "\1\u0225",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
+            "",
+            "",
             "\1\u0226",
             "\1\u0227",
             "",
-            "",
             "\1\u0228",
             "\1\u0229",
+            "\1\u022a",
+            "",
+            "",
+            "\1\u022b",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\u022a\1\uffff"+
+            "\1\u022d",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\u022e\1\uffff"+
             "\32\77",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
@@ -7945,29 +8240,24 @@ public class InternalCpp2Lexer extends Lexer {
             "\77",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "\1\u022f",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
-            "\1\u0230",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
-            "\1\u0232",
-            "\1\u0233",
             "\1\u0234",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
             "\1\u0235",
-            "",
-            "",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
+            "\1\u0237",
             "\1\u0238",
             "\1\u0239",
+            "",
+            "",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
             "\1\u023a",
-            "\1\u023b",
-            "\1\u023c",
+            "",
+            "",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
             "\1\u023d",
@@ -7979,131 +8269,134 @@ public class InternalCpp2Lexer extends Lexer {
             "\77",
             "\1\u0242",
             "\1\u0243",
+            "\1\u0244",
+            "\1\u0245",
+            "\1\u0246",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "\60\u00b4\12\u0245\7\u00b4\6\u0245\uffb9\u00b4",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
-            "\60\u00b4\12\u0246\7\u00b4\6\u0246\uffb9\u00b4",
             "\1\u0247",
             "\1\u0248",
-            "\1\u0249",
-            "\1\u024a",
-            "\1\u024b",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
+            "\60\u00b5\12\u024a\7\u00b5\6\u024a\uffb9\u00b5",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
+            "\60\u00b5\12\u024b\7\u00b5\6\u024b\uffb9\u00b5",
             "\1\u024c",
             "\1\u024d",
             "\1\u024e",
             "\1\u024f",
             "\1\u0250",
             "\1\u0251",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
+            "\1\u0252",
             "\1\u0253",
             "\1\u0254",
             "\1\u0255",
-            "",
-            "\1\u0256",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
             "\1\u0257",
             "\1\u0258",
             "\1\u0259",
+            "",
             "\1\u025a",
             "\1\u025b",
             "\1\u025c",
-            "\1\u025d\1\uffff\1\u025e",
-            "",
-            "",
-            "",
-            "",
+            "\1\u025d",
+            "\1\u025e",
             "\1\u025f",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
             "",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
-            "\1\u0262",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
-            "\1\u0264",
+            "\1\u0260",
+            "\1\u0261\1\uffff\1\u0262",
             "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u0263",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
             "",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
             "\1\u0266",
-            "\1\u0267",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
             "\1\u0268",
-            "\1\u0269",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
-            "\1\u026b",
-            "\1\u026c",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
-            "\1\u026e",
             "",
-            "\12\u00b3\1\u00b4\27\u00b3\1\u0121\71\u00b3\1\u00b2\uffa3"+
-            "\u00b3",
-            "\12\u00b8\1\u00b4\34\u00b8\1\u0124\64\u00b8\1\u00b9\uffa3"+
-            "\u00b8",
+            "",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
+            "\1\u026a",
+            "\1\u026b",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
+            "\1\u026c",
+            "\1\u026d",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
             "\1\u026f",
-            "\1\u0271\11\uffff\1\u0270",
+            "\1\u0270",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
             "\1\u0272",
+            "",
+            "\12\u00b3\1\u00b5\27\u00b3\1\u0120\71\u00b3\1\u00b4\uffa3"+
+            "\u00b3",
+            "\12\u00b9\1\u00b5\34\u00b9\1\u0126\64\u00b9\1\u00b8\uffa3"+
+            "\u00b9",
             "\1\u0273",
-            "\1\u0274",
-            "\1\u0275",
+            "\1\u0275\11\uffff\1\u0274",
             "\1\u0276",
             "\1\u0277",
             "\1\u0278",
             "\1\u0279",
             "\1\u027a",
+            "\1\u027b",
+            "\1\u027c",
+            "\1\u027d",
             "",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "\1\u027c",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
-            "\1\u027e",
             "\1\u027f",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
+            "\1\u0281",
+            "\1\u0282",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "\1\u0283",
-            "\1\u0284",
-            "\1\u0285",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "",
-            "",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
-            "",
+            "\1\u0287",
+            "\1\u0288",
+            "\1\u0289",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
             "",
+            "",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "\1\u028a",
+            "",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
+            "",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
+            "\1\u028e",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
             "",
-            "\1\u028d",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
-            "",
-            "\1\u028f",
-            "\1\u0290",
             "\1\u0291",
-            "\1\u0292",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
+            "",
             "\1\u0293",
             "\1\u0294",
             "\1\u0295",
@@ -8113,23 +8406,27 @@ public class InternalCpp2Lexer extends Lexer {
             "\1\u0299",
             "\1\u029a",
             "\1\u029b",
-            "",
             "\1\u029c",
+            "\1\u029d",
+            "\1\u029e",
+            "",
+            "\1\u029f",
             "",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "\1\u029e",
-            "",
-            "",
-            "",
-            "\1\u029f",
-            "\1\u02a0",
             "\1\u02a1",
             "",
             "",
             "",
             "",
             "\1\u02a2",
+            "\1\u02a3",
+            "\1\u02a4",
+            "",
+            "",
+            "",
+            "",
+            "\1\u02a5",
             "",
             "",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
@@ -8139,51 +8436,48 @@ public class InternalCpp2Lexer extends Lexer {
             "\77",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "\1\u02a6",
-            "\1\u02a7",
-            "\1\u02a8",
             "\1\u02a9",
             "\1\u02aa",
             "\1\u02ab",
             "\1\u02ac",
             "\1\u02ad",
             "\1\u02ae",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
+            "\1\u02af",
             "\1\u02b0",
-            "\1\u02b1",
-            "",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
             "\1\u02b2",
             "\1\u02b3",
-            "\1\u02b4",
-            "\1\u02b5",
             "",
-            "",
-            "",
-            "\1\u02b6",
-            "\1\u02b7",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
+            "\1\u02b4",
+            "\1\u02b5",
+            "\1\u02b6",
+            "\1\u02b7",
+            "",
+            "",
+            "",
+            "\1\u02b8",
             "\1\u02b9",
-            "\1\u02ba",
+            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
+            "\77",
             "\1\u02bb",
             "\1\u02bc",
             "\1\u02bd",
             "\1\u02be",
-            "",
             "\1\u02bf",
+            "",
             "\1\u02c0",
             "\1\u02c1",
             "\1\u02c2",
+            "\1\u02c3",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "\1\u02c3",
             "\1\u02c4",
             "\1\u02c5",
-            "",
             "\1\u02c6",
+            "",
             "\1\u02c7",
             "\1\u02c8",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
@@ -8201,44 +8495,44 @@ public class InternalCpp2Lexer extends Lexer {
             "\1\u02d1",
             "\1\u02d2",
             "\1\u02d3",
+            "",
             "\1\u02d4",
-            "",
             "\1\u02d5",
-            "\1\u02d6",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
             "",
-            "\1\u02d8",
+            "\1\u02d7",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
+            "\1\u02d9",
             "\1\u02da",
             "\1\u02db",
             "\1\u02dc",
             "\1\u02dd",
             "\1\u02de",
+            "",
             "\1\u02df",
+            "",
             "\1\u02e0",
-            "",
             "\1\u02e1",
-            "",
             "\1\u02e2",
-            "\1\u02e3",
-            "\1\u02e4",
-            "\1\u02e5",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
+            "\1\u02e4",
+            "\1\u02e5",
+            "\1\u02e6",
             "\1\u02e7",
             "\1\u02e8",
             "\1\u02e9",
+            "",
             "\1\u02ea",
             "\1\u02eb",
-            "\1\u02ec",
-            "\1\u02ed",
-            "",
-            "\1\u02ee",
-            "\1\u02ef",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
+            "\1\u02ec",
+            "\1\u02ed",
+            "\1\u02ee",
+            "\1\u02ef",
             "\1\u02f0",
             "\1\u02f1",
             "\1\u02f2",
@@ -8248,23 +8542,16 @@ public class InternalCpp2Lexer extends Lexer {
             "\1\u02f5",
             "\1\u02f6",
             "\1\u02f7",
+            "",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "",
             "\1\u02f9",
             "\1\u02fa",
             "\1\u02fb",
-            "\1\u02fc",
             "",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
-            "\1\u02fe",
-            "\1\u02ff",
-            "\1\u0300",
-            "",
-            "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
-            "\77",
-            "\1\u0302",
+            "\1\u02fd",
             "\12\77\7\uffff\32\77\1\uffff\1\77\2\uffff\1\77\1\uffff\32"+
             "\77",
             "",
@@ -8304,167 +8591,79 @@ public class InternalCpp2Lexer extends Lexer {
             this.transition = DFA43_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | RULE_KEYWORD | RULE_PREPROCESSING_OP_OR_PUNC | RULE_ID | RULE_INT | RULE_CHARACTER_LITERAL | RULE_FLOATING_LITERAL | RULE_STRING_LITERAL | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | T__156 | T__157 | T__158 | T__159 | T__160 | RULE_KEYWORD | RULE_PREPROCESSING_OP_OR_PUNC | RULE_ID | RULE_INT | RULE_CHARACTER_LITERAL | RULE_FLOATING_LITERAL | RULE_STRING_LITERAL | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA43_528 = input.LA(1);
+                        int LA43_292 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA43_528>='\u0000' && LA43_528<='/')||(LA43_528>=':' && LA43_528<='@')||(LA43_528>='G' && LA43_528<='\uFFFF')) ) {s = 180;}
+                        if ( (LA43_292=='\'') ) {s = 294;}
 
-                        else if ( ((LA43_528>='0' && LA43_528<='9')||(LA43_528>='A' && LA43_528<='F')) ) {s = 581;}
+                        else if ( ((LA43_292>='\u0000' && LA43_292<='\t')||(LA43_292>='\u000B' && LA43_292<='&')||(LA43_292>='(' && LA43_292<='[')||(LA43_292>=']' && LA43_292<='\uFFFF')) ) {s = 185;}
+
+                        else if ( (LA43_292=='\\') ) {s = 184;}
+
+                        else if ( (LA43_292=='\n') ) {s = 181;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA43_458 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA43_458>='\u0000' && LA43_458<='/')||(LA43_458>=':' && LA43_458<='@')||(LA43_458>='G' && LA43_458<='\uFFFF')) ) {s = 180;}
-
-                        else if ( ((LA43_458>='0' && LA43_458<='9')||(LA43_458>='A' && LA43_458<='F')) ) {s = 528;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA43_378 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA43_378>='\u0000' && LA43_378<='/')||(LA43_378>=':' && LA43_378<='@')||(LA43_378>='G' && LA43_378<='\uFFFF')) ) {s = 180;}
-
-                        else if ( ((LA43_378>='0' && LA43_378<='9')||(LA43_378>='A' && LA43_378<='F')) ) {s = 458;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA43_288 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA43_288>='0' && LA43_288<='9')||(LA43_288>='A' && LA43_288<='F')) ) {s = 378;}
-
-                        else if ( ((LA43_288>='\u0000' && LA43_288<='/')||(LA43_288>=':' && LA43_288<='@')||(LA43_288>='G' && LA43_288<='\uFFFF')) ) {s = 180;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
-                        int LA43_293 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA43_293=='\'') ) {s = 292;}
-
-                        else if ( ((LA43_293>='\u0000' && LA43_293<='\t')||(LA43_293>='\u000B' && LA43_293<='&')||(LA43_293>='(' && LA43_293<='[')||(LA43_293>=']' && LA43_293<='\uFFFF')) ) {s = 184;}
-
-                        else if ( (LA43_293=='\\') ) {s = 185;}
-
-                        else if ( (LA43_293=='\n') ) {s = 180;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
-                        int LA43_184 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA43_184=='\'') ) {s = 292;}
-
-                        else if ( (LA43_184=='\\') ) {s = 185;}
-
-                        else if ( ((LA43_184>='\u0000' && LA43_184<='\t')||(LA43_184>='\u000B' && LA43_184<='&')||(LA43_184>='(' && LA43_184<='[')||(LA43_184>=']' && LA43_184<='\uFFFF')) ) {s = 184;}
-
-                        else if ( (LA43_184=='\n') ) {s = 180;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 6 : 
-                        int LA43_460 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA43_460>='\u0000' && LA43_460<='/')||(LA43_460>=':' && LA43_460<='@')||(LA43_460>='G' && LA43_460<='\uFFFF')) ) {s = 180;}
-
-                        else if ( ((LA43_460>='0' && LA43_460<='9')||(LA43_460>='A' && LA43_460<='F')) ) {s = 530;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 7 : 
-                        int LA43_530 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA43_530>='\u0000' && LA43_530<='/')||(LA43_530>=':' && LA43_530<='@')||(LA43_530>='G' && LA43_530<='\uFFFF')) ) {s = 180;}
-
-                        else if ( ((LA43_530>='0' && LA43_530<='9')||(LA43_530>='A' && LA43_530<='F')) ) {s = 582;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 8 : 
-                        int LA43_381 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA43_381>='\u0000' && LA43_381<='/')||(LA43_381>=':' && LA43_381<='@')||(LA43_381>='G' && LA43_381<='\uFFFF')) ) {s = 180;}
-
-                        else if ( ((LA43_381>='0' && LA43_381<='9')||(LA43_381>='A' && LA43_381<='F')) ) {s = 460;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 9 : 
                         int LA43_59 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA43_59>='\u0000' && LA43_59<='\t')||(LA43_59>='\u000B' && LA43_59<='&')||(LA43_59>='(' && LA43_59<='[')||(LA43_59>=']' && LA43_59<='\uFFFF')) ) {s = 184;}
+                        if ( (LA43_59=='\\') ) {s = 184;}
 
-                        else if ( (LA43_59=='\\') ) {s = 185;}
+                        else if ( ((LA43_59>='\u0000' && LA43_59<='\t')||(LA43_59>='\u000B' && LA43_59<='&')||(LA43_59>='(' && LA43_59<='[')||(LA43_59>=']' && LA43_59<='\uFFFF')) ) {s = 185;}
 
-                        else if ( (LA43_59=='\n'||LA43_59=='\'') ) {s = 180;}
+                        else if ( (LA43_59=='\n'||LA43_59=='\'') ) {s = 181;}
 
                         else s = 61;
 
                         if ( s>=0 ) return s;
                         break;
-                    case 10 : 
-                        int LA43_50 = input.LA(1);
+                    case 2 : 
+                        int LA43_289 = input.LA(1);
 
                         s = -1;
-                        if ( (LA43_50=='\\') ) {s = 178;}
+                        if ( (LA43_289=='\"') ) {s = 288;}
 
-                        else if ( ((LA43_50>='\u0000' && LA43_50<='\t')||(LA43_50>='\u000B' && LA43_50<='!')||(LA43_50>='#' && LA43_50<='[')||(LA43_50>=']' && LA43_50<='\uFFFF')) ) {s = 179;}
+                        else if ( ((LA43_289>='\u0000' && LA43_289<='\t')||(LA43_289>='\u000B' && LA43_289<='!')||(LA43_289>='#' && LA43_289<='[')||(LA43_289>=']' && LA43_289<='\uFFFF')) ) {s = 179;}
 
-                        else if ( (LA43_50=='\n'||LA43_50=='\"') ) {s = 180;}
+                        else if ( (LA43_289=='\\') ) {s = 180;}
 
-                        else s = 177;
+                        else if ( (LA43_289=='\n') ) {s = 181;}
 
                         if ( s>=0 ) return s;
                         break;
-                    case 11 : 
-                        int LA43_179 = input.LA(1);
+                    case 3 : 
+                        int LA43_293 = input.LA(1);
 
                         s = -1;
-                        if ( (LA43_179=='\"') ) {s = 289;}
+                        if ( ((LA43_293>='0' && LA43_293<='9')||(LA43_293>='A' && LA43_293<='F')) ) {s = 381;}
 
-                        else if ( (LA43_179=='\\') ) {s = 178;}
-
-                        else if ( ((LA43_179>='\u0000' && LA43_179<='\t')||(LA43_179>='\u000B' && LA43_179<='!')||(LA43_179>='#' && LA43_179<='[')||(LA43_179>=']' && LA43_179<='\uFFFF')) ) {s = 179;}
-
-                        else if ( (LA43_179=='\n') ) {s = 180;}
+                        else if ( ((LA43_293>='\u0000' && LA43_293<='/')||(LA43_293>=':' && LA43_293<='@')||(LA43_293>='G' && LA43_293<='\uFFFF')) ) {s = 181;}
 
                         if ( s>=0 ) return s;
                         break;
-                    case 12 : 
-                        int LA43_581 = input.LA(1);
+                    case 4 : 
+                        int LA43_51 = input.LA(1);
 
                         s = -1;
-                        if ( (LA43_581=='\"') ) {s = 289;}
+                        if ( ((LA43_51>='\u0000' && LA43_51<='\t')||(LA43_51>='\u000B' && LA43_51<='!')||(LA43_51>='#' && LA43_51<='[')||(LA43_51>=']' && LA43_51<='\uFFFF')) ) {s = 179;}
 
-                        else if ( (LA43_581=='\\') ) {s = 178;}
+                        else if ( (LA43_51=='\\') ) {s = 180;}
 
-                        else if ( ((LA43_581>='\u0000' && LA43_581<='\t')||(LA43_581>='\u000B' && LA43_581<='!')||(LA43_581>='#' && LA43_581<='[')||(LA43_581>=']' && LA43_581<='\uFFFF')) ) {s = 179;}
+                        else if ( (LA43_51=='\n'||LA43_51=='\"') ) {s = 181;}
 
-                        else if ( (LA43_581=='\n') ) {s = 180;}
+                        else s = 178;
 
                         if ( s>=0 ) return s;
                         break;
-                    case 13 : 
+                    case 5 : 
                         int LA43_0 = input.LA(1);
 
                         s = -1;
@@ -8556,19 +8755,19 @@ public class InternalCpp2Lexer extends Lexer {
 
                         else if ( (LA43_0==';') ) {s = 44;}
 
-                        else if ( (LA43_0==')') ) {s = 45;}
+                        else if ( (LA43_0=='{') ) {s = 45;}
 
-                        else if ( (LA43_0=='{') ) {s = 46;}
+                        else if ( (LA43_0=='}') ) {s = 46;}
 
-                        else if ( (LA43_0=='}') ) {s = 47;}
+                        else if ( (LA43_0==')') ) {s = 47;}
 
-                        else if ( (LA43_0=='0') ) {s = 48;}
+                        else if ( (LA43_0=='g') ) {s = 48;}
 
-                        else if ( (LA43_0==']') ) {s = 49;}
+                        else if ( (LA43_0=='0') ) {s = 49;}
 
-                        else if ( (LA43_0=='\"') ) {s = 50;}
+                        else if ( (LA43_0==']') ) {s = 50;}
 
-                        else if ( (LA43_0=='g') ) {s = 51;}
+                        else if ( (LA43_0=='\"') ) {s = 51;}
 
                         else if ( (LA43_0=='#') ) {s = 52;}
 
@@ -8592,41 +8791,129 @@ public class InternalCpp2Lexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 14 : 
-                        int LA43_294 = input.LA(1);
+                    case 6 : 
+                        int LA43_587 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA43_294>='\u0000' && LA43_294<='/')||(LA43_294>=':' && LA43_294<='@')||(LA43_294>='G' && LA43_294<='\uFFFF')) ) {s = 180;}
+                        if ( (LA43_587=='\'') ) {s = 294;}
 
-                        else if ( ((LA43_294>='0' && LA43_294<='9')||(LA43_294>='A' && LA43_294<='F')) ) {s = 381;}
+                        else if ( (LA43_587=='\\') ) {s = 184;}
+
+                        else if ( ((LA43_587>='\u0000' && LA43_587<='\t')||(LA43_587>='\u000B' && LA43_587<='&')||(LA43_587>='(' && LA43_587<='[')||(LA43_587>=']' && LA43_587<='\uFFFF')) ) {s = 185;}
+
+                        else if ( (LA43_587=='\n') ) {s = 181;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 7 : 
+                        int LA43_586 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA43_586=='\"') ) {s = 288;}
+
+                        else if ( (LA43_586=='\\') ) {s = 180;}
+
+                        else if ( ((LA43_586>='\u0000' && LA43_586<='\t')||(LA43_586>='\u000B' && LA43_586<='!')||(LA43_586>='#' && LA43_586<='[')||(LA43_586>=']' && LA43_586<='\uFFFF')) ) {s = 179;}
+
+                        else if ( (LA43_586=='\n') ) {s = 181;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 8 : 
+                        int LA43_532 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA43_532>='\u0000' && LA43_532<='/')||(LA43_532>=':' && LA43_532<='@')||(LA43_532>='G' && LA43_532<='\uFFFF')) ) {s = 181;}
+
+                        else if ( ((LA43_532>='0' && LA43_532<='9')||(LA43_532>='A' && LA43_532<='F')) ) {s = 586;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 9 : 
+                        int LA43_461 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA43_461>='\u0000' && LA43_461<='/')||(LA43_461>=':' && LA43_461<='@')||(LA43_461>='G' && LA43_461<='\uFFFF')) ) {s = 181;}
+
+                        else if ( ((LA43_461>='0' && LA43_461<='9')||(LA43_461>='A' && LA43_461<='F')) ) {s = 532;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 10 : 
+                        int LA43_379 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA43_379>='\u0000' && LA43_379<='/')||(LA43_379>=':' && LA43_379<='@')||(LA43_379>='G' && LA43_379<='\uFFFF')) ) {s = 181;}
+
+                        else if ( ((LA43_379>='0' && LA43_379<='9')||(LA43_379>='A' && LA43_379<='F')) ) {s = 461;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 11 : 
+                        int LA43_381 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA43_381>='\u0000' && LA43_381<='/')||(LA43_381>=':' && LA43_381<='@')||(LA43_381>='G' && LA43_381<='\uFFFF')) ) {s = 181;}
+
+                        else if ( ((LA43_381>='0' && LA43_381<='9')||(LA43_381>='A' && LA43_381<='F')) ) {s = 463;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 12 : 
+                        int LA43_463 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA43_463>='\u0000' && LA43_463<='/')||(LA43_463>=':' && LA43_463<='@')||(LA43_463>='G' && LA43_463<='\uFFFF')) ) {s = 181;}
+
+                        else if ( ((LA43_463>='0' && LA43_463<='9')||(LA43_463>='A' && LA43_463<='F')) ) {s = 534;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 13 : 
+                        int LA43_534 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA43_534>='\u0000' && LA43_534<='/')||(LA43_534>=':' && LA43_534<='@')||(LA43_534>='G' && LA43_534<='\uFFFF')) ) {s = 181;}
+
+                        else if ( ((LA43_534>='0' && LA43_534<='9')||(LA43_534>='A' && LA43_534<='F')) ) {s = 587;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 14 : 
+                        int LA43_179 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA43_179=='\"') ) {s = 288;}
+
+                        else if ( (LA43_179=='\\') ) {s = 180;}
+
+                        else if ( ((LA43_179>='\u0000' && LA43_179<='\t')||(LA43_179>='\u000B' && LA43_179<='!')||(LA43_179>='#' && LA43_179<='[')||(LA43_179>=']' && LA43_179<='\uFFFF')) ) {s = 179;}
+
+                        else if ( (LA43_179=='\n') ) {s = 181;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 15 : 
-                        int LA43_287 = input.LA(1);
+                        int LA43_290 = input.LA(1);
 
                         s = -1;
-                        if ( (LA43_287=='\"') ) {s = 289;}
+                        if ( ((LA43_290>='0' && LA43_290<='9')||(LA43_290>='A' && LA43_290<='F')) ) {s = 379;}
 
-                        else if ( ((LA43_287>='\u0000' && LA43_287<='\t')||(LA43_287>='\u000B' && LA43_287<='!')||(LA43_287>='#' && LA43_287<='[')||(LA43_287>=']' && LA43_287<='\uFFFF')) ) {s = 179;}
-
-                        else if ( (LA43_287=='\\') ) {s = 178;}
-
-                        else if ( (LA43_287=='\n') ) {s = 180;}
+                        else if ( ((LA43_290>='\u0000' && LA43_290<='/')||(LA43_290>=':' && LA43_290<='@')||(LA43_290>='G' && LA43_290<='\uFFFF')) ) {s = 181;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 16 : 
-                        int LA43_582 = input.LA(1);
+                        int LA43_185 = input.LA(1);
 
                         s = -1;
-                        if ( (LA43_582=='\'') ) {s = 292;}
+                        if ( (LA43_185=='\'') ) {s = 294;}
 
-                        else if ( ((LA43_582>='\u0000' && LA43_582<='\t')||(LA43_582>='\u000B' && LA43_582<='&')||(LA43_582>='(' && LA43_582<='[')||(LA43_582>=']' && LA43_582<='\uFFFF')) ) {s = 184;}
+                        else if ( (LA43_185=='\\') ) {s = 184;}
 
-                        else if ( (LA43_582=='\\') ) {s = 185;}
+                        else if ( ((LA43_185>='\u0000' && LA43_185<='\t')||(LA43_185>='\u000B' && LA43_185<='&')||(LA43_185>='(' && LA43_185<='[')||(LA43_185>=']' && LA43_185<='\uFFFF')) ) {s = 185;}
 
-                        else if ( (LA43_582=='\n') ) {s = 180;}
+                        else if ( (LA43_185=='\n') ) {s = 181;}
 
                         if ( s>=0 ) return s;
                         break;

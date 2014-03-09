@@ -282,6 +282,57 @@ terminal fragment ENC_PREFIX:
 terminal fragment SCHAR:
 	!('\"' | '\\' | '\n') | ESCAPE_SEQUENCE | UNIVERSAL_CHARACTER_NAME;
 
+// stmt.stmt
+Statement:
+	LabeledStatement |
+	ExpressionStatement |
+	CompoundStatement |
+	SelectionStatement |
+	IterationStatement |
+	JumpStatement |
+	DeclarationStatement |
+	TryBlock;
+
+// stmt.label
+LabeledStatement:
+	ID ':' Statement |
+	'case' ConstantExpression ':' Statement |
+	'default' ':' Statement;
+
+// stmt.expr
+ExpressionStatement:
+	Expression ';';
+
+// stmt.block
+CompoundStatement:
+	'{' Statement* '}';
+
+// stmt.select
+SelectionStatement:
+	'if' '(' Condition ')' Statement (=> 'else' Statement)? |
+	'switch' '(' Condition ')' Statement;
+
+Condition:
+	Expression |
+	DeclarationSpecifier+ DeclaratorId ('=' InitializerClause | BracedInitializerList);
+
+// stmt.iter
+IterationStatement:
+	'while' '(' Condition ')' Statement |
+	'do' Statement 'while' '(' Expression ')' ';' |
+	'for' '(' ForInitializationStatement Condition? ';' Expression? ')' Statement;
+
+ForInitializationStatement:
+	ExpressionStatement |
+	SimpleDeclaration;
+
+// stmt.jump
+JumpStatement:
+	'break' ';' |
+	'continue' ';' |
+	'return' (Expression | BracedInitializerList)? ';' |
+	'goto' ID ';';
+
 // stmt.dcl
 DeclarationStatement:
 	SimpleDeclaration |
@@ -708,10 +759,6 @@ NestedNameSpecifier:
 
 AssignmentExpression:
 	'AssignmentExpression'
-;
-
-CompoundStatement:
-	'CompoundStatement'
 ;
 
 CtorInitializer:
