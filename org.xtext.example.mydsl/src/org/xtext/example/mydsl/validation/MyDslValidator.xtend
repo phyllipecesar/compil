@@ -27,6 +27,15 @@ import org.xtext.example.mydsl.myDsl.BooleanhType
 import org.xtext.example.mydsl.myDsl.StringhType
 import org.xtext.example.mydsl.myDsl.FunctionChamada
 import org.xtext.example.mydsl.myDsl.ReturnExpr
+import org.xtext.example.mydsl.myDsl.FunctionType
+import org.xtext.example.mydsl.myDsl.NoPtrExpression
+import org.xtext.example.mydsl.myDsl.Atomic
+import org.xtext.example.mydsl.myDsl.NoPtrTerminalExpression
+
+import org.xtext.example.mydsl.myDsl.NoPtrSelect
+import org.xtext.example.mydsl.myDsl.NoPtrCases
+import org.xtext.example.mydsl.myDsl.DefaultCase
+import org.xtext.example.mydsl.myDsl.CaseNormal
 
 /**
  * Custom validation rules. 
@@ -104,6 +113,32 @@ def checkReturnOnlyOnFunction(Return r) {
 	
 }
 
+int t_v;
+@Check
+def checkSwitchDefaults(NoPtrSelect s) {
+	t_v = 0;
+	for (NoPtrCases c : s.cases) {
+		if (c instanceof DefaultCase) {
+			t_v = t_v + 1;
+			if (t_v >= 2) {
+				error("A switch must only at most one 'default'.", c, null, -1);	
+			}
+		}
+	}		
+}
+@Check
+def checkSwitchCases(NoPtrSelect s) {
+	val tipo = getExpressionType(s.expr);
+	for (NoPtrCases c : s.cases) {
+		if (c instanceof CaseNormal) {
+			val tipo2 = getExpressionType(c.expr)
+			if (!tipo2.equals(tipo)) {
+				error ("A case rule should have the same type as the switch, expected '" + tipo + "' found '" + tipo2 + "'", c, null, -1);
+			}
+		}
+	}
+		
+}
 EObject rt2;
 EObject rt4;
 Variable v;
@@ -113,32 +148,11 @@ String tipoCRT2;
 @Check
 def checkReturnTypeFunction(Return r) {
 	rt2 = 	r.eContainer;
-	val tipo = r.rettype;
+	if (r.rettype instanceof NoPtrExpression) {
+	val tipo = getExpressionType(r.rettype);
 	while (rt2 != null) {
 		if (rt2 instanceof FunctionDeclaration) {
-			if (tipo.eClass.name != null) {
-			if (tipo instanceof Variable) {
-				v = tipo;
-				tipoCRT = "Tipo NAo Declarado";
-				for (Parameter symbol: rt2.params) {
-					val nome = symbol.name;
-					if (nome.equals(v.name)) {
-						tipoCRT = symbol.type.sts.name;
-					}
-				}
-				for (VarDecl variavel: rt2.escopo.variaveis) {
-					val nome = variavel.name;
-					if (nome.equals(v.name)) {
-						tipoCRT = variavel.type.sts.name;
-					}
-				}
-			} else if (tipo instanceof IntType) {
-				tipoCRT = 'int';	
-			} else if (tipo instanceof BooleanhType) {
-				tipoCRT = 'bool';	
-			} else if (tipo instanceof StringhType) {
-				tipoCRT = 'string';	
-			}
+			tipoCRT = tipo;
 			tipoCRT2 = rt2.type.sts.name;
 			System.out.println("Tipo 1" + tipoCRT);
 			System.out.println("Tipo 2" + tipoCRT2);
@@ -151,12 +165,10 @@ def checkReturnTypeFunction(Return r) {
 			else if (!tipoCRT2.equals(tipoCRT)) {
 				error("Return type mismatch, expected '" + tipoCRT2 + "' found '" + tipoCRT + "'.", r, null, -1);
 			}
-			} else if (!rt2.type.sts.name.equals("void")) {
-					error("A function of type '" + rt2.type.sts.name + "' must have a valid return type.", r, null, -1);
-		
-			}
+			
 		}	
 		rt2 = rt2.eContainer;
+	}
 	}
 }
 @Check
@@ -171,6 +183,42 @@ def checkVariableAlreadyExists(NoPtrStatement st) {
 		}	
 	
 }
+
+
+def String getFuncaoTipo(FunctionType f) {
+	return checkCallFunction(f.call);
+
+}
+
+
+def String getExpressionTypeTerminal(NoPtrTerminalExpression expr) {
+	if (expr instanceof Atomic) {
+		return lookUpType(expr.atomic);
+	} else {
+		return getExpressionType(expr.inside);
+	}
+}
+
+@Check
+def getExpressionType(NoPtrExpression expr) {
+	val g1 = getExpressionTypeTerminal(expr.left);
+	// System.out.println("AHA");
+	
+	if (expr.op instanceof String) {
+		val	g2 = getExpressionTypeTerminal(expr.right); 
+		if (expr.op.equals('||') || expr.op.equals('&&')) {
+			if (!g1.equals("bool") || !g2.equals("bool")) {
+				error("A logical operation should be between booleans, found '(" + g1 + "," + g2 +")'", expr, null, -1);
+			}
+		} else if (!g1.equals(g2)) {
+			error("A comparison should between same types, but found '" + g1 + "' and '" + g2 + "'", expr, null, -1);
+		}
+		return "bool";
+	} else {
+		return g1;
+		
+	}
+}
 Body st2;
 
 FunctionDeclaration st3;
@@ -182,7 +230,10 @@ def lookUpType(ReturnExpr d)  {
 		return "bool";		
 	} else if (d instanceof StringhType) {
 		return "string";		
-	} else if (d instanceof Variable) {
+	} else if (d instanceof FunctionType) {
+		return getFuncaoTipo(d);
+	} 
+	else if (d instanceof Variable) {
 		ret2 = d;
 		while (!(ret2 instanceof FunctionDeclaration || ret2 instanceof Body)) {
 			ret2 = ret2.eContainer;
@@ -258,7 +309,6 @@ def checkCallFunction(FunctionChamada f) {
 	}
 	fName = fName + ")";
 	gotmsg = gotmsg + ")";
-	
 	ccffound = false;
 	for (Declaration d: st.declarations) {
 		try {
@@ -278,7 +328,8 @@ def checkCallFunction(FunctionChamada f) {
 					}
 					fName2 = fName2 + ")";
 					if (fName.equals(fName2)) {
-						ccffound = true;
+						return d.funcao.type.sts.name;
+					
 					}
 				}
 			}
@@ -289,6 +340,7 @@ def checkCallFunction(FunctionChamada f) {
 	if (!ccffound) {
 		error(gotmsg, f, null, -1);
 	}
+	return "Unknown-Type";
 }
 
 @Check

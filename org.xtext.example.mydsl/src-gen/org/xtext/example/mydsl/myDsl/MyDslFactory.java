@@ -95,6 +95,42 @@ public interface MyDslFactory extends EFactory
   NoPtrStatement createNoPtrStatement();
 
   /**
+   * Returns a new object of class '<em>No Ptr Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>No Ptr Expression</em>'.
+   * @generated
+   */
+  NoPtrExpression createNoPtrExpression();
+
+  /**
+   * Returns a new object of class '<em>No Ptr Terminal Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>No Ptr Terminal Expression</em>'.
+   * @generated
+   */
+  NoPtrTerminalExpression createNoPtrTerminalExpression();
+
+  /**
+   * Returns a new object of class '<em>No Ptr Select</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>No Ptr Select</em>'.
+   * @generated
+   */
+  NoPtrSelect createNoPtrSelect();
+
+  /**
+   * Returns a new object of class '<em>No Ptr Cases</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>No Ptr Cases</em>'.
+   * @generated
+   */
+  NoPtrCases createNoPtrCases();
+
+  /**
    * Returns a new object of class '<em>Parameter</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -185,6 +221,33 @@ public interface MyDslFactory extends EFactory
   LKS createLKS();
 
   /**
+   * Returns a new object of class '<em>Atomic</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Atomic</em>'.
+   * @generated
+   */
+  Atomic createAtomic();
+
+  /**
+   * Returns a new object of class '<em>Default Case</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Default Case</em>'.
+   * @generated
+   */
+  DefaultCase createDefaultCase();
+
+  /**
+   * Returns a new object of class '<em>Case Normal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Case Normal</em>'.
+   * @generated
+   */
+  CaseNormal createCaseNormal();
+
+  /**
    * Returns a new object of class '<em>Int Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -237,6 +300,15 @@ public interface MyDslFactory extends EFactory
    * @generated
    */
   StringhType createStringhType();
+
+  /**
+   * Returns a new object of class '<em>Function Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Type</em>'.
+   * @generated
+   */
+  FunctionType createFunctionType();
 
   /**
    * Returns a new object of class '<em>Variable</em>'.

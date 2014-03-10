@@ -31,12 +31,12 @@ public interface Return extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Rettype</em>' containment reference.
-   * @see #setRettype(ReturnExpr)
+   * @see #setRettype(NoPtrExpression)
    * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getReturn_Rettype()
    * @model containment="true"
    * @generated
    */
-  ReturnExpr getRettype();
+  NoPtrExpression getRettype();
 
   /**
    * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Return#getRettype <em>Rettype</em>}' containment reference.
@@ -46,6 +46,6 @@ public interface Return extends EObject
    * @see #getRettype()
    * @generated
    */
-  void setRettype(ReturnExpr value);
+  void setRettype(NoPtrExpression value);
 
 } // Return

@@ -129,6 +129,34 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MyDslPackage.NO_PTR_EXPRESSION:
+      {
+        NoPtrExpression noPtrExpression = (NoPtrExpression)theEObject;
+        T result = caseNoPtrExpression(noPtrExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.NO_PTR_TERMINAL_EXPRESSION:
+      {
+        NoPtrTerminalExpression noPtrTerminalExpression = (NoPtrTerminalExpression)theEObject;
+        T result = caseNoPtrTerminalExpression(noPtrTerminalExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.NO_PTR_SELECT:
+      {
+        NoPtrSelect noPtrSelect = (NoPtrSelect)theEObject;
+        T result = caseNoPtrSelect(noPtrSelect);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.NO_PTR_CASES:
+      {
+        NoPtrCases noPtrCases = (NoPtrCases)theEObject;
+        T result = caseNoPtrCases(noPtrCases);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MyDslPackage.PARAMETER:
       {
         Parameter parameter = (Parameter)theEObject;
@@ -200,6 +228,30 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MyDslPackage.ATOMIC:
+      {
+        Atomic atomic = (Atomic)theEObject;
+        T result = caseAtomic(atomic);
+        if (result == null) result = caseNoPtrTerminalExpression(atomic);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.DEFAULT_CASE:
+      {
+        DefaultCase defaultCase = (DefaultCase)theEObject;
+        T result = caseDefaultCase(defaultCase);
+        if (result == null) result = caseNoPtrCases(defaultCase);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.CASE_NORMAL:
+      {
+        CaseNormal caseNormal = (CaseNormal)theEObject;
+        T result = caseCaseNormal(caseNormal);
+        if (result == null) result = caseNoPtrCases(caseNormal);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MyDslPackage.INT_TYPE:
       {
         IntType intType = (IntType)theEObject;
@@ -246,6 +298,14 @@ public class MyDslSwitch<T> extends Switch<T>
         StringhType stringhType = (StringhType)theEObject;
         T result = caseStringhType(stringhType);
         if (result == null) result = caseReturnExpr(stringhType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.FUNCTION_TYPE:
+      {
+        FunctionType functionType = (FunctionType)theEObject;
+        T result = caseFunctionType(functionType);
+        if (result == null) result = caseReturnExpr(functionType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -385,6 +445,70 @@ public class MyDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseNoPtrStatement(NoPtrStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>No Ptr Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>No Ptr Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNoPtrExpression(NoPtrExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>No Ptr Terminal Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>No Ptr Terminal Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNoPtrTerminalExpression(NoPtrTerminalExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>No Ptr Select</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>No Ptr Select</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNoPtrSelect(NoPtrSelect object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>No Ptr Cases</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>No Ptr Cases</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNoPtrCases(NoPtrCases object)
   {
     return null;
   }
@@ -550,6 +674,54 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Atomic</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Atomic</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAtomic(Atomic object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Default Case</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Default Case</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDefaultCase(DefaultCase object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Case Normal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Case Normal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCaseNormal(CaseNormal object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Int Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -641,6 +813,22 @@ public class MyDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStringhType(StringhType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Function Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctionType(FunctionType object)
   {
     return null;
   }

@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
+import org.xtext.example.mydsl.myDsl.NoPtrExpression;
 import org.xtext.example.mydsl.myDsl.Return;
-import org.xtext.example.mydsl.myDsl.ReturnExpr;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +38,7 @@ public class ReturnImpl extends MinimalEObjectImpl.Container implements Return
    * @generated
    * @ordered
    */
-  protected ReturnExpr rettype;
+  protected NoPtrExpression rettype;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public class ReturnImpl extends MinimalEObjectImpl.Container implements Return
    * <!-- end-user-doc -->
    * @generated
    */
-  public ReturnExpr getRettype()
+  public NoPtrExpression getRettype()
   {
     return rettype;
   }
@@ -76,9 +76,9 @@ public class ReturnImpl extends MinimalEObjectImpl.Container implements Return
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRettype(ReturnExpr newRettype, NotificationChain msgs)
+  public NotificationChain basicSetRettype(NoPtrExpression newRettype, NotificationChain msgs)
   {
-    ReturnExpr oldRettype = rettype;
+    NoPtrExpression oldRettype = rettype;
     rettype = newRettype;
     if (eNotificationRequired())
     {
@@ -93,7 +93,7 @@ public class ReturnImpl extends MinimalEObjectImpl.Container implements Return
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRettype(ReturnExpr newRettype)
+  public void setRettype(NoPtrExpression newRettype)
   {
     if (newRettype != rettype)
     {
@@ -152,7 +152,7 @@ public class ReturnImpl extends MinimalEObjectImpl.Container implements Return
     switch (featureID)
     {
       case MyDslPackage.RETURN__RETTYPE:
-        setRettype((ReturnExpr)newValue);
+        setRettype((NoPtrExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,7 +169,7 @@ public class ReturnImpl extends MinimalEObjectImpl.Container implements Return
     switch (featureID)
     {
       case MyDslPackage.RETURN__RETTYPE:
-        setRettype((ReturnExpr)null);
+        setRettype((NoPtrExpression)null);
         return;
     }
     super.eUnset(featureID);

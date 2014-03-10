@@ -72,6 +72,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.FUNCTION_DECLARATION: return createFunctionDeclaration();
       case MyDslPackage.FUNCTION_CHAMADA: return createFunctionChamada();
       case MyDslPackage.NO_PTR_STATEMENT: return createNoPtrStatement();
+      case MyDslPackage.NO_PTR_EXPRESSION: return createNoPtrExpression();
+      case MyDslPackage.NO_PTR_TERMINAL_EXPRESSION: return createNoPtrTerminalExpression();
+      case MyDslPackage.NO_PTR_SELECT: return createNoPtrSelect();
+      case MyDslPackage.NO_PTR_CASES: return createNoPtrCases();
       case MyDslPackage.PARAMETER: return createParameter();
       case MyDslPackage.VAR_DECL: return createVarDecl();
       case MyDslPackage.TYPE: return createType();
@@ -82,12 +86,16 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.DECLARATION_STATEMENT: return createdeclaration_statement();
       case MyDslPackage.BLOCK_DECLARATION: return createblock_declaration();
       case MyDslPackage.LKS: return createLKS();
+      case MyDslPackage.ATOMIC: return createAtomic();
+      case MyDslPackage.DEFAULT_CASE: return createDefaultCase();
+      case MyDslPackage.CASE_NORMAL: return createCaseNormal();
       case MyDslPackage.INT_TYPE: return createIntType();
       case MyDslPackage.BOOLEAN_TYPE: return createBooleanType();
       case MyDslPackage.STRING_TYPE: return createStringType();
       case MyDslPackage.UNKNOWN_TYPE: return createUnknownType();
       case MyDslPackage.BOOLEANH_TYPE: return createBooleanhType();
       case MyDslPackage.STRINGH_TYPE: return createStringhType();
+      case MyDslPackage.FUNCTION_TYPE: return createFunctionType();
       case MyDslPackage.VARIABLE: return createVariable();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -180,6 +188,50 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     NoPtrStatementImpl noPtrStatement = new NoPtrStatementImpl();
     return noPtrStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NoPtrExpression createNoPtrExpression()
+  {
+    NoPtrExpressionImpl noPtrExpression = new NoPtrExpressionImpl();
+    return noPtrExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NoPtrTerminalExpression createNoPtrTerminalExpression()
+  {
+    NoPtrTerminalExpressionImpl noPtrTerminalExpression = new NoPtrTerminalExpressionImpl();
+    return noPtrTerminalExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NoPtrSelect createNoPtrSelect()
+  {
+    NoPtrSelectImpl noPtrSelect = new NoPtrSelectImpl();
+    return noPtrSelect;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NoPtrCases createNoPtrCases()
+  {
+    NoPtrCasesImpl noPtrCases = new NoPtrCasesImpl();
+    return noPtrCases;
   }
 
   /**
@@ -297,6 +349,39 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Atomic createAtomic()
+  {
+    AtomicImpl atomic = new AtomicImpl();
+    return atomic;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DefaultCase createDefaultCase()
+  {
+    DefaultCaseImpl defaultCase = new DefaultCaseImpl();
+    return defaultCase;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CaseNormal createCaseNormal()
+  {
+    CaseNormalImpl caseNormal = new CaseNormalImpl();
+    return caseNormal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public IntType createIntType()
   {
     IntTypeImpl intType = new IntTypeImpl();
@@ -356,6 +441,17 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     StringhTypeImpl stringhType = new StringhTypeImpl();
     return stringhType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FunctionType createFunctionType()
+  {
+    FunctionTypeImpl functionType = new FunctionTypeImpl();
+    return functionType;
   }
 
   /**

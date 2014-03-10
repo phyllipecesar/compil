@@ -6,18 +6,25 @@ package org.xtext.example.mydsl.validation;
 import com.google.common.base.Objects;
 import java.util.HashSet;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
+import org.xtext.example.mydsl.myDsl.Atomic;
 import org.xtext.example.mydsl.myDsl.Body;
 import org.xtext.example.mydsl.myDsl.BooleanhType;
+import org.xtext.example.mydsl.myDsl.CaseNormal;
 import org.xtext.example.mydsl.myDsl.Declaration;
+import org.xtext.example.mydsl.myDsl.DefaultCase;
 import org.xtext.example.mydsl.myDsl.FunctionChamada;
 import org.xtext.example.mydsl.myDsl.FunctionDeclaration;
+import org.xtext.example.mydsl.myDsl.FunctionType;
 import org.xtext.example.mydsl.myDsl.IntType;
+import org.xtext.example.mydsl.myDsl.NoPtrCases;
+import org.xtext.example.mydsl.myDsl.NoPtrExpression;
+import org.xtext.example.mydsl.myDsl.NoPtrSelect;
 import org.xtext.example.mydsl.myDsl.NoPtrStatement;
+import org.xtext.example.mydsl.myDsl.NoPtrTerminalExpression;
 import org.xtext.example.mydsl.myDsl.Parameter;
 import org.xtext.example.mydsl.myDsl.Return;
 import org.xtext.example.mydsl.myDsl.ReturnExpr;
@@ -156,6 +163,40 @@ public class MyDslValidator extends AbstractMyDslValidator {
     }
   }
   
+  private int t_v;
+  
+  @Check
+  public void checkSwitchDefaults(final NoPtrSelect s) {
+    this.t_v = 0;
+    EList<NoPtrCases> _cases = s.getCases();
+    for (final NoPtrCases c : _cases) {
+      if ((c instanceof DefaultCase)) {
+        this.t_v = (this.t_v + 1);
+        if ((this.t_v >= 2)) {
+          this.error("A switch must only at most one \'default\'.", c, null, (-1));
+        }
+      }
+    }
+  }
+  
+  @Check
+  public void checkSwitchCases(final NoPtrSelect s) {
+    NoPtrExpression _expr = s.getExpr();
+    final String tipo = this.getExpressionType(_expr);
+    EList<NoPtrCases> _cases = s.getCases();
+    for (final NoPtrCases c : _cases) {
+      if ((c instanceof CaseNormal)) {
+        NoPtrExpression _expr_1 = ((CaseNormal)c).getExpr();
+        final String tipo2 = this.getExpressionType(_expr_1);
+        boolean _equals = tipo2.equals(tipo);
+        boolean _not = (!_equals);
+        if (_not) {
+          this.error((((("A case rule should have the same type as the switch, expected \'" + tipo) + "\' found \'") + tipo2) + "\'"), c, null, (-1));
+        }
+      }
+    }
+  }
+  
   private EObject rt2;
   
   private EObject rt4;
@@ -172,65 +213,20 @@ public class MyDslValidator extends AbstractMyDslValidator {
   public void checkReturnTypeFunction(final Return r) {
     EObject _eContainer = r.eContainer();
     this.rt2 = _eContainer;
-    final ReturnExpr tipo = r.getRettype();
-    boolean _notEquals = (!Objects.equal(this.rt2, null));
-    boolean _while = _notEquals;
-    while (_while) {
-      {
-        if ((this.rt2 instanceof FunctionDeclaration)) {
-          EClass _eClass = tipo.eClass();
-          String _name = _eClass.getName();
-          boolean _notEquals_1 = (!Objects.equal(_name, null));
-          if (_notEquals_1) {
-            if ((tipo instanceof Variable)) {
-              this.v = ((Variable)tipo);
-              this.tipoCRT = "Tipo NAo Declarado";
-              EList<Parameter> _params = ((FunctionDeclaration)this.rt2).getParams();
-              for (final Parameter symbol : _params) {
-                {
-                  final String nome = symbol.getName();
-                  String _name_1 = this.v.getName();
-                  boolean _equals = nome.equals(_name_1);
-                  if (_equals) {
-                    Type _type = symbol.getType();
-                    simple_type_specifier _sts = _type.getSts();
-                    String _name_2 = _sts.getName();
-                    this.tipoCRT = _name_2;
-                  }
-                }
-              }
-              NoPtrStatement _escopo = ((FunctionDeclaration)this.rt2).getEscopo();
-              EList<VarDecl> _variaveis = _escopo.getVariaveis();
-              for (final VarDecl variavel : _variaveis) {
-                {
-                  final String nome = variavel.getName();
-                  String _name_1 = this.v.getName();
-                  boolean _equals = nome.equals(_name_1);
-                  if (_equals) {
-                    Type _type = variavel.getType();
-                    simple_type_specifier _sts = _type.getSts();
-                    String _name_2 = _sts.getName();
-                    this.tipoCRT = _name_2;
-                  }
-                }
-              }
-            } else {
-              if ((tipo instanceof IntType)) {
-                this.tipoCRT = "int";
-              } else {
-                if ((tipo instanceof BooleanhType)) {
-                  this.tipoCRT = "bool";
-                } else {
-                  if ((tipo instanceof StringhType)) {
-                    this.tipoCRT = "string";
-                  }
-                }
-              }
-            }
+    NoPtrExpression _rettype = r.getRettype();
+    if ((_rettype instanceof NoPtrExpression)) {
+      NoPtrExpression _rettype_1 = r.getRettype();
+      final String tipo = this.getExpressionType(_rettype_1);
+      boolean _notEquals = (!Objects.equal(this.rt2, null));
+      boolean _while = _notEquals;
+      while (_while) {
+        {
+          if ((this.rt2 instanceof FunctionDeclaration)) {
+            this.tipoCRT = tipo;
             Type _type = ((FunctionDeclaration)this.rt2).getType();
             simple_type_specifier _sts = _type.getSts();
-            String _name_1 = _sts.getName();
-            this.tipoCRT2 = _name_1;
+            String _name = _sts.getName();
+            this.tipoCRT2 = _name;
             System.out.println(("Tipo 1" + this.tipoCRT));
             System.out.println(("Tipo 2" + this.tipoCRT2));
             boolean _equals = this.tipoCRT2.equals("void");
@@ -248,27 +244,13 @@ public class MyDslValidator extends AbstractMyDslValidator {
                 }
               }
             }
-          } else {
-            Type _type_1 = ((FunctionDeclaration)this.rt2).getType();
-            simple_type_specifier _sts_1 = _type_1.getSts();
-            String _name_2 = _sts_1.getName();
-            boolean _equals_3 = _name_2.equals("void");
-            boolean _not_1 = (!_equals_3);
-            if (_not_1) {
-              Type _type_2 = ((FunctionDeclaration)this.rt2).getType();
-              simple_type_specifier _sts_2 = _type_2.getSts();
-              String _name_3 = _sts_2.getName();
-              String _plus = ("A function of type \'" + _name_3);
-              String _plus_1 = (_plus + "\' must have a valid return type.");
-              this.error(_plus_1, r, null, (-1));
-            }
           }
+          EObject _eContainer_1 = this.rt2.eContainer();
+          this.rt2 = _eContainer_1;
         }
-        EObject _eContainer_1 = this.rt2.eContainer();
-        this.rt2 = _eContainer_1;
+        boolean _notEquals_1 = (!Objects.equal(this.rt2, null));
+        _while = _notEquals_1;
       }
-      boolean _notEquals_1 = (!Objects.equal(this.rt2, null));
-      _while = _notEquals_1;
     }
   }
   
@@ -288,6 +270,66 @@ public class MyDslValidator extends AbstractMyDslValidator {
     }
   }
   
+  public String getFuncaoTipo(final FunctionType f) {
+    FunctionChamada _call = f.getCall();
+    return this.checkCallFunction(_call);
+  }
+  
+  public String getExpressionTypeTerminal(final NoPtrTerminalExpression expr) {
+    if ((expr instanceof Atomic)) {
+      ReturnExpr _atomic = ((Atomic)expr).getAtomic();
+      return this.lookUpType(_atomic);
+    } else {
+      NoPtrExpression _inside = expr.getInside();
+      return this.getExpressionType(_inside);
+    }
+  }
+  
+  @Check
+  public String getExpressionType(final NoPtrExpression expr) {
+    NoPtrTerminalExpression _left = expr.getLeft();
+    final String g1 = this.getExpressionTypeTerminal(_left);
+    String _op = expr.getOp();
+    if ((_op instanceof String)) {
+      NoPtrTerminalExpression _right = expr.getRight();
+      final String g2 = this.getExpressionTypeTerminal(_right);
+      boolean _or = false;
+      String _op_1 = expr.getOp();
+      boolean _equals = _op_1.equals("||");
+      if (_equals) {
+        _or = true;
+      } else {
+        String _op_2 = expr.getOp();
+        boolean _equals_1 = _op_2.equals("&&");
+        _or = (_equals || _equals_1);
+      }
+      if (_or) {
+        boolean _or_1 = false;
+        boolean _equals_2 = g1.equals("bool");
+        boolean _not = (!_equals_2);
+        if (_not) {
+          _or_1 = true;
+        } else {
+          boolean _equals_3 = g2.equals("bool");
+          boolean _not_1 = (!_equals_3);
+          _or_1 = (_not || _not_1);
+        }
+        if (_or_1) {
+          this.error((((("A logical operation should be between booleans, found \'(" + g1) + ",") + g2) + ")\'"), expr, null, (-1));
+        }
+      } else {
+        boolean _equals_4 = g1.equals(g2);
+        boolean _not_2 = (!_equals_4);
+        if (_not_2) {
+          this.error((((("A comparison should between same types, but found \'" + g1) + "\' and \'") + g2) + "\'"), expr, null, (-1));
+        }
+      }
+      return "bool";
+    } else {
+      return g1;
+    }
+  }
+  
   private Body st2;
   
   private FunctionDeclaration st3;
@@ -304,66 +346,70 @@ public class MyDslValidator extends AbstractMyDslValidator {
         if ((d instanceof StringhType)) {
           return "string";
         } else {
-          if ((d instanceof Variable)) {
-            this.ret2 = d;
-            boolean _while = (!((this.ret2 instanceof FunctionDeclaration) || (this.ret2 instanceof Body)));
-            while (_while) {
-              EObject _eContainer = this.ret2.eContainer();
-              this.ret2 = _eContainer;
-              _while = (!((this.ret2 instanceof FunctionDeclaration) || (this.ret2 instanceof Body)));
-            }
-            if ((this.ret2 instanceof FunctionDeclaration)) {
-              this.st3 = ((FunctionDeclaration)this.ret2);
-              EList<Parameter> _params = this.st3.getParams();
-              for (final Parameter p : _params) {
-                String _name = p.getName();
-                String _name_1 = ((Variable)d).getName();
-                boolean _equals = _name.equals(_name_1);
-                if (_equals) {
-                  Type _type = p.getType();
-                  simple_type_specifier _sts = _type.getSts();
-                  return _sts.getName();
-                }
+          if ((d instanceof FunctionType)) {
+            return this.getFuncaoTipo(((FunctionType)d));
+          } else {
+            if ((d instanceof Variable)) {
+              this.ret2 = d;
+              boolean _while = (!((this.ret2 instanceof FunctionDeclaration) || (this.ret2 instanceof Body)));
+              while (_while) {
+                EObject _eContainer = this.ret2.eContainer();
+                this.ret2 = _eContainer;
+                _while = (!((this.ret2 instanceof FunctionDeclaration) || (this.ret2 instanceof Body)));
               }
-              NoPtrStatement _escopo = this.st3.getEscopo();
-              EList<VarDecl> _variaveis = _escopo.getVariaveis();
-              for (final VarDecl v : _variaveis) {
-                String _name_2 = v.getName();
-                String _name_3 = ((Variable)d).getName();
-                boolean _equals_1 = _name_2.equals(_name_3);
-                if (_equals_1) {
-                  Type _type_1 = v.getType();
-                  simple_type_specifier _sts_1 = _type_1.getSts();
-                  return _sts_1.getName();
-                }
-              }
-            }
-            boolean _while_1 = (!(this.ret2 instanceof Body));
-            while (_while_1) {
-              EObject _eContainer = this.ret2.eContainer();
-              this.ret2 = _eContainer;
-              _while_1 = (!(this.ret2 instanceof Body));
-            }
-            if ((this.ret2 instanceof Body)) {
-              this.st2 = ((Body)this.ret2);
-              EList<Declaration> _declarations = this.st2.getDeclarations();
-              for (final Declaration d2 : _declarations) {
-                try {
-                  VarDecl _variaveis_1 = d2.getVariaveis();
-                  String _name_4 = _variaveis_1.getName();
-                  String _name_5 = ((Variable)d).getName();
-                  boolean _equals_2 = _name_4.equals(_name_5);
-                  if (_equals_2) {
-                    VarDecl _variaveis_2 = d2.getVariaveis();
-                    Type _type_2 = _variaveis_2.getType();
-                    simple_type_specifier _sts_2 = _type_2.getSts();
-                    return _sts_2.getName();
+              if ((this.ret2 instanceof FunctionDeclaration)) {
+                this.st3 = ((FunctionDeclaration)this.ret2);
+                EList<Parameter> _params = this.st3.getParams();
+                for (final Parameter p : _params) {
+                  String _name = p.getName();
+                  String _name_1 = ((Variable)d).getName();
+                  boolean _equals = _name.equals(_name_1);
+                  if (_equals) {
+                    Type _type = p.getType();
+                    simple_type_specifier _sts = _type.getSts();
+                    return _sts.getName();
                   }
-                } catch (final Throwable _t) {
-                  if (_t instanceof Exception) {
-                    final Exception e = (Exception)_t;
-                  } else {
-                    throw Exceptions.sneakyThrow(_t);
+                }
+                NoPtrStatement _escopo = this.st3.getEscopo();
+                EList<VarDecl> _variaveis = _escopo.getVariaveis();
+                for (final VarDecl v : _variaveis) {
+                  String _name_2 = v.getName();
+                  String _name_3 = ((Variable)d).getName();
+                  boolean _equals_1 = _name_2.equals(_name_3);
+                  if (_equals_1) {
+                    Type _type_1 = v.getType();
+                    simple_type_specifier _sts_1 = _type_1.getSts();
+                    return _sts_1.getName();
+                  }
+                }
+              }
+              boolean _while_1 = (!(this.ret2 instanceof Body));
+              while (_while_1) {
+                EObject _eContainer = this.ret2.eContainer();
+                this.ret2 = _eContainer;
+                _while_1 = (!(this.ret2 instanceof Body));
+              }
+              if ((this.ret2 instanceof Body)) {
+                this.st2 = ((Body)this.ret2);
+                EList<Declaration> _declarations = this.st2.getDeclarations();
+                for (final Declaration d2 : _declarations) {
+                  try {
+                    VarDecl _variaveis_1 = d2.getVariaveis();
+                    String _name_4 = _variaveis_1.getName();
+                    String _name_5 = ((Variable)d).getName();
+                    boolean _equals_2 = _name_4.equals(_name_5);
+                    if (_equals_2) {
+                      VarDecl _variaveis_2 = d2.getVariaveis();
+                      Type _type_2 = _variaveis_2.getType();
+                      simple_type_specifier _sts_2 = _type_2.getSts();
+                      return _sts_2.getName();
+                    }
+                  } catch (final Throwable _t) {
+                    if (_t instanceof Exception) {
+                      final Exception e = (Exception)_t;
+                    } else {
+                      throw Exceptions.sneakyThrow(_t);
+                    }
                   }
                 }
               }
@@ -392,7 +438,7 @@ public class MyDslValidator extends AbstractMyDslValidator {
   private boolean auxp2;
   
   @Check
-  public void checkCallFunction(final FunctionChamada f) {
+  public String checkCallFunction(final FunctionChamada f) {
     this.ccffound = false;
     this.fName = "";
     this.ret = f;
@@ -472,7 +518,10 @@ public class MyDslValidator extends AbstractMyDslValidator {
             this.fName2 = (this.fName2 + ")");
             boolean _equals_2 = this.fName.equals(this.fName2);
             if (_equals_2) {
-              this.ccffound = true;
+              FunctionDeclaration _funcao_4 = d_1.getFuncao();
+              Type _type = _funcao_4.getType();
+              simple_type_specifier _sts = _type.getSts();
+              return _sts.getName();
             }
           }
         }
@@ -487,6 +536,7 @@ public class MyDslValidator extends AbstractMyDslValidator {
     if ((!this.ccffound)) {
       this.error(this.gotmsg, f, null, (-1));
     }
+    return "Unknown-Type";
   }
   
   @Check

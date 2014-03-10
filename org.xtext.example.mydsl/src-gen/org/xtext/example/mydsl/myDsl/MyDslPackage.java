@@ -371,13 +371,22 @@ public interface MyDslPackage extends EPackage
   int NO_PTR_STATEMENT__VARIAVEIS = 0;
 
   /**
+   * The feature id for the '<em><b>Switches</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_STATEMENT__SWITCHES = 1;
+
+  /**
    * The feature id for the '<em><b>Dirty B</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NO_PTR_STATEMENT__DIRTY_B = 1;
+  int NO_PTR_STATEMENT__DIRTY_B = 2;
 
   /**
    * The feature id for the '<em><b>Dirty</b></em>' attribute list.
@@ -386,7 +395,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NO_PTR_STATEMENT__DIRTY = 2;
+  int NO_PTR_STATEMENT__DIRTY = 3;
 
   /**
    * The feature id for the '<em><b>Dirty V</b></em>' containment reference list.
@@ -395,7 +404,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NO_PTR_STATEMENT__DIRTY_V = 3;
+  int NO_PTR_STATEMENT__DIRTY_V = 4;
 
   /**
    * The number of structural features of the '<em>No Ptr Statement</em>' class.
@@ -404,7 +413,137 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NO_PTR_STATEMENT_FEATURE_COUNT = 4;
+  int NO_PTR_STATEMENT_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.NoPtrExpressionImpl <em>No Ptr Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.NoPtrExpressionImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getNoPtrExpression()
+   * @generated
+   */
+  int NO_PTR_EXPRESSION = 8;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_EXPRESSION__LEFT = 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_EXPRESSION__OP = 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_EXPRESSION__RIGHT = 2;
+
+  /**
+   * The number of structural features of the '<em>No Ptr Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_EXPRESSION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.NoPtrTerminalExpressionImpl <em>No Ptr Terminal Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.NoPtrTerminalExpressionImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getNoPtrTerminalExpression()
+   * @generated
+   */
+  int NO_PTR_TERMINAL_EXPRESSION = 9;
+
+  /**
+   * The feature id for the '<em><b>Inside</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_TERMINAL_EXPRESSION__INSIDE = 0;
+
+  /**
+   * The number of structural features of the '<em>No Ptr Terminal Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_TERMINAL_EXPRESSION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.NoPtrSelectImpl <em>No Ptr Select</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.NoPtrSelectImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getNoPtrSelect()
+   * @generated
+   */
+  int NO_PTR_SELECT = 10;
+
+  /**
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_SELECT__EXPR = 0;
+
+  /**
+   * The feature id for the '<em><b>Cases</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_SELECT__CASES = 1;
+
+  /**
+   * The number of structural features of the '<em>No Ptr Select</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_SELECT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.NoPtrCasesImpl <em>No Ptr Cases</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.NoPtrCasesImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getNoPtrCases()
+   * @generated
+   */
+  int NO_PTR_CASES = 11;
+
+  /**
+   * The number of structural features of the '<em>No Ptr Cases</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_CASES_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -414,7 +553,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getParameter()
    * @generated
    */
-  int PARAMETER = 8;
+  int PARAMETER = 12;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -451,7 +590,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getVarDecl()
    * @generated
    */
-  int VAR_DECL = 9;
+  int VAR_DECL = 13;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -488,7 +627,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getType()
    * @generated
    */
-  int TYPE = 10;
+  int TYPE = 14;
 
   /**
    * The feature id for the '<em><b>Sts</b></em>' containment reference.
@@ -516,7 +655,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getsimple_type_specifier()
    * @generated
    */
-  int SIMPLE_TYPE_SPECIFIER = 11;
+  int SIMPLE_TYPE_SPECIFIER = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -544,7 +683,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getsimple_declaration()
    * @generated
    */
-  int SIMPLE_DECLARATION = 12;
+  int SIMPLE_DECLARATION = 16;
 
   /**
    * The feature id for the '<em><b>Variavel</b></em>' containment reference.
@@ -572,7 +711,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getReturn()
    * @generated
    */
-  int RETURN = 13;
+  int RETURN = 17;
 
   /**
    * The feature id for the '<em><b>Rettype</b></em>' containment reference.
@@ -600,7 +739,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getReturnExpr()
    * @generated
    */
-  int RETURN_EXPR = 14;
+  int RETURN_EXPR = 18;
 
   /**
    * The number of structural features of the '<em>Return Expr</em>' class.
@@ -619,7 +758,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getdeclaration_statement()
    * @generated
    */
-  int DECLARATION_STATEMENT = 15;
+  int DECLARATION_STATEMENT = 19;
 
   /**
    * The feature id for the '<em><b>Variaveis</b></em>' containment reference list.
@@ -647,7 +786,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getblock_declaration()
    * @generated
    */
-  int BLOCK_DECLARATION = 16;
+  int BLOCK_DECLARATION = 20;
 
   /**
    * The feature id for the '<em><b>Variavel</b></em>' containment reference.
@@ -675,7 +814,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getLKS()
    * @generated
    */
-  int LKS = 17;
+  int LKS = 21;
 
   /**
    * The feature id for the '<em><b>Dirty</b></em>' containment reference.
@@ -696,6 +835,90 @@ public interface MyDslPackage extends EPackage
   int LKS_FEATURE_COUNT = LINKAGE_SPECIFICATION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.AtomicImpl <em>Atomic</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.AtomicImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getAtomic()
+   * @generated
+   */
+  int ATOMIC = 22;
+
+  /**
+   * The feature id for the '<em><b>Inside</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATOMIC__INSIDE = NO_PTR_TERMINAL_EXPRESSION__INSIDE;
+
+  /**
+   * The feature id for the '<em><b>Atomic</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATOMIC__ATOMIC = NO_PTR_TERMINAL_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Atomic</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATOMIC_FEATURE_COUNT = NO_PTR_TERMINAL_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.DefaultCaseImpl <em>Default Case</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.DefaultCaseImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getDefaultCase()
+   * @generated
+   */
+  int DEFAULT_CASE = 23;
+
+  /**
+   * The number of structural features of the '<em>Default Case</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFAULT_CASE_FEATURE_COUNT = NO_PTR_CASES_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.CaseNormalImpl <em>Case Normal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.CaseNormalImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getCaseNormal()
+   * @generated
+   */
+  int CASE_NORMAL = 24;
+
+  /**
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_NORMAL__EXPR = NO_PTR_CASES_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Case Normal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_NORMAL_FEATURE_COUNT = NO_PTR_CASES_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.IntTypeImpl <em>Int Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -703,7 +926,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getIntType()
    * @generated
    */
-  int INT_TYPE = 18;
+  int INT_TYPE = 25;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -731,7 +954,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getBooleanType()
    * @generated
    */
-  int BOOLEAN_TYPE = 19;
+  int BOOLEAN_TYPE = 26;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -759,7 +982,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getStringType()
    * @generated
    */
-  int STRING_TYPE = 20;
+  int STRING_TYPE = 27;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -787,7 +1010,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getUnknownType()
    * @generated
    */
-  int UNKNOWN_TYPE = 21;
+  int UNKNOWN_TYPE = 28;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -815,7 +1038,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getBooleanhType()
    * @generated
    */
-  int BOOLEANH_TYPE = 22;
+  int BOOLEANH_TYPE = 29;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -843,7 +1066,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getStringhType()
    * @generated
    */
-  int STRINGH_TYPE = 23;
+  int STRINGH_TYPE = 30;
 
   /**
    * The number of structural features of the '<em>Stringh Type</em>' class.
@@ -855,6 +1078,34 @@ public interface MyDslPackage extends EPackage
   int STRINGH_TYPE_FEATURE_COUNT = RETURN_EXPR_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.FunctionTypeImpl <em>Function Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.FunctionTypeImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getFunctionType()
+   * @generated
+   */
+  int FUNCTION_TYPE = 31;
+
+  /**
+   * The feature id for the '<em><b>Call</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_TYPE__CALL = RETURN_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Function Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_TYPE_FEATURE_COUNT = RETURN_EXPR_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.VariableImpl <em>Variable</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -862,7 +1113,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 24;
+  int VARIABLE = 32;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1173,6 +1424,17 @@ public interface MyDslPackage extends EPackage
   EReference getNoPtrStatement_Variaveis();
 
   /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.NoPtrStatement#getSwitches <em>Switches</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Switches</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrStatement#getSwitches()
+   * @see #getNoPtrStatement()
+   * @generated
+   */
+  EReference getNoPtrStatement_Switches();
+
+  /**
    * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.NoPtrStatement#getDirtyB <em>Dirty B</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1204,6 +1466,112 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EReference getNoPtrStatement_DirtyV();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.NoPtrExpression <em>No Ptr Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>No Ptr Expression</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrExpression
+   * @generated
+   */
+  EClass getNoPtrExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.NoPtrExpression#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrExpression#getLeft()
+   * @see #getNoPtrExpression()
+   * @generated
+   */
+  EReference getNoPtrExpression_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.NoPtrExpression#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrExpression#getOp()
+   * @see #getNoPtrExpression()
+   * @generated
+   */
+  EAttribute getNoPtrExpression_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.NoPtrExpression#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrExpression#getRight()
+   * @see #getNoPtrExpression()
+   * @generated
+   */
+  EReference getNoPtrExpression_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.NoPtrTerminalExpression <em>No Ptr Terminal Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>No Ptr Terminal Expression</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrTerminalExpression
+   * @generated
+   */
+  EClass getNoPtrTerminalExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.NoPtrTerminalExpression#getInside <em>Inside</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Inside</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrTerminalExpression#getInside()
+   * @see #getNoPtrTerminalExpression()
+   * @generated
+   */
+  EReference getNoPtrTerminalExpression_Inside();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.NoPtrSelect <em>No Ptr Select</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>No Ptr Select</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrSelect
+   * @generated
+   */
+  EClass getNoPtrSelect();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.NoPtrSelect#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrSelect#getExpr()
+   * @see #getNoPtrSelect()
+   * @generated
+   */
+  EReference getNoPtrSelect_Expr();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.NoPtrSelect#getCases <em>Cases</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Cases</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrSelect#getCases()
+   * @see #getNoPtrSelect()
+   * @generated
+   */
+  EReference getNoPtrSelect_Cases();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.NoPtrCases <em>No Ptr Cases</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>No Ptr Cases</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrCases
+   * @generated
+   */
+  EClass getNoPtrCases();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Parameter <em>Parameter</em>}'.
@@ -1427,6 +1795,58 @@ public interface MyDslPackage extends EPackage
   EReference getLKS_Dirty();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Atomic <em>Atomic</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Atomic</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Atomic
+   * @generated
+   */
+  EClass getAtomic();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Atomic#getAtomic <em>Atomic</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Atomic</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Atomic#getAtomic()
+   * @see #getAtomic()
+   * @generated
+   */
+  EReference getAtomic_Atomic();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.DefaultCase <em>Default Case</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Default Case</em>'.
+   * @see org.xtext.example.mydsl.myDsl.DefaultCase
+   * @generated
+   */
+  EClass getDefaultCase();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.CaseNormal <em>Case Normal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Case Normal</em>'.
+   * @see org.xtext.example.mydsl.myDsl.CaseNormal
+   * @generated
+   */
+  EClass getCaseNormal();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.CaseNormal#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see org.xtext.example.mydsl.myDsl.CaseNormal#getExpr()
+   * @see #getCaseNormal()
+   * @generated
+   */
+  EReference getCaseNormal_Expr();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.IntType <em>Int Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1496,6 +1916,27 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EClass getStringhType();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.FunctionType <em>Function Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Function Type</em>'.
+   * @see org.xtext.example.mydsl.myDsl.FunctionType
+   * @generated
+   */
+  EClass getFunctionType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.FunctionType#getCall <em>Call</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Call</em>'.
+   * @see org.xtext.example.mydsl.myDsl.FunctionType#getCall()
+   * @see #getFunctionType()
+   * @generated
+   */
+  EReference getFunctionType_Call();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Variable <em>Variable</em>}'.
@@ -1774,6 +2215,14 @@ public interface MyDslPackage extends EPackage
     EReference NO_PTR_STATEMENT__VARIAVEIS = eINSTANCE.getNoPtrStatement_Variaveis();
 
     /**
+     * The meta object literal for the '<em><b>Switches</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NO_PTR_STATEMENT__SWITCHES = eINSTANCE.getNoPtrStatement_Switches();
+
+    /**
      * The meta object literal for the '<em><b>Dirty B</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1796,6 +2245,94 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EReference NO_PTR_STATEMENT__DIRTY_V = eINSTANCE.getNoPtrStatement_DirtyV();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.NoPtrExpressionImpl <em>No Ptr Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.NoPtrExpressionImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getNoPtrExpression()
+     * @generated
+     */
+    EClass NO_PTR_EXPRESSION = eINSTANCE.getNoPtrExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NO_PTR_EXPRESSION__LEFT = eINSTANCE.getNoPtrExpression_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NO_PTR_EXPRESSION__OP = eINSTANCE.getNoPtrExpression_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NO_PTR_EXPRESSION__RIGHT = eINSTANCE.getNoPtrExpression_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.NoPtrTerminalExpressionImpl <em>No Ptr Terminal Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.NoPtrTerminalExpressionImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getNoPtrTerminalExpression()
+     * @generated
+     */
+    EClass NO_PTR_TERMINAL_EXPRESSION = eINSTANCE.getNoPtrTerminalExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Inside</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NO_PTR_TERMINAL_EXPRESSION__INSIDE = eINSTANCE.getNoPtrTerminalExpression_Inside();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.NoPtrSelectImpl <em>No Ptr Select</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.NoPtrSelectImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getNoPtrSelect()
+     * @generated
+     */
+    EClass NO_PTR_SELECT = eINSTANCE.getNoPtrSelect();
+
+    /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NO_PTR_SELECT__EXPR = eINSTANCE.getNoPtrSelect_Expr();
+
+    /**
+     * The meta object literal for the '<em><b>Cases</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NO_PTR_SELECT__CASES = eINSTANCE.getNoPtrSelect_Cases();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.NoPtrCasesImpl <em>No Ptr Cases</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.NoPtrCasesImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getNoPtrCases()
+     * @generated
+     */
+    EClass NO_PTR_CASES = eINSTANCE.getNoPtrCases();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -1986,6 +2523,52 @@ public interface MyDslPackage extends EPackage
     EReference LKS__DIRTY = eINSTANCE.getLKS_Dirty();
 
     /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.AtomicImpl <em>Atomic</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.AtomicImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getAtomic()
+     * @generated
+     */
+    EClass ATOMIC = eINSTANCE.getAtomic();
+
+    /**
+     * The meta object literal for the '<em><b>Atomic</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATOMIC__ATOMIC = eINSTANCE.getAtomic_Atomic();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.DefaultCaseImpl <em>Default Case</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.DefaultCaseImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getDefaultCase()
+     * @generated
+     */
+    EClass DEFAULT_CASE = eINSTANCE.getDefaultCase();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.CaseNormalImpl <em>Case Normal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.CaseNormalImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getCaseNormal()
+     * @generated
+     */
+    EClass CASE_NORMAL = eINSTANCE.getCaseNormal();
+
+    /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CASE_NORMAL__EXPR = eINSTANCE.getCaseNormal_Expr();
+
+    /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.IntTypeImpl <em>Int Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2052,6 +2635,24 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EClass STRINGH_TYPE = eINSTANCE.getStringhType();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.FunctionTypeImpl <em>Function Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.FunctionTypeImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getFunctionType()
+     * @generated
+     */
+    EClass FUNCTION_TYPE = eINSTANCE.getFunctionType();
+
+    /**
+     * The meta object literal for the '<em><b>Call</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_TYPE__CALL = eINSTANCE.getFunctionType_Call();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.VariableImpl <em>Variable</em>}' class.
