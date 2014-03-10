@@ -25,6 +25,8 @@ import org.xtext.example.mydsl.myDsl.Variable
 import org.xtext.example.mydsl.myDsl.IntType
 import org.xtext.example.mydsl.myDsl.BooleanhType
 import org.xtext.example.mydsl.myDsl.StringhType
+import org.xtext.example.mydsl.myDsl.FunctionChamada
+import org.xtext.example.mydsl.myDsl.ReturnExpr
 
 /**
  * Custom validation rules. 
@@ -60,6 +62,7 @@ def checkFunctionAlreadyExists(Body b) {
 	hash.clear();
 	
 	for (Declaration symbol: b.declarations) {
+		try {
 		if (symbol.funcao.name != "null") {
 			row = symbol.funcao.name + "(";
 			ok = 0;
@@ -69,13 +72,18 @@ def checkFunctionAlreadyExists(Body b) {
 				row = row + symb.type.sts.name;
 			}
 			row = row + ")";
+			System.out.println(row);
 			if (hash.contains(row)) {
 				error("Function '" +  row + "' already exists", symbol.funcao, null, -1);
 			}
 			hash.add(row);
 		}
+	} catch (Exception e) {
+		
+	}
 	}
 }
+
 
 
 boolean funcaoExiste = false;
@@ -163,27 +171,140 @@ def checkVariableAlreadyExists(NoPtrStatement st) {
 		}	
 	
 }
+Body st2;
+
+FunctionDeclaration st3;
+EObject ret2;
+def lookUpType(ReturnExpr d)  {
+	if (d instanceof IntType) {
+		return "int";
+	} else if (d instanceof BooleanhType) {
+		return "bool";		
+	} else if (d instanceof StringhType) {
+		return "string";		
+	} else if (d instanceof Variable) {
+		ret2 = d;
+		while (!(ret2 instanceof FunctionDeclaration || ret2 instanceof Body)) {
+			ret2 = ret2.eContainer;
+		}
+		
+		if (ret2 instanceof FunctionDeclaration) {
+			st3 = ret2;
+			for (Parameter p: st3.params) {
+				if (p.name.equals(d.name)) {
+					return p.type.sts.name;
+				}
+			}
+			for (VarDecl v: st3.escopo.variaveis) {
+				if (v.name.equals(d.name)) {
+					return v.type.sts.name;
+				}
+			}
+		}
+		while (!(ret2 instanceof Body)) {
+			ret2 = ret2.eContainer;
+		}
+		
+		if (ret2 instanceof Body) {
+			st2 = ret2;
+			for (Declaration d2: st2.declarations) {
+				try {
+					if (d2.variaveis.name.equals(d.name)) {
+						return d2.variaveis.type.sts.name;				
+					}
+				} catch(Exception e) {
+					
+				}
+			}
+		}
+	}
+	return "No Type Found";
+}
+	
+
+	
+boolean ccffound;
+String gotmsg;
+Body st;
+EObject ret;
+String auxp;
+String fName;
+String fName2;
+boolean auxp2;
+@Check
+def checkCallFunction(FunctionChamada f) {
+	ccffound = false;
+	fName = "";
+	ret = f;
+	while (!(ret instanceof Body)) {
+		ret = ret.eContainer;
+	}
+	if (ret instanceof Body) st = ret;
+	gotmsg = "There is no function '" + f.name + "(";
+	fName = f.name + "(";
+	for (ReturnExpr d: f.params) {
+		if (ccffound) {
+			fName = fName + ", ";
+			gotmsg = gotmsg +", ";
+		}
+		ccffound = true;
+		auxp = lookUpType(d);
+		if (auxp.equals("No Type Found")) {
+			error("This variable is not defined", d, null, -1);
+			auxp = "Unknown-Type"
+		}
+		fName = fName + auxp;
+		gotmsg = gotmsg + auxp;
+	}
+	fName = fName + ")";
+	gotmsg = gotmsg + ")";
+	
+	ccffound = false;
+	for (Declaration d: st.declarations) {
+		try {
+			if (f.name.equals(d.funcao.name)) {
+				if (f.params.size == d.funcao.params.size) {
+					auxp2 = false;
+					fName2 = d.funcao.name + "(";
+					for (Parameter p : d.funcao.params) {
+						if (auxp2) {
+							fName2 = fName2 + ", ";
+						}
+						auxp2 = true;
+						
+						fName2 = fName2 + p.type.sts.name;
+						
+						
+					}
+					fName2 = fName2 + ")";
+					if (fName.equals(fName2)) {
+						ccffound = true;
+					}
+				}
+			}
+		} catch (Exception e) {
+			
+		}
+	}
+	if (!ccffound) {
+		error(gotmsg, f, null, -1);
+	}
+}
 
 @Check
 def checkVariableAlreadyExistsBody(Body st) {
 		hash.clear();
-		for (VarDecl variavel : st.variaveis) {
-			val nome = variavel.name;
+		for (Declaration variavel : st.declarations) {
+			try {
+				val nome = variavel.variaveis.name;
 			if (hash.contains(nome)) {
-				error("Variable '" + nome + "' already exists", variavel, null, -1);
+				error("Variable '" + nome + "' already exists", variavel.variaveis, null, -1);
 			}
 			hash.add(nome);
+			} catch (Exception e) {
+			}
 		}	
 	
 }
-//  public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					MyDslPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+
 }

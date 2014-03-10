@@ -77,6 +77,15 @@ public interface MyDslFactory extends EFactory
   FunctionDeclaration createFunctionDeclaration();
 
   /**
+   * Returns a new object of class '<em>Function Chamada</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Chamada</em>'.
+   * @generated
+   */
+  FunctionChamada createFunctionChamada();
+
+  /**
    * Returns a new object of class '<em>No Ptr Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

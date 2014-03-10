@@ -17,6 +17,7 @@ import org.xtext.example.mydsl.myDsl.Body;
 import org.xtext.example.mydsl.myDsl.BooleanType;
 import org.xtext.example.mydsl.myDsl.BooleanhType;
 import org.xtext.example.mydsl.myDsl.Declaration;
+import org.xtext.example.mydsl.myDsl.FunctionChamada;
 import org.xtext.example.mydsl.myDsl.FunctionDeclaration;
 import org.xtext.example.mydsl.myDsl.IntType;
 import org.xtext.example.mydsl.myDsl.LKS;
@@ -66,6 +67,12 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MyDslPackage.DECLARATION:
 				if(context == grammarAccess.getDeclarationRule()) {
 					sequence_Declaration(context, (Declaration) semanticObject); 
+					return; 
+				}
+				else break;
+			case MyDslPackage.FUNCTION_CHAMADA:
+				if(context == grammarAccess.getFunctionChamadaRule()) {
+					sequence_FunctionChamada(context, (FunctionChamada) semanticObject); 
 					return; 
 				}
 				else break;
@@ -175,7 +182,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     ((variaveis+=VarDecl | declarations+=Declaration)*)
+	 *     (declarations+=Declaration*)
 	 */
 	protected void sequence_Body(EObject context, Body semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -185,7 +192,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (
+	 *         variaveis=VarDecl | 
 	 *         ditryD=Return | 
+	 *         chamada=FunctionChamada | 
 	 *         funcao=FunctionDeclaration | 
 	 *         dirtyE=SimpleOrFunctionDeclaration | 
 	 *         dirtyA=BlockDeclaration | 
@@ -197,6 +206,15 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     )
 	 */
 	protected void sequence_Declaration(EObject context, Declaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID (params+=ReturnExpr params+=ReturnExpr*)?)
+	 */
+	protected void sequence_FunctionChamada(EObject context, FunctionChamada semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -230,7 +248,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     ((variaveis+=VarDecl | dirtyB+=Return | dirty+=Statement)*)
+	 *     ((variaveis+=VarDecl | dirtyB+=Return | dirty+=Statement | dirtyV+=FunctionChamada)*)
 	 */
 	protected void sequence_NoPtrStatement(EObject context, NoPtrStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -250,8 +268,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getParameterAccess().getTypeTypeParserRuleCall_1_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getParameterAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getParameterAccess().getTypeTypeParserRuleCall_2_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getParameterAccess().getNameIDTerminalRuleCall_4_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	

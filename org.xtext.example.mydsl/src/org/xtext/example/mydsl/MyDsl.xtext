@@ -25,7 +25,7 @@ Body:
 	// (classes += ClassDeclaration)* |
 	// (structs += StructDeclaration)* |
 	// (structs += StructDeclaration)* |
-	(variaveis += VarDecl | declarations += Declaration)*
+	( declarations += Declaration)*
 	
 ;
 
@@ -34,7 +34,10 @@ Body:
 
 Declaration:
 	{Declaration} (
+		
+		variaveis = VarDecl |
 		ditryD = Return |
+		chamada = FunctionChamada |
 		funcao = FunctionDeclaration |
 	dirtyE= SimpleOrFunctionDeclaration|
 	dirtyA = BlockDeclaration |
@@ -130,16 +133,18 @@ elif_groups:
 		
 // FUNCTION
 FunctionDeclaration returns FunctionDeclaration:
-	{FunctionDeclaration} type=Type name=ID "(" 
+	{FunctionDeclaration} "const"? type=Type name=ID => "(" 
 		(params+=Parameter  ("," params+=Parameter)* )?  ")" "{"	
 			escopo = NoPtrStatement
 	"}";
-	
+FunctionChamada:
+	{FunctionChamada} name=ID'('(params+=ReturnExpr ("," params+=ReturnExpr)* )?  ');'
+;
 NoPtrStatement:
-	{NoPtrStatement} (((variaveis+= VarDecl) |dirtyB += Return| dirty += Statement)*)
+	{NoPtrStatement} (((variaveis+= VarDecl) |dirtyB += Return| dirty += Statement | dirtyV += FunctionChamada )*)
 ;
 Parameter:
-	{Parameter} type=Type name=ID;
+	{Parameter} 'const' ? type=Type ('*'*|'&'*)  name=ID ('['INT?']')*;
 
 VarDecl:
 	{VarDecl} 'const'? type=Type ('*'*|'&'*) name=ID ('['INT']')*;
@@ -270,7 +275,6 @@ terminal KEYWORD:
 	'break' |
 	'case' |
 	'catch' |
-	'char' |
 	'char16_t' |
 	'char32_t' |
 	'class' |
@@ -288,7 +292,6 @@ terminal KEYWORD:
 	'enum' |
 	'explicit' |
 	'export' |
-	'extern' |
 	'false' |
 	'float' |
 	'for' |
@@ -605,7 +608,6 @@ TrailingTypeSpecifier:
 // dct.type.simple
 SimpleTypeSpecifier:
 	'::'? (TypeName | NestedNameSpecifier (TypeName | 'template' SimpleTemplateId)) |
-	'char' |
 	'char16_t' |
 	'char32_t' |
 	'wchar_t' |

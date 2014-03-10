@@ -19,8 +19,12 @@ import org.xtext.example.mydsl.services.MyDslGrammarAccess;
 public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected MyDslGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_FunctionDeclaration_ConstKeyword_1_q;
 	protected AbstractElementAlias match_NamespaceDefinition_IDTerminalRuleCall_2_q;
 	protected AbstractElementAlias match_NamespaceDefinition_InlineKeyword_0_q;
+	protected AbstractElementAlias match_Parameter_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a;
+	protected AbstractElementAlias match_Parameter_ConstKeyword_1_q;
+	protected AbstractElementAlias match_Parameter___LeftSquareBracketKeyword_5_0_INTTerminalRuleCall_5_1_q_RightSquareBracketKeyword_5_2__a;
 	protected AbstractElementAlias match_VarDecl_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a;
 	protected AbstractElementAlias match_VarDecl_ConstKeyword_1_q;
 	protected AbstractElementAlias match_VarDecl___LeftSquareBracketKeyword_5_0_INTTerminalRuleCall_5_1_RightSquareBracketKeyword_5_2__a;
@@ -28,8 +32,12 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (MyDslGrammarAccess) access;
+		match_FunctionDeclaration_ConstKeyword_1_q = new TokenAlias(false, true, grammarAccess.getFunctionDeclarationAccess().getConstKeyword_1());
 		match_NamespaceDefinition_IDTerminalRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getNamespaceDefinitionAccess().getIDTerminalRuleCall_2());
 		match_NamespaceDefinition_InlineKeyword_0_q = new TokenAlias(false, true, grammarAccess.getNamespaceDefinitionAccess().getInlineKeyword_0());
+		match_Parameter_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a = new AlternativeAlias(false, false, new TokenAlias(true, true, grammarAccess.getParameterAccess().getAmpersandKeyword_3_1()), new TokenAlias(true, true, grammarAccess.getParameterAccess().getAsteriskKeyword_3_0()));
+		match_Parameter_ConstKeyword_1_q = new TokenAlias(false, true, grammarAccess.getParameterAccess().getConstKeyword_1());
+		match_Parameter___LeftSquareBracketKeyword_5_0_INTTerminalRuleCall_5_1_q_RightSquareBracketKeyword_5_2__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getParameterAccess().getLeftSquareBracketKeyword_5_0()), new TokenAlias(false, true, grammarAccess.getParameterAccess().getINTTerminalRuleCall_5_1()), new TokenAlias(false, false, grammarAccess.getParameterAccess().getRightSquareBracketKeyword_5_2()));
 		match_VarDecl_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a = new AlternativeAlias(false, false, new TokenAlias(true, true, grammarAccess.getVarDeclAccess().getAmpersandKeyword_3_1()), new TokenAlias(true, true, grammarAccess.getVarDeclAccess().getAsteriskKeyword_3_0()));
 		match_VarDecl_ConstKeyword_1_q = new TokenAlias(false, true, grammarAccess.getVarDeclAccess().getConstKeyword_1());
 		match_VarDecl___LeftSquareBracketKeyword_5_0_INTTerminalRuleCall_5_1_RightSquareBracketKeyword_5_2__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getVarDeclAccess().getLeftSquareBracketKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getVarDeclAccess().getINTTerminalRuleCall_5_1()), new TokenAlias(false, false, grammarAccess.getVarDeclAccess().getRightSquareBracketKeyword_5_2()));
@@ -108,10 +116,18 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_NamespaceDefinition_IDTerminalRuleCall_2_q.equals(syntax))
+			if(match_FunctionDeclaration_ConstKeyword_1_q.equals(syntax))
+				emit_FunctionDeclaration_ConstKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_NamespaceDefinition_IDTerminalRuleCall_2_q.equals(syntax))
 				emit_NamespaceDefinition_IDTerminalRuleCall_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_NamespaceDefinition_InlineKeyword_0_q.equals(syntax))
 				emit_NamespaceDefinition_InlineKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Parameter_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a.equals(syntax))
+				emit_Parameter_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Parameter_ConstKeyword_1_q.equals(syntax))
+				emit_Parameter_ConstKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Parameter___LeftSquareBracketKeyword_5_0_INTTerminalRuleCall_5_1_q_RightSquareBracketKeyword_5_2__a.equals(syntax))
+				emit_Parameter___LeftSquareBracketKeyword_5_0_INTTerminalRuleCall_5_1_q_RightSquareBracketKeyword_5_2__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_VarDecl_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a.equals(syntax))
 				emit_VarDecl_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_VarDecl_ConstKeyword_1_q.equals(syntax))
@@ -122,6 +138,14 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		}
 	}
 
+	/**
+	 * Syntax:
+	 *     'const'?
+	 */
+	protected void emit_FunctionDeclaration_ConstKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Syntax:
 	 *     ID?
@@ -135,6 +159,30 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'inline'?
 	 */
 	protected void emit_NamespaceDefinition_InlineKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     '*'* | '&'*
+	 */
+	protected void emit_Parameter_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     'const'?
+	 */
+	protected void emit_Parameter_ConstKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     ('[' INT? ']')*
+	 */
+	protected void emit_Parameter___LeftSquareBracketKeyword_5_0_INTTerminalRuleCall_5_1_q_RightSquareBracketKeyword_5_2__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

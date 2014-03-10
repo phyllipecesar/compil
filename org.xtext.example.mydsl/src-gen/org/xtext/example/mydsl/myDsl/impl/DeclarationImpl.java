@@ -13,9 +13,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.mydsl.myDsl.Declaration;
+import org.xtext.example.mydsl.myDsl.FunctionChamada;
 import org.xtext.example.mydsl.myDsl.FunctionDeclaration;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.Return;
+import org.xtext.example.mydsl.myDsl.VarDecl;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +26,9 @@ import org.xtext.example.mydsl.myDsl.Return;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.DeclarationImpl#getVariaveis <em>Variaveis</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.DeclarationImpl#getDitryD <em>Ditry D</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.DeclarationImpl#getChamada <em>Chamada</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.DeclarationImpl#getFuncao <em>Funcao</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.DeclarationImpl#getDirtyE <em>Dirty E</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.DeclarationImpl#getDirtyA <em>Dirty A</em>}</li>
@@ -40,6 +44,16 @@ import org.xtext.example.mydsl.myDsl.Return;
 public class DeclarationImpl extends MinimalEObjectImpl.Container implements Declaration
 {
   /**
+   * The cached value of the '{@link #getVariaveis() <em>Variaveis</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVariaveis()
+   * @generated
+   * @ordered
+   */
+  protected VarDecl variaveis;
+
+  /**
    * The cached value of the '{@link #getDitryD() <em>Ditry D</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -48,6 +62,16 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
    * @ordered
    */
   protected Return ditryD;
+
+  /**
+   * The cached value of the '{@link #getChamada() <em>Chamada</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getChamada()
+   * @generated
+   * @ordered
+   */
+  protected FunctionChamada chamada;
 
   /**
    * The cached value of the '{@link #getFuncao() <em>Funcao</em>}' containment reference.
@@ -195,6 +219,54 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
    * <!-- end-user-doc -->
    * @generated
    */
+  public VarDecl getVariaveis()
+  {
+    return variaveis;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetVariaveis(VarDecl newVariaveis, NotificationChain msgs)
+  {
+    VarDecl oldVariaveis = variaveis;
+    variaveis = newVariaveis;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.DECLARATION__VARIAVEIS, oldVariaveis, newVariaveis);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVariaveis(VarDecl newVariaveis)
+  {
+    if (newVariaveis != variaveis)
+    {
+      NotificationChain msgs = null;
+      if (variaveis != null)
+        msgs = ((InternalEObject)variaveis).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.DECLARATION__VARIAVEIS, null, msgs);
+      if (newVariaveis != null)
+        msgs = ((InternalEObject)newVariaveis).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.DECLARATION__VARIAVEIS, null, msgs);
+      msgs = basicSetVariaveis(newVariaveis, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.DECLARATION__VARIAVEIS, newVariaveis, newVariaveis));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Return getDitryD()
   {
     return ditryD;
@@ -236,6 +308,54 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.DECLARATION__DITRY_D, newDitryD, newDitryD));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FunctionChamada getChamada()
+  {
+    return chamada;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetChamada(FunctionChamada newChamada, NotificationChain msgs)
+  {
+    FunctionChamada oldChamada = chamada;
+    chamada = newChamada;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.DECLARATION__CHAMADA, oldChamada, newChamada);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setChamada(FunctionChamada newChamada)
+  {
+    if (newChamada != chamada)
+    {
+      NotificationChain msgs = null;
+      if (chamada != null)
+        msgs = ((InternalEObject)chamada).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.DECLARATION__CHAMADA, null, msgs);
+      if (newChamada != null)
+        msgs = ((InternalEObject)newChamada).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.DECLARATION__CHAMADA, null, msgs);
+      msgs = basicSetChamada(newChamada, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.DECLARATION__CHAMADA, newChamada, newChamada));
   }
 
   /**
@@ -459,8 +579,12 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
   {
     switch (featureID)
     {
+      case MyDslPackage.DECLARATION__VARIAVEIS:
+        return basicSetVariaveis(null, msgs);
       case MyDslPackage.DECLARATION__DITRY_D:
         return basicSetDitryD(null, msgs);
+      case MyDslPackage.DECLARATION__CHAMADA:
+        return basicSetChamada(null, msgs);
       case MyDslPackage.DECLARATION__FUNCAO:
         return basicSetFuncao(null, msgs);
       case MyDslPackage.DECLARATION__DIRTY:
@@ -479,8 +603,12 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
   {
     switch (featureID)
     {
+      case MyDslPackage.DECLARATION__VARIAVEIS:
+        return getVariaveis();
       case MyDslPackage.DECLARATION__DITRY_D:
         return getDitryD();
+      case MyDslPackage.DECLARATION__CHAMADA:
+        return getChamada();
       case MyDslPackage.DECLARATION__FUNCAO:
         return getFuncao();
       case MyDslPackage.DECLARATION__DIRTY_E:
@@ -509,8 +637,14 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
   {
     switch (featureID)
     {
+      case MyDslPackage.DECLARATION__VARIAVEIS:
+        setVariaveis((VarDecl)newValue);
+        return;
       case MyDslPackage.DECLARATION__DITRY_D:
         setDitryD((Return)newValue);
+        return;
+      case MyDslPackage.DECLARATION__CHAMADA:
+        setChamada((FunctionChamada)newValue);
         return;
       case MyDslPackage.DECLARATION__FUNCAO:
         setFuncao((FunctionDeclaration)newValue);
@@ -547,8 +681,14 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
   {
     switch (featureID)
     {
+      case MyDslPackage.DECLARATION__VARIAVEIS:
+        setVariaveis((VarDecl)null);
+        return;
       case MyDslPackage.DECLARATION__DITRY_D:
         setDitryD((Return)null);
+        return;
+      case MyDslPackage.DECLARATION__CHAMADA:
+        setChamada((FunctionChamada)null);
         return;
       case MyDslPackage.DECLARATION__FUNCAO:
         setFuncao((FunctionDeclaration)null);
@@ -585,8 +725,12 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
   {
     switch (featureID)
     {
+      case MyDslPackage.DECLARATION__VARIAVEIS:
+        return variaveis != null;
       case MyDslPackage.DECLARATION__DITRY_D:
         return ditryD != null;
+      case MyDslPackage.DECLARATION__CHAMADA:
+        return chamada != null;
       case MyDslPackage.DECLARATION__FUNCAO:
         return funcao != null;
       case MyDslPackage.DECLARATION__DIRTY_E:

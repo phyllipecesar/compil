@@ -12,7 +12,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Declaration#getVariaveis <em>Variaveis</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Declaration#getDitryD <em>Ditry D</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Declaration#getChamada <em>Chamada</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Declaration#getFuncao <em>Funcao</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Declaration#getDirtyE <em>Dirty E</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Declaration#getDirtyA <em>Dirty A</em>}</li>
@@ -29,6 +31,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Declaration extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Variaveis</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Variaveis</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Variaveis</em>' containment reference.
+   * @see #setVariaveis(VarDecl)
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getDeclaration_Variaveis()
+   * @model containment="true"
+   * @generated
+   */
+  VarDecl getVariaveis();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Declaration#getVariaveis <em>Variaveis</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Variaveis</em>' containment reference.
+   * @see #getVariaveis()
+   * @generated
+   */
+  void setVariaveis(VarDecl value);
+
   /**
    * Returns the value of the '<em><b>Ditry D</b></em>' containment reference.
    * <!-- begin-user-doc -->
@@ -54,6 +82,32 @@ public interface Declaration extends EObject
    * @generated
    */
   void setDitryD(Return value);
+
+  /**
+   * Returns the value of the '<em><b>Chamada</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Chamada</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Chamada</em>' containment reference.
+   * @see #setChamada(FunctionChamada)
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getDeclaration_Chamada()
+   * @model containment="true"
+   * @generated
+   */
+  FunctionChamada getChamada();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Declaration#getChamada <em>Chamada</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Chamada</em>' containment reference.
+   * @see #getChamada()
+   * @generated
+   */
+  void setChamada(FunctionChamada value);
 
   /**
    * Returns the value of the '<em><b>Funcao</b></em>' containment reference.

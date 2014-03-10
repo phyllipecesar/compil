@@ -70,6 +70,7 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.NAMESPACE_DEFINITION: return createNamespaceDefinition();
       case MyDslPackage.LINKAGE_SPECIFICATION: return createLinkageSpecification();
       case MyDslPackage.FUNCTION_DECLARATION: return createFunctionDeclaration();
+      case MyDslPackage.FUNCTION_CHAMADA: return createFunctionChamada();
       case MyDslPackage.NO_PTR_STATEMENT: return createNoPtrStatement();
       case MyDslPackage.PARAMETER: return createParameter();
       case MyDslPackage.VAR_DECL: return createVarDecl();
@@ -157,6 +158,17 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     FunctionDeclarationImpl functionDeclaration = new FunctionDeclarationImpl();
     return functionDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FunctionChamada createFunctionChamada()
+  {
+    FunctionChamadaImpl functionChamada = new FunctionChamadaImpl();
+    return functionChamada;
   }
 
   /**

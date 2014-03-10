@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.xtext.example.mydsl.myDsl.Body;
 import org.xtext.example.mydsl.myDsl.Declaration;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
-import org.xtext.example.mydsl.myDsl.VarDecl;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +25,6 @@ import org.xtext.example.mydsl.myDsl.VarDecl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.BodyImpl#getVariaveis <em>Variaveis</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.BodyImpl#getDeclarations <em>Declarations</em>}</li>
  * </ul>
  * </p>
@@ -35,16 +33,6 @@ import org.xtext.example.mydsl.myDsl.VarDecl;
  */
 public class BodyImpl extends ModelImpl implements Body
 {
-  /**
-   * The cached value of the '{@link #getVariaveis() <em>Variaveis</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVariaveis()
-   * @generated
-   * @ordered
-   */
-  protected EList<VarDecl> variaveis;
-
   /**
    * The cached value of the '{@link #getDeclarations() <em>Declarations</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -81,20 +69,6 @@ public class BodyImpl extends ModelImpl implements Body
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<VarDecl> getVariaveis()
-  {
-    if (variaveis == null)
-    {
-      variaveis = new EObjectContainmentEList<VarDecl>(VarDecl.class, this, MyDslPackage.BODY__VARIAVEIS);
-    }
-    return variaveis;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<Declaration> getDeclarations()
   {
     if (declarations == null)
@@ -114,8 +88,6 @@ public class BodyImpl extends ModelImpl implements Body
   {
     switch (featureID)
     {
-      case MyDslPackage.BODY__VARIAVEIS:
-        return ((InternalEList<?>)getVariaveis()).basicRemove(otherEnd, msgs);
       case MyDslPackage.BODY__DECLARATIONS:
         return ((InternalEList<?>)getDeclarations()).basicRemove(otherEnd, msgs);
     }
@@ -132,8 +104,6 @@ public class BodyImpl extends ModelImpl implements Body
   {
     switch (featureID)
     {
-      case MyDslPackage.BODY__VARIAVEIS:
-        return getVariaveis();
       case MyDslPackage.BODY__DECLARATIONS:
         return getDeclarations();
     }
@@ -151,10 +121,6 @@ public class BodyImpl extends ModelImpl implements Body
   {
     switch (featureID)
     {
-      case MyDslPackage.BODY__VARIAVEIS:
-        getVariaveis().clear();
-        getVariaveis().addAll((Collection<? extends VarDecl>)newValue);
-        return;
       case MyDslPackage.BODY__DECLARATIONS:
         getDeclarations().clear();
         getDeclarations().addAll((Collection<? extends Declaration>)newValue);
@@ -173,9 +139,6 @@ public class BodyImpl extends ModelImpl implements Body
   {
     switch (featureID)
     {
-      case MyDslPackage.BODY__VARIAVEIS:
-        getVariaveis().clear();
-        return;
       case MyDslPackage.BODY__DECLARATIONS:
         getDeclarations().clear();
         return;
@@ -193,8 +156,6 @@ public class BodyImpl extends ModelImpl implements Body
   {
     switch (featureID)
     {
-      case MyDslPackage.BODY__VARIAVEIS:
-        return variaveis != null && !variaveis.isEmpty();
       case MyDslPackage.BODY__DECLARATIONS:
         return declarations != null && !declarations.isEmpty();
     }

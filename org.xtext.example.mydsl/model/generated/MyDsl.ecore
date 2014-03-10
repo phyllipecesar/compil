@@ -3,13 +3,15 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="myDsl" nsURI="http://www.xtext.org/example/mydsl/MyDsl" nsPrefix="myDsl">
   <eClassifiers xsi:type="ecore:EClass" name="Model"/>
   <eClassifiers xsi:type="ecore:EClass" name="Body" eSuperTypes="#//Model">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variaveis" upperBound="-1"
-        eType="#//VarDecl" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="declarations" upperBound="-1"
         eType="#//Declaration" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Declaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variaveis" eType="#//VarDecl"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ditryD" eType="#//Return"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="chamada" eType="#//FunctionChamada"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="funcao" eType="#//FunctionDeclaration"
         containment="true"/>
@@ -34,6 +36,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="escopo" eType="#//NoPtrStatement"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionChamada">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
+        eType="#//ReturnExpr" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NoPtrStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variaveis" upperBound="-1"
         eType="#//VarDecl" containment="true"/>
@@ -41,6 +48,8 @@
         eType="#//Return" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dirty" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dirtyV" upperBound="-1"
+        eType="#//FunctionChamada" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Parameter">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type" containment="true"/>

@@ -115,6 +115,13 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MyDslPackage.FUNCTION_CHAMADA:
+      {
+        FunctionChamada functionChamada = (FunctionChamada)theEObject;
+        T result = caseFunctionChamada(functionChamada);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MyDslPackage.NO_PTR_STATEMENT:
       {
         NoPtrStatement noPtrStatement = (NoPtrStatement)theEObject;
@@ -346,6 +353,22 @@ public class MyDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseFunctionDeclaration(FunctionDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Function Chamada</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function Chamada</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctionChamada(FunctionChamada object)
   {
     return null;
   }

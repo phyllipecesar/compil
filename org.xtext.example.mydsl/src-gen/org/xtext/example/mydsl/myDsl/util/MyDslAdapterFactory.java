@@ -105,6 +105,11 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createFunctionDeclarationAdapter();
       }
       @Override
+      public Adapter caseFunctionChamada(FunctionChamada object)
+      {
+        return createFunctionChamadaAdapter();
+      }
+      @Override
       public Adapter caseNoPtrStatement(NoPtrStatement object)
       {
         return createNoPtrStatementAdapter();
@@ -302,6 +307,21 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createFunctionDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.FunctionChamada <em>Function Chamada</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.myDsl.FunctionChamada
+   * @generated
+   */
+  public Adapter createFunctionChamadaAdapter()
   {
     return null;
   }

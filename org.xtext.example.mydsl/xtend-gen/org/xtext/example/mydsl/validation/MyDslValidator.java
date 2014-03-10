@@ -9,10 +9,12 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.xtext.example.mydsl.myDsl.Body;
 import org.xtext.example.mydsl.myDsl.BooleanhType;
 import org.xtext.example.mydsl.myDsl.Declaration;
+import org.xtext.example.mydsl.myDsl.FunctionChamada;
 import org.xtext.example.mydsl.myDsl.FunctionDeclaration;
 import org.xtext.example.mydsl.myDsl.IntType;
 import org.xtext.example.mydsl.myDsl.NoPtrStatement;
@@ -83,37 +85,46 @@ public class MyDslValidator extends AbstractMyDslValidator {
     this.hash.clear();
     EList<Declaration> _declarations = b.getDeclarations();
     for (final Declaration symbol : _declarations) {
-      FunctionDeclaration _funcao = symbol.getFuncao();
-      String _name = _funcao.getName();
-      boolean _notEquals = (!Objects.equal(_name, "null"));
-      if (_notEquals) {
-        FunctionDeclaration _funcao_1 = symbol.getFuncao();
-        String _name_1 = _funcao_1.getName();
-        String _plus = (_name_1 + "(");
-        this.row = _plus;
-        this.ok = 0;
-        FunctionDeclaration _funcao_2 = symbol.getFuncao();
-        EList<Parameter> _params = _funcao_2.getParams();
-        for (final Parameter symb : _params) {
-          {
-            if ((this.ok == 1)) {
-              this.row = (this.row + ",");
+      try {
+        FunctionDeclaration _funcao = symbol.getFuncao();
+        String _name = _funcao.getName();
+        boolean _notEquals = (!Objects.equal(_name, "null"));
+        if (_notEquals) {
+          FunctionDeclaration _funcao_1 = symbol.getFuncao();
+          String _name_1 = _funcao_1.getName();
+          String _plus = (_name_1 + "(");
+          this.row = _plus;
+          this.ok = 0;
+          FunctionDeclaration _funcao_2 = symbol.getFuncao();
+          EList<Parameter> _params = _funcao_2.getParams();
+          for (final Parameter symb : _params) {
+            {
+              if ((this.ok == 1)) {
+                this.row = (this.row + ",");
+              }
+              this.ok = 1;
+              Type _type = symb.getType();
+              simple_type_specifier _sts = _type.getSts();
+              String _name_2 = _sts.getName();
+              String _plus_1 = (this.row + _name_2);
+              this.row = _plus_1;
             }
-            this.ok = 1;
-            Type _type = symb.getType();
-            simple_type_specifier _sts = _type.getSts();
-            String _name_2 = _sts.getName();
-            String _plus_1 = (this.row + _name_2);
-            this.row = _plus_1;
           }
+          this.row = (this.row + ")");
+          System.out.println(this.row);
+          boolean _contains = this.hash.contains(this.row);
+          if (_contains) {
+            FunctionDeclaration _funcao_3 = symbol.getFuncao();
+            this.error((("Function \'" + this.row) + "\' already exists"), _funcao_3, null, (-1));
+          }
+          this.hash.add(this.row);
         }
-        this.row = (this.row + ")");
-        boolean _contains = this.hash.contains(this.row);
-        if (_contains) {
-          FunctionDeclaration _funcao_3 = symbol.getFuncao();
-          this.error((("Function \'" + this.row) + "\' already exists"), _funcao_3, null, (-1));
+      } catch (final Throwable _t) {
+        if (_t instanceof Exception) {
+          final Exception e = (Exception)_t;
+        } else {
+          throw Exceptions.sneakyThrow(_t);
         }
-        this.hash.add(this.row);
       }
     }
   }
@@ -277,18 +288,227 @@ public class MyDslValidator extends AbstractMyDslValidator {
     }
   }
   
+  private Body st2;
+  
+  private FunctionDeclaration st3;
+  
+  private EObject ret2;
+  
+  public String lookUpType(final ReturnExpr d) {
+    if ((d instanceof IntType)) {
+      return "int";
+    } else {
+      if ((d instanceof BooleanhType)) {
+        return "bool";
+      } else {
+        if ((d instanceof StringhType)) {
+          return "string";
+        } else {
+          if ((d instanceof Variable)) {
+            this.ret2 = d;
+            boolean _while = (!((this.ret2 instanceof FunctionDeclaration) || (this.ret2 instanceof Body)));
+            while (_while) {
+              EObject _eContainer = this.ret2.eContainer();
+              this.ret2 = _eContainer;
+              _while = (!((this.ret2 instanceof FunctionDeclaration) || (this.ret2 instanceof Body)));
+            }
+            if ((this.ret2 instanceof FunctionDeclaration)) {
+              this.st3 = ((FunctionDeclaration)this.ret2);
+              EList<Parameter> _params = this.st3.getParams();
+              for (final Parameter p : _params) {
+                String _name = p.getName();
+                String _name_1 = ((Variable)d).getName();
+                boolean _equals = _name.equals(_name_1);
+                if (_equals) {
+                  Type _type = p.getType();
+                  simple_type_specifier _sts = _type.getSts();
+                  return _sts.getName();
+                }
+              }
+              NoPtrStatement _escopo = this.st3.getEscopo();
+              EList<VarDecl> _variaveis = _escopo.getVariaveis();
+              for (final VarDecl v : _variaveis) {
+                String _name_2 = v.getName();
+                String _name_3 = ((Variable)d).getName();
+                boolean _equals_1 = _name_2.equals(_name_3);
+                if (_equals_1) {
+                  Type _type_1 = v.getType();
+                  simple_type_specifier _sts_1 = _type_1.getSts();
+                  return _sts_1.getName();
+                }
+              }
+            }
+            boolean _while_1 = (!(this.ret2 instanceof Body));
+            while (_while_1) {
+              EObject _eContainer = this.ret2.eContainer();
+              this.ret2 = _eContainer;
+              _while_1 = (!(this.ret2 instanceof Body));
+            }
+            if ((this.ret2 instanceof Body)) {
+              this.st2 = ((Body)this.ret2);
+              EList<Declaration> _declarations = this.st2.getDeclarations();
+              for (final Declaration d2 : _declarations) {
+                try {
+                  VarDecl _variaveis_1 = d2.getVariaveis();
+                  String _name_4 = _variaveis_1.getName();
+                  String _name_5 = ((Variable)d).getName();
+                  boolean _equals_2 = _name_4.equals(_name_5);
+                  if (_equals_2) {
+                    VarDecl _variaveis_2 = d2.getVariaveis();
+                    Type _type_2 = _variaveis_2.getType();
+                    simple_type_specifier _sts_2 = _type_2.getSts();
+                    return _sts_2.getName();
+                  }
+                } catch (final Throwable _t) {
+                  if (_t instanceof Exception) {
+                    final Exception e = (Exception)_t;
+                  } else {
+                    throw Exceptions.sneakyThrow(_t);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    return "No Type Found";
+  }
+  
+  private boolean ccffound;
+  
+  private String gotmsg;
+  
+  private Body st;
+  
+  private EObject ret;
+  
+  private String auxp;
+  
+  private String fName;
+  
+  private String fName2;
+  
+  private boolean auxp2;
+  
+  @Check
+  public void checkCallFunction(final FunctionChamada f) {
+    this.ccffound = false;
+    this.fName = "";
+    this.ret = f;
+    boolean _while = (!(this.ret instanceof Body));
+    while (_while) {
+      EObject _eContainer = this.ret.eContainer();
+      this.ret = _eContainer;
+      _while = (!(this.ret instanceof Body));
+    }
+    if ((this.ret instanceof Body)) {
+      this.st = ((Body)this.ret);
+    }
+    String _name = f.getName();
+    String _plus = ("There is no function \'" + _name);
+    String _plus_1 = (_plus + "(");
+    this.gotmsg = _plus_1;
+    String _name_1 = f.getName();
+    String _plus_2 = (_name_1 + "(");
+    this.fName = _plus_2;
+    EList<ReturnExpr> _params = f.getParams();
+    for (final ReturnExpr d : _params) {
+      {
+        if (this.ccffound) {
+          this.fName = (this.fName + ", ");
+          this.gotmsg = (this.gotmsg + ", ");
+        }
+        this.ccffound = true;
+        String _lookUpType = this.lookUpType(d);
+        this.auxp = _lookUpType;
+        boolean _equals = this.auxp.equals("No Type Found");
+        if (_equals) {
+          this.error("This variable is not defined", d, null, (-1));
+          this.auxp = "Unknown-Type";
+        }
+        this.fName = (this.fName + this.auxp);
+        this.gotmsg = (this.gotmsg + this.auxp);
+      }
+    }
+    this.fName = (this.fName + ")");
+    this.gotmsg = (this.gotmsg + ")");
+    this.ccffound = false;
+    EList<Declaration> _declarations = this.st.getDeclarations();
+    for (final Declaration d_1 : _declarations) {
+      try {
+        String _name_2 = f.getName();
+        FunctionDeclaration _funcao = d_1.getFuncao();
+        String _name_3 = _funcao.getName();
+        boolean _equals = _name_2.equals(_name_3);
+        if (_equals) {
+          EList<ReturnExpr> _params_1 = f.getParams();
+          int _size = _params_1.size();
+          FunctionDeclaration _funcao_1 = d_1.getFuncao();
+          EList<Parameter> _params_2 = _funcao_1.getParams();
+          int _size_1 = _params_2.size();
+          boolean _equals_1 = (_size == _size_1);
+          if (_equals_1) {
+            this.auxp2 = false;
+            FunctionDeclaration _funcao_2 = d_1.getFuncao();
+            String _name_4 = _funcao_2.getName();
+            String _plus_3 = (_name_4 + "(");
+            this.fName2 = _plus_3;
+            FunctionDeclaration _funcao_3 = d_1.getFuncao();
+            EList<Parameter> _params_3 = _funcao_3.getParams();
+            for (final Parameter p : _params_3) {
+              {
+                if (this.auxp2) {
+                  this.fName2 = (this.fName2 + ", ");
+                }
+                this.auxp2 = true;
+                Type _type = p.getType();
+                simple_type_specifier _sts = _type.getSts();
+                String _name_5 = _sts.getName();
+                String _plus_4 = (this.fName2 + _name_5);
+                this.fName2 = _plus_4;
+              }
+            }
+            this.fName2 = (this.fName2 + ")");
+            boolean _equals_2 = this.fName.equals(this.fName2);
+            if (_equals_2) {
+              this.ccffound = true;
+            }
+          }
+        }
+      } catch (final Throwable _t) {
+        if (_t instanceof Exception) {
+          final Exception e = (Exception)_t;
+        } else {
+          throw Exceptions.sneakyThrow(_t);
+        }
+      }
+    }
+    if ((!this.ccffound)) {
+      this.error(this.gotmsg, f, null, (-1));
+    }
+  }
+  
   @Check
   public void checkVariableAlreadyExistsBody(final Body st) {
     this.hash.clear();
-    EList<VarDecl> _variaveis = st.getVariaveis();
-    for (final VarDecl variavel : _variaveis) {
-      {
-        final String nome = variavel.getName();
+    EList<Declaration> _declarations = st.getDeclarations();
+    for (final Declaration variavel : _declarations) {
+      try {
+        VarDecl _variaveis = variavel.getVariaveis();
+        final String nome = _variaveis.getName();
         boolean _contains = this.hash.contains(nome);
         if (_contains) {
-          this.error((("Variable \'" + nome) + "\' already exists"), variavel, null, (-1));
+          VarDecl _variaveis_1 = variavel.getVariaveis();
+          this.error((("Variable \'" + nome) + "\' already exists"), _variaveis_1, null, (-1));
         }
         this.hash.add(nome);
+      } catch (final Throwable _t) {
+        if (_t instanceof Exception) {
+          final Exception e = (Exception)_t;
+        } else {
+          throw Exceptions.sneakyThrow(_t);
+        }
       }
     }
   }
