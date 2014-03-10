@@ -6,15 +6,23 @@ package org.xtext.example.mydsl.validation;
 import com.google.common.base.Objects;
 import java.util.HashSet;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.xtext.example.mydsl.myDsl.Body;
+import org.xtext.example.mydsl.myDsl.BooleanhType;
 import org.xtext.example.mydsl.myDsl.Declaration;
 import org.xtext.example.mydsl.myDsl.FunctionDeclaration;
+import org.xtext.example.mydsl.myDsl.IntType;
+import org.xtext.example.mydsl.myDsl.NoPtrStatement;
 import org.xtext.example.mydsl.myDsl.Parameter;
 import org.xtext.example.mydsl.myDsl.Return;
+import org.xtext.example.mydsl.myDsl.ReturnExpr;
+import org.xtext.example.mydsl.myDsl.StringhType;
 import org.xtext.example.mydsl.myDsl.Type;
+import org.xtext.example.mydsl.myDsl.VarDecl;
+import org.xtext.example.mydsl.myDsl.Variable;
 import org.xtext.example.mydsl.myDsl.simple_type_specifier;
 import org.xtext.example.mydsl.validation.AbstractMyDslValidator;
 
@@ -34,9 +42,36 @@ public class MyDslValidator extends AbstractMyDslValidator {
   
   @Check
   public void checkParamsFunction(final FunctionDeclaration funcao) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method variavel is undefined for the type MyDslValidator"
-      + "\nvariaveis cannot be resolved");
+    this.hash.clear();
+    EList<Parameter> _params = funcao.getParams();
+    for (final Parameter symbol : _params) {
+      {
+        final String nome = symbol.getName();
+        boolean _contains = this.hash.contains(nome);
+        if (_contains) {
+          Type _type = symbol.getType();
+          simple_type_specifier _sts = _type.getSts();
+          String _name = _sts.getName();
+          String _plus = ("Parameter \'" + _name);
+          String _plus_1 = (_plus + " ");
+          String _plus_2 = (_plus_1 + nome);
+          String _plus_3 = (_plus_2 + "\' already exists");
+          this.error(_plus_3, symbol, null, (-1));
+        }
+        this.hash.add(nome);
+      }
+    }
+    NoPtrStatement _escopo = funcao.getEscopo();
+    EList<VarDecl> _variaveis = _escopo.getVariaveis();
+    for (final VarDecl variavel : _variaveis) {
+      {
+        final String nome = variavel.getName();
+        boolean _contains = this.hash.contains(nome);
+        if (_contains) {
+          this.error((("declaration of variable \'" + nome) + "\' shadows a paramater"), variavel, null, (-1));
+        }
+      }
+    }
   }
   
   private String row;
@@ -83,44 +118,178 @@ public class MyDslValidator extends AbstractMyDslValidator {
     }
   }
   
+  private boolean funcaoExiste = false;
+  
+  private EObject rt;
+  
   @Check
   public void checkReturnOnlyOnFunction(final Return r) {
+    this.funcaoExiste = false;
     EObject _eContainer = r.eContainer();
-    boolean _equals = Objects.equal(_eContainer, null);
-    if (_equals) {
-      this.error("return can only be used inside of functions", r, null, (-1));
+    this.rt = _eContainer;
+    boolean _notEquals = (!Objects.equal(this.rt, null));
+    boolean _while = _notEquals;
+    while (_while) {
+      {
+        if ((this.rt instanceof FunctionDeclaration)) {
+          this.funcaoExiste = true;
+        }
+        EObject _eContainer_1 = this.rt.eContainer();
+        this.rt = _eContainer_1;
+      }
+      boolean _notEquals_1 = (!Objects.equal(this.rt, null));
+      _while = _notEquals_1;
     }
-    EObject _eContainer_1 = r.eContainer();
-    Class<? extends EObject> _class = _eContainer_1.getClass();
-    System.out.println(_class);
-    EObject _eContainer_2 = r.eContainer();
-    EObject _eContainer_3 = _eContainer_2.eContainer();
-    boolean _equals_1 = Objects.equal(_eContainer_3, null);
-    if (_equals_1) {
-      this.error("return can only be used inside of functions", r, null, (-1));
-    }
-    EObject _eContainer_4 = r.eContainer();
-    EObject _eContainer_5 = _eContainer_4.eContainer();
-    EObject _eContainer_6 = _eContainer_5.eContainer();
-    boolean _equals_2 = Objects.equal(_eContainer_6, null);
-    if (_equals_2) {
-      this.error("return can only be used inside of functions", r, null, (-1));
-    }
-    EObject _eContainer_7 = r.eContainer();
-    EObject _eContainer_8 = _eContainer_7.eContainer();
-    EObject _eContainer_9 = _eContainer_8.eContainer();
-    EObject _eContainer_10 = _eContainer_9.eContainer();
-    Class<? extends EObject> _class_1 = _eContainer_10.getClass();
-    boolean _notEquals = (!Objects.equal(_class_1, FunctionDeclaration.class));
-    if (_notEquals) {
+    if ((this.funcaoExiste == false)) {
       this.error("return can only be used inside of functions", r, null, (-1));
     }
   }
   
+  private EObject rt2;
+  
+  private EObject rt4;
+  
+  private Variable v;
+  
+  private FunctionDeclaration rt3;
+  
+  private String tipoCRT;
+  
+  private String tipoCRT2;
+  
   @Check
-  public void checkVariableAlreadyExists(final /* statement */Object st) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nvariavel cannot be resolved"
-      + "\nvariaveis cannot be resolved");
+  public void checkReturnTypeFunction(final Return r) {
+    EObject _eContainer = r.eContainer();
+    this.rt2 = _eContainer;
+    final ReturnExpr tipo = r.getRettype();
+    boolean _notEquals = (!Objects.equal(this.rt2, null));
+    boolean _while = _notEquals;
+    while (_while) {
+      {
+        if ((this.rt2 instanceof FunctionDeclaration)) {
+          EClass _eClass = tipo.eClass();
+          String _name = _eClass.getName();
+          boolean _notEquals_1 = (!Objects.equal(_name, null));
+          if (_notEquals_1) {
+            if ((tipo instanceof Variable)) {
+              this.v = ((Variable)tipo);
+              this.tipoCRT = "Tipo NAo Declarado";
+              EList<Parameter> _params = ((FunctionDeclaration)this.rt2).getParams();
+              for (final Parameter symbol : _params) {
+                {
+                  final String nome = symbol.getName();
+                  String _name_1 = this.v.getName();
+                  boolean _equals = nome.equals(_name_1);
+                  if (_equals) {
+                    Type _type = symbol.getType();
+                    simple_type_specifier _sts = _type.getSts();
+                    String _name_2 = _sts.getName();
+                    this.tipoCRT = _name_2;
+                  }
+                }
+              }
+              NoPtrStatement _escopo = ((FunctionDeclaration)this.rt2).getEscopo();
+              EList<VarDecl> _variaveis = _escopo.getVariaveis();
+              for (final VarDecl variavel : _variaveis) {
+                {
+                  final String nome = variavel.getName();
+                  String _name_1 = this.v.getName();
+                  boolean _equals = nome.equals(_name_1);
+                  if (_equals) {
+                    Type _type = variavel.getType();
+                    simple_type_specifier _sts = _type.getSts();
+                    String _name_2 = _sts.getName();
+                    this.tipoCRT = _name_2;
+                  }
+                }
+              }
+            } else {
+              if ((tipo instanceof IntType)) {
+                this.tipoCRT = "int";
+              } else {
+                if ((tipo instanceof BooleanhType)) {
+                  this.tipoCRT = "bool";
+                } else {
+                  if ((tipo instanceof StringhType)) {
+                    this.tipoCRT = "string";
+                  }
+                }
+              }
+            }
+            Type _type = ((FunctionDeclaration)this.rt2).getType();
+            simple_type_specifier _sts = _type.getSts();
+            String _name_1 = _sts.getName();
+            this.tipoCRT2 = _name_1;
+            System.out.println(("Tipo 1" + this.tipoCRT));
+            System.out.println(("Tipo 2" + this.tipoCRT2));
+            boolean _equals = this.tipoCRT2.equals("void");
+            if (_equals) {
+              this.error("A \'void\' function should not have a return", r, null, (-1));
+            } else {
+              boolean _equals_1 = this.tipoCRT.equals("Tipo NAo Declarado");
+              if (_equals_1) {
+                this.error("Your variable was not declared, neither is an argument.", r, null, (-1));
+              } else {
+                boolean _equals_2 = this.tipoCRT2.equals(this.tipoCRT);
+                boolean _not = (!_equals_2);
+                if (_not) {
+                  this.error((((("Return type mismatch, expected \'" + this.tipoCRT2) + "\' found \'") + this.tipoCRT) + "\'."), r, null, (-1));
+                }
+              }
+            }
+          } else {
+            Type _type_1 = ((FunctionDeclaration)this.rt2).getType();
+            simple_type_specifier _sts_1 = _type_1.getSts();
+            String _name_2 = _sts_1.getName();
+            boolean _equals_3 = _name_2.equals("void");
+            boolean _not_1 = (!_equals_3);
+            if (_not_1) {
+              Type _type_2 = ((FunctionDeclaration)this.rt2).getType();
+              simple_type_specifier _sts_2 = _type_2.getSts();
+              String _name_3 = _sts_2.getName();
+              String _plus = ("A function of type \'" + _name_3);
+              String _plus_1 = (_plus + "\' must have a valid return type.");
+              this.error(_plus_1, r, null, (-1));
+            }
+          }
+        }
+        EObject _eContainer_1 = this.rt2.eContainer();
+        this.rt2 = _eContainer_1;
+      }
+      boolean _notEquals_1 = (!Objects.equal(this.rt2, null));
+      _while = _notEquals_1;
+    }
+  }
+  
+  @Check
+  public void checkVariableAlreadyExists(final NoPtrStatement st) {
+    this.hash.clear();
+    EList<VarDecl> _variaveis = st.getVariaveis();
+    for (final VarDecl variavel : _variaveis) {
+      {
+        final String nome = variavel.getName();
+        boolean _contains = this.hash.contains(nome);
+        if (_contains) {
+          this.error((("Variable \'" + nome) + "\' already exists"), variavel, null, (-1));
+        }
+        this.hash.add(nome);
+      }
+    }
+  }
+  
+  @Check
+  public void checkVariableAlreadyExistsBody(final Body st) {
+    this.hash.clear();
+    EList<VarDecl> _variaveis = st.getVariaveis();
+    for (final VarDecl variavel : _variaveis) {
+      {
+        final String nome = variavel.getName();
+        boolean _contains = this.hash.contains(nome);
+        if (_contains) {
+          this.error((("Variable \'" + nome) + "\' already exists"), variavel, null, (-1));
+        }
+        this.hash.add(nome);
+      }
+    }
   }
 }

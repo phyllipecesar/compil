@@ -9,9 +9,11 @@
       fileExtensions="mydsl" ecorePackage="MyDsl.ecore#/">
     <genClasses ecoreClass="MyDsl.ecore#//Model"/>
     <genClasses ecoreClass="MyDsl.ecore#//Body">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Body/variaveis"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Body/declarations"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Declaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Declaration/ditryD"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Declaration/funcao"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Declaration/dirtyE"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Declaration/dirtyA"/>
@@ -28,7 +30,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//FunctionDeclaration/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//FunctionDeclaration/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//FunctionDeclaration/params"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//FunctionDeclaration/escopo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//FunctionDeclaration/escopo"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//NoPtrStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NoPtrStatement/variaveis"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NoPtrStatement/dirtyB"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//NoPtrStatement/dirty"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Parameter">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Parameter/type"/>
@@ -47,7 +54,10 @@
     <genClasses ecoreClass="MyDsl.ecore#//simple_declaration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//simple_declaration/variavel"/>
     </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//jump_statement"/>
+    <genClasses ecoreClass="MyDsl.ecore#//Return">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Return/rettype"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//ReturnExpr"/>
     <genClasses ecoreClass="MyDsl.ecore#//declaration_statement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//declaration_statement/variaveis"/>
     </genClasses>
@@ -58,10 +68,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//LKS/dirty"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//IntType"/>
-    <genClasses ecoreClass="MyDsl.ecore#//BoolType"/>
+    <genClasses ecoreClass="MyDsl.ecore#//BooleanType"/>
+    <genClasses ecoreClass="MyDsl.ecore#//StringType"/>
     <genClasses ecoreClass="MyDsl.ecore#//UnknownType"/>
-    <genClasses ecoreClass="MyDsl.ecore#//Return">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Return/exp"/>
+    <genClasses ecoreClass="MyDsl.ecore#//BooleanhType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//BooleanhType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//StringhType"/>
+    <genClasses ecoreClass="MyDsl.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Variable/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

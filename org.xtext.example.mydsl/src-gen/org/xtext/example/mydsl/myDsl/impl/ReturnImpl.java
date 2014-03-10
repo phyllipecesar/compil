@@ -3,13 +3,17 @@
 package org.xtext.example.mydsl.myDsl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.Return;
+import org.xtext.example.mydsl.myDsl.ReturnExpr;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,33 +22,23 @@ import org.xtext.example.mydsl.myDsl.Return;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.ReturnImpl#getExp <em>Exp</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.ReturnImpl#getRettype <em>Rettype</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ReturnImpl extends jump_statementImpl implements Return
+public class ReturnImpl extends MinimalEObjectImpl.Container implements Return
 {
   /**
-   * The default value of the '{@link #getExp() <em>Exp</em>}' attribute.
+   * The cached value of the '{@link #getRettype() <em>Rettype</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExp()
+   * @see #getRettype()
    * @generated
    * @ordered
    */
-  protected static final String EXP_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getExp() <em>Exp</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getExp()
-   * @generated
-   * @ordered
-   */
-  protected String exp = EXP_EDEFAULT;
+  protected ReturnExpr rettype;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,9 +66,9 @@ public class ReturnImpl extends jump_statementImpl implements Return
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getExp()
+  public ReturnExpr getRettype()
   {
-    return exp;
+    return rettype;
   }
 
   /**
@@ -82,12 +76,53 @@ public class ReturnImpl extends jump_statementImpl implements Return
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExp(String newExp)
+  public NotificationChain basicSetRettype(ReturnExpr newRettype, NotificationChain msgs)
   {
-    String oldExp = exp;
-    exp = newExp;
+    ReturnExpr oldRettype = rettype;
+    rettype = newRettype;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.RETURN__EXP, oldExp, exp));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.RETURN__RETTYPE, oldRettype, newRettype);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRettype(ReturnExpr newRettype)
+  {
+    if (newRettype != rettype)
+    {
+      NotificationChain msgs = null;
+      if (rettype != null)
+        msgs = ((InternalEObject)rettype).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.RETURN__RETTYPE, null, msgs);
+      if (newRettype != null)
+        msgs = ((InternalEObject)newRettype).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.RETURN__RETTYPE, null, msgs);
+      msgs = basicSetRettype(newRettype, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.RETURN__RETTYPE, newRettype, newRettype));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case MyDslPackage.RETURN__RETTYPE:
+        return basicSetRettype(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -100,8 +135,8 @@ public class ReturnImpl extends jump_statementImpl implements Return
   {
     switch (featureID)
     {
-      case MyDslPackage.RETURN__EXP:
-        return getExp();
+      case MyDslPackage.RETURN__RETTYPE:
+        return getRettype();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -116,8 +151,8 @@ public class ReturnImpl extends jump_statementImpl implements Return
   {
     switch (featureID)
     {
-      case MyDslPackage.RETURN__EXP:
-        setExp((String)newValue);
+      case MyDslPackage.RETURN__RETTYPE:
+        setRettype((ReturnExpr)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -133,8 +168,8 @@ public class ReturnImpl extends jump_statementImpl implements Return
   {
     switch (featureID)
     {
-      case MyDslPackage.RETURN__EXP:
-        setExp(EXP_EDEFAULT);
+      case MyDslPackage.RETURN__RETTYPE:
+        setRettype((ReturnExpr)null);
         return;
     }
     super.eUnset(featureID);
@@ -150,27 +185,10 @@ public class ReturnImpl extends jump_statementImpl implements Return
   {
     switch (featureID)
     {
-      case MyDslPackage.RETURN__EXP:
-        return EXP_EDEFAULT == null ? exp != null : !EXP_EDEFAULT.equals(exp);
+      case MyDslPackage.RETURN__RETTYPE:
+        return rettype != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (exp: ");
-    result.append(exp);
-    result.append(')');
-    return result.toString();
   }
 
 } //ReturnImpl

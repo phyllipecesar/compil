@@ -115,6 +115,13 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MyDslPackage.NO_PTR_STATEMENT:
+      {
+        NoPtrStatement noPtrStatement = (NoPtrStatement)theEObject;
+        T result = caseNoPtrStatement(noPtrStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MyDslPackage.PARAMETER:
       {
         Parameter parameter = (Parameter)theEObject;
@@ -150,10 +157,17 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.JUMP_STATEMENT:
+      case MyDslPackage.RETURN:
       {
-        jump_statement jump_statement = (jump_statement)theEObject;
-        T result = casejump_statement(jump_statement);
+        Return return_ = (Return)theEObject;
+        T result = caseReturn(return_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.RETURN_EXPR:
+      {
+        ReturnExpr returnExpr = (ReturnExpr)theEObject;
+        T result = caseReturnExpr(returnExpr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -184,14 +198,23 @@ public class MyDslSwitch<T> extends Switch<T>
         IntType intType = (IntType)theEObject;
         T result = caseIntType(intType);
         if (result == null) result = casesimple_type_specifier(intType);
+        if (result == null) result = caseReturnExpr(intType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.BOOL_TYPE:
+      case MyDslPackage.BOOLEAN_TYPE:
       {
-        BoolType boolType = (BoolType)theEObject;
-        T result = caseBoolType(boolType);
-        if (result == null) result = casesimple_type_specifier(boolType);
+        BooleanType booleanType = (BooleanType)theEObject;
+        T result = caseBooleanType(booleanType);
+        if (result == null) result = casesimple_type_specifier(booleanType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.STRING_TYPE:
+      {
+        StringType stringType = (StringType)theEObject;
+        T result = caseStringType(stringType);
+        if (result == null) result = casesimple_type_specifier(stringType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -203,11 +226,27 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.RETURN:
+      case MyDslPackage.BOOLEANH_TYPE:
       {
-        Return return_ = (Return)theEObject;
-        T result = caseReturn(return_);
-        if (result == null) result = casejump_statement(return_);
+        BooleanhType booleanhType = (BooleanhType)theEObject;
+        T result = caseBooleanhType(booleanhType);
+        if (result == null) result = caseReturnExpr(booleanhType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.STRINGH_TYPE:
+      {
+        StringhType stringhType = (StringhType)theEObject;
+        T result = caseStringhType(stringhType);
+        if (result == null) result = caseReturnExpr(stringhType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.VARIABLE:
+      {
+        Variable variable = (Variable)theEObject;
+        T result = caseVariable(variable);
+        if (result == null) result = caseReturnExpr(variable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -312,6 +351,22 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>No Ptr Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>No Ptr Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNoPtrStatement(NoPtrStatement object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Parameter</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -392,17 +447,33 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>jump statement</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Return</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>jump statement</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Return</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casejump_statement(jump_statement object)
+  public T caseReturn(Return object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Return Expr</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Return Expr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReturnExpr(ReturnExpr object)
   {
     return null;
   }
@@ -472,17 +543,33 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Bool Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Bool Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBoolType(BoolType object)
+  public T caseBooleanType(BooleanType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringType(StringType object)
   {
     return null;
   }
@@ -504,17 +591,49 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Return</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Booleanh Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Return</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Booleanh Type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseReturn(Return object)
+  public T caseBooleanhType(BooleanhType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Stringh Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Stringh Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringhType(StringhType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariable(Variable object)
   {
     return null;
   }

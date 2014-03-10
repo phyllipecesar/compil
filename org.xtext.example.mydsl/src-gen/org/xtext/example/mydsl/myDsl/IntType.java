@@ -13,6 +13,6 @@ package org.xtext.example.mydsl.myDsl;
  * @model
  * @generated
  */
-public interface IntType extends simple_type_specifier
+public interface IntType extends simple_type_specifier, ReturnExpr
 {
 } // IntType

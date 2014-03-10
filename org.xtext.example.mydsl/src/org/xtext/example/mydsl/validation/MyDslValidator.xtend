@@ -9,7 +9,6 @@ import java.*
 import java.util.TreeSet
 import java.util.List
 import org.eclipse.xtext.validation.Check
-import org.xtext.example.mydsl.myDsl.statement
 import java.util.HashSet
 import java.util.HashMap
 import org.xtext.example.mydsl.myDsl.block_declaration
@@ -19,6 +18,13 @@ import org.xtext.example.mydsl.myDsl.Parameter
 import org.xtext.example.mydsl.myDsl.Return
 import org.antlr.misc.Utils
 import org.xtext.example.mydsl.myDsl.Declaration
+import org.xtext.example.mydsl.myDsl.VarDecl
+import org.xtext.example.mydsl.myDsl.NoPtrStatement
+import org.eclipse.emf.ecore.EObject
+import org.xtext.example.mydsl.myDsl.Variable
+import org.xtext.example.mydsl.myDsl.IntType
+import org.xtext.example.mydsl.myDsl.BooleanhType
+import org.xtext.example.mydsl.myDsl.StringhType
 
 /**
  * Custom validation rules. 
@@ -39,11 +45,10 @@ def checkParamsFunction(FunctionDeclaration funcao) {
 			}
 			hash.add(nome);
 	}
-	for (block_declaration block: funcao.escopo.variavel.variaveis) {
-		val nome = block.variavel.variavel.name;
+	for (VarDecl variavel: funcao.escopo.variaveis) {
+		val nome = variavel.name;
 		if (hash.contains(nome)) {
-			block.variavel.variavel.type
-			error("declaration of variable '" + nome + "' shadows a paramater", block.variavel.variavel, null, -1);
+			error("declaration of variable '" + nome + "' shadows a paramater", variavel, null, -1);
 			
 		}
 	}
@@ -73,36 +78,102 @@ def checkFunctionAlreadyExists(Body b) {
 }
 
 
+boolean funcaoExiste = false;
+EObject rt;
 @Check
 def checkReturnOnlyOnFunction(Return r) {
-	if (r.eContainer == null) {
-			error( "return can only be used inside of functions", r, null, -1);
+	funcaoExiste = false;
+	rt = 	r.eContainer;
+	while (rt != null) {
+		if (rt instanceof FunctionDeclaration) {
+			funcaoExiste = true;
+		}	
+		rt = rt.eContainer;
 	}
-	System.out.println(r.eContainer.class);
-	if (r.eContainer.eContainer == null) {
-			error( "return can only be used inside of functions", r, null, -1);
-	}
-	if (r.eContainer.eContainer.eContainer == null) {
-			error( "return can only be used inside of functions", r, null, -1);
-	}
-	
-	if (r.eContainer.eContainer.eContainer.eContainer.class != FunctionDeclaration) {
+	if (funcaoExiste == false) {
 			error( "return can only be used inside of functions", r, null, -1);
 	}
 	
 }
+
+EObject rt2;
+EObject rt4;
+Variable v;
+FunctionDeclaration rt3;
+String tipoCRT;
+String tipoCRT2;
 @Check
-def checkVariableAlreadyExists(statement st) {
+def checkReturnTypeFunction(Return r) {
+	rt2 = 	r.eContainer;
+	val tipo = r.rettype;
+	while (rt2 != null) {
+		if (rt2 instanceof FunctionDeclaration) {
+			if (tipo.eClass.name != null) {
+			if (tipo instanceof Variable) {
+				v = tipo;
+				tipoCRT = "Tipo NAo Declarado";
+				for (Parameter symbol: rt2.params) {
+					val nome = symbol.name;
+					if (nome.equals(v.name)) {
+						tipoCRT = symbol.type.sts.name;
+					}
+				}
+				for (VarDecl variavel: rt2.escopo.variaveis) {
+					val nome = variavel.name;
+					if (nome.equals(v.name)) {
+						tipoCRT = variavel.type.sts.name;
+					}
+				}
+			} else if (tipo instanceof IntType) {
+				tipoCRT = 'int';	
+			} else if (tipo instanceof BooleanhType) {
+				tipoCRT = 'bool';	
+			} else if (tipo instanceof StringhType) {
+				tipoCRT = 'string';	
+			}
+			tipoCRT2 = rt2.type.sts.name;
+			System.out.println("Tipo 1" + tipoCRT);
+			System.out.println("Tipo 2" + tipoCRT2);
+			if (tipoCRT2.equals("void")) {
+				error("A 'void' function should not have a return", r, null, -1);
+			}
+			else if (tipoCRT.equals("Tipo NAo Declarado")) {
+				error("Your variable was not declared, neither is an argument.", r, null, -1);
+			}
+			else if (!tipoCRT2.equals(tipoCRT)) {
+				error("Return type mismatch, expected '" + tipoCRT2 + "' found '" + tipoCRT + "'.", r, null, -1);
+			}
+			} else if (!rt2.type.sts.name.equals("void")) {
+					error("A function of type '" + rt2.type.sts.name + "' must have a valid return type.", r, null, -1);
+		
+			}
+		}	
+		rt2 = rt2.eContainer;
+	}
+}
+@Check
+def checkVariableAlreadyExists(NoPtrStatement st) {
 		hash.clear();
-		for (block_declaration block : st.variavel.variaveis) {
-			val nome = block.variavel.variavel.name;
+		for (VarDecl variavel : st.variaveis) {
+			val nome = variavel.name;
 			if (hash.contains(nome)) {
-				error("Variable '" + nome + "' already exists", block.variavel.variavel, null, -1);
+				error("Variable '" + nome + "' already exists", variavel, null, -1);
 			}
 			hash.add(nome);
-		}
-		
-		
+		}	
+	
+}
+
+@Check
+def checkVariableAlreadyExistsBody(Body st) {
+		hash.clear();
+		for (VarDecl variavel : st.variaveis) {
+			val nome = variavel.name;
+			if (hash.contains(nome)) {
+				error("Variable '" + nome + "' already exists", variavel, null, -1);
+			}
+			hash.add(nome);
+		}	
 	
 }
 //  public static val INVALID_NAME = 'invalidName'

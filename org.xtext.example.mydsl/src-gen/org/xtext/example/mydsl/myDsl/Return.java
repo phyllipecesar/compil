@@ -2,6 +2,7 @@
  */
 package org.xtext.example.mydsl.myDsl;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -11,7 +12,7 @@ package org.xtext.example.mydsl.myDsl;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Return#getExp <em>Exp</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Return#getRettype <em>Rettype</em>}</li>
  * </ul>
  * </p>
  *
@@ -19,32 +20,32 @@ package org.xtext.example.mydsl.myDsl;
  * @model
  * @generated
  */
-public interface Return extends jump_statement
+public interface Return extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Exp</b></em>' attribute.
+   * Returns the value of the '<em><b>Rettype</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Exp</em>' attribute isn't clear,
+   * If the meaning of the '<em>Rettype</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Exp</em>' attribute.
-   * @see #setExp(String)
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getReturn_Exp()
-   * @model
+   * @return the value of the '<em>Rettype</em>' containment reference.
+   * @see #setRettype(ReturnExpr)
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getReturn_Rettype()
+   * @model containment="true"
    * @generated
    */
-  String getExp();
+  ReturnExpr getRettype();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Return#getExp <em>Exp</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Return#getRettype <em>Rettype</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Exp</em>' attribute.
-   * @see #getExp()
+   * @param value the new value of the '<em>Rettype</em>' containment reference.
+   * @see #getRettype()
    * @generated
    */
-  void setExp(String value);
+  void setRettype(ReturnExpr value);
 
 } // Return

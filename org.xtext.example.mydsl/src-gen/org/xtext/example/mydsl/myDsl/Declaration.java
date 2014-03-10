@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Declaration#getDitryD <em>Ditry D</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Declaration#getFuncao <em>Funcao</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Declaration#getDirtyE <em>Dirty E</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Declaration#getDirtyA <em>Dirty A</em>}</li>
@@ -28,6 +29,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Declaration extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Ditry D</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Ditry D</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Ditry D</em>' containment reference.
+   * @see #setDitryD(Return)
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getDeclaration_DitryD()
+   * @model containment="true"
+   * @generated
+   */
+  Return getDitryD();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Declaration#getDitryD <em>Ditry D</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Ditry D</em>' containment reference.
+   * @see #getDitryD()
+   * @generated
+   */
+  void setDitryD(Return value);
+
   /**
    * Returns the value of the '<em><b>Funcao</b></em>' containment reference.
    * <!-- begin-user-doc -->

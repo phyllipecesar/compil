@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.xtext.example.mydsl.myDsl.Declaration;
 import org.xtext.example.mydsl.myDsl.FunctionDeclaration;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
+import org.xtext.example.mydsl.myDsl.Return;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +24,7 @@ import org.xtext.example.mydsl.myDsl.MyDslPackage;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.DeclarationImpl#getDitryD <em>Ditry D</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.DeclarationImpl#getFuncao <em>Funcao</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.DeclarationImpl#getDirtyE <em>Dirty E</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.DeclarationImpl#getDirtyA <em>Dirty A</em>}</li>
@@ -37,6 +39,16 @@ import org.xtext.example.mydsl.myDsl.MyDslPackage;
  */
 public class DeclarationImpl extends MinimalEObjectImpl.Container implements Declaration
 {
+  /**
+   * The cached value of the '{@link #getDitryD() <em>Ditry D</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDitryD()
+   * @generated
+   * @ordered
+   */
+  protected Return ditryD;
+
   /**
    * The cached value of the '{@link #getFuncao() <em>Funcao</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -176,6 +188,54 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
   protected EClass eStaticClass()
   {
     return MyDslPackage.Literals.DECLARATION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Return getDitryD()
+  {
+    return ditryD;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetDitryD(Return newDitryD, NotificationChain msgs)
+  {
+    Return oldDitryD = ditryD;
+    ditryD = newDitryD;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.DECLARATION__DITRY_D, oldDitryD, newDitryD);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDitryD(Return newDitryD)
+  {
+    if (newDitryD != ditryD)
+    {
+      NotificationChain msgs = null;
+      if (ditryD != null)
+        msgs = ((InternalEObject)ditryD).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.DECLARATION__DITRY_D, null, msgs);
+      if (newDitryD != null)
+        msgs = ((InternalEObject)newDitryD).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.DECLARATION__DITRY_D, null, msgs);
+      msgs = basicSetDitryD(newDitryD, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.DECLARATION__DITRY_D, newDitryD, newDitryD));
   }
 
   /**
@@ -399,6 +459,8 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
   {
     switch (featureID)
     {
+      case MyDslPackage.DECLARATION__DITRY_D:
+        return basicSetDitryD(null, msgs);
       case MyDslPackage.DECLARATION__FUNCAO:
         return basicSetFuncao(null, msgs);
       case MyDslPackage.DECLARATION__DIRTY:
@@ -417,6 +479,8 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
   {
     switch (featureID)
     {
+      case MyDslPackage.DECLARATION__DITRY_D:
+        return getDitryD();
       case MyDslPackage.DECLARATION__FUNCAO:
         return getFuncao();
       case MyDslPackage.DECLARATION__DIRTY_E:
@@ -445,6 +509,9 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
   {
     switch (featureID)
     {
+      case MyDslPackage.DECLARATION__DITRY_D:
+        setDitryD((Return)newValue);
+        return;
       case MyDslPackage.DECLARATION__FUNCAO:
         setFuncao((FunctionDeclaration)newValue);
         return;
@@ -480,6 +547,9 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
   {
     switch (featureID)
     {
+      case MyDslPackage.DECLARATION__DITRY_D:
+        setDitryD((Return)null);
+        return;
       case MyDslPackage.DECLARATION__FUNCAO:
         setFuncao((FunctionDeclaration)null);
         return;
@@ -515,6 +585,8 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
   {
     switch (featureID)
     {
+      case MyDslPackage.DECLARATION__DITRY_D:
+        return ditryD != null;
       case MyDslPackage.DECLARATION__FUNCAO:
         return funcao != null;
       case MyDslPackage.DECLARATION__DIRTY_E:

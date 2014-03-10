@@ -77,6 +77,15 @@ public interface MyDslFactory extends EFactory
   FunctionDeclaration createFunctionDeclaration();
 
   /**
+   * Returns a new object of class '<em>No Ptr Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>No Ptr Statement</em>'.
+   * @generated
+   */
+  NoPtrStatement createNoPtrStatement();
+
+  /**
    * Returns a new object of class '<em>Parameter</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -122,13 +131,22 @@ public interface MyDslFactory extends EFactory
   simple_declaration createsimple_declaration();
 
   /**
-   * Returns a new object of class '<em>jump statement</em>'.
+   * Returns a new object of class '<em>Return</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>jump statement</em>'.
+   * @return a new object of class '<em>Return</em>'.
    * @generated
    */
-  jump_statement createjump_statement();
+  Return createReturn();
+
+  /**
+   * Returns a new object of class '<em>Return Expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Return Expr</em>'.
+   * @generated
+   */
+  ReturnExpr createReturnExpr();
 
   /**
    * Returns a new object of class '<em>declaration statement</em>'.
@@ -167,13 +185,22 @@ public interface MyDslFactory extends EFactory
   IntType createIntType();
 
   /**
-   * Returns a new object of class '<em>Bool Type</em>'.
+   * Returns a new object of class '<em>Boolean Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Bool Type</em>'.
+   * @return a new object of class '<em>Boolean Type</em>'.
    * @generated
    */
-  BoolType createBoolType();
+  BooleanType createBooleanType();
+
+  /**
+   * Returns a new object of class '<em>String Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Type</em>'.
+   * @generated
+   */
+  StringType createStringType();
 
   /**
    * Returns a new object of class '<em>Unknown Type</em>'.
@@ -185,13 +212,31 @@ public interface MyDslFactory extends EFactory
   UnknownType createUnknownType();
 
   /**
-   * Returns a new object of class '<em>Return</em>'.
+   * Returns a new object of class '<em>Booleanh Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Return</em>'.
+   * @return a new object of class '<em>Booleanh Type</em>'.
    * @generated
    */
-  Return createReturn();
+  BooleanhType createBooleanhType();
+
+  /**
+   * Returns a new object of class '<em>Stringh Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Stringh Type</em>'.
+   * @generated
+   */
+  StringhType createStringhType();
+
+  /**
+   * Returns a new object of class '<em>Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable</em>'.
+   * @generated
+   */
+  Variable createVariable();
 
   /**
    * Returns the package supported by this factory.

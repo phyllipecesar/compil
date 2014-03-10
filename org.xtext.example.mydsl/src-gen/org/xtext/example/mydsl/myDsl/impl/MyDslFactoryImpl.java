@@ -70,19 +70,24 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.NAMESPACE_DEFINITION: return createNamespaceDefinition();
       case MyDslPackage.LINKAGE_SPECIFICATION: return createLinkageSpecification();
       case MyDslPackage.FUNCTION_DECLARATION: return createFunctionDeclaration();
+      case MyDslPackage.NO_PTR_STATEMENT: return createNoPtrStatement();
       case MyDslPackage.PARAMETER: return createParameter();
       case MyDslPackage.VAR_DECL: return createVarDecl();
       case MyDslPackage.TYPE: return createType();
       case MyDslPackage.SIMPLE_TYPE_SPECIFIER: return createsimple_type_specifier();
       case MyDslPackage.SIMPLE_DECLARATION: return createsimple_declaration();
-      case MyDslPackage.JUMP_STATEMENT: return createjump_statement();
+      case MyDslPackage.RETURN: return createReturn();
+      case MyDslPackage.RETURN_EXPR: return createReturnExpr();
       case MyDslPackage.DECLARATION_STATEMENT: return createdeclaration_statement();
       case MyDslPackage.BLOCK_DECLARATION: return createblock_declaration();
       case MyDslPackage.LKS: return createLKS();
       case MyDslPackage.INT_TYPE: return createIntType();
-      case MyDslPackage.BOOL_TYPE: return createBoolType();
+      case MyDslPackage.BOOLEAN_TYPE: return createBooleanType();
+      case MyDslPackage.STRING_TYPE: return createStringType();
       case MyDslPackage.UNKNOWN_TYPE: return createUnknownType();
-      case MyDslPackage.RETURN: return createReturn();
+      case MyDslPackage.BOOLEANH_TYPE: return createBooleanhType();
+      case MyDslPackage.STRINGH_TYPE: return createStringhType();
+      case MyDslPackage.VARIABLE: return createVariable();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -159,6 +164,17 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public NoPtrStatement createNoPtrStatement()
+  {
+    NoPtrStatementImpl noPtrStatement = new NoPtrStatementImpl();
+    return noPtrStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Parameter createParameter()
   {
     ParameterImpl parameter = new ParameterImpl();
@@ -214,10 +230,21 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public jump_statement createjump_statement()
+  public Return createReturn()
   {
-    jump_statementImpl jump_statement = new jump_statementImpl();
-    return jump_statement;
+    ReturnImpl return_ = new ReturnImpl();
+    return return_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ReturnExpr createReturnExpr()
+  {
+    ReturnExprImpl returnExpr = new ReturnExprImpl();
+    return returnExpr;
   }
 
   /**
@@ -269,10 +296,21 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BoolType createBoolType()
+  public BooleanType createBooleanType()
   {
-    BoolTypeImpl boolType = new BoolTypeImpl();
-    return boolType;
+    BooleanTypeImpl booleanType = new BooleanTypeImpl();
+    return booleanType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringType createStringType()
+  {
+    StringTypeImpl stringType = new StringTypeImpl();
+    return stringType;
   }
 
   /**
@@ -291,10 +329,32 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Return createReturn()
+  public BooleanhType createBooleanhType()
   {
-    ReturnImpl return_ = new ReturnImpl();
-    return return_;
+    BooleanhTypeImpl booleanhType = new BooleanhTypeImpl();
+    return booleanhType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringhType createStringhType()
+  {
+    StringhTypeImpl stringhType = new StringhTypeImpl();
+    return stringhType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Variable createVariable()
+  {
+    VariableImpl variable = new VariableImpl();
+    return variable;
   }
 
   /**

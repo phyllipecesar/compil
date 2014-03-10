@@ -105,6 +105,11 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createFunctionDeclarationAdapter();
       }
       @Override
+      public Adapter caseNoPtrStatement(NoPtrStatement object)
+      {
+        return createNoPtrStatementAdapter();
+      }
+      @Override
       public Adapter caseParameter(Parameter object)
       {
         return createParameterAdapter();
@@ -130,9 +135,14 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createsimple_declarationAdapter();
       }
       @Override
-      public Adapter casejump_statement(jump_statement object)
+      public Adapter caseReturn(Return object)
       {
-        return createjump_statementAdapter();
+        return createReturnAdapter();
+      }
+      @Override
+      public Adapter caseReturnExpr(ReturnExpr object)
+      {
+        return createReturnExprAdapter();
       }
       @Override
       public Adapter casedeclaration_statement(declaration_statement object)
@@ -155,9 +165,14 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createIntTypeAdapter();
       }
       @Override
-      public Adapter caseBoolType(BoolType object)
+      public Adapter caseBooleanType(BooleanType object)
       {
-        return createBoolTypeAdapter();
+        return createBooleanTypeAdapter();
+      }
+      @Override
+      public Adapter caseStringType(StringType object)
+      {
+        return createStringTypeAdapter();
       }
       @Override
       public Adapter caseUnknownType(UnknownType object)
@@ -165,9 +180,19 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createUnknownTypeAdapter();
       }
       @Override
-      public Adapter caseReturn(Return object)
+      public Adapter caseBooleanhType(BooleanhType object)
       {
-        return createReturnAdapter();
+        return createBooleanhTypeAdapter();
+      }
+      @Override
+      public Adapter caseStringhType(StringhType object)
+      {
+        return createStringhTypeAdapter();
+      }
+      @Override
+      public Adapter caseVariable(Variable object)
+      {
+        return createVariableAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -282,6 +307,21 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.NoPtrStatement <em>No Ptr Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrStatement
+   * @generated
+   */
+  public Adapter createNoPtrStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Parameter <em>Parameter</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -357,16 +397,31 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.jump_statement <em>jump statement</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Return <em>Return</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl.myDsl.jump_statement
+   * @see org.xtext.example.mydsl.myDsl.Return
    * @generated
    */
-  public Adapter createjump_statementAdapter()
+  public Adapter createReturnAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.ReturnExpr <em>Return Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.myDsl.ReturnExpr
+   * @generated
+   */
+  public Adapter createReturnExprAdapter()
   {
     return null;
   }
@@ -432,16 +487,31 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.BoolType <em>Bool Type</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.BooleanType <em>Boolean Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl.myDsl.BoolType
+   * @see org.xtext.example.mydsl.myDsl.BooleanType
    * @generated
    */
-  public Adapter createBoolTypeAdapter()
+  public Adapter createBooleanTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.StringType <em>String Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.myDsl.StringType
+   * @generated
+   */
+  public Adapter createStringTypeAdapter()
   {
     return null;
   }
@@ -462,16 +532,46 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Return <em>Return</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.BooleanhType <em>Booleanh Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl.myDsl.Return
+   * @see org.xtext.example.mydsl.myDsl.BooleanhType
    * @generated
    */
-  public Adapter createReturnAdapter()
+  public Adapter createBooleanhTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.StringhType <em>Stringh Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.myDsl.StringhType
+   * @generated
+   */
+  public Adapter createStringhTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Variable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.myDsl.Variable
+   * @generated
+   */
+  public Adapter createVariableAdapter()
   {
     return null;
   }

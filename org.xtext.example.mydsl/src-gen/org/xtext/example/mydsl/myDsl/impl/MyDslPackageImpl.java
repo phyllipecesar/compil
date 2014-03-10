@@ -10,7 +10,8 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.example.mydsl.myDsl.Body;
-import org.xtext.example.mydsl.myDsl.BoolType;
+import org.xtext.example.mydsl.myDsl.BooleanType;
+import org.xtext.example.mydsl.myDsl.BooleanhType;
 import org.xtext.example.mydsl.myDsl.Declaration;
 import org.xtext.example.mydsl.myDsl.FunctionDeclaration;
 import org.xtext.example.mydsl.myDsl.IntType;
@@ -19,14 +20,18 @@ import org.xtext.example.mydsl.myDsl.Model;
 import org.xtext.example.mydsl.myDsl.MyDslFactory;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.NamespaceDefinition;
+import org.xtext.example.mydsl.myDsl.NoPtrStatement;
 import org.xtext.example.mydsl.myDsl.Parameter;
 import org.xtext.example.mydsl.myDsl.Return;
+import org.xtext.example.mydsl.myDsl.ReturnExpr;
+import org.xtext.example.mydsl.myDsl.StringType;
+import org.xtext.example.mydsl.myDsl.StringhType;
 import org.xtext.example.mydsl.myDsl.Type;
 import org.xtext.example.mydsl.myDsl.UnknownType;
 import org.xtext.example.mydsl.myDsl.VarDecl;
+import org.xtext.example.mydsl.myDsl.Variable;
 import org.xtext.example.mydsl.myDsl.block_declaration;
 import org.xtext.example.mydsl.myDsl.declaration_statement;
-import org.xtext.example.mydsl.myDsl.jump_statement;
 import org.xtext.example.mydsl.myDsl.simple_declaration;
 import org.xtext.example.mydsl.myDsl.simple_type_specifier;
 
@@ -85,6 +90,13 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass noPtrStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass parameterEClass = null;
 
   /**
@@ -120,7 +132,14 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass jump_statementEClass = null;
+  private EClass returnEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass returnExprEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -155,7 +174,14 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass boolTypeEClass = null;
+  private EClass booleanTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stringTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -169,7 +195,21 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass returnEClass = null;
+  private EClass booleanhTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stringhTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass variableEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -259,9 +299,19 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBody_Declarations()
+  public EReference getBody_Variaveis()
   {
     return (EReference)bodyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBody_Declarations()
+  {
+    return (EReference)bodyEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -279,7 +329,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDeclaration_Funcao()
+  public EReference getDeclaration_DitryD()
   {
     return (EReference)declarationEClass.getEStructuralFeatures().get(0);
   }
@@ -289,9 +339,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDeclaration_DirtyE()
+  public EReference getDeclaration_Funcao()
   {
-    return (EAttribute)declarationEClass.getEStructuralFeatures().get(1);
+    return (EReference)declarationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -299,7 +349,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDeclaration_DirtyA()
+  public EAttribute getDeclaration_DirtyE()
   {
     return (EAttribute)declarationEClass.getEStructuralFeatures().get(2);
   }
@@ -309,7 +359,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDeclaration_DirtyB()
+  public EAttribute getDeclaration_DirtyA()
   {
     return (EAttribute)declarationEClass.getEStructuralFeatures().get(3);
   }
@@ -319,7 +369,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDeclaration_DirtyC()
+  public EAttribute getDeclaration_DirtyB()
   {
     return (EAttribute)declarationEClass.getEStructuralFeatures().get(4);
   }
@@ -329,7 +379,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDeclaration_DirtyD()
+  public EAttribute getDeclaration_DirtyC()
   {
     return (EAttribute)declarationEClass.getEStructuralFeatures().get(5);
   }
@@ -339,9 +389,19 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getDeclaration_DirtyD()
+  {
+    return (EAttribute)declarationEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getDeclaration_Dirty()
   {
-    return (EReference)declarationEClass.getEStructuralFeatures().get(6);
+    return (EReference)declarationEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -419,9 +479,49 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFunctionDeclaration_Escopo()
+  public EReference getFunctionDeclaration_Escopo()
   {
-    return (EAttribute)functionDeclarationEClass.getEStructuralFeatures().get(3);
+    return (EReference)functionDeclarationEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNoPtrStatement()
+  {
+    return noPtrStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNoPtrStatement_Variaveis()
+  {
+    return (EReference)noPtrStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNoPtrStatement_DirtyB()
+  {
+    return (EReference)noPtrStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNoPtrStatement_Dirty()
+  {
+    return (EAttribute)noPtrStatementEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -549,9 +649,29 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getjump_statement()
+  public EClass getReturn()
   {
-    return jump_statementEClass;
+    return returnEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getReturn_Rettype()
+  {
+    return (EReference)returnEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getReturnExpr()
+  {
+    return returnExprEClass;
   }
 
   /**
@@ -629,9 +749,19 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBoolType()
+  public EClass getBooleanType()
   {
-    return boolTypeEClass;
+    return booleanTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStringType()
+  {
+    return stringTypeEClass;
   }
 
   /**
@@ -649,9 +779,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getReturn()
+  public EClass getBooleanhType()
   {
-    return returnEClass;
+    return booleanhTypeEClass;
   }
 
   /**
@@ -659,9 +789,39 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getReturn_Exp()
+  public EAttribute getBooleanhType_Value()
   {
-    return (EAttribute)returnEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)booleanhTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStringhType()
+  {
+    return stringhTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVariable()
+  {
+    return variableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getVariable_Name()
+  {
+    return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -697,9 +857,11 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     modelEClass = createEClass(MODEL);
 
     bodyEClass = createEClass(BODY);
+    createEReference(bodyEClass, BODY__VARIAVEIS);
     createEReference(bodyEClass, BODY__DECLARATIONS);
 
     declarationEClass = createEClass(DECLARATION);
+    createEReference(declarationEClass, DECLARATION__DITRY_D);
     createEReference(declarationEClass, DECLARATION__FUNCAO);
     createEAttribute(declarationEClass, DECLARATION__DIRTY_E);
     createEAttribute(declarationEClass, DECLARATION__DIRTY_A);
@@ -717,7 +879,12 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     createEReference(functionDeclarationEClass, FUNCTION_DECLARATION__TYPE);
     createEAttribute(functionDeclarationEClass, FUNCTION_DECLARATION__NAME);
     createEReference(functionDeclarationEClass, FUNCTION_DECLARATION__PARAMS);
-    createEAttribute(functionDeclarationEClass, FUNCTION_DECLARATION__ESCOPO);
+    createEReference(functionDeclarationEClass, FUNCTION_DECLARATION__ESCOPO);
+
+    noPtrStatementEClass = createEClass(NO_PTR_STATEMENT);
+    createEReference(noPtrStatementEClass, NO_PTR_STATEMENT__VARIAVEIS);
+    createEReference(noPtrStatementEClass, NO_PTR_STATEMENT__DIRTY_B);
+    createEAttribute(noPtrStatementEClass, NO_PTR_STATEMENT__DIRTY);
 
     parameterEClass = createEClass(PARAMETER);
     createEReference(parameterEClass, PARAMETER__TYPE);
@@ -736,7 +903,10 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     simple_declarationEClass = createEClass(SIMPLE_DECLARATION);
     createEReference(simple_declarationEClass, SIMPLE_DECLARATION__VARIAVEL);
 
-    jump_statementEClass = createEClass(JUMP_STATEMENT);
+    returnEClass = createEClass(RETURN);
+    createEReference(returnEClass, RETURN__RETTYPE);
+
+    returnExprEClass = createEClass(RETURN_EXPR);
 
     declaration_statementEClass = createEClass(DECLARATION_STATEMENT);
     createEReference(declaration_statementEClass, DECLARATION_STATEMENT__VARIAVEIS);
@@ -749,12 +919,19 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 
     intTypeEClass = createEClass(INT_TYPE);
 
-    boolTypeEClass = createEClass(BOOL_TYPE);
+    booleanTypeEClass = createEClass(BOOLEAN_TYPE);
+
+    stringTypeEClass = createEClass(STRING_TYPE);
 
     unknownTypeEClass = createEClass(UNKNOWN_TYPE);
 
-    returnEClass = createEClass(RETURN);
-    createEAttribute(returnEClass, RETURN__EXP);
+    booleanhTypeEClass = createEClass(BOOLEANH_TYPE);
+    createEAttribute(booleanhTypeEClass, BOOLEANH_TYPE__VALUE);
+
+    stringhTypeEClass = createEClass(STRINGH_TYPE);
+
+    variableEClass = createEClass(VARIABLE);
+    createEAttribute(variableEClass, VARIABLE__NAME);
   }
 
   /**
@@ -789,17 +966,23 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     bodyEClass.getESuperTypes().add(this.getModel());
     lksEClass.getESuperTypes().add(this.getLinkageSpecification());
     intTypeEClass.getESuperTypes().add(this.getsimple_type_specifier());
-    boolTypeEClass.getESuperTypes().add(this.getsimple_type_specifier());
+    intTypeEClass.getESuperTypes().add(this.getReturnExpr());
+    booleanTypeEClass.getESuperTypes().add(this.getsimple_type_specifier());
+    stringTypeEClass.getESuperTypes().add(this.getsimple_type_specifier());
     unknownTypeEClass.getESuperTypes().add(this.getsimple_type_specifier());
-    returnEClass.getESuperTypes().add(this.getjump_statement());
+    booleanhTypeEClass.getESuperTypes().add(this.getReturnExpr());
+    stringhTypeEClass.getESuperTypes().add(this.getReturnExpr());
+    variableEClass.getESuperTypes().add(this.getReturnExpr());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(bodyEClass, Body.class, "Body", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBody_Variaveis(), this.getVarDecl(), null, "variaveis", null, 0, -1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBody_Declarations(), this.getDeclaration(), null, "declarations", null, 0, -1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(declarationEClass, Declaration.class, "Declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeclaration_DitryD(), this.getReturn(), null, "ditryD", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDeclaration_Funcao(), this.getFunctionDeclaration(), null, "funcao", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDeclaration_DirtyE(), ecorePackage.getEString(), "dirtyE", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDeclaration_DirtyA(), ecorePackage.getEString(), "dirtyA", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -817,7 +1000,12 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEReference(getFunctionDeclaration_Type(), this.getType(), null, "type", null, 0, 1, FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFunctionDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionDeclaration_Params(), this.getParameter(), null, "params", null, 0, -1, FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFunctionDeclaration_Escopo(), ecorePackage.getEString(), "escopo", null, 0, 1, FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionDeclaration_Escopo(), this.getNoPtrStatement(), null, "escopo", null, 0, 1, FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(noPtrStatementEClass, NoPtrStatement.class, "NoPtrStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNoPtrStatement_Variaveis(), this.getVarDecl(), null, "variaveis", null, 0, -1, NoPtrStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNoPtrStatement_DirtyB(), this.getReturn(), null, "dirtyB", null, 0, -1, NoPtrStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNoPtrStatement_Dirty(), ecorePackage.getEString(), "dirty", null, 0, -1, NoPtrStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getParameter_Type(), this.getType(), null, "type", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -836,7 +1024,10 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEClass(simple_declarationEClass, simple_declaration.class, "simple_declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getsimple_declaration_Variavel(), this.getVarDecl(), null, "variavel", null, 0, 1, simple_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(jump_statementEClass, jump_statement.class, "jump_statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(returnEClass, Return.class, "Return", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getReturn_Rettype(), this.getReturnExpr(), null, "rettype", null, 0, 1, Return.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(returnExprEClass, ReturnExpr.class, "ReturnExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(declaration_statementEClass, declaration_statement.class, "declaration_statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getdeclaration_statement_Variaveis(), this.getblock_declaration(), null, "variaveis", null, 0, -1, declaration_statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -849,12 +1040,19 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 
     initEClass(intTypeEClass, IntType.class, "IntType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(boolTypeEClass, BoolType.class, "BoolType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(booleanTypeEClass, BooleanType.class, "BooleanType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(stringTypeEClass, StringType.class, "StringType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(unknownTypeEClass, UnknownType.class, "UnknownType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(returnEClass, Return.class, "Return", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getReturn_Exp(), ecorePackage.getEString(), "exp", null, 0, 1, Return.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(booleanhTypeEClass, BooleanhType.class, "BooleanhType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBooleanhType_Value(), ecorePackage.getEString(), "value", null, 0, 1, BooleanhType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stringhTypeEClass, StringhType.class, "StringhType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

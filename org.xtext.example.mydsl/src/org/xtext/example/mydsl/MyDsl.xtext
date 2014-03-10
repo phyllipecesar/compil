@@ -25,7 +25,7 @@ Body:
 	// (classes += ClassDeclaration)* |
 	// (structs += StructDeclaration)* |
 	// (structs += StructDeclaration)* |
-	(declarations += Declaration)*
+	(variaveis += VarDecl | declarations += Declaration)*
 	
 ;
 
@@ -33,14 +33,17 @@ Body:
 // MODIFIEDS
 
 Declaration:
-	{Declaration} (funcao = FunctionDeclaration |
+	{Declaration} (
+		ditryD = Return |
+		funcao = FunctionDeclaration |
 	dirtyE= SimpleOrFunctionDeclaration|
 	dirtyA = BlockDeclaration |
 	dirtyB = TemplateDeclaration |
 	dirtyC = ExplicitInstantiation |
 	dirtyD = ExplicitSpecialization |
 	dirty = LinkageSpecification |
-	dirty = NamespaceDefinition);
+	dirty = NamespaceDefinition
+	);
 	
 	
 // namespace.def
@@ -129,21 +132,25 @@ elif_groups:
 FunctionDeclaration returns FunctionDeclaration:
 	{FunctionDeclaration} type=Type name=ID "(" 
 		(params+=Parameter  ("," params+=Parameter)* )?  ")" "{"	
-		(escopo=Statement)?
+			escopo = NoPtrStatement
 	"}";
-		
+	
+NoPtrStatement:
+	{NoPtrStatement} (((variaveis+= VarDecl) |dirtyB += Return| dirty += Statement)*)
+;
 Parameter:
 	{Parameter} type=Type name=ID;
 
 VarDecl:
-	{VarDecl} type=Type name=ID;
+	{VarDecl} 'const'? type=Type ('*'*|'&'*) name=ID ('['INT']')*;
 
 Type:
 	{Type} sts = simple_type_specifier;
 
 simple_type_specifier:
 	{IntType} name="int"|
-	{BoolType} name="bool"|
+	{BooleanType} name="bool"|
+	{StringType} name="string"|
 	{UnknownType} name=ID;
 
 //// A.5
@@ -184,12 +191,17 @@ simple_declaration:
 //	expression
 //;
 
-jump_statement:
-	'break;'|
-	'continue;'|
-	{Return}'return' exp=Expression?';'|
-	'goto' ID';'
+Return:
+	{Return} 'return' rettype=ReturnExpr?';'
 ;
+
+ReturnExpr:
+	{IntType} INT |
+	{BooleanhType} value=("false"|"true") |
+	{StringhType} STRING |
+	{Variable} name=ID;
+
+
 
 
 
@@ -319,7 +331,7 @@ terminal KEYWORD:
 	'unsigned' |
 	'using' |
 	'virtual' |
-	'void' |
+//	'void' |
 	'volatile' |
 	'wchar_t' |
 	'while';
@@ -399,13 +411,13 @@ terminal PREPROCESSING_OP_OR_PUNC:
 
 // lex.name
 terminal ID:
-	(NONDIGIT | UNIVERSAL_CHARACTER_NAME) (DIGIT | NONDIGIT | UNIVERSAL_CHARACTER_NAME)*;
+	(NONDIGIT | UNIVERSAL_CHARACTER_NAME) (('0'..'9') | NONDIGIT | UNIVERSAL_CHARACTER_NAME)*;
 
 terminal fragment NONDIGIT:
 	'a'..'z' | 'A'..'Z' | '_';
 
-terminal fragment DIGIT:
-	'0'..'9';
+ DIGIT:
+	'0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9';
 
 // lex.literal.kinds
 Literal:
@@ -416,12 +428,9 @@ Literal:
 	('true' | 'false')
 	'nullptr';
 
-// lex.icon
-terminal INT returns ecore::EInt:
-	(DECIMAL_LITERAL | OCTAL_LITERAL | HEXADECIMAL_LITERAL) INTEGER_SUFFIX?;
-	
+
 terminal fragment DECIMAL_LITERAL:
-	'1'..'9' DIGIT*;
+	'1'..'9' ('0'..'9')*;
 	
 terminal fragment OCTAL_LITERAL:
 	'0' OCTAL_DIGIT*;
@@ -460,13 +469,13 @@ terminal fragment HEXADECIMAL_ESCAPE_SEQUENCE:
 
 // lex.fcon
 terminal FLOATING_LITERAL:
-	(FRACTIONAL_CONSTANT EXPONENT_PART? | DIGIT+ EXPONENT_PART) ('f' | 'l' | 'F' | 'L')?;
+	(FRACTIONAL_CONSTANT EXPONENT_PART? | ('0'..'9')+ EXPONENT_PART) ('f' | 'l' | 'F' | 'L')?;
 
 terminal fragment FRACTIONAL_CONSTANT:
-	DIGIT* '.' DIGIT+ | DIGIT+ '.';
+	('0'..'9')* '.' ('0'..'9')+ | ('0'..'9')+ '.';
 
 terminal fragment EXPONENT_PART:
-	('e' | 'E') ('+' | '-')? DIGIT+;
+	('e' | 'E') ('+' | '-')? ('0'..'9')+;
 
 // lex.string
 terminal STRING_LITERAL:
@@ -526,7 +535,6 @@ ForInitializationStatement:
 JumpStatement:
 	'break' ';' |
 	'continue' ';' |
-	'return' (Expression | BracedInitializerList)? ';' |
 	'goto' ID ';';
 
 // stmt.dcl
@@ -609,7 +617,7 @@ SimpleTypeSpecifier:
 	'unsigned' |
 	'float' |
 	'double' |
-	'void' |
+//	'void' |
 	'auto' |
 	DeclarationTypeSpecifier;
 
@@ -669,7 +677,7 @@ AsmDefinition:
 
 // dcl.decl
 InitDeclaratorList:
-	InitDeclarator (',' InitDeclarator)*;
+	InitDeclarator (=> ',' InitDeclarator)*;
 
 InitDeclarator:
 	DeclaratorId Initializer?;

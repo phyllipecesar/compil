@@ -86,13 +86,22 @@ public interface MyDslPackage extends EPackage
   int BODY = 1;
 
   /**
+   * The feature id for the '<em><b>Variaveis</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BODY__VARIAVEIS = MODEL_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Declarations</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BODY__DECLARATIONS = MODEL_FEATURE_COUNT + 0;
+  int BODY__DECLARATIONS = MODEL_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Body</em>' class.
@@ -101,7 +110,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BODY_FEATURE_COUNT = MODEL_FEATURE_COUNT + 1;
+  int BODY_FEATURE_COUNT = MODEL_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.DeclarationImpl <em>Declaration</em>}' class.
@@ -114,13 +123,22 @@ public interface MyDslPackage extends EPackage
   int DECLARATION = 2;
 
   /**
+   * The feature id for the '<em><b>Ditry D</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__DITRY_D = 0;
+
+  /**
    * The feature id for the '<em><b>Funcao</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DECLARATION__FUNCAO = 0;
+  int DECLARATION__FUNCAO = 1;
 
   /**
    * The feature id for the '<em><b>Dirty E</b></em>' attribute.
@@ -129,7 +147,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECLARATION__DIRTY_E = 1;
+  int DECLARATION__DIRTY_E = 2;
 
   /**
    * The feature id for the '<em><b>Dirty A</b></em>' attribute.
@@ -138,7 +156,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECLARATION__DIRTY_A = 2;
+  int DECLARATION__DIRTY_A = 3;
 
   /**
    * The feature id for the '<em><b>Dirty B</b></em>' attribute.
@@ -147,7 +165,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECLARATION__DIRTY_B = 3;
+  int DECLARATION__DIRTY_B = 4;
 
   /**
    * The feature id for the '<em><b>Dirty C</b></em>' attribute.
@@ -156,7 +174,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECLARATION__DIRTY_C = 4;
+  int DECLARATION__DIRTY_C = 5;
 
   /**
    * The feature id for the '<em><b>Dirty D</b></em>' attribute.
@@ -165,7 +183,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECLARATION__DIRTY_D = 5;
+  int DECLARATION__DIRTY_D = 6;
 
   /**
    * The feature id for the '<em><b>Dirty</b></em>' containment reference.
@@ -174,7 +192,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECLARATION__DIRTY = 6;
+  int DECLARATION__DIRTY = 7;
 
   /**
    * The number of structural features of the '<em>Declaration</em>' class.
@@ -183,7 +201,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECLARATION_FEATURE_COUNT = 7;
+  int DECLARATION_FEATURE_COUNT = 8;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.NamespaceDefinitionImpl <em>Namespace Definition</em>}' class.
@@ -270,7 +288,7 @@ public interface MyDslPackage extends EPackage
   int FUNCTION_DECLARATION__PARAMS = 2;
 
   /**
-   * The feature id for the '<em><b>Escopo</b></em>' attribute.
+   * The feature id for the '<em><b>Escopo</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -288,6 +306,52 @@ public interface MyDslPackage extends EPackage
   int FUNCTION_DECLARATION_FEATURE_COUNT = 4;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.NoPtrStatementImpl <em>No Ptr Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.NoPtrStatementImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getNoPtrStatement()
+   * @generated
+   */
+  int NO_PTR_STATEMENT = 6;
+
+  /**
+   * The feature id for the '<em><b>Variaveis</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_STATEMENT__VARIAVEIS = 0;
+
+  /**
+   * The feature id for the '<em><b>Dirty B</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_STATEMENT__DIRTY_B = 1;
+
+  /**
+   * The feature id for the '<em><b>Dirty</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_STATEMENT__DIRTY = 2;
+
+  /**
+   * The number of structural features of the '<em>No Ptr Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_STATEMENT_FEATURE_COUNT = 3;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.ParameterImpl <em>Parameter</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -295,7 +359,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getParameter()
    * @generated
    */
-  int PARAMETER = 6;
+  int PARAMETER = 7;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -332,7 +396,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getVarDecl()
    * @generated
    */
-  int VAR_DECL = 7;
+  int VAR_DECL = 8;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -369,7 +433,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getType()
    * @generated
    */
-  int TYPE = 8;
+  int TYPE = 9;
 
   /**
    * The feature id for the '<em><b>Sts</b></em>' containment reference.
@@ -397,7 +461,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getsimple_type_specifier()
    * @generated
    */
-  int SIMPLE_TYPE_SPECIFIER = 9;
+  int SIMPLE_TYPE_SPECIFIER = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -425,7 +489,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getsimple_declaration()
    * @generated
    */
-  int SIMPLE_DECLARATION = 10;
+  int SIMPLE_DECLARATION = 11;
 
   /**
    * The feature id for the '<em><b>Variavel</b></em>' containment reference.
@@ -446,23 +510,51 @@ public interface MyDslPackage extends EPackage
   int SIMPLE_DECLARATION_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.jump_statementImpl <em>jump statement</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.ReturnImpl <em>Return</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.myDsl.impl.jump_statementImpl
-   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getjump_statement()
+   * @see org.xtext.example.mydsl.myDsl.impl.ReturnImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getReturn()
    * @generated
    */
-  int JUMP_STATEMENT = 11;
+  int RETURN = 12;
 
   /**
-   * The number of structural features of the '<em>jump statement</em>' class.
+   * The feature id for the '<em><b>Rettype</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JUMP_STATEMENT_FEATURE_COUNT = 0;
+  int RETURN__RETTYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>Return</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.ReturnExprImpl <em>Return Expr</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.ReturnExprImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getReturnExpr()
+   * @generated
+   */
+  int RETURN_EXPR = 13;
+
+  /**
+   * The number of structural features of the '<em>Return Expr</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_EXPR_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.declaration_statementImpl <em>declaration statement</em>}' class.
@@ -472,7 +564,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getdeclaration_statement()
    * @generated
    */
-  int DECLARATION_STATEMENT = 12;
+  int DECLARATION_STATEMENT = 14;
 
   /**
    * The feature id for the '<em><b>Variaveis</b></em>' containment reference list.
@@ -500,7 +592,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getblock_declaration()
    * @generated
    */
-  int BLOCK_DECLARATION = 13;
+  int BLOCK_DECLARATION = 15;
 
   /**
    * The feature id for the '<em><b>Variavel</b></em>' containment reference.
@@ -528,7 +620,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getLKS()
    * @generated
    */
-  int LKS = 14;
+  int LKS = 16;
 
   /**
    * The feature id for the '<em><b>Dirty</b></em>' containment reference.
@@ -556,7 +648,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getIntType()
    * @generated
    */
-  int INT_TYPE = 15;
+  int INT_TYPE = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -577,14 +669,14 @@ public interface MyDslPackage extends EPackage
   int INT_TYPE_FEATURE_COUNT = SIMPLE_TYPE_SPECIFIER_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.BoolTypeImpl <em>Bool Type</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.myDsl.impl.BoolTypeImpl
-   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getBoolType()
+   * @see org.xtext.example.mydsl.myDsl.impl.BooleanTypeImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getBooleanType()
    * @generated
    */
-  int BOOL_TYPE = 16;
+  int BOOLEAN_TYPE = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -593,16 +685,44 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BOOL_TYPE__NAME = SIMPLE_TYPE_SPECIFIER__NAME;
+  int BOOLEAN_TYPE__NAME = SIMPLE_TYPE_SPECIFIER__NAME;
 
   /**
-   * The number of structural features of the '<em>Bool Type</em>' class.
+   * The number of structural features of the '<em>Boolean Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOL_TYPE_FEATURE_COUNT = SIMPLE_TYPE_SPECIFIER_FEATURE_COUNT + 0;
+  int BOOLEAN_TYPE_FEATURE_COUNT = SIMPLE_TYPE_SPECIFIER_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.StringTypeImpl <em>String Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.StringTypeImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getStringType()
+   * @generated
+   */
+  int STRING_TYPE = 19;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_TYPE__NAME = SIMPLE_TYPE_SPECIFIER__NAME;
+
+  /**
+   * The number of structural features of the '<em>String Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_TYPE_FEATURE_COUNT = SIMPLE_TYPE_SPECIFIER_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.UnknownTypeImpl <em>Unknown Type</em>}' class.
@@ -612,7 +732,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getUnknownType()
    * @generated
    */
-  int UNKNOWN_TYPE = 17;
+  int UNKNOWN_TYPE = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -633,32 +753,79 @@ public interface MyDslPackage extends EPackage
   int UNKNOWN_TYPE_FEATURE_COUNT = SIMPLE_TYPE_SPECIFIER_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.ReturnImpl <em>Return</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.BooleanhTypeImpl <em>Booleanh Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.myDsl.impl.ReturnImpl
-   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getReturn()
+   * @see org.xtext.example.mydsl.myDsl.impl.BooleanhTypeImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getBooleanhType()
    * @generated
    */
-  int RETURN = 18;
+  int BOOLEANH_TYPE = 21;
 
   /**
-   * The feature id for the '<em><b>Exp</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RETURN__EXP = JUMP_STATEMENT_FEATURE_COUNT + 0;
+  int BOOLEANH_TYPE__VALUE = RETURN_EXPR_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Return</em>' class.
+   * The number of structural features of the '<em>Booleanh Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RETURN_FEATURE_COUNT = JUMP_STATEMENT_FEATURE_COUNT + 1;
+  int BOOLEANH_TYPE_FEATURE_COUNT = RETURN_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.StringhTypeImpl <em>Stringh Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.StringhTypeImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getStringhType()
+   * @generated
+   */
+  int STRINGH_TYPE = 22;
+
+  /**
+   * The number of structural features of the '<em>Stringh Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRINGH_TYPE_FEATURE_COUNT = RETURN_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.VariableImpl <em>Variable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.VariableImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getVariable()
+   * @generated
+   */
+  int VARIABLE = 23;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE__NAME = RETURN_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Variable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_FEATURE_COUNT = RETURN_EXPR_FEATURE_COUNT + 1;
 
 
   /**
@@ -682,6 +849,17 @@ public interface MyDslPackage extends EPackage
   EClass getBody();
 
   /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Body#getVariaveis <em>Variaveis</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Variaveis</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Body#getVariaveis()
+   * @see #getBody()
+   * @generated
+   */
+  EReference getBody_Variaveis();
+
+  /**
    * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Body#getDeclarations <em>Declarations</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -701,6 +879,17 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EClass getDeclaration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Declaration#getDitryD <em>Ditry D</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Ditry D</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Declaration#getDitryD()
+   * @see #getDeclaration()
+   * @generated
+   */
+  EReference getDeclaration_DitryD();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Declaration#getFuncao <em>Funcao</em>}'.
@@ -854,15 +1043,58 @@ public interface MyDslPackage extends EPackage
   EReference getFunctionDeclaration_Params();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.FunctionDeclaration#getEscopo <em>Escopo</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.FunctionDeclaration#getEscopo <em>Escopo</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Escopo</em>'.
+   * @return the meta object for the containment reference '<em>Escopo</em>'.
    * @see org.xtext.example.mydsl.myDsl.FunctionDeclaration#getEscopo()
    * @see #getFunctionDeclaration()
    * @generated
    */
-  EAttribute getFunctionDeclaration_Escopo();
+  EReference getFunctionDeclaration_Escopo();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.NoPtrStatement <em>No Ptr Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>No Ptr Statement</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrStatement
+   * @generated
+   */
+  EClass getNoPtrStatement();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.NoPtrStatement#getVariaveis <em>Variaveis</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Variaveis</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrStatement#getVariaveis()
+   * @see #getNoPtrStatement()
+   * @generated
+   */
+  EReference getNoPtrStatement_Variaveis();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.NoPtrStatement#getDirtyB <em>Dirty B</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Dirty B</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrStatement#getDirtyB()
+   * @see #getNoPtrStatement()
+   * @generated
+   */
+  EReference getNoPtrStatement_DirtyB();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.example.mydsl.myDsl.NoPtrStatement#getDirty <em>Dirty</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Dirty</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrStatement#getDirty()
+   * @see #getNoPtrStatement()
+   * @generated
+   */
+  EAttribute getNoPtrStatement_Dirty();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Parameter <em>Parameter</em>}'.
@@ -992,14 +1224,35 @@ public interface MyDslPackage extends EPackage
   EReference getsimple_declaration_Variavel();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.jump_statement <em>jump statement</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Return <em>Return</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>jump statement</em>'.
-   * @see org.xtext.example.mydsl.myDsl.jump_statement
+   * @return the meta object for class '<em>Return</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Return
    * @generated
    */
-  EClass getjump_statement();
+  EClass getReturn();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Return#getRettype <em>Rettype</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Rettype</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Return#getRettype()
+   * @see #getReturn()
+   * @generated
+   */
+  EReference getReturn_Rettype();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.ReturnExpr <em>Return Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Return Expr</em>'.
+   * @see org.xtext.example.mydsl.myDsl.ReturnExpr
+   * @generated
+   */
+  EClass getReturnExpr();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.declaration_statement <em>declaration statement</em>}'.
@@ -1075,14 +1328,24 @@ public interface MyDslPackage extends EPackage
   EClass getIntType();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.BoolType <em>Bool Type</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.BooleanType <em>Boolean Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Bool Type</em>'.
-   * @see org.xtext.example.mydsl.myDsl.BoolType
+   * @return the meta object for class '<em>Boolean Type</em>'.
+   * @see org.xtext.example.mydsl.myDsl.BooleanType
    * @generated
    */
-  EClass getBoolType();
+  EClass getBooleanType();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.StringType <em>String Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Type</em>'.
+   * @see org.xtext.example.mydsl.myDsl.StringType
+   * @generated
+   */
+  EClass getStringType();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.UnknownType <em>Unknown Type</em>}'.
@@ -1095,25 +1358,56 @@ public interface MyDslPackage extends EPackage
   EClass getUnknownType();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Return <em>Return</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.BooleanhType <em>Booleanh Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Return</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Return
+   * @return the meta object for class '<em>Booleanh Type</em>'.
+   * @see org.xtext.example.mydsl.myDsl.BooleanhType
    * @generated
    */
-  EClass getReturn();
+  EClass getBooleanhType();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Return#getExp <em>Exp</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.BooleanhType#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Exp</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Return#getExp()
-   * @see #getReturn()
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.xtext.example.mydsl.myDsl.BooleanhType#getValue()
+   * @see #getBooleanhType()
    * @generated
    */
-  EAttribute getReturn_Exp();
+  EAttribute getBooleanhType_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.StringhType <em>Stringh Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Stringh Type</em>'.
+   * @see org.xtext.example.mydsl.myDsl.StringhType
+   * @generated
+   */
+  EClass getStringhType();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Variable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variable</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Variable
+   * @generated
+   */
+  EClass getVariable();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Variable#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Variable#getName()
+   * @see #getVariable()
+   * @generated
+   */
+  EAttribute getVariable_Name();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1159,6 +1453,14 @@ public interface MyDslPackage extends EPackage
     EClass BODY = eINSTANCE.getBody();
 
     /**
+     * The meta object literal for the '<em><b>Variaveis</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BODY__VARIAVEIS = eINSTANCE.getBody_Variaveis();
+
+    /**
      * The meta object literal for the '<em><b>Declarations</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1175,6 +1477,14 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EClass DECLARATION = eINSTANCE.getDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Ditry D</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION__DITRY_D = eINSTANCE.getDeclaration_DitryD();
 
     /**
      * The meta object literal for the '<em><b>Funcao</b></em>' containment reference feature.
@@ -1295,12 +1605,46 @@ public interface MyDslPackage extends EPackage
     EReference FUNCTION_DECLARATION__PARAMS = eINSTANCE.getFunctionDeclaration_Params();
 
     /**
-     * The meta object literal for the '<em><b>Escopo</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Escopo</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FUNCTION_DECLARATION__ESCOPO = eINSTANCE.getFunctionDeclaration_Escopo();
+    EReference FUNCTION_DECLARATION__ESCOPO = eINSTANCE.getFunctionDeclaration_Escopo();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.NoPtrStatementImpl <em>No Ptr Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.NoPtrStatementImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getNoPtrStatement()
+     * @generated
+     */
+    EClass NO_PTR_STATEMENT = eINSTANCE.getNoPtrStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Variaveis</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NO_PTR_STATEMENT__VARIAVEIS = eINSTANCE.getNoPtrStatement_Variaveis();
+
+    /**
+     * The meta object literal for the '<em><b>Dirty B</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NO_PTR_STATEMENT__DIRTY_B = eINSTANCE.getNoPtrStatement_DirtyB();
+
+    /**
+     * The meta object literal for the '<em><b>Dirty</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NO_PTR_STATEMENT__DIRTY = eINSTANCE.getNoPtrStatement_Dirty();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -1409,14 +1753,32 @@ public interface MyDslPackage extends EPackage
     EReference SIMPLE_DECLARATION__VARIAVEL = eINSTANCE.getsimple_declaration_Variavel();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.jump_statementImpl <em>jump statement</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.ReturnImpl <em>Return</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.myDsl.impl.jump_statementImpl
-     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getjump_statement()
+     * @see org.xtext.example.mydsl.myDsl.impl.ReturnImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getReturn()
      * @generated
      */
-    EClass JUMP_STATEMENT = eINSTANCE.getjump_statement();
+    EClass RETURN = eINSTANCE.getReturn();
+
+    /**
+     * The meta object literal for the '<em><b>Rettype</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RETURN__RETTYPE = eINSTANCE.getReturn_Rettype();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.ReturnExprImpl <em>Return Expr</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.ReturnExprImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getReturnExpr()
+     * @generated
+     */
+    EClass RETURN_EXPR = eINSTANCE.getReturnExpr();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.declaration_statementImpl <em>declaration statement</em>}' class.
@@ -1483,14 +1845,24 @@ public interface MyDslPackage extends EPackage
     EClass INT_TYPE = eINSTANCE.getIntType();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.BoolTypeImpl <em>Bool Type</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.myDsl.impl.BoolTypeImpl
-     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getBoolType()
+     * @see org.xtext.example.mydsl.myDsl.impl.BooleanTypeImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getBooleanType()
      * @generated
      */
-    EClass BOOL_TYPE = eINSTANCE.getBoolType();
+    EClass BOOLEAN_TYPE = eINSTANCE.getBooleanType();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.StringTypeImpl <em>String Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.StringTypeImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getStringType()
+     * @generated
+     */
+    EClass STRING_TYPE = eINSTANCE.getStringType();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.UnknownTypeImpl <em>Unknown Type</em>}' class.
@@ -1503,22 +1875,50 @@ public interface MyDslPackage extends EPackage
     EClass UNKNOWN_TYPE = eINSTANCE.getUnknownType();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.ReturnImpl <em>Return</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.BooleanhTypeImpl <em>Booleanh Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.myDsl.impl.ReturnImpl
-     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getReturn()
+     * @see org.xtext.example.mydsl.myDsl.impl.BooleanhTypeImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getBooleanhType()
      * @generated
      */
-    EClass RETURN = eINSTANCE.getReturn();
+    EClass BOOLEANH_TYPE = eINSTANCE.getBooleanhType();
 
     /**
-     * The meta object literal for the '<em><b>Exp</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RETURN__EXP = eINSTANCE.getReturn_Exp();
+    EAttribute BOOLEANH_TYPE__VALUE = eINSTANCE.getBooleanhType_Value();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.StringhTypeImpl <em>Stringh Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.StringhTypeImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getStringhType()
+     * @generated
+     */
+    EClass STRINGH_TYPE = eINSTANCE.getStringhType();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.VariableImpl <em>Variable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.VariableImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getVariable()
+     * @generated
+     */
+    EClass VARIABLE = eINSTANCE.getVariable();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE__NAME = eINSTANCE.getVariable_Name();
 
   }
 

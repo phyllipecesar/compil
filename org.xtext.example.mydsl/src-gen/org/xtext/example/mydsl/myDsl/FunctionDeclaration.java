@@ -96,29 +96,29 @@ public interface FunctionDeclaration extends EObject
   EList<Parameter> getParams();
 
   /**
-   * Returns the value of the '<em><b>Escopo</b></em>' attribute.
+   * Returns the value of the '<em><b>Escopo</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Escopo</em>' attribute isn't clear,
+   * If the meaning of the '<em>Escopo</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Escopo</em>' attribute.
-   * @see #setEscopo(String)
+   * @return the value of the '<em>Escopo</em>' containment reference.
+   * @see #setEscopo(NoPtrStatement)
    * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getFunctionDeclaration_Escopo()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getEscopo();
+  NoPtrStatement getEscopo();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.FunctionDeclaration#getEscopo <em>Escopo</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.FunctionDeclaration#getEscopo <em>Escopo</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Escopo</em>' attribute.
+   * @param value the new value of the '<em>Escopo</em>' containment reference.
    * @see #getEscopo()
    * @generated
    */
-  void setEscopo(String value);
+  void setEscopo(NoPtrStatement value);
 
 } // FunctionDeclaration

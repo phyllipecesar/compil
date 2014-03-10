@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.mydsl.myDsl.FunctionDeclaration;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
+import org.xtext.example.mydsl.myDsl.NoPtrStatement;
 import org.xtext.example.mydsl.myDsl.Parameter;
 import org.xtext.example.mydsl.myDsl.Type;
 
@@ -82,24 +83,14 @@ public class FunctionDeclarationImpl extends MinimalEObjectImpl.Container implem
   protected EList<Parameter> params;
 
   /**
-   * The default value of the '{@link #getEscopo() <em>Escopo</em>}' attribute.
+   * The cached value of the '{@link #getEscopo() <em>Escopo</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getEscopo()
    * @generated
    * @ordered
    */
-  protected static final String ESCOPO_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getEscopo() <em>Escopo</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEscopo()
-   * @generated
-   * @ordered
-   */
-  protected String escopo = ESCOPO_EDEFAULT;
+  protected NoPtrStatement escopo;
 
   /**
    * <!-- begin-user-doc -->
@@ -212,7 +203,7 @@ public class FunctionDeclarationImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getEscopo()
+  public NoPtrStatement getEscopo()
   {
     return escopo;
   }
@@ -222,12 +213,37 @@ public class FunctionDeclarationImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEscopo(String newEscopo)
+  public NotificationChain basicSetEscopo(NoPtrStatement newEscopo, NotificationChain msgs)
   {
-    String oldEscopo = escopo;
+    NoPtrStatement oldEscopo = escopo;
     escopo = newEscopo;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.FUNCTION_DECLARATION__ESCOPO, oldEscopo, escopo));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.FUNCTION_DECLARATION__ESCOPO, oldEscopo, newEscopo);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setEscopo(NoPtrStatement newEscopo)
+  {
+    if (newEscopo != escopo)
+    {
+      NotificationChain msgs = null;
+      if (escopo != null)
+        msgs = ((InternalEObject)escopo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.FUNCTION_DECLARATION__ESCOPO, null, msgs);
+      if (newEscopo != null)
+        msgs = ((InternalEObject)newEscopo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.FUNCTION_DECLARATION__ESCOPO, null, msgs);
+      msgs = basicSetEscopo(newEscopo, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.FUNCTION_DECLARATION__ESCOPO, newEscopo, newEscopo));
   }
 
   /**
@@ -244,6 +260,8 @@ public class FunctionDeclarationImpl extends MinimalEObjectImpl.Container implem
         return basicSetType(null, msgs);
       case MyDslPackage.FUNCTION_DECLARATION__PARAMS:
         return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
+      case MyDslPackage.FUNCTION_DECLARATION__ESCOPO:
+        return basicSetEscopo(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -292,7 +310,7 @@ public class FunctionDeclarationImpl extends MinimalEObjectImpl.Container implem
         getParams().addAll((Collection<? extends Parameter>)newValue);
         return;
       case MyDslPackage.FUNCTION_DECLARATION__ESCOPO:
-        setEscopo((String)newValue);
+        setEscopo((NoPtrStatement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -318,7 +336,7 @@ public class FunctionDeclarationImpl extends MinimalEObjectImpl.Container implem
         getParams().clear();
         return;
       case MyDslPackage.FUNCTION_DECLARATION__ESCOPO:
-        setEscopo(ESCOPO_EDEFAULT);
+        setEscopo((NoPtrStatement)null);
         return;
     }
     super.eUnset(featureID);
@@ -341,7 +359,7 @@ public class FunctionDeclarationImpl extends MinimalEObjectImpl.Container implem
       case MyDslPackage.FUNCTION_DECLARATION__PARAMS:
         return params != null && !params.isEmpty();
       case MyDslPackage.FUNCTION_DECLARATION__ESCOPO:
-        return ESCOPO_EDEFAULT == null ? escopo != null : !ESCOPO_EDEFAULT.equals(escopo);
+        return escopo != null;
     }
     return super.eIsSet(featureID);
   }
@@ -359,8 +377,6 @@ public class FunctionDeclarationImpl extends MinimalEObjectImpl.Container implem
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", escopo: ");
-    result.append(escopo);
     result.append(')');
     return result.toString();
   }
