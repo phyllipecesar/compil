@@ -60,10 +60,12 @@
     <genClasses ecoreClass="MyDsl.ecore#//Parameter">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Parameter/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Parameter/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Parameter/expr"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//VarDecl">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//VarDecl/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//VarDecl/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//VarDecl/expr"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Type">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Type/sts"/>
@@ -107,6 +109,7 @@
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Variable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Variable/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Variable/expr"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

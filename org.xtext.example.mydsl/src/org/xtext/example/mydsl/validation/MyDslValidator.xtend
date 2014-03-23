@@ -46,6 +46,10 @@ class MyDslValidator extends AbstractMyDslValidator {
 	HashSet<String> hash = new HashSet<String>();
 
 
+/**
+ * Verifica se os parametros sao declarados duas vezes com o mesmo nome
+ * e se existe alguma variavel com o mesmo nome dos parametros.
+ */
 @Check
 def checkParamsFunction(FunctionDeclaration funcao) {
 	hash.clear();
@@ -69,21 +73,27 @@ int ok;
 @Check
 def checkFunctionAlreadyExists(Body b) {
 	hash.clear();
-	
+	var row2 = "";
 	for (Declaration symbol: b.declarations) {
 		try {
 		if (symbol.funcao.name != "null") {
 			row = symbol.funcao.name + "(";
 			ok = 0;
+			row2 = row;
 			for (Parameter symb : symbol.funcao.params) {
 				if (ok == 1) row = row + ",";
 				ok = 1;
-				row = row + symb.type.sts.name;
+				var v = symb.type.sts.name;
+				if (v.equals("bool")) {
+					v = "int";
+				}
+				row2 = row2 + symb.type.sts.name;
+				row = row + v;
 			}
 			row = row + ")";
-			System.out.println(row);
+			row2 = row2 + ")";
 			if (hash.contains(row)) {
-				error("Function '" +  row + "' already exists", symbol.funcao, null, -1);
+				error("Function '" +  row2 + "' already exists", symbol.funcao, null, -1);
 			}
 			hash.add(row);
 		}
@@ -132,7 +142,7 @@ def checkSwitchCases(NoPtrSelect s) {
 	for (NoPtrCases c : s.cases) {
 		if (c instanceof CaseNormal) {
 			val tipo2 = getExpressionType(c.expr)
-			if (!tipo2.equals(tipo)) {
+			if (!isSameType(tipo2, tipo)) {
 				error ("A case rule should have the same type as the switch, expected '" + tipo + "' found '" + tipo2 + "'", c, null, -1);
 			}
 		}
@@ -159,10 +169,10 @@ def checkReturnTypeFunction(Return r) {
 			if (tipoCRT2.equals("void")) {
 				error("A 'void' function should not have a return", r, null, -1);
 			}
-			else if (tipoCRT.equals("Tipo NAo Declarado")) {
+			else if (tipoCRT.equals("No Type Found")) {
 				error("Your variable was not declared, neither is an argument.", r, null, -1);
 			}
-			else if (!tipoCRT2.equals(tipoCRT)) {
+			else if (!isSameType(tipoCRT2, tipoCRT)) {
 				error("Return type mismatch, expected '" + tipoCRT2 + "' found '" + tipoCRT + "'.", r, null, -1);
 			}
 			
@@ -207,10 +217,11 @@ def getExpressionType(NoPtrExpression expr) {
 	if (expr.op instanceof String) {
 		val	g2 = getExpressionTypeTerminal(expr.right); 
 		if (expr.op.equals('||') || expr.op.equals('&&')) {
-			if (!g1.equals("bool") || !g2.equals("bool")) {
+			if (!isSameType(g1, "bool") || !isSameType(g2, "bool")) {
 				error("A logical operation should be between booleans, found '(" + g1 + "," + g2 +")'", expr, null, -1);
 			}
-		} else if (!g1.equals(g2)) {
+		} else if (!isSameType(g1, g2)
+		) {
 			error("A comparison should between same types, but found '" + g1 + "' and '" + g2 + "'", expr, null, -1);
 		}
 		return "bool";
@@ -220,6 +231,13 @@ def getExpressionType(NoPtrExpression expr) {
 	}
 }
 Body st2;
+
+def Boolean isSameType(String a, String b) {
+	if (a.equals("int") || a.equals("bool")) {
+		return b.equals("int") || b.equals("bool");
+	}
+	return a.equals(b);
+}
 
 FunctionDeclaration st3;
 EObject ret2;

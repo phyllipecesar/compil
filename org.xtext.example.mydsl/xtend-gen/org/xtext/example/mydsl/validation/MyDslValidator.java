@@ -49,6 +49,10 @@ public class MyDslValidator extends AbstractMyDslValidator {
     }
   }.apply();
   
+  /**
+   * Verifica se os parametros sao declarados duas vezes com o mesmo nome
+   * e se existe alguma variavel com o mesmo nome dos parametros.
+   */
   @Check
   public void checkParamsFunction(final FunctionDeclaration funcao) {
     this.hash.clear();
@@ -90,6 +94,7 @@ public class MyDslValidator extends AbstractMyDslValidator {
   @Check
   public void checkFunctionAlreadyExists(final Body b) {
     this.hash.clear();
+    String row2 = "";
     EList<Declaration> _declarations = b.getDeclarations();
     for (final Declaration symbol : _declarations) {
       try {
@@ -102,6 +107,7 @@ public class MyDslValidator extends AbstractMyDslValidator {
           String _plus = (_name_1 + "(");
           this.row = _plus;
           this.ok = 0;
+          row2 = this.row;
           FunctionDeclaration _funcao_2 = symbol.getFuncao();
           EList<Parameter> _params = _funcao_2.getParams();
           for (final Parameter symb : _params) {
@@ -112,17 +118,25 @@ public class MyDslValidator extends AbstractMyDslValidator {
               this.ok = 1;
               Type _type = symb.getType();
               simple_type_specifier _sts = _type.getSts();
-              String _name_2 = _sts.getName();
-              String _plus_1 = (this.row + _name_2);
-              this.row = _plus_1;
+              String v = _sts.getName();
+              boolean _equals = v.equals("bool");
+              if (_equals) {
+                v = "int";
+              }
+              Type _type_1 = symb.getType();
+              simple_type_specifier _sts_1 = _type_1.getSts();
+              String _name_2 = _sts_1.getName();
+              String _plus_1 = (row2 + _name_2);
+              row2 = _plus_1;
+              this.row = (this.row + v);
             }
           }
           this.row = (this.row + ")");
-          System.out.println(this.row);
+          row2 = (row2 + ")");
           boolean _contains = this.hash.contains(this.row);
           if (_contains) {
             FunctionDeclaration _funcao_3 = symbol.getFuncao();
-            this.error((("Function \'" + this.row) + "\' already exists"), _funcao_3, null, (-1));
+            this.error((("Function \'" + row2) + "\' already exists"), _funcao_3, null, (-1));
           }
           this.hash.add(this.row);
         }
@@ -188,8 +202,8 @@ public class MyDslValidator extends AbstractMyDslValidator {
       if ((c instanceof CaseNormal)) {
         NoPtrExpression _expr_1 = ((CaseNormal)c).getExpr();
         final String tipo2 = this.getExpressionType(_expr_1);
-        boolean _equals = tipo2.equals(tipo);
-        boolean _not = (!_equals);
+        Boolean _isSameType = this.isSameType(tipo2, tipo);
+        boolean _not = (!(_isSameType).booleanValue());
         if (_not) {
           this.error((((("A case rule should have the same type as the switch, expected \'" + tipo) + "\' found \'") + tipo2) + "\'"), c, null, (-1));
         }
@@ -233,12 +247,12 @@ public class MyDslValidator extends AbstractMyDslValidator {
             if (_equals) {
               this.error("A \'void\' function should not have a return", r, null, (-1));
             } else {
-              boolean _equals_1 = this.tipoCRT.equals("Tipo NAo Declarado");
+              boolean _equals_1 = this.tipoCRT.equals("No Type Found");
               if (_equals_1) {
                 this.error("Your variable was not declared, neither is an argument.", r, null, (-1));
               } else {
-                boolean _equals_2 = this.tipoCRT2.equals(this.tipoCRT);
-                boolean _not = (!_equals_2);
+                Boolean _isSameType = this.isSameType(this.tipoCRT2, this.tipoCRT);
+                boolean _not = (!(_isSameType).booleanValue());
                 if (_not) {
                   this.error((((("Return type mismatch, expected \'" + this.tipoCRT2) + "\' found \'") + this.tipoCRT) + "\'."), r, null, (-1));
                 }
@@ -305,21 +319,21 @@ public class MyDslValidator extends AbstractMyDslValidator {
       }
       if (_or) {
         boolean _or_1 = false;
-        boolean _equals_2 = g1.equals("bool");
-        boolean _not = (!_equals_2);
+        Boolean _isSameType = this.isSameType(g1, "bool");
+        boolean _not = (!(_isSameType).booleanValue());
         if (_not) {
           _or_1 = true;
         } else {
-          boolean _equals_3 = g2.equals("bool");
-          boolean _not_1 = (!_equals_3);
+          Boolean _isSameType_1 = this.isSameType(g2, "bool");
+          boolean _not_1 = (!(_isSameType_1).booleanValue());
           _or_1 = (_not || _not_1);
         }
         if (_or_1) {
           this.error((((("A logical operation should be between booleans, found \'(" + g1) + ",") + g2) + ")\'"), expr, null, (-1));
         }
       } else {
-        boolean _equals_4 = g1.equals(g2);
-        boolean _not_2 = (!_equals_4);
+        Boolean _isSameType_2 = this.isSameType(g1, g2);
+        boolean _not_2 = (!(_isSameType_2).booleanValue());
         if (_not_2) {
           this.error((((("A comparison should between same types, but found \'" + g1) + "\' and \'") + g2) + "\'"), expr, null, (-1));
         }
@@ -331,6 +345,29 @@ public class MyDslValidator extends AbstractMyDslValidator {
   }
   
   private Body st2;
+  
+  public Boolean isSameType(final String a, final String b) {
+    boolean _or = false;
+    boolean _equals = a.equals("int");
+    if (_equals) {
+      _or = true;
+    } else {
+      boolean _equals_1 = a.equals("bool");
+      _or = (_equals || _equals_1);
+    }
+    if (_or) {
+      boolean _or_1 = false;
+      boolean _equals_2 = b.equals("int");
+      if (_equals_2) {
+        _or_1 = true;
+      } else {
+        boolean _equals_3 = b.equals("bool");
+        _or_1 = (_equals_2 || _equals_3);
+      }
+      return Boolean.valueOf(_or_1);
+    }
+    return Boolean.valueOf(a.equals(b));
+  }
   
   private FunctionDeclaration st3;
   

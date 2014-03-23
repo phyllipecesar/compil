@@ -2222,7 +2222,29 @@ ruleParameter returns [EObject current=null]
     {
     	newLeafNode(otherlv_8, grammarAccess.getParameterAccess().getRightSquareBracketKeyword_5_2());
     }
-)*)
+)*(	otherlv_9='=' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getParameterAccess().getEqualsSignKeyword_6_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getParameterAccess().getExprReturnExprParserRuleCall_6_1_0()); 
+	    }
+		lv_expr_10_0=ruleReturnExpr		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getParameterRule());
+	        }
+       		set(
+       			$current, 
+       			"expr",
+        		lv_expr_10_0, 
+        		"ReturnExpr");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?)
 ;
 
 
@@ -2313,7 +2335,29 @@ this_INT_7=RULE_INT
     {
     	newLeafNode(otherlv_8, grammarAccess.getVarDeclAccess().getRightSquareBracketKeyword_5_2());
     }
-)*)
+)*(	otherlv_9='=' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getVarDeclAccess().getEqualsSignKeyword_6_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getVarDeclAccess().getExprReturnExprParserRuleCall_6_1_0()); 
+	    }
+		lv_expr_10_0=ruleReturnExpr		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getVarDeclRule());
+	        }
+       		set(
+       			$current, 
+       			"expr",
+        		lv_expr_10_0, 
+        		"ReturnExpr");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?)
 ;
 
 
@@ -2728,7 +2772,29 @@ ruleReturnExpr returns [EObject current=null]
 	    }
 
 )
-)))
+)(	otherlv_10='=' 
+    {
+    	newLeafNode(otherlv_10, grammarAccess.getReturnExprAccess().getEqualsSignKeyword_4_2_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getReturnExprAccess().getExprReturnExprParserRuleCall_4_2_1_0()); 
+	    }
+		lv_expr_11_0=ruleReturnExpr		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getReturnExprRule());
+	        }
+       		set(
+       			$current, 
+       			"expr",
+        		lv_expr_11_0, 
+        		"ReturnExpr");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?))
 ;
 
 

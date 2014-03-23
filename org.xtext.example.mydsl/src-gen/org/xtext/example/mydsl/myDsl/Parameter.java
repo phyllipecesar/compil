@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Parameter#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Parameter#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Parameter#getExpr <em>Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,5 +75,31 @@ public interface Parameter extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Expr</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Expr</em>' containment reference.
+   * @see #setExpr(ReturnExpr)
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getParameter_Expr()
+   * @model containment="true"
+   * @generated
+   */
+  ReturnExpr getExpr();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Parameter#getExpr <em>Expr</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Expr</em>' containment reference.
+   * @see #getExpr()
+   * @generated
+   */
+  void setExpr(ReturnExpr value);
 
 } // Parameter

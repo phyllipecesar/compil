@@ -161,10 +161,10 @@ NoPtrCases:
 	
 ;
 Parameter:
-	{Parameter} 'const' ? type=Type ('*'*|'&'*)  name=ID ('['INT?']')*;
+	{Parameter} 'const' ? type=Type ('*'*|'&'*)  name=ID ('['INT?']')* ('=' expr=ReturnExpr)?;
 
 VarDecl:
-	{VarDecl} 'const'? type=Type ('*'*|'&'*) name=ID ('['INT']')*;
+	{VarDecl} 'const'? type=Type ('*'*|'&'*) name=ID ('['INT']')* ('=' expr=ReturnExpr)?;
 
 Type:
 	{Type} sts = simple_type_specifier;
@@ -222,7 +222,7 @@ ReturnExpr:
 	{BooleanhType} value=("false"|"true") |
 	{StringhType} STRING |
 	{FunctionType} call=FunctionChamada |
-	{Variable} name=ID;
+	{Variable} name=ID ('=' expr=ReturnExpr)?;
 
 
 

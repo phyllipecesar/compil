@@ -1188,12 +1188,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftSquareBracketKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final RuleCall cINTTerminalRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
 		private final Keyword cRightSquareBracketKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cEqualsSignKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cExprAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cExprReturnExprParserRuleCall_6_1_0 = (RuleCall)cExprAssignment_6_1.eContents().get(0);
 		
 		//Parameter:
-		//	{Parameter} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT? "]")*;
+		//	{Parameter} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT? "]")* ("=" expr=ReturnExpr)?;
 		public ParserRule getRule() { return rule; }
 
-		//{Parameter} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT? "]")*
+		//{Parameter} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT? "]")* ("=" expr=ReturnExpr)?
 		public Group getGroup() { return cGroup; }
 
 		//{Parameter}
@@ -1234,6 +1238,18 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"]"
 		public Keyword getRightSquareBracketKeyword_5_2() { return cRightSquareBracketKeyword_5_2; }
+
+		//("=" expr=ReturnExpr)?
+		public Group getGroup_6() { return cGroup_6; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_6_0() { return cEqualsSignKeyword_6_0; }
+
+		//expr=ReturnExpr
+		public Assignment getExprAssignment_6_1() { return cExprAssignment_6_1; }
+
+		//ReturnExpr
+		public RuleCall getExprReturnExprParserRuleCall_6_1_0() { return cExprReturnExprParserRuleCall_6_1_0; }
 	}
 
 	public class VarDeclElements extends AbstractParserRuleElementFinder {
@@ -1252,12 +1268,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftSquareBracketKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final RuleCall cINTTerminalRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
 		private final Keyword cRightSquareBracketKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cEqualsSignKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cExprAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cExprReturnExprParserRuleCall_6_1_0 = (RuleCall)cExprAssignment_6_1.eContents().get(0);
 		
 		//VarDecl:
-		//	{VarDecl} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT "]")*;
+		//	{VarDecl} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT "]")* ("=" expr=ReturnExpr)?;
 		public ParserRule getRule() { return rule; }
 
-		//{VarDecl} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT "]")*
+		//{VarDecl} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT "]")* ("=" expr=ReturnExpr)?
 		public Group getGroup() { return cGroup; }
 
 		//{VarDecl}
@@ -1298,6 +1318,18 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"]"
 		public Keyword getRightSquareBracketKeyword_5_2() { return cRightSquareBracketKeyword_5_2; }
+
+		//("=" expr=ReturnExpr)?
+		public Group getGroup_6() { return cGroup_6; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_6_0() { return cEqualsSignKeyword_6_0; }
+
+		//expr=ReturnExpr
+		public Assignment getExprAssignment_6_1() { return cExprAssignment_6_1; }
+
+		//ReturnExpr
+		public RuleCall getExprReturnExprParserRuleCall_6_1_0() { return cExprReturnExprParserRuleCall_6_1_0; }
 	}
 
 	public class TypeElements extends AbstractParserRuleElementFinder {
@@ -1513,14 +1545,18 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cVariableAction_4_0 = (Action)cGroup_4.eContents().get(0);
 		private final Assignment cNameAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_4_1_0 = (RuleCall)cNameAssignment_4_1.eContents().get(0);
+		private final Group cGroup_4_2 = (Group)cGroup_4.eContents().get(2);
+		private final Keyword cEqualsSignKeyword_4_2_0 = (Keyword)cGroup_4_2.eContents().get(0);
+		private final Assignment cExprAssignment_4_2_1 = (Assignment)cGroup_4_2.eContents().get(1);
+		private final RuleCall cExprReturnExprParserRuleCall_4_2_1_0 = (RuleCall)cExprAssignment_4_2_1.eContents().get(0);
 		
 		//ReturnExpr:
 		//	{IntType} INT | {BooleanhType} value=("false" | "true") | {StringhType} STRING | {FunctionType} call=FunctionChamada |
-		//	{Variable} name=ID;
+		//	{Variable} name=ID ("=" expr=ReturnExpr)?;
 		public ParserRule getRule() { return rule; }
 
 		//{IntType} INT | {BooleanhType} value=("false" | "true") | {StringhType} STRING | {FunctionType} call=FunctionChamada |
-		//{Variable} name=ID
+		//{Variable} name=ID ("=" expr=ReturnExpr)?
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//{IntType} INT
@@ -1571,7 +1607,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//FunctionChamada
 		public RuleCall getCallFunctionChamadaParserRuleCall_3_1_0() { return cCallFunctionChamadaParserRuleCall_3_1_0; }
 
-		//{Variable} name=ID
+		//{Variable} name=ID ("=" expr=ReturnExpr)?
 		public Group getGroup_4() { return cGroup_4; }
 
 		//{Variable}
@@ -1582,6 +1618,18 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_4_1_0() { return cNameIDTerminalRuleCall_4_1_0; }
+
+		//("=" expr=ReturnExpr)?
+		public Group getGroup_4_2() { return cGroup_4_2; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_4_2_0() { return cEqualsSignKeyword_4_2_0; }
+
+		//expr=ReturnExpr
+		public Assignment getExprAssignment_4_2_1() { return cExprAssignment_4_2_1; }
+
+		//ReturnExpr
+		public RuleCall getExprReturnExprParserRuleCall_4_2_1_0() { return cExprReturnExprParserRuleCall_4_2_1_0; }
 	}
 
 	public class Declaration_statementElements extends AbstractParserRuleElementFinder {
@@ -5557,7 +5605,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Parameter:
-	//	{Parameter} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT? "]")*;
+	//	{Parameter} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT? "]")* ("=" expr=ReturnExpr)?;
 	public ParameterElements getParameterAccess() {
 		return (pParameter != null) ? pParameter : (pParameter = new ParameterElements());
 	}
@@ -5567,7 +5615,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//VarDecl:
-	//	{VarDecl} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT "]")*;
+	//	{VarDecl} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT "]")* ("=" expr=ReturnExpr)?;
 	public VarDeclElements getVarDeclAccess() {
 		return (pVarDecl != null) ? pVarDecl : (pVarDecl = new VarDeclElements());
 	}
@@ -5652,7 +5700,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	//ReturnExpr:
 	//	{IntType} INT | {BooleanhType} value=("false" | "true") | {StringhType} STRING | {FunctionType} call=FunctionChamada |
-	//	{Variable} name=ID;
+	//	{Variable} name=ID ("=" expr=ReturnExpr)?;
 	public ReturnExprElements getReturnExprAccess() {
 		return (pReturnExpr != null) ? pReturnExpr : (pReturnExpr = new ReturnExprElements());
 	}

@@ -574,13 +574,22 @@ public interface MyDslPackage extends EPackage
   int PARAMETER__NAME = 1;
 
   /**
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER__EXPR = 2;
+
+  /**
    * The number of structural features of the '<em>Parameter</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PARAMETER_FEATURE_COUNT = 2;
+  int PARAMETER_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.VarDeclImpl <em>Var Decl</em>}' class.
@@ -611,13 +620,22 @@ public interface MyDslPackage extends EPackage
   int VAR_DECL__NAME = 1;
 
   /**
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VAR_DECL__EXPR = 2;
+
+  /**
    * The number of structural features of the '<em>Var Decl</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VAR_DECL_FEATURE_COUNT = 2;
+  int VAR_DECL_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.TypeImpl <em>Type</em>}' class.
@@ -1125,13 +1143,22 @@ public interface MyDslPackage extends EPackage
   int VARIABLE__NAME = RETURN_EXPR_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE__EXPR = RETURN_EXPR_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Variable</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_FEATURE_COUNT = RETURN_EXPR_FEATURE_COUNT + 1;
+  int VARIABLE_FEATURE_COUNT = RETURN_EXPR_FEATURE_COUNT + 2;
 
 
   /**
@@ -1606,6 +1633,17 @@ public interface MyDslPackage extends EPackage
   EAttribute getParameter_Name();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Parameter#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Parameter#getExpr()
+   * @see #getParameter()
+   * @generated
+   */
+  EReference getParameter_Expr();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.VarDecl <em>Var Decl</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1636,6 +1674,17 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EAttribute getVarDecl_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.VarDecl#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see org.xtext.example.mydsl.myDsl.VarDecl#getExpr()
+   * @see #getVarDecl()
+   * @generated
+   */
+  EReference getVarDecl_Expr();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Type <em>Type</em>}'.
@@ -1958,6 +2007,17 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EAttribute getVariable_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Variable#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Variable#getExpr()
+   * @see #getVariable()
+   * @generated
+   */
+  EReference getVariable_Expr();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -2361,6 +2421,14 @@ public interface MyDslPackage extends EPackage
     EAttribute PARAMETER__NAME = eINSTANCE.getParameter_Name();
 
     /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PARAMETER__EXPR = eINSTANCE.getParameter_Expr();
+
+    /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.VarDeclImpl <em>Var Decl</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2385,6 +2453,14 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EAttribute VAR_DECL__NAME = eINSTANCE.getVarDecl_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VAR_DECL__EXPR = eINSTANCE.getVarDecl_Expr();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.TypeImpl <em>Type</em>}' class.
@@ -2671,6 +2747,14 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EAttribute VARIABLE__NAME = eINSTANCE.getVariable_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE__EXPR = eINSTANCE.getVariable_Expr();
 
   }
 

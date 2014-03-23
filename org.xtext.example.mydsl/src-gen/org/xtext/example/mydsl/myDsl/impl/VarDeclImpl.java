@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
+import org.xtext.example.mydsl.myDsl.ReturnExpr;
 import org.xtext.example.mydsl.myDsl.Type;
 import org.xtext.example.mydsl.myDsl.VarDecl;
 
@@ -24,6 +25,7 @@ import org.xtext.example.mydsl.myDsl.VarDecl;
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.VarDeclImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.VarDeclImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.VarDeclImpl#getExpr <em>Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,6 +62,16 @@ public class VarDeclImpl extends MinimalEObjectImpl.Container implements VarDecl
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpr()
+   * @generated
+   * @ordered
+   */
+  protected ReturnExpr expr;
 
   /**
    * <!-- begin-user-doc -->
@@ -158,6 +170,54 @@ public class VarDeclImpl extends MinimalEObjectImpl.Container implements VarDecl
    * <!-- end-user-doc -->
    * @generated
    */
+  public ReturnExpr getExpr()
+  {
+    return expr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExpr(ReturnExpr newExpr, NotificationChain msgs)
+  {
+    ReturnExpr oldExpr = expr;
+    expr = newExpr;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.VAR_DECL__EXPR, oldExpr, newExpr);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExpr(ReturnExpr newExpr)
+  {
+    if (newExpr != expr)
+    {
+      NotificationChain msgs = null;
+      if (expr != null)
+        msgs = ((InternalEObject)expr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.VAR_DECL__EXPR, null, msgs);
+      if (newExpr != null)
+        msgs = ((InternalEObject)newExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.VAR_DECL__EXPR, null, msgs);
+      msgs = basicSetExpr(newExpr, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.VAR_DECL__EXPR, newExpr, newExpr));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -165,6 +225,8 @@ public class VarDeclImpl extends MinimalEObjectImpl.Container implements VarDecl
     {
       case MyDslPackage.VAR_DECL__TYPE:
         return basicSetType(null, msgs);
+      case MyDslPackage.VAR_DECL__EXPR:
+        return basicSetExpr(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -183,6 +245,8 @@ public class VarDeclImpl extends MinimalEObjectImpl.Container implements VarDecl
         return getType();
       case MyDslPackage.VAR_DECL__NAME:
         return getName();
+      case MyDslPackage.VAR_DECL__EXPR:
+        return getExpr();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -202,6 +266,9 @@ public class VarDeclImpl extends MinimalEObjectImpl.Container implements VarDecl
         return;
       case MyDslPackage.VAR_DECL__NAME:
         setName((String)newValue);
+        return;
+      case MyDslPackage.VAR_DECL__EXPR:
+        setExpr((ReturnExpr)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -223,6 +290,9 @@ public class VarDeclImpl extends MinimalEObjectImpl.Container implements VarDecl
       case MyDslPackage.VAR_DECL__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case MyDslPackage.VAR_DECL__EXPR:
+        setExpr((ReturnExpr)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -241,6 +311,8 @@ public class VarDeclImpl extends MinimalEObjectImpl.Container implements VarDecl
         return type != null;
       case MyDslPackage.VAR_DECL__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case MyDslPackage.VAR_DECL__EXPR:
+        return expr != null;
     }
     return super.eIsSet(featureID);
   }
