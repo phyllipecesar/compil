@@ -24,11 +24,15 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_NamespaceDefinition_InlineKeyword_0_q;
 	protected AbstractElementAlias match_NoPtrCases_StatementParserRuleCall_0_3_q;
 	protected AbstractElementAlias match_NoPtrCases_StatementParserRuleCall_1_4_q;
+	protected AbstractElementAlias match_NoPtrTerminalExpression_ExclamationMarkKeyword_0_1_a;
+	protected AbstractElementAlias match_NoPtrTerminalExpression_ExclamationMarkKeyword_1_1_a;
 	protected AbstractElementAlias match_Parameter_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a;
 	protected AbstractElementAlias match_Parameter_ConstKeyword_1_q;
+	protected AbstractElementAlias match_Parameter_ExclamationMarkKeyword_6_1_a;
 	protected AbstractElementAlias match_Parameter___LeftSquareBracketKeyword_5_0_INTTerminalRuleCall_5_1_q_RightSquareBracketKeyword_5_2__a;
 	protected AbstractElementAlias match_VarDecl_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a;
 	protected AbstractElementAlias match_VarDecl_ConstKeyword_1_q;
+	protected AbstractElementAlias match_VarDecl_ExclamationMarkKeyword_6_1_a;
 	protected AbstractElementAlias match_VarDecl___LeftSquareBracketKeyword_5_0_INTTerminalRuleCall_5_1_RightSquareBracketKeyword_5_2__a;
 	
 	@Inject
@@ -39,11 +43,15 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_NamespaceDefinition_InlineKeyword_0_q = new TokenAlias(false, true, grammarAccess.getNamespaceDefinitionAccess().getInlineKeyword_0());
 		match_NoPtrCases_StatementParserRuleCall_0_3_q = new TokenAlias(false, true, grammarAccess.getNoPtrCasesAccess().getStatementParserRuleCall_0_3());
 		match_NoPtrCases_StatementParserRuleCall_1_4_q = new TokenAlias(false, true, grammarAccess.getNoPtrCasesAccess().getStatementParserRuleCall_1_4());
+		match_NoPtrTerminalExpression_ExclamationMarkKeyword_0_1_a = new TokenAlias(true, true, grammarAccess.getNoPtrTerminalExpressionAccess().getExclamationMarkKeyword_0_1());
+		match_NoPtrTerminalExpression_ExclamationMarkKeyword_1_1_a = new TokenAlias(true, true, grammarAccess.getNoPtrTerminalExpressionAccess().getExclamationMarkKeyword_1_1());
 		match_Parameter_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a = new AlternativeAlias(false, false, new TokenAlias(true, true, grammarAccess.getParameterAccess().getAmpersandKeyword_3_1()), new TokenAlias(true, true, grammarAccess.getParameterAccess().getAsteriskKeyword_3_0()));
 		match_Parameter_ConstKeyword_1_q = new TokenAlias(false, true, grammarAccess.getParameterAccess().getConstKeyword_1());
+		match_Parameter_ExclamationMarkKeyword_6_1_a = new TokenAlias(true, true, grammarAccess.getParameterAccess().getExclamationMarkKeyword_6_1());
 		match_Parameter___LeftSquareBracketKeyword_5_0_INTTerminalRuleCall_5_1_q_RightSquareBracketKeyword_5_2__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getParameterAccess().getLeftSquareBracketKeyword_5_0()), new TokenAlias(false, true, grammarAccess.getParameterAccess().getINTTerminalRuleCall_5_1()), new TokenAlias(false, false, grammarAccess.getParameterAccess().getRightSquareBracketKeyword_5_2()));
 		match_VarDecl_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a = new AlternativeAlias(false, false, new TokenAlias(true, true, grammarAccess.getVarDeclAccess().getAmpersandKeyword_3_1()), new TokenAlias(true, true, grammarAccess.getVarDeclAccess().getAsteriskKeyword_3_0()));
 		match_VarDecl_ConstKeyword_1_q = new TokenAlias(false, true, grammarAccess.getVarDeclAccess().getConstKeyword_1());
+		match_VarDecl_ExclamationMarkKeyword_6_1_a = new TokenAlias(true, true, grammarAccess.getVarDeclAccess().getExclamationMarkKeyword_6_1());
 		match_VarDecl___LeftSquareBracketKeyword_5_0_INTTerminalRuleCall_5_1_RightSquareBracketKeyword_5_2__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getVarDeclAccess().getLeftSquareBracketKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getVarDeclAccess().getINTTerminalRuleCall_5_1()), new TokenAlias(false, false, grammarAccess.getVarDeclAccess().getRightSquareBracketKeyword_5_2()));
 	}
 	
@@ -137,16 +145,24 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_NoPtrCases_StatementParserRuleCall_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_NoPtrCases_StatementParserRuleCall_1_4_q.equals(syntax))
 				emit_NoPtrCases_StatementParserRuleCall_1_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_NoPtrTerminalExpression_ExclamationMarkKeyword_0_1_a.equals(syntax))
+				emit_NoPtrTerminalExpression_ExclamationMarkKeyword_0_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_NoPtrTerminalExpression_ExclamationMarkKeyword_1_1_a.equals(syntax))
+				emit_NoPtrTerminalExpression_ExclamationMarkKeyword_1_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Parameter_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a.equals(syntax))
 				emit_Parameter_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Parameter_ConstKeyword_1_q.equals(syntax))
 				emit_Parameter_ConstKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Parameter_ExclamationMarkKeyword_6_1_a.equals(syntax))
+				emit_Parameter_ExclamationMarkKeyword_6_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Parameter___LeftSquareBracketKeyword_5_0_INTTerminalRuleCall_5_1_q_RightSquareBracketKeyword_5_2__a.equals(syntax))
 				emit_Parameter___LeftSquareBracketKeyword_5_0_INTTerminalRuleCall_5_1_q_RightSquareBracketKeyword_5_2__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_VarDecl_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a.equals(syntax))
 				emit_VarDecl_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_VarDecl_ConstKeyword_1_q.equals(syntax))
 				emit_VarDecl_ConstKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_VarDecl_ExclamationMarkKeyword_6_1_a.equals(syntax))
+				emit_VarDecl_ExclamationMarkKeyword_6_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_VarDecl___LeftSquareBracketKeyword_5_0_INTTerminalRuleCall_5_1_RightSquareBracketKeyword_5_2__a.equals(syntax))
 				emit_VarDecl___LeftSquareBracketKeyword_5_0_INTTerminalRuleCall_5_1_RightSquareBracketKeyword_5_2__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -195,7 +211,23 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     '&'* | '*'*
+	 *     '!'*
+	 */
+	protected void emit_NoPtrTerminalExpression_ExclamationMarkKeyword_0_1_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     '!'*
+	 */
+	protected void emit_NoPtrTerminalExpression_ExclamationMarkKeyword_1_1_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     '*'* | '&'*
 	 */
 	protected void emit_Parameter_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -206,6 +238,14 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'const'?
 	 */
 	protected void emit_Parameter_ConstKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     '!'*
+	 */
+	protected void emit_Parameter_ExclamationMarkKeyword_6_1_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -230,6 +270,14 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'const'?
 	 */
 	protected void emit_VarDecl_ConstKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     '!'*
+	 */
+	protected void emit_VarDecl_ExclamationMarkKeyword_6_1_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

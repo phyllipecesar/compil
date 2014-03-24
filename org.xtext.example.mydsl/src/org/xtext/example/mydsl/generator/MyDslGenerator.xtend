@@ -6,6 +6,26 @@ package org.xtext.example.mydsl.generator
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
+import org.eclipse.emf.ecore.EObject
+import org.xtext.example.mydsl.myDsl.FunctionDeclaration
+import org.xtext.example.mydsl.myDsl.NoPtrStatement
+import org.xtext.example.mydsl.myDsl.VarDecl
+import org.eclipse.xtext.generator.parser.antlr.splitting.simpleExpressions.impl.ExpressionImpl
+import org.xtext.example.mydsl.myDsl.impl.VarDeclImpl
+import org.xtext.example.mydsl.myDsl.Parameter
+import org.xtext.example.mydsl.myDsl.NoPtrExpression
+import org.xtext.example.mydsl.myDsl.ReturnExpr
+import org.xtext.example.mydsl.myDsl.BooleanhType
+import org.xtext.example.mydsl.myDsl.IntType
+import org.xtext.example.mydsl.myDsl.StringType
+import org.xtext.example.mydsl.myDsl.StringhType
+import org.xtext.example.mydsl.myDsl.Return
+import org.xtext.example.mydsl.myDsl.impl.ReturnImpl
+import org.xtext.example.mydsl.myDsl.NoPtrTerminalExpression
+import org.xtext.example.mydsl.myDsl.Atomic
+import org.xtext.example.mydsl.myDsl.Variable
+import org.xtext.example.mydsl.myDsl.NoPtrMudanca
+import org.xtext.example.mydsl.myDsl.impl.NoPtrMudancaImpl
 
 /**
  * Generates code from your model files on save.
@@ -14,11 +34,218 @@ import org.eclipse.xtext.generator.IFileSystemAccess
  */
 class MyDslGenerator implements IGenerator {
 	
+	var regCounter = 0;
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
+		var code = "";
 //		fsa.generateFile('greetings.txt', 'People to greet: ' + 
 //			resource.allContents
 //				.filter(typeof(Greeting))
 //				.map[name]
 //				.join(', '))
+		for(declaration : resource.allContents.toIterable.
+			filter(FunctionDeclaration)){
+				code = code + declaration.compile
+				regCounter = regCounter+1;
+			}
+
+		fsa.generateFile('gen.asm', code);
+	}
+	def String compile(VarDecl variavel) {
+		var ret = "";
+		if (variavel.expr == null) {
+			ret = "LD R" + regCounter + ", #";
+			System.out.println("Type GEN: " + variavel.type.sts.name);
+			if (variavel.type.sts.name == "int") {
+				ret = ret + "0";
+			} else if (variavel.type.sts.name == "string") {
+				ret = ret + "\"\"";
+			} else if (variavel.type.sts.name == "bool") {
+				ret = ret + "false";
+			} else {
+				ret = ret + "null";
+			}
+			
+		}
+		return '''
+		«ret»
+		«variavel.expr.compile»
+		ST «variavel.name», R«regCounter»
+	'''
+	
+	}
+	
+	def String compile(Parameter variavel) {
+		var ret = "";
+		if (variavel.expr == null) {
+			ret = "LD R" + regCounter + ", #";
+			System.out.println("Type GEN: " + variavel.type.sts.name);
+			if (variavel.type.sts.name == "int") {
+				ret = ret + "0";
+			} else if (variavel.type.sts.name == "string") {
+				ret = ret + "\"\"";
+			} else if (variavel.type.sts.name == "bool") {
+				ret = ret + "false";
+			} else {
+				ret = ret + "null";
+			}
+			
+		}
+		return '''
+		«ret»
+		«variavel.expr.compile»
+		ST «variavel.name», R«regCounter»
+	'''
+	
+	}
+	def String compile(IntType tipo) {
+		var valor = "0";
+		if (tipo == null) {
+			valor = "0";
+		}
+		else {
+			valor = tipo.value.toString;
+		}
+		return "LD R" + regCounter + ", #" + valor;
+	}
+	def String compile(BooleanhType tipo) {
+		var valor = "false";
+		if (tipo == null) {
+			valor = "false";
+		}
+		else {
+			valor = tipo.value.toString;
+		}
+		return "LD R" + regCounter + ", #" + valor;
+	}
+	
+	def String compile(StringhType tipo) {
+		var valor = "\"\"";
+		if (tipo == null) {
+			valor = "\"\"";
+		}
+		else {
+			valor = "\"" + tipo.value + "\"";
+		}
+		return "LD R" + regCounter + ", #" + valor;
+	}
+	
+	def String compile(Variable expr) {
+		if (expr.expr == null) {
+			return "LD R" + regCounter + ", " + expr.name;
+		} else {
+			return '''
+«expr.expr.compile»
+ST «expr.name», R«regCounter»
+LD R«regCounter», «expr.name» 
+'''
+		}
+	}
+	def String compile(ReturnExpr expr) {
+		if (expr instanceof BooleanhType) {
+			return compile(BooleanhType.cast(expr));
+		} else if (expr instanceof IntType) {
+			return compile(IntType.cast(expr));
+		} else if (expr instanceof StringhType) {
+			return compile(StringhType.cast(expr));
+		} else if (expr instanceof Variable) {
+			return compile(Variable.cast(expr));
+		}
+		
+		if (expr == null) {
+		}
+		return "";
+	}
+	def compile(NoPtrMudanca mud) {
+		if (mud.expr != null) {
+			return '''
+			«mud.expr.compile»
+			ST «mud.name», R«regCounter» 
+			''';
+		} else {
+			return '';
+		}
+	}
+	def String compile(NoPtrStatement statement) '''
+		«FOR decl : statement.eContents»
+			«IF decl instanceof VarDecl»
+				«VarDeclImpl.cast(decl).compile»
+			«ELSEIF decl instanceof NoPtrMudanca»
+				«NoPtrMudancaImpl.cast(decl).compile»
+			«ELSEIF decl instanceof Return»
+				«ReturnImpl.cast(decl).compile»
+			«ENDIF»
+		«ENDFOR»
+	'''
+	
+	def compile(NoPtrTerminalExpression expr) {
+		if (expr instanceof Atomic) {
+			return compile(ReturnExpr.cast(expr.atomic));	
+		}
+		return compile(expr.inside);
+	}
+	
+	def String compile(NoPtrExpression expr) {
+		if (expr == null) {
+			return "";
+		} else {
+			var left = compile(expr.left);
+			var reg = regCounter;
+			var ret = "";
+			if (expr.op != null) {
+				regCounter = regCounter + 1;
+				var right = compile(expr.right);
+			
+				if (expr.op == '&&') {
+					ret = "AND R" + regCounter + ", R" + reg + ", R" + regCounter;
+				} else if (expr.op == '||') {
+					ret = "OR R" + regCounter + ", R" + reg + ", R" + regCounter;
+				} else if (expr.op == '==') {
+					ret = "CMP R" + regCounter + ", R" + reg + ", R" + regCounter;
+				} else if (expr.op == '!=') {
+					ret = "CMP R" + regCounter + ", R" + reg + ", R" + regCounter;
+					ret = ret + "\nNOT R" + regCounter + ", R" + regCounter;
+				}
+				ret = right + "\n" + ret;
+			}
+		return '''«left»
+«ret»
+		'''
+		}
+		
+	}
+	def compile(Return ret) {
+		var antigo = "";
+		if (ret.rettype != null) {
+			antigo = '''
+				«ret.rettype.compile»
+				LD RET, R«regCounter»
+			'''
+		}
+	return '''
+		«antigo»
+		BR *0(SP)
+	'''	
+	}
+	def String getNameFunction(FunctionDeclaration funcao) {
+		var nome = funcao.name + '(';
+		var ok = 0;
+		for (Parameter symb : funcao.params) {
+				if (ok == 1) nome = nome + ",";
+				ok = 1;
+				nome = nome + symb.type.sts.name;
+		}
+		nome = nome + ')';
+		return nome;
+	}
+	
+	def String compile(FunctionDeclaration functionDecl) {
+	return
+	'''
+		«getNameFunction(functionDecl)»:
+		«FOR decl : functionDecl.params»
+			«decl.compile»
+		«ENDFOR»
+		«functionDecl.escopo.compile»
+	'''
 	}
 }

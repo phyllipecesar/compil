@@ -36,6 +36,7 @@ import org.xtext.example.mydsl.myDsl.NoPtrSelect
 import org.xtext.example.mydsl.myDsl.NoPtrCases
 import org.xtext.example.mydsl.myDsl.DefaultCase
 import org.xtext.example.mydsl.myDsl.CaseNormal
+import org.xtext.example.mydsl.myDsl.NoPtrMudanca
 
 /**
  * Custom validation rules. 
@@ -164,8 +165,6 @@ def checkReturnTypeFunction(Return r) {
 		if (rt2 instanceof FunctionDeclaration) {
 			tipoCRT = tipo;
 			tipoCRT2 = rt2.type.sts.name;
-			System.out.println("Tipo 1" + tipoCRT);
-			System.out.println("Tipo 2" + tipoCRT2);
 			if (tipoCRT2.equals("void")) {
 				error("A 'void' function should not have a return", r, null, -1);
 			}
@@ -201,6 +200,57 @@ def String getFuncaoTipo(FunctionType f) {
 }
 
 
+def getMudanca(NoPtrMudanca mudanca) {
+		ret2 = mudanca;
+		while (!(ret2 instanceof FunctionDeclaration || ret2 instanceof Body)) {
+			ret2 = ret2.eContainer;
+		}
+		
+		if (ret2 instanceof FunctionDeclaration) {
+			st3 = ret2;
+			for (Parameter p: st3.params) {
+				if (p.name.equals(mudanca.name)) {
+					return p.type.sts.name;
+				}
+			}
+			for (VarDecl v: st3.escopo.variaveis) {
+				if (v.name.equals(mudanca.name)) {
+					return v.type.sts.name;
+				}
+			}
+		}
+		while (!(ret2 instanceof Body)) {
+			ret2 = ret2.eContainer;
+		}
+		
+		if (ret2 instanceof Body) {
+			st2 = ret2;
+			for (Declaration d2: st2.declarations) {
+				try {
+					if (d2.variaveis.name.equals(mudanca.name)) {
+						return d2.variaveis.type.sts.name;				
+					}
+				} catch(Exception e) {
+					
+				}
+				}
+			}
+	return "No Type Found";
+			
+}
+
+@Check
+def checkMudanca(NoPtrMudanca mudanca) {
+	var tipo = getMudanca(mudanca);
+	if (tipo.equals("No Type Found")) {
+		error("Variable '" + mudanca.name + "' was not declared", mudanca, null, -1);
+	} else if (mudanca.expr != null) {
+		var tipo1 = getExpressionType(mudanca.expr);
+		if (!isSameType(tipo, tipo1)) {
+			error("Variable '" + mudanca.name + "' is from type '" + tipo + "' expression returned '" + tipo1 +"'.", mudanca, null, -1); 
+		}
+	}
+}
 def String getExpressionTypeTerminal(NoPtrTerminalExpression expr) {
 	if (expr instanceof Atomic) {
 		return lookUpType(expr.atomic);

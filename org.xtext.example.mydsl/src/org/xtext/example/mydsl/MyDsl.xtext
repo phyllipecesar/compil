@@ -142,15 +142,19 @@ FunctionChamada:
 	{FunctionChamada} name=ID'('(params+=ReturnExpr ("," params+=ReturnExpr)* )?  ')'
 ;
 NoPtrStatement:
-	{NoPtrStatement} (((variaveis+= VarDecl) |  switches += NoPtrSelect |dirtyB += Return| dirty += Statement | dirtyV += FunctionChamada )*)
+	{NoPtrStatement} (((variaveis+= VarDecl) | mudancas += NoPtrMudanca | switches += NoPtrSelect |dirtyB += Return| dirty += Statement | dirtyV += FunctionChamada )*)
+;
+
+NoPtrMudanca:
+	{NoPtrMudanca} name=ID ('=' expr=NoPtrExpression)?
 ;
 NoPtrExpression:
 	{NoPtrExpression} left=NoPtrTerminalExpression (op=('&&'|'||'|'=='|'!=') right=NoPtrTerminalExpression)?	
 ;
 	
 NoPtrTerminalExpression:
-  {NoPtrTerminalExpression}'(' inside=NoPtrExpression ')' |
-  {Atomic} atomic=ReturnExpr
+  {NoPtrTerminalExpression} '!'* '(' inside=NoPtrExpression ')' |
+  {Atomic} '!'* atomic=ReturnExpr
 ;
 NoPtrSelect:
 	{NoPtrSelect} 'switch' '(' expr=NoPtrExpression')' '{' cases += NoPtrCases* '}'
@@ -161,10 +165,10 @@ NoPtrCases:
 	
 ;
 Parameter:
-	{Parameter} 'const' ? type=Type ('*'*|'&'*)  name=ID ('['INT?']')* ('=' expr=ReturnExpr)?;
+	{Parameter} 'const' ? type=Type ('*'*|'&'*)  name=ID ('['INT?']')* ('=' '!'* expr=ReturnExpr)?;
 
 VarDecl:
-	{VarDecl} 'const'? type=Type ('*'*|'&'*) name=ID ('['INT']')* ('=' expr=ReturnExpr)?;
+	{VarDecl} 'const'? type=Type ('*'*|'&'*) name=ID ('['INT']')* ('=' '!'* expr=ReturnExpr)?;
 
 Type:
 	{Type} sts = simple_type_specifier;
@@ -218,9 +222,9 @@ Return:
 ;
 
 ReturnExpr:
-	{IntType} INT |
+	{IntType} value=INT |
 	{BooleanhType} value=("false"|"true") |
-	{StringhType} STRING |
+	{StringhType} value=STRING |
 	{FunctionType} call=FunctionChamada |
 	{Variable} name=ID ('=' expr=ReturnExpr)?;
 

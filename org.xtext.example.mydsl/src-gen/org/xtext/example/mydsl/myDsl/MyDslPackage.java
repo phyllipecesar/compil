@@ -371,13 +371,22 @@ public interface MyDslPackage extends EPackage
   int NO_PTR_STATEMENT__VARIAVEIS = 0;
 
   /**
+   * The feature id for the '<em><b>Mudancas</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_STATEMENT__MUDANCAS = 1;
+
+  /**
    * The feature id for the '<em><b>Switches</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NO_PTR_STATEMENT__SWITCHES = 1;
+  int NO_PTR_STATEMENT__SWITCHES = 2;
 
   /**
    * The feature id for the '<em><b>Dirty B</b></em>' containment reference list.
@@ -386,7 +395,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NO_PTR_STATEMENT__DIRTY_B = 2;
+  int NO_PTR_STATEMENT__DIRTY_B = 3;
 
   /**
    * The feature id for the '<em><b>Dirty</b></em>' attribute list.
@@ -395,7 +404,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NO_PTR_STATEMENT__DIRTY = 3;
+  int NO_PTR_STATEMENT__DIRTY = 4;
 
   /**
    * The feature id for the '<em><b>Dirty V</b></em>' containment reference list.
@@ -404,7 +413,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NO_PTR_STATEMENT__DIRTY_V = 4;
+  int NO_PTR_STATEMENT__DIRTY_V = 5;
 
   /**
    * The number of structural features of the '<em>No Ptr Statement</em>' class.
@@ -413,7 +422,44 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NO_PTR_STATEMENT_FEATURE_COUNT = 5;
+  int NO_PTR_STATEMENT_FEATURE_COUNT = 6;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.NoPtrMudancaImpl <em>No Ptr Mudanca</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.NoPtrMudancaImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getNoPtrMudanca()
+   * @generated
+   */
+  int NO_PTR_MUDANCA = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_MUDANCA__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_MUDANCA__EXPR = 1;
+
+  /**
+   * The number of structural features of the '<em>No Ptr Mudanca</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_MUDANCA_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.NoPtrExpressionImpl <em>No Ptr Expression</em>}' class.
@@ -423,7 +469,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getNoPtrExpression()
    * @generated
    */
-  int NO_PTR_EXPRESSION = 8;
+  int NO_PTR_EXPRESSION = 9;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -469,7 +515,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getNoPtrTerminalExpression()
    * @generated
    */
-  int NO_PTR_TERMINAL_EXPRESSION = 9;
+  int NO_PTR_TERMINAL_EXPRESSION = 10;
 
   /**
    * The feature id for the '<em><b>Inside</b></em>' containment reference.
@@ -497,7 +543,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getNoPtrSelect()
    * @generated
    */
-  int NO_PTR_SELECT = 10;
+  int NO_PTR_SELECT = 11;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -534,7 +580,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getNoPtrCases()
    * @generated
    */
-  int NO_PTR_CASES = 11;
+  int NO_PTR_CASES = 12;
 
   /**
    * The number of structural features of the '<em>No Ptr Cases</em>' class.
@@ -553,7 +599,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getParameter()
    * @generated
    */
-  int PARAMETER = 12;
+  int PARAMETER = 13;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -599,7 +645,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getVarDecl()
    * @generated
    */
-  int VAR_DECL = 13;
+  int VAR_DECL = 14;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -645,7 +691,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getType()
    * @generated
    */
-  int TYPE = 14;
+  int TYPE = 15;
 
   /**
    * The feature id for the '<em><b>Sts</b></em>' containment reference.
@@ -673,7 +719,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getsimple_type_specifier()
    * @generated
    */
-  int SIMPLE_TYPE_SPECIFIER = 15;
+  int SIMPLE_TYPE_SPECIFIER = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -701,7 +747,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getsimple_declaration()
    * @generated
    */
-  int SIMPLE_DECLARATION = 16;
+  int SIMPLE_DECLARATION = 17;
 
   /**
    * The feature id for the '<em><b>Variavel</b></em>' containment reference.
@@ -729,7 +775,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getReturn()
    * @generated
    */
-  int RETURN = 17;
+  int RETURN = 18;
 
   /**
    * The feature id for the '<em><b>Rettype</b></em>' containment reference.
@@ -757,7 +803,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getReturnExpr()
    * @generated
    */
-  int RETURN_EXPR = 18;
+  int RETURN_EXPR = 19;
 
   /**
    * The number of structural features of the '<em>Return Expr</em>' class.
@@ -776,7 +822,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getdeclaration_statement()
    * @generated
    */
-  int DECLARATION_STATEMENT = 19;
+  int DECLARATION_STATEMENT = 20;
 
   /**
    * The feature id for the '<em><b>Variaveis</b></em>' containment reference list.
@@ -804,7 +850,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getblock_declaration()
    * @generated
    */
-  int BLOCK_DECLARATION = 20;
+  int BLOCK_DECLARATION = 21;
 
   /**
    * The feature id for the '<em><b>Variavel</b></em>' containment reference.
@@ -832,7 +878,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getLKS()
    * @generated
    */
-  int LKS = 21;
+  int LKS = 22;
 
   /**
    * The feature id for the '<em><b>Dirty</b></em>' containment reference.
@@ -860,7 +906,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getAtomic()
    * @generated
    */
-  int ATOMIC = 22;
+  int ATOMIC = 23;
 
   /**
    * The feature id for the '<em><b>Inside</b></em>' containment reference.
@@ -897,7 +943,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getDefaultCase()
    * @generated
    */
-  int DEFAULT_CASE = 23;
+  int DEFAULT_CASE = 24;
 
   /**
    * The number of structural features of the '<em>Default Case</em>' class.
@@ -916,7 +962,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getCaseNormal()
    * @generated
    */
-  int CASE_NORMAL = 24;
+  int CASE_NORMAL = 25;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -944,7 +990,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getIntType()
    * @generated
    */
-  int INT_TYPE = 25;
+  int INT_TYPE = 26;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -956,13 +1002,22 @@ public interface MyDslPackage extends EPackage
   int INT_TYPE__NAME = SIMPLE_TYPE_SPECIFIER__NAME;
 
   /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_TYPE__VALUE = SIMPLE_TYPE_SPECIFIER_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>Int Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INT_TYPE_FEATURE_COUNT = SIMPLE_TYPE_SPECIFIER_FEATURE_COUNT + 0;
+  int INT_TYPE_FEATURE_COUNT = SIMPLE_TYPE_SPECIFIER_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
@@ -972,7 +1027,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getBooleanType()
    * @generated
    */
-  int BOOLEAN_TYPE = 26;
+  int BOOLEAN_TYPE = 27;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1000,7 +1055,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getStringType()
    * @generated
    */
-  int STRING_TYPE = 27;
+  int STRING_TYPE = 28;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1028,7 +1083,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getUnknownType()
    * @generated
    */
-  int UNKNOWN_TYPE = 28;
+  int UNKNOWN_TYPE = 29;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1056,7 +1111,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getBooleanhType()
    * @generated
    */
-  int BOOLEANH_TYPE = 29;
+  int BOOLEANH_TYPE = 30;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1084,7 +1139,16 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getStringhType()
    * @generated
    */
-  int STRINGH_TYPE = 30;
+  int STRINGH_TYPE = 31;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRINGH_TYPE__VALUE = RETURN_EXPR_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Stringh Type</em>' class.
@@ -1093,7 +1157,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STRINGH_TYPE_FEATURE_COUNT = RETURN_EXPR_FEATURE_COUNT + 0;
+  int STRINGH_TYPE_FEATURE_COUNT = RETURN_EXPR_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.FunctionTypeImpl <em>Function Type</em>}' class.
@@ -1103,7 +1167,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getFunctionType()
    * @generated
    */
-  int FUNCTION_TYPE = 31;
+  int FUNCTION_TYPE = 32;
 
   /**
    * The feature id for the '<em><b>Call</b></em>' containment reference.
@@ -1131,7 +1195,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 32;
+  int VARIABLE = 33;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1451,6 +1515,17 @@ public interface MyDslPackage extends EPackage
   EReference getNoPtrStatement_Variaveis();
 
   /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.NoPtrStatement#getMudancas <em>Mudancas</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Mudancas</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrStatement#getMudancas()
+   * @see #getNoPtrStatement()
+   * @generated
+   */
+  EReference getNoPtrStatement_Mudancas();
+
+  /**
    * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.NoPtrStatement#getSwitches <em>Switches</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1493,6 +1568,38 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EReference getNoPtrStatement_DirtyV();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.NoPtrMudanca <em>No Ptr Mudanca</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>No Ptr Mudanca</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrMudanca
+   * @generated
+   */
+  EClass getNoPtrMudanca();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.NoPtrMudanca#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrMudanca#getName()
+   * @see #getNoPtrMudanca()
+   * @generated
+   */
+  EAttribute getNoPtrMudanca_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.NoPtrMudanca#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrMudanca#getExpr()
+   * @see #getNoPtrMudanca()
+   * @generated
+   */
+  EReference getNoPtrMudanca_Expr();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.NoPtrExpression <em>No Ptr Expression</em>}'.
@@ -1906,6 +2013,17 @@ public interface MyDslPackage extends EPackage
   EClass getIntType();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.IntType#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.xtext.example.mydsl.myDsl.IntType#getValue()
+   * @see #getIntType()
+   * @generated
+   */
+  EAttribute getIntType_Value();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.BooleanType <em>Boolean Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1965,6 +2083,17 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EClass getStringhType();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.StringhType#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.xtext.example.mydsl.myDsl.StringhType#getValue()
+   * @see #getStringhType()
+   * @generated
+   */
+  EAttribute getStringhType_Value();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.FunctionType <em>Function Type</em>}'.
@@ -2275,6 +2404,14 @@ public interface MyDslPackage extends EPackage
     EReference NO_PTR_STATEMENT__VARIAVEIS = eINSTANCE.getNoPtrStatement_Variaveis();
 
     /**
+     * The meta object literal for the '<em><b>Mudancas</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NO_PTR_STATEMENT__MUDANCAS = eINSTANCE.getNoPtrStatement_Mudancas();
+
+    /**
      * The meta object literal for the '<em><b>Switches</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2305,6 +2442,32 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EReference NO_PTR_STATEMENT__DIRTY_V = eINSTANCE.getNoPtrStatement_DirtyV();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.NoPtrMudancaImpl <em>No Ptr Mudanca</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.NoPtrMudancaImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getNoPtrMudanca()
+     * @generated
+     */
+    EClass NO_PTR_MUDANCA = eINSTANCE.getNoPtrMudanca();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NO_PTR_MUDANCA__NAME = eINSTANCE.getNoPtrMudanca_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NO_PTR_MUDANCA__EXPR = eINSTANCE.getNoPtrMudanca_Expr();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.NoPtrExpressionImpl <em>No Ptr Expression</em>}' class.
@@ -2655,6 +2818,14 @@ public interface MyDslPackage extends EPackage
     EClass INT_TYPE = eINSTANCE.getIntType();
 
     /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INT_TYPE__VALUE = eINSTANCE.getIntType_Value();
+
+    /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2711,6 +2882,14 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EClass STRINGH_TYPE = eINSTANCE.getStringhType();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRINGH_TYPE__VALUE = eINSTANCE.getStringhType_Value();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.FunctionTypeImpl <em>Function Type</em>}' class.

@@ -893,28 +893,31 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Assignment cVariaveisAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
 		private final RuleCall cVariaveisVarDeclParserRuleCall_1_0_0 = (RuleCall)cVariaveisAssignment_1_0.eContents().get(0);
-		private final Assignment cSwitchesAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
-		private final RuleCall cSwitchesNoPtrSelectParserRuleCall_1_1_0 = (RuleCall)cSwitchesAssignment_1_1.eContents().get(0);
-		private final Assignment cDirtyBAssignment_1_2 = (Assignment)cAlternatives_1.eContents().get(2);
-		private final RuleCall cDirtyBReturnParserRuleCall_1_2_0 = (RuleCall)cDirtyBAssignment_1_2.eContents().get(0);
-		private final Assignment cDirtyAssignment_1_3 = (Assignment)cAlternatives_1.eContents().get(3);
-		private final RuleCall cDirtyStatementParserRuleCall_1_3_0 = (RuleCall)cDirtyAssignment_1_3.eContents().get(0);
-		private final Assignment cDirtyVAssignment_1_4 = (Assignment)cAlternatives_1.eContents().get(4);
-		private final RuleCall cDirtyVFunctionChamadaParserRuleCall_1_4_0 = (RuleCall)cDirtyVAssignment_1_4.eContents().get(0);
+		private final Assignment cMudancasAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
+		private final RuleCall cMudancasNoPtrMudancaParserRuleCall_1_1_0 = (RuleCall)cMudancasAssignment_1_1.eContents().get(0);
+		private final Assignment cSwitchesAssignment_1_2 = (Assignment)cAlternatives_1.eContents().get(2);
+		private final RuleCall cSwitchesNoPtrSelectParserRuleCall_1_2_0 = (RuleCall)cSwitchesAssignment_1_2.eContents().get(0);
+		private final Assignment cDirtyBAssignment_1_3 = (Assignment)cAlternatives_1.eContents().get(3);
+		private final RuleCall cDirtyBReturnParserRuleCall_1_3_0 = (RuleCall)cDirtyBAssignment_1_3.eContents().get(0);
+		private final Assignment cDirtyAssignment_1_4 = (Assignment)cAlternatives_1.eContents().get(4);
+		private final RuleCall cDirtyStatementParserRuleCall_1_4_0 = (RuleCall)cDirtyAssignment_1_4.eContents().get(0);
+		private final Assignment cDirtyVAssignment_1_5 = (Assignment)cAlternatives_1.eContents().get(5);
+		private final RuleCall cDirtyVFunctionChamadaParserRuleCall_1_5_0 = (RuleCall)cDirtyVAssignment_1_5.eContents().get(0);
 		
 		//NoPtrStatement:
-		//	{NoPtrStatement} (variaveis+=VarDecl | switches+=NoPtrSelect | dirtyB+=Return | dirty+=Statement |
-		//	dirtyV+=FunctionChamada)*;
+		//	{NoPtrStatement} (variaveis+=VarDecl | mudancas+=NoPtrMudanca | switches+=NoPtrSelect | dirtyB+=Return |
+		//	dirty+=Statement | dirtyV+=FunctionChamada)*;
 		public ParserRule getRule() { return rule; }
 
-		//{NoPtrStatement} (variaveis+=VarDecl | switches+=NoPtrSelect | dirtyB+=Return | dirty+=Statement |
-		//dirtyV+=FunctionChamada)*
+		//{NoPtrStatement} (variaveis+=VarDecl | mudancas+=NoPtrMudanca | switches+=NoPtrSelect | dirtyB+=Return |
+		//dirty+=Statement | dirtyV+=FunctionChamada)*
 		public Group getGroup() { return cGroup; }
 
 		//{NoPtrStatement}
 		public Action getNoPtrStatementAction_0() { return cNoPtrStatementAction_0; }
 
-		//(variaveis+=VarDecl | switches+=NoPtrSelect | dirtyB+=Return | dirty+=Statement | dirtyV+=FunctionChamada)*
+		//(variaveis+=VarDecl | mudancas+=NoPtrMudanca | switches+=NoPtrSelect | dirtyB+=Return | dirty+=Statement |
+		//dirtyV+=FunctionChamada)*
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//variaveis+=VarDecl
@@ -923,29 +926,75 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//VarDecl
 		public RuleCall getVariaveisVarDeclParserRuleCall_1_0_0() { return cVariaveisVarDeclParserRuleCall_1_0_0; }
 
+		//mudancas+=NoPtrMudanca
+		public Assignment getMudancasAssignment_1_1() { return cMudancasAssignment_1_1; }
+
+		//NoPtrMudanca
+		public RuleCall getMudancasNoPtrMudancaParserRuleCall_1_1_0() { return cMudancasNoPtrMudancaParserRuleCall_1_1_0; }
+
 		//switches+=NoPtrSelect
-		public Assignment getSwitchesAssignment_1_1() { return cSwitchesAssignment_1_1; }
+		public Assignment getSwitchesAssignment_1_2() { return cSwitchesAssignment_1_2; }
 
 		//NoPtrSelect
-		public RuleCall getSwitchesNoPtrSelectParserRuleCall_1_1_0() { return cSwitchesNoPtrSelectParserRuleCall_1_1_0; }
+		public RuleCall getSwitchesNoPtrSelectParserRuleCall_1_2_0() { return cSwitchesNoPtrSelectParserRuleCall_1_2_0; }
 
 		//dirtyB+=Return
-		public Assignment getDirtyBAssignment_1_2() { return cDirtyBAssignment_1_2; }
+		public Assignment getDirtyBAssignment_1_3() { return cDirtyBAssignment_1_3; }
 
 		//Return
-		public RuleCall getDirtyBReturnParserRuleCall_1_2_0() { return cDirtyBReturnParserRuleCall_1_2_0; }
+		public RuleCall getDirtyBReturnParserRuleCall_1_3_0() { return cDirtyBReturnParserRuleCall_1_3_0; }
 
 		//dirty+=Statement
-		public Assignment getDirtyAssignment_1_3() { return cDirtyAssignment_1_3; }
+		public Assignment getDirtyAssignment_1_4() { return cDirtyAssignment_1_4; }
 
 		//Statement
-		public RuleCall getDirtyStatementParserRuleCall_1_3_0() { return cDirtyStatementParserRuleCall_1_3_0; }
+		public RuleCall getDirtyStatementParserRuleCall_1_4_0() { return cDirtyStatementParserRuleCall_1_4_0; }
 
 		//dirtyV+=FunctionChamada
-		public Assignment getDirtyVAssignment_1_4() { return cDirtyVAssignment_1_4; }
+		public Assignment getDirtyVAssignment_1_5() { return cDirtyVAssignment_1_5; }
 
 		//FunctionChamada
-		public RuleCall getDirtyVFunctionChamadaParserRuleCall_1_4_0() { return cDirtyVFunctionChamadaParserRuleCall_1_4_0; }
+		public RuleCall getDirtyVFunctionChamadaParserRuleCall_1_5_0() { return cDirtyVFunctionChamadaParserRuleCall_1_5_0; }
+	}
+
+	public class NoPtrMudancaElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NoPtrMudanca");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cNoPtrMudancaAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cEqualsSignKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cExprAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cExprNoPtrExpressionParserRuleCall_2_1_0 = (RuleCall)cExprAssignment_2_1.eContents().get(0);
+		
+		//NoPtrMudanca:
+		//	{NoPtrMudanca} name=ID ("=" expr=NoPtrExpression)?;
+		public ParserRule getRule() { return rule; }
+
+		//{NoPtrMudanca} name=ID ("=" expr=NoPtrExpression)?
+		public Group getGroup() { return cGroup; }
+
+		//{NoPtrMudanca}
+		public Action getNoPtrMudancaAction_0() { return cNoPtrMudancaAction_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//("=" expr=NoPtrExpression)?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_2_0() { return cEqualsSignKeyword_2_0; }
+
+		//expr=NoPtrExpression
+		public Assignment getExprAssignment_2_1() { return cExprAssignment_2_1; }
+
+		//NoPtrExpression
+		public RuleCall getExprNoPtrExpressionParserRuleCall_2_1_0() { return cExprNoPtrExpressionParserRuleCall_2_1_0; }
 	}
 
 	public class NoPtrExpressionElements extends AbstractParserRuleElementFinder {
@@ -1013,51 +1062,59 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Action cNoPtrTerminalExpressionAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cInsideAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cInsideNoPtrExpressionParserRuleCall_0_2_0 = (RuleCall)cInsideAssignment_0_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
+		private final Keyword cExclamationMarkKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final Assignment cInsideAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
+		private final RuleCall cInsideNoPtrExpressionParserRuleCall_0_3_0 = (RuleCall)cInsideAssignment_0_3.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_0_4 = (Keyword)cGroup_0.eContents().get(4);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Action cAtomicAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cAtomicAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cAtomicReturnExprParserRuleCall_1_1_0 = (RuleCall)cAtomicAssignment_1_1.eContents().get(0);
+		private final Keyword cExclamationMarkKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cAtomicAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cAtomicReturnExprParserRuleCall_1_2_0 = (RuleCall)cAtomicAssignment_1_2.eContents().get(0);
 		
 		//NoPtrTerminalExpression:
-		//	{NoPtrTerminalExpression} "(" inside=NoPtrExpression ")" | {Atomic} atomic=ReturnExpr;
+		//	{NoPtrTerminalExpression} "!"* "(" inside=NoPtrExpression ")" | {Atomic} "!"* atomic=ReturnExpr;
 		public ParserRule getRule() { return rule; }
 
-		//{NoPtrTerminalExpression} "(" inside=NoPtrExpression ")" | {Atomic} atomic=ReturnExpr
+		//{NoPtrTerminalExpression} "!"* "(" inside=NoPtrExpression ")" | {Atomic} "!"* atomic=ReturnExpr
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//{NoPtrTerminalExpression} "(" inside=NoPtrExpression ")"
+		//{NoPtrTerminalExpression} "!"* "(" inside=NoPtrExpression ")"
 		public Group getGroup_0() { return cGroup_0; }
 
 		//{NoPtrTerminalExpression}
 		public Action getNoPtrTerminalExpressionAction_0_0() { return cNoPtrTerminalExpressionAction_0_0; }
 
+		//"!"*
+		public Keyword getExclamationMarkKeyword_0_1() { return cExclamationMarkKeyword_0_1; }
+
 		//"("
-		public Keyword getLeftParenthesisKeyword_0_1() { return cLeftParenthesisKeyword_0_1; }
+		public Keyword getLeftParenthesisKeyword_0_2() { return cLeftParenthesisKeyword_0_2; }
 
 		//inside=NoPtrExpression
-		public Assignment getInsideAssignment_0_2() { return cInsideAssignment_0_2; }
+		public Assignment getInsideAssignment_0_3() { return cInsideAssignment_0_3; }
 
 		//NoPtrExpression
-		public RuleCall getInsideNoPtrExpressionParserRuleCall_0_2_0() { return cInsideNoPtrExpressionParserRuleCall_0_2_0; }
+		public RuleCall getInsideNoPtrExpressionParserRuleCall_0_3_0() { return cInsideNoPtrExpressionParserRuleCall_0_3_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_0_3() { return cRightParenthesisKeyword_0_3; }
+		public Keyword getRightParenthesisKeyword_0_4() { return cRightParenthesisKeyword_0_4; }
 
-		//{Atomic} atomic=ReturnExpr
+		//{Atomic} "!"* atomic=ReturnExpr
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{Atomic}
 		public Action getAtomicAction_1_0() { return cAtomicAction_1_0; }
 
+		//"!"*
+		public Keyword getExclamationMarkKeyword_1_1() { return cExclamationMarkKeyword_1_1; }
+
 		//atomic=ReturnExpr
-		public Assignment getAtomicAssignment_1_1() { return cAtomicAssignment_1_1; }
+		public Assignment getAtomicAssignment_1_2() { return cAtomicAssignment_1_2; }
 
 		//ReturnExpr
-		public RuleCall getAtomicReturnExprParserRuleCall_1_1_0() { return cAtomicReturnExprParserRuleCall_1_1_0; }
+		public RuleCall getAtomicReturnExprParserRuleCall_1_2_0() { return cAtomicReturnExprParserRuleCall_1_2_0; }
 	}
 
 	public class NoPtrSelectElements extends AbstractParserRuleElementFinder {
@@ -1190,14 +1247,15 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cEqualsSignKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cExprAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cExprReturnExprParserRuleCall_6_1_0 = (RuleCall)cExprAssignment_6_1.eContents().get(0);
+		private final Keyword cExclamationMarkKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Assignment cExprAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+		private final RuleCall cExprReturnExprParserRuleCall_6_2_0 = (RuleCall)cExprAssignment_6_2.eContents().get(0);
 		
 		//Parameter:
-		//	{Parameter} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT? "]")* ("=" expr=ReturnExpr)?;
+		//	{Parameter} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT? "]")* ("=" "!"* expr=ReturnExpr)?;
 		public ParserRule getRule() { return rule; }
 
-		//{Parameter} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT? "]")* ("=" expr=ReturnExpr)?
+		//{Parameter} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT? "]")* ("=" "!"* expr=ReturnExpr)?
 		public Group getGroup() { return cGroup; }
 
 		//{Parameter}
@@ -1239,17 +1297,20 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"]"
 		public Keyword getRightSquareBracketKeyword_5_2() { return cRightSquareBracketKeyword_5_2; }
 
-		//("=" expr=ReturnExpr)?
+		//("=" "!"* expr=ReturnExpr)?
 		public Group getGroup_6() { return cGroup_6; }
 
 		//"="
 		public Keyword getEqualsSignKeyword_6_0() { return cEqualsSignKeyword_6_0; }
 
+		//"!"*
+		public Keyword getExclamationMarkKeyword_6_1() { return cExclamationMarkKeyword_6_1; }
+
 		//expr=ReturnExpr
-		public Assignment getExprAssignment_6_1() { return cExprAssignment_6_1; }
+		public Assignment getExprAssignment_6_2() { return cExprAssignment_6_2; }
 
 		//ReturnExpr
-		public RuleCall getExprReturnExprParserRuleCall_6_1_0() { return cExprReturnExprParserRuleCall_6_1_0; }
+		public RuleCall getExprReturnExprParserRuleCall_6_2_0() { return cExprReturnExprParserRuleCall_6_2_0; }
 	}
 
 	public class VarDeclElements extends AbstractParserRuleElementFinder {
@@ -1270,14 +1331,15 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cEqualsSignKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cExprAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cExprReturnExprParserRuleCall_6_1_0 = (RuleCall)cExprAssignment_6_1.eContents().get(0);
+		private final Keyword cExclamationMarkKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Assignment cExprAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+		private final RuleCall cExprReturnExprParserRuleCall_6_2_0 = (RuleCall)cExprAssignment_6_2.eContents().get(0);
 		
 		//VarDecl:
-		//	{VarDecl} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT "]")* ("=" expr=ReturnExpr)?;
+		//	{VarDecl} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT "]")* ("=" "!"* expr=ReturnExpr)?;
 		public ParserRule getRule() { return rule; }
 
-		//{VarDecl} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT "]")* ("=" expr=ReturnExpr)?
+		//{VarDecl} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT "]")* ("=" "!"* expr=ReturnExpr)?
 		public Group getGroup() { return cGroup; }
 
 		//{VarDecl}
@@ -1319,17 +1381,20 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"]"
 		public Keyword getRightSquareBracketKeyword_5_2() { return cRightSquareBracketKeyword_5_2; }
 
-		//("=" expr=ReturnExpr)?
+		//("=" "!"* expr=ReturnExpr)?
 		public Group getGroup_6() { return cGroup_6; }
 
 		//"="
 		public Keyword getEqualsSignKeyword_6_0() { return cEqualsSignKeyword_6_0; }
 
+		//"!"*
+		public Keyword getExclamationMarkKeyword_6_1() { return cExclamationMarkKeyword_6_1; }
+
 		//expr=ReturnExpr
-		public Assignment getExprAssignment_6_1() { return cExprAssignment_6_1; }
+		public Assignment getExprAssignment_6_2() { return cExprAssignment_6_2; }
 
 		//ReturnExpr
-		public RuleCall getExprReturnExprParserRuleCall_6_1_0() { return cExprReturnExprParserRuleCall_6_1_0; }
+		public RuleCall getExprReturnExprParserRuleCall_6_2_0() { return cExprReturnExprParserRuleCall_6_2_0; }
 	}
 
 	public class TypeElements extends AbstractParserRuleElementFinder {
@@ -1527,7 +1592,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Action cIntTypeAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Assignment cValueAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cValueINTTerminalRuleCall_0_1_0 = (RuleCall)cValueAssignment_0_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Action cBooleanhTypeAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
@@ -1536,7 +1602,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cValueTrueKeyword_1_1_0_1 = (Keyword)cValueAlternatives_1_1_0.eContents().get(1);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final Action cStringhTypeAction_2_0 = (Action)cGroup_2.eContents().get(0);
-		private final RuleCall cSTRINGTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final Assignment cValueAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
 		private final Action cFunctionTypeAction_3_0 = (Action)cGroup_3.eContents().get(0);
 		private final Assignment cCallAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
@@ -1551,22 +1618,25 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExprReturnExprParserRuleCall_4_2_1_0 = (RuleCall)cExprAssignment_4_2_1.eContents().get(0);
 		
 		//ReturnExpr:
-		//	{IntType} INT | {BooleanhType} value=("false" | "true") | {StringhType} STRING | {FunctionType} call=FunctionChamada |
-		//	{Variable} name=ID ("=" expr=ReturnExpr)?;
+		//	{IntType} value=INT | {BooleanhType} value=("false" | "true") | {StringhType} value=STRING | {FunctionType}
+		//	call=FunctionChamada | {Variable} name=ID ("=" expr=ReturnExpr)?;
 		public ParserRule getRule() { return rule; }
 
-		//{IntType} INT | {BooleanhType} value=("false" | "true") | {StringhType} STRING | {FunctionType} call=FunctionChamada |
-		//{Variable} name=ID ("=" expr=ReturnExpr)?
+		//{IntType} value=INT | {BooleanhType} value=("false" | "true") | {StringhType} value=STRING | {FunctionType}
+		//call=FunctionChamada | {Variable} name=ID ("=" expr=ReturnExpr)?
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//{IntType} INT
+		//{IntType} value=INT
 		public Group getGroup_0() { return cGroup_0; }
 
 		//{IntType}
 		public Action getIntTypeAction_0_0() { return cIntTypeAction_0_0; }
 
+		//value=INT
+		public Assignment getValueAssignment_0_1() { return cValueAssignment_0_1; }
+
 		//INT
-		public RuleCall getINTTerminalRuleCall_0_1() { return cINTTerminalRuleCall_0_1; }
+		public RuleCall getValueINTTerminalRuleCall_0_1_0() { return cValueINTTerminalRuleCall_0_1_0; }
 
 		//{BooleanhType} value=("false" | "true")
 		public Group getGroup_1() { return cGroup_1; }
@@ -1586,14 +1656,17 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"true"
 		public Keyword getValueTrueKeyword_1_1_0_1() { return cValueTrueKeyword_1_1_0_1; }
 
-		//{StringhType} STRING
+		//{StringhType} value=STRING
 		public Group getGroup_2() { return cGroup_2; }
 
 		//{StringhType}
 		public Action getStringhTypeAction_2_0() { return cStringhTypeAction_2_0; }
 
+		//value=STRING
+		public Assignment getValueAssignment_2_1() { return cValueAssignment_2_1; }
+
 		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_2_1() { return cSTRINGTerminalRuleCall_2_1; }
+		public RuleCall getValueSTRINGTerminalRuleCall_2_1_0() { return cValueSTRINGTerminalRuleCall_2_1_0; }
 
 		//{FunctionType} call=FunctionChamada
 		public Group getGroup_3() { return cGroup_3; }
@@ -5108,6 +5181,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private FunctionDeclarationElements pFunctionDeclaration;
 	private FunctionChamadaElements pFunctionChamada;
 	private NoPtrStatementElements pNoPtrStatement;
+	private NoPtrMudancaElements pNoPtrMudanca;
 	private NoPtrExpressionElements pNoPtrExpression;
 	private NoPtrTerminalExpressionElements pNoPtrTerminalExpression;
 	private NoPtrSelectElements pNoPtrSelect;
@@ -5554,14 +5628,24 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NoPtrStatement:
-	//	{NoPtrStatement} (variaveis+=VarDecl | switches+=NoPtrSelect | dirtyB+=Return | dirty+=Statement |
-	//	dirtyV+=FunctionChamada)*;
+	//	{NoPtrStatement} (variaveis+=VarDecl | mudancas+=NoPtrMudanca | switches+=NoPtrSelect | dirtyB+=Return |
+	//	dirty+=Statement | dirtyV+=FunctionChamada)*;
 	public NoPtrStatementElements getNoPtrStatementAccess() {
 		return (pNoPtrStatement != null) ? pNoPtrStatement : (pNoPtrStatement = new NoPtrStatementElements());
 	}
 	
 	public ParserRule getNoPtrStatementRule() {
 		return getNoPtrStatementAccess().getRule();
+	}
+
+	//NoPtrMudanca:
+	//	{NoPtrMudanca} name=ID ("=" expr=NoPtrExpression)?;
+	public NoPtrMudancaElements getNoPtrMudancaAccess() {
+		return (pNoPtrMudanca != null) ? pNoPtrMudanca : (pNoPtrMudanca = new NoPtrMudancaElements());
+	}
+	
+	public ParserRule getNoPtrMudancaRule() {
+		return getNoPtrMudancaAccess().getRule();
 	}
 
 	//NoPtrExpression:
@@ -5575,7 +5659,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NoPtrTerminalExpression:
-	//	{NoPtrTerminalExpression} "(" inside=NoPtrExpression ")" | {Atomic} atomic=ReturnExpr;
+	//	{NoPtrTerminalExpression} "!"* "(" inside=NoPtrExpression ")" | {Atomic} "!"* atomic=ReturnExpr;
 	public NoPtrTerminalExpressionElements getNoPtrTerminalExpressionAccess() {
 		return (pNoPtrTerminalExpression != null) ? pNoPtrTerminalExpression : (pNoPtrTerminalExpression = new NoPtrTerminalExpressionElements());
 	}
@@ -5605,7 +5689,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Parameter:
-	//	{Parameter} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT? "]")* ("=" expr=ReturnExpr)?;
+	//	{Parameter} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT? "]")* ("=" "!"* expr=ReturnExpr)?;
 	public ParameterElements getParameterAccess() {
 		return (pParameter != null) ? pParameter : (pParameter = new ParameterElements());
 	}
@@ -5615,7 +5699,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//VarDecl:
-	//	{VarDecl} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT "]")* ("=" expr=ReturnExpr)?;
+	//	{VarDecl} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT "]")* ("=" "!"* expr=ReturnExpr)?;
 	public VarDeclElements getVarDeclAccess() {
 		return (pVarDecl != null) ? pVarDecl : (pVarDecl = new VarDeclElements());
 	}
@@ -5699,8 +5783,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ReturnExpr:
-	//	{IntType} INT | {BooleanhType} value=("false" | "true") | {StringhType} STRING | {FunctionType} call=FunctionChamada |
-	//	{Variable} name=ID ("=" expr=ReturnExpr)?;
+	//	{IntType} value=INT | {BooleanhType} value=("false" | "true") | {StringhType} value=STRING | {FunctionType}
+	//	call=FunctionChamada | {Variable} name=ID ("=" expr=ReturnExpr)?;
 	public ReturnExprElements getReturnExprAccess() {
 		return (pReturnExpr != null) ? pReturnExpr : (pReturnExpr = new ReturnExprElements());
 	}

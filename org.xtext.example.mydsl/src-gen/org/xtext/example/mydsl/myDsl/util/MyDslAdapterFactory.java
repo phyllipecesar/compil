@@ -115,6 +115,11 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createNoPtrStatementAdapter();
       }
       @Override
+      public Adapter caseNoPtrMudanca(NoPtrMudanca object)
+      {
+        return createNoPtrMudancaAdapter();
+      }
+      @Override
       public Adapter caseNoPtrExpression(NoPtrExpression object)
       {
         return createNoPtrExpressionAdapter();
@@ -377,6 +382,21 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNoPtrStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.NoPtrMudanca <em>No Ptr Mudanca</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrMudanca
+   * @generated
+   */
+  public Adapter createNoPtrMudancaAdapter()
   {
     return null;
   }

@@ -95,6 +95,15 @@ public interface MyDslFactory extends EFactory
   NoPtrStatement createNoPtrStatement();
 
   /**
+   * Returns a new object of class '<em>No Ptr Mudanca</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>No Ptr Mudanca</em>'.
+   * @generated
+   */
+  NoPtrMudanca createNoPtrMudanca();
+
+  /**
    * Returns a new object of class '<em>No Ptr Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

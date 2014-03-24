@@ -72,6 +72,7 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.FUNCTION_DECLARATION: return createFunctionDeclaration();
       case MyDslPackage.FUNCTION_CHAMADA: return createFunctionChamada();
       case MyDslPackage.NO_PTR_STATEMENT: return createNoPtrStatement();
+      case MyDslPackage.NO_PTR_MUDANCA: return createNoPtrMudanca();
       case MyDslPackage.NO_PTR_EXPRESSION: return createNoPtrExpression();
       case MyDslPackage.NO_PTR_TERMINAL_EXPRESSION: return createNoPtrTerminalExpression();
       case MyDslPackage.NO_PTR_SELECT: return createNoPtrSelect();
@@ -188,6 +189,17 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     NoPtrStatementImpl noPtrStatement = new NoPtrStatementImpl();
     return noPtrStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NoPtrMudanca createNoPtrMudanca()
+  {
+    NoPtrMudancaImpl noPtrMudanca = new NoPtrMudancaImpl();
+    return noPtrMudanca;
   }
 
   /**

@@ -39,10 +39,15 @@
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//NoPtrStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NoPtrStatement/variaveis"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NoPtrStatement/mudancas"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NoPtrStatement/switches"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NoPtrStatement/dirtyB"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//NoPtrStatement/dirty"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NoPtrStatement/dirtyV"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//NoPtrMudanca">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//NoPtrMudanca/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NoPtrMudanca/expr"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//NoPtrExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NoPtrExpression/left"/>
@@ -96,14 +101,18 @@
     <genClasses ecoreClass="MyDsl.ecore#//CaseNormal">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//CaseNormal/expr"/>
     </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//IntType"/>
+    <genClasses ecoreClass="MyDsl.ecore#//IntType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//IntType/value"/>
+    </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//BooleanType"/>
     <genClasses ecoreClass="MyDsl.ecore#//StringType"/>
     <genClasses ecoreClass="MyDsl.ecore#//UnknownType"/>
     <genClasses ecoreClass="MyDsl.ecore#//BooleanhType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//BooleanhType/value"/>
     </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//StringhType"/>
+    <genClasses ecoreClass="MyDsl.ecore#//StringhType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//StringhType/value"/>
+    </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//FunctionType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//FunctionType/call"/>
     </genClasses>

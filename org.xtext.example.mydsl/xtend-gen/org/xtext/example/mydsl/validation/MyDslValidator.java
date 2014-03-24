@@ -22,6 +22,7 @@ import org.xtext.example.mydsl.myDsl.FunctionType;
 import org.xtext.example.mydsl.myDsl.IntType;
 import org.xtext.example.mydsl.myDsl.NoPtrCases;
 import org.xtext.example.mydsl.myDsl.NoPtrExpression;
+import org.xtext.example.mydsl.myDsl.NoPtrMudanca;
 import org.xtext.example.mydsl.myDsl.NoPtrSelect;
 import org.xtext.example.mydsl.myDsl.NoPtrStatement;
 import org.xtext.example.mydsl.myDsl.NoPtrTerminalExpression;
@@ -241,8 +242,6 @@ public class MyDslValidator extends AbstractMyDslValidator {
             simple_type_specifier _sts = _type.getSts();
             String _name = _sts.getName();
             this.tipoCRT2 = _name;
-            System.out.println(("Tipo 1" + this.tipoCRT));
-            System.out.println(("Tipo 2" + this.tipoCRT2));
             boolean _equals = this.tipoCRT2.equals("void");
             if (_equals) {
               this.error("A \'void\' function should not have a return", r, null, (-1));
@@ -287,6 +286,104 @@ public class MyDslValidator extends AbstractMyDslValidator {
   public String getFuncaoTipo(final FunctionType f) {
     FunctionChamada _call = f.getCall();
     return this.checkCallFunction(_call);
+  }
+  
+  public String getMudanca(final NoPtrMudanca mudanca) {
+    this.ret2 = mudanca;
+    boolean _while = (!((this.ret2 instanceof FunctionDeclaration) || (this.ret2 instanceof Body)));
+    while (_while) {
+      EObject _eContainer = this.ret2.eContainer();
+      this.ret2 = _eContainer;
+      _while = (!((this.ret2 instanceof FunctionDeclaration) || (this.ret2 instanceof Body)));
+    }
+    if ((this.ret2 instanceof FunctionDeclaration)) {
+      this.st3 = ((FunctionDeclaration)this.ret2);
+      EList<Parameter> _params = this.st3.getParams();
+      for (final Parameter p : _params) {
+        String _name = p.getName();
+        String _name_1 = mudanca.getName();
+        boolean _equals = _name.equals(_name_1);
+        if (_equals) {
+          Type _type = p.getType();
+          simple_type_specifier _sts = _type.getSts();
+          return _sts.getName();
+        }
+      }
+      NoPtrStatement _escopo = this.st3.getEscopo();
+      EList<VarDecl> _variaveis = _escopo.getVariaveis();
+      for (final VarDecl v : _variaveis) {
+        String _name_2 = v.getName();
+        String _name_3 = mudanca.getName();
+        boolean _equals_1 = _name_2.equals(_name_3);
+        if (_equals_1) {
+          Type _type_1 = v.getType();
+          simple_type_specifier _sts_1 = _type_1.getSts();
+          return _sts_1.getName();
+        }
+      }
+    }
+    boolean _while_1 = (!(this.ret2 instanceof Body));
+    while (_while_1) {
+      EObject _eContainer = this.ret2.eContainer();
+      this.ret2 = _eContainer;
+      _while_1 = (!(this.ret2 instanceof Body));
+    }
+    if ((this.ret2 instanceof Body)) {
+      this.st2 = ((Body)this.ret2);
+      EList<Declaration> _declarations = this.st2.getDeclarations();
+      for (final Declaration d2 : _declarations) {
+        try {
+          VarDecl _variaveis_1 = d2.getVariaveis();
+          String _name_4 = _variaveis_1.getName();
+          String _name_5 = mudanca.getName();
+          boolean _equals_2 = _name_4.equals(_name_5);
+          if (_equals_2) {
+            VarDecl _variaveis_2 = d2.getVariaveis();
+            Type _type_2 = _variaveis_2.getType();
+            simple_type_specifier _sts_2 = _type_2.getSts();
+            return _sts_2.getName();
+          }
+        } catch (final Throwable _t) {
+          if (_t instanceof Exception) {
+            final Exception e = (Exception)_t;
+          } else {
+            throw Exceptions.sneakyThrow(_t);
+          }
+        }
+      }
+    }
+    return "No Type Found";
+  }
+  
+  @Check
+  public void checkMudanca(final NoPtrMudanca mudanca) {
+    String tipo = this.getMudanca(mudanca);
+    boolean _equals = tipo.equals("No Type Found");
+    if (_equals) {
+      String _name = mudanca.getName();
+      String _plus = ("Variable \'" + _name);
+      String _plus_1 = (_plus + "\' was not declared");
+      this.error(_plus_1, mudanca, null, (-1));
+    } else {
+      NoPtrExpression _expr = mudanca.getExpr();
+      boolean _notEquals = (!Objects.equal(_expr, null));
+      if (_notEquals) {
+        NoPtrExpression _expr_1 = mudanca.getExpr();
+        String tipo1 = this.getExpressionType(_expr_1);
+        Boolean _isSameType = this.isSameType(tipo, tipo1);
+        boolean _not = (!(_isSameType).booleanValue());
+        if (_not) {
+          String _name_1 = mudanca.getName();
+          String _plus_2 = ("Variable \'" + _name_1);
+          String _plus_3 = (_plus_2 + "\' is from type \'");
+          String _plus_4 = (_plus_3 + tipo);
+          String _plus_5 = (_plus_4 + "\' expression returned \'");
+          String _plus_6 = (_plus_5 + tipo1);
+          String _plus_7 = (_plus_6 + "\'.");
+          this.error(_plus_7, mudanca, null, (-1));
+        }
+      }
+    }
   }
   
   public String getExpressionTypeTerminal(final NoPtrTerminalExpression expr) {

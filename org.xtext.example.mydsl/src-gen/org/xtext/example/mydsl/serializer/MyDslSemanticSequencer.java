@@ -28,6 +28,7 @@ import org.xtext.example.mydsl.myDsl.LKS;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.NamespaceDefinition;
 import org.xtext.example.mydsl.myDsl.NoPtrExpression;
+import org.xtext.example.mydsl.myDsl.NoPtrMudanca;
 import org.xtext.example.mydsl.myDsl.NoPtrSelect;
 import org.xtext.example.mydsl.myDsl.NoPtrStatement;
 import org.xtext.example.mydsl.myDsl.NoPtrTerminalExpression;
@@ -138,6 +139,12 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MyDslPackage.NO_PTR_EXPRESSION:
 				if(context == grammarAccess.getNoPtrExpressionRule()) {
 					sequence_NoPtrExpression(context, (NoPtrExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case MyDslPackage.NO_PTR_MUDANCA:
+				if(context == grammarAccess.getNoPtrMudancaRule()) {
+					sequence_NoPtrMudanca(context, (NoPtrMudanca) semanticObject); 
 					return; 
 				}
 				else break;
@@ -331,6 +338,15 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
+	 *     (name=ID expr=NoPtrExpression?)
+	 */
+	protected void sequence_NoPtrMudanca(EObject context, NoPtrMudanca semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (expr=NoPtrExpression cases+=NoPtrCases*)
 	 */
 	protected void sequence_NoPtrSelect(EObject context, NoPtrSelect semanticObject) {
@@ -340,7 +356,16 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     ((variaveis+=VarDecl | switches+=NoPtrSelect | dirtyB+=Return | dirty+=Statement | dirtyV+=FunctionChamada)*)
+	 *     (
+	 *         (
+	 *             variaveis+=VarDecl | 
+	 *             mudancas+=NoPtrMudanca | 
+	 *             switches+=NoPtrSelect | 
+	 *             dirtyB+=Return | 
+	 *             dirty+=Statement | 
+	 *             dirtyV+=FunctionChamada
+	 *         )*
+	 *     )
 	 */
 	protected void sequence_NoPtrStatement(EObject context, NoPtrStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -367,7 +392,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getNoPtrTerminalExpressionAccess().getInsideNoPtrExpressionParserRuleCall_0_2_0(), semanticObject.getInside());
+		feeder.accept(grammarAccess.getNoPtrTerminalExpressionAccess().getInsideNoPtrExpressionParserRuleCall_0_3_0(), semanticObject.getInside());
 		feeder.finish();
 	}
 	
@@ -408,7 +433,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     {IntType}
+	 *     value=INT
 	 */
 	protected void sequence_ReturnExpr(EObject context, IntType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -417,10 +442,17 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     {StringhType}
+	 *     value=STRING
 	 */
 	protected void sequence_ReturnExpr(EObject context, StringhType semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.STRINGH_TYPE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.STRINGH_TYPE__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getReturnExprAccess().getValueSTRINGTerminalRuleCall_2_1_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	
@@ -529,14 +561,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     name='int'
 	 */
 	protected void sequence_simple_type_specifier(EObject context, IntType semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.SIMPLE_TYPE_SPECIFIER__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.SIMPLE_TYPE_SPECIFIER__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getSimple_type_specifierAccess().getNameIntKeyword_0_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
