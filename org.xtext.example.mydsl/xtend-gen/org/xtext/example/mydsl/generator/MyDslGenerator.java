@@ -15,7 +15,9 @@ import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.xtext.example.mydsl.myDsl.Atomic;
 import org.xtext.example.mydsl.myDsl.BooleanhType;
+import org.xtext.example.mydsl.myDsl.FunctionChamada;
 import org.xtext.example.mydsl.myDsl.FunctionDeclaration;
+import org.xtext.example.mydsl.myDsl.FunctionType;
 import org.xtext.example.mydsl.myDsl.IntType;
 import org.xtext.example.mydsl.myDsl.NoPtrExpression;
 import org.xtext.example.mydsl.myDsl.NoPtrMudanca;
@@ -28,6 +30,7 @@ import org.xtext.example.mydsl.myDsl.StringhType;
 import org.xtext.example.mydsl.myDsl.Type;
 import org.xtext.example.mydsl.myDsl.VarDecl;
 import org.xtext.example.mydsl.myDsl.Variable;
+import org.xtext.example.mydsl.myDsl.impl.FunctionChamadaImpl;
 import org.xtext.example.mydsl.myDsl.impl.NoPtrMudancaImpl;
 import org.xtext.example.mydsl.myDsl.impl.ReturnImpl;
 import org.xtext.example.mydsl.myDsl.impl.VarDeclImpl;
@@ -44,6 +47,7 @@ public class MyDslGenerator implements IGenerator {
   
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
     String code = "";
+    this.regCounter = 0;
     TreeIterator<EObject> _allContents = resource.getAllContents();
     Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
     Iterable<FunctionDeclaration> _filter = Iterables.<FunctionDeclaration>filter(_iterable, FunctionDeclaration.class);
@@ -67,26 +71,21 @@ public class MyDslGenerator implements IGenerator {
       Type _type = variavel.getType();
       simple_type_specifier _sts = _type.getSts();
       String _name = _sts.getName();
-      String _plus = ("Type GEN: " + _name);
-      System.out.println(_plus);
-      Type _type_1 = variavel.getType();
-      simple_type_specifier _sts_1 = _type_1.getSts();
-      String _name_1 = _sts_1.getName();
-      boolean _equals_1 = Objects.equal(_name_1, "int");
+      boolean _equals_1 = Objects.equal(_name, "int");
       if (_equals_1) {
         ret = (ret + "0");
       } else {
-        Type _type_2 = variavel.getType();
-        simple_type_specifier _sts_2 = _type_2.getSts();
-        String _name_2 = _sts_2.getName();
-        boolean _equals_2 = Objects.equal(_name_2, "string");
+        Type _type_1 = variavel.getType();
+        simple_type_specifier _sts_1 = _type_1.getSts();
+        String _name_1 = _sts_1.getName();
+        boolean _equals_2 = Objects.equal(_name_1, "string");
         if (_equals_2) {
           ret = (ret + "\"\"");
         } else {
-          Type _type_3 = variavel.getType();
-          simple_type_specifier _sts_3 = _type_3.getSts();
-          String _name_3 = _sts_3.getName();
-          boolean _equals_3 = Objects.equal(_name_3, "bool");
+          Type _type_2 = variavel.getType();
+          simple_type_specifier _sts_2 = _type_2.getSts();
+          String _name_2 = _sts_2.getName();
+          boolean _equals_3 = Objects.equal(_name_2, "bool");
           if (_equals_3) {
             ret = (ret + "false");
           } else {
@@ -103,8 +102,8 @@ public class MyDslGenerator implements IGenerator {
     _builder.append(_compile, "");
     _builder.newLineIfNotEmpty();
     _builder.append("ST ");
-    String _name_4 = variavel.getName();
-    _builder.append(_name_4, "");
+    String _name_3 = variavel.getName();
+    _builder.append(_name_3, "");
     _builder.append(", R");
     _builder.append(this.regCounter, "");
     _builder.newLineIfNotEmpty();
@@ -249,6 +248,11 @@ public class MyDslGenerator implements IGenerator {
           if ((expr instanceof Variable)) {
             Variable _cast_3 = Variable.class.cast(expr);
             return this.compile(_cast_3);
+          } else {
+            if ((expr instanceof FunctionType)) {
+              FunctionChamada _cast_4 = FunctionChamada.class.cast(expr);
+              return this.compile(_cast_4);
+            }
           }
         }
       }
@@ -281,6 +285,33 @@ public class MyDslGenerator implements IGenerator {
     }
   }
   
+  public String compile(final FunctionChamada funcao) {
+    String ret = "";
+    EList<ReturnExpr> _params = funcao.getParams();
+    for (final ReturnExpr symb : _params) {
+      {
+        String _compile = this.compile(symb);
+        String _plus = ((ret + "\n") + _compile);
+        String _plus_1 = (_plus + "\nPUSH R");
+        String _plus_2 = (_plus_1 + Integer.valueOf(this.regCounter));
+        ret = _plus_2;
+        this.regCounter = (this.regCounter + 1);
+      }
+    }
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append(ret, "");
+    _builder.newLineIfNotEmpty();
+    _builder.append("CALL ");
+    String _name = funcao.getName();
+    _builder.append(_name, "");
+    _builder.newLineIfNotEmpty();
+    _builder.append("LD R");
+    _builder.append(this.regCounter, "");
+    _builder.append(", EAX");
+    _builder.newLineIfNotEmpty();
+    return _builder.toString();
+  }
+  
   public String compile(final NoPtrStatement statement) {
     StringConcatenation _builder = new StringConcatenation();
     {
@@ -304,6 +335,13 @@ public class MyDslGenerator implements IGenerator {
                 String _compile_2 = this.compile(_cast_2);
                 _builder.append(_compile_2, "");
                 _builder.newLineIfNotEmpty();
+              } else {
+                if ((decl instanceof FunctionChamada)) {
+                  FunctionChamadaImpl _cast_3 = FunctionChamadaImpl.class.cast(decl);
+                  String _compile_3 = this.compile(_cast_3);
+                  _builder.append(_compile_3, "");
+                  _builder.newLineIfNotEmpty();
+                }
               }
             }
           }

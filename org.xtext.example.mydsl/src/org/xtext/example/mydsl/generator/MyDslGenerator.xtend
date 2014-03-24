@@ -26,6 +26,9 @@ import org.xtext.example.mydsl.myDsl.Atomic
 import org.xtext.example.mydsl.myDsl.Variable
 import org.xtext.example.mydsl.myDsl.NoPtrMudanca
 import org.xtext.example.mydsl.myDsl.impl.NoPtrMudancaImpl
+import org.xtext.example.mydsl.myDsl.FunctionChamada
+import org.xtext.example.mydsl.myDsl.impl.FunctionChamadaImpl
+import org.xtext.example.mydsl.myDsl.FunctionType
 
 /**
  * Generates code from your model files on save.
@@ -37,6 +40,7 @@ class MyDslGenerator implements IGenerator {
 	var regCounter = 0;
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 		var code = "";
+		regCounter = 0;
 //		fsa.generateFile('greetings.txt', 'People to greet: ' + 
 //			resource.allContents
 //				.filter(typeof(Greeting))
@@ -54,7 +58,6 @@ class MyDslGenerator implements IGenerator {
 		var ret = "";
 		if (variavel.expr == null) {
 			ret = "LD R" + regCounter + ", #";
-			System.out.println("Type GEN: " + variavel.type.sts.name);
 			if (variavel.type.sts.name == "int") {
 				ret = ret + "0";
 			} else if (variavel.type.sts.name == "string") {
@@ -149,6 +152,8 @@ LD R«regCounter», «expr.name»
 			return compile(StringhType.cast(expr));
 		} else if (expr instanceof Variable) {
 			return compile(Variable.cast(expr));
+		}else if (expr instanceof FunctionType) {
+			return compile(FunctionChamada.cast(expr));
 		}
 		
 		if (expr == null) {
@@ -165,6 +170,20 @@ LD R«regCounter», «expr.name»
 			return '';
 		}
 	}
+	
+	def compile(FunctionChamada funcao) {
+		var ret = "";
+		for (ReturnExpr symb : funcao.params) {
+			ret = ret + "\n" + compile(symb) + "\nPUSH R" + regCounter;
+			regCounter = regCounter + 1;
+		}
+		
+		return '''
+		«ret»
+		CALL «funcao.name»
+		LD R«regCounter», EAX
+		''';
+	}
 	def String compile(NoPtrStatement statement) '''
 		«FOR decl : statement.eContents»
 			«IF decl instanceof VarDecl»
@@ -173,6 +192,8 @@ LD R«regCounter», «expr.name»
 				«NoPtrMudancaImpl.cast(decl).compile»
 			«ELSEIF decl instanceof Return»
 				«ReturnImpl.cast(decl).compile»
+			«ELSEIF decl instanceof FunctionChamada»
+				«FunctionChamadaImpl.cast(decl).compile»
 			«ENDIF»
 		«ENDFOR»
 	'''
