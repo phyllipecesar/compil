@@ -85,12 +85,12 @@ public interface VarDecl extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Expr</em>' containment reference.
-   * @see #setExpr(ReturnExpr)
+   * @see #setExpr(NoPtrExpression)
    * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getVarDecl_Expr()
    * @model containment="true"
    * @generated
    */
-  ReturnExpr getExpr();
+  NoPtrExpression getExpr();
 
   /**
    * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.VarDecl#getExpr <em>Expr</em>}' containment reference.
@@ -100,6 +100,6 @@ public interface VarDecl extends EObject
    * @see #getExpr()
    * @generated
    */
-  void setExpr(ReturnExpr value);
+  void setExpr(NoPtrExpression value);
 
 } // VarDecl

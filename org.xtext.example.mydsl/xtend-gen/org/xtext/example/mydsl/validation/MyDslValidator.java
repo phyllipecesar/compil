@@ -50,6 +50,64 @@ public class MyDslValidator extends AbstractMyDslValidator {
     }
   }.apply();
   
+  @Check
+  public void varDeclCheck(final VarDecl v) {
+    NoPtrExpression _expr = v.getExpr();
+    boolean _notEquals = (!Objects.equal(_expr, null));
+    if (_notEquals) {
+      Type _type = v.getType();
+      simple_type_specifier _sts = _type.getSts();
+      String _name = _sts.getName();
+      NoPtrExpression _expr_1 = v.getExpr();
+      String _expressionType = this.getExpressionType(_expr_1);
+      Boolean _isSameType = this.isSameType(_name, _expressionType);
+      boolean _not = (!(_isSameType).booleanValue());
+      if (_not) {
+        String _name_1 = v.getName();
+        String _plus = ("Variable \'" + _name_1);
+        String _plus_1 = (_plus + "\' expected \'");
+        Type _type_1 = v.getType();
+        simple_type_specifier _sts_1 = _type_1.getSts();
+        String _name_2 = _sts_1.getName();
+        String _plus_2 = (_plus_1 + _name_2);
+        String _plus_3 = (_plus_2 + "\' found \'");
+        NoPtrExpression _expr_2 = v.getExpr();
+        String _expressionType_1 = this.getExpressionType(_expr_2);
+        String _plus_4 = (_plus_3 + _expressionType_1);
+        this.error(_plus_4, v, null, (-1));
+      }
+    }
+  }
+  
+  @Check
+  public void paramCheck(final Parameter v) {
+    NoPtrExpression _expr = v.getExpr();
+    boolean _notEquals = (!Objects.equal(_expr, null));
+    if (_notEquals) {
+      Type _type = v.getType();
+      simple_type_specifier _sts = _type.getSts();
+      String _name = _sts.getName();
+      NoPtrExpression _expr_1 = v.getExpr();
+      String _expressionType = this.getExpressionType(_expr_1);
+      Boolean _isSameType = this.isSameType(_name, _expressionType);
+      boolean _not = (!(_isSameType).booleanValue());
+      if (_not) {
+        String _name_1 = v.getName();
+        String _plus = ("Variable \'" + _name_1);
+        String _plus_1 = (_plus + "\' expected \'");
+        Type _type_1 = v.getType();
+        simple_type_specifier _sts_1 = _type_1.getSts();
+        String _name_2 = _sts_1.getName();
+        String _plus_2 = (_plus_1 + _name_2);
+        String _plus_3 = (_plus_2 + "\' found \'");
+        NoPtrExpression _expr_2 = v.getExpr();
+        String _expressionType_1 = this.getExpressionType(_expr_2);
+        String _plus_4 = (_plus_3 + _expressionType_1);
+        this.error(_plus_4, v, null, (-1));
+      }
+    }
+  }
+  
   /**
    * Verifica se os parametros sao declarados duas vezes com o mesmo nome
    * e se existe alguma variavel com o mesmo nome dos parametros.
@@ -650,7 +708,9 @@ public class MyDslValidator extends AbstractMyDslValidator {
               }
             }
             this.fName2 = (this.fName2 + ")");
-            boolean _equals_2 = this.fName.equals(this.fName2);
+            String _replaceAll = this.fName.replaceAll("bool", "int");
+            String _replaceAll_1 = this.fName2.replaceAll("bool", "int");
+            boolean _equals_2 = _replaceAll.equals(_replaceAll_1);
             if (_equals_2) {
               FunctionDeclaration _funcao_4 = d_1.getFuncao();
               Type _type = _funcao_4.getType();

@@ -380,13 +380,22 @@ public interface MyDslPackage extends EPackage
   int NO_PTR_STATEMENT__MUDANCAS = 1;
 
   /**
+   * The feature id for the '<em><b>Lixo V</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_STATEMENT__LIXO_V = 2;
+
+  /**
    * The feature id for the '<em><b>Switches</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NO_PTR_STATEMENT__SWITCHES = 2;
+  int NO_PTR_STATEMENT__SWITCHES = 3;
 
   /**
    * The feature id for the '<em><b>Dirty B</b></em>' containment reference list.
@@ -395,7 +404,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NO_PTR_STATEMENT__DIRTY_B = 3;
+  int NO_PTR_STATEMENT__DIRTY_B = 4;
 
   /**
    * The feature id for the '<em><b>Dirty</b></em>' attribute list.
@@ -404,7 +413,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NO_PTR_STATEMENT__DIRTY = 4;
+  int NO_PTR_STATEMENT__DIRTY = 5;
 
   /**
    * The feature id for the '<em><b>Dirty V</b></em>' containment reference list.
@@ -413,7 +422,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NO_PTR_STATEMENT__DIRTY_V = 5;
+  int NO_PTR_STATEMENT__DIRTY_V = 6;
 
   /**
    * The number of structural features of the '<em>No Ptr Statement</em>' class.
@@ -422,7 +431,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NO_PTR_STATEMENT_FEATURE_COUNT = 6;
+  int NO_PTR_STATEMENT_FEATURE_COUNT = 7;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.NoPtrMudancaImpl <em>No Ptr Mudanca</em>}' class.
@@ -1526,6 +1535,17 @@ public interface MyDslPackage extends EPackage
   EReference getNoPtrStatement_Mudancas();
 
   /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.NoPtrStatement#getLixoV <em>Lixo V</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Lixo V</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrStatement#getLixoV()
+   * @see #getNoPtrStatement()
+   * @generated
+   */
+  EReference getNoPtrStatement_LixoV();
+
+  /**
    * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.NoPtrStatement#getSwitches <em>Switches</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2410,6 +2430,14 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EReference NO_PTR_STATEMENT__MUDANCAS = eINSTANCE.getNoPtrStatement_Mudancas();
+
+    /**
+     * The meta object literal for the '<em><b>Lixo V</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NO_PTR_STATEMENT__LIXO_V = eINSTANCE.getNoPtrStatement_LixoV();
 
     /**
      * The meta object literal for the '<em><b>Switches</b></em>' containment reference list feature.

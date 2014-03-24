@@ -47,10 +47,27 @@ class MyDslValidator extends AbstractMyDslValidator {
 	HashSet<String> hash = new HashSet<String>();
 
 
+@Check
+def varDeclCheck(VarDecl v) {
+	if (v.expr != null) {
+		if (!isSameType(v.type.sts.name, getExpressionType(v.expr))) {
+			error("Variable '" + v.name + "' expected '" + v.type.sts.name + "' found '" + getExpressionType(v.expr), v, null, -1);
+		}
+	}
+}
+@Check 
+def paramCheck(Parameter v) {
+	if (v.expr != null) {
+		if (!isSameType(v.type.sts.name, getExpressionType(v.expr))) {
+			error("Variable '" + v.name + "' expected '" + v.type.sts.name + "' found '" + getExpressionType(v.expr), v, null, -1);
+		}
+	}
+}
 /**
  * Verifica se os parametros sao declarados duas vezes com o mesmo nome
  * e se existe alguma variavel com o mesmo nome dos parametros.
  */
+ 
 @Check
 def checkParamsFunction(FunctionDeclaration funcao) {
 	hash.clear();
@@ -395,7 +412,7 @@ def checkCallFunction(FunctionChamada f) {
 						
 					}
 					fName2 = fName2 + ")";
-					if (fName.equals(fName2)) {
+					if (fName.replaceAll("bool", "int").equals(fName2.replaceAll("bool", "int"))) {
 						return d.funcao.type.sts.name;
 					
 					}

@@ -895,29 +895,31 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cVariaveisVarDeclParserRuleCall_1_0_0 = (RuleCall)cVariaveisAssignment_1_0.eContents().get(0);
 		private final Assignment cMudancasAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
 		private final RuleCall cMudancasNoPtrMudancaParserRuleCall_1_1_0 = (RuleCall)cMudancasAssignment_1_1.eContents().get(0);
-		private final Assignment cSwitchesAssignment_1_2 = (Assignment)cAlternatives_1.eContents().get(2);
-		private final RuleCall cSwitchesNoPtrSelectParserRuleCall_1_2_0 = (RuleCall)cSwitchesAssignment_1_2.eContents().get(0);
-		private final Assignment cDirtyBAssignment_1_3 = (Assignment)cAlternatives_1.eContents().get(3);
-		private final RuleCall cDirtyBReturnParserRuleCall_1_3_0 = (RuleCall)cDirtyBAssignment_1_3.eContents().get(0);
-		private final Assignment cDirtyAssignment_1_4 = (Assignment)cAlternatives_1.eContents().get(4);
-		private final RuleCall cDirtyStatementParserRuleCall_1_4_0 = (RuleCall)cDirtyAssignment_1_4.eContents().get(0);
-		private final Assignment cDirtyVAssignment_1_5 = (Assignment)cAlternatives_1.eContents().get(5);
-		private final RuleCall cDirtyVFunctionChamadaParserRuleCall_1_5_0 = (RuleCall)cDirtyVAssignment_1_5.eContents().get(0);
+		private final Assignment cLixoVAssignment_1_2 = (Assignment)cAlternatives_1.eContents().get(2);
+		private final RuleCall cLixoVNoPtrExpressionParserRuleCall_1_2_0 = (RuleCall)cLixoVAssignment_1_2.eContents().get(0);
+		private final Assignment cSwitchesAssignment_1_3 = (Assignment)cAlternatives_1.eContents().get(3);
+		private final RuleCall cSwitchesNoPtrSelectParserRuleCall_1_3_0 = (RuleCall)cSwitchesAssignment_1_3.eContents().get(0);
+		private final Assignment cDirtyBAssignment_1_4 = (Assignment)cAlternatives_1.eContents().get(4);
+		private final RuleCall cDirtyBReturnParserRuleCall_1_4_0 = (RuleCall)cDirtyBAssignment_1_4.eContents().get(0);
+		private final Assignment cDirtyAssignment_1_5 = (Assignment)cAlternatives_1.eContents().get(5);
+		private final RuleCall cDirtyStatementParserRuleCall_1_5_0 = (RuleCall)cDirtyAssignment_1_5.eContents().get(0);
+		private final Assignment cDirtyVAssignment_1_6 = (Assignment)cAlternatives_1.eContents().get(6);
+		private final RuleCall cDirtyVFunctionChamadaParserRuleCall_1_6_0 = (RuleCall)cDirtyVAssignment_1_6.eContents().get(0);
 		
 		//NoPtrStatement:
-		//	{NoPtrStatement} (variaveis+=VarDecl | mudancas+=NoPtrMudanca | switches+=NoPtrSelect | dirtyB+=Return |
-		//	dirty+=Statement | dirtyV+=FunctionChamada)*;
+		//	{NoPtrStatement} (variaveis+=VarDecl | mudancas+=NoPtrMudanca | lixoV+=NoPtrExpression | switches+=NoPtrSelect |
+		//	dirtyB+=Return | dirty+=Statement | dirtyV+=FunctionChamada)*;
 		public ParserRule getRule() { return rule; }
 
-		//{NoPtrStatement} (variaveis+=VarDecl | mudancas+=NoPtrMudanca | switches+=NoPtrSelect | dirtyB+=Return |
-		//dirty+=Statement | dirtyV+=FunctionChamada)*
+		//{NoPtrStatement} (variaveis+=VarDecl | mudancas+=NoPtrMudanca | lixoV+=NoPtrExpression | switches+=NoPtrSelect |
+		//dirtyB+=Return | dirty+=Statement | dirtyV+=FunctionChamada)*
 		public Group getGroup() { return cGroup; }
 
 		//{NoPtrStatement}
 		public Action getNoPtrStatementAction_0() { return cNoPtrStatementAction_0; }
 
-		//(variaveis+=VarDecl | mudancas+=NoPtrMudanca | switches+=NoPtrSelect | dirtyB+=Return | dirty+=Statement |
-		//dirtyV+=FunctionChamada)*
+		//(variaveis+=VarDecl | mudancas+=NoPtrMudanca | lixoV+=NoPtrExpression | switches+=NoPtrSelect | dirtyB+=Return |
+		//dirty+=Statement | dirtyV+=FunctionChamada)*
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//variaveis+=VarDecl
@@ -932,29 +934,35 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//NoPtrMudanca
 		public RuleCall getMudancasNoPtrMudancaParserRuleCall_1_1_0() { return cMudancasNoPtrMudancaParserRuleCall_1_1_0; }
 
+		//lixoV+=NoPtrExpression
+		public Assignment getLixoVAssignment_1_2() { return cLixoVAssignment_1_2; }
+
+		//NoPtrExpression
+		public RuleCall getLixoVNoPtrExpressionParserRuleCall_1_2_0() { return cLixoVNoPtrExpressionParserRuleCall_1_2_0; }
+
 		//switches+=NoPtrSelect
-		public Assignment getSwitchesAssignment_1_2() { return cSwitchesAssignment_1_2; }
+		public Assignment getSwitchesAssignment_1_3() { return cSwitchesAssignment_1_3; }
 
 		//NoPtrSelect
-		public RuleCall getSwitchesNoPtrSelectParserRuleCall_1_2_0() { return cSwitchesNoPtrSelectParserRuleCall_1_2_0; }
+		public RuleCall getSwitchesNoPtrSelectParserRuleCall_1_3_0() { return cSwitchesNoPtrSelectParserRuleCall_1_3_0; }
 
 		//dirtyB+=Return
-		public Assignment getDirtyBAssignment_1_3() { return cDirtyBAssignment_1_3; }
+		public Assignment getDirtyBAssignment_1_4() { return cDirtyBAssignment_1_4; }
 
 		//Return
-		public RuleCall getDirtyBReturnParserRuleCall_1_3_0() { return cDirtyBReturnParserRuleCall_1_3_0; }
+		public RuleCall getDirtyBReturnParserRuleCall_1_4_0() { return cDirtyBReturnParserRuleCall_1_4_0; }
 
 		//dirty+=Statement
-		public Assignment getDirtyAssignment_1_4() { return cDirtyAssignment_1_4; }
+		public Assignment getDirtyAssignment_1_5() { return cDirtyAssignment_1_5; }
 
 		//Statement
-		public RuleCall getDirtyStatementParserRuleCall_1_4_0() { return cDirtyStatementParserRuleCall_1_4_0; }
+		public RuleCall getDirtyStatementParserRuleCall_1_5_0() { return cDirtyStatementParserRuleCall_1_5_0; }
 
 		//dirtyV+=FunctionChamada
-		public Assignment getDirtyVAssignment_1_5() { return cDirtyVAssignment_1_5; }
+		public Assignment getDirtyVAssignment_1_6() { return cDirtyVAssignment_1_6; }
 
 		//FunctionChamada
-		public RuleCall getDirtyVFunctionChamadaParserRuleCall_1_5_0() { return cDirtyVFunctionChamadaParserRuleCall_1_5_0; }
+		public RuleCall getDirtyVFunctionChamadaParserRuleCall_1_6_0() { return cDirtyVFunctionChamadaParserRuleCall_1_6_0; }
 	}
 
 	public class NoPtrMudancaElements extends AbstractParserRuleElementFinder {
@@ -969,10 +977,10 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExprNoPtrExpressionParserRuleCall_2_1_0 = (RuleCall)cExprAssignment_2_1.eContents().get(0);
 		
 		//NoPtrMudanca:
-		//	{NoPtrMudanca} name=ID ("=" expr=NoPtrExpression)?;
+		//	{NoPtrMudanca} name=ID ("=" expr=NoPtrExpression);
 		public ParserRule getRule() { return rule; }
 
-		//{NoPtrMudanca} name=ID ("=" expr=NoPtrExpression)?
+		//{NoPtrMudanca} name=ID ("=" expr=NoPtrExpression)
 		public Group getGroup() { return cGroup; }
 
 		//{NoPtrMudanca}
@@ -984,7 +992,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
-		//("=" expr=NoPtrExpression)?
+		//"=" expr=NoPtrExpression
 		public Group getGroup_2() { return cGroup_2; }
 
 		//"="
@@ -1014,10 +1022,10 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRightNoPtrTerminalExpressionParserRuleCall_2_1_0 = (RuleCall)cRightAssignment_2_1.eContents().get(0);
 		
 		//NoPtrExpression:
-		//	{NoPtrExpression} left=NoPtrTerminalExpression (op=("&&" | "||" | "==" | "!=") right=NoPtrTerminalExpression)?;
+		//	{NoPtrExpression} left=NoPtrTerminalExpression (=> op=("&&" | "||" | "==" | "!=") right=NoPtrTerminalExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//{NoPtrExpression} left=NoPtrTerminalExpression (op=("&&" | "||" | "==" | "!=") right=NoPtrTerminalExpression)?
+		//{NoPtrExpression} left=NoPtrTerminalExpression (=> op=("&&" | "||" | "==" | "!=") right=NoPtrTerminalExpression)?
 		public Group getGroup() { return cGroup; }
 
 		//{NoPtrExpression}
@@ -1029,10 +1037,10 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//NoPtrTerminalExpression
 		public RuleCall getLeftNoPtrTerminalExpressionParserRuleCall_1_0() { return cLeftNoPtrTerminalExpressionParserRuleCall_1_0; }
 
-		//(op=("&&" | "||" | "==" | "!=") right=NoPtrTerminalExpression)?
+		//(=> op=("&&" | "||" | "==" | "!=") right=NoPtrTerminalExpression)?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//op=("&&" | "||" | "==" | "!=")
+		//=> op=("&&" | "||" | "==" | "!=")
 		public Assignment getOpAssignment_2_0() { return cOpAssignment_2_0; }
 
 		//"&&" | "||" | "==" | "!="
@@ -1249,13 +1257,13 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEqualsSignKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cExclamationMarkKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
 		private final Assignment cExprAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cExprReturnExprParserRuleCall_6_2_0 = (RuleCall)cExprAssignment_6_2.eContents().get(0);
+		private final RuleCall cExprNoPtrExpressionParserRuleCall_6_2_0 = (RuleCall)cExprAssignment_6_2.eContents().get(0);
 		
 		//Parameter:
-		//	{Parameter} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT? "]")* ("=" "!"* expr=ReturnExpr)?;
+		//	{Parameter} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT? "]")* ("=" "!"* expr=NoPtrExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//{Parameter} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT? "]")* ("=" "!"* expr=ReturnExpr)?
+		//{Parameter} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT? "]")* ("=" "!"* expr=NoPtrExpression)?
 		public Group getGroup() { return cGroup; }
 
 		//{Parameter}
@@ -1297,7 +1305,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"]"
 		public Keyword getRightSquareBracketKeyword_5_2() { return cRightSquareBracketKeyword_5_2; }
 
-		//("=" "!"* expr=ReturnExpr)?
+		//("=" "!"* expr=NoPtrExpression)?
 		public Group getGroup_6() { return cGroup_6; }
 
 		//"="
@@ -1306,11 +1314,11 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"!"*
 		public Keyword getExclamationMarkKeyword_6_1() { return cExclamationMarkKeyword_6_1; }
 
-		//expr=ReturnExpr
+		//expr=NoPtrExpression
 		public Assignment getExprAssignment_6_2() { return cExprAssignment_6_2; }
 
-		//ReturnExpr
-		public RuleCall getExprReturnExprParserRuleCall_6_2_0() { return cExprReturnExprParserRuleCall_6_2_0; }
+		//NoPtrExpression
+		public RuleCall getExprNoPtrExpressionParserRuleCall_6_2_0() { return cExprNoPtrExpressionParserRuleCall_6_2_0; }
 	}
 
 	public class VarDeclElements extends AbstractParserRuleElementFinder {
@@ -1333,13 +1341,13 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEqualsSignKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cExclamationMarkKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
 		private final Assignment cExprAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cExprReturnExprParserRuleCall_6_2_0 = (RuleCall)cExprAssignment_6_2.eContents().get(0);
+		private final RuleCall cExprNoPtrExpressionParserRuleCall_6_2_0 = (RuleCall)cExprAssignment_6_2.eContents().get(0);
 		
 		//VarDecl:
-		//	{VarDecl} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT "]")* ("=" "!"* expr=ReturnExpr)?;
+		//	{VarDecl} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT "]")* ("=" "!"* expr=NoPtrExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//{VarDecl} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT "]")* ("=" "!"* expr=ReturnExpr)?
+		//{VarDecl} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT "]")* ("=" "!"* expr=NoPtrExpression)?
 		public Group getGroup() { return cGroup; }
 
 		//{VarDecl}
@@ -1381,7 +1389,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"]"
 		public Keyword getRightSquareBracketKeyword_5_2() { return cRightSquareBracketKeyword_5_2; }
 
-		//("=" "!"* expr=ReturnExpr)?
+		//("=" "!"* expr=NoPtrExpression)?
 		public Group getGroup_6() { return cGroup_6; }
 
 		//"="
@@ -1390,11 +1398,11 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"!"*
 		public Keyword getExclamationMarkKeyword_6_1() { return cExclamationMarkKeyword_6_1; }
 
-		//expr=ReturnExpr
+		//expr=NoPtrExpression
 		public Assignment getExprAssignment_6_2() { return cExprAssignment_6_2; }
 
-		//ReturnExpr
-		public RuleCall getExprReturnExprParserRuleCall_6_2_0() { return cExprReturnExprParserRuleCall_6_2_0; }
+		//NoPtrExpression
+		public RuleCall getExprNoPtrExpressionParserRuleCall_6_2_0() { return cExprNoPtrExpressionParserRuleCall_6_2_0; }
 	}
 
 	public class TypeElements extends AbstractParserRuleElementFinder {
@@ -5628,8 +5636,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NoPtrStatement:
-	//	{NoPtrStatement} (variaveis+=VarDecl | mudancas+=NoPtrMudanca | switches+=NoPtrSelect | dirtyB+=Return |
-	//	dirty+=Statement | dirtyV+=FunctionChamada)*;
+	//	{NoPtrStatement} (variaveis+=VarDecl | mudancas+=NoPtrMudanca | lixoV+=NoPtrExpression | switches+=NoPtrSelect |
+	//	dirtyB+=Return | dirty+=Statement | dirtyV+=FunctionChamada)*;
 	public NoPtrStatementElements getNoPtrStatementAccess() {
 		return (pNoPtrStatement != null) ? pNoPtrStatement : (pNoPtrStatement = new NoPtrStatementElements());
 	}
@@ -5639,7 +5647,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NoPtrMudanca:
-	//	{NoPtrMudanca} name=ID ("=" expr=NoPtrExpression)?;
+	//	{NoPtrMudanca} name=ID ("=" expr=NoPtrExpression);
 	public NoPtrMudancaElements getNoPtrMudancaAccess() {
 		return (pNoPtrMudanca != null) ? pNoPtrMudanca : (pNoPtrMudanca = new NoPtrMudancaElements());
 	}
@@ -5649,7 +5657,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NoPtrExpression:
-	//	{NoPtrExpression} left=NoPtrTerminalExpression (op=("&&" | "||" | "==" | "!=") right=NoPtrTerminalExpression)?;
+	//	{NoPtrExpression} left=NoPtrTerminalExpression (=> op=("&&" | "||" | "==" | "!=") right=NoPtrTerminalExpression)?;
 	public NoPtrExpressionElements getNoPtrExpressionAccess() {
 		return (pNoPtrExpression != null) ? pNoPtrExpression : (pNoPtrExpression = new NoPtrExpressionElements());
 	}
@@ -5689,7 +5697,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Parameter:
-	//	{Parameter} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT? "]")* ("=" "!"* expr=ReturnExpr)?;
+	//	{Parameter} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT? "]")* ("=" "!"* expr=NoPtrExpression)?;
 	public ParameterElements getParameterAccess() {
 		return (pParameter != null) ? pParameter : (pParameter = new ParameterElements());
 	}
@@ -5699,7 +5707,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//VarDecl:
-	//	{VarDecl} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT "]")* ("=" "!"* expr=ReturnExpr)?;
+	//	{VarDecl} "const"? type=Type ("*"* | "&"*) name=ID ("[" INT "]")* ("=" "!"* expr=NoPtrExpression)?;
 	public VarDeclElements getVarDeclAccess() {
 		return (pVarDecl != null) ? pVarDecl : (pVarDecl = new VarDeclElements());
 	}

@@ -46,6 +46,8 @@
         eType="#//VarDecl" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mudancas" upperBound="-1"
         eType="#//NoPtrMudanca" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lixoV" upperBound="-1"
+        eType="#//NoPtrExpression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="switches" upperBound="-1"
         eType="#//NoPtrSelect" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dirtyB" upperBound="-1"
@@ -81,13 +83,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="Parameter">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//ReturnExpr"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//NoPtrExpression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VarDecl">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//ReturnExpr"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//NoPtrExpression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Type">

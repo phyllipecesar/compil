@@ -15,12 +15,16 @@ import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.xtext.example.mydsl.myDsl.Atomic;
 import org.xtext.example.mydsl.myDsl.BooleanhType;
+import org.xtext.example.mydsl.myDsl.CaseNormal;
+import org.xtext.example.mydsl.myDsl.DefaultCase;
 import org.xtext.example.mydsl.myDsl.FunctionChamada;
 import org.xtext.example.mydsl.myDsl.FunctionDeclaration;
 import org.xtext.example.mydsl.myDsl.FunctionType;
 import org.xtext.example.mydsl.myDsl.IntType;
+import org.xtext.example.mydsl.myDsl.NoPtrCases;
 import org.xtext.example.mydsl.myDsl.NoPtrExpression;
 import org.xtext.example.mydsl.myDsl.NoPtrMudanca;
+import org.xtext.example.mydsl.myDsl.NoPtrSelect;
 import org.xtext.example.mydsl.myDsl.NoPtrStatement;
 import org.xtext.example.mydsl.myDsl.NoPtrTerminalExpression;
 import org.xtext.example.mydsl.myDsl.Parameter;
@@ -31,7 +35,9 @@ import org.xtext.example.mydsl.myDsl.Type;
 import org.xtext.example.mydsl.myDsl.VarDecl;
 import org.xtext.example.mydsl.myDsl.Variable;
 import org.xtext.example.mydsl.myDsl.impl.FunctionChamadaImpl;
+import org.xtext.example.mydsl.myDsl.impl.NoPtrExpressionImpl;
 import org.xtext.example.mydsl.myDsl.impl.NoPtrMudancaImpl;
+import org.xtext.example.mydsl.myDsl.impl.NoPtrSelectImpl;
 import org.xtext.example.mydsl.myDsl.impl.ReturnImpl;
 import org.xtext.example.mydsl.myDsl.impl.VarDeclImpl;
 import org.xtext.example.mydsl.myDsl.simple_type_specifier;
@@ -45,9 +51,12 @@ import org.xtext.example.mydsl.myDsl.simple_type_specifier;
 public class MyDslGenerator implements IGenerator {
   private int regCounter = 0;
   
+  private int switch_n = 0;
+  
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
     String code = "";
     this.regCounter = 0;
+    this.switch_n = 0;
     TreeIterator<EObject> _allContents = resource.getAllContents();
     Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
     Iterable<FunctionDeclaration> _filter = Iterables.<FunctionDeclaration>filter(_iterable, FunctionDeclaration.class);
@@ -64,7 +73,7 @@ public class MyDslGenerator implements IGenerator {
   
   public String compile(final VarDecl variavel) {
     String ret = "";
-    ReturnExpr _expr = variavel.getExpr();
+    NoPtrExpression _expr = variavel.getExpr();
     boolean _equals = Objects.equal(_expr, null);
     if (_equals) {
       ret = (("LD R" + Integer.valueOf(this.regCounter)) + ", #");
@@ -97,7 +106,7 @@ public class MyDslGenerator implements IGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append(ret, "");
     _builder.newLineIfNotEmpty();
-    ReturnExpr _expr_1 = variavel.getExpr();
+    NoPtrExpression _expr_1 = variavel.getExpr();
     String _compile = this.compile(_expr_1);
     _builder.append(_compile, "");
     _builder.newLineIfNotEmpty();
@@ -106,13 +115,12 @@ public class MyDslGenerator implements IGenerator {
     _builder.append(_name_3, "");
     _builder.append(", R");
     _builder.append(this.regCounter, "");
-    _builder.newLineIfNotEmpty();
     return _builder.toString();
   }
   
   public String compile(final Parameter variavel) {
     String ret = "";
-    ReturnExpr _expr = variavel.getExpr();
+    NoPtrExpression _expr = variavel.getExpr();
     boolean _equals = Objects.equal(_expr, null);
     if (_equals) {
       ret = (("LD R" + Integer.valueOf(this.regCounter)) + ", #");
@@ -150,7 +158,7 @@ public class MyDslGenerator implements IGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append(ret, "");
     _builder.newLineIfNotEmpty();
-    ReturnExpr _expr_1 = variavel.getExpr();
+    NoPtrExpression _expr_1 = variavel.getExpr();
     String _compile = this.compile(_expr_1);
     _builder.append(_compile, "");
     _builder.newLineIfNotEmpty();
@@ -159,7 +167,6 @@ public class MyDslGenerator implements IGenerator {
     _builder.append(_name_4, "");
     _builder.append(", R");
     _builder.append(this.regCounter, "");
-    _builder.newLineIfNotEmpty();
     return _builder.toString();
   }
   
@@ -226,8 +233,6 @@ public class MyDslGenerator implements IGenerator {
       _builder.append(", ");
       String _name_2 = expr.getName();
       _builder.append(_name_2, "");
-      _builder.append(" ");
-      _builder.newLineIfNotEmpty();
       return _builder.toString();
     }
   }
@@ -250,8 +255,8 @@ public class MyDslGenerator implements IGenerator {
             return this.compile(_cast_3);
           } else {
             if ((expr instanceof FunctionType)) {
-              FunctionChamada _cast_4 = FunctionChamada.class.cast(expr);
-              return this.compile(_cast_4);
+              FunctionChamada _call = ((FunctionType)expr).getCall();
+              return this.compile(_call);
             }
           }
         }
@@ -277,8 +282,6 @@ public class MyDslGenerator implements IGenerator {
       _builder.append(_name, "");
       _builder.append(", R");
       _builder.append(this.regCounter, "");
-      _builder.append(" ");
-      _builder.newLineIfNotEmpty();
       return _builder.toString();
     } else {
       return "";
@@ -308,7 +311,96 @@ public class MyDslGenerator implements IGenerator {
     _builder.append("LD R");
     _builder.append(this.regCounter, "");
     _builder.append(", EAX");
+    return _builder.toString();
+  }
+  
+  public CharSequence compile(final NoPtrCases symb, final int valor) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("SWITCH_LABEL_");
+    String _string = Integer.valueOf(this.switch_n).toString();
+    _builder.append(_string, "");
+    _builder.append("_");
+    String _string_1 = Integer.valueOf(valor).toString();
+    _builder.append(_string_1, "");
+    _builder.append(":");
     _builder.newLineIfNotEmpty();
+    _builder.append("BR BEYOND_SWITCH_");
+    String _string_2 = Integer.valueOf(this.switch_n).toString();
+    _builder.append(_string_2, "");
+    return _builder;
+  }
+  
+  public String compile(final NoPtrSelect switche) {
+    String _string = Integer.valueOf(this.switch_n).toString();
+    String _plus = ("SWITCH_START_" + _string);
+    String switch_rule = (_plus + ":");
+    NoPtrExpression _expr = switche.getExpr();
+    String expres = this.compile(_expr);
+    int lastReg = this.regCounter;
+    this.regCounter = (this.regCounter + 1);
+    switch_rule = ((switch_rule + "\n") + expres);
+    String _string_1 = Integer.valueOf(this.switch_n).toString();
+    String up_part = (("BR " + "SWITCH_START_") + _string_1);
+    int valor = 0;
+    EList<NoPtrCases> _cases = switche.getCases();
+    for (final NoPtrCases symb : _cases) {
+      {
+        CharSequence _compile = this.compile(symb, valor);
+        String _plus_1 = ((up_part + "\n") + _compile);
+        up_part = _plus_1;
+        valor = (valor + 1);
+      }
+    }
+    this.regCounter = (this.regCounter + 1);
+    valor = 0;
+    EList<NoPtrCases> _cases_1 = switche.getCases();
+    for (final NoPtrCases symb_1 : _cases_1) {
+      {
+        if ((symb_1 instanceof DefaultCase)) {
+          String _string_2 = Integer.valueOf(this.switch_n).toString();
+          String _plus_1 = (((switch_rule + "\n") + "BR SWITCH_LABEL_") + _string_2);
+          String _plus_2 = (_plus_1 + "_");
+          String _string_3 = Integer.valueOf(valor).toString();
+          String _plus_3 = (_plus_2 + _string_3);
+          switch_rule = _plus_3;
+        } else {
+          if ((symb_1 instanceof CaseNormal)) {
+            NoPtrExpression _expr_1 = ((CaseNormal)symb_1).getExpr();
+            String _compile = this.compile(_expr_1);
+            String _plus_4 = ((switch_rule + "\n") + _compile);
+            switch_rule = _plus_4;
+            String _string_4 = Integer.valueOf(this.regCounter).toString();
+            String _plus_5 = (((switch_rule + "\n") + "CMP R") + _string_4);
+            String _plus_6 = (_plus_5 + ", R");
+            String _string_5 = Integer.valueOf(this.regCounter).toString();
+            String _plus_7 = (_plus_6 + _string_5);
+            String _plus_8 = (_plus_7 + ", R");
+            String _string_6 = Integer.valueOf(lastReg).toString();
+            String _plus_9 = (_plus_8 + _string_6);
+            switch_rule = _plus_9;
+            String _string_7 = Integer.valueOf(this.regCounter).toString();
+            String _plus_10 = (((switch_rule + "\n") + "Bcond R") + _string_7);
+            String _plus_11 = (_plus_10 + ", SWITCH_LABEL_");
+            String _string_8 = Integer.valueOf(this.switch_n).toString();
+            String _plus_12 = (_plus_11 + _string_8);
+            String _plus_13 = (_plus_12 + "_");
+            String _string_9 = Integer.valueOf(valor).toString();
+            String _plus_14 = (_plus_13 + _string_9);
+            switch_rule = _plus_14;
+          }
+        }
+        valor = (valor + 1);
+      }
+    }
+    this.switch_n = (this.switch_n + 1);
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append(up_part, "");
+    _builder.newLineIfNotEmpty();
+    _builder.append(switch_rule, "");
+    _builder.newLineIfNotEmpty();
+    _builder.append("BEYOND_SWITCH_");
+    String _string_2 = Integer.valueOf((this.switch_n - 1)).toString();
+    _builder.append(_string_2, "");
     return _builder.toString();
   }
   
@@ -341,6 +433,20 @@ public class MyDslGenerator implements IGenerator {
                   String _compile_3 = this.compile(_cast_3);
                   _builder.append(_compile_3, "");
                   _builder.newLineIfNotEmpty();
+                } else {
+                  if ((decl instanceof NoPtrSelect)) {
+                    NoPtrSelectImpl _cast_4 = NoPtrSelectImpl.class.cast(decl);
+                    String _compile_4 = this.compile(_cast_4);
+                    _builder.append(_compile_4, "");
+                    _builder.newLineIfNotEmpty();
+                  } else {
+                    if ((decl instanceof NoPtrExpression)) {
+                      NoPtrExpressionImpl _cast_5 = NoPtrExpressionImpl.class.cast(decl);
+                      String _compile_5 = this.compile(_cast_5);
+                      _builder.append(_compile_5, "");
+                      _builder.newLineIfNotEmpty();
+                    }
+                  }
                 }
               }
             }
@@ -406,7 +512,6 @@ public class MyDslGenerator implements IGenerator {
       _builder.append(left, "");
       _builder.newLineIfNotEmpty();
       _builder.append(ret, "");
-      _builder.newLineIfNotEmpty();
       return _builder.toString();
     }
   }
@@ -423,14 +528,12 @@ public class MyDslGenerator implements IGenerator {
       _builder.newLineIfNotEmpty();
       _builder.append("LD RET, R");
       _builder.append(this.regCounter, "");
-      _builder.newLineIfNotEmpty();
       antigo = _builder.toString();
     }
     StringConcatenation _builder_1 = new StringConcatenation();
     _builder_1.append(antigo, "");
     _builder_1.newLineIfNotEmpty();
     _builder_1.append("BR *0(SP)");
-    _builder_1.newLine();
     return _builder_1.toString();
   }
   

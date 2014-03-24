@@ -298,10 +298,11 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionChamadaAccess().getParamsAssignment_3_1_1(), "rule__FunctionChamada__ParamsAssignment_3_1_1");
 					put(grammarAccess.getNoPtrStatementAccess().getVariaveisAssignment_1_0(), "rule__NoPtrStatement__VariaveisAssignment_1_0");
 					put(grammarAccess.getNoPtrStatementAccess().getMudancasAssignment_1_1(), "rule__NoPtrStatement__MudancasAssignment_1_1");
-					put(grammarAccess.getNoPtrStatementAccess().getSwitchesAssignment_1_2(), "rule__NoPtrStatement__SwitchesAssignment_1_2");
-					put(grammarAccess.getNoPtrStatementAccess().getDirtyBAssignment_1_3(), "rule__NoPtrStatement__DirtyBAssignment_1_3");
-					put(grammarAccess.getNoPtrStatementAccess().getDirtyAssignment_1_4(), "rule__NoPtrStatement__DirtyAssignment_1_4");
-					put(grammarAccess.getNoPtrStatementAccess().getDirtyVAssignment_1_5(), "rule__NoPtrStatement__DirtyVAssignment_1_5");
+					put(grammarAccess.getNoPtrStatementAccess().getLixoVAssignment_1_2(), "rule__NoPtrStatement__LixoVAssignment_1_2");
+					put(grammarAccess.getNoPtrStatementAccess().getSwitchesAssignment_1_3(), "rule__NoPtrStatement__SwitchesAssignment_1_3");
+					put(grammarAccess.getNoPtrStatementAccess().getDirtyBAssignment_1_4(), "rule__NoPtrStatement__DirtyBAssignment_1_4");
+					put(grammarAccess.getNoPtrStatementAccess().getDirtyAssignment_1_5(), "rule__NoPtrStatement__DirtyAssignment_1_5");
+					put(grammarAccess.getNoPtrStatementAccess().getDirtyVAssignment_1_6(), "rule__NoPtrStatement__DirtyVAssignment_1_6");
 					put(grammarAccess.getNoPtrMudancaAccess().getNameAssignment_1(), "rule__NoPtrMudanca__NameAssignment_1");
 					put(grammarAccess.getNoPtrMudancaAccess().getExprAssignment_2_1(), "rule__NoPtrMudanca__ExprAssignment_2_1");
 					put(grammarAccess.getNoPtrExpressionAccess().getLeftAssignment_1(), "rule__NoPtrExpression__LeftAssignment_1");

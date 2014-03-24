@@ -338,10 +338,20 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID expr=NoPtrExpression?)
+	 *     (name=ID expr=NoPtrExpression)
 	 */
 	protected void sequence_NoPtrMudanca(EObject context, NoPtrMudanca semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.NO_PTR_MUDANCA__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.NO_PTR_MUDANCA__NAME));
+			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.NO_PTR_MUDANCA__EXPR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.NO_PTR_MUDANCA__EXPR));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getNoPtrMudancaAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getNoPtrMudancaAccess().getExprNoPtrExpressionParserRuleCall_2_1_0(), semanticObject.getExpr());
+		feeder.finish();
 	}
 	
 	
@@ -360,6 +370,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         (
 	 *             variaveis+=VarDecl | 
 	 *             mudancas+=NoPtrMudanca | 
+	 *             lixoV+=NoPtrExpression | 
 	 *             switches+=NoPtrSelect | 
 	 *             dirtyB+=Return | 
 	 *             dirty+=Statement | 
@@ -399,7 +410,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (type=Type name=ID expr=ReturnExpr?)
+	 *     (type=Type name=ID expr=NoPtrExpression?)
 	 */
 	protected void sequence_Parameter(EObject context, Parameter semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -492,7 +503,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (type=Type name=ID expr=ReturnExpr?)
+	 *     (type=Type name=ID expr=NoPtrExpression?)
 	 */
 	protected void sequence_VarDecl(EObject context, VarDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
+import org.xtext.example.mydsl.myDsl.NoPtrExpression;
 import org.xtext.example.mydsl.myDsl.Parameter;
-import org.xtext.example.mydsl.myDsl.ReturnExpr;
 import org.xtext.example.mydsl.myDsl.Type;
 
 /**
@@ -71,7 +71,7 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
    * @generated
    * @ordered
    */
-  protected ReturnExpr expr;
+  protected NoPtrExpression expr;
 
   /**
    * <!-- begin-user-doc -->
@@ -170,7 +170,7 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
    * <!-- end-user-doc -->
    * @generated
    */
-  public ReturnExpr getExpr()
+  public NoPtrExpression getExpr()
   {
     return expr;
   }
@@ -180,9 +180,9 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpr(ReturnExpr newExpr, NotificationChain msgs)
+  public NotificationChain basicSetExpr(NoPtrExpression newExpr, NotificationChain msgs)
   {
-    ReturnExpr oldExpr = expr;
+    NoPtrExpression oldExpr = expr;
     expr = newExpr;
     if (eNotificationRequired())
     {
@@ -197,7 +197,7 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpr(ReturnExpr newExpr)
+  public void setExpr(NoPtrExpression newExpr)
   {
     if (newExpr != expr)
     {
@@ -268,7 +268,7 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
         setName((String)newValue);
         return;
       case MyDslPackage.PARAMETER__EXPR:
-        setExpr((ReturnExpr)newValue);
+        setExpr((NoPtrExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -291,7 +291,7 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
         setName(NAME_EDEFAULT);
         return;
       case MyDslPackage.PARAMETER__EXPR:
-        setExpr((ReturnExpr)null);
+        setExpr((NoPtrExpression)null);
         return;
     }
     super.eUnset(featureID);

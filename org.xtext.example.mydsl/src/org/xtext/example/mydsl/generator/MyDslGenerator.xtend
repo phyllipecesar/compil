@@ -29,6 +29,12 @@ import org.xtext.example.mydsl.myDsl.impl.NoPtrMudancaImpl
 import org.xtext.example.mydsl.myDsl.FunctionChamada
 import org.xtext.example.mydsl.myDsl.impl.FunctionChamadaImpl
 import org.xtext.example.mydsl.myDsl.FunctionType
+import org.xtext.example.mydsl.myDsl.NoPtrSelect
+import org.xtext.example.mydsl.myDsl.impl.NoPtrSelectImpl
+import org.xtext.example.mydsl.myDsl.NoPtrCases
+import org.xtext.example.mydsl.myDsl.DefaultCase
+import org.xtext.example.mydsl.myDsl.CaseNormal
+import org.xtext.example.mydsl.myDsl.impl.NoPtrExpressionImpl
 
 /**
  * Generates code from your model files on save.
@@ -38,9 +44,11 @@ import org.xtext.example.mydsl.myDsl.FunctionType
 class MyDslGenerator implements IGenerator {
 	
 	var regCounter = 0;
+	var switch_n = 0;
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 		var code = "";
 		regCounter = 0;
+		switch_n = 0;
 //		fsa.generateFile('greetings.txt', 'People to greet: ' + 
 //			resource.allContents
 //				.filter(typeof(Greeting))
@@ -72,8 +80,7 @@ class MyDslGenerator implements IGenerator {
 		return '''
 		«ret»
 		«variavel.expr.compile»
-		ST «variavel.name», R«regCounter»
-	'''
+		ST «variavel.name», R«regCounter»'''
 	
 	}
 	
@@ -96,8 +103,7 @@ class MyDslGenerator implements IGenerator {
 		return '''
 		«ret»
 		«variavel.expr.compile»
-		ST «variavel.name», R«regCounter»
-	'''
+		ST «variavel.name», R«regCounter»'''
 	
 	}
 	def String compile(IntType tipo) {
@@ -139,8 +145,7 @@ class MyDslGenerator implements IGenerator {
 			return '''
 «expr.expr.compile»
 ST «expr.name», R«regCounter»
-LD R«regCounter», «expr.name» 
-'''
+LD R«regCounter», «expr.name»'''
 		}
 	}
 	def String compile(ReturnExpr expr) {
@@ -153,7 +158,7 @@ LD R«regCounter», «expr.name»
 		} else if (expr instanceof Variable) {
 			return compile(Variable.cast(expr));
 		}else if (expr instanceof FunctionType) {
-			return compile(FunctionChamada.cast(expr));
+			return compile(expr.call);
 		}
 		
 		if (expr == null) {
@@ -164,8 +169,7 @@ LD R«regCounter», «expr.name»
 		if (mud.expr != null) {
 			return '''
 			«mud.expr.compile»
-			ST «mud.name», R«regCounter» 
-			''';
+			ST «mud.name», R«regCounter»''';
 		} else {
 			return '';
 		}
@@ -181,8 +185,42 @@ LD R«regCounter», «expr.name»
 		return '''
 		«ret»
 		CALL «funcao.name»
-		LD R«regCounter», EAX
-		''';
+		LD R«regCounter», EAX''';
+	}
+	
+	def compile(NoPtrCases symb, int valor) '''
+		SWITCH_LABEL_«switch_n.toString»_«valor.toString»:
+		BR BEYOND_SWITCH_«switch_n.toString»'''
+	
+	def compile(NoPtrSelect switche) {
+		var switch_rule = 'SWITCH_START_' + switch_n.toString + ':';
+		var expres = switche.expr.compile;
+		var lastReg = regCounter;
+		regCounter = regCounter + 1;
+		switch_rule = switch_rule + "\n" + expres;
+		var up_part = "BR " + 'SWITCH_START_' + switch_n.toString;
+		var valor = 0;
+		for (NoPtrCases symb: switche.cases) {
+			up_part = up_part + "\n" + compile(symb, valor);
+			valor = valor + 1;
+		}
+		regCounter = regCounter + 1;
+		valor = 0;
+		for (NoPtrCases symb: switche.cases) {
+			if (symb instanceof DefaultCase) {
+				switch_rule = switch_rule + "\n" + "BR SWITCH_LABEL_" + switch_n.toString + "_" + valor.toString;
+			} else if (symb instanceof CaseNormal) {
+				switch_rule = switch_rule + "\n" + compile(symb.expr);
+				switch_rule = switch_rule + "\n" + "CMP R" + regCounter.toString + ", R" + regCounter.toString + ", R" + (lastReg).toString;	
+				switch_rule = switch_rule + "\n" + "Bcond R" + regCounter.toString + ", SWITCH_LABEL_" + switch_n.toString + "_" + valor.toString;  
+			}
+			valor = valor + 1;
+		}
+		switch_n = switch_n + 1;
+		return '''
+		«up_part»
+		«switch_rule»
+		BEYOND_SWITCH_«(switch_n-1).toString»'''
 	}
 	def String compile(NoPtrStatement statement) '''
 		«FOR decl : statement.eContents»
@@ -194,6 +232,10 @@ LD R«regCounter», «expr.name»
 				«ReturnImpl.cast(decl).compile»
 			«ELSEIF decl instanceof FunctionChamada»
 				«FunctionChamadaImpl.cast(decl).compile»
+			«ELSEIF decl instanceof NoPtrSelect»
+				«NoPtrSelectImpl.cast(decl).compile»
+			«ELSEIF decl instanceof NoPtrExpression»
+				«NoPtrExpressionImpl.cast(decl).compile»
 			«ENDIF»
 		«ENDFOR»
 	'''
@@ -229,8 +271,7 @@ LD R«regCounter», «expr.name»
 				ret = right + "\n" + ret;
 			}
 		return '''«left»
-«ret»
-		'''
+«ret»'''
 		}
 		
 	}
@@ -239,13 +280,11 @@ LD R«regCounter», «expr.name»
 		if (ret.rettype != null) {
 			antigo = '''
 				«ret.rettype.compile»
-				LD RET, R«regCounter»
-			'''
+				LD RET, R«regCounter»'''
 		}
 	return '''
 		«antigo»
-		BR *0(SP)
-	'''	
+		BR *0(SP)'''	
 	}
 	def String getNameFunction(FunctionDeclaration funcao) {
 		var nome = funcao.name + '(';
