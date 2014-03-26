@@ -22,8 +22,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_FunctionDeclaration_ConstKeyword_1_q;
 	protected AbstractElementAlias match_NamespaceDefinition_IDTerminalRuleCall_2_q;
 	protected AbstractElementAlias match_NamespaceDefinition_InlineKeyword_0_q;
-	protected AbstractElementAlias match_NoPtrCases_StatementParserRuleCall_0_3_q;
-	protected AbstractElementAlias match_NoPtrCases_StatementParserRuleCall_1_4_q;
+	protected AbstractElementAlias match_NoPtrStatement_BreakKeyword_1_0_a;
 	protected AbstractElementAlias match_NoPtrTerminalExpression_ExclamationMarkKeyword_0_1_a;
 	protected AbstractElementAlias match_NoPtrTerminalExpression_ExclamationMarkKeyword_1_1_a;
 	protected AbstractElementAlias match_Parameter_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a;
@@ -41,8 +40,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_FunctionDeclaration_ConstKeyword_1_q = new TokenAlias(false, true, grammarAccess.getFunctionDeclarationAccess().getConstKeyword_1());
 		match_NamespaceDefinition_IDTerminalRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getNamespaceDefinitionAccess().getIDTerminalRuleCall_2());
 		match_NamespaceDefinition_InlineKeyword_0_q = new TokenAlias(false, true, grammarAccess.getNamespaceDefinitionAccess().getInlineKeyword_0());
-		match_NoPtrCases_StatementParserRuleCall_0_3_q = new TokenAlias(false, true, grammarAccess.getNoPtrCasesAccess().getStatementParserRuleCall_0_3());
-		match_NoPtrCases_StatementParserRuleCall_1_4_q = new TokenAlias(false, true, grammarAccess.getNoPtrCasesAccess().getStatementParserRuleCall_1_4());
+		match_NoPtrStatement_BreakKeyword_1_0_a = new TokenAlias(true, true, grammarAccess.getNoPtrStatementAccess().getBreakKeyword_1_0());
 		match_NoPtrTerminalExpression_ExclamationMarkKeyword_0_1_a = new TokenAlias(true, true, grammarAccess.getNoPtrTerminalExpressionAccess().getExclamationMarkKeyword_0_1());
 		match_NoPtrTerminalExpression_ExclamationMarkKeyword_1_1_a = new TokenAlias(true, true, grammarAccess.getNoPtrTerminalExpressionAccess().getExclamationMarkKeyword_1_1());
 		match_Parameter_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a = new AlternativeAlias(false, false, new TokenAlias(true, true, grammarAccess.getParameterAccess().getAmpersandKeyword_3_1()), new TokenAlias(true, true, grammarAccess.getParameterAccess().getAsteriskKeyword_3_0()));
@@ -63,8 +61,6 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 			return getINTToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getSTRINGRule())
 			return getSTRINGToken(semanticObject, ruleCall, node);
-		else if(ruleCall.getRule() == grammarAccess.getStatementRule())
-			return getStatementToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getPreprocessing_fileRule())
 			return getpreprocessing_fileToken(semanticObject, ruleCall, node);
 		return "";
@@ -102,23 +98,6 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * Statement:
-	 * 	LabeledStatement |
-	 * 	ExpressionStatement |
-	 * 	CompoundStatement |
-	 * 	SelectionStatement |
-	 * 	IterationStatement |
-	 * 	JumpStatement |
-	 * 	DeclarationStatement |
-	 * 	TryBlock;
-	 */
-	protected String getStatementToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return ":";
-	}
-	
-	/**
 	 * preprocessing_file:
 	 * 	group?
 	 * ;
@@ -141,10 +120,8 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_NamespaceDefinition_IDTerminalRuleCall_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_NamespaceDefinition_InlineKeyword_0_q.equals(syntax))
 				emit_NamespaceDefinition_InlineKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_NoPtrCases_StatementParserRuleCall_0_3_q.equals(syntax))
-				emit_NoPtrCases_StatementParserRuleCall_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_NoPtrCases_StatementParserRuleCall_1_4_q.equals(syntax))
-				emit_NoPtrCases_StatementParserRuleCall_1_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_NoPtrStatement_BreakKeyword_1_0_a.equals(syntax))
+				emit_NoPtrStatement_BreakKeyword_1_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_NoPtrTerminalExpression_ExclamationMarkKeyword_0_1_a.equals(syntax))
 				emit_NoPtrTerminalExpression_ExclamationMarkKeyword_0_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_NoPtrTerminalExpression_ExclamationMarkKeyword_1_1_a.equals(syntax))
@@ -195,17 +172,9 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     Statement?
+	 *     'break;'*
 	 */
-	protected void emit_NoPtrCases_StatementParserRuleCall_0_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     Statement?
-	 */
-	protected void emit_NoPtrCases_StatementParserRuleCall_1_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_NoPtrStatement_BreakKeyword_1_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -227,7 +196,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     '&'* | '*'*
+	 *     '*'* | '&'*
 	 */
 	protected void emit_Parameter_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -259,7 +228,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     '*'* | '&'*
+	 *     '&'* | '*'*
 	 */
 	protected void emit_VarDecl_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

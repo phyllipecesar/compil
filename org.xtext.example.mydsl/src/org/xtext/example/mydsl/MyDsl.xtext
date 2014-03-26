@@ -142,7 +142,7 @@ FunctionChamada:
 	{FunctionChamada} name=ID'('(params+=ReturnExpr ("," params+=ReturnExpr)* )?  ')'
 ;
 NoPtrStatement:
-	{NoPtrStatement} (((variaveis+= VarDecl) | mudancas += NoPtrMudanca |  lixoV += NoPtrExpression | switches += NoPtrSelect |dirtyB += Return| dirty += Statement | dirtyV += FunctionChamada )*)
+	{NoPtrStatement} (('break;' | (variaveis+= VarDecl) | mudancas += NoPtrMudanca |  lixoV += NoPtrExpression | switches += NoPtrSelect |dirtyB += Return| dirty += Statement | dirtyV += FunctionChamada )*)
 ;
 
 NoPtrMudanca:
@@ -160,8 +160,8 @@ NoPtrSelect:
 	{NoPtrSelect} 'switch' '(' expr=NoPtrExpression')' '{' cases += NoPtrCases* '}'
 ;
 NoPtrCases:
-	{DefaultCase} 'default' ':' Statement? |
-	{CaseNormal} 'case' expr=NoPtrExpression ':' Statement?
+	{DefaultCase} 'default' ':' v=NoPtrStatement |
+	{CaseNormal} 'case' expr=NoPtrExpression ':' v=NoPtrStatement
 	
 ;
 Parameter:

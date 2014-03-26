@@ -62,7 +62,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NoPtrSelect/expr"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NoPtrSelect/cases"/>
     </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//NoPtrCases"/>
+    <genClasses ecoreClass="MyDsl.ecore#//NoPtrCases">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NoPtrCases/v"/>
+    </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Parameter">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Parameter/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Parameter/name"/>

@@ -891,78 +891,82 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cNoPtrStatementAction_0 = (Action)cGroup.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final Assignment cVariaveisAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
-		private final RuleCall cVariaveisVarDeclParserRuleCall_1_0_0 = (RuleCall)cVariaveisAssignment_1_0.eContents().get(0);
-		private final Assignment cMudancasAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
-		private final RuleCall cMudancasNoPtrMudancaParserRuleCall_1_1_0 = (RuleCall)cMudancasAssignment_1_1.eContents().get(0);
-		private final Assignment cLixoVAssignment_1_2 = (Assignment)cAlternatives_1.eContents().get(2);
-		private final RuleCall cLixoVNoPtrExpressionParserRuleCall_1_2_0 = (RuleCall)cLixoVAssignment_1_2.eContents().get(0);
-		private final Assignment cSwitchesAssignment_1_3 = (Assignment)cAlternatives_1.eContents().get(3);
-		private final RuleCall cSwitchesNoPtrSelectParserRuleCall_1_3_0 = (RuleCall)cSwitchesAssignment_1_3.eContents().get(0);
-		private final Assignment cDirtyBAssignment_1_4 = (Assignment)cAlternatives_1.eContents().get(4);
-		private final RuleCall cDirtyBReturnParserRuleCall_1_4_0 = (RuleCall)cDirtyBAssignment_1_4.eContents().get(0);
-		private final Assignment cDirtyAssignment_1_5 = (Assignment)cAlternatives_1.eContents().get(5);
-		private final RuleCall cDirtyStatementParserRuleCall_1_5_0 = (RuleCall)cDirtyAssignment_1_5.eContents().get(0);
-		private final Assignment cDirtyVAssignment_1_6 = (Assignment)cAlternatives_1.eContents().get(6);
-		private final RuleCall cDirtyVFunctionChamadaParserRuleCall_1_6_0 = (RuleCall)cDirtyVAssignment_1_6.eContents().get(0);
+		private final Keyword cBreakKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
+		private final Assignment cVariaveisAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
+		private final RuleCall cVariaveisVarDeclParserRuleCall_1_1_0 = (RuleCall)cVariaveisAssignment_1_1.eContents().get(0);
+		private final Assignment cMudancasAssignment_1_2 = (Assignment)cAlternatives_1.eContents().get(2);
+		private final RuleCall cMudancasNoPtrMudancaParserRuleCall_1_2_0 = (RuleCall)cMudancasAssignment_1_2.eContents().get(0);
+		private final Assignment cLixoVAssignment_1_3 = (Assignment)cAlternatives_1.eContents().get(3);
+		private final RuleCall cLixoVNoPtrExpressionParserRuleCall_1_3_0 = (RuleCall)cLixoVAssignment_1_3.eContents().get(0);
+		private final Assignment cSwitchesAssignment_1_4 = (Assignment)cAlternatives_1.eContents().get(4);
+		private final RuleCall cSwitchesNoPtrSelectParserRuleCall_1_4_0 = (RuleCall)cSwitchesAssignment_1_4.eContents().get(0);
+		private final Assignment cDirtyBAssignment_1_5 = (Assignment)cAlternatives_1.eContents().get(5);
+		private final RuleCall cDirtyBReturnParserRuleCall_1_5_0 = (RuleCall)cDirtyBAssignment_1_5.eContents().get(0);
+		private final Assignment cDirtyAssignment_1_6 = (Assignment)cAlternatives_1.eContents().get(6);
+		private final RuleCall cDirtyStatementParserRuleCall_1_6_0 = (RuleCall)cDirtyAssignment_1_6.eContents().get(0);
+		private final Assignment cDirtyVAssignment_1_7 = (Assignment)cAlternatives_1.eContents().get(7);
+		private final RuleCall cDirtyVFunctionChamadaParserRuleCall_1_7_0 = (RuleCall)cDirtyVAssignment_1_7.eContents().get(0);
 		
 		//NoPtrStatement:
-		//	{NoPtrStatement} (variaveis+=VarDecl | mudancas+=NoPtrMudanca | lixoV+=NoPtrExpression | switches+=NoPtrSelect |
-		//	dirtyB+=Return | dirty+=Statement | dirtyV+=FunctionChamada)*;
+		//	{NoPtrStatement} ("break;" | variaveis+=VarDecl | mudancas+=NoPtrMudanca | lixoV+=NoPtrExpression |
+		//	switches+=NoPtrSelect | dirtyB+=Return | dirty+=Statement | dirtyV+=FunctionChamada)*;
 		public ParserRule getRule() { return rule; }
 
-		//{NoPtrStatement} (variaveis+=VarDecl | mudancas+=NoPtrMudanca | lixoV+=NoPtrExpression | switches+=NoPtrSelect |
-		//dirtyB+=Return | dirty+=Statement | dirtyV+=FunctionChamada)*
+		//{NoPtrStatement} ("break;" | variaveis+=VarDecl | mudancas+=NoPtrMudanca | lixoV+=NoPtrExpression |
+		//switches+=NoPtrSelect | dirtyB+=Return | dirty+=Statement | dirtyV+=FunctionChamada)*
 		public Group getGroup() { return cGroup; }
 
 		//{NoPtrStatement}
 		public Action getNoPtrStatementAction_0() { return cNoPtrStatementAction_0; }
 
-		//(variaveis+=VarDecl | mudancas+=NoPtrMudanca | lixoV+=NoPtrExpression | switches+=NoPtrSelect | dirtyB+=Return |
-		//dirty+=Statement | dirtyV+=FunctionChamada)*
+		//("break;" | variaveis+=VarDecl | mudancas+=NoPtrMudanca | lixoV+=NoPtrExpression | switches+=NoPtrSelect |
+		//dirtyB+=Return | dirty+=Statement | dirtyV+=FunctionChamada)*
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
+		//"break;"
+		public Keyword getBreakKeyword_1_0() { return cBreakKeyword_1_0; }
+
 		//variaveis+=VarDecl
-		public Assignment getVariaveisAssignment_1_0() { return cVariaveisAssignment_1_0; }
+		public Assignment getVariaveisAssignment_1_1() { return cVariaveisAssignment_1_1; }
 
 		//VarDecl
-		public RuleCall getVariaveisVarDeclParserRuleCall_1_0_0() { return cVariaveisVarDeclParserRuleCall_1_0_0; }
+		public RuleCall getVariaveisVarDeclParserRuleCall_1_1_0() { return cVariaveisVarDeclParserRuleCall_1_1_0; }
 
 		//mudancas+=NoPtrMudanca
-		public Assignment getMudancasAssignment_1_1() { return cMudancasAssignment_1_1; }
+		public Assignment getMudancasAssignment_1_2() { return cMudancasAssignment_1_2; }
 
 		//NoPtrMudanca
-		public RuleCall getMudancasNoPtrMudancaParserRuleCall_1_1_0() { return cMudancasNoPtrMudancaParserRuleCall_1_1_0; }
+		public RuleCall getMudancasNoPtrMudancaParserRuleCall_1_2_0() { return cMudancasNoPtrMudancaParserRuleCall_1_2_0; }
 
 		//lixoV+=NoPtrExpression
-		public Assignment getLixoVAssignment_1_2() { return cLixoVAssignment_1_2; }
+		public Assignment getLixoVAssignment_1_3() { return cLixoVAssignment_1_3; }
 
 		//NoPtrExpression
-		public RuleCall getLixoVNoPtrExpressionParserRuleCall_1_2_0() { return cLixoVNoPtrExpressionParserRuleCall_1_2_0; }
+		public RuleCall getLixoVNoPtrExpressionParserRuleCall_1_3_0() { return cLixoVNoPtrExpressionParserRuleCall_1_3_0; }
 
 		//switches+=NoPtrSelect
-		public Assignment getSwitchesAssignment_1_3() { return cSwitchesAssignment_1_3; }
+		public Assignment getSwitchesAssignment_1_4() { return cSwitchesAssignment_1_4; }
 
 		//NoPtrSelect
-		public RuleCall getSwitchesNoPtrSelectParserRuleCall_1_3_0() { return cSwitchesNoPtrSelectParserRuleCall_1_3_0; }
+		public RuleCall getSwitchesNoPtrSelectParserRuleCall_1_4_0() { return cSwitchesNoPtrSelectParserRuleCall_1_4_0; }
 
 		//dirtyB+=Return
-		public Assignment getDirtyBAssignment_1_4() { return cDirtyBAssignment_1_4; }
+		public Assignment getDirtyBAssignment_1_5() { return cDirtyBAssignment_1_5; }
 
 		//Return
-		public RuleCall getDirtyBReturnParserRuleCall_1_4_0() { return cDirtyBReturnParserRuleCall_1_4_0; }
+		public RuleCall getDirtyBReturnParserRuleCall_1_5_0() { return cDirtyBReturnParserRuleCall_1_5_0; }
 
 		//dirty+=Statement
-		public Assignment getDirtyAssignment_1_5() { return cDirtyAssignment_1_5; }
+		public Assignment getDirtyAssignment_1_6() { return cDirtyAssignment_1_6; }
 
 		//Statement
-		public RuleCall getDirtyStatementParserRuleCall_1_5_0() { return cDirtyStatementParserRuleCall_1_5_0; }
+		public RuleCall getDirtyStatementParserRuleCall_1_6_0() { return cDirtyStatementParserRuleCall_1_6_0; }
 
 		//dirtyV+=FunctionChamada
-		public Assignment getDirtyVAssignment_1_6() { return cDirtyVAssignment_1_6; }
+		public Assignment getDirtyVAssignment_1_7() { return cDirtyVAssignment_1_7; }
 
 		//FunctionChamada
-		public RuleCall getDirtyVFunctionChamadaParserRuleCall_1_6_0() { return cDirtyVFunctionChamadaParserRuleCall_1_6_0; }
+		public RuleCall getDirtyVFunctionChamadaParserRuleCall_1_7_0() { return cDirtyVFunctionChamadaParserRuleCall_1_7_0; }
 	}
 
 	public class NoPtrMudancaElements extends AbstractParserRuleElementFinder {
@@ -1184,23 +1188,25 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cDefaultCaseAction_0_0 = (Action)cGroup_0.eContents().get(0);
 		private final Keyword cDefaultKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
 		private final Keyword cColonKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
-		private final RuleCall cStatementParserRuleCall_0_3 = (RuleCall)cGroup_0.eContents().get(3);
+		private final Assignment cVAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
+		private final RuleCall cVNoPtrStatementParserRuleCall_0_3_0 = (RuleCall)cVAssignment_0_3.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Action cCaseNormalAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Keyword cCaseKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cExprAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cExprNoPtrExpressionParserRuleCall_1_2_0 = (RuleCall)cExprAssignment_1_2.eContents().get(0);
 		private final Keyword cColonKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
-		private final RuleCall cStatementParserRuleCall_1_4 = (RuleCall)cGroup_1.eContents().get(4);
+		private final Assignment cVAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
+		private final RuleCall cVNoPtrStatementParserRuleCall_1_4_0 = (RuleCall)cVAssignment_1_4.eContents().get(0);
 		
 		//NoPtrCases:
-		//	{DefaultCase} "default" ":" Statement? | {CaseNormal} "case" expr=NoPtrExpression ":" Statement?;
+		//	{DefaultCase} "default" ":" v=NoPtrStatement | {CaseNormal} "case" expr=NoPtrExpression ":" v=NoPtrStatement;
 		public ParserRule getRule() { return rule; }
 
-		//{DefaultCase} "default" ":" Statement? | {CaseNormal} "case" expr=NoPtrExpression ":" Statement?
+		//{DefaultCase} "default" ":" v=NoPtrStatement | {CaseNormal} "case" expr=NoPtrExpression ":" v=NoPtrStatement
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//{DefaultCase} "default" ":" Statement?
+		//{DefaultCase} "default" ":" v=NoPtrStatement
 		public Group getGroup_0() { return cGroup_0; }
 
 		//{DefaultCase}
@@ -1212,10 +1218,13 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_0_2() { return cColonKeyword_0_2; }
 
-		//Statement?
-		public RuleCall getStatementParserRuleCall_0_3() { return cStatementParserRuleCall_0_3; }
+		//v=NoPtrStatement
+		public Assignment getVAssignment_0_3() { return cVAssignment_0_3; }
 
-		//{CaseNormal} "case" expr=NoPtrExpression ":" Statement?
+		//NoPtrStatement
+		public RuleCall getVNoPtrStatementParserRuleCall_0_3_0() { return cVNoPtrStatementParserRuleCall_0_3_0; }
+
+		//{CaseNormal} "case" expr=NoPtrExpression ":" v=NoPtrStatement
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{CaseNormal}
@@ -1233,8 +1242,11 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_1_3() { return cColonKeyword_1_3; }
 
-		//Statement?
-		public RuleCall getStatementParserRuleCall_1_4() { return cStatementParserRuleCall_1_4; }
+		//v=NoPtrStatement
+		public Assignment getVAssignment_1_4() { return cVAssignment_1_4; }
+
+		//NoPtrStatement
+		public RuleCall getVNoPtrStatementParserRuleCall_1_4_0() { return cVNoPtrStatementParserRuleCall_1_4_0; }
 	}
 
 	public class ParameterElements extends AbstractParserRuleElementFinder {
@@ -5636,8 +5648,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NoPtrStatement:
-	//	{NoPtrStatement} (variaveis+=VarDecl | mudancas+=NoPtrMudanca | lixoV+=NoPtrExpression | switches+=NoPtrSelect |
-	//	dirtyB+=Return | dirty+=Statement | dirtyV+=FunctionChamada)*;
+	//	{NoPtrStatement} ("break;" | variaveis+=VarDecl | mudancas+=NoPtrMudanca | lixoV+=NoPtrExpression |
+	//	switches+=NoPtrSelect | dirtyB+=Return | dirty+=Statement | dirtyV+=FunctionChamada)*;
 	public NoPtrStatementElements getNoPtrStatementAccess() {
 		return (pNoPtrStatement != null) ? pNoPtrStatement : (pNoPtrStatement = new NoPtrStatementElements());
 	}
@@ -5687,7 +5699,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NoPtrCases:
-	//	{DefaultCase} "default" ":" Statement? | {CaseNormal} "case" expr=NoPtrExpression ":" Statement?;
+	//	{DefaultCase} "default" ":" v=NoPtrStatement | {CaseNormal} "case" expr=NoPtrExpression ":" v=NoPtrStatement;
 	public NoPtrCasesElements getNoPtrCasesAccess() {
 		return (pNoPtrCases != null) ? pNoPtrCases : (pNoPtrCases = new NoPtrCasesElements());
 	}

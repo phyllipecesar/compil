@@ -592,13 +592,22 @@ public interface MyDslPackage extends EPackage
   int NO_PTR_CASES = 12;
 
   /**
+   * The feature id for the '<em><b>V</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_CASES__V = 0;
+
+  /**
    * The number of structural features of the '<em>No Ptr Cases</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NO_PTR_CASES_FEATURE_COUNT = 0;
+  int NO_PTR_CASES_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -955,6 +964,15 @@ public interface MyDslPackage extends EPackage
   int DEFAULT_CASE = 24;
 
   /**
+   * The feature id for the '<em><b>V</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFAULT_CASE__V = NO_PTR_CASES__V;
+
+  /**
    * The number of structural features of the '<em>Default Case</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -972,6 +990,15 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   int CASE_NORMAL = 25;
+
+  /**
+   * The feature id for the '<em><b>V</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_NORMAL__V = NO_PTR_CASES__V;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -1726,6 +1753,17 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EClass getNoPtrCases();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.NoPtrCases#getV <em>V</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>V</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrCases#getV()
+   * @see #getNoPtrCases()
+   * @generated
+   */
+  EReference getNoPtrCases_V();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Parameter <em>Parameter</em>}'.
@@ -2584,6 +2622,14 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EClass NO_PTR_CASES = eINSTANCE.getNoPtrCases();
+
+    /**
+     * The meta object literal for the '<em><b>V</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NO_PTR_CASES__V = eINSTANCE.getNoPtrCases_V();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.ParameterImpl <em>Parameter</em>}' class.

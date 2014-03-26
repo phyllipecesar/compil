@@ -819,6 +819,16 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getNoPtrCases_V()
+  {
+    return (EReference)noPtrCasesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getParameter()
   {
     return parameterEClass;
@@ -1322,6 +1332,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     createEReference(noPtrSelectEClass, NO_PTR_SELECT__CASES);
 
     noPtrCasesEClass = createEClass(NO_PTR_CASES);
+    createEReference(noPtrCasesEClass, NO_PTR_CASES__V);
 
     parameterEClass = createEClass(PARAMETER);
     createEReference(parameterEClass, PARAMETER__TYPE);
@@ -1490,6 +1501,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEReference(getNoPtrSelect_Cases(), this.getNoPtrCases(), null, "cases", null, 0, -1, NoPtrSelect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(noPtrCasesEClass, NoPtrCases.class, "NoPtrCases", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNoPtrCases_V(), this.getNoPtrStatement(), null, "v", null, 0, 1, NoPtrCases.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getParameter_Type(), this.getType(), null, "type", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

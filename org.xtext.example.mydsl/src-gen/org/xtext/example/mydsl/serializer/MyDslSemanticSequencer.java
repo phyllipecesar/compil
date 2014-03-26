@@ -304,26 +304,36 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     expr=NoPtrExpression
+	 *     (expr=NoPtrExpression v=NoPtrStatement)
 	 */
 	protected void sequence_NoPtrCases(EObject context, CaseNormal semanticObject) {
 		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.NO_PTR_CASES__V) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.NO_PTR_CASES__V));
 			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.CASE_NORMAL__EXPR) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.CASE_NORMAL__EXPR));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getNoPtrCasesAccess().getExprNoPtrExpressionParserRuleCall_1_2_0(), semanticObject.getExpr());
+		feeder.accept(grammarAccess.getNoPtrCasesAccess().getVNoPtrStatementParserRuleCall_1_4_0(), semanticObject.getV());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     {DefaultCase}
+	 *     v=NoPtrStatement
 	 */
 	protected void sequence_NoPtrCases(EObject context, DefaultCase semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.NO_PTR_CASES__V) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.NO_PTR_CASES__V));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getNoPtrCasesAccess().getVNoPtrStatementParserRuleCall_0_3_0(), semanticObject.getV());
+		feeder.finish();
 	}
 	
 	
