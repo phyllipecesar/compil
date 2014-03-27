@@ -215,7 +215,7 @@ public class MyDslGenerator implements IGenerator {
     boolean _equals = Objects.equal(_expr, null);
     if (_equals) {
       String _name = expr.getName();
-      return ((("LD R" + Integer.valueOf(this.regCounter)) + ", ") + _name);
+      return ((("LD R" + Integer.valueOf(this.regCounter)) + ", #") + _name);
     } else {
       StringConcatenation _builder = new StringConcatenation();
       ReturnExpr _expr_1 = expr.getExpr();
@@ -304,10 +304,16 @@ public class MyDslGenerator implements IGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append(ret, "");
     _builder.newLineIfNotEmpty();
-    _builder.append("CALL ");
+    _builder.append("ADD SP, SP, #sz");
+    _builder.newLine();
+    _builder.append("ST *SP, ret");
+    _builder.newLine();
+    _builder.append("BR ");
     String _name = funcao.getName();
     _builder.append(_name, "");
     _builder.newLineIfNotEmpty();
+    _builder.append("SUB SP, SP, #sz");
+    _builder.newLine();
     _builder.append("LD R");
     _builder.append(this.regCounter, "");
     _builder.append(", EAX");
@@ -323,6 +329,10 @@ public class MyDslGenerator implements IGenerator {
     String _string_1 = Integer.valueOf(valor).toString();
     _builder.append(_string_1, "");
     _builder.append(":");
+    _builder.newLineIfNotEmpty();
+    NoPtrStatement _v = symb.getV();
+    String _compile = this.compile(_v);
+    _builder.append(_compile, "");
     _builder.newLineIfNotEmpty();
     _builder.append("BR BEYOND_SWITCH_");
     String _string_2 = Integer.valueOf(this.switch_n).toString();
@@ -401,6 +411,7 @@ public class MyDslGenerator implements IGenerator {
     _builder.append("BEYOND_SWITCH_");
     String _string_2 = Integer.valueOf((this.switch_n - 1)).toString();
     _builder.append(_string_2, "");
+    _builder.append(":");
     return _builder.toString();
   }
   
@@ -577,6 +588,8 @@ public class MyDslGenerator implements IGenerator {
     String _compile_1 = this.compile(_escopo);
     _builder.append(_compile_1, "");
     _builder.newLineIfNotEmpty();
+    _builder.append("halt");
+    _builder.newLine();
     return _builder.toString();
   }
 }

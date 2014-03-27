@@ -140,7 +140,7 @@ class MyDslGenerator implements IGenerator {
 	
 	def String compile(Variable expr) {
 		if (expr.expr == null) {
-			return "LD R" + regCounter + ", " + expr.name;
+			return "LD R" + regCounter + ", #" + expr.name;
 		} else {
 			return '''
 «expr.expr.compile»
@@ -167,9 +167,8 @@ LD R«regCounter», «expr.name»'''
 	}
 	def compile(NoPtrMudanca mud) {
 		if (mud.expr != null) {
-			return '''
-			«mud.expr.compile»
-			ST «mud.name», R«regCounter»''';
+			return '''«mud.expr.compile»
+ST «mud.name», R«regCounter»''';
 		} else {
 			return '';
 		}
@@ -182,14 +181,17 @@ LD R«regCounter», «expr.name»'''
 			regCounter = regCounter + 1;
 		}
 		
-		return '''
-		«ret»
-		CALL «funcao.name»
-		LD R«regCounter», EAX''';
+		return '''«ret»
+ADD SP, SP, #sz
+ST *SP, ret
+BR «funcao.name»
+SUB SP, SP, #sz
+LD R«regCounter», EAX''';
 	}
 	
 	def compile(NoPtrCases symb, int valor) '''
 		SWITCH_LABEL_«switch_n.toString»_«valor.toString»:
+		«symb.v.compile»
 		BR BEYOND_SWITCH_«switch_n.toString»'''
 	
 	def compile(NoPtrSelect switche) {
@@ -217,10 +219,9 @@ LD R«regCounter», «expr.name»'''
 			valor = valor + 1;
 		}
 		switch_n = switch_n + 1;
-		return '''
-		«up_part»
-		«switch_rule»
-		BEYOND_SWITCH_«(switch_n-1).toString»'''
+		return '''«up_part»
+«switch_rule»
+BEYOND_SWITCH_«(switch_n-1).toString»:'''
 	}
 	def String compile(NoPtrStatement statement) '''
 		«FOR decl : statement.eContents»
@@ -306,6 +307,7 @@ LD R«regCounter», «expr.name»'''
 			«decl.compile»
 		«ENDFOR»
 		«functionDecl.escopo.compile»
+		halt
 	'''
 	}
 }
