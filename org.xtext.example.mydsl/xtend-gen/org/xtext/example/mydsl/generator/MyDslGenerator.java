@@ -5,6 +5,8 @@ package org.xtext.example.mydsl.generator;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
+import java.util.ArrayList;
+import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -12,6 +14,9 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
+import org.eclipse.xtext.nodemodel.ICompositeNode;
+import org.eclipse.xtext.nodemodel.INode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.xtext.example.mydsl.myDsl.Atomic;
 import org.xtext.example.mydsl.myDsl.BooleanhType;
@@ -304,16 +309,10 @@ public class MyDslGenerator implements IGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append(ret, "");
     _builder.newLineIfNotEmpty();
-    _builder.append("ADD SP, SP, #sz");
-    _builder.newLine();
-    _builder.append("ST *SP, ret");
-    _builder.newLine();
-    _builder.append("BR ");
+    _builder.append("CALL ");
     String _name = funcao.getName();
     _builder.append(_name, "");
     _builder.newLineIfNotEmpty();
-    _builder.append("SUB SP, SP, #sz");
-    _builder.newLine();
     _builder.append("LD R");
     _builder.append(this.regCounter, "");
     _builder.append(", EAX");
@@ -334,7 +333,7 @@ public class MyDslGenerator implements IGenerator {
     String _compile = this.compile(_v);
     _builder.append(_compile, "");
     _builder.newLineIfNotEmpty();
-    _builder.append("BR BEYOND_SWITCH_");
+    _builder.append("GOTO BEYOND_SWITCH_");
     String _string_2 = Integer.valueOf(this.switch_n).toString();
     _builder.append(_string_2, "");
     return _builder;
@@ -350,7 +349,7 @@ public class MyDslGenerator implements IGenerator {
     this.regCounter = (this.regCounter + 1);
     switch_rule = ((switch_rule + "\n") + expres);
     String _string_1 = Integer.valueOf(this.switch_n).toString();
-    String up_part = (("BR " + "SWITCH_START_") + _string_1);
+    String up_part = (("GOTO " + "SWITCH_START_") + _string_1);
     int valor = 0;
     EList<NoPtrCases> _cases = switche.getCases();
     for (final NoPtrCases symb : _cases) {
@@ -368,7 +367,7 @@ public class MyDslGenerator implements IGenerator {
       {
         if ((symb_1 instanceof DefaultCase)) {
           String _string_2 = Integer.valueOf(this.switch_n).toString();
-          String _plus_1 = (((switch_rule + "\n") + "BR SWITCH_LABEL_") + _string_2);
+          String _plus_1 = (((switch_rule + "\n") + "GOTO SWITCH_LABEL_") + _string_2);
           String _plus_2 = (_plus_1 + "_");
           String _string_3 = Integer.valueOf(valor).toString();
           String _plus_3 = (_plus_2 + _string_3);
@@ -408,6 +407,7 @@ public class MyDslGenerator implements IGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append(switch_rule, "");
     _builder.newLineIfNotEmpty();
+    _builder.newLine();
     _builder.append("BEYOND_SWITCH_");
     String _string_2 = Integer.valueOf((this.switch_n - 1)).toString();
     _builder.append(_string_2, "");
@@ -415,11 +415,62 @@ public class MyDslGenerator implements IGenerator {
     return _builder.toString();
   }
   
+  private INode node;
+  
+  private INode node2;
+  
+  private List<EObject> test;
+  
+  public List<EObject> sortObjects(final EList<EObject> lista) {
+    int i = 0;
+    ArrayList<EObject> _arrayList = new ArrayList<EObject>();
+    this.test = _arrayList;
+    for (final EObject obj : lista) {
+      this.test.add(obj);
+    }
+    int _size = lista.size();
+    boolean _lessThan = (i < _size);
+    boolean _while = _lessThan;
+    while (_while) {
+      {
+        int j = (i - 1);
+        EObject _get = this.test.get(i);
+        ICompositeNode _node = NodeModelUtils.getNode(_get);
+        this.node = _node;
+        boolean _while_1 = (j >= 0);
+        while (_while_1) {
+          {
+            EObject _get_1 = this.test.get(j);
+            ICompositeNode _node_1 = NodeModelUtils.getNode(_get_1);
+            this.node2 = _node_1;
+            int _startLine = this.node2.getStartLine();
+            int _startLine_1 = this.node.getStartLine();
+            boolean _greaterThan = (_startLine > _startLine_1);
+            if (_greaterThan) {
+              EObject obj_1 = this.test.get((j + 1));
+              EObject _get_2 = this.test.get(j);
+              this.test.set((j + 1), _get_2);
+              this.test.set(j, obj_1);
+            }
+            j = (j - 1);
+          }
+          _while_1 = (j >= 0);
+        }
+        i = (i + 1);
+      }
+      int _size_1 = lista.size();
+      boolean _lessThan_1 = (i < _size_1);
+      _while = _lessThan_1;
+    }
+    return this.test;
+  }
+  
   public String compile(final NoPtrStatement statement) {
     StringConcatenation _builder = new StringConcatenation();
     {
       EList<EObject> _eContents = statement.eContents();
-      for(final EObject decl : _eContents) {
+      List<EObject> _sortObjects = this.sortObjects(_eContents);
+      for(final EObject decl : _sortObjects) {
         {
           if ((decl instanceof VarDecl)) {
             VarDeclImpl _cast = VarDeclImpl.class.cast(decl);
@@ -544,7 +595,7 @@ public class MyDslGenerator implements IGenerator {
     StringConcatenation _builder_1 = new StringConcatenation();
     _builder_1.append(antigo, "");
     _builder_1.newLineIfNotEmpty();
-    _builder_1.append("BR *0(SP)");
+    _builder_1.append("RETURN");
     return _builder_1.toString();
   }
   

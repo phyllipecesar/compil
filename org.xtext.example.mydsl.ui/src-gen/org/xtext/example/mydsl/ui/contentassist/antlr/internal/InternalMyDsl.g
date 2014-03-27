@@ -9601,11 +9601,9 @@ rule__NoPtrSelect__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getNoPtrSelectAccess().getSwitchKeyword_1()); }
-
-	'switch' 
-
-{ after(grammarAccess.getNoPtrSelectAccess().getSwitchKeyword_1()); }
+{ before(grammarAccess.getNoPtrSelectAccess().getNameAssignment_1()); }
+(rule__NoPtrSelect__NameAssignment_1)
+{ after(grammarAccess.getNoPtrSelectAccess().getNameAssignment_1()); }
 )
 
 ;
@@ -22044,6 +22042,29 @@ rule__NoPtrTerminalExpression__AtomicAssignment_1_2
 (
 { before(grammarAccess.getNoPtrTerminalExpressionAccess().getAtomicReturnExprParserRuleCall_1_2_0()); }
 	ruleReturnExpr{ after(grammarAccess.getNoPtrTerminalExpressionAccess().getAtomicReturnExprParserRuleCall_1_2_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NoPtrSelect__NameAssignment_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNoPtrSelectAccess().getNameSwitchKeyword_1_0()); }
+(
+{ before(grammarAccess.getNoPtrSelectAccess().getNameSwitchKeyword_1_0()); }
+
+	'switch' 
+
+{ after(grammarAccess.getNoPtrSelectAccess().getNameSwitchKeyword_1_0()); }
+)
+
+{ after(grammarAccess.getNoPtrSelectAccess().getNameSwitchKeyword_1_0()); }
 )
 
 ;

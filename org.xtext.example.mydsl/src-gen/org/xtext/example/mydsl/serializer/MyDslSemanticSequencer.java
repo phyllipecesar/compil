@@ -367,7 +367,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (expr=NoPtrExpression cases+=NoPtrCases*)
+	 *     (name='switch' expr=NoPtrExpression cases+=NoPtrCases*)
 	 */
 	protected void sequence_NoPtrSelect(EObject context, NoPtrSelect semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

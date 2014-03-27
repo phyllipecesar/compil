@@ -2118,11 +2118,22 @@ ruleNoPtrSelect returns [EObject current=null]
             grammarAccess.getNoPtrSelectAccess().getNoPtrSelectAction_0(),
             $current);
     }
-)	otherlv_1='switch' 
+)(
+(
+		lv_name_1_0=	'switch' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getNoPtrSelectAccess().getSwitchKeyword_1());
+        newLeafNode(lv_name_1_0, grammarAccess.getNoPtrSelectAccess().getNameSwitchKeyword_1_0());
     }
-	otherlv_2='(' 
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getNoPtrSelectRule());
+	        }
+       		setWithLastConsumed($current, "name", lv_name_1_0, "switch");
+	    }
+
+)
+)	otherlv_2='(' 
     {
     	newLeafNode(otherlv_2, grammarAccess.getNoPtrSelectAccess().getLeftParenthesisKeyword_2());
     }

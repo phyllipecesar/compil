@@ -789,9 +789,19 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getNoPtrSelect_Name()
+  {
+    return (EAttribute)noPtrSelectEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getNoPtrSelect_Expr()
   {
-    return (EReference)noPtrSelectEClass.getEStructuralFeatures().get(0);
+    return (EReference)noPtrSelectEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -801,7 +811,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    */
   public EReference getNoPtrSelect_Cases()
   {
-    return (EReference)noPtrSelectEClass.getEStructuralFeatures().get(1);
+    return (EReference)noPtrSelectEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1328,6 +1338,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     createEReference(noPtrTerminalExpressionEClass, NO_PTR_TERMINAL_EXPRESSION__INSIDE);
 
     noPtrSelectEClass = createEClass(NO_PTR_SELECT);
+    createEAttribute(noPtrSelectEClass, NO_PTR_SELECT__NAME);
     createEReference(noPtrSelectEClass, NO_PTR_SELECT__EXPR);
     createEReference(noPtrSelectEClass, NO_PTR_SELECT__CASES);
 
@@ -1497,6 +1508,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEReference(getNoPtrTerminalExpression_Inside(), this.getNoPtrExpression(), null, "inside", null, 0, 1, NoPtrTerminalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(noPtrSelectEClass, NoPtrSelect.class, "NoPtrSelect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNoPtrSelect_Name(), ecorePackage.getEString(), "name", null, 0, 1, NoPtrSelect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNoPtrSelect_Expr(), this.getNoPtrExpression(), null, "expr", null, 0, 1, NoPtrSelect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNoPtrSelect_Cases(), this.getNoPtrCases(), null, "cases", null, 0, -1, NoPtrSelect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

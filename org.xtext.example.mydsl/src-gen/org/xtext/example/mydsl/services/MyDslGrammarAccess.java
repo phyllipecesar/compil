@@ -1133,7 +1133,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NoPtrSelect");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cNoPtrSelectAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cSwitchKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cNameSwitchKeyword_1_0 = (Keyword)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cExprAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cExprNoPtrExpressionParserRuleCall_3_0 = (RuleCall)cExprAssignment_3.eContents().get(0);
@@ -1144,17 +1145,20 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//NoPtrSelect:
-		//	{NoPtrSelect} "switch" "(" expr=NoPtrExpression ")" "{" cases+=NoPtrCases* "}";
+		//	{NoPtrSelect} name="switch" "(" expr=NoPtrExpression ")" "{" cases+=NoPtrCases* "}";
 		public ParserRule getRule() { return rule; }
 
-		//{NoPtrSelect} "switch" "(" expr=NoPtrExpression ")" "{" cases+=NoPtrCases* "}"
+		//{NoPtrSelect} name="switch" "(" expr=NoPtrExpression ")" "{" cases+=NoPtrCases* "}"
 		public Group getGroup() { return cGroup; }
 
 		//{NoPtrSelect}
 		public Action getNoPtrSelectAction_0() { return cNoPtrSelectAction_0; }
 
+		//name="switch"
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
 		//"switch"
-		public Keyword getSwitchKeyword_1() { return cSwitchKeyword_1; }
+		public Keyword getNameSwitchKeyword_1_0() { return cNameSwitchKeyword_1_0; }
 
 		//"("
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
@@ -5689,7 +5693,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NoPtrSelect:
-	//	{NoPtrSelect} "switch" "(" expr=NoPtrExpression ")" "{" cases+=NoPtrCases* "}";
+	//	{NoPtrSelect} name="switch" "(" expr=NoPtrExpression ")" "{" cases+=NoPtrCases* "}";
 	public NoPtrSelectElements getNoPtrSelectAccess() {
 		return (pNoPtrSelect != null) ? pNoPtrSelect : (pNoPtrSelect = new NoPtrSelectElements());
 	}

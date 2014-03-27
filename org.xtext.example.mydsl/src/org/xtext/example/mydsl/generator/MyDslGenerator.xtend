@@ -3,38 +3,43 @@
  */
 package org.xtext.example.mydsl.generator
 
-import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.xtext.generator.IGenerator
-import org.eclipse.xtext.generator.IFileSystemAccess
+import java.util.ArrayList
+import java.util.List
+import org.eclipse.emf.common.util.EList
 import org.eclipse.emf.ecore.EObject
-import org.xtext.example.mydsl.myDsl.FunctionDeclaration
-import org.xtext.example.mydsl.myDsl.NoPtrStatement
-import org.xtext.example.mydsl.myDsl.VarDecl
+import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.xtext.generator.IFileSystemAccess
+import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.parser.antlr.splitting.simpleExpressions.impl.ExpressionImpl
-import org.xtext.example.mydsl.myDsl.impl.VarDeclImpl
-import org.xtext.example.mydsl.myDsl.Parameter
-import org.xtext.example.mydsl.myDsl.NoPtrExpression
-import org.xtext.example.mydsl.myDsl.ReturnExpr
+import org.eclipse.xtext.nodemodel.INode
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils
+import org.xtext.example.mydsl.myDsl.Atomic
 import org.xtext.example.mydsl.myDsl.BooleanhType
+import org.xtext.example.mydsl.myDsl.CaseNormal
+import org.xtext.example.mydsl.myDsl.DefaultCase
+import org.xtext.example.mydsl.myDsl.FunctionChamada
+import org.xtext.example.mydsl.myDsl.FunctionDeclaration
+import org.xtext.example.mydsl.myDsl.FunctionType
 import org.xtext.example.mydsl.myDsl.IntType
+import org.xtext.example.mydsl.myDsl.NoPtrCases
+import org.xtext.example.mydsl.myDsl.NoPtrExpression
+import org.xtext.example.mydsl.myDsl.NoPtrMudanca
+import org.xtext.example.mydsl.myDsl.NoPtrSelect
+import org.xtext.example.mydsl.myDsl.NoPtrStatement
+import org.xtext.example.mydsl.myDsl.NoPtrTerminalExpression
+import org.xtext.example.mydsl.myDsl.Parameter
+import org.xtext.example.mydsl.myDsl.Return
+import org.xtext.example.mydsl.myDsl.ReturnExpr
 import org.xtext.example.mydsl.myDsl.StringType
 import org.xtext.example.mydsl.myDsl.StringhType
-import org.xtext.example.mydsl.myDsl.Return
-import org.xtext.example.mydsl.myDsl.impl.ReturnImpl
-import org.xtext.example.mydsl.myDsl.NoPtrTerminalExpression
-import org.xtext.example.mydsl.myDsl.Atomic
+import org.xtext.example.mydsl.myDsl.VarDecl
 import org.xtext.example.mydsl.myDsl.Variable
-import org.xtext.example.mydsl.myDsl.NoPtrMudanca
-import org.xtext.example.mydsl.myDsl.impl.NoPtrMudancaImpl
-import org.xtext.example.mydsl.myDsl.FunctionChamada
 import org.xtext.example.mydsl.myDsl.impl.FunctionChamadaImpl
-import org.xtext.example.mydsl.myDsl.FunctionType
-import org.xtext.example.mydsl.myDsl.NoPtrSelect
-import org.xtext.example.mydsl.myDsl.impl.NoPtrSelectImpl
-import org.xtext.example.mydsl.myDsl.NoPtrCases
-import org.xtext.example.mydsl.myDsl.DefaultCase
-import org.xtext.example.mydsl.myDsl.CaseNormal
 import org.xtext.example.mydsl.myDsl.impl.NoPtrExpressionImpl
+import org.xtext.example.mydsl.myDsl.impl.NoPtrMudancaImpl
+import org.xtext.example.mydsl.myDsl.impl.NoPtrSelectImpl
+import org.xtext.example.mydsl.myDsl.impl.ReturnImpl
+import org.xtext.example.mydsl.myDsl.impl.VarDeclImpl
 
 /**
  * Generates code from your model files on save.
@@ -182,17 +187,14 @@ ST «mud.name», R«regCounter»''';
 		}
 		
 		return '''«ret»
-ADD SP, SP, #sz
-ST *SP, ret
-BR «funcao.name»
-SUB SP, SP, #sz
+CALL «funcao.name»
 LD R«regCounter», EAX''';
 	}
 	
 	def compile(NoPtrCases symb, int valor) '''
 		SWITCH_LABEL_«switch_n.toString»_«valor.toString»:
 		«symb.v.compile»
-		BR BEYOND_SWITCH_«switch_n.toString»'''
+		GOTO BEYOND_SWITCH_«switch_n.toString»'''
 	
 	def compile(NoPtrSelect switche) {
 		var switch_rule = 'SWITCH_START_' + switch_n.toString + ':';
@@ -200,7 +202,7 @@ LD R«regCounter», EAX''';
 		var lastReg = regCounter;
 		regCounter = regCounter + 1;
 		switch_rule = switch_rule + "\n" + expres;
-		var up_part = "BR " + 'SWITCH_START_' + switch_n.toString;
+		var up_part = "GOTO " + 'SWITCH_START_' + switch_n.toString;
 		var valor = 0;
 		for (NoPtrCases symb: switche.cases) {
 			up_part = up_part + "\n" + compile(symb, valor);
@@ -210,7 +212,7 @@ LD R«regCounter», EAX''';
 		valor = 0;
 		for (NoPtrCases symb: switche.cases) {
 			if (symb instanceof DefaultCase) {
-				switch_rule = switch_rule + "\n" + "BR SWITCH_LABEL_" + switch_n.toString + "_" + valor.toString;
+				switch_rule = switch_rule + "\n" + "GOTO SWITCH_LABEL_" + switch_n.toString + "_" + valor.toString;
 			} else if (symb instanceof CaseNormal) {
 				switch_rule = switch_rule + "\n" + compile(symb.expr);
 				switch_rule = switch_rule + "\n" + "CMP R" + regCounter.toString + ", R" + regCounter.toString + ", R" + (lastReg).toString;	
@@ -221,10 +223,40 @@ LD R«regCounter», EAX''';
 		switch_n = switch_n + 1;
 		return '''«up_part»
 «switch_rule»
+
 BEYOND_SWITCH_«(switch_n-1).toString»:'''
 	}
+	
+
+	INode node;
+	INode node2;
+	List<EObject> test;
+	def List<EObject> sortObjects(EList<EObject> lista ) {
+		var i = 0;
+		test = new ArrayList<EObject>();
+		for (obj : lista) {
+			test.add(obj);
+		}
+		while (i < lista.size) {
+			var j = i -1;
+			node =  NodeModelUtils.getNode(test.get(i));
+			while (j >= 0) {
+				node2 =  NodeModelUtils.getNode(test.get(j));
+				if (node2.startLine > node.startLine) {
+					
+					var obj = test.get(j+1);
+					test.set(j+1, test.get(j));
+					test.set(j, obj);
+					}
+				j = j -1;
+				}
+			i = i +1; 
+		}
+		return test;
+	}
+	
 	def String compile(NoPtrStatement statement) '''
-		«FOR decl : statement.eContents»
+ 		«FOR decl : statement.eContents.sortObjects»
 			«IF decl instanceof VarDecl»
 				«VarDeclImpl.cast(decl).compile»
 			«ELSEIF decl instanceof NoPtrMudanca»
@@ -285,7 +317,7 @@ BEYOND_SWITCH_«(switch_n-1).toString»:'''
 		}
 	return '''
 		«antigo»
-		BR *0(SP)'''	
+		RETURN'''	
 	}
 	def String getNameFunction(FunctionDeclaration funcao) {
 		var nome = funcao.name + '(';

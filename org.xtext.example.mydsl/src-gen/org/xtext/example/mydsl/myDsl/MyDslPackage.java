@@ -555,13 +555,22 @@ public interface MyDslPackage extends EPackage
   int NO_PTR_SELECT = 11;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_PTR_SELECT__NAME = 0;
+
+  /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NO_PTR_SELECT__EXPR = 0;
+  int NO_PTR_SELECT__EXPR = 1;
 
   /**
    * The feature id for the '<em><b>Cases</b></em>' containment reference list.
@@ -570,7 +579,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NO_PTR_SELECT__CASES = 1;
+  int NO_PTR_SELECT__CASES = 2;
 
   /**
    * The number of structural features of the '<em>No Ptr Select</em>' class.
@@ -579,7 +588,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NO_PTR_SELECT_FEATURE_COUNT = 2;
+  int NO_PTR_SELECT_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.NoPtrCasesImpl <em>No Ptr Cases</em>}' class.
@@ -1723,6 +1732,17 @@ public interface MyDslPackage extends EPackage
   EClass getNoPtrSelect();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.NoPtrSelect#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrSelect#getName()
+   * @see #getNoPtrSelect()
+   * @generated
+   */
+  EAttribute getNoPtrSelect_Name();
+
+  /**
    * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.NoPtrSelect#getExpr <em>Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2596,6 +2616,14 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EClass NO_PTR_SELECT = eINSTANCE.getNoPtrSelect();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NO_PTR_SELECT__NAME = eINSTANCE.getNoPtrSelect_Name();
 
     /**
      * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
