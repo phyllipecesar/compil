@@ -52,10 +52,22 @@
         eType="#//NoPtrSelect" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dirtyB" upperBound="-1"
         eType="#//Return" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dirtU" upperBound="-1"
+        eType="#//NoPtrFor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dirtyABC" upperBound="-1"
+        eType="#//NoPtrWhile" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dirty" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dirtyV" upperBound="-1"
         eType="#//FunctionChamada" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NoPtrFor">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="escopo" eType="#//NoPtrStatement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NoPtrWhile">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="escopo" eType="#//NoPtrStatement"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NoPtrMudanca">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

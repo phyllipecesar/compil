@@ -45,6 +45,9 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGroup_partAccess().getAlternatives(), "rule__Group_part__Alternatives");
 					put(grammarAccess.getIf_groupAccess().getAlternatives(), "rule__If_group__Alternatives");
 					put(grammarAccess.getNoPtrStatementAccess().getAlternatives_1(), "rule__NoPtrStatement__Alternatives_1");
+					put(grammarAccess.getNoPtrForAccess().getAlternatives_2_2_1(), "rule__NoPtrFor__Alternatives_2_2_1");
+					put(grammarAccess.getNoPtrForAccess().getAlternatives_4_1_0(), "rule__NoPtrFor__Alternatives_4_1_0");
+					put(grammarAccess.getNoPtrWhileAccess().getAlternatives_2_1_0(), "rule__NoPtrWhile__Alternatives_2_1_0");
 					put(grammarAccess.getNoPtrExpressionAccess().getOpAlternatives_2_0_0(), "rule__NoPtrExpression__OpAlternatives_2_0_0");
 					put(grammarAccess.getNoPtrTerminalExpressionAccess().getAlternatives(), "rule__NoPtrTerminalExpression__Alternatives");
 					put(grammarAccess.getNoPtrCasesAccess().getAlternatives(), "rule__NoPtrCases__Alternatives");
@@ -61,7 +64,6 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLabeledStatementAccess().getAlternatives(), "rule__LabeledStatement__Alternatives");
 					put(grammarAccess.getConditionAccess().getAlternatives(), "rule__Condition__Alternatives");
 					put(grammarAccess.getConditionAccess().getAlternatives_1_2(), "rule__Condition__Alternatives_1_2");
-					put(grammarAccess.getIterationStatementAccess().getAlternatives(), "rule__IterationStatement__Alternatives");
 					put(grammarAccess.getForInitializationStatementAccess().getAlternatives(), "rule__ForInitializationStatement__Alternatives");
 					put(grammarAccess.getJumpStatementAccess().getAlternatives(), "rule__JumpStatement__Alternatives");
 					put(grammarAccess.getDeclarationStatementAccess().getAlternatives(), "rule__DeclarationStatement__Alternatives");
@@ -135,6 +137,15 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionChamadaAccess().getGroup_3(), "rule__FunctionChamada__Group_3__0");
 					put(grammarAccess.getFunctionChamadaAccess().getGroup_3_1(), "rule__FunctionChamada__Group_3_1__0");
 					put(grammarAccess.getNoPtrStatementAccess().getGroup(), "rule__NoPtrStatement__Group__0");
+					put(grammarAccess.getNoPtrForAccess().getGroup(), "rule__NoPtrFor__Group__0");
+					put(grammarAccess.getNoPtrForAccess().getGroup_2(), "rule__NoPtrFor__Group_2__0");
+					put(grammarAccess.getNoPtrForAccess().getGroup_2_2(), "rule__NoPtrFor__Group_2_2__0");
+					put(grammarAccess.getNoPtrForAccess().getGroup_4(), "rule__NoPtrFor__Group_4__0");
+					put(grammarAccess.getNoPtrForAccess().getGroup_4_1(), "rule__NoPtrFor__Group_4_1__0");
+					put(grammarAccess.getNoPtrForAccess().getGroup_6(), "rule__NoPtrFor__Group_6__0");
+					put(grammarAccess.getNoPtrWhileAccess().getGroup(), "rule__NoPtrWhile__Group__0");
+					put(grammarAccess.getNoPtrWhileAccess().getGroup_2(), "rule__NoPtrWhile__Group_2__0");
+					put(grammarAccess.getNoPtrWhileAccess().getGroup_2_1(), "rule__NoPtrWhile__Group_2_1__0");
 					put(grammarAccess.getNoPtrMudancaAccess().getGroup(), "rule__NoPtrMudanca__Group__0");
 					put(grammarAccess.getNoPtrMudancaAccess().getGroup_2(), "rule__NoPtrMudanca__Group_2__0");
 					put(grammarAccess.getNoPtrExpressionAccess().getGroup(), "rule__NoPtrExpression__Group__0");
@@ -175,9 +186,6 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSelectionStatementAccess().getGroup_5(), "rule__SelectionStatement__Group_5__0");
 					put(grammarAccess.getConditionAccess().getGroup_1(), "rule__Condition__Group_1__0");
 					put(grammarAccess.getConditionAccess().getGroup_1_2_0(), "rule__Condition__Group_1_2_0__0");
-					put(grammarAccess.getIterationStatementAccess().getGroup_0(), "rule__IterationStatement__Group_0__0");
-					put(grammarAccess.getIterationStatementAccess().getGroup_1(), "rule__IterationStatement__Group_1__0");
-					put(grammarAccess.getIterationStatementAccess().getGroup_2(), "rule__IterationStatement__Group_2__0");
 					put(grammarAccess.getJumpStatementAccess().getGroup_0(), "rule__JumpStatement__Group_0__0");
 					put(grammarAccess.getJumpStatementAccess().getGroup_1(), "rule__JumpStatement__Group_1__0");
 					put(grammarAccess.getJumpStatementAccess().getGroup_2(), "rule__JumpStatement__Group_2__0");
@@ -301,8 +309,12 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNoPtrStatementAccess().getLixoVAssignment_1_3(), "rule__NoPtrStatement__LixoVAssignment_1_3");
 					put(grammarAccess.getNoPtrStatementAccess().getSwitchesAssignment_1_4(), "rule__NoPtrStatement__SwitchesAssignment_1_4");
 					put(grammarAccess.getNoPtrStatementAccess().getDirtyBAssignment_1_5(), "rule__NoPtrStatement__DirtyBAssignment_1_5");
-					put(grammarAccess.getNoPtrStatementAccess().getDirtyAssignment_1_6(), "rule__NoPtrStatement__DirtyAssignment_1_6");
-					put(grammarAccess.getNoPtrStatementAccess().getDirtyVAssignment_1_7(), "rule__NoPtrStatement__DirtyVAssignment_1_7");
+					put(grammarAccess.getNoPtrStatementAccess().getDirtUAssignment_1_6(), "rule__NoPtrStatement__DirtUAssignment_1_6");
+					put(grammarAccess.getNoPtrStatementAccess().getDirtyABCAssignment_1_7(), "rule__NoPtrStatement__DirtyABCAssignment_1_7");
+					put(grammarAccess.getNoPtrStatementAccess().getDirtyAssignment_1_8(), "rule__NoPtrStatement__DirtyAssignment_1_8");
+					put(grammarAccess.getNoPtrStatementAccess().getDirtyVAssignment_1_9(), "rule__NoPtrStatement__DirtyVAssignment_1_9");
+					put(grammarAccess.getNoPtrForAccess().getEscopoAssignment_9(), "rule__NoPtrFor__EscopoAssignment_9");
+					put(grammarAccess.getNoPtrWhileAccess().getEscopoAssignment_5(), "rule__NoPtrWhile__EscopoAssignment_5");
 					put(grammarAccess.getNoPtrMudancaAccess().getNameAssignment_1(), "rule__NoPtrMudanca__NameAssignment_1");
 					put(grammarAccess.getNoPtrMudancaAccess().getExprAssignment_2_1(), "rule__NoPtrMudanca__ExprAssignment_2_1");
 					put(grammarAccess.getNoPtrExpressionAccess().getLeftAssignment_1(), "rule__NoPtrExpression__LeftAssignment_1");

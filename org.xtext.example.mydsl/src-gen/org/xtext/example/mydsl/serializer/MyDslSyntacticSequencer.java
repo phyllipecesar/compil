@@ -22,9 +22,13 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_FunctionDeclaration_ConstKeyword_1_q;
 	protected AbstractElementAlias match_NamespaceDefinition_IDTerminalRuleCall_2_q;
 	protected AbstractElementAlias match_NamespaceDefinition_InlineKeyword_0_q;
+	protected AbstractElementAlias match_NoPtrFor___IDTerminalRuleCall_2_0_IDTerminalRuleCall_2_1___EqualsSignKeyword_2_2_0___IDTerminalRuleCall_2_2_1_0_or_INTTerminalRuleCall_2_2_1_1____q__q;
+	protected AbstractElementAlias match_NoPtrFor___IDTerminalRuleCall_4_0_____AmpersandAmpersandKeyword_4_1_0_4_or_EqualsSignEqualsSignKeyword_4_1_0_2_or_ExclamationMarkEqualsSignKeyword_4_1_0_3_or_GreaterThanSignKeyword_4_1_0_1_or_LessThanSignKeyword_4_1_0_0_or_VerticalLineKeyword_4_1_0_5___IDTerminalRuleCall_4_1_1__q__q;
+	protected AbstractElementAlias match_NoPtrFor___IDTerminalRuleCall_6_0_PlusSignEqualsSignKeyword_6_1_INTTerminalRuleCall_6_2__q;
 	protected AbstractElementAlias match_NoPtrStatement_BreakKeyword_1_0_a;
 	protected AbstractElementAlias match_NoPtrTerminalExpression_ExclamationMarkKeyword_0_1_a;
 	protected AbstractElementAlias match_NoPtrTerminalExpression_ExclamationMarkKeyword_1_1_a;
+	protected AbstractElementAlias match_NoPtrWhile___IDTerminalRuleCall_2_0_____AmpersandAmpersandKeyword_2_1_0_4_or_EqualsSignEqualsSignKeyword_2_1_0_2_or_ExclamationMarkEqualsSignKeyword_2_1_0_3_or_GreaterThanSignKeyword_2_1_0_1_or_LessThanSignKeyword_2_1_0_0_or_VerticalLineKeyword_2_1_0_5___IDTerminalRuleCall_2_1_1__q__q;
 	protected AbstractElementAlias match_Parameter_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a;
 	protected AbstractElementAlias match_Parameter_ConstKeyword_1_q;
 	protected AbstractElementAlias match_Parameter_ExclamationMarkKeyword_6_1_a;
@@ -40,9 +44,13 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_FunctionDeclaration_ConstKeyword_1_q = new TokenAlias(false, true, grammarAccess.getFunctionDeclarationAccess().getConstKeyword_1());
 		match_NamespaceDefinition_IDTerminalRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getNamespaceDefinitionAccess().getIDTerminalRuleCall_2());
 		match_NamespaceDefinition_InlineKeyword_0_q = new TokenAlias(false, true, grammarAccess.getNamespaceDefinitionAccess().getInlineKeyword_0());
+		match_NoPtrFor___IDTerminalRuleCall_2_0_IDTerminalRuleCall_2_1___EqualsSignKeyword_2_2_0___IDTerminalRuleCall_2_2_1_0_or_INTTerminalRuleCall_2_2_1_1____q__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNoPtrForAccess().getIDTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getNoPtrForAccess().getIDTerminalRuleCall_2_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNoPtrForAccess().getEqualsSignKeyword_2_2_0()), new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getNoPtrForAccess().getIDTerminalRuleCall_2_2_1_0()), new TokenAlias(false, false, grammarAccess.getNoPtrForAccess().getINTTerminalRuleCall_2_2_1_1()))));
+		match_NoPtrFor___IDTerminalRuleCall_4_0_____AmpersandAmpersandKeyword_4_1_0_4_or_EqualsSignEqualsSignKeyword_4_1_0_2_or_ExclamationMarkEqualsSignKeyword_4_1_0_3_or_GreaterThanSignKeyword_4_1_0_1_or_LessThanSignKeyword_4_1_0_0_or_VerticalLineKeyword_4_1_0_5___IDTerminalRuleCall_4_1_1__q__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNoPtrForAccess().getIDTerminalRuleCall_4_0()), new GroupAlias(false, true, new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getNoPtrForAccess().getAmpersandAmpersandKeyword_4_1_0_4()), new TokenAlias(false, false, grammarAccess.getNoPtrForAccess().getEqualsSignEqualsSignKeyword_4_1_0_2()), new TokenAlias(false, false, grammarAccess.getNoPtrForAccess().getExclamationMarkEqualsSignKeyword_4_1_0_3()), new TokenAlias(false, false, grammarAccess.getNoPtrForAccess().getGreaterThanSignKeyword_4_1_0_1()), new TokenAlias(false, false, grammarAccess.getNoPtrForAccess().getLessThanSignKeyword_4_1_0_0()), new TokenAlias(false, false, grammarAccess.getNoPtrForAccess().getVerticalLineKeyword_4_1_0_5())), new TokenAlias(false, false, grammarAccess.getNoPtrForAccess().getIDTerminalRuleCall_4_1_1())));
+		match_NoPtrFor___IDTerminalRuleCall_6_0_PlusSignEqualsSignKeyword_6_1_INTTerminalRuleCall_6_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNoPtrForAccess().getIDTerminalRuleCall_6_0()), new TokenAlias(false, false, grammarAccess.getNoPtrForAccess().getPlusSignEqualsSignKeyword_6_1()), new TokenAlias(false, false, grammarAccess.getNoPtrForAccess().getINTTerminalRuleCall_6_2()));
 		match_NoPtrStatement_BreakKeyword_1_0_a = new TokenAlias(true, true, grammarAccess.getNoPtrStatementAccess().getBreakKeyword_1_0());
 		match_NoPtrTerminalExpression_ExclamationMarkKeyword_0_1_a = new TokenAlias(true, true, grammarAccess.getNoPtrTerminalExpressionAccess().getExclamationMarkKeyword_0_1());
 		match_NoPtrTerminalExpression_ExclamationMarkKeyword_1_1_a = new TokenAlias(true, true, grammarAccess.getNoPtrTerminalExpressionAccess().getExclamationMarkKeyword_1_1());
+		match_NoPtrWhile___IDTerminalRuleCall_2_0_____AmpersandAmpersandKeyword_2_1_0_4_or_EqualsSignEqualsSignKeyword_2_1_0_2_or_ExclamationMarkEqualsSignKeyword_2_1_0_3_or_GreaterThanSignKeyword_2_1_0_1_or_LessThanSignKeyword_2_1_0_0_or_VerticalLineKeyword_2_1_0_5___IDTerminalRuleCall_2_1_1__q__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNoPtrWhileAccess().getIDTerminalRuleCall_2_0()), new GroupAlias(false, true, new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getNoPtrWhileAccess().getAmpersandAmpersandKeyword_2_1_0_4()), new TokenAlias(false, false, grammarAccess.getNoPtrWhileAccess().getEqualsSignEqualsSignKeyword_2_1_0_2()), new TokenAlias(false, false, grammarAccess.getNoPtrWhileAccess().getExclamationMarkEqualsSignKeyword_2_1_0_3()), new TokenAlias(false, false, grammarAccess.getNoPtrWhileAccess().getGreaterThanSignKeyword_2_1_0_1()), new TokenAlias(false, false, grammarAccess.getNoPtrWhileAccess().getLessThanSignKeyword_2_1_0_0()), new TokenAlias(false, false, grammarAccess.getNoPtrWhileAccess().getVerticalLineKeyword_2_1_0_5())), new TokenAlias(false, false, grammarAccess.getNoPtrWhileAccess().getIDTerminalRuleCall_2_1_1())));
 		match_Parameter_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a = new AlternativeAlias(false, false, new TokenAlias(true, true, grammarAccess.getParameterAccess().getAmpersandKeyword_3_1()), new TokenAlias(true, true, grammarAccess.getParameterAccess().getAsteriskKeyword_3_0()));
 		match_Parameter_ConstKeyword_1_q = new TokenAlias(false, true, grammarAccess.getParameterAccess().getConstKeyword_1());
 		match_Parameter_ExclamationMarkKeyword_6_1_a = new TokenAlias(true, true, grammarAccess.getParameterAccess().getExclamationMarkKeyword_6_1());
@@ -120,12 +128,20 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_NamespaceDefinition_IDTerminalRuleCall_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_NamespaceDefinition_InlineKeyword_0_q.equals(syntax))
 				emit_NamespaceDefinition_InlineKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_NoPtrFor___IDTerminalRuleCall_2_0_IDTerminalRuleCall_2_1___EqualsSignKeyword_2_2_0___IDTerminalRuleCall_2_2_1_0_or_INTTerminalRuleCall_2_2_1_1____q__q.equals(syntax))
+				emit_NoPtrFor___IDTerminalRuleCall_2_0_IDTerminalRuleCall_2_1___EqualsSignKeyword_2_2_0___IDTerminalRuleCall_2_2_1_0_or_INTTerminalRuleCall_2_2_1_1____q__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_NoPtrFor___IDTerminalRuleCall_4_0_____AmpersandAmpersandKeyword_4_1_0_4_or_EqualsSignEqualsSignKeyword_4_1_0_2_or_ExclamationMarkEqualsSignKeyword_4_1_0_3_or_GreaterThanSignKeyword_4_1_0_1_or_LessThanSignKeyword_4_1_0_0_or_VerticalLineKeyword_4_1_0_5___IDTerminalRuleCall_4_1_1__q__q.equals(syntax))
+				emit_NoPtrFor___IDTerminalRuleCall_4_0_____AmpersandAmpersandKeyword_4_1_0_4_or_EqualsSignEqualsSignKeyword_4_1_0_2_or_ExclamationMarkEqualsSignKeyword_4_1_0_3_or_GreaterThanSignKeyword_4_1_0_1_or_LessThanSignKeyword_4_1_0_0_or_VerticalLineKeyword_4_1_0_5___IDTerminalRuleCall_4_1_1__q__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_NoPtrFor___IDTerminalRuleCall_6_0_PlusSignEqualsSignKeyword_6_1_INTTerminalRuleCall_6_2__q.equals(syntax))
+				emit_NoPtrFor___IDTerminalRuleCall_6_0_PlusSignEqualsSignKeyword_6_1_INTTerminalRuleCall_6_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_NoPtrStatement_BreakKeyword_1_0_a.equals(syntax))
 				emit_NoPtrStatement_BreakKeyword_1_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_NoPtrTerminalExpression_ExclamationMarkKeyword_0_1_a.equals(syntax))
 				emit_NoPtrTerminalExpression_ExclamationMarkKeyword_0_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_NoPtrTerminalExpression_ExclamationMarkKeyword_1_1_a.equals(syntax))
 				emit_NoPtrTerminalExpression_ExclamationMarkKeyword_1_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_NoPtrWhile___IDTerminalRuleCall_2_0_____AmpersandAmpersandKeyword_2_1_0_4_or_EqualsSignEqualsSignKeyword_2_1_0_2_or_ExclamationMarkEqualsSignKeyword_2_1_0_3_or_GreaterThanSignKeyword_2_1_0_1_or_LessThanSignKeyword_2_1_0_0_or_VerticalLineKeyword_2_1_0_5___IDTerminalRuleCall_2_1_1__q__q.equals(syntax))
+				emit_NoPtrWhile___IDTerminalRuleCall_2_0_____AmpersandAmpersandKeyword_2_1_0_4_or_EqualsSignEqualsSignKeyword_2_1_0_2_or_ExclamationMarkEqualsSignKeyword_2_1_0_3_or_GreaterThanSignKeyword_2_1_0_1_or_LessThanSignKeyword_2_1_0_0_or_VerticalLineKeyword_2_1_0_5___IDTerminalRuleCall_2_1_1__q__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Parameter_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a.equals(syntax))
 				emit_Parameter_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Parameter_ConstKeyword_1_q.equals(syntax))
@@ -172,6 +188,43 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
+	 *     (ID ID ('=' (INT | ID))?)?
+	 */
+	protected void emit_NoPtrFor___IDTerminalRuleCall_2_0_IDTerminalRuleCall_2_1___EqualsSignKeyword_2_2_0___IDTerminalRuleCall_2_2_1_0_or_INTTerminalRuleCall_2_2_1_1____q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     (
+	     ID 
+	     (
+	         (
+	             '>' | 
+	             '|' | 
+	             '==' | 
+	             '!=' | 
+	             '<' | 
+	             '&&'
+	         ) 
+	         ID
+	     )?
+	 )?
+	 */
+	protected void emit_NoPtrFor___IDTerminalRuleCall_4_0_____AmpersandAmpersandKeyword_4_1_0_4_or_EqualsSignEqualsSignKeyword_4_1_0_2_or_ExclamationMarkEqualsSignKeyword_4_1_0_3_or_GreaterThanSignKeyword_4_1_0_1_or_LessThanSignKeyword_4_1_0_0_or_VerticalLineKeyword_4_1_0_5___IDTerminalRuleCall_4_1_1__q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     (ID '+=' INT)?
+	 */
+	protected void emit_NoPtrFor___IDTerminalRuleCall_6_0_PlusSignEqualsSignKeyword_6_1_INTTerminalRuleCall_6_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
 	 *     'break;'*
 	 */
 	protected void emit_NoPtrStatement_BreakKeyword_1_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -196,7 +249,28 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     '*'* | '&'*
+	 *     (
+	     ID 
+	     (
+	         (
+	             '>' | 
+	             '&&' | 
+	             '!=' | 
+	             '|' | 
+	             '<' | 
+	             '=='
+	         ) 
+	         ID
+	     )?
+	 )?
+	 */
+	protected void emit_NoPtrWhile___IDTerminalRuleCall_2_0_____AmpersandAmpersandKeyword_2_1_0_4_or_EqualsSignEqualsSignKeyword_2_1_0_2_or_ExclamationMarkEqualsSignKeyword_2_1_0_3_or_GreaterThanSignKeyword_2_1_0_1_or_LessThanSignKeyword_2_1_0_0_or_VerticalLineKeyword_2_1_0_5___IDTerminalRuleCall_2_1_1__q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     '&'* | '*'*
 	 */
 	protected void emit_Parameter_AmpersandKeyword_3_1_a_or_AsteriskKeyword_3_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

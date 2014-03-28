@@ -39,7 +39,6 @@ Declaration:
 		ditryD = Return |
 		chamada = FunctionChamada ';' |
 		funcao = FunctionDeclaration |
-
 	dirtyE= SimpleOrFunctionDeclaration|
 	dirtyA = BlockDeclaration |
 	dirtyB = TemplateDeclaration |
@@ -142,8 +141,21 @@ FunctionChamada:
 	{FunctionChamada} name=ID'('(params+=ReturnExpr ("," params+=ReturnExpr)* )?  ')'
 ;
 NoPtrStatement:
-	{NoPtrStatement} (('break;' | (variaveis += VarDecl) | mudancas += NoPtrMudanca |  lixoV += NoPtrExpression | switches += NoPtrSelect |dirtyB += Return| dirty += Statement | dirtyV += FunctionChamada )*)
+	{NoPtrStatement} (('break;' | (variaveis += VarDecl) | mudancas += NoPtrMudanca |  lixoV += NoPtrExpression | switches += NoPtrSelect |dirtyB += Return| dirtU += NoPtrFor | dirtyABC += NoPtrWhile | dirty += Statement | dirtyV += FunctionChamada )*)
 ;
+NoPtrFor:
+	'for' '(' (ID ID ('=' (ID|INT))?)? ';' (ID (('<'|'>'|'=='|'!='|'&&'|'|') ID)?)?  ';' (ID '+=' INT)? ')' '{'
+		escopo=NoPtrStatement
+	'}'
+;
+NoPtrWhile:
+	'while' '('  (ID (('<'|'>'|'=='|'!='|'&&'|'|') ID)?)? ')' '{'
+		escopo=NoPtrStatement
+	'}'
+	
+;
+
+
 
 NoPtrMudanca:
 	{NoPtrMudanca} name=ID ('=' expr=NoPtrExpression)
@@ -537,10 +549,9 @@ Condition:
 
 // stmt.iter
 IterationStatement:
-	'while' '(' Condition ')' Statement |
-	'do' Statement 'while' '(' Expression ')' ';' |
-	'for' '(' ForInitializationStatement Condition? ';' Expression? ')' Statement;
-
+	
+'asjkajksjksajskjskjskjskjaskajsksjkasjksajsakjsksjaksajksajksj'
+	;
 ForInitializationStatement:
 	ExpressionStatement |
 	SimpleDeclaration;

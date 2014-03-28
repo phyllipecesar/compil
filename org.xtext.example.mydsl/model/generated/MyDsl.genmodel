@@ -43,8 +43,16 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NoPtrStatement/lixoV"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NoPtrStatement/switches"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NoPtrStatement/dirtyB"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NoPtrStatement/dirtU"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NoPtrStatement/dirtyABC"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//NoPtrStatement/dirty"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NoPtrStatement/dirtyV"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//NoPtrFor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NoPtrFor/escopo"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//NoPtrWhile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NoPtrWhile/escopo"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//NoPtrMudanca">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//NoPtrMudanca/name"/>

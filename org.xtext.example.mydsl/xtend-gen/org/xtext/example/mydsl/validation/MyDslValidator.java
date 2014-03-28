@@ -467,7 +467,20 @@ public class MyDslValidator extends AbstractMyDslValidator {
   public String getExpressionTypeTerminal(final NoPtrTerminalExpression expr) {
     if ((expr instanceof Atomic)) {
       ReturnExpr _atomic = ((Atomic)expr).getAtomic();
-      return this.lookUpType(_atomic);
+      String x = this.lookUpType(_atomic);
+      boolean _equals = x.equals("No Type Found");
+      if (_equals) {
+        ReturnExpr _atomic_1 = ((Atomic)expr).getAtomic();
+        if ((_atomic_1 instanceof Variable)) {
+          ReturnExpr _atomic_2 = ((Atomic)expr).getAtomic();
+          Variable _cast = Variable.class.cast(_atomic_2);
+          String _name = _cast.getName();
+          String _plus = ("Variable \'" + _name);
+          String _plus_1 = (_plus + "\' was not declared.");
+          this.error(_plus_1, expr, null, (-1));
+        }
+      }
+      return x;
     } else {
       NoPtrExpression _inside = expr.getInside();
       return this.getExpressionType(_inside);

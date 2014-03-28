@@ -115,6 +115,16 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createNoPtrStatementAdapter();
       }
       @Override
+      public Adapter caseNoPtrFor(NoPtrFor object)
+      {
+        return createNoPtrForAdapter();
+      }
+      @Override
+      public Adapter caseNoPtrWhile(NoPtrWhile object)
+      {
+        return createNoPtrWhileAdapter();
+      }
+      @Override
       public Adapter caseNoPtrMudanca(NoPtrMudanca object)
       {
         return createNoPtrMudancaAdapter();
@@ -382,6 +392,36 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNoPtrStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.NoPtrFor <em>No Ptr For</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrFor
+   * @generated
+   */
+  public Adapter createNoPtrForAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.NoPtrWhile <em>No Ptr While</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.myDsl.NoPtrWhile
+   * @generated
+   */
+  public Adapter createNoPtrWhileAdapter()
   {
     return null;
   }

@@ -28,10 +28,12 @@ import org.xtext.example.mydsl.myDsl.LKS;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.NamespaceDefinition;
 import org.xtext.example.mydsl.myDsl.NoPtrExpression;
+import org.xtext.example.mydsl.myDsl.NoPtrFor;
 import org.xtext.example.mydsl.myDsl.NoPtrMudanca;
 import org.xtext.example.mydsl.myDsl.NoPtrSelect;
 import org.xtext.example.mydsl.myDsl.NoPtrStatement;
 import org.xtext.example.mydsl.myDsl.NoPtrTerminalExpression;
+import org.xtext.example.mydsl.myDsl.NoPtrWhile;
 import org.xtext.example.mydsl.myDsl.Parameter;
 import org.xtext.example.mydsl.myDsl.Return;
 import org.xtext.example.mydsl.myDsl.StringType;
@@ -142,6 +144,12 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case MyDslPackage.NO_PTR_FOR:
+				if(context == grammarAccess.getNoPtrForRule()) {
+					sequence_NoPtrFor(context, (NoPtrFor) semanticObject); 
+					return; 
+				}
+				else break;
 			case MyDslPackage.NO_PTR_MUDANCA:
 				if(context == grammarAccess.getNoPtrMudancaRule()) {
 					sequence_NoPtrMudanca(context, (NoPtrMudanca) semanticObject); 
@@ -163,6 +171,12 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MyDslPackage.NO_PTR_TERMINAL_EXPRESSION:
 				if(context == grammarAccess.getNoPtrTerminalExpressionRule()) {
 					sequence_NoPtrTerminalExpression(context, (NoPtrTerminalExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case MyDslPackage.NO_PTR_WHILE:
+				if(context == grammarAccess.getNoPtrWhileRule()) {
+					sequence_NoPtrWhile(context, (NoPtrWhile) semanticObject); 
 					return; 
 				}
 				else break;
@@ -348,6 +362,22 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
+	 *     escopo=NoPtrStatement
+	 */
+	protected void sequence_NoPtrFor(EObject context, NoPtrFor semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.NO_PTR_FOR__ESCOPO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.NO_PTR_FOR__ESCOPO));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getNoPtrForAccess().getEscopoNoPtrStatementParserRuleCall_9_0(), semanticObject.getEscopo());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=ID expr=NoPtrExpression)
 	 */
 	protected void sequence_NoPtrMudanca(EObject context, NoPtrMudanca semanticObject) {
@@ -383,6 +413,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *             lixoV+=NoPtrExpression | 
 	 *             switches+=NoPtrSelect | 
 	 *             dirtyB+=Return | 
+	 *             dirtU+=NoPtrFor | 
+	 *             dirtyABC+=NoPtrWhile | 
 	 *             dirty+=Statement | 
 	 *             dirtyV+=FunctionChamada
 	 *         )*
@@ -414,6 +446,22 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getNoPtrTerminalExpressionAccess().getInsideNoPtrExpressionParserRuleCall_0_3_0(), semanticObject.getInside());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     escopo=NoPtrStatement
+	 */
+	protected void sequence_NoPtrWhile(EObject context, NoPtrWhile semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.NO_PTR_WHILE__ESCOPO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.NO_PTR_WHILE__ESCOPO));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getNoPtrWhileAccess().getEscopoNoPtrStatementParserRuleCall_5_0(), semanticObject.getEscopo());
 		feeder.finish();
 	}
 	

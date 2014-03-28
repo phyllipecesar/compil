@@ -129,6 +129,20 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MyDslPackage.NO_PTR_FOR:
+      {
+        NoPtrFor noPtrFor = (NoPtrFor)theEObject;
+        T result = caseNoPtrFor(noPtrFor);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.NO_PTR_WHILE:
+      {
+        NoPtrWhile noPtrWhile = (NoPtrWhile)theEObject;
+        T result = caseNoPtrWhile(noPtrWhile);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MyDslPackage.NO_PTR_MUDANCA:
       {
         NoPtrMudanca noPtrMudanca = (NoPtrMudanca)theEObject;
@@ -452,6 +466,38 @@ public class MyDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseNoPtrStatement(NoPtrStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>No Ptr For</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>No Ptr For</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNoPtrFor(NoPtrFor object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>No Ptr While</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>No Ptr While</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNoPtrWhile(NoPtrWhile object)
   {
     return null;
   }

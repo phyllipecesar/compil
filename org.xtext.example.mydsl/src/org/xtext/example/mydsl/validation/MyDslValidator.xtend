@@ -279,9 +279,18 @@ def checkMudanca(NoPtrMudanca mudanca) {
 		}
 	}
 }
+
+
 def String getExpressionTypeTerminal(NoPtrTerminalExpression expr) {
 	if (expr instanceof Atomic) {
-		return lookUpType(expr.atomic);
+		var x =  lookUpType(expr.atomic);
+		if (x.equals("No Type Found")) {
+			if (expr.atomic instanceof Variable) {
+			error("Variable '" + Variable.cast(expr.atomic).name + "' was not declared.", expr, null, -1);
+		}
+		
+	}
+		return x;
 	} else {
 		return getExpressionType(expr.inside);
 	}
@@ -290,6 +299,7 @@ def String getExpressionTypeTerminal(NoPtrTerminalExpression expr) {
 @Check
 def getExpressionType(NoPtrExpression expr) {
 	val g1 = getExpressionTypeTerminal(expr.left);
+
 	// System.out.println("AHA");
 	
 	if (expr.op instanceof String) {
