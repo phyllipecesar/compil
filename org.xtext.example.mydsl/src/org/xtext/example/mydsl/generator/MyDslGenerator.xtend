@@ -40,6 +40,7 @@ import org.xtext.example.mydsl.myDsl.impl.NoPtrMudancaImpl
 import org.xtext.example.mydsl.myDsl.impl.NoPtrSelectImpl
 import org.xtext.example.mydsl.myDsl.impl.ReturnImpl
 import org.xtext.example.mydsl.myDsl.impl.VarDeclImpl
+import org.xtext.example.mydsl.myDsl.Body
 
 /**
  * Generates code from your model files on save.
@@ -59,6 +60,21 @@ class MyDslGenerator implements IGenerator {
 //				.filter(typeof(Greeting))
 //				.map[name]
 //				.join(', '))
+
+		for(declaration : resource.allContents.toIterable.
+			filter(Body)){
+				for (dec : declaration.declarations) {
+					if (dec.variaveis != null) {
+						code = code + VarDeclImpl.cast(dec.variaveis).compile
+							regCounter = regCounter+1;
+					} else if (dec.chamada != null ) {
+						code = code + FunctionChamadaImpl.cast(dec.chamada).compile;
+							regCounter = regCounter+1;
+					}
+				}
+			
+			}
+
 		for(declaration : resource.allContents.toIterable.
 			filter(FunctionDeclaration)){
 				code = code + declaration.compile
@@ -85,7 +101,8 @@ class MyDslGenerator implements IGenerator {
 		return '''
 		«ret»
 		«variavel.expr.compile»
-		ST «variavel.name», R«regCounter»'''
+		ST «variavel.name», R«regCounter»
+		'''
 	
 	}
 	
@@ -150,7 +167,8 @@ class MyDslGenerator implements IGenerator {
 			return '''
 «expr.expr.compile»
 ST «expr.name», R«regCounter»
-LD R«regCounter», «expr.name»'''
+LD R«regCounter», «expr.name»
+'''
 		}
 	}
 	def String compile(ReturnExpr expr) {
@@ -172,8 +190,10 @@ LD R«regCounter», «expr.name»'''
 	}
 	def compile(NoPtrMudanca mud) {
 		if (mud.expr != null) {
-			return '''«mud.expr.compile»
-ST «mud.name», R«regCounter»''';
+			return '''
+«mud.expr.compile»
+ST «mud.name», R«regCounter»
+''';
 		} else {
 			return '';
 		}
@@ -186,9 +206,11 @@ ST «mud.name», R«regCounter»''';
 			regCounter = regCounter + 1;
 		}
 		
-		return '''«ret»
+		return '''
+«ret»
 CALL «funcao.name»
-LD R«regCounter», EAX''';
+LD R«regCounter», EAX
+''';
 	}
 	
 	def compile(NoPtrCases symb, int valor) '''
@@ -221,10 +243,12 @@ LD R«regCounter», EAX''';
 			valor = valor + 1;
 		}
 		switch_n = switch_n + 1;
-		return '''«up_part»
+		return '''
+«up_part»
 «switch_rule»
 
-BEYOND_SWITCH_«(switch_n-1).toString»:'''
+BEYOND_SWITCH_«(switch_n-1).toString»:
+'''
 	}
 	
 
@@ -303,8 +327,10 @@ BEYOND_SWITCH_«(switch_n-1).toString»:'''
 				}
 				ret = right + "\n" + ret;
 			}
-		return '''«left»
-«ret»'''
+		return '''
+«left»
+«ret»
+'''
 		}
 		
 	}
@@ -312,12 +338,13 @@ BEYOND_SWITCH_«(switch_n-1).toString»:'''
 		var antigo = "";
 		if (ret.rettype != null) {
 			antigo = '''
-				«ret.rettype.compile»
-				LD RET, R«regCounter»'''
+			«ret.rettype.compile»
+			LD RET, R«regCounter»'''
 		}
 	return '''
 		«antigo»
-		RETURN'''	
+		RETURN
+'''	
 	}
 	def String getNameFunction(FunctionDeclaration funcao) {
 		var nome = funcao.name + '(';

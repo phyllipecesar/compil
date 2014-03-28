@@ -19,8 +19,10 @@ import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.xtext.example.mydsl.myDsl.Atomic;
+import org.xtext.example.mydsl.myDsl.Body;
 import org.xtext.example.mydsl.myDsl.BooleanhType;
 import org.xtext.example.mydsl.myDsl.CaseNormal;
+import org.xtext.example.mydsl.myDsl.Declaration;
 import org.xtext.example.mydsl.myDsl.DefaultCase;
 import org.xtext.example.mydsl.myDsl.FunctionChamada;
 import org.xtext.example.mydsl.myDsl.FunctionDeclaration;
@@ -64,12 +66,41 @@ public class MyDslGenerator implements IGenerator {
     this.switch_n = 0;
     TreeIterator<EObject> _allContents = resource.getAllContents();
     Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
-    Iterable<FunctionDeclaration> _filter = Iterables.<FunctionDeclaration>filter(_iterable, FunctionDeclaration.class);
-    for (final FunctionDeclaration declaration : _filter) {
+    Iterable<Body> _filter = Iterables.<Body>filter(_iterable, Body.class);
+    for (final Body declaration : _filter) {
+      EList<Declaration> _declarations = declaration.getDeclarations();
+      for (final Declaration dec : _declarations) {
+        VarDecl _variaveis = dec.getVariaveis();
+        boolean _notEquals = (!Objects.equal(_variaveis, null));
+        if (_notEquals) {
+          VarDecl _variaveis_1 = dec.getVariaveis();
+          VarDeclImpl _cast = VarDeclImpl.class.cast(_variaveis_1);
+          String _compile = this.compile(_cast);
+          String _plus = (code + _compile);
+          code = _plus;
+          this.regCounter = (this.regCounter + 1);
+        } else {
+          FunctionChamada _chamada = dec.getChamada();
+          boolean _notEquals_1 = (!Objects.equal(_chamada, null));
+          if (_notEquals_1) {
+            FunctionChamada _chamada_1 = dec.getChamada();
+            FunctionChamadaImpl _cast_1 = FunctionChamadaImpl.class.cast(_chamada_1);
+            String _compile_1 = this.compile(_cast_1);
+            String _plus_1 = (code + _compile_1);
+            code = _plus_1;
+            this.regCounter = (this.regCounter + 1);
+          }
+        }
+      }
+    }
+    TreeIterator<EObject> _allContents_1 = resource.getAllContents();
+    Iterable<EObject> _iterable_1 = IteratorExtensions.<EObject>toIterable(_allContents_1);
+    Iterable<FunctionDeclaration> _filter_1 = Iterables.<FunctionDeclaration>filter(_iterable_1, FunctionDeclaration.class);
+    for (final FunctionDeclaration declaration_1 : _filter_1) {
       {
-        String _compile = this.compile(declaration);
-        String _plus = (code + _compile);
-        code = _plus;
+        String _compile_2 = this.compile(declaration_1);
+        String _plus_2 = (code + _compile_2);
+        code = _plus_2;
         this.regCounter = (this.regCounter + 1);
       }
     }
@@ -120,6 +151,7 @@ public class MyDslGenerator implements IGenerator {
     _builder.append(_name_3, "");
     _builder.append(", R");
     _builder.append(this.regCounter, "");
+    _builder.newLineIfNotEmpty();
     return _builder.toString();
   }
   
@@ -238,6 +270,7 @@ public class MyDslGenerator implements IGenerator {
       _builder.append(", ");
       String _name_2 = expr.getName();
       _builder.append(_name_2, "");
+      _builder.newLineIfNotEmpty();
       return _builder.toString();
     }
   }
@@ -287,6 +320,7 @@ public class MyDslGenerator implements IGenerator {
       _builder.append(_name, "");
       _builder.append(", R");
       _builder.append(this.regCounter, "");
+      _builder.newLineIfNotEmpty();
       return _builder.toString();
     } else {
       return "";
@@ -316,6 +350,7 @@ public class MyDslGenerator implements IGenerator {
     _builder.append("LD R");
     _builder.append(this.regCounter, "");
     _builder.append(", EAX");
+    _builder.newLineIfNotEmpty();
     return _builder.toString();
   }
   
@@ -412,6 +447,7 @@ public class MyDslGenerator implements IGenerator {
     String _string_2 = Integer.valueOf((this.switch_n - 1)).toString();
     _builder.append(_string_2, "");
     _builder.append(":");
+    _builder.newLineIfNotEmpty();
     return _builder.toString();
   }
   
@@ -574,6 +610,7 @@ public class MyDslGenerator implements IGenerator {
       _builder.append(left, "");
       _builder.newLineIfNotEmpty();
       _builder.append(ret, "");
+      _builder.newLineIfNotEmpty();
       return _builder.toString();
     }
   }
@@ -596,6 +633,7 @@ public class MyDslGenerator implements IGenerator {
     _builder_1.append(antigo, "");
     _builder_1.newLineIfNotEmpty();
     _builder_1.append("RETURN");
+    _builder_1.newLine();
     return _builder_1.toString();
   }
   
