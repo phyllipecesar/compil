@@ -219,10 +219,21 @@ def String getFuncaoTipo(FunctionType f) {
 
 def getMudanca(NoPtrMudanca mudanca) {
 		ret2 = mudanca;
-		while (!(ret2 instanceof FunctionDeclaration || ret2 instanceof Body)) {
+		while (!(ret2 instanceof FunctionDeclaration || ret2 instanceof Body || ret2 instanceof NoPtrCases)) {
 			ret2 = ret2.eContainer;
 		}
 		
+		if (ret2 instanceof NoPtrCases) {
+			for (VarDecl v: ret2.v.variaveis) {
+				if (v.name.equals(mudanca.name)) {
+					return v.type.sts.name;
+				}
+			}
+		}
+		
+		while (!(ret2 instanceof FunctionDeclaration || ret2 instanceof Body)) {
+			ret2 = ret2.eContainer;
+		}
 		if (ret2 instanceof FunctionDeclaration) {
 			st3 = ret2;
 			for (Parameter p: st3.params) {
@@ -320,10 +331,21 @@ def lookUpType(ReturnExpr d)  {
 	} 
 	else if (d instanceof Variable) {
 		ret2 = d;
-		while (!(ret2 instanceof FunctionDeclaration || ret2 instanceof Body)) {
+		while (!(ret2 instanceof FunctionDeclaration || ret2 instanceof Body || ret2 instanceof NoPtrCases)) {
 			ret2 = ret2.eContainer;
 		}
 		
+		if (ret2 instanceof NoPtrCases) {
+			for (VarDecl v: ret2.v.variaveis) {
+				if (v.name.equals(d.name)) {
+					return v.type.sts.name;
+				}
+			}
+		}
+		
+		while (!(ret2 instanceof FunctionDeclaration || ret2 instanceof Body)) {
+			ret2 = ret2.eContainer;
+		}
 		if (ret2 instanceof FunctionDeclaration) {
 			st3 = ret2;
 			for (Parameter p: st3.params) {

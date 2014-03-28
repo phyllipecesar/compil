@@ -348,58 +348,78 @@ public class MyDslValidator extends AbstractMyDslValidator {
   
   public String getMudanca(final NoPtrMudanca mudanca) {
     this.ret2 = mudanca;
-    boolean _while = (!((this.ret2 instanceof FunctionDeclaration) || (this.ret2 instanceof Body)));
+    boolean _while = (!(((this.ret2 instanceof FunctionDeclaration) || (this.ret2 instanceof Body)) || (this.ret2 instanceof NoPtrCases)));
     while (_while) {
       EObject _eContainer = this.ret2.eContainer();
       this.ret2 = _eContainer;
-      _while = (!((this.ret2 instanceof FunctionDeclaration) || (this.ret2 instanceof Body)));
+      _while = (!(((this.ret2 instanceof FunctionDeclaration) || (this.ret2 instanceof Body)) || (this.ret2 instanceof NoPtrCases)));
+    }
+    if ((this.ret2 instanceof NoPtrCases)) {
+      NoPtrStatement _v = ((NoPtrCases)this.ret2).getV();
+      EList<VarDecl> _variaveis = _v.getVariaveis();
+      for (final VarDecl v : _variaveis) {
+        String _name = v.getName();
+        String _name_1 = mudanca.getName();
+        boolean _equals = _name.equals(_name_1);
+        if (_equals) {
+          Type _type = v.getType();
+          simple_type_specifier _sts = _type.getSts();
+          return _sts.getName();
+        }
+      }
+    }
+    boolean _while_1 = (!((this.ret2 instanceof FunctionDeclaration) || (this.ret2 instanceof Body)));
+    while (_while_1) {
+      EObject _eContainer = this.ret2.eContainer();
+      this.ret2 = _eContainer;
+      _while_1 = (!((this.ret2 instanceof FunctionDeclaration) || (this.ret2 instanceof Body)));
     }
     if ((this.ret2 instanceof FunctionDeclaration)) {
       this.st3 = ((FunctionDeclaration)this.ret2);
       EList<Parameter> _params = this.st3.getParams();
       for (final Parameter p : _params) {
-        String _name = p.getName();
-        String _name_1 = mudanca.getName();
-        boolean _equals = _name.equals(_name_1);
-        if (_equals) {
-          Type _type = p.getType();
-          simple_type_specifier _sts = _type.getSts();
-          return _sts.getName();
-        }
-      }
-      NoPtrStatement _escopo = this.st3.getEscopo();
-      EList<VarDecl> _variaveis = _escopo.getVariaveis();
-      for (final VarDecl v : _variaveis) {
-        String _name_2 = v.getName();
+        String _name_2 = p.getName();
         String _name_3 = mudanca.getName();
         boolean _equals_1 = _name_2.equals(_name_3);
         if (_equals_1) {
-          Type _type_1 = v.getType();
+          Type _type_1 = p.getType();
           simple_type_specifier _sts_1 = _type_1.getSts();
           return _sts_1.getName();
         }
       }
+      NoPtrStatement _escopo = this.st3.getEscopo();
+      EList<VarDecl> _variaveis_1 = _escopo.getVariaveis();
+      for (final VarDecl v_1 : _variaveis_1) {
+        String _name_4 = v_1.getName();
+        String _name_5 = mudanca.getName();
+        boolean _equals_2 = _name_4.equals(_name_5);
+        if (_equals_2) {
+          Type _type_2 = v_1.getType();
+          simple_type_specifier _sts_2 = _type_2.getSts();
+          return _sts_2.getName();
+        }
+      }
     }
-    boolean _while_1 = (!(this.ret2 instanceof Body));
-    while (_while_1) {
+    boolean _while_2 = (!(this.ret2 instanceof Body));
+    while (_while_2) {
       EObject _eContainer = this.ret2.eContainer();
       this.ret2 = _eContainer;
-      _while_1 = (!(this.ret2 instanceof Body));
+      _while_2 = (!(this.ret2 instanceof Body));
     }
     if ((this.ret2 instanceof Body)) {
       this.st2 = ((Body)this.ret2);
       EList<Declaration> _declarations = this.st2.getDeclarations();
       for (final Declaration d2 : _declarations) {
         try {
-          VarDecl _variaveis_1 = d2.getVariaveis();
-          String _name_4 = _variaveis_1.getName();
-          String _name_5 = mudanca.getName();
-          boolean _equals_2 = _name_4.equals(_name_5);
-          if (_equals_2) {
-            VarDecl _variaveis_2 = d2.getVariaveis();
-            Type _type_2 = _variaveis_2.getType();
-            simple_type_specifier _sts_2 = _type_2.getSts();
-            return _sts_2.getName();
+          VarDecl _variaveis_2 = d2.getVariaveis();
+          String _name_6 = _variaveis_2.getName();
+          String _name_7 = mudanca.getName();
+          boolean _equals_3 = _name_6.equals(_name_7);
+          if (_equals_3) {
+            VarDecl _variaveis_3 = d2.getVariaveis();
+            Type _type_3 = _variaveis_3.getType();
+            simple_type_specifier _sts_3 = _type_3.getSts();
+            return _sts_3.getName();
           }
         } catch (final Throwable _t) {
           if (_t instanceof Exception) {
@@ -543,58 +563,78 @@ public class MyDslValidator extends AbstractMyDslValidator {
           } else {
             if ((d instanceof Variable)) {
               this.ret2 = d;
-              boolean _while = (!((this.ret2 instanceof FunctionDeclaration) || (this.ret2 instanceof Body)));
+              boolean _while = (!(((this.ret2 instanceof FunctionDeclaration) || (this.ret2 instanceof Body)) || (this.ret2 instanceof NoPtrCases)));
               while (_while) {
                 EObject _eContainer = this.ret2.eContainer();
                 this.ret2 = _eContainer;
-                _while = (!((this.ret2 instanceof FunctionDeclaration) || (this.ret2 instanceof Body)));
+                _while = (!(((this.ret2 instanceof FunctionDeclaration) || (this.ret2 instanceof Body)) || (this.ret2 instanceof NoPtrCases)));
+              }
+              if ((this.ret2 instanceof NoPtrCases)) {
+                NoPtrStatement _v = ((NoPtrCases)this.ret2).getV();
+                EList<VarDecl> _variaveis = _v.getVariaveis();
+                for (final VarDecl v : _variaveis) {
+                  String _name = v.getName();
+                  String _name_1 = ((Variable)d).getName();
+                  boolean _equals = _name.equals(_name_1);
+                  if (_equals) {
+                    Type _type = v.getType();
+                    simple_type_specifier _sts = _type.getSts();
+                    return _sts.getName();
+                  }
+                }
+              }
+              boolean _while_1 = (!((this.ret2 instanceof FunctionDeclaration) || (this.ret2 instanceof Body)));
+              while (_while_1) {
+                EObject _eContainer = this.ret2.eContainer();
+                this.ret2 = _eContainer;
+                _while_1 = (!((this.ret2 instanceof FunctionDeclaration) || (this.ret2 instanceof Body)));
               }
               if ((this.ret2 instanceof FunctionDeclaration)) {
                 this.st3 = ((FunctionDeclaration)this.ret2);
                 EList<Parameter> _params = this.st3.getParams();
                 for (final Parameter p : _params) {
-                  String _name = p.getName();
-                  String _name_1 = ((Variable)d).getName();
-                  boolean _equals = _name.equals(_name_1);
-                  if (_equals) {
-                    Type _type = p.getType();
-                    simple_type_specifier _sts = _type.getSts();
-                    return _sts.getName();
-                  }
-                }
-                NoPtrStatement _escopo = this.st3.getEscopo();
-                EList<VarDecl> _variaveis = _escopo.getVariaveis();
-                for (final VarDecl v : _variaveis) {
-                  String _name_2 = v.getName();
+                  String _name_2 = p.getName();
                   String _name_3 = ((Variable)d).getName();
                   boolean _equals_1 = _name_2.equals(_name_3);
                   if (_equals_1) {
-                    Type _type_1 = v.getType();
+                    Type _type_1 = p.getType();
                     simple_type_specifier _sts_1 = _type_1.getSts();
                     return _sts_1.getName();
                   }
                 }
+                NoPtrStatement _escopo = this.st3.getEscopo();
+                EList<VarDecl> _variaveis_1 = _escopo.getVariaveis();
+                for (final VarDecl v_1 : _variaveis_1) {
+                  String _name_4 = v_1.getName();
+                  String _name_5 = ((Variable)d).getName();
+                  boolean _equals_2 = _name_4.equals(_name_5);
+                  if (_equals_2) {
+                    Type _type_2 = v_1.getType();
+                    simple_type_specifier _sts_2 = _type_2.getSts();
+                    return _sts_2.getName();
+                  }
+                }
               }
-              boolean _while_1 = (!(this.ret2 instanceof Body));
-              while (_while_1) {
+              boolean _while_2 = (!(this.ret2 instanceof Body));
+              while (_while_2) {
                 EObject _eContainer = this.ret2.eContainer();
                 this.ret2 = _eContainer;
-                _while_1 = (!(this.ret2 instanceof Body));
+                _while_2 = (!(this.ret2 instanceof Body));
               }
               if ((this.ret2 instanceof Body)) {
                 this.st2 = ((Body)this.ret2);
                 EList<Declaration> _declarations = this.st2.getDeclarations();
                 for (final Declaration d2 : _declarations) {
                   try {
-                    VarDecl _variaveis_1 = d2.getVariaveis();
-                    String _name_4 = _variaveis_1.getName();
-                    String _name_5 = ((Variable)d).getName();
-                    boolean _equals_2 = _name_4.equals(_name_5);
-                    if (_equals_2) {
-                      VarDecl _variaveis_2 = d2.getVariaveis();
-                      Type _type_2 = _variaveis_2.getType();
-                      simple_type_specifier _sts_2 = _type_2.getSts();
-                      return _sts_2.getName();
+                    VarDecl _variaveis_2 = d2.getVariaveis();
+                    String _name_6 = _variaveis_2.getName();
+                    String _name_7 = ((Variable)d).getName();
+                    boolean _equals_3 = _name_6.equals(_name_7);
+                    if (_equals_3) {
+                      VarDecl _variaveis_3 = d2.getVariaveis();
+                      Type _type_3 = _variaveis_3.getType();
+                      simple_type_specifier _sts_3 = _type_3.getSts();
+                      return _sts_3.getName();
                     }
                   } catch (final Throwable _t) {
                     if (_t instanceof Exception) {
